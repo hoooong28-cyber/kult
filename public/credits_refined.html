@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KULT - Elite Credit Acquisition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1111d4",
+                        "obsidian-start": "#05050a",
+                        "obsidian-end": "#0a0a1a",
+                        "neon-blue": "#1111d4",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body { 
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                background: radial-gradient(circle at top right, #0a0a25 0%, #05050a 100%);
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(17, 17, 212, 0.05);
+            border-color: rgba(17, 17, 212, 0.4);
+            box-shadow: 0 0 25px rgba(17, 17, 212, 0.15);
+        }
+        .neon-border {
+            border: 1px solid rgba(17, 17, 212, 0.3);
+            box-shadow: 0 0 15px rgba(17, 17, 212, 0.1), inset 0 0 10px rgba(17, 17, 212, 0.05);
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(17, 17, 212, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(17, 17, 212, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(17, 17, 212, 0); }
+        }
+        .minimal-input {
+            @apply bg-transparent border-0 border-b border-white/10 px-0 py-3 text-white focus:ring-0 focus:border-primary transition-all placeholder:text-white/20 font-light text-lg;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-label {
+            @apply text-[10px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-1;
+        }
+    </style>
+</head>
+<body class="dark text-slate-100 min-h-screen selection:bg-primary selection:text-white">
+<header class="sticky top-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/5">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 border border-primary/30 flex items-center justify-center rotate-45 group hover:rotate-[225deg] transition-transform duration-700">
+<span class="material-symbols-outlined text-primary -rotate-45 group-hover:rotate-[-225deg] transition-transform duration-700">diamond</span>
+</div>
+<span class="text-2xl font-light tracking-[0.4em] uppercase">Kult</span>
+</div>
+<a class="flex items-center gap-3 text-xs font-bold tracking-widest text-white/40 hover:text-primary transition-colors uppercase" href="#">
+<span class="material-symbols-outlined text-sm">north_west</span>
+            Return to Concierge
+        </a>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12 lg:py-20">
+<div class="flex flex-col lg:flex-row gap-16">
+<div class="flex-1 space-y-20">
+<section>
+<h1 class="text-5xl font-extralight tracking-tight text-white mb-4">Elite Credit Acquisition</h1>
+<p class="text-white/40 text-lg font-light max-w-xl leading-relaxed">Fuel your journey across the curated cosmos. Select a premium funding tier to enable seamless space travel experiences.</p>
+</section>
+<section class="space-y-8">
+<div class="flex items-center gap-4">
+<span class="text-primary font-bold text-xs tracking-tighter">01</span>
+<h2 class="text-sm font-bold uppercase tracking-[0.2em] text-white/80">Select Tier</h2>
+<div class="h-px bg-white/5 flex-1"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<label class="relative cursor-pointer group">
+<input checked="" class="peer hidden" name="package" type="radio" value="starter"/>
+<div class="glass-card p-8 rounded-2xl peer-checked:border-primary peer-checked:bg-primary/5 flex flex-col items-start gap-6 h-full">
+<span class="material-symbols-outlined text-primary text-3xl font-extralight">rocket_launch</span>
+<div>
+<p class="premium-label">Starter</p>
+<div class="text-3xl font-light tracking-tight mb-1">5 Credits</div>
+<div class="text-sm font-semibold text-primary/80 tracking-widest">$10.00 USD</div>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer hidden" name="package" type="radio" value="explorer"/>
+<div class="glass-card p-8 rounded-2xl peer-checked:border-primary peer-checked:bg-primary/5 flex flex-col items-start gap-6 h-full">
+<span class="material-symbols-outlined text-primary text-3xl font-extralight">explore</span>
+<div>
+<p class="premium-label">Explorer</p>
+<div class="text-3xl font-light tracking-tight mb-1">20 Credits</div>
+<div class="text-sm font-semibold text-primary/80 tracking-widest">$35.00 USD</div>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer hidden" name="package" type="radio" value="professional"/>
+<div class="glass-card p-8 rounded-2xl peer-checked:border-primary peer-checked:bg-primary/5 flex flex-col items-start gap-6 h-full">
+<span class="material-symbols-outlined text-primary text-3xl font-extralight">stars</span>
+<div>
+<p class="premium-label">Professional</p>
+<div class="text-3xl font-light tracking-tight mb-1">50 Credits</div>
+<div class="text-sm font-semibold text-primary/80 tracking-widest">$80.00 USD</div>
+</div>
+</div>
+</label>
+</div>
+</section>
+<section class="space-y-10">
+<div class="flex items-center gap-4">
+<span class="text-primary font-bold text-xs tracking-tighter">02</span>
+<h2 class="text-sm font-bold uppercase tracking-[0.2em] text-white/80">Vault Authorization</h2>
+<div class="h-px bg-white/5 flex-1"></div>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<button class="glass-card p-6 rounded-xl flex flex-col items-center gap-3 border-primary/40 bg-primary/5">
+<span class="material-symbols-outlined text-2xl">credit_card</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-white/60">Credit Card</span>
+</button>
+<button class="glass-card p-6 rounded-xl flex flex-col items-center gap-3 grayscale opacity-40 hover:grayscale-0 hover:opacity-100">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-white/60">Transfer</span>
+</button>
+<button class="glass-card p-6 rounded-xl flex flex-col items-center gap-3 grayscale opacity-40 hover:grayscale-0 hover:opacity-100">
+<span class="material-symbols-outlined text-2xl">currency_bitcoin</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-white/60">Crypto</span>
+</button>
+</div>
+<div class="space-y-12 max-w-2xl">
+<div class="flex flex-col">
+<label class="premium-label">Cardholder Identity</label>
+<input class="minimal-input" placeholder="Name as it appears on card" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="premium-label">Card Sequence</label>
+<div class="relative">
+<input class="minimal-input w-full" placeholder="0000 0000 0000 0000" type="text"/>
+<span class="material-symbols-outlined absolute right-0 bottom-3 text-white/20">lock_open</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="flex flex-col">
+<label class="premium-label">Expiration</label>
+<input class="minimal-input" placeholder="MM / YY" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="premium-label">Verification Code</label>
+<input class="minimal-input" placeholder="***" type="text"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<aside class="w-full lg:w-[420px]">
+<div class="sticky top-28 neon-border bg-black/60 backdrop-blur-3xl rounded-3xl overflow-hidden">
+<div class="h-56 relative group">
+<img alt="Luxury Space View" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9L-HmcarmhnP3IO4lxxZrV8b-qiy0_WoV3mteJDcNUVH5Fi6nDu36phAP7DRyhO4_NUP8yrX4E3R7F-D-4c4VRnnl7v04QQ6jUhtxH7ZsuPYOA-9J8ksfez-10rHs0v1VJIUbO511a15dzX1Hy6-iZjR051pXpSeZWYHMtvA8pDYFjtTzH311g_ax4M1HB_0_5FrKuW4wpLqFI0HGIrftIjgSlDtAiVvMODPP0dxDN5W9Sw4ylUkqvmKF_jbnNTJgTN4w8n6xTjzp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-6 left-8">
+<span class="premium-label !text-primary-400">Next Destination</span>
+<h3 class="text-xl font-light tracking-wide text-white">Orbital Lounge IV</h3>
+</div>
+</div>
+<div class="p-8 space-y-10">
+<div>
+<h4 class="premium-label mb-6">Transaction Summary</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center group">
+<span class="text-sm text-white/40 font-light">Acquisition Tier</span>
+<span class="text-sm text-white font-medium tracking-wide">Explorer Pack</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-white/40 font-light">Total Credits</span>
+<span class="text-sm text-primary font-bold tracking-widest">+ 20.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-white/40 font-light">Processing Fee</span>
+<span class="text-sm text-white font-medium">$0.00</span>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5">
+<div class="flex justify-between items-end mb-10">
+<div>
+<p class="premium-label !mb-0">Amount Due</p>
+<p class="text-[10px] text-white/20 font-bold tracking-tighter uppercase">Inclusive of VAT</p>
+</div>
+<div class="text-4xl font-extralight tracking-tighter text-white">
+<span class="text-lg align-top mr-1 font-bold text-primary">$</span>35.00
+                            </div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/80 text-white text-xs font-bold tracking-[0.3em] uppercase py-5 rounded-lg pulse-glow transition-all active:scale-[0.98]">
+                            Purchase Credits
+                        </button>
+</div>
+<div class="flex items-center justify-between text-[9px] font-bold tracking-[0.2em] text-white/20 uppercase border-t border-white/5 pt-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+                            Quantum Secured
+                        </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">language</span>
+                            Global Node 04
+                        </div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<footer class="max-w-7xl mx-auto px-6 py-16 border-t border-white/5">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 text-[10px] font-bold tracking-[0.2em] text-white/20 uppercase">
+<div class="flex items-center gap-4">
+<span class="text-white/40 tracking-[0.4em]">Kult</span>
+<span>Est. 2024</span>
+<span class="w-1 h-1 bg-white/10 rounded-full"></span>
+<span>Advanced Curation Protocols</span>
+</div>
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors" href="#">Legal</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Security</a>
+<a class="hover:text-primary transition-colors" href="#">Terminal Access</a>
+</div>
+</div>
+</footer>
+
+</body></html>

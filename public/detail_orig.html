@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KULT | On-neul Hanok Cafe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --obsidian: #050508;
+            --space-navy: #0a0a1a;
+            --neon-blue: #1111d4;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(10, 10, 26, 0.6);
+        }
+        @layer base {
+            body {
+                @apply bg-[var(--obsidian)] text-white/90 selection:bg-[var(--neon-blue)] selection:text-white;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+        }
+        .glass-panel {
+            @apply backdrop-blur-xl bg-[var(--glass-bg)] border border-[var(--glass-border)];
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 20px rgba(17, 17, 212, 0.4);
+            border-color: var(--neon-blue);
+        }
+        .text-header {
+            @apply tracking-[0.2em] uppercase font-light;
+        }
+        .ultra-thin-icon {
+            font-variation-settings: 'wght' 100, 'FILL' 0;
+            font-size: 1.25rem;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }.space-gradient {
+            background: radial-gradient(circle at 50% -20%, #151540 0%, #050508 60%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1111d4",
+                        "obsidian": "#050508",
+                        "navy-deep": "#0a0a1a",
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="space-gradient min-h-screen">
+<div class="relative flex flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-white/5 bg-[var(--obsidian)]/80 backdrop-blur-2xl">
+<div class="mx-auto flex max-w-[1440px] items-center justify-between px-10 py-5">
+<div class="flex items-center gap-16">
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="text-[var(--neon-blue)] drop-shadow-[0_0_8px_rgba(17,17,212,0.8)]">
+<svg class="size-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-xl font-light tracking-[0.4em] text-white">KULT</span>
+</div>
+<nav class="hidden lg:flex items-center gap-10">
+<a class="text-[11px] text-header text-white/50 hover:text-white transition-all duration-300" href="#">Mission Control</a>
+<a class="text-[11px] text-header text-white/50 hover:text-white transition-all duration-300" href="#">Sector Map</a>
+<a class="text-[11px] text-header text-white/50 hover:text-white transition-all duration-300" href="#">Archive</a>
+</nav>
+</div>
+<div class="flex items-center gap-8">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined ultra-thin-icon absolute left-3 top-1/2 -translate-y-1/2 text-white/30">search</span>
+<input class="h-9 w-64 rounded-none border-b border-white/10 bg-transparent pl-10 pr-4 text-xs tracking-widest focus:border-[var(--neon-blue)] focus:ring-0 transition-colors placeholder:text-white/20" placeholder="SCAN DATABASE..." type="text"/>
+</div>
+<button class="text-[11px] text-header border border-white/20 px-8 py-2.5 hover:bg-white hover:text-black transition-all duration-500">Access Portal</button>
+</div>
+</div>
+</header>
+<main class="mx-auto w-full max-w-[1440px] px-10 py-12">
+<nav class="mb-12 flex items-center gap-4 text-[10px] text-header text-white/30">
+<a class="hover:text-white transition-colors" href="#">System</a>
+<span class="material-symbols-outlined ultra-thin-icon text-xs">arrow_forward_ios</span>
+<a class="hover:text-white transition-colors" href="#">Territory 02</a>
+<span class="material-symbols-outlined ultra-thin-icon text-xs">arrow_forward_ios</span>
+<span class="text-white">ON-NEUL HANOK</span>
+</nav>
+<div class="grid h-[600px] grid-cols-6 grid-rows-2 gap-3 mb-20">
+<div class="col-span-3 row-span-2 relative group overflow-hidden border border-white/5">
+<img class="h-full w-full object-cover grayscale-[0.2] transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCcpNstA2CL_VZ1V601Vqe9-mcVyHbrACHsiuomy7qDdwemdTK2Vxh0UNNsdKnX9JMhimiuPZrP8QFZ1GWZnp1Q8tq4u26Ke7l3qBvXBX1xZW6siudXJs71RDg1rLmjSH-ZfF5R0vxUE5-YOxqmhzNlnDxpT6B2D30zxHWLzRG1K3zqI8ZtsggY9ON5i7Rkk_X9SlLFlEwDS_IzRZwrp0c5hWXhqdMDbSHKtJvcopk6Vv2w_N8eEFZ3gWIJa58SCSS39qbyG3ET4o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[var(--obsidian)]/60 to-transparent"></div>
+</div>
+<div class="col-span-1 row-span-1 relative group overflow-hidden border border-white/5">
+<img class="h-full w-full object-cover grayscale-[0.3] transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxgwvJY_L8LXzVmr3_FAsuTWWqa-hW9IVA_pC2C_bvC1wc8b2kb4cc16dBM2PQm_dkSkHOSO3WP0IhLcBok_sByuyoqZT7IaWyv_hg6sUHlS_f89KYbs6ws81020P-lBAi7Ihuy7xmHWXShsma1UFh0PYM3wdngA1wfmo_0fQJwWVYrLq3kQ6hrQ_yactGDCl2rI89tmJackN6UxVd9H_5N3uzUb68_fDshAmzWSJOsOd0xBw0P06LdedKR77xFMHxJuA28CwW-EEd"/>
+</div>
+<div class="col-span-2 row-span-1 relative group overflow-hidden border border-white/5">
+<img class="h-full w-full object-cover grayscale-[0.3] transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5N2iqA45mtAYtpSJ5zCe8ig98I9g-OZCgcK5-bEBvY-zr3j8Sa58OLdP4j6rNfiPQ_p0KurlNhMmALikPtKIm-2Ox2FO7NYFr0yq3oXW8BnxmJm6l5agsYaFX3e1XB8RvuWXN5jGyxe4kVTDd8cCuqO7XuJyu930XnUNYLQg5pghTFTizfphrdfPSi95xxnR6nvHE9vMyQWFtuXMblmzEJ0YgfBsCXrAKOvYO7FbRLASr3Nnmw1Sv1OGtGxS3tilygSMYwrKBHqgl"/>
+</div>
+<div class="col-span-3 row-span-1 relative group overflow-hidden border border-white/5">
+<img class="h-full w-full object-cover grayscale-[0.3] transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNQdtDl8F8NrfSZNkNTZ7Fd6-G2-f2TBDgAIitya1eZwSumvDJ4fV9wjJyxINjZTepCGcgyLcwYuHrUqeZDUKFJiYUYeZRMFhERrYXgN613fL6yFJZa_PVnHVwbLAiG2bKfvQjFiGwIQ8liFgydKLWqFMhx2O9Um-EOjZwc-2_BFKzal9k1nx7U-2Cf68sGJloH_rTKLMddmOlpOsbK-sQ_OovTG3liM0J99LSskuxtxvbIQhbhUkFG29ChlS-ViowRi_0866ehh48"/>
+<button class="absolute bottom-8 right-8 flex items-center gap-3 border border-white/20 bg-black/40 px-6 py-3 text-[10px] text-header text-white backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300">
+<span class="material-symbols-outlined ultra-thin-icon">grid_view</span>
+                        Visual Repository
+                    </button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-20 relative">
+<div class="flex-1 max-w-3xl">
+<div class="mb-12">
+<h1 class="text-6xl font-light tracking-[0.15em] text-white mb-8 leading-tight">ON-NEUL <br/><span class="text-white/40">HANOK CAFE</span></h1>
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined ultra-thin-icon text-[var(--neon-blue)]">star</span>
+<span class="text-lg font-light tracking-widest">4.9</span>
+<span class="text-white/30 text-xs tracking-widest ml-1">(128 LOGS)</span>
+</div>
+<div class="h-px w-12 bg-white/10"></div>
+<p class="text-white/50 text-xs text-header flex items-center gap-3">
+<span class="material-symbols-outlined ultra-thin-icon">location_on</span>
+                                Bukchon District, Sector SEO
+                            </p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+<div class="glass-panel p-5 flex flex-col gap-4 border-l-2 border-l-white/20 hover:border-l-[var(--neon-blue)] transition-all duration-500">
+<span class="material-symbols-outlined ultra-thin-icon text-white/40">sensors</span>
+<span class="text-[10px] text-header text-white/60">Data Stream</span>
+</div>
+<div class="glass-panel p-5 flex flex-col gap-4 border-l-2 border-l-white/20 hover:border-l-[var(--neon-blue)] transition-all duration-500">
+<span class="material-symbols-outlined ultra-thin-icon text-white/40">language</span>
+<span class="text-[10px] text-header text-white/60">Multi-Lingual</span>
+</div>
+<div class="glass-panel p-5 flex flex-col gap-4 border-l-2 border-l-white/20 hover:border-l-[var(--neon-blue)] transition-all duration-500">
+<span class="material-symbols-outlined ultra-thin-icon text-white/40">energy_savings_leaf</span>
+<span class="text-[10px] text-header text-white/60">Bio-Organic</span>
+</div>
+<div class="glass-panel p-5 flex flex-col gap-4 border-l-2 border-l-white/20 hover:border-l-[var(--neon-blue)] transition-all duration-500">
+<span class="material-symbols-outlined ultra-thin-icon text-white/40">bolt</span>
+<span class="text-[10px] text-header text-white/60">Power Grid</span>
+</div>
+</div>
+<div class="space-y-12 mb-20">
+<section class="glass-panel p-10 border-white/5 bg-white/[0.02]">
+<h3 class="text-xs text-header text-[var(--neon-blue)] mb-6 drop-shadow-[0_0_8px_rgba(17,17,212,0.4)]">Observatory Dossier</h3>
+<p class="text-xl leading-[1.8] font-light text-white/70 italic mb-8">
+                                "A rare sanctuary where the legacy of the 1920s converges with contemporary silence."
+                            </p>
+<p class="text-base leading-loose text-white/50 font-light">
+                                Nestled in the heart of the historic Bukchon Hanok Village, On-neul offers a rare sanctuary from the city's pulse. This restored 1920s Hanok maintains its original timber architecture, showcasing the timeless elegance of traditional craftsmanship viewed through a lens of modern minimalism.
+                            </p>
+</section>
+<div class="grid grid-cols-2 gap-12 py-10 border-y border-white/5">
+<div>
+<h4 class="text-[10px] text-header text-white mb-4">Space Ambience</h4>
+<p class="text-sm text-white/40 leading-relaxed font-light">Quiet, meditative, and sophisticated. Designed for deep focus and intimate intellectual exchanges.</p>
+</div>
+<div>
+<h4 class="text-[10px] text-header text-white mb-4">Core Provisions</h4>
+<p class="text-sm text-white/40 leading-relaxed font-light">Hand-pressed Jeju Omija infusions and seasonal vegan bio-cakes prepared in-house.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="lg:w-[420px]">
+<div class="sticky top-32">
+<div class="glass-panel p-10 relative overflow-hidden group neon-glow transition-all duration-700">
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-[var(--neon-blue)]/10 blur-[100px] pointer-events-none"></div>
+<div class="flex items-end justify-between mb-12">
+<div>
+<span class="text-3xl font-light tracking-widest text-white">₩15,000</span>
+<span class="text-white/30 text-xs text-header ml-2">/ Cycle</span>
+</div>
+<div class="flex items-center gap-2 text-[10px] text-header text-[var(--neon-blue)] animate-pulse">
+<span class="material-symbols-outlined ultra-thin-icon text-sm">radar</span>
+                                    LIVE STATUS
+                                </div>
+</div>
+<div class="space-y-6 mb-12">
+<div class="border border-white/10 divide-y divide-white/10">
+<div class="flex divide-x divide-white/10">
+<div class="flex-1 p-4 flex flex-col gap-2">
+<span class="text-[9px] text-header text-white/30">Target Date</span>
+<span class="text-xs tracking-widest">24.10.2023</span>
+</div>
+<div class="flex-1 p-4 flex flex-col gap-2">
+<span class="text-[9px] text-header text-white/30">Personnel</span>
+<span class="text-xs tracking-widest">02 UNITS</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[9px] text-header text-white/30">Protocol</span>
+<span class="text-xs tracking-widest">TEA CEREMONY EXPERIENCE</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-white text-black py-5 text-[11px] text-header hover:bg-[var(--neon-blue)] hover:text-white transition-all duration-500 mb-6 group">
+<span class="group-hover:tracking-[0.4em] transition-all duration-500">Initialize Reservation</span>
+</button>
+<p class="text-center text-[9px] text-header text-white/20">Finalizing transmission of credentials</p>
+<div class="mt-12 space-y-4 border-t border-white/5 pt-8">
+<div class="flex justify-between text-[10px] text-header text-white/40">
+<span>Base Rate</span>
+<span>₩30,000</span>
+</div>
+<div class="flex justify-between text-[10px] text-header text-white/40">
+<span>Processing Fee</span>
+<span>₩2,500</span>
+</div>
+<div class="pt-4 flex justify-between text-xs text-header text-white">
+<span class="font-semibold">Aggregate</span>
+<span class="text-[var(--neon-blue)] drop-shadow-[0_0_5px_rgba(17,17,212,0.4)]">₩32,500</span>
+</div>
+</div>
+</div>
+<div class="glass-panel mt-6 p-6 border-dashed border-white/10 bg-transparent flex items-center justify-between group cursor-pointer hover:border-white/30 transition-colors">
+<span class="text-[9px] text-header text-white/50">Safety Protocols &amp; Compliance</span>
+<span class="material-symbols-outlined ultra-thin-icon text-white/30 group-hover:text-white transition-colors">arrow_forward</span>
+</div>
+</div>
+</aside>
+</div>
+<section class="mt-40 pt-24 border-t border-white/5">
+<div class="flex items-center justify-between mb-12">
+<h2 class="text-3xl font-light tracking-[0.2em] uppercase">Peripheral <span class="text-white/30">Nodes</span></h2>
+<a class="group flex items-center gap-3 text-[10px] text-header text-white/50 hover:text-white transition-all" href="#">
+                        EXPAND DATABASE 
+                        <span class="material-symbols-outlined ultra-thin-icon transition-transform group-hover:translate-x-2">trending_flat</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden border border-white/5 mb-6 relative">
+<img class="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMgkXFQDDk4nkcjl7BKddmWje8xtlmanzLbNfP-PZwwgBDbpO7KMYKXSxtjFs6iClpGYi9Q0R3kAZ2Ep9jpBXpDrZ0IZ4W0bnLoY9Y8yyQ0lsnrew7W3TRGUm6BTQi4n9R2RB1_GULNAlSb8YEMrzJYVbCF2IC6cleC9hyd9a_F2a47W-8Pa-chT12Ru9R8CQvqvKXhJ4ouXiz5HjGAhct3MUUN9_QGCRX_8pqq6Cm46DlD04MWZrQ7K1QTZCC-sQ6AZY6NEYjDFps"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<button class="absolute top-4 right-4 p-2 bg-black/40 backdrop-blur-md border border-white/10 hover:border-[var(--neon-blue)] transition-all">
+<span class="material-symbols-outlined ultra-thin-icon text-white">favorite</span>
+</button>
+</div>
+<h3 class="text-[11px] text-header text-white/90 group-hover:text-[var(--neon-blue)] transition-colors mb-2">A-Room Atelier</h3>
+<p class="text-[9px] text-header text-white/30 mb-4">Sector IKSEON</p>
+<p class="text-xs tracking-widest font-light">₩18,000 <span class="text-white/20 ml-2">/ H</span></p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden border border-white/5 mb-6 relative">
+<img class="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaUxhfZdSUAiIBhaTk-PMxufkW3jhkdVthptdJy4BTz0N_FABWSKU4P6XL8JcnvNXDAeCLI8DRgYSLeJkcXTSK-SDPpN1RBhLiPXnJ2PXBaYD771-TmjBWLt6N22AUnWgpO5j3TaKQgwdnn5bN1wISzkA50aBzWLCw4x8RlH7H6mSySYtqq4FS4nyyy4MI6nZIgl9XXnlncv7sp8AESJfJ-HpBmYFx0TG1qP7toMzfAD-WHhb42WxQyLgbEqMMr1ew7O3oyCYcZ419"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<button class="absolute top-4 right-4 p-2 bg-black/40 backdrop-blur-md border border-white/10 hover:border-[var(--neon-blue)] transition-all">
+<span class="material-symbols-outlined ultra-thin-icon text-white">favorite</span>
+</button>
+</div>
+<h3 class="text-[11px] text-header text-white/90 group-hover:text-[var(--neon-blue)] transition-colors mb-2">Cha-teul Tea House</h3>
+<p class="text-[9px] text-header text-white/30 mb-4">Sector SAMCHEONG</p>
+<p class="text-xs tracking-widest font-light">₩12,000 <span class="text-white/20 ml-2">/ U</span></p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden border border-white/5 mb-6 relative">
+<img class="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQulAYkDTe0xAXKaTXIJoTajXFR1pNiFaOTJdzQnTfcPjsoHl7e1Fl-_k-ErtzNx_JK9qXIQQIOqZsNo3xSU4qwoOmtaDJwNLw1jJH-pYpZuO9tZTRTv1tStZC7yQQn-MBmWlGCUvzq2kGtpgJr_ApG01DgvkXDAkV8iosmuU2v3qhQnl96MAyAgESYBh6-Yki5YenettXDwxVKh-Kxa3kL3zmKffxLIyN4jgUv-EyM_EAs7KzpHS643Zs_gEuaPNfXO7iCpwufd7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<button class="absolute top-4 right-4 p-2 bg-black/40 backdrop-blur-md border border-white/10 hover:border-[var(--neon-blue)] transition-all">
+<span class="material-symbols-outlined ultra-thin-icon text-white">favorite</span>
+</button>
+</div>
+<h3 class="text-[11px] text-header text-white/90 group-hover:text-[var(--neon-blue)] transition-colors mb-2">O'sulloc Archive</h3>
+<p class="text-[9px] text-header text-white/30 mb-4">Sector INSA</p>
+<p class="text-xs tracking-widest font-light">₩22,000 <span class="text-white/20 ml-2">/ U</span></p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden border border-white/5 mb-6 relative">
+<img class="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIXmcvgQ5ttwCbk_uL0-F6nQ4PNiLivPzD_QfHH_lxV4xycL0yIkx2eMbhLN1cNl8cdPG8qoZi6lfj_zbjAWnO1lXwXSBZFCGmoSHOmKwvazvkPtTuVH-9k2-SLq_KQ_B9kn8Ludtlg-d5eGBsl6df-ECIXYMIcn3IKwUkJe5Q9pi0CpNlBhABuUiYyexph9XNoDzP0aS5N7EHrhI4cEzixBgyD1QzXTFmLZV9DOwcxuIho0xfWNevwpAw5cwm3Rx3jP_I8RMrPxaT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<button class="absolute top-4 right-4 p-2 bg-black/40 backdrop-blur-md border border-white/10 hover:border-[var(--neon-blue)] transition-all">
+<span class="material-symbols-outlined ultra-thin-icon text-white">favorite</span>
+</button>
+</div>
+<h3 class="text-[11px] text-header text-white/90 group-hover:text-[var(--neon-blue)] transition-colors mb-2">Sol-ga-heon Unit</h3>
+<p class="text-[9px] text-header text-white/30 mb-4">Sector BUKCHON</p>
+<p class="text-xs tracking-widest font-light">₩14,000 <span class="text-white/20 ml-2">/ H</span></p>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-40 border-t border-white/5 bg-[var(--obsidian)]">
+<div class="mx-auto max-w-[1440px] px-10 py-20">
+<div class="flex flex-col md:flex-row justify-between items-start gap-20">
+<div class="max-w-sm">
+<div class="flex items-center gap-3 mb-8">
+<div class="text-[var(--neon-blue)]">
+<svg class="size-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-lg font-light tracking-[0.4em]">KULT</span>
+</div>
+<p class="text-xs text-header text-white/30 leading-relaxed">
+                            A curated network of architectural sanctuaries for the modern minimalist. Mapping the intersection of heritage and future.
+                        </p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-16">
+<div>
+<h4 class="text-[10px] text-header text-white mb-6">Discovery</h4>
+<ul class="space-y-4 text-[9px] text-header text-white/40">
+<li><a class="hover:text-[var(--neon-blue)] transition-colors" href="#">Global Nodes</a></li>
+<li><a class="hover:text-[var(--neon-blue)] transition-colors" href="#">SEO Dispatch</a></li>
+<li><a class="hover:text-[var(--neon-blue)] transition-colors" href="#">TYO Archive</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] text-header text-white mb-6">Operations</h4>
+<ul class="space-y-4 text-[9px] text-header text-white/40">
+<li><a class="hover:text-[var(--neon-blue)] transition-colors" href="#">Support Link</a></li>
+<li><a class="hover:text-[var(--neon-blue)] transition-colors" href="#">Protocols</a></li>
+<li><a class="hover:text-[var(--neon-blue)] transition-colors" href="#">Emergency</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] text-header text-white mb-6">Encrypted</h4>
+<ul class="space-y-4 text-[9px] text-header text-white/40">
+<li><a class="hover:text-[var(--neon-blue)] transition-colors" href="#">Privacy Cipher</a></li>
+<li><a class="hover:text-[var(--neon-blue)] transition-colors" href="#">Terms &amp; Laws</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6 text-[9px] text-header text-white/20">
+<p>© 2024 KULT COMMAND CENTER. ALL SYSTEMS NOMINAL.</p>
+<div class="flex gap-8">
+<a class="hover:text-white transition-colors" href="#">INSTAGRAM</a>
+<a class="hover:text-white transition-colors" href="#">SIGNAL</a>
+<a class="hover:text-white transition-colors" href="#">MATRIX</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

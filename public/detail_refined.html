@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KULT | Elite Space Detail - On-neul</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..200,0..0&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1111d4",
+                        "obsidian": "#050508",
+                        "midnight": "#0a0a1a",
+                        "accent-blue": "#1111d4",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    letterSpacing: {
+                        "luxury": "0.15em",
+                        "ultra": "0.25em"
+                    },
+                    boxShadow: {
+                        "glow": "0 0 20px -5px rgba(17, 17, 212, 0.4)",
+                        "deep-glow": "0 20px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px -5px rgba(17, 17, 212, 0.3)",
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body { 
+                @apply bg-obsidian text-slate-300 font-display;
+                background-image: radial-gradient(circle at 50% 0%, #0d0d2b 0%, #050508 100%);
+            }
+        }
+        .luxury-text {
+            letter-spacing: 0.15em;
+        }
+        .glow-border {
+            box-shadow: 0 0 0 1px rgba(17, 17, 212, 0.3), 0 0 15px rgba(17, 17, 212, 0.1);
+        }
+        .ultra-thin-icon {
+            font-variation-settings: 'wght' 100, 'opsz' 20;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-white/5 bg-obsidian/60 backdrop-blur-xl">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-8 py-6">
+<div class="flex items-center gap-16">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="size-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-2xl font-light tracking-ultra text-white">KULT</span>
+</div>
+<nav class="hidden lg:flex items-center gap-10">
+<a class="text-[11px] uppercase tracking-ultra font-medium text-slate-400 hover:text-white transition-all" href="#">Curation</a>
+<a class="text-[11px] uppercase tracking-ultra font-medium text-slate-400 hover:text-white transition-all" href="#">Voyages</a>
+<a class="text-[11px] uppercase tracking-ultra font-medium text-slate-400 hover:text-white transition-all" href="#">Concierge</a>
+</nav>
+</div>
+<div class="flex items-center gap-8">
+<button class="text-slate-400 hover:text-white">
+<span class="material-symbols-outlined ultra-thin-icon text-2xl">search</span>
+</button>
+<button class="border border-white/10 px-8 py-2.5 text-[11px] uppercase tracking-ultra font-semibold text-white hover:bg-white hover:text-obsidian transition-all">
+                    Access
+                </button>
+</div>
+</div>
+</header>
+<main class="mx-auto w-full max-w-7xl px-8 py-16">
+<nav class="mb-16 flex items-center gap-4 text-[10px] uppercase tracking-ultra font-semibold text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Inventory</a>
+<span class="h-px w-4 bg-slate-800"></span>
+<a class="hover:text-primary transition-colors" href="#">Seoul District</a>
+<span class="h-px w-4 bg-slate-800"></span>
+<span class="text-white">On-neul Hanok</span>
+</nav>
+<div class="grid h-[650px] grid-cols-12 grid-rows-2 gap-4 mb-32">
+<div class="col-span-8 row-span-2 relative group overflow-hidden rounded-sm glow-border">
+<img class="h-full w-full object-cover grayscale-[20%] transition-all duration-1000 group-hover:scale-105 group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCcpNstA2CL_VZ1V601Vqe9-mcVyHbrACHsiuomy7qDdwemdTK2Vxh0UNNsdKnX9JMhimiuPZrP8QFZ1GWZnp1Q8tq4u26Ke7l3qBvXBX1xZW6siudXJs71RDg1rLmjSH-ZfF5R0vxUE5-YOxqmhzNlnDxpT6B2D30zxHWLzRG1K3zqI8ZtsggY9ON5i7Rkk_X9SlLFlEwDS_IzRZwrp0c5hWXhqdMDbSHKtJvcopk6Vv2w_N8eEFZ3gWIJa58SCSS39qbyG3ET4o"/>
+<div class="absolute inset-0 bg-obsidian/20"></div>
+</div>
+<div class="col-span-4 row-span-1 relative group overflow-hidden rounded-sm glow-border">
+<img class="h-full w-full object-cover grayscale-[30%] transition-all duration-1000 group-hover:scale-105 group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxgwvJY_L8LXzVmr3_FAsuTWWqa-hW9IVA_pC2C_bvC1wc8b2kb4cc16dBM2PQm_dkSkHOSO3WP0IhLcBok_sByuyoqZT7IaWyv_hg6sUHlS_f89KYbs6ws81020P-lBAi7Ihuy7xmHWXShsma1UFh0PYM3wdngA1wfmo_0fQJwWVYrLq3kQ6hrQ_yactGDCl2rI89tmJackN6UxVd9H_5N3uzUb68_fDshAmzWSJOsOd0xBw0P06LdedKR77xFMHxJuA28CwW-EEd"/>
+</div>
+<div class="col-span-2 row-span-1 relative group overflow-hidden rounded-sm glow-border">
+<img class="h-full w-full object-cover grayscale-[30%] transition-all duration-1000 group-hover:scale-105 group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5N2iqA45mtAYtpSJ5zCe8ig98I9g-OZCgcK5-bEBvY-zr3j8Sa58OLdP4j6rNfiPQ_p0KurlNhMmALikPtKIm-2Ox2FO7NYFr0yq3oXW8BnxmJm6l5agsYaFX3e1XB8RvuWXN5jGyxe4kVTDd8cCuqO7XuJyu930XnUNYLQg5pghTFTizfphrdfPSi95xxnR6nvHE9vMyQWFtuXMblmzEJ0YgfBsCXrAKOvYO7FbRLASr3Nnmw1Sv1OGtGxS3tilygSMYwrKBHqgl"/>
+</div>
+<div class="col-span-2 row-span-1 relative group overflow-hidden rounded-sm glow-border">
+<img class="h-full w-full object-cover grayscale-[30%] transition-all duration-1000 group-hover:scale-105 group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNQdtDl8F8NrfSZNkNTZ7Fd6-G2-f2TBDgAIitya1eZwSumvDJ4fV9wjJyxINjZTepCGcgyLcwYuHrUqeZDUKFJiYUYeZRMFhERrYXgN613fL6yFJZa_PVnHVwbLAiG2bKfvQjFiGwIQ8liFgydKLWqFMhx2O9Um-EOjZwc-2_BFKzal9k1nx7U-2Cf68sGJloH_rTKLMddmOlpOsbK-sQ_OovTG3liM0J99LSskuxtxvbIQhbhUkFG29ChlS-ViowRi_0866ehh48"/>
+<button class="absolute inset-0 flex items-center justify-center bg-obsidian/60 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+<span class="text-[10px] uppercase tracking-ultra font-bold text-white">View Archive</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-24 relative">
+<div class="flex-1">
+<div class="mb-20">
+<div class="flex items-center gap-4 mb-6">
+<span class="h-px w-12 bg-primary"></span>
+<span class="text-[12px] uppercase tracking-ultra text-primary font-bold">Premium Curation</span>
+</div>
+<h1 class="text-6xl font-extralight tracking-tight text-white mb-8 leading-tight">On-neul <br/><span class="font-semibold italic">Hanok Cafe</span></h1>
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined ultra-thin-icon text-primary">star</span>
+<span class="text-lg font-light tracking-widest text-white">4.9</span>
+<span class="text-xs uppercase tracking-luxury text-slate-500 ml-2">Verified Reviews</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined ultra-thin-icon text-slate-400">location_on</span>
+<span class="text-xs uppercase tracking-luxury text-slate-300">Bukchon District, Seoul</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 border border-white/5 mb-24">
+<div class="p-8 flex flex-col items-center gap-4 bg-obsidian/40 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined ultra-thin-icon text-3xl text-slate-400 group-hover:text-primary transition-colors">wifi</span>
+<span class="text-[10px] uppercase tracking-ultra font-medium text-slate-500">Global Link</span>
+</div>
+<div class="p-8 flex flex-col items-center gap-4 bg-obsidian/40 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined ultra-thin-icon text-3xl text-slate-400 group-hover:text-primary transition-colors">translate</span>
+<span class="text-[10px] uppercase tracking-ultra font-medium text-slate-500">Polyglot Staff</span>
+</div>
+<div class="p-8 flex flex-col items-center gap-4 bg-obsidian/40 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined ultra-thin-icon text-3xl text-slate-400 group-hover:text-primary transition-colors">eco</span>
+<span class="text-[10px] uppercase tracking-ultra font-medium text-slate-500">Botanical Menu</span>
+</div>
+<div class="p-8 flex flex-col items-center gap-4 bg-obsidian/40 hover:bg-white/5 transition-colors group">
+<span class="material-symbols-outlined ultra-thin-icon text-3xl text-slate-400 group-hover:text-primary transition-colors">power</span>
+<span class="text-[10px] uppercase tracking-ultra font-medium text-slate-500">Universal Power</span>
+</div>
+</div>
+<div class="space-y-24">
+<section class="max-w-2xl">
+<h3 class="text-xs uppercase tracking-[0.4em] font-bold text-white/40 mb-10">The Narrative</h3>
+<p class="text-xl leading-relaxed text-slate-400 font-light mb-8">
+                            Nestled in the heart of the historic Bukchon Hanok Village, On-neul (meaning "Today") offers a rare sanctuary from the city's pulse. This restored 1920s Hanok maintains its original timber architecture, showcasing the <span class="text-white italic">timeless elegance of traditional craftsmanship</span>.
+                        </p>
+<p class="text-xl leading-relaxed text-slate-400 font-light">
+                            The space is designed around a central courtyard, allowing seasonal light and breeze to flow through the open-plan seating areas. A masterclass in silence and refined aesthetics.
+                        </p>
+</section>
+<section class="grid grid-cols-2 gap-16 py-16 border-y border-white/5">
+<div>
+<h4 class="text-[11px] uppercase tracking-ultra font-bold text-white mb-6">Atmosphere</h4>
+<p class="text-sm leading-relaxed text-slate-500 font-medium">Quiet, meditative, and sophisticated. Designed for creative clarity and intimate dialogue.</p>
+</div>
+<div>
+<h4 class="text-[11px] uppercase tracking-ultra font-bold text-white mb-6">Culinary Notes</h4>
+<p class="text-sm leading-relaxed text-slate-500 font-medium">Hand-pressed Jeju Omija and artisanal seasonal rice cakes, crafted at dawn.</p>
+</div>
+</section>
+</div>
+</div>
+<aside class="lg:w-[420px]">
+<div class="sticky top-32 rounded-sm border border-white/10 bg-midnight p-10 shadow-deep-glow">
+<div class="flex flex-col gap-2 mb-10">
+<span class="text-[10px] uppercase tracking-ultra text-primary font-bold">Standard Passage</span>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-light tracking-tight text-white">₩15,000</span>
+<span class="text-xs uppercase tracking-luxury text-slate-500">/ Entry</span>
+</div>
+</div>
+<div class="space-y-6 mb-10">
+<div class="grid grid-cols-2 border border-white/10 divide-x divide-white/10 bg-obsidian/50">
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[9px] uppercase tracking-ultra font-bold text-slate-500">Date</span>
+<span class="text-xs tracking-widest text-white uppercase">24 Oct 2024</span>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[9px] uppercase tracking-ultra font-bold text-slate-500">Party</span>
+<span class="text-xs tracking-widest text-white uppercase">02 Persons</span>
+</div>
+</div>
+<div class="p-4 border border-white/10 bg-obsidian/50 flex flex-col gap-2">
+<span class="text-[9px] uppercase tracking-ultra font-bold text-slate-500">Experience</span>
+<span class="text-xs tracking-widest text-white uppercase">Traditional Tea Rite</span>
+</div>
+</div>
+<button class="group relative w-full overflow-hidden border border-primary bg-primary/10 py-5 transition-all hover:bg-primary">
+<div class="relative z-10 flex items-center justify-center gap-3">
+<span class="text-[11px] uppercase tracking-ultra font-bold text-white">Request Reservation</span>
+<span class="material-symbols-outlined ultra-thin-icon text-sm text-white group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</button>
+<div class="mt-10 space-y-4">
+<div class="flex justify-between text-[11px] uppercase tracking-luxury text-slate-500">
+<span>Base Rate</span>
+<span class="text-white">₩30,000</span>
+</div>
+<div class="flex justify-between text-[11px] uppercase tracking-luxury text-slate-500">
+<span>Concierge Fee</span>
+<span class="text-white">₩2,500</span>
+</div>
+<div class="pt-6 border-t border-white/5 flex justify-between">
+<span class="text-[11px] uppercase tracking-ultra font-bold text-white">Final Valuation</span>
+<span class="text-xl font-light text-primary">₩32,500</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<section class="mt-48 pt-32 border-t border-white/5">
+<div class="flex items-end justify-between mb-16">
+<div>
+<span class="text-[12px] uppercase tracking-ultra text-primary font-bold mb-4 block">Extended Collection</span>
+<h2 class="text-4xl font-light tracking-tight text-white">Parallel Spaces</h2>
+</div>
+<a class="group flex items-center gap-3 text-[11px] uppercase tracking-ultra font-bold text-slate-400 hover:text-white" href="#">
+                    View Directory 
+                    <span class="material-symbols-outlined ultra-thin-icon text-xl transition-transform group-hover:translate-x-2">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-sm glow-border mb-6 relative">
+<img class="h-full w-full object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMgkXFQDDk4nkcjl7BKddmWje8xtlmanzLbNfP-PZwwgBDbpO7KMYKXSxtjFs6iClpGYi9Q0R3kAZ2Ep9jpBXpDrZ0IZ4W0bnLoY9Y8yyQ0lsnrew7W3TRGUm6BTQi4n9R2RB1_GULNAlSb8YEMrzJYVbCF2IC6cleC9hyd9a_F2a47W-8Pa-chT12Ru9R8CQvqvKXhJ4ouXiz5HjGAhct3MUUN9_QGCRX_8pqq6Cm46DlD04MWZrQ7K1QTZCC-sQ6AZY6NEYjDFps"/>
+<div class="absolute inset-0 bg-obsidian/40 group-hover:bg-transparent transition-colors"></div>
+</div>
+<h3 class="text-[12px] uppercase tracking-ultra font-bold text-white mb-2 group-hover:text-primary transition-colors">A-Room Atelier</h3>
+<p class="text-[10px] uppercase tracking-luxury text-slate-500 mb-4">Ikseon-dong District</p>
+<p class="text-sm font-light tracking-widest text-slate-300">₩18,000 <span class="text-[10px] text-slate-600">/ HR</span></p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-sm glow-border mb-6 relative">
+<img class="h-full w-full object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaUxhfZdSUAiIBhaTk-PMxufkW3jhkdVthptdJy4BTz0N_FABWSKU4P6XL8JcnvNXDAeCLI8DRgYSLeJkcXTSK-SDPpN1RBhLiPXnJ2PXBaYD771-TmjBWLt6N22AUnWgpO5j3TaKQgwdnn5bN1wISzkA50aBzWLCw4x8RlH7H6mSySYtqq4FS4nyyy4MI6nZIgl9XXnlncv7sp8AESJfJ-HpBmYFx0TG1qP7toMzfAD-WHhb42WxQyLgbEqMMr1ew7O3oyCYcZ419"/>
+<div class="absolute inset-0 bg-obsidian/40 group-hover:bg-transparent transition-colors"></div>
+</div>
+<h3 class="text-[12px] uppercase tracking-ultra font-bold text-white mb-2 group-hover:text-primary transition-colors">Cha-teul Tea House</h3>
+<p class="text-[10px] uppercase tracking-luxury text-slate-500 mb-4">Samcheong-dong District</p>
+<p class="text-sm font-light tracking-widest text-slate-300">₩12,000 <span class="text-[10px] text-slate-600">/ ENTRY</span></p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-sm glow-border mb-6 relative">
+<img class="h-full w-full object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQulAYkDTe0xAXKaTXIJoTajXFR1pNiFaOTJdzQnTfcPjsoHl7e1Fl-_k-ErtzNx_JK9qXIQQIOqZsNo3xSU4qwoOmtaDJwNLw1jJH-pYpZuO9tZTRTv1tStZC7yQQn-MBmWlGCUvzq2kGtpgJr_ApG01DgvkXDAkV8iosmuU2v3qhQnl96MAyAgESYBh6-Yki5YenettXDwxVKh-Kxa3kL3zmKffxLIyN4jgUv-EyM_EAs7KzpHS643Zs_gEuaPNfXO7iCpwufd7"/>
+<div class="absolute inset-0 bg-obsidian/40 group-hover:bg-transparent transition-colors"></div>
+</div>
+<h3 class="text-[12px] uppercase tracking-ultra font-bold text-white mb-2 group-hover:text-primary transition-colors">O'sulloc Collection</h3>
+<p class="text-[10px] uppercase tracking-luxury text-slate-500 mb-4">Insa-dong District</p>
+<p class="text-sm font-light tracking-widest text-slate-300">₩22,000 <span class="text-[10px] text-slate-600">/ ENTRY</span></p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-sm glow-border mb-6 relative">
+<img class="h-full w-full object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIXmcvgQ5ttwCbk_uL0-F6nQ4PNiLivPzD_QfHH_lxV4xycL0yIkx2eMbhLN1cNl8cdPG8qoZi6lfj_zbjAWnO1lXwXSBZFCGmoSHOmKwvazvkPtTuVH-9k2-SLq_KQ_B9kn8Ludtlg-d5eGBsl6df-ECIXYMIcn3IKwUkJe5Q9pi0CpNlBhABuUiYyexph9XNoDzP0aS5N7EHrhI4cEzixBgyD1QzXTFmLZV9DOwcxuIho0xfWNevwpAw5cwm3Rx3jP_I8RMrPxaT"/>
+<div class="absolute inset-0 bg-obsidian/40 group-hover:bg-transparent transition-colors"></div>
+</div>
+<h3 class="text-[12px] uppercase tracking-ultra font-bold text-white mb-2 group-hover:text-primary transition-colors">Sol-ga-heon</h3>
+<p class="text-[10px] uppercase tracking-luxury text-slate-500 mb-4">Bukchon District</p>
+<p class="text-sm font-light tracking-widest text-slate-300">₩14,000 <span class="text-[10px] text-slate-600">/ HR</span></p>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-48 border-t border-white/5 bg-obsidian/80 backdrop-blur-md">
+<div class="mx-auto max-w-7xl px-8 py-20">
+<div class="flex flex-col md:flex-row justify-between items-start gap-24">
+<div class="max-w-sm">
+<div class="flex items-center gap-3 mb-10">
+<div class="text-primary">
+<svg class="size-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-xl font-light tracking-ultra text-white">KULT</span>
+</div>
+<p class="text-sm font-light text-slate-500 leading-loose tracking-luxury italic">Architectural scouting and cultural passage services for the discerning traveler.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-20">
+<div>
+<h4 class="text-[10px] uppercase tracking-ultra font-bold text-white mb-8">Navigation</h4>
+<ul class="space-y-4 text-[11px] uppercase tracking-luxury text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">The Vault</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Seoul Journal</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Atelier Collections</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] uppercase tracking-ultra font-bold text-white mb-8">Assistance</h4>
+<ul class="space-y-4 text-[11px] uppercase tracking-luxury text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Protocol</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Safety Matrix</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] uppercase tracking-ultra font-bold text-white mb-8">Connect</h4>
+<ul class="space-y-4 text-[11px] uppercase tracking-luxury text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Intelligence</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Transmission</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6 text-[9px] uppercase tracking-ultra text-slate-600 font-bold">
+<p>© 2024 KULT GLOBAL. SECURED ACCESS ONLY.</p>
+<div class="flex gap-10">
+<a class="hover:text-white" href="#">IG</a>
+<a class="hover:text-white" href="#">TW</a>
+<a class="hover:text-white" href="#">LI</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

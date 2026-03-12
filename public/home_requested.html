@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KULT | Discover the Soul of Korea</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1111d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<!-- Logo -->
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">explore</span>
+<h1 class="text-2xl font-extrabold tracking-tighter">KULT</h1>
+</div>
+<!-- Desktop Search (Simplified) -->
+<div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-1.5 border border-transparent focus-within:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-slate-500 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-400" placeholder="Search spaces..." type="text"/>
+</div>
+</div>
+<!-- Right Utilities -->
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+<a class="hover:text-primary transition-colors" href="#">Discover</a>
+<a class="hover:text-primary transition-colors" href="#">Curations</a>
+<a class="hover:text-primary transition-colors" href="#">Stories</a>
+</nav>
+<div class="h-4 w-[1px] bg-slate-200 dark:bg-slate-700 hidden lg:block"></div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-semibold hover:text-primary transition-colors">Login</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+<span class="material-symbols-outlined text-base">language</span>
+                            EN / KR
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/40 z-10"></div>
+<img alt="Modern Hanok Cafe with large glass windows" class="w-full h-full object-cover" data-alt="Modern Hanok cafe interior with sunlight streaming through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAP5yqtzkzaT7TkrV2neEgzf3mqsEzOkcNWNPc9yGhu-05JvO1_laDMgbjdsvxTnKw4B5fJEUiNwA3GrepgRpgmW5MwRsudgOhIGQgrqHNs51a8KadtqNakqHZE7fgbDV1WOq0HWAW6AZuXlV1V7qVzKL6yCDocrOyvBnRUW1PD0LCxbrMTmfcTnBzrDNS0m2JkseeXHEorqLv1SxccEJELpWIYHykB5eR1X9YQTLBm7pXNGjV_Wi2yEIMmsfoqv7Q6UEE1SKCGm_Y"/>
+</div>
+<div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+<span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold tracking-[0.2em] uppercase mb-6">Curated Korean Lifestyle</span>
+<h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
+                    Discover the <br/><span class="text-primary italic">Soul</span> of Korea
+                </h1>
+<p class="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    A boutique collection of spaces that define modern Korean culture, from hidden tea houses to avant-garde stays.
+                </p>
+<!-- Search & Filters Bar -->
+<div class="bg-white dark:bg-slate-900 p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center gap-2 max-w-3xl mx-auto">
+<div class="flex-1 w-full grid grid-cols-2 divide-x divide-slate-100 dark:divide-slate-800">
+<button class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">location_on</span>
+<div class="text-left">
+<p class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Location</p>
+<p class="text-sm font-semibold">Seoul, Korea</p>
+</div>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">category</span>
+<div class="text-left">
+<p class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Category</p>
+<p class="text-sm font-semibold">All Spaces</p>
+</div>
+</button>
+</div>
+<button class="w-full md:w-auto h-14 px-8 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">search</span>
+                        Explore Now
+                    </button>
+</div>
+</div>
+</section>
+<!-- Category Shortcuts -->
+<section class="py-8 bg-white dark:bg-slate-950">
+<div class="max-w-7xl mx-auto px-4 flex justify-center gap-4 md:gap-12 overflow-x-auto hide-scrollbar">
+<button class="flex flex-col items-center gap-2 min-w-[80px] group">
+<div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary/10 group-hover:text-primary transition-all">
+<span class="material-symbols-outlined">coffee</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-tighter">Cafe</span>
+</button>
+<button class="flex flex-col items-center gap-2 min-w-[80px] group">
+<div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary/10 group-hover:text-primary transition-all">
+<span class="material-symbols-outlined">bed</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-tighter">Stay</span>
+</button>
+<button class="flex flex-col items-center gap-2 min-w-[80px] group">
+<div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary/10 group-hover:text-primary transition-all">
+<span class="material-symbols-outlined">museum</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-tighter">Culture</span>
+</button>
+<button class="flex flex-col items-center gap-2 min-w-[80px] group">
+<div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary/10 group-hover:text-primary transition-all">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-tighter">Retail</span>
+</button>
+</div>
+</section>
+<!-- Editor's Pick Section -->
+<section class="py-20 px-4">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div class="max-w-xl">
+<h2 class="text-sm font-bold text-primary tracking-[0.3em] uppercase mb-3">Handpicked Selection</h2>
+<h3 class="text-4xl font-extrabold tracking-tight">Editor's Pick</h3>
+<p class="mt-4 text-slate-500 dark:text-slate-400">Our team travels across the peninsula to find spaces that offer more than just a view—they offer a story.</p>
+</div>
+<a class="flex items-center gap-2 font-bold text-sm border-b-2 border-primary pb-1 hover:gap-4 transition-all" href="#">
+                        View All Stories
+                        <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Tea House -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6">
+<img alt="Traditional Tea House Gyeongju" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Traditional Korean wooden tea house with paper windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOeAEDReiO56NceRRAI74x11UkMAFpLTD8rCqj6Dt1pbF3arduDR00v0-ywXgvJV8TuH-x6mypHbt2yGFcQ2bkNRhYCFDYAUOO5qlimCTFvJ6yeN0tbXXHhSEv1PrWHsrBqlPg5uc11s0eSQEqTMSAMWxqC_IgFTc8TmkBMAh7gQGCkUbfhDSAy7xMO0NrAsZUO0eX83mN83tQ_lxjJMD1S2abzB2uQmcQmRQxtGUs5jIvKhCMXyT_UoSSIcB0hOsDt4_whSqdSjVN"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Heritage</span>
+</div>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Yuyeon Tea House</h4>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+                            Gyeongju
+                        </div>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 line-clamp-2">
+                            A centuries-old Hanok where the art of tea brewing meets the silence of the surrounding bamboo forest.
+                        </p>
+</div>
+<!-- Card 2: Modern Art Gallery -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6">
+<img alt="Modern Art Gallery Seoul" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Minimalist modern art gallery interior with concrete walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbwoL1fq_JksuTSIQIDc7aKzarYFCoKXSumbSeFD4TWpCcU4858QFMLYdYebKkiZR2jIFI1Ei9rgbQtdkXOHuljgW7VDJNzMAAwGaKuNkaLY6127SDCwTsk2kK1eC1_tfaDDAJHRQbbplp2pfiNDZuBrLhn6446CsRVlnIdLQvEPy5HilTe6nGGGoNYB8zN6L9ISkrK_tR1jP5sDMbVWukDfDARBmz7zviyycbc2XIbshKwgivg43cPtycFsPWD5743_ye5gxVo3r3"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Culture</span>
+</div>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Void Space Seoul</h4>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+                            Seoul, Hannam
+                        </div>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 line-clamp-2">
+                            Minimalist architecture hosting experimental digital art exhibitions that define Seoul's contemporary pulse.
+                        </p>
+</div>
+<!-- Card 3: Forest Stay -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6">
+<img alt="Forest Stay Pyeongchang" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Cabin hidden in a dense pine forest in Korea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnz2ezosgYy1InE6M-vxahUlcD39OD0pvgs5qPupHwpGcZr1Ec3pwOUr1T6MSQydMR9XbCIw-loP0wEBYXtYYZjnGpO0K1a9Fhf--q4V1jW4KyxHNuX1p_Vuu749zGUQFvrKBVkUPN9YNv68yqozKkH86YlL2rpXyYlUXDAjM06W0X1bj6Yg-W6I2PdqzKRbR4-IpYDyvAqljF9nR-t6_JiBngrHivGFtmfN0OI1KLc_Vv_rttoDWEFpYL6tZKE1TwFmhMig6L_y3U"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Healing Stay</span>
+</div>
+</div>
+<h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">The Pine Hideaway</h4>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+                            Pyeongchang
+                        </div>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 line-clamp-2">
+                            Disconnect to reconnect. A glass-walled sanctuary tucked deep into the cedar forests of Gangwon province.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Now (Horizontal Scroll) -->
+<section class="py-20 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-4">
+<div class="flex items-center justify-between mb-10">
+<h3 class="text-2xl font-bold">Trending Now</h3>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-white dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto hide-scrollbar pb-8">
+<!-- Trending Card 1 -->
+<div class="flex-none w-[280px] group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-sm">
+<img alt="Bukchon Hanok Village" class="w-full h-full object-cover" data-alt="Traditional Korean rooftops in Bukchon Village" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8hs2GzqCwBkGmzI2aDawlFFh-Y2btSLIoEKU6_lrMlmFIAeRn9pDsbW6_jRZ5ZChCQHFg53ONbi7_mawIVqbzM0KQBzTbg8D6YgNxWaP995MWHtBDKd1o9JGRYe9Q4m-LlfYUsYzVRFNDa1-5piIObKG57PxGHPfhkXuySAh9nwEGmM6FhL_gdNBaMNQ9JrxFZjAXLY9rlA4cu2Ugn3evEZkvOQWj6Ud6-AFQ48cDmCQbfnWmHJo7HMh-_AzGNe2Cb2vcqzp1XTmw"/>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h5 class="font-bold text-sm">Gaeul Coffee</h5>
+<p class="text-xs text-slate-500">Seoul • Cafe</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-xs fill-1">star</span>
+<span class="text-xs font-bold">4.9</span>
+</div>
+</div>
+</div>
+<!-- Trending Card 2 -->
+<div class="flex-none w-[280px] group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-sm">
+<img alt="Modern Busan Stay" class="w-full h-full object-cover" data-alt="Modern hotel room with view of the ocean in Busan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwR9B6yUh8_mTQDz3ukNqLmek6Nt6NUTWGxbmf1jxPDswxuV_aZx7ZqmDIYNqUKKDId3iXnbt5AJusFfmj9xR66QyWpvYsQb3yK6dTM38O1Q234n3QYIxoYbezqq0EfEO37w1Iu8rZ7Hj8BRG2QsE9hTM4Pv1QVHOKC-6IkekSfuv8L3gp5RsCZfbMqs_phA4qcKYCEr_5H2dfkV-u-B8d2-2Y51leMGRTqu8FLohzrjSmy5IQz91fJ097SART9qLwlKgTxMRky5Da"/>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h5 class="font-bold text-sm">Wave House</h5>
+<p class="text-xs text-slate-500">Busan • Stay</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-xs fill-1">star</span>
+<span class="text-xs font-bold">4.8</span>
+</div>
+</div>
+</div>
+<!-- Trending Card 3 -->
+<div class="flex-none w-[280px] group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-sm">
+<img alt="Kyoto style tea house" class="w-full h-full object-cover" data-alt="Zen garden and tea house interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDObeqZadoeKjY0rvNBI7b6xlnW_z1zPjsKyYMGQg9f-elBoWq9bk-Zdaf8S70uqul6HHXJze4n332TbfZGyknUwrkahMNMZuoVTBslFIXnPvUUHmMQrkdmCD5xrZXkhlPF5v71u6Gol-muoQ-OwTaIc4HHbRW77IYLsC7ni6S5seCZ24s1n_Q5LayHdGZX9TPhYeElhp3H0qs8L4qBfXWwUrA7t0iIEhoczzznXmqLu1SFS5kvqJVZ6xVurzIP3hiMmfGoozddHWDS"/>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h5 class="font-bold text-sm">Zen Attic</h5>
+<p class="text-xs text-slate-500">Jeju • Culture</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-xs fill-1">star</span>
+<span class="text-xs font-bold">5.0</span>
+</div>
+</div>
+</div>
+<!-- Trending Card 4 -->
+<div class="flex-none w-[280px] group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-sm">
+<img alt="Seoul Nightscape" class="w-full h-full object-cover" data-alt="City lights and neon signs of Seoul at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHgCnS8Z0XjYLPwjNsmzPerwPFsLS5TOzybD0zm6Ha-zR4UhusmGnaSIUZZziy3FHZ2ZoXnCPo7AIIoAnU_FdGJedUA5zdwoUe21o_N1GkRmm15grWncJpdqaXwEmHel0zwomIUoNZUiUJURiWi0VuXWlggUPgsL75Txete1kIFfPoa7KkCgOgpAGDbGMtdls-0_q4EdBxpsr1BR-csF-GPuuUo7Jn3Ga6qohnoO65g4bPgUy0gavAcJWEdb80kBY0b-l0QgpCYKcN"/>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h5 class="font-bold text-sm">Neon Library</h5>
+<p class="text-xs text-slate-500">Seoul • Culture</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-xs fill-1">star</span>
+<span class="text-xs font-bold">4.7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="py-24 bg-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-1/2"></div>
+<div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+<h3 class="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Be the first to explore the new Korea.</h3>
+<p class="text-primary/20 bg-white/10 backdrop-blur-md inline-block px-4 py-2 rounded-lg text-white font-medium mb-10">
+                    Get bi-weekly curations of the best Korean spaces.
+                </p>
+<div class="max-w-md mx-auto flex gap-2">
+<input class="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/50 rounded-xl px-6 focus:ring-2 focus:ring-white/30 border-none h-14" placeholder="Email address" type="email"/>
+<button class="bg-white text-primary font-bold px-8 rounded-xl hover:bg-slate-100 transition-colors h-14">Join KULT</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-6">
+<span class="material-symbols-outlined text-2xl font-bold">explore</span>
+<h2 class="text-xl font-extrabold tracking-tighter">KULT</h2>
+</div>
+<p class="text-sm text-slate-500 leading-relaxed max-w-xs">
+                    Curating the most authentic and modern Korean experiences for the global traveler.
+                </p>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Explore</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Featured Cafes</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Boutique Stays</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cultural Landmarks</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Concept Stores</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Support</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Partnership</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Social</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">camera</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-slate-100 dark:border-slate-900 text-center">
+<p class="text-xs text-slate-400">© 2024 KULT. All rights reserved. Made for the curious soul.</p>
+</div>
+</footer>
+</body></html>
