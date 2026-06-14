@@ -4,6 +4,7 @@ import { Search, MapPin, Star, Sparkles, ChevronLeft, ChevronRight, ArrowRight, 
 import UserNav from '../components/UserNav'
 import Header from '../components/Header'
 import { useLanguage } from '../context/LanguageContext'
+import ProductFeed from '../components/ProductFeed'
 
 const editorPicks = [
     {
@@ -97,164 +98,48 @@ const Home = () => {
             <Header />
 
             <main>
-                {/* Hero Section */}
-                <section className="relative w-full h-[75vh] min-h-[550px] flex items-center justify-center">
+                {/* Longblack-style Hero Section: Today's Paid Column */}
+                <section className="relative w-full min-h-[85vh] flex items-center justify-center bg-slate-950 overflow-hidden group">
                     <div className="absolute inset-0 z-0">
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-slate-900/10 z-10"></div>
-                        <img alt="Modern Hanok Cafe" className="w-full h-full object-cover scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAP5yqtzkzaT7TkrV2neEgzf3mqsEzOkcNWNPc9yGhu-05JvO1_laDMgbjdsvxTnKw4B5fJEUiNwA3GrepgRpgmW5MwRsudgOhIGQgrqHNs51a8KadtqNakqHZE7fgbDV1WOq0HWAW6AZuXlV1V7qVzKL6yCDocrOyvBnRUW1PD0LCxbrMTmfcTnBzrDNS0m2JkseeXHEorqLv1SxccEJELpWIYHykB5eR1X9YQTLBm7pXNGjV_Wi2yEIMmsfoqv7Q6UEE1SKCGm_Y" />
+                        <img 
+                            alt="Column Cover" 
+                            className="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0" 
+                            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-10"></div>
                     </div>
-                    <div className="relative z-20 text-center px-4 max-w-5xl mx-auto text-left md:text-center">
-                        <span className="inline-block px-5 py-2 bg-white/10 border border-white/20 backdrop-blur-md rounded-full text-white text-[10px] font-bold tracking-[0.4em] uppercase mb-8">
-                            {t("Premium Space Concierge", "프리미엄 공간 컨시어지")}
-                        </span>
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight uppercase leading-tight md:leading-none text-white mb-6 drop-shadow-lg text-left md:text-center">
-                            {t("Explore Korea's", "대한민국 숨겨진")} <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-50 italic font-normal">{t("hidden Spaces.", "공간을 탐험하세요.")}</span>
+                    
+                    <div className="relative z-20 text-center px-6 w-full max-w-[1000px] mx-auto mt-20">
+                        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 border border-primary/30 bg-primary/10 backdrop-blur-md rounded-full mb-8">
+                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-primary">
+                                {t("Today's Deep Dive", "오늘의 심층 칼럼")}
+                            </span>
+                        </div>
+                        
+                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase mb-6 font-display">
+                            {t("The Silent Architecture", "침묵의 건축학")}
                         </h1>
-                        <p className="text-[10px] md:text-xs text-slate-300 mb-12 max-w-lg mx-auto font-medium leading-relaxed tracking-[0.3em] uppercase opacity-80 text-left md:text-center">
-                            {t("Curating the future of Korean lifestyle. From gravity-defying architecture to silent heritage sanctuaries.", "한국 라이프스타일의 미래를 큐레이팅합니다. 중력을 거스르는 건축물부터 고요한 헤리티지 안식처까지.")}
+                        <h2 className="text-xl md:text-3xl text-slate-300 font-medium tracking-tight mb-10 max-w-3xl mx-auto">
+                            {t("How modern Korean spaces are redefining emptiness.", "현대 한국의 공간들이 비어있음을 재정의하는 방법")}
+                        </h2>
+                        
+                        <p className="text-sm text-slate-400 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+                            {t("In the heart of Seongsu, a new architectural movement is brewing. We sat down with the visionary behind Void Space Seoul to discuss why the absence of elements speaks louder than their presence.", "성수동 중심부에서 새로운 건축적 움직임이 일고 있습니다. 보이드 스페이스 서울의 설립자를 만나 요소의 부재가 존재보다 더 큰 울림을 주는 이유에 대해 이야기를 나눴습니다.")}
                         </p>
-                        <div className="relative max-w-3xl mx-auto z-50">
-                            <div className="bg-white/10 backdrop-blur-3xl p-3 rounded-2xl border border-white/20 shadow-2xl flex flex-col md:flex-row items-center gap-3 transition-all duration-700 hover:border-white/40">
-                                <div className="flex-1 w-full flex flex-col sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-                                    <div className="relative flex-1" ref={destRef}>
-                                        <button onClick={() => { setDestOpen(!destOpen); setCatOpen(false); }} className="flex items-center justify-center sm:justify-start gap-4 sm:gap-5 px-5 sm:px-6 py-3.5 hover:bg-white/10 rounded-xl transition-all group relative cursor-pointer w-full text-left">
-                                            <MapPin className="w-4 h-4 text-white/80 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] flex-shrink-0" strokeWidth={1.5} />
-                                            <div>
-                                                <p className="text-[8px] text-slate-400 font-medium tracking-[0.2em] uppercase mb-0.5">{t("Location", "위치")}</p>
-                                                <p className="text-[11px] text-white font-semibold tracking-[0.15em] uppercase">{t(destination.label, destination.labelKr)}</p>
-                                            </div>
-                                        </button>
-                                        {destOpen && (
-                                            <div className="absolute top-full left-0 w-full min-w-[220px] bg-white rounded-2xl border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.2)] p-4 z-[100] mt-2 backdrop-blur-xl">
-                                                {destinations.map((d) => (
-                                                    <button key={d.value} onClick={() => { setDestination(d); setDestOpen(false); }} className={`w-full text-left px-4 py-3 rounded-lg text-[10px] font-bold uppercase tracking-widest text-slate-500 hover:text-primary hover:bg-slate-50 transition-all ${destination.value === d.value ? 'text-primary bg-primary/5' : ''}`}>
-                                                        {t(d.label, d.labelKr)}
-                                                    </button>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div className="relative flex-1" ref={catRef}>
-                                        <button onClick={() => { setCatOpen(!catOpen); setDestOpen(false); }} className="flex items-center justify-center sm:justify-start gap-4 sm:gap-5 px-5 sm:px-6 py-3.5 hover:bg-white/10 rounded-xl transition-all group relative cursor-pointer w-full text-left">
-                                            <LayoutGrid className="w-4 h-4 text-white/80 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] flex-shrink-0" strokeWidth={1.5} />
-                                            <div>
-                                                <p className="text-[8px] text-slate-400 font-medium tracking-[0.2em] uppercase mb-0.5">{t("Category", "카테고리")}</p>
-                                                <p className="text-[11px] text-white font-semibold tracking-[0.15em] uppercase">{t(category.label, category.labelKr)}</p>
-                                            </div>
-                                        </button>
-                                        {catOpen && (
-                                            <div className="absolute top-full left-0 w-full min-w-[220px] bg-white rounded-2xl border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.2)] p-4 z-[100] mt-2 backdrop-blur-xl">
-                                                {categories.map((c) => (
-                                                    <button key={c.value} onClick={() => { setCategory(c); setCatOpen(false); }} className={`w-full text-left px-4 py-3 rounded-lg text-[10px] font-bold uppercase tracking-widest text-slate-500 hover:text-primary hover:bg-slate-50 transition-all ${category.value === c.value ? 'text-primary bg-primary/5' : ''}`}>
-                                                        {t(c.label, c.labelKr)}
-                                                    </button>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                                <button onClick={handleExplore} className="w-full md:w-auto h-16 px-12 bg-primary text-white rounded-xl font-black flex items-center justify-center gap-3 hover:brightness-110 transition-all shadow-[0_10px_25px_rgba(17,17,212,0.3)] hover:shadow-[0_15px_35px_rgba(17,17,212,0.5)] group cursor-pointer">
-                                    <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" strokeWidth={1.5} />
-                                    <span className="tracking-[0.3em] uppercase text-[10px]">{t("EXPLORE", "탐험하기")}</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Category Shortcuts */}
-                <section className="py-16 bg-white border-y border-slate-100">
-                    <div className="max-w-7xl mx-auto px-4 flex justify-center gap-12 md:gap-32 overflow-x-auto hide-scrollbar">
-                        {[
-                            { icon: Coffee, label: t('Cafes', '카페'), value: 'cafe' },
-                            { icon: Landmark, label: t('Culture', '컬처'), value: 'culture' },
-                            { icon: ShoppingBag, label: t('Retail', '리테일'), value: 'retail' }
-                        ].map((cat) => (
-                            <button
-                                key={cat.label}
-                                onClick={() => navigate(`/search?category=${cat.value}`)}
-                                className="flex flex-col items-center gap-4 group transition-all cursor-pointer hover:-translate-y-1"
-                            >
-                                <div className="size-16 sm:size-24 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:border-primary/30 group-hover:bg-primary/5 transition-all shadow-sm group-hover:shadow-[0_10px_30px_rgba(17,17,212,0.1)]">
-                                    <cat.icon className="w-6 h-6 sm:w-8 t-8 text-slate-400 group-hover:text-primary transition-colors" strokeWidth={0.5} />
-                                </div>
-                                <span className="text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.4em] text-slate-400 group-hover:text-primary transition-colors">{cat.label}</span>
-                            </button>
-                        ))}
-                    </div>
-                </section>
-
-                {/* Editor's Pick Section */}
-                <section className="py-24 px-4 bg-slate-50 text-left">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-                            <div className="max-w-xl">
-                                <h2 className="text-[10px] font-bold text-primary/70 tracking-[0.6em] uppercase mb-4">{t("Handpicked Selection", "엄선된 셀렉션")}</h2>
-                                <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 uppercase tracking-tighter">{t("Editor's Pick", "에디터 초이스")}</h3>
-                                <p className="mt-6 text-slate-500 text-sm leading-relaxed font-light">{t("Our curation team travels across the peninsula to find sanctuaries that offer more than just a view—they offer a story.", "저희 큐레이션 팀은 한반도 전역을 여행하며 단순한 풍경 이상의 이야기를 담은 안식처를 찾아냅니다.")}</p>
-                            </div>
-                            <Link className="flex items-center gap-2 font-bold text-sm text-primary border-b-2 border-primary/20 pb-1 hover:border-primary hover:gap-4 transition-all" to="/search/ikseon-dong">
-                                {t("View all curations", "모든 큐레이션 보기")}
-                                <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                        
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link to="/space/void-space" className="w-full sm:w-auto px-10 py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-colors">
+                                {t("Read Full Column", "칼럼 전체 읽기")}
                             </Link>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                            {editorPicks.map((pick) => (
-                                <Link to="/space/detail" key={pick.name} className="group cursor-pointer bg-white border border-slate-100 p-5 rounded-[2.5rem] hover:border-primary/20 transition-all duration-700 hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.08)]">
-                                    <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] mb-8">
-                                        <img alt={pick.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src={pick.img} />
-                                        <div className="absolute top-6 left-6">
-                                            <span className="bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-widest text-slate-900 shadow-sm">{t(pick.badge, pick.badgeKr)}</span>
-                                        </div>
-                                    </div>
-                                    <h4 className="text-2xl font-black mb-3 group-hover:text-primary transition-colors text-slate-900 tracking-tight">{t(pick.name, pick.nameKr)}</h4>
-                                    <div className="flex items-center gap-2 text-slate-400 text-sm mb-6 uppercase tracking-widest font-medium">
-                                        <MapPin className="w-4 h-4" strokeWidth={1.5} />
-                                        {t(pick.location, pick.locationKr)}
-                                    </div>
-                                    <p className="text-sm leading-relaxed text-slate-500 line-clamp-2 font-light">{t(pick.desc, pick.descKr)}</p>
-                                </Link>
-                            ))}
+                            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                                {t("Requires Membership", "멤버십 필요")}
+                            </span>
                         </div>
                     </div>
                 </section>
 
-                {/* Trending Section */}
-                <section className="py-24 bg-white border-t border-slate-100 text-left">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <div className="flex items-center justify-between mb-12">
-                            <h3 className="text-3xl font-black text-slate-900 uppercase tracking-tighter">{t("Trending Now", "현재 트렌딩")}</h3>
-                            <div className="flex gap-3">
-                                <button onClick={() => scrollTrending(-1)} className="w-12 h-12 rounded-full border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-all hover:border-primary/30 text-slate-400 hover:text-primary cursor-pointer">
-                                    <ChevronLeft className="w-6 h-6" strokeWidth={1} />
-                                </button>
-                                <button onClick={() => scrollTrending(1)} className="w-12 h-12 rounded-full border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-all hover:border-primary/30 text-slate-400 hover:text-primary cursor-pointer">
-                                    <ChevronRight className="w-6 h-6" strokeWidth={1} />
-                                </button>
-                            </div>
-                        </div>
-                        <div ref={scrollRef} className="flex gap-8 overflow-x-auto hide-scrollbar pb-12">
-                            {trendingSpaces.map((space) => (
-                                <Link to="/space/detail" key={space.name} className="flex-none w-[320px] group cursor-pointer hover:-translate-y-1 transition-all">
-                                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-5 shadow-sm border border-slate-100">
-                                        <img alt={space.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={space.img} />
-                                    </div>
-                                    <div className="flex items-start justify-between px-1">
-                                        <div>
-                                            <h5 className="font-bold text-base text-slate-900 group-hover:text-primary transition-colors">{t(space.name, space.nameKr)}</h5>
-                                            <p className="text-xs text-slate-400 mt-1 uppercase tracking-widest font-medium">{t(space.sub, space.subKr)}</p>
-                                        </div>
-                                        <div className="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg">
-                                            <Star className="w-3 h-3 text-amber-400 fill-amber-400" strokeWidth={1} />
-                                            <span className="text-xs font-bold text-slate-700">{space.rating}</span>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <ProductFeed t={t} />
 
                 {/* CTA Section */}
                 <section className="py-28 bg-slate-900 relative overflow-hidden text-left md:text-center">
