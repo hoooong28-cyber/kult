@@ -1,0 +1,409 @@
+{
+  "name": "projects/10064344228996604613",
+  "title": "프리미엄 지식 구독 플랫폼",
+  "visibility": "PRIVATE",
+  "createTime": "2026-06-14T07:27:30.411670Z",
+  "updateTime": "2026-06-14T08:17:51.256175Z",
+  "projectType": "TEXT_TO_UI_PRO",
+  "thumbnailScreenshot": {
+    "name": "projects/10064344228996604613/files/0597ef9f9ce1471d875c49317b2b5f60",
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AP1WRLu8yju3eTa-2W_51eYamrrIlZFoUuv1wIoVkXAAocl_Ou1nuhnqmS0DdsPVK5BgCq_6InJ2bJKvIHRDuNPEmOuvvjsMZceKm9tKEjAPcQAKjljUwpo1bdXuw-BZyRYEsiJBVOK2UasfSSZ5Mw0TviRTFfG4QvHKiUJ2wtcz0suLzpJjCztNrqXYZCMH76GIozcGCAFiB45vwUZAhdOkOyzTK6ZI0cua4ujB62Y5kzdtH2U2mjh0xSI2mWuR"
+  },
+  "origin": "STITCH",
+  "deviceType": "DESKTOP",
+  "designTheme": {
+    "colorMode": "LIGHT",
+    "font": "LIBRE_CASLON_TEXT",
+    "roundness": "ROUND_FOUR",
+    "customColor": "#242424",
+    "headlineFont": "LIBRE_CASLON_TEXT",
+    "bodyFont": "SOURCE_SANS_3",
+    "labelFont": "HANKEN_GROTESK",
+    "namedColors": {
+      "background": "#fcf9f5",
+      "error": "#ba1a1a",
+      "error_container": "#ffdad6",
+      "inverse_on_surface": "#f3f0ec",
+      "inverse_primary": "#c8c6c5",
+      "inverse_surface": "#31302e",
+      "on_background": "#1c1c1a",
+      "on_error": "#ffffff",
+      "on_error_container": "#93000a",
+      "on_primary": "#ffffff",
+      "on_primary_container": "#8c8b8b",
+      "on_primary_fixed": "#1b1c1c",
+      "on_primary_fixed_variant": "#474746",
+      "on_secondary": "#ffffff",
+      "on_secondary_container": "#626361",
+      "on_secondary_fixed": "#1a1c1b",
+      "on_secondary_fixed_variant": "#464746",
+      "on_surface": "#1c1c1a",
+      "on_surface_variant": "#444748",
+      "on_tertiary": "#ffffff",
+      "on_tertiary_container": "#cd716c",
+      "on_tertiary_fixed": "#3e0407",
+      "on_tertiary_fixed_variant": "#792f2d",
+      "outline": "#747878",
+      "outline_variant": "#c4c7c7",
+      "primary": "#0e0f0f",
+      "primary_container": "#242424",
+      "primary_fixed": "#e4e2e1",
+      "primary_fixed_dim": "#c8c6c5",
+      "secondary": "#5e5e5d",
+      "secondary_container": "#e0dfde",
+      "secondary_fixed": "#e3e2e0",
+      "secondary_fixed_dim": "#c7c6c5",
+      "surface": "#fcf9f5",
+      "surface_bright": "#fcf9f5",
+      "surface_container": "#f0ede9",
+      "surface_container_high": "#eae8e4",
+      "surface_container_highest": "#e5e2de",
+      "surface_container_low": "#f6f3ef",
+      "surface_container_lowest": "#ffffff",
+      "surface_dim": "#dcdad6",
+      "surface_tint": "#5f5e5e",
+      "surface_variant": "#e5e2de",
+      "tertiary": "#280002",
+      "tertiary_container": "#4a0c0e",
+      "tertiary_fixed": "#ffdad7",
+      "tertiary_fixed_dim": "#ffb3af"
+    },
+    "designMd": "---\nname: Editorial Minimalist\ncolors:\n  surface: '#fcf9f5'\n  surface-dim: '#dcdad6'\n  surface-bright: '#fcf9f5'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f6f3ef'\n  surface-container: '#f0ede9'\n  surface-container-high: '#eae8e4'\n  surface-container-highest: '#e5e2de'\n  on-surface: '#1c1c1a'\n  on-surface-variant: '#444748'\n  inverse-surface: '#31302e'\n  inverse-on-surface: '#f3f0ec'\n  outline: '#747878'\n  outline-variant: '#c4c7c7'\n  surface-tint: '#5f5e5e'\n  primary: '#0e0f0f'\n  on-primary: '#ffffff'\n  primary-container: '#242424'\n  on-primary-container: '#8c8b8b'\n  inverse-primary: '#c8c6c5'\n  secondary: '#5e5e5d'\n  on-secondary: '#ffffff'\n  secondary-container: '#e0dfde'\n  on-secondary-container: '#626361'\n  tertiary: '#280002'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#4a0c0e'\n  on-tertiary-container: '#cd716c'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#e4e2e1'\n  primary-fixed-dim: '#c8c6c5'\n  on-primary-fixed: '#1b1c1c'\n  on-primary-fixed-variant: '#474746'\n  secondary-fixed: '#e3e2e0'\n  secondary-fixed-dim: '#c7c6c5'\n  on-secondary-fixed: '#1a1c1b'\n  on-secondary-fixed-variant: '#464746'\n  tertiary-fixed: '#ffdad7'\n  tertiary-fixed-dim: '#ffb3af'\n  on-tertiary-fixed: '#3e0407'\n  on-tertiary-fixed-variant: '#792f2d'\n  background: '#fcf9f5'\n  on-background: '#1c1c1a'\n  surface-variant: '#e5e2de'\ntypography:\n  display-lg:\n    fontFamily: Libre Caslon Text\n    fontSize: 48px\n    fontWeight: '400'\n    lineHeight: '1.1'\n    letterSpacing: -0.02em\n  display-lg-mobile:\n    fontFamily: Libre Caslon Text\n    fontSize: 36px\n    fontWeight: '400'\n    lineHeight: '1.2'\n  headline-md:\n    fontFamily: Libre Caslon Text\n    fontSize: 32px\n    fontWeight: '400'\n    lineHeight: '1.3'\n  headline-sm:\n    fontFamily: Libre Caslon Text\n    fontSize: 24px\n    fontWeight: '400'\n    lineHeight: '1.4'\n  body-lg:\n    fontFamily: Source Sans 3\n    fontSize: 20px\n    fontWeight: '400'\n    lineHeight: '1.6'\n  body-md:\n    fontFamily: Source Sans 3\n    fontSize: 17px\n    fontWeight: '400'\n    lineHeight: '1.6'\n  label-md:\n    fontFamily: Hanken Grotesk\n    fontSize: 14px\n    fontWeight: '600'\n    lineHeight: '1.0'\n    letterSpacing: 0.05em\n  label-sm:\n    fontFamily: Hanken Grotesk\n    fontSize: 12px\n    fontWeight: '500'\n    lineHeight: '1.0'\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  container-max: 720px\n  gutter: 24px\n  margin-desktop: 64px\n  margin-mobile: 20px\n  stack-sm: 8px\n  stack-md: 24px\n  stack-lg: 48px\n  stack-xl: 80px\n---\n\n## Brand & Style\nThe brand personality is intellectual, curated, and authoritative, designed for readers who value depth over speed. It targets a discerning audience—thinkers, creators, and professionals—evoking a sense of calm focus and \"slow media\" consumption.\n\nThe design style is **Minimalist Editorial**. It prioritizes content hierarchy through generous whitespace and masterful typography rather than decorative elements. By stripping away digital noise, the UI feels like a premium physical publication—tactile, intentional, and quiet. The experience should feel like stepping into a private library: sophisticated, hushed, and deeply immersive.\n\n## Colors\nThe palette is grounded in a \"paper-and-ink\" philosophy. \n\n- **Primary (#242424):** A deep charcoal used for primary text and high-impact UI elements to ensure maximum legibility without the harshness of pure black.\n- **Secondary (#F9F8F6):** A warm, parchment-inspired off-white that serves as the universal background, reducing eye strain during long-form reading.\n- **Tertiary (#5D1A1A):** A muted Burgundy used sparingly as a sophisticated \"mark of quality\" for accents, active states, or premium labels.\n- **Neutral (#706F6C):** A soft taupe-grey for secondary metadata, borders, and UI scaffolding that should recede into the background.\n\n## Typography\nTypography is the core of this design system. We use a high-contrast pairing to distinguish between \"Story\" and \"System.\"\n\n- **Headlines (Libre Caslon Text):** Traditional and authoritative. Used for titles and pull-quotes to provide a literary, editorial feel.\n- **Body (Source Sans 3):** Chosen for its exceptional clarity in long-form prose. The line height is intentionally generous (1.6) to enhance the rhythm of reading.\n- **Labels (Hanken Grotesk):** A sharp, modern sans-serif used for UI controls and metadata. It provides a functional contrast to the expressive serif headings.\n\nFor mobile, display sizes scale down to prevent awkward word breaks, while body text remains large to maintain a premium reading experience.\n\n## Layout & Spacing\nThe layout follows a **Fixed-Width Reading Column** model for articles and a **Responsive Grid** for discovery.\n\n- **Reading Experience:** Content is centered in a tight 720px container to ensure optimal line length (approx. 70-80 characters). This mimics the width of a book page.\n- **Discovery/Home:** A 12-column grid that collapses to 1 column on mobile. In discovery mode, whitespace (stack-xl) is used to separate different content sections, allowing each article \"card\" to breathe.\n- **Rhythm:** We use a base-8 spacing scale. Vertical rhythm is critical; use `stack-lg` for section breaks and `stack-md` for related groupings.\n\n## Elevation & Depth\nThis design system avoids heavy shadows and skeuomorphism. Depth is created through **Tonal Layering** and **Soft Ambient Occlusion**.\n\n- **Surface Levels:** The base layer is the warm off-white (#F9F8F6). Secondary surfaces (like search bars or sticky headers) use the same color but are defined by a 1px stroke of #706F6C at 15% opacity.\n- **Shadows:** Use only for floating elements like dropdowns or modals. Shadows should be ultra-diffused: `0 20px 40px rgba(0,0,0,0.04)`.\n- **Focus:** No \"glows.\" Hierarchy is communicated through proximity and scale. When an element is raised, it does not gain a border; it gains a subtle backdrop blur or a very slight tint shift.\n\n## Shapes\nThe shape language is understated and architectural. \n\nWe use **Soft (0.25rem)** roundedness for most UI elements. This keeps the aesthetic feeling modern and accessible without becoming \"bubbly\" or overly playful. Images should either be perfectly sharp (0px) to feel like magazine clippings or use the `rounded-lg` (0.5rem) token for a slightly more contemporary app feel. Buttons and input fields must remain consistent with the `soft` profile.\n\n## Components\n- **Buttons:** Primary buttons are solid Charcoal (#242424) with white text. Secondary buttons use a 1px border of the primary color with no fill. All buttons use the `label-md` typography for a professional, sharp look.\n- **Article Cards:** No borders or shadows. A card consists of a headline, a short summary in `body-md`, and metadata in `label-sm`. They are separated by generous whitespace or a thin, 1px horizontal rule.\n- **Chips/Tags:** Used for categories. Styled with a transparent background and a thin #706F6C border. Text is `label-sm` with high letter spacing.\n- **Inputs:** Minimalist bottom-border only or a very light 4-sided stroke. No heavy focus rings; instead, the bottom border shifts to the Burgundy accent color (#5D1A1A) on focus.\n- **Lists:** Clean, left-aligned, using the `primary` color for the bullet or numbering to maintain the \"literary\" aesthetic.\n- **Progress Indicator:** A very thin (2px) fixed bar at the top of the article page in the Burgundy accent color to track reading progress.",
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#242424",
+    "overrideSecondaryColor": "#f9f8f6",
+    "overrideTertiaryColor": "#5d1a1a",
+    "overrideNeutralColor": "#706f6c",
+    "spacingScale": 2,
+    "typography": {
+      "body-lg": {
+        "fontFamily": "Source Sans 3",
+        "fontSize": "20px",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "body-md": {
+        "fontFamily": "Source Sans 3",
+        "fontSize": "17px",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "display-lg": {
+        "fontFamily": "Libre Caslon Text",
+        "fontSize": "48px",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "display-lg-mobile": {
+        "fontFamily": "Libre Caslon Text",
+        "fontSize": "36px",
+        "fontWeight": "400",
+        "lineHeight": "1.2"
+      },
+      "headline-md": {
+        "fontFamily": "Libre Caslon Text",
+        "fontSize": "32px",
+        "fontWeight": "400",
+        "lineHeight": "1.3"
+      },
+      "headline-sm": {
+        "fontFamily": "Libre Caslon Text",
+        "fontSize": "24px",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "label-md": {
+        "fontFamily": "Hanken Grotesk",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "1.0",
+        "letterSpacing": "0.05em"
+      },
+      "label-sm": {
+        "fontFamily": "Hanken Grotesk",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "lineHeight": "1.0"
+      }
+    },
+    "spacing": {
+      "container-max": "720px",
+      "gutter": "24px",
+      "margin-desktop": "64px",
+      "margin-mobile": "20px",
+      "stack-lg": "48px",
+      "stack-md": "24px",
+      "stack-sm": "8px",
+      "stack-xl": "80px"
+    },
+    "headlineFontFamily": "Libre Caslon Text",
+    "bodyFontFamily": "Source Sans 3",
+    "labelFontFamily": "Hanken Grotesk"
+  },
+  "screenInstances": [
+    {
+      "id": "1b6f617c7e424e2fbb7aba0c130e05d4",
+      "sourceScreen": "projects/10064344228996604613/screens/1b6f617c7e424e2fbb7aba0c130e05d4",
+      "x": 10376,
+      "y": 3798,
+      "width": 1280,
+      "height": 2662
+    },
+    {
+      "id": "2375cba306d84ec4aaff542198fdf4d3",
+      "sourceScreen": "projects/10064344228996604613/screens/2375cba306d84ec4aaff542198fdf4d3",
+      "x": 5056,
+      "y": 21927,
+      "width": 1280,
+      "height": 3295
+    },
+    {
+      "id": "26974493b927460a94b221a50d81c759",
+      "sourceScreen": "projects/10064344228996604613/screens/26974493b927460a94b221a50d81c759",
+      "x": 6664,
+      "y": 3798,
+      "width": 1280,
+      "height": 5172
+    },
+    {
+      "id": "2832fb01f1ca4beda28005fa07660a88",
+      "sourceScreen": "projects/10064344228996604613/screens/2832fb01f1ca4beda28005fa07660a88",
+      "x": 1024,
+      "width": 1280,
+      "height": 3542
+    },
+    {
+      "id": "3818f6f84d8e41f6b8c884a542aeeb90",
+      "sourceScreen": "projects/10064344228996604613/screens/3818f6f84d8e41f6b8c884a542aeeb90",
+      "x": 3712,
+      "width": 1280,
+      "height": 1703
+    },
+    {
+      "id": "42f9fe48c3294601ac44b1ab0c80bab1",
+      "sourceScreen": "projects/10064344228996604613/screens/42f9fe48c3294601ac44b1ab0c80bab1",
+      "x": 2368,
+      "width": 1280,
+      "height": 2113
+    },
+    {
+      "id": "46daf67a8aa54f31b1ade1a52763c72d",
+      "sourceScreen": "projects/10064344228996604613/screens/46daf67a8aa54f31b1ade1a52763c72d",
+      "x": 5056,
+      "y": 16257,
+      "width": 1280,
+      "height": 4445
+    },
+    {
+      "id": "621bc8ecde814a1da205d08858095d8d",
+      "sourceScreen": "projects/10064344228996604613/screens/621bc8ecde814a1da205d08858095d8d",
+      "x": 2688,
+      "y": 11302,
+      "width": 1280,
+      "height": 3580
+    },
+    {
+      "id": "77eb2ee237634eff875126d47343cd95",
+      "sourceScreen": "projects/10064344228996604613/screens/77eb2ee237634eff875126d47343cd95",
+      "x": 2368,
+      "y": 16257,
+      "width": 1280,
+      "height": 5354
+    },
+    {
+      "id": "7985810ece6f4814b9b2fc7be6a50229",
+      "sourceScreen": "projects/10064344228996604613/screens/7985810ece6f4814b9b2fc7be6a50229",
+      "x": 3712,
+      "y": 16257,
+      "width": 1280,
+      "height": 5414
+    },
+    {
+      "id": "7c5a3d6b6ff941e1b873910a30748394",
+      "sourceScreen": "projects/10064344228996604613/screens/7c5a3d6b6ff941e1b873910a30748394",
+      "x": 4032,
+      "y": 11302,
+      "width": 1280,
+      "height": 3975
+    },
+    {
+      "id": "9a6f054eb8ca45b18ba398d3cea187f0",
+      "sourceScreen": "projects/10064344228996604613/screens/9a6f054eb8ca45b18ba398d3cea187f0",
+      "x": 10432,
+      "y": 11302,
+      "width": 1280,
+      "height": 2157
+    },
+    {
+      "id": "a55a0a490d6e42ac892abcd823ab6f8b",
+      "sourceScreen": "projects/10064344228996604613/screens/a55a0a490d6e42ac892abcd823ab6f8b",
+      "x": 5320,
+      "y": 3798,
+      "width": 1280,
+      "height": 3216
+    },
+    {
+      "id": "assets_9941f40e4f62453fba4dcffb96376b34",
+      "y": 21927,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/9941f40e4f62453fba4dcffb96376b34",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_9f43a74595b546ddafc8c139f8715ed0",
+      "y": 9226,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/9f43a74595b546ddafc8c139f8715ed0",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_b2b7ab1fb00f406ca7d11be926cb5f8c",
+      "x": 5376,
+      "y": 11302,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/b2b7ab1fb00f406ca7d11be926cb5f8c",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_ba18919c9b044791b740485ecf1eabb6",
+      "x": 9352,
+      "y": 3798,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/ba18919c9b044791b740485ecf1eabb6",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_c2441ea0297f4e52878bb020416a4b1e",
+      "x": 264,
+      "y": 3798,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/c2441ea0297f4e52878bb020416a4b1e",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_f7be62077d424541923d4349a6026dcc",
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/f7be62077d424541923d4349a6026dcc",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_fa9268d8d4c44e409f10914563b10219",
+      "y": 16257,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/fa9268d8d4c44e409f10914563b10219",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "d0c28c25a15541578555d83bd77160af",
+      "sourceScreen": "projects/10064344228996604613/screens/d0c28c25a15541578555d83bd77160af",
+      "x": 7744,
+      "y": 11302,
+      "width": 1280,
+      "height": 4699
+    },
+    {
+      "id": "d5547014d12549f1a8dae87c587cf11e",
+      "sourceScreen": "projects/10064344228996604613/screens/d5547014d12549f1a8dae87c587cf11e",
+      "x": 5056,
+      "width": 1280,
+      "height": 2188
+    },
+    {
+      "id": "d6b895287f2c4dd68cab2e8f64c3e1ef",
+      "sourceScreen": "projects/10064344228996604613/screens/d6b895287f2c4dd68cab2e8f64c3e1ef",
+      "x": 3712,
+      "y": 21927,
+      "width": 1280,
+      "height": 4316
+    },
+    {
+      "id": "d855ef7daef74e6db63e405b4bcf6f88",
+      "sourceScreen": "projects/10064344228996604613/screens/d855ef7daef74e6db63e405b4bcf6f88",
+      "x": 6400,
+      "y": 11302,
+      "width": 1280,
+      "height": 3767
+    },
+    {
+      "id": "dc466b07fa184ee7bb92d07d7989829e",
+      "sourceScreen": "projects/10064344228996604613/screens/dc466b07fa184ee7bb92d07d7989829e",
+      "x": 9088,
+      "y": 11302,
+      "width": 1280,
+      "height": 3512
+    },
+    {
+      "id": "dde0db77a6394bc5b8fc6bbc58187add",
+      "sourceScreen": "projects/10064344228996604613/screens/dde0db77a6394bc5b8fc6bbc58187add",
+      "x": 1344,
+      "y": 11302,
+      "width": 1280,
+      "height": 4369
+    },
+    {
+      "id": "e2003a3321e449e59e9b7a21f4c72778",
+      "sourceScreen": "projects/10064344228996604613/screens/e2003a3321e449e59e9b7a21f4c72778",
+      "y": 3798,
+      "width": 200,
+      "height": 60
+    },
+    {
+      "id": "e2f3223a4f9347b1868a6e095eedb323",
+      "sourceScreen": "projects/10064344228996604613/screens/e2f3223a4f9347b1868a6e095eedb323",
+      "y": 11302,
+      "width": 1280,
+      "height": 4414
+    },
+    {
+      "id": "e80d79d7cd6a4eb28499a78b69e37621",
+      "sourceScreen": "projects/10064344228996604613/screens/e80d79d7cd6a4eb28499a78b69e37621",
+      "x": 8008,
+      "y": 3798,
+      "width": 1280,
+      "height": 2608
+    },
+    {
+      "id": "eea3519d820447bab693fa116210a344",
+      "sourceScreen": "projects/10064344228996604613/screens/eea3519d820447bab693fa116210a344",
+      "x": 1024,
+      "y": 16257,
+      "width": 1280,
+      "height": 4301
+    },
+    {
+      "id": "f3c598cb31f345119d29108812af1987",
+      "sourceScreen": "projects/10064344228996604613/screens/f3c598cb31f345119d29108812af1987",
+      "x": 3976,
+      "y": 3798,
+      "width": 1280,
+      "height": 3417
+    },
+    {
+      "id": "fcd253d9b88a4495aa0db2a43f2dbaf9",
+      "sourceScreen": "projects/10064344228996604613/screens/fcd253d9b88a4495aa0db2a43f2dbaf9",
+      "x": 2368,
+      "y": 21927,
+      "width": 1280,
+      "height": 3498
+    },
+    {
+      "id": "fe99cf294bde4ae7aacdb70ff464dca0",
+      "sourceScreen": "projects/10064344228996604613/screens/fe99cf294bde4ae7aacdb70ff464dca0",
+      "x": 1024,
+      "y": 21927,
+      "width": 1280,
+      "height": 3952
+    }
+  ],
+  "metadata": {
+    "userRole": "OWNER"
+  }
+}

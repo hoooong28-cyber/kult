@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Inter:wght@400;500&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1b1c1c",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#e9e8e7",
+                    "surface-tint": "#954742",
+                    "on-background": "#1b1c1c",
+                    "tertiary-container": "#242424",
+                    "inverse-primary": "#ffb3ad",
+                    "primary-fixed": "#ffdad7",
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf9f8",
+                    "tertiary": "#0f0f0f",
+                    "surface-container-low": "#f5f3f3",
+                    "outline": "#877270",
+                    "surface-dim": "#dbdad9",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#2a0002",
+                    "outline-variant": "#dac1bf",
+                    "secondary": "#5e5e5b",
+                    "inverse-surface": "#303031",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-tertiary-container": "#8d8b8b",
+                    "on-primary-fixed-variant": "#77302d",
+                    "secondary-container": "#e1dfdb",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container": "#efeded",
+                    "surface-bright": "#fbf9f8",
+                    "on-secondary-fixed": "#1b1c19",
+                    "on-secondary-container": "#63635f",
+                    "on-secondary-fixed-variant": "#474744",
+                    "secondary-fixed-dim": "#c8c6c2",
+                    "primary-container": "#4a0e0e",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-surface-variant": "#544341",
+                    "surface": "#fbf9f8",
+                    "secondary-fixed": "#e4e2dd",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e4e2e2",
+                    "on-primary-container": "#cc726d",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "inverse-on-surface": "#f2f0f0",
+                    "on-primary-fixed": "#3d0506",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0rem",
+                    "lg": "0rem",
+                    "xl": "0rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "container-max": "1440px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "margin-desktop": "64px",
+                    "section-gap": "128px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Syne"],
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "headline-xl": ["Libre Caslon Text"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "headline-lg": ["Libre Caslon Text"],
+                    "body-lg": ["Inter"],
+                    "logo-brand": ["Syne"],
+                    "headline-md": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl": ["60px", {"lineHeight": "68px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "logo-brand": ["32px", {"lineHeight": "32px", "letterSpacing": "-0.05em", "fontWeight": "800"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "0em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 32px;
+        }
+        .asymmetric-offset {
+            margin-top: 64px;
+        }
+        ::selection {
+            background-color: #2a0002;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-white">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-background dark:bg-background border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<a class="font-logo-brand text-logo-brand text-primary dark:text-primary-fixed-dim tracking-tighter" href="#">KULT</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps uppercase text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 cursor-pointer active:opacity-70" href="#">SPACES</a>
+<a class="font-label-caps text-label-caps uppercase text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 cursor-pointer active:opacity-70" href="#">PRODUCTS</a>
+<a class="font-label-caps text-label-caps uppercase text-primary dark:text-primary-fixed-dim border-b border-primary pb-1 transition-colors duration-300 cursor-pointer active:opacity-70" href="#">ARCHIVE</a>
+<a class="font-label-caps text-label-caps uppercase text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 cursor-pointer active:opacity-70" href="#">ESSAYS</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="cursor-pointer active:opacity-70 text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
+<!-- Header Section -->
+<header class="py-16 md:py-32 border-b border-outline-variant">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">COLLECTION 2024</span>
+<h1 class="font-headline-xl text-headline-xl md:text-display-lg italic leading-tight">
+                        ARCHIVE <br/> REFINED.
+                    </h1>
+</div>
+<div class="md:w-1/3">
+<p class="font-body-lg text-body-lg text-secondary">
+                        A curated repository of cultural artifacts, design philosophy, and visual explorations. This archive documents the evolution of the KULT aesthetic through time.
+                    </p>
+</div>
+</div>
+</header>
+<!-- Filter & Utility -->
+<section class="flex flex-wrap justify-between items-center py-8 gap-4">
+<div class="flex gap-6 overflow-x-auto pb-2 scrollbar-hide">
+<button class="font-label-caps text-label-caps border-b-2 border-primary text-primary whitespace-nowrap">ALL WORKS</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors whitespace-nowrap">OBJECTS</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors whitespace-nowrap">PRINT</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors whitespace-nowrap">DIGITAL</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors whitespace-nowrap">SPATIAL</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-secondary">VIEW:</span>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="grid_view">grid_view</span>
+<span class="material-symbols-outlined text-outline cursor-pointer" data-icon="view_agenda">view_agenda</span>
+</div>
+</section>
+<!-- Main Archive Grid -->
+<div class="editorial-grid mt-8">
+<!-- Feature Card 1 (Large Asymmetric) -->
+<div class="col-span-12 md:col-span-8 flex flex-col group cursor-pointer">
+<div class="aspect-[16/9] overflow-hidden bg-surface-container mb-6 relative">
+<img alt="Abstract art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A large-scale, high-contrast digital artwork featuring fluid organic shapes in deep burgundy and crisp ivory tones. The piece is displayed in a bright, cavernous gallery with polished concrete floors and minimal architectural details. Soft, diffuse lighting highlights the matte textures of the work, creating a sophisticated and intellectual atmosphere consistent with a premium design archive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ4CX8_8dKWYXZMpaxUtH3Z1TUwlqNuEF6aBz2O5yHr-v-VsEUo26ETtPqeeFesNUAPvAIBvAxqDvzJ8HB9vrqM59kv4dHtWxwa4xFrrFMRUAzl8WGEqtlbpaa-ul5QJkEj6VIILicshPf9xO7r4P12_TbuDQo6umW0_yIc5qIzew6YbgPdSr2qJH9Niq37gqYy8WU6ALZaQuj70wwNjfWm1iI9139Jtf2AA5LjnHLPR85UbaAvoTfxB35ekMYBwn_HSOCAlVh_Eas"/>
+<div class="absolute top-4 right-4 bg-background px-3 py-1 font-label-caps text-[10px]">FEATURED</div>
+</div>
+<div class="flex justify-between items-start border-b border-outline-variant pb-8">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:italic transition-all">Morphology of Silence</h3>
+<p class="font-label-caps text-label-caps text-secondary">001 / VISUAL RESEARCH</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+<!-- Side Card 1 -->
+<div class="col-span-12 md:col-span-4 md:mt-24 group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-6">
+<img alt="Italian architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A monochrome photograph of a modernist architectural detail in Milan, showcasing sharp shadows and geometric precision. The image uses high-contrast black and white tones to emphasize the brutalist concrete textures and deep ink-well blacks of the recessed windows. The composition is strictly aligned and evokes a sense of timeless elegance and disciplined creative energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD44afl32dZrhx3nKbNtmW6AbmZEEa0nNQ3MwWpU0Med9g4SXsMAmwaSmaVqXu8pc6zDCcHJKeMHRUpE6xzBUJ0LC1jBTfeeC9mq1RauzJbsK-cQVypBVzfdggW3GfdXAdECzTXynSfaH0kLp1Ok5JnMHIvPA28HWCe6mLFKEnb5fNPg-ByvgFolI2NUZrXfSxBgEWPZPInuXTjU_Rn-7OllZCqtI39bKhpbJgZF9J8DADohEugd_8NKfY6dNI0O3JGN6E4sSLA3j4d"/>
+</div>
+<div class="border-b border-outline-variant pb-8">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:italic transition-all">Rationalist Echoes</h3>
+<p class="font-label-caps text-label-caps text-secondary">002 / ARCHITECTURAL STUDY</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="col-span-12 md:col-span-4 group cursor-pointer">
+<div class="aspect-square overflow-hidden bg-surface-container mb-6">
+<img alt="Typography" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of premium print design featuring bold, high-contrast serif typography on heavy-weight textured paper. The ink is a deep, rich burgundy that appears almost black in the shadows, while the paper is a subtle warm off-white. The lighting is dramatic and directional, highlighting the tactile quality of the letterpress indentation and the fine grain of the material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHZ2cUR3TATy3Y8N5XP5bvwSojm1qSzlEmv64AeAskKlBGkHN2fGfDYZ-8sf6w5DzcMVH0bxMs-r6Dz7WlZ1fdzZuQ5QKiwxR4JTdr464CySdYhMYnMnxTBcHXa93b089Sortva4-CvNQuSv60iZeouWo-2O4iyu64DyrXaNm050Vj6R2objkBemGi2EzTzp1xm_kaRjCn1FC8CV01OkkuWeqB2bwMcssONr8UC5xibvMmxEe-Gw6_nWLWLk7vg1q6FJpesDIHxRzM"/>
+</div>
+<div class="border-b border-outline-variant pb-8">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:italic transition-all">The Typeface Manifesto</h3>
+<p class="font-label-caps text-label-caps text-secondary">003 / TYPOGRAPHY</p>
+</div>
+</div>
+<!-- Card 4 (Pull Quote / Text Break) -->
+<div class="col-span-12 md:col-span-8 flex items-center justify-center bg-surface-container-low p-12 md:p-24">
+<div class="max-w-xl text-center">
+<span class="font-label-caps text-label-caps text-primary block mb-6">REDACTED THOUGHTS</span>
+<blockquote class="font-headline-lg text-headline-lg text-primary leading-tight mb-8">
+                        "DESIGN IS THE SILENT AMBASSADOR OF THE KULT IDENTITY—A BALANCE OF BRUTAL CLARITY AND POETIC DISORDER."
+                    </blockquote>
+<p class="font-label-caps text-label-caps text-secondary">— FROM THE ARCHIVE ESSAYS, VOL. IV</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="col-span-12 md:col-span-6 md:mt-12 group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
+<img alt="Minimalist lamp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist designer lamp with a sharp, geometric profile standing in a dark, moody corner. The light source creates a focused beam that spills onto a textured surface, rendered in tones of deep ink and aged burgundy. The aesthetic is extremely clean and brutalist, with a focus on functional sculpture and high-end material finish within a contemporary interior space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIRlvj2e8uo6vg15q1gF9yyJgKL6IWUCdpAOMLRf1eqPbYJXMR66nT9utkQaFEZu3d_DkRMzUSAYrRea8DNQSde3uOXpNs5-Uaun8Wo9lNfPfBtpMdKxC9aEhOqI1zm_tCL_7D2khwTK-zVSW40xgKZkLtS36xKvFFk4Lqs1XAFPfIChGGvvFvog-7F5a9qO-a2qfEAdxJ4aIw-Hqmb86TjfjzyxYeafOMPF7mzR5BIFys7Y4A-pq-YnJSQjGHwR9dtz3tu9J4ozyK"/>
+</div>
+<div class="border-b border-outline-variant pb-8">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:italic transition-all">Lumina No. 4</h3>
+<p class="font-label-caps text-label-caps text-secondary">004 / INDUSTRIAL OBJECT</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="col-span-12 md:col-span-6 group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6">
+<img alt="Design process" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A workspace featuring carefully arranged design sketches and technical drawings on a minimalist drafting table. The lighting is bright and editorial, using a high-key light-mode palette. Subtle accents of deep red are found in the drawing tools and small artifacts, while the overall mood is focused, professional, and creatively rigorous, highlighting the process behind the finished archive works." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7FGiuYl2pUyk3gbFs-a1mBCp4fzfTB505udNAPHy2XB83AVdLLX5s4Puod-AEtJZIpaXbx4dbdfpIP0x4LOQSljXLuHFzvuNJSl7m6br28Ak98Y0005zHevmyxARBeKQKtIkJ6VA-fb-OSu6Q9q1sAKbx0yxbmu5GEYrxUmp_jMMglCY3Ki2SiIIN9ELu73cqszNxUKLwiS-sQ7GkCdasN2TN61rV9IsDD_cq3hrYxdMFhr4fkqYo3WgK8ioAQQ4kpo5YwZUMx2z-"/>
+</div>
+<div class="border-b border-outline-variant pb-8">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:italic transition-all">Process Documentation</h3>
+<p class="font-label-caps text-label-caps text-secondary">005 / BEHIND THE SCENES</p>
+</div>
+<span class="font-label-caps text-label-caps text-primary py-1 px-3 border border-primary">NEW</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="flex flex-col items-center justify-center mt-32 gap-6">
+<button class="px-12 py-5 bg-primary text-surface font-label-caps text-label-caps hover:bg-surface-tint transition-all active:scale-95">
+                LOAD MORE ARCHIVE
+            </button>
+<p class="font-label-caps text-label-caps text-secondary">PAGE 01 OF 12</p>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-surface-container-lowest dark:bg-tertiary border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 w-full gap-8 max-w-container-max mx-auto">
+<div class="font-logo-brand text-logo-brand text-primary">KULT</div>
+<div class="flex gap-8">
+<a class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim hover:text-on-background dark:hover:text-on-tertiary-fixed transition-colors opacity-100" href="#">INSTAGRAM</a>
+<a class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim hover:text-on-background dark:hover:text-on-tertiary-fixed transition-colors opacity-100" href="#">NEWSLETTER</a>
+<a class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim hover:text-on-background dark:hover:text-on-tertiary-fixed transition-colors opacity-100" href="#">CONTACT</a>
+<a class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim hover:text-on-background dark:hover:text-on-tertiary-fixed transition-colors opacity-100" href="#">TERMS</a>
+</div>
+<div class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed-dim">
+                © 2024 KULT. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling
+        document.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+
+        // Hover effects for grid cards
+        const cards = document.querySelectorAll('.group');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.transform = 'translate(4px, -4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.transform = 'translate(0, 0)';
+            });
+        });
+    </script>
+</body></html>

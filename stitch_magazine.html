@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1111d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                        "silver-accent": "#e2e2e9",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col bg-white">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-silver-accent bg-white/90 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="flex items-center gap-3 text-slate-900">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"></path>
+</svg>
+</div>
+<h1 class="text-xl font-extrabold tracking-tighter">KULT</h1>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-slate-900 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" href="#">Archive</a>
+<a class="text-slate-900 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" href="#">Insider</a>
+<a class="text-slate-900 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" href="#">Credits</a>
+<a class="text-slate-900 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-full bg-primary px-5 py-2 text-white text-xs font-bold tracking-widest uppercase">
+                    12 Credits
+                </button>
+<button class="flex size-10 items-center justify-center rounded-full bg-silver-accent/50 text-slate-900">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col flex-1">
+<section class="px-6 md:px-20 py-10">
+<div class="relative w-full aspect-[21/9] overflow-hidden rounded-xl bg-slate-100 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist modern luxury interior space in Seoul" style="background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXLD6hZlSP2fkwwKBW7rOgF_AEYlghUKTaMzcHTzXgARTGacx7TkcDwuaaskh9Fg89eXV1NZhet56k0X7OfLNhOIrTHfA-gFHzq3cIHnNZm3z3P9aQGsfJI71ib2aElSScy-aIHtyqkWTMDAU4dKibHEEixrBFfFLPAooOOrwPPCMjzsyLrB2vHAgumSB1l-PQd89rRGL1pZVyWVO1dBLW6o_4xHaNPBH2--D5TqBPZ1b-SPhR8hpiHd_LaWJekeN-yeRvYtxnfp9B');">
+</div>
+<div class="absolute bottom-0 left-0 p-8 md:p-16 w-full flex flex-col items-start gap-2">
+<span class="text-white/80 text-xs font-bold tracking-[0.3em] uppercase">Vol. 1 • Kult Insider Exclusive</span>
+<h2 class="text-white text-4xl md:text-7xl font-bold tracking-tight leading-none uppercase">Trending Beauty <br/>Selects</h2>
+</div>
+</div>
+</section>
+<section class="px-6 md:px-20 py-16 bg-white">
+<div class="flex items-end justify-between mb-12 border-b border-silver-accent pb-6">
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-widest">The Collection</span>
+<h3 class="text-4xl font-bold tracking-tight text-slate-900">New Frontiers</h3>
+</div>
+<p class="max-w-xs text-sm text-slate-500 hidden md:block">Exploring the intersection of ancient Korean traditions and radical modern innovation.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="group flex flex-col gap-5">
+<div class="aspect-[3/4] overflow-hidden rounded-lg bg-slate-50 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Premium green tea antioxidant serum bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoT-lmhYO0AWjUGDACveXaYCNFJYozjevlnCdUB5JX2ebPzRvAXh-pguhd8hv-kQWGZmVSnOX1qOcy5MB0-P3rSGSsC0BhjME62ATy4onVGzlo08bpGRSVZ00VStHe51ZV4N4R8H_XfsmaV_fmd7-ykhVJGUCEkZQ911M8GylyuWYkqlTRvdIqUfZxTnanZ210lPuSCXQjAAQodFlKlR9pViqMdVIemVF5o7wIRiY5tXzmwZEdOpNgpvMtL_E2n5KF9CMLc7a60RXB"/>
+<div class="absolute top-4 right-4">
+<span class="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-sm">Bestseller</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-xl font-bold tracking-tight">Amorepacific Vintage Essence</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Rare single extract green tea antioxidant serum fermented for 100 days.</p>
+<button class="mt-2 w-full py-3 border border-primary text-primary text-xs font-bold uppercase tracking-widest rounded hover:bg-primary hover:text-white transition-all">
+                                Unlock for 1 Credit
+                            </button>
+</div>
+</div>
+<div class="group flex flex-col gap-5">
+<div class="aspect-[3/4] overflow-hidden rounded-lg bg-slate-50 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Sophisticated anti-aging ginseng cream jar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5zpXcFXceQI9dA1qqpWFtg96C1dIP1gwMo8e2oH-4684KOFuoRbdaPo59Z6SLCPceRlnzC4K0QUaXRXN0pRM3RiVahKy3_wclcXDhkAV07heLBKqM44-Gt8-zMW2nlWrSwocQxfFc2y1GcMCqmboQUQBzRYc1LF108ZaG2xAMysCjrw5SsmVQLYYfNudCR0beOG_0u4iPvq4p4LsQAQUX2rWhxbjb9N1TBWat1vrvHWNp0-kbGkbZH5ML_aWsssxNu1V53K0TYx4s"/>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-xl font-bold tracking-tight">Sulwhasoo Concentrated Ginseng</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Iconic anti-aging cream powered by the vitality of rare Korean Red Ginseng.</p>
+<button class="mt-2 w-full py-3 border border-primary text-primary text-xs font-bold uppercase tracking-widest rounded hover:bg-primary hover:text-white transition-all">
+                                Unlock for 1 Credit
+                            </button>
+</div>
+</div>
+<div class="group flex flex-col gap-5">
+<div class="aspect-[3/4] overflow-hidden rounded-lg bg-slate-50 relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Artisanal ceramic skincare bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPkV0cUW3JtZmi_ON5v7ILhy2Gp5SCe6QC9On5kTicp5vhUo8WXd-_Tc9ULzud4xvlNBNAD2jhlH4OVux7xmFpcmSCe64f47AUF3MqJ9DJyzeECZ0iQr6B78oASXGg9vLgU9KDP5nylLWfivB8lLg9rNit4rUBXCzZqEqh95de6eYC1PEvBwqwEWDBlDHXOd6PllEI7UgReWeyyMp6wKzUOlgDGmVoeekSxa8M55244N78ibJW6T_f59KxAo9oNWPFLu33-__lZH1E"/>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-xl font-bold tracking-tight">Moon Jar Ceramic Set</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Handcrafted minimalist vessels inspired by Joseon dynasty moon jars.</p>
+<button class="mt-2 w-full py-3 border border-primary text-primary text-xs font-bold uppercase tracking-widest rounded hover:bg-primary hover:text-white transition-all">
+                                Unlock for 1 Credit
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 md:px-20 py-24 bg-background-light">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-square overflow-hidden rounded-xl bg-white shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Atmospheric modern architecture in Seoul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-nPmxc5h9bkPBtz0Q2dHx31M7SBAuOou4_I4Pqjscu9YsubnoobgX6Nhm9X_CeFkWKhdNlMP9nXqXX_lGcy7qHLUJ0PtYzlZNjbIIBhKJZhGHsfnagnha6P203z3x0MqkzSZBL5OjR3wzD4pGm5AkOTbJnAG7Aum4AwAPD-rwMw4ZdcnrITN6zvCB3piMWHEjamY5uIgtE17c5dWqjSbd4xH8c-YZuoBWtspW-Xz8Zr5_GSJOgkTaA3USrbKJ7cqLUlnEXjLh1dH7"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 rounded-lg shadow-xl hidden md:block">
+<p class="text-3xl font-bold">SEOUL</p>
+<p class="text-[10px] uppercase tracking-widest opacity-80">Spatial Series 01</p>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-6">
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Architecture Spotlight</span>
+<h3 class="text-5xl font-bold tracking-tight text-slate-900 leading-tight">Spatial Masterpiece: <br/>The Hidden Void</h3>
+<p class="text-lg text-slate-600 leading-relaxed font-light">
+                            Tucked away in the winding alleys of Samcheong-dong, this architectural marvel redefines urban sanctuary. Using negative space and filtered natural light, the structure creates a meditative environment that bridges the gap between traditional Hanok principles and futuristic brutalism.
+                        </p>
+<div class="flex gap-4 items-center mt-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-bold tracking-widest uppercase text-xs text-slate-900" data-location="Seoul">Samcheong-dong District, Seoul</span>
+</div>
+<a class="mt-4 flex items-center gap-2 font-bold text-sm tracking-widest uppercase text-primary group" href="#">
+                            Read Full Feature
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white border-t border-silver-accent px-6 md:px-20 py-20">
+<div class="flex flex-col items-center text-center gap-10">
+<div class="flex flex-col gap-4">
+<h4 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 uppercase">Stay Ahead of the Curve</h4>
+<p class="text-slate-500 max-w-lg mx-auto leading-relaxed">Join the KULT inner circle for weekly curation of products, spaces, and philosophy from the world's most innovative centers.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-4 w-full max-w-md">
+<input class="flex-1 bg-background-light border-none rounded px-6 py-4 text-xs font-bold tracking-widest focus:ring-2 focus:ring-primary/20 outline-none" placeholder="YOUR@EMAIL.COM" type="email"/>
+<button class="bg-primary text-white px-8 py-4 rounded text-xs font-bold tracking-widest uppercase hover:bg-primary/90 transition-colors">
+                        Subscribe to Alerts
+                    </button>
+</div>
+<div class="flex flex-col gap-8 w-full items-center mt-10">
+<div class="flex gap-8">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">public</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">share</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</a>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
+<p class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">© 2024 KULT MEDIA INC.</p>
+<a class="text-[10px] text-slate-400 font-bold tracking-widest uppercase hover:text-slate-900" href="#">Privacy Policy</a>
+<a class="text-[10px] text-slate-400 font-bold tracking-widest uppercase hover:text-slate-900" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

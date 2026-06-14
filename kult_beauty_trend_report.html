@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KULT GLOBAL BEAUTY REPORT</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+  body { 
+    font-family: 'Pretendard', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background: #fdfdfd; 
+    color: #1a1a1a; 
+    -webkit-print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    background: white;
+  }
+  .header { 
+    background: #000000; 
+    color: #ffffff; 
+    padding: 60px 50px; 
+    text-align: left; 
+    border-bottom: 6px solid #e11d48;
+  }
+  .header h1 { 
+    margin: 0; 
+    font-size: 34px; 
+    font-weight: 900; 
+    letter-spacing: 1px; 
+  }
+  .header p { 
+    margin: 12px 0 0; 
+    color: #cbd5e1; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-weight: 500;
+  }
+  .tag {
+    display: inline-block;
+    background: #e11d48;
+    color: white;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+  }
+  .content { 
+    padding: 50px; 
+  }
+  
+  .insight-box, .editors-note {
+    background: #f8fafc;
+    border-left: 4px solid #e11d48;
+    padding: 25px 30px;
+    margin-bottom: 40px;
+  }
+  .insight-box h4, .editors-note h4 { margin: 0 0 12px 0; color: #0f172a; font-size: 16px; font-weight: 800; letter-spacing: 0.5px;}
+  .insight-box p, .editors-note p { margin: 0; color: #334155; font-size: 14px; line-height: 1.7; }
+  
+  .editors-note {
+    background: #fff1f2;
+    border-left: 4px solid #fda4af;
+  }
+
+  .section-title { 
+    font-size: 20px; 
+    font-weight: 900; 
+    border-bottom: 2px solid #e2e8f0; 
+    padding-bottom: 12px; 
+    margin-bottom: 30px; 
+    color: #0f172a; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    page-break-inside: avoid;
+  }
+  .product-image {
+    width: 100%;
+    height: 220px;
+    background: #f8fafc;
+    position: relative;
+  }
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .rank-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .product-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .brand-name {
+    font-weight: 900;
+    color: #e11d48;
+    font-size: 13px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .product-name {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+    min-height: 40px;
+    line-height: 1.3;
+  }
+  .price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 15px;
+  }
+  .specs, .tip {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .tip {
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  .tip strong { color: #e11d48; }
+
+  .shop-btn {
+    align-self: flex-start;
+    display: inline-block;
+    background: #0f172a;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+    transition: background 0.2s;
+  }
+  .shop-btn:hover { background: #e11d48; }
+
+  .footer { 
+    text-align: center; 
+    margin-top: 50px; 
+    font-size: 12px; 
+    color: #64748b; 
+    border-top: 1px solid #e2e8f0; 
+    padding-top: 25px; 
+    padding-bottom: 25px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <span class="tag">GLOBAL COMMERCE EDITION</span>
+      <h1>KULT BEAUTY INTELLIGENCE</h1>
+      <p>APRIL 2026 • THE SPRING K-BEAUTY CATCH</p>
+    </div>
+    
+    <div class="content">
+      <div class="insight-box">
+        <h4>EXECUTIVE SUMMARY : Spring 2026 K-Beauty Trends</h4>
+        <p>The Korean beauty market is currently dominated by two contrasting yet complementary forces: <b>"Skincare-ing Makeup"</b> (hybrid cosmetics providing a healthy, transparent glass-skin effect without clogging pores) and <b>"Micro-biome/Vegan Skincare"</b> (soothing essentials designed to repair the skin barrier). According to Olive Young Global sales data, international consumers are prioritizing multi-use textures, clean ingredients, and "quiet luxury" radiant finishes above all else.</p>
+      </div>
+
+      <div class="editors-note">
+        <h4>EDITOR'S NOTE : Why 'Blur & Gloss' Rules 2026</h4>
+        <p>This season, matte is dead. We are seeing a massive shift towards <i>"Tanghulu Lips"</i> (a syrupy, high-shine finish) matched perfectly with <i>"Blurry Cheeks"</i> (a soft, diffused matte). By contrasting the extreme gloss of the lips with a velvet canvas, it creates a multidimensional, youthful glow that looks incredible on camera. This digest curates the exact formulations you need to achieve this specific look.</p>
+      </div>
+      
+      <div class="section-title">01. MAKEUP & COLOR (LIPS/EYES/BASE)</div>
+      <div class="product-grid">
+        
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <div class="rank-badge">01</div>
+            <img src="https://images.unsplash.com/photo-1596462502278-27bf85033e5a?auto=format&fit=crop&q=80&w=400" alt="rom&nd tint" />
+          </div>
+          <div class="product-info">
+            <span class="brand-name">ROM&ND</span>
+            <div class="product-name">Juicy Lasting Tint</div>
+            <div class="price">$11.00 USD</div>
+            <div class="specs">
+              <strong>KULT Insight:</strong> The absolute #1 ranked lip tint series globally. Features a signature Tanghulu gloss that stays vibrant without feeling sticky.
+            </div>
+            <div class="tip"><strong>💡 Pro Tip:</strong> Layer twice! Apply a thin layer, wait 30 seconds for it to stain, then add a second thick coat in the center.</div>
+            <a href="https://global.oliveyoung.com/product/detail?prdtNo=GA251235991" class="shop-btn" target="_blank">Shop on Olive Young ↗</a>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <div class="rank-badge">02</div>
+            <img src="https://images.unsplash.com/photo-1590156546946-cb5afcf2fbff?auto=format&fit=crop&q=80&w=400" alt="fwee pudding pot" />
+          </div>
+          <div class="product-info">
+            <span class="brand-name">FWEE</span>
+            <div class="product-name">Lip & Cheek Blurry Pudding Pot</div>
+            <div class="price">$16.50 USD</div>
+            <div class="specs">
+              <strong>KULT Insight:</strong> A completely viral sensation. A bouncy, putty-like texture that melts into the skin conferring a soft-blur matte finish.
+            </div>
+            <div class="tip"><strong>💡 Pro Tip:</strong> Use your fingers. The heat of your skin melts the pudding formula for a seamless, airbrushed flush.</div>
+            <a href="https://global.oliveyoung.com/display/search?query=fwee%20pudding%20pot" class="shop-btn" target="_blank">Shop on Olive Young ↗</a>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <div class="rank-badge">03</div>
+            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=400" alt="dasique palette" />
+          </div>
+          <div class="product-info">
+            <span class="brand-name">DASIQUE</span>
+            <div class="product-name">Shadow Palette (Sweet Blossom)</div>
+            <div class="price">$27.50 USD</div>
+            <div class="specs">
+              <strong>KULT Insight:</strong> Captures the "watercolor blush" trend perfectly. The newly formulated 'wet glitters' prevent fallout and adhere to the skin seamlessly.
+            </div>
+            <div class="tip"><strong>💡 Pro Tip:</strong> Tap the wet glitter shades onto the center of your eyelids and the aegyo-sal for a tear-drop effect.</div>
+            <a href="https://global.oliveyoung.com/display/search?query=dasique%20shadow%20palette" class="shop-btn" target="_blank">Shop on Olive Young ↗</a>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <div class="rank-badge">04</div>
+            <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?auto=format&fit=crop&q=80&w=400" alt="Clio Cushion" />
+          </div>
+          <div class="product-info">
+            <span class="brand-name">CLIO</span>
+            <div class="product-name">Kill Cover Skin Fixer Cushion</div>
+            <div class="price">$28.00 USD</div>
+            <div class="specs">
+              <strong>KULT Insight:</strong> The undisputed king of Korean cushions. Provides ultra-thin yet full coverage that survives humidity. 
+            </div>
+            <div class="tip"><strong>💡 Pro Tip:</strong> Less is more! Tap the puff lightly on the mesh, then stamp it on the back of your hand before applying to the face.</div>
+            <a href="https://global.oliveyoung.com/display/search?query=clio%20kill%20cover" class="shop-btn" target="_blank">Shop on Olive Young ↗</a>
+          </div>
+        </div>
+
+      </div> <!-- End Grid -->
+
+      <div class="section-title" style="page-break-before: always; margin-top: 50px;">02. SKINCARE & WELLNESS</div>
+      <div class="product-grid">
+
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="product-image">
+            <div class="rank-badge">05</div>
+            <img src="https://images.unsplash.com/photo-1608248593802-8eb3a6962f3e?auto=format&fit=crop&q=80&w=400" alt="Anua Cleansing Oil" />
+          </div>
+          <div class="product-info">
+            <span class="brand-name">ANUA</span>
+            <div class="product-name">Heartleaf Pore Control Cleansing Oil</div>
+            <div class="price">$19.50 USD</div>
+            <div class="specs">
+              <strong>KULT Insight:</strong> Reigned #1 on TikTok. The mild formula gently melts sebaceous filaments without triggering acne breakouts.
+            </div>
+            <div class="tip"><strong>💡 Pro Tip:</strong> Massage for exactly 60 seconds on dry skin to emulsify blackheads, then rinse thoroughly.</div>
+            <a href="https://global.oliveyoung.com/display/search?query=anua%20cleansing%20oil" class="shop-btn" target="_blank">Shop on Olive Young ↗</a>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <div class="rank-badge">06</div>
+            <img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=400" alt="Torriden Serum" />
+          </div>
+          <div class="product-info">
+            <span class="brand-name">TORRIDEN</span>
+            <div class="product-name">Dive-In Low Molecular Hyaluronic Acid Serum</div>
+            <div class="price">$22.00 USD</div>
+            <div class="specs">
+              <strong>KULT Insight:</strong> The gold standard of hydration. Plumps the skin profoundly with 5D-Complex Hyaluronic Acid. Sinks instantly leaving zero tacky residue.
+            </div>
+            <div class="tip"><strong>💡 Pro Tip:</strong> Apply on slightly damp skin right after cleansing to lock in maximum moisture.</div>
+            <a href="https://global.oliveyoung.com/display/search?query=torriden%20dive-in%20serum" class="shop-btn" target="_blank">Shop on Olive Young ↗</a>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+          <div class="product-image">
+            <div class="rank-badge">07</div>
+            <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80&w=400" alt="Round Lab Sunscreen" />
+          </div>
+          <div class="product-info">
+            <span class="brand-name">ROUND LAB</span>
+            <div class="product-name">Birch Juice Moisturizing Sun Cream</div>
+            <div class="price">$20.00 USD</div>
+            <div class="specs">
+              <strong>KULT Insight:</strong> Voted #1 SPF in Korea three years straight. Acts dynamically as a moisturizer and sunscreen without a white cast, forming the ultimate makeup base. 
+            </div>
+            <div class="tip"><strong>💡 Pro Tip:</strong> Skip your heavy day cream! This sunscreen is hydrating enough to act as your final skincare step.</div>
+            <a href="https://global.oliveyoung.com/display/search?query=round%20lab%20birch%20juice%20sun" class="shop-btn" target="_blank">Shop on Olive Young ↗</a>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card">
+          <div class="product-image">
+            <div class="rank-badge">08</div>
+            <img src="https://images.unsplash.com/photo-1571781926291-c477eb31f24e?auto=format&fit=crop&q=80&w=400" alt="dAlba Serum" />
+          </div>
+          <div class="product-info">
+            <span class="brand-name">D'ALBA</span>
+            <div class="product-name">White Truffle First Spray Serum</div>
+            <div class="price">$26.00 USD</div>
+            <div class="specs">
+              <strong>KULT Insight:</strong> The "Flight Attendant Mist". Bi-phase oil and water serum giving immediate radiant glass skin on-the-go. An essential for combating dry airplane cabins.
+            </div>
+            <div class="tip"><strong>💡 Pro Tip:</strong> Shake well to mix the oils, then spray over makeup throughout the day to revive that flawless glass-skin glow.</div>
+            <a href="https://global.oliveyoung.com/display/search?query=d%27alba%20spray%20serum" class="shop-btn" target="_blank">Shop on Olive Young ↗</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        © 2026 KULT MAGAZINE INC. AFFILIATE COMMERCE REPORT.<br>
+        Links provided may earn KULT an affiliate commission. Auto-generated by KULT AI Pipeline.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

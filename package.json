@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\" \"npm run autosave\"",
+    "autosave": "nodemon --watch src --watch public -e js,jsx,css,html --delay 10 --exec \"git add . && git commit -m 'Auto-save' || true\"",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -27,6 +28,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.24",
+    "concurrently": "^10.0.3",
+    "nodemon": "^3.1.14",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.2.1"
   }
