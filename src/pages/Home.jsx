@@ -1,362 +1,353 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Lock, Sparkles, Globe, Instagram, Orbit, ChevronRight } from 'lucide-react'
+import { ArrowRight, Lock, ChevronLeft, ChevronRight, Orbit, Globe, Instagram } from 'lucide-react'
 import Header from '../components/Header'
 import { useLanguage } from '../context/LanguageContext'
 
-// ── Paid Content: Brand Stories & Spaces ──────────────────────────────────────
-const brandColumns = [
+// ── Brand Space Columns (Paid) ──────────────────────────────────────────────
+const mainColumn = {
+    slug: 'void-space',
+    titleEn: 'The Geometry of Solitude: On Arumjigi\'s Traditional-Modern Hybridity',
+    titleKr: '고독의 기하학: 아름지기의 전통-현대 혼합성에 대하여',
+    brand: 'Arumjigi Culture Keepers',
+    location: 'Bukchon · Seoul',
+    tagEn: 'Spatial Identity',
+    tagKr: '공간 정체성',
+    readTime: '12 Min Read',
+    author: 'Min-kyu Park',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAL3agwzc-8E8FlKAzXEmAe8iNTQp9ndNfujEcI5YBP0aaEqI1v81s46gDKS2BzoDdjcIM2RTEx_VzX5g_TMaXkKw6lK91R3Xpn5h2EFtfN6qqi0qLqjKE8WTKEAeiga0a1YlTD9N-HanGvQhx89hudtTfpqAj-AattYGUq3C1T2ejDqYGx6E2uktoYnH_joy01LfvURuiDlDD9qKldo-9Eu1JqNHl6YDndEtJuPfeLzO7hSJAeA_cqfoR0gr4-9IlUCv6EItYjkZkE',
+    desc: 'Exploring how Arumjigi Culture Keepers Foundation bridges the gap between Joseon-era aesthetics and 21st-century minimalism in the heart of Seoul.'
+}
+
+const sideColumns = [
     {
         slug: 'void-space',
-        title: '침묵의 건축학',
-        titleEn: 'The Silent Architecture',
-        brand: 'Void Space Seoul',
-        location: '한남 · Seoul',
-        tag: '브랜드 스토리',
-        tagEn: 'Brand Story',
-        img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200',
-        featured: true
-    },
-    {
-        slug: 'yuyeon-tea-house',
-        title: '정적의 예술',
-        titleEn: 'The Art of Stillness',
-        brand: 'Yuyeon Tea House',
-        location: '경주 · Gyeongju',
-        tag: '공간 탐방',
-        tagEn: 'Space',
-        img: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&q=80&w=800'
+        titleEn: 'Void Space: Curating Emptiness',
+        titleKr: '보이드 스페이스: 비어있음을 큐레이팅하다',
+        descEn: 'Inside Hannam\'s most enigmatic concrete shell where art becomes an atmospheric experience.',
+        descKr: '예술이 분위기 경험이 되는 한남의 가장 수수께끼 같은 콘크리트 공간 내부.',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbwoL1fq_JksuTSIQIDc7aKzarYFCoKXSumbSeFD4TWpCcU4858QFMLYdYebKkiZR2jIFI1Ei9rgbQtdkXOHuljgW7VDJNzMAAwGaKuNkaLY6127SDCwTsk2kK1eC1_tfaDDAJHRQbbplp2pfiNDZuBrLhn6446CsRVlnIdLQvEPy5HilTe6nGGGoNYB8zN6L9ISkrK_tR1jP5sDMbVWukDfDARBmz7zviyycbc2XIbshKwgivg43cPtycFsPWD5743_ye5gxVo3r3'
     },
     {
         slug: 'pine-hideaway',
-        title: '철학으로서의 숲',
-        titleEn: 'Forest as Philosophy',
-        brand: 'The Pine Hideaway',
-        location: '평창 · Pyeongchang',
-        tag: '헤리티지',
-        tagEn: 'Heritage',
-        img: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800'
+        titleEn: 'Gangwon Forest Retreats',
+        titleKr: '강원 포레스트 리트리트',
+        descEn: 'How contemporary architects are weaving luxury stays into the dense cedar canopies of Pyeongchang.',
+        descKr: '현대 건축가들이 평창의 빽빽한 삼나무 숲 사이에 럭셔리 스테이를 엮어내는 방법.',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnz2ezosgYy1InE6M-vxahUlcD39OD0pvgs5qPupHwpGcZr1Ec3pwOUr1T6MSQydMR9XbCIw-loP0wEBYXtYYZjnGpO0K1a9Fhf--q4V1jW4KyxHNuX1p_Vuu749zGUQFvrKBVkUPN9YNv68yqozKkH86YlL2rpXyYlUXDAjM06W0X1bj6Yg-W6I2PdqzKRbR4-IpYDyvAqljF9nR-t6_JiBngrHivGFtmfN0OI1KLc_Vv_rttoDWEFpYL6tZKE1TwFmhMig6L_y3U'
     }
 ]
 
-// ── Free Content: New Korean Products ─────────────────────────────────────────
-const newProducts = [
+// ── New Products (Free) ─────────────────────────────────────────────────────
+const products = [
     {
         id: 'p1',
-        brand: 'NONFICTION',
-        name: 'Santal Cream Hand Wash',
-        nameKr: '산탈 크림 핸드워시',
-        category: 'Beauty',
-        categoryKr: '뷰티',
-        date: 'Today',
-        img: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600'
+        brand: 'Sulwhasoo',
+        nameEn: 'Ginseng Renewing Cream v.05',
+        nameKr: '진생 리뉴잉 크림 v.05',
+        descEn: 'The evolution of a legend. Enhanced bio-cell formula for deep restoration.',
+        descKr: '전설의 진화. 심층 회복을 위한 향상된 바이오셀 포뮬러.',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuANx8Mn2dg7Tpng5l62dRg7UYS0QEnujBySMMIfqtmNElNn_BgWflDwnlrWZ4_sTc1qYwMLSdV-ddaZ-Su9DAtEOORvntUvQPUACDgmRRnbOfIEfni6kk_9TBsz_e5JoleZoWFsvH18S5WJJMMJ9qqGFMieeUt12ILpDnH-iqWMhKyej9azd5mIpNyidEp81uQGuQCIyvyyq533mRRUD8KVK4z2A0WvMCvPZFntBM4xgU2U4Btyp7VZWzapwuZGXcGlnHDeVFxHR62S'
     },
     {
         id: 'p2',
-        brand: 'Tamburins',
-        name: 'Chamo Perfume Balm',
-        nameKr: '카모 퍼퓸 밤',
-        category: 'Fragrance',
-        categoryKr: '프래그런스',
-        date: 'Today',
-        img: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=600'
+        brand: 'HAY Korea',
+        nameEn: 'Ceramic Series: Insa Edition',
+        nameKr: '세라믹 시리즈: 인사 에디션',
+        descEn: 'A collaboration between Nordic functionalism and Korean celadon heritage.',
+        descKr: '북유럽 기능주의와 한국 청자 헤리티지의 협업.',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC9UubJlP9tkI7cnHbMKmEYrn5HMBOrEQcb7Q8sl2D7_dgC-wla-wjWHzRS7JllUGrlGto2PR8Cbe5PqpNe01evzAbjq2BNYDX9BW8r7NaTWBNL6CC-X-GHGbwpSHgkUZ2ffJqA8g9sKWnI5J9XjNrTTjEXJfJIWmT3EgXSCxx6mNHKJcjJIzPhhI_orLcgc1rgaAHrmLHoTl_Ri-RstcqlLBrYCLOyPfsSEyaM6Y4NNpJq0qNm9fMBekHxUI0ulod90isikVVnpVCo'
     },
     {
         id: 'p3',
-        brand: 'Osoi',
-        name: 'Toni Mini Bag',
-        nameKr: '토니 미니백',
-        category: 'Fashion',
-        categoryKr: '패션',
-        date: 'Yesterday',
-        img: 'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=600'
+        brand: 'Studio Odd',
+        nameEn: 'Neon Archive 04 Lamp',
+        nameKr: '네온 아카이브 04 램프',
+        descEn: 'The vibrant energy of Euljiro nights captured in a minimalist lighting fixture.',
+        descKr: '을지로의 생동감 넘치는 야경 에너지를 담은 미니멀리스트 조명.',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBHgCnS8Z0XjYLPwjNsmzPerwPFsLS5TOzybD0zm6Ha-zR4UhusmGnaSIUZZziy3FHZ2ZoXnCPo7AIIoAnU_FdGJedUA5zdwoUe21o_N1GkRmm15grWncJpdqaXwEmHel0zwomIUoNZUiUJURiWi0VuXWlggUPgsL75Txete1kIFfPoa7KkCgOgpAGDbGMtdls-0_q4EdBxpsr1BR-csF-GPuuUo7Jn3Ga6qohnoO65g4bPgUy0gavAcJWEdb80kBY0b-l0QgpCYKcN'
     },
     {
         id: 'p4',
-        brand: 'Gentle Monster',
-        name: 'Rococo 01',
-        nameKr: '로코코 01',
-        category: 'Eyewear',
-        categoryKr: '아이웨어',
-        date: 'Yesterday',
-        img: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=600'
-    },
-    {
-        id: 'p5',
-        brand: 'Aesop',
-        name: 'Resurrection Aromatique',
-        nameKr: '리서렉션 아로마틱',
-        category: 'Beauty',
-        categoryKr: '뷰티',
-        date: '2 days ago',
-        img: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&q=80&w=600'
-    },
-    {
-        id: 'p6',
-        brand: 'Matin Kim',
-        name: 'Leather Tote Bag',
-        nameKr: '레더 토트백',
-        category: 'Fashion',
-        categoryKr: '패션',
-        date: '2 days ago',
-        img: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=600'
+        brand: 'Ader Error',
+        nameEn: 'Object 012: The Hybrid Bag',
+        nameKr: '오브젝트 012: 하이브리드 백',
+        descEn: 'Deconstructed aesthetics meeting industrial durability in their latest drop.',
+        descKr: '해체주의 미학과 산업적 내구성이 만난 최신 드롭.',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8hs2GzqCwBkGmzI2aDawlFFh-Y2btSLIoEKU6_lrMlmFIAeRn9pDsbW6_jRZ5ZChCQHFg53ONbi7_mawIVqbzM0KQBzTbg8D6YgNxWaP995MWHtBDKd1o9JGRYe9Q4m-LlfYUsYzVRFNDa1-5piIObKG57PxGHPfhkXuySAh9nwEGmM6FhL_gdNBaMNQ9JrxFZjAXLY9rlA4cu2Ugn3evEZkvOQWj6Ud6-AFQ48cDmCQbfnWmHJo7HMh-_AzGNe2Cb2vcqzp1XTmw'
     }
 ]
 
 const Home = () => {
     const { t, lang } = useLanguage()
     const [email, setEmail] = useState('')
-    const featured = brandColumns[0]
-    const rest = brandColumns.slice(1)
 
     return (
-        <div style={{ minHeight: '100vh' }}>
+        <div style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
             <Header />
 
             <main>
-                {/* ── HERO: Featured Premium Column ────────────────────────── */}
-                <section className="relative w-full bg-[#0d0d0d] overflow-hidden" style={{ minHeight: '90vh' }}>
-                    {/* Background image */}
-                    <div className="absolute inset-0">
+                {/* ── HERO: Featured Column ───────────────────────────────── */}
+                <section style={{ position: 'relative', width: '100%', height: '80vh', overflow: 'hidden' }} className="group">
+                    <div style={{ position: 'absolute', inset: 0 }}>
                         <img
-                            src={featured.img}
-                            alt={featured.titleEn}
-                            className="w-full h-full object-cover opacity-35"
-                            style={{ objectPosition: 'center' }}
+                            alt="Featured Korean Brand Space"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transition: 'transform 3s ease' }}
+                            className="group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf1blu6c8imp44TnDdmZGqeo88chuE6BEd1swlYnJerkGIzHeO-hj3Sj2OAdeA8_G-AmyulffbP2Kxn2WlS6yP2njTuxHUvlZ2tGnTDim9sB68oLr25Q1AQC0oA-xS4YPl_WnL2JGpAhVcPEeCN_378EtQwAF0pu4JDZMZkb8sI89gb3zsUuL1cRZPyiXChVsAxicZ2D395HMTOF2lneOnhNSmwTtTgFdC__NG7FpMBmQfv-J3moka4CRT7j2oGad8s3of5yjYtxyd"
                         />
-                        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0d0d0d 40%, rgba(13,13,13,0.4) 100%)' }} />
+                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.2) 100%)' }} />
                     </div>
 
-                    {/* Content */}
-                    <div className="relative z-10 flex flex-col justify-end" style={{ minHeight: '90vh', padding: '0 2.5rem 5rem' }}>
-                        <div className="max-w-4xl">
-                            {/* Badge */}
-                            <div className="flex items-center gap-3 mb-6">
-                                <span className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/20 rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-white/60">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse" />
-                                    {t("Today's Column", "오늘의 칼럼")}
-                                </span>
-                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#5d1a1a] rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-white">
-                                    <Lock className="w-2.5 h-2.5" />
-                                    Premium
-                                </span>
-                            </div>
-
-                            {/* Title */}
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tight mb-4 uppercase">
-                                {lang === 'KR' ? featured.title : featured.titleEn}
+                    <div style={{ position: 'relative', zIndex: 10, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', maxWidth: '1280px', margin: '0 auto', padding: '0 2rem 5rem' }}>
+                        <div style={{ maxWidth: '800px' }}>
+                            <span style={{ display: 'inline-block', padding: '4px 14px', background: '#1111d4', color: '#fff', fontSize: '9px', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+                                {t('Featured Column', '피처드 칼럼')}
+                            </span>
+                            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', fontFamily: 'Georgia, ui-serif, serif', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+                                {t('The Silence of Tamburins: Rethinking Retail as a Sanctuary', '탬버린즈의 침묵: 리테일을 성소로 재고하다')}
                             </h1>
-                            <p className="text-white/50 text-base md:text-lg font-medium mb-2 tracking-wide">
-                                {featured.brand} · {featured.location}
+                            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', fontWeight: 300, maxWidth: '520px', marginBottom: '2.5rem', lineHeight: 1.75, letterSpacing: '0.01em' }}>
+                                {t('How a fragrance brand transformed the bustling streets of Sinsa-dong into a spatial narrative of time, texture, and scent.', '한 프래그런스 브랜드가 신사동의 분주한 거리를 시간, 질감, 향기의 공간적 내러티브로 변환한 방법.')}
                             </p>
-                            <p className="text-white/60 text-base md:text-xl max-w-2xl mb-10 leading-relaxed font-light">
-                                {t(
-                                    "In the heart of Hannam, a new architectural philosophy is quietly taking root. We sat down with the visionary behind Void Space Seoul.",
-                                    "한남동 중심부에서, 새로운 건축 철학이 조용히 뿌리내리고 있습니다. 보이드 스페이스 서울의 설립자를 만났습니다."
-                                )}
-                            </p>
-
-                            {/* CTA */}
-                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                                <Link
-                                    to={`/space/${featured.slug}`}
-                                    className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0d0d0d] rounded-full font-black text-xs uppercase tracking-widest hover:bg-[#fcf9f5] transition-colors"
-                                >
-                                    {t("Read Full Column", "칼럼 읽기")}
-                                    <ArrowRight className="w-4 h-4" />
-                                </Link>
-                                <Link
-                                    to="/subscribe"
-                                    className="inline-flex items-center gap-2 text-white/50 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors"
-                                >
-                                    {t("Requires membership", "멤버십 필요")}
-                                    <ChevronRight className="w-3.5 h-3.5" />
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                <Link to="/space/void-space" style={{ display: 'inline-block', padding: '14px 36px', background: '#fff', color: '#0d0d0d', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', textDecoration: 'none' }}
+                                    className="hover:bg-slate-100 transition-colors">
+                                    {t('Read Story', '스토리 읽기')}
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* ── SECTION 1: Brand Stories & Spaces (Premium) ─────────── */}
-                <section className="bg-[#fcf9f5] py-20" style={{ borderTop: '1px solid #e8e5e1' }}>
-                    <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+                {/* ── Filter Bar ─────────────────────────────────────────── */}
+                <nav style={{ borderBottom: '1px solid #f1f5f9', padding: '1.5rem 0', backgroundColor: 'rgba(248,250,252,0.5)' }}>
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
+                            {[
+                                { label: t('All Collections', '전체'), active: true },
+                                { label: 'Seoul', active: false },
+                                { label: 'Busan', active: false },
+                                { label: 'Jeju', active: false },
+                                { label: 'Gyeongju', active: false }
+                            ].map(item => (
+                                <span key={item.label} style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', cursor: 'default', color: item.active ? '#0d0d0d' : '#94a3b8', borderBottom: item.active ? '1px solid #1111d4' : 'none', paddingBottom: '2px' }}>
+                                    {item.label}
+                                </span>
+                            ))}
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#64748b' }}>Category:</span>
+                            <select style={{ background: 'transparent', border: 'none', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#1111d4', cursor: 'pointer', outline: 'none' }}>
+                                <option>{t('Architecture', '건축')}</option>
+                                <option>{t('Wellness', '웰니스')}</option>
+                                <option>{t('Beauty', '뷰티')}</option>
+                                <option>{t('Fashion', '패션')}</option>
+                            </select>
+                        </div>
+                    </div>
+                </nav>
 
+                {/* ── Pillar 1: Brand Space Columns (Paid) ────────────────── */}
+                <section style={{ padding: '6rem 0', backgroundColor: '#fff' }}>
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
                         {/* Section header */}
-                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem', paddingBottom: '2rem', borderBottom: '1px solid #f1f5f9' }}>
                             <div>
-                                <div className="flex items-center gap-3 mb-3">
-                                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#5d1a1a]/10 text-[#5d1a1a] rounded-full text-[10px] font-black uppercase tracking-widest border border-[#5d1a1a]/20">
-                                        <Lock className="w-2.5 h-2.5" />
-                                        {t("Premium", "유료")}
-                                    </span>
-                                </div>
-                                <h2 className="text-3xl md:text-4xl font-black text-[#1c1c1a] tracking-tight leading-tight">
-                                    {t("Brand Stories & Spaces", "브랜드 히스토리 & 공간")}
+                                <p style={{ fontSize: '11px', fontWeight: 700, color: '#1111d4', letterSpacing: '0.5em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Space Stories</p>
+                                <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontFamily: 'Georgia, ui-serif, serif', fontWeight: 700, color: '#0d0d0d', letterSpacing: '-0.02em' }}>
+                                    {t('Brand Space Columns', '브랜드 공간 칼럼')}
                                 </h2>
-                                <p className="text-[#747878] mt-2 text-base font-medium">
-                                    {t("In-depth columns on Korea's most compelling brands and their spaces.", "한국의 주목할 브랜드와 그들의 공간을 깊이 있게 탐구합니다.")}
-                                </p>
                             </div>
-                            <Link to="/subscribe" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#1c1c1a] border border-[#c4c7c7] px-6 py-3 rounded-full hover:border-[#1c1c1a] transition-colors whitespace-nowrap">
-                                {t("All Columns", "전체 칼럼")} →
+                            <Link to="/subscribe" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#0d0d0d', textDecoration: 'none' }}
+                                className="hover:text-blue-600 transition-colors">
+                                {t('View Magazine Archive', '매거진 아카이브 보기')}
+                                <ArrowRight style={{ width: '12px', height: '12px' }} />
                             </Link>
                         </div>
 
-                        {/* Column cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {rest.map((col) => (
-                                <Link to={`/space/${col.slug}`} key={col.slug} className="group block bg-white rounded-2xl overflow-hidden border border-[#e8e5e1] hover:border-[#c4c7c7] hover:shadow-lg transition-all duration-500">
-                                    <div className="relative aspect-[16/9] overflow-hidden">
+                        {/* 12-column grid: 8 + 4 */}
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }} className="md:grid-cols-12-auto">
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '3rem' }}>
+                                {/* Main column (8 cols) */}
+                                <Link to={`/space/${mainColumn.slug}`} style={{ gridColumn: 'span 8', textDecoration: 'none', color: 'inherit' }} className="group cursor-pointer">
+                                    <div style={{ position: 'relative', aspectRatio: '16/10', overflow: 'hidden', borderRadius: '1.5rem', marginBottom: '2rem' }}>
                                         <img
-                                            src={col.img}
-                                            alt={col.titleEn}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                            src={mainColumn.img}
+                                            alt={mainColumn.titleEn}
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }}
+                                            className="group-hover:scale-105"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                                        <span className="absolute top-4 left-4 px-3 py-1 bg-[#5d1a1a] text-white rounded-full text-[9px] font-black uppercase tracking-widest">
-                                            {lang === 'KR' ? col.tag : col.tagEn}
-                                        </span>
-                                        <span className="absolute top-4 right-4 w-8 h-8 bg-white/90 backdrop-blur rounded-full flex items-center justify-center">
-                                            <Lock className="w-3.5 h-3.5 text-[#1c1c1a]" />
-                                        </span>
                                     </div>
-                                    <div className="p-6">
-                                        <p className="text-[10px] font-black uppercase tracking-widest text-[#747878] mb-2">{col.brand} · {col.location}</p>
-                                        <h3 className="text-xl font-black text-[#1c1c1a] tracking-tight group-hover:text-[#5d1a1a] transition-colors">
-                                            {lang === 'KR' ? col.title : col.titleEn}
+                                    <div style={{ maxWidth: '600px' }}>
+                                        <span style={{ display: 'block', fontSize: '10px', fontWeight: 700, color: '#94a3b8', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                                            {lang === 'KR' ? mainColumn.tagKr : mainColumn.tagEn} · {mainColumn.location}
+                                        </span>
+                                        <h3 style={{ fontFamily: 'Georgia, ui-serif, serif', fontSize: 'clamp(1.25rem, 2.5vw, 1.875rem)', fontWeight: 700, lineHeight: 1.25, marginBottom: '1rem', letterSpacing: '-0.01em' }}
+                                            className="group-hover:text-blue-700 transition-colors">
+                                            {lang === 'KR' ? mainColumn.titleKr : mainColumn.titleEn}
                                         </h3>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* ── SECTION 2: New Korean Products (Free) ───────────────── */}
-                <section className="bg-white py-20" style={{ borderTop: '1px solid #e8e5e1' }}>
-                    <div className="max-w-[1440px] mx-auto px-6 md:px-10">
-
-                        {/* Section header */}
-                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-                            <div>
-                                <div className="flex items-center gap-3 mb-3">
-                                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-700 rounded-full text-[10px] font-black uppercase tracking-widest border border-green-100">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                        {t("Free", "무료")}
-                                    </span>
-                                </div>
-                                <h2 className="text-3xl md:text-4xl font-black text-[#1c1c1a] tracking-tight leading-tight">
-                                    {t("New Korean Products", "한국 신상품 소개")}
-                                </h2>
-                                <p className="text-[#747878] mt-2 text-base font-medium">
-                                    {t("The latest drops from Korea's most exciting brands, curated daily.", "매일 업데이트되는 한국 브랜드의 새로운 제품들을 무료로 만나보세요.")}
-                                </p>
-                            </div>
-                            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#747878] whitespace-nowrap">
-                                <Sparkles className="w-3.5 h-3.5" />
-                                {t("Updated Daily", "매일 업데이트")}
-                            </span>
-                        </div>
-
-                        {/* Product grid */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                            {newProducts.map((product) => (
-                                <div key={product.id} className="group cursor-default">
-                                    <div className="relative aspect-[3/4] bg-[#f6f3ef] rounded-xl overflow-hidden mb-3 border border-[#e8e5e1]">
-                                        <img
-                                            src={product.img}
-                                            alt={product.name}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                        />
-                                        <div className="absolute top-3 left-3 px-2 py-0.5 bg-white/90 backdrop-blur rounded-full text-[8px] font-black uppercase tracking-wide text-[#1c1c1a]">
-                                            {lang === 'KR' ? product.categoryKr : product.category}
+                                        <p style={{ color: '#64748b', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                                            {mainColumn.desc}
+                                        </p>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '9px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#94a3b8' }}>
+                                            <span>By {mainColumn.author}</span>
+                                            <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                                            <span>{mainColumn.readTime}</span>
+                                            <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                                            <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#1111d4' }}>
+                                                <Lock style={{ width: '10px', height: '10px' }} />
+                                                Premium
+                                            </span>
                                         </div>
                                     </div>
-                                    <p className="text-[9px] font-black uppercase tracking-widest text-[#747878] mb-0.5">{product.brand}</p>
-                                    <h4 className="text-sm font-black text-[#1c1c1a] leading-tight group-hover:text-[#5d1a1a] transition-colors">
-                                        {lang === 'KR' ? product.nameKr : product.name}
-                                    </h4>
-                                    <p className="text-[10px] text-[#c4c7c7] font-medium mt-0.5">{product.date}</p>
+                                </Link>
+
+                                {/* Side columns (4 cols) */}
+                                <div style={{ gridColumn: 'span 4', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                                    {sideColumns.map(col => (
+                                        <Link to={`/space/${col.slug}`} key={col.slug} style={{ textDecoration: 'none', color: 'inherit' }} className="group cursor-pointer">
+                                            <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden', borderRadius: '1rem', marginBottom: '1.25rem' }}>
+                                                <img
+                                                    src={col.img}
+                                                    alt={col.titleEn}
+                                                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }}
+                                                    className="group-hover:scale-110"
+                                                />
+                                            </div>
+                                            <h4 style={{ fontFamily: 'Georgia, ui-serif, serif', fontSize: '1.125rem', fontWeight: 700, marginBottom: '0.5rem', lineHeight: 1.3 }}
+                                                className="group-hover:text-blue-700 transition-colors">
+                                                {lang === 'KR' ? col.titleKr : col.titleEn}
+                                            </h4>
+                                            <p style={{ color: '#94a3b8', fontSize: '0.75rem', lineHeight: 1.6, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                                                {lang === 'KR' ? col.descKr : col.descEn}
+                                            </p>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ── Pillar 2: New Korean Products (Free) ────────────────── */}
+                <section style={{ padding: '6rem 0', backgroundColor: '#f8fafc' }}>
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+                        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                            <p style={{ fontSize: '11px', fontWeight: 700, color: '#1111d4', letterSpacing: '0.5em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>KULT Insider</p>
+                            <h2 style={{ fontFamily: 'Georgia, ui-serif, serif', fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 700, color: '#0d0d0d', letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>
+                                {t('New Product News', '신상품 뉴스')}
+                            </h2>
+                            <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#94a3b8' }}>
+                                {t('The Curated Release Radar: Beauty, Lifestyle & Fashion', '큐레이티드 릴리즈 레이더: 뷰티, 라이프스타일 & 패션')}
+                            </p>
+                        </div>
+
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
+                            {products.map(product => (
+                                <div key={product.id} className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500" style={{ padding: '8px', borderRadius: '1rem' }}>
+                                    <div style={{ position: 'relative', aspectRatio: '1/1', overflow: 'hidden', borderRadius: '0.75rem', backgroundColor: '#f1f5f9', marginBottom: '1.25rem' }}>
+                                        <img
+                                            src={product.img}
+                                            alt={product.nameEn}
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                                            className="group-hover:scale-110"
+                                        />
+                                        <div style={{ position: 'absolute', top: '12px', right: '12px', backgroundColor: '#1111d4', color: '#fff', fontSize: '8px', fontWeight: 700, padding: '4px 8px', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
+                                            New Drop
+                                        </div>
+                                    </div>
+                                    <div style={{ padding: '0 12px 16px' }}>
+                                        <p style={{ fontSize: '9px', fontWeight: 700, color: '#1111d4', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '6px' }}>{product.brand}</p>
+                                        <h4 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0d0d0d', marginBottom: '8px', lineHeight: 1.4 }}>
+                                            {lang === 'KR' ? product.nameKr : product.nameEn}
+                                        </h4>
+                                        <p style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.6, marginBottom: '1rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                                            {lang === 'KR' ? product.descKr : product.descEn}
+                                        </p>
+                                        <button style={{ width: '100%', padding: '10px 0', border: '1px solid #e2e8f0', fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', background: 'transparent', cursor: 'pointer', transition: 'all 0.2s' }}
+                                            className="hover:bg-slate-900 hover:text-white hover:border-slate-900">
+                                            {t('Explore News', '뉴스 보기')}
+                                        </button>
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* ── SUBSCRIPTION CTA ────────────────────────────────────── */}
-                <section className="bg-[#1c1c1a] py-24" style={{ borderTop: '1px solid #2a2a28' }}>
-                    <div className="max-w-3xl mx-auto px-6 text-center">
-                        <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#747878] mb-6">KULT Membership</p>
-                        <h2 className="text-4xl md:text-6xl font-black text-white leading-none tracking-tight uppercase mb-6">
-                            {t("Read deeper.", "더 깊이 읽으세요.")}
+                {/* ── Newsletter CTA ─────────────────────────────────────── */}
+                <section style={{ padding: '6rem 0', backgroundColor: '#fff', borderTop: '1px solid #f1f5f9', borderBottom: '1px solid #f1f5f9' }}>
+                    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+                        <h2 style={{ fontFamily: 'Georgia, ui-serif, serif', fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, color: '#0d0d0d', marginBottom: '1rem' }}>
+                            {t('Join the KULT Transmission', 'KULT 트랜스미션에 합류하세요')}
                         </h2>
-                        <p className="text-[#747878] text-lg font-light mb-10 leading-relaxed">
-                            {t(
-                                "Unlock all brand columns and spaces. Premium content, curated for those who want to understand Korea beyond the surface.",
-                                "모든 브랜드 칼럼과 공간 스토리를 열람하세요. 한국의 표면 너머를 알고 싶은 사람들을 위한 프리미엄 콘텐츠입니다."
-                            )}
+                        <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#94a3b8', marginBottom: '3rem' }}>
+                            {t('Receive weekly editorial dossiers on Korea\'s rising spaces and brands.', '한국의 떠오르는 공간과 브랜드에 대한 주간 에디토리얼 도시에를 받아보세요.')}
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                to="/subscribe"
-                                className="px-10 py-4 bg-white text-[#1c1c1a] rounded-full font-black text-xs uppercase tracking-widest hover:bg-[#fcf9f5] transition-colors"
-                            >
-                                {t("Subscribe — ₩9,900/mo", "구독하기 — ₩9,900/월")}
-                            </Link>
-                            <Link
-                                to="/subscribe"
-                                className="px-10 py-4 border border-white/20 text-white rounded-full font-black text-xs uppercase tracking-widest hover:border-white/60 transition-colors"
-                            >
-                                {t("Buy Credits", "크레딧 구매")}
-                            </Link>
+                        <div style={{ maxWidth: '420px', margin: '0 auto', display: 'flex', gap: '8px', padding: '6px', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '9999px' }}>
+                            <input
+                                type="email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                placeholder={t('Terminal ID (Email)', '이메일')}
+                                style={{ flex: 1, backgroundColor: 'transparent', border: 'none', outline: 'none', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', padding: '0 1.5rem', height: '48px', color: '#0d0d0d' }}
+                            />
+                            <button style={{ backgroundColor: '#1111d4', color: '#fff', fontWeight: 700, padding: '0 2rem', borderRadius: '9999px', height: '48px', border: 'none', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.15em', cursor: 'pointer', transition: 'background 0.2s' }}
+                                className="hover:bg-slate-900">
+                                {t('Subscribe', '구독')}
+                            </button>
                         </div>
+                        <p style={{ marginTop: '1rem', fontSize: '9px', color: '#cbd5e1', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                            {t('Or', '또는')} <Link to="/subscribe" style={{ color: '#1111d4', textDecoration: 'none', fontWeight: 700 }}>{t('start a membership', '멤버십 시작하기')}</Link> {t('for full access.', '전체 접근권을 얻으세요.')}
+                        </p>
                     </div>
                 </section>
             </main>
 
-            {/* ── FOOTER ───────────────────────────────────────────────── */}
-            <footer className="bg-[#fcf9f5]" style={{ borderTop: '1px solid #e8e5e1' }}>
-                <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-16 grid grid-cols-2 md:grid-cols-4 gap-12">
-                    <div className="col-span-2 md:col-span-1">
-                        <div className="flex items-center gap-2 mb-4">
-                            <Orbit className="w-6 h-6 text-[#1c1c1a]" strokeWidth={1.5} />
-                            <span className="font-black text-xl tracking-tighter text-[#1c1c1a]">KULT</span>
+            {/* ── Footer ───────────────────────────────────────────────── */}
+            <footer style={{ backgroundColor: '#fff', paddingTop: '5rem', paddingBottom: '2rem' }}>
+                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '3rem', paddingBottom: '3rem', borderBottom: '1px solid #f1f5f9' }}>
+                    <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1.5rem', color: '#1111d4' }}>
+                            <Orbit strokeWidth={1.5} style={{ width: '24px', height: '24px' }} />
+                            <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.05em', color: '#0d0d0d' }}>KULT</span>
                         </div>
-                        <p className="text-sm text-[#747878] leading-relaxed font-light">
-                            {t("Curating the soul of Korea — brands, spaces, and new discoveries.", "한국의 브랜드, 공간, 그리고 새로운 발견을 큐레이팅합니다.")}
+                        <p style={{ fontSize: '0.75rem', color: '#94a3b8', lineHeight: 1.7, maxWidth: '200px', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                            {t('A premium editorial platform curating the modern Korean identity.', '현대 한국의 정체성을 큐레이팅하는 프리미엄 에디토리얼 플랫폼.')}
                         </p>
                     </div>
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-[#1c1c1a] mb-5">{t("Content", "콘텐츠")}</h4>
-                        <ul className="space-y-3 text-sm text-[#747878]">
-                            <li><Link to="/subscribe" className="hover:text-[#1c1c1a] transition-colors">{t("Brand Columns", "브랜드 칼럼")}</Link></li>
-                            <li><span className="cursor-default">{t("New Products", "신상품")}</span></li>
-                            <li><Link to="/subscribe" className="hover:text-[#1c1c1a] transition-colors">{t("Subscribe", "구독하기")}</Link></li>
+                        <h4 style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '2rem', color: '#0d0d0d' }}>Platform</h4>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            {[t('Space Columns', '공간 칼럼'), t('Product News', '신상품 뉴스'), t('Brand Directory', '브랜드 디렉토리')].map(item => (
+                                <li key={item}><span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#94a3b8', cursor: 'default' }}>{item}</span></li>
+                            ))}
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-[#1c1c1a] mb-5">{t("Company", "회사")}</h4>
-                        <ul className="space-y-3 text-sm text-[#747878]">
-                            <li><span className="cursor-default">{t("About", "소개")}</span></li>
-                            <li><span className="cursor-default">{t("Privacy", "개인정보")}</span></li>
-                            <li><span className="cursor-default">{t("Terms", "이용약관")}</span></li>
+                        <h4 style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '2rem', color: '#0d0d0d' }}>Magazine</h4>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            {[t('About KULT', 'KULT 소개'), t('Editorial Team', '에디토리얼 팀'), t('Contact', '문의')].map(item => (
+                                <li key={item}><span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#94a3b8', cursor: 'default' }}>{item}</span></li>
+                            ))}
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-[#1c1c1a] mb-5">Social</h4>
-                        <div className="flex gap-3">
-                            <span className="w-10 h-10 rounded-full border border-[#e8e5e1] flex items-center justify-center hover:border-[#1c1c1a] transition-colors cursor-default">
-                                <Instagram className="w-4 h-4 text-[#747878]" strokeWidth={1.5} />
-                            </span>
-                            <span className="w-10 h-10 rounded-full border border-[#e8e5e1] flex items-center justify-center hover:border-[#1c1c1a] transition-colors cursor-default">
-                                <Globe className="w-4 h-4 text-[#747878]" strokeWidth={1.5} />
-                            </span>
+                        <h4 style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '2rem', color: '#0d0d0d' }}>Social</h4>
+                        <div style={{ display: 'flex', gap: '0.75rem' }}>
+                            {[Instagram, Globe].map((Icon, i) => (
+                                <span key={i} style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'default' }}
+                                    className="hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all">
+                                    <Icon strokeWidth={1.5} style={{ width: '16px', height: '16px', color: '#64748b' }} />
+                                </span>
+                            ))}
                         </div>
                     </div>
                 </div>
-                <div className="max-w-[1440px] mx-auto px-6 md:px-10 pb-8" style={{ borderTop: '1px solid #e8e5e1', paddingTop: '2rem' }}>
-                    <p className="text-[10px] text-[#c4c7c7] font-medium uppercase tracking-widest">
-                        © 2024 KULT Media. {t("All rights reserved.", "All rights reserved.")}
+                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '2rem 2rem 0', textAlign: 'center' }}>
+                    <p style={{ fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.4em', color: '#cbd5e1' }}>
+                        © 2024 KULT Space & Brand Editorial. Seoul, South Korea.
                     </p>
                 </div>
             </footer>
