@@ -53,15 +53,14 @@ const ProductFeed = ({ t }) => {
                             {t("Discover the latest drops from Korean brands, curated daily.", "매일 업데이트되는 한국 브랜드의 새로운 소식을 무료로 만나보세요.")}
                         </p>
                     </div>
-                    <Link className="flex items-center gap-2 font-bold text-sm text-primary hover:gap-4 transition-all" to="/search">
-                        {t("View all products", "모든 신상품 보기")}
-                        <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    <span className="flex items-center gap-2 font-bold text-sm text-slate-400 uppercase tracking-widest text-xs">
+                        {t("Updated Daily", "매일 업데이트")}
+                    </span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {products.map((product) => (
-                        <Link to={`/search`} key={product.id} className="group block">
+                        <div key={product.id} className="group block cursor-default">
                             <div className="relative aspect-[4/5] bg-slate-50 rounded-2xl overflow-hidden mb-4 border border-slate-100">
                                 <img src={product.img} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-slate-900">
@@ -75,7 +74,7 @@ const ProductFeed = ({ t }) => {
                                 </div>
                                 <h3 className="text-lg font-black text-slate-900 group-hover:text-primary transition-colors">{product.name}</h3>
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
             </div>
