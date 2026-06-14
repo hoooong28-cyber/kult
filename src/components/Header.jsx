@@ -30,8 +30,6 @@ const Header = () => {
                     <div className="flex items-center gap-3 md:gap-10">
                         <nav className="hidden lg:flex items-center gap-10 text-[10px] tracking-[0.2em] uppercase font-bold text-slate-400">
                             <Link className="hover:text-primary transition-all duration-300" to="/">{t("Discover", "디스커버")}</Link>
-                            <Link className="hover:text-primary transition-all duration-300" to="/sectors">{t("Archives", "아카이브")}</Link>
-                            <Link className="hover:text-primary transition-all duration-300" to="/search">{t("Curations", "큐레이션")}</Link>
                             <Link className="hover:text-primary transition-all duration-300" to="/subscribe">{t("Subscribe", "구독하기")}</Link>
                         </nav>
                         <div className="h-4 w-[1px] bg-slate-200 hidden lg:block"></div>
@@ -43,13 +41,6 @@ const Header = () => {
                             >
                                 <Globe className="w-3 h-3" />
                                 <span className="hidden xs:inline">{lang}</span>
-                            </button>
-                            <button
-                                onClick={() => alert(t('KULT GLOBAL HUB: Connection protocol 01-A is being initialized.', 'KULT 글로벌 허브: 접속 프로토콜 01-A 초기화 중입니다.'))}
-                                className="flex items-center gap-2 px-3 md:px-5 py-2.5 bg-slate-900 rounded-full text-[9px] font-black text-white hover:bg-primary transition-all shadow-xl shadow-slate-200 whitespace-nowrap"
-                            >
-                                <span className="hidden sm:inline">{t("GLOBAL HUB", "글로벌 허브")}</span>
-                                <Orbit className="w-3 h-3 sm:hidden" />
                             </button>
                         </div>
                     </div>
