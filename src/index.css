@@ -1,48 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0e0f0f;
+  --color-primary: #1111d4;
   --color-on-primary: #ffffff;
-  --color-primary-container: #242424;
-  --color-on-primary-container: #8c8b8b;
-  --color-secondary: #5e5e5d;
-  --color-tertiary: #5d1a1a;
-  --color-on-tertiary: #ffffff;
-  --color-background: #fcf9f5;
-  --color-on-background: #1c1c1a;
-  --color-surface: #ffffff;
-  --color-outline: #747878;
-  --color-outline-variant: #c4c7c7;
+  --color-background: #ffffff;
+  --color-on-background: #0d0d0d;
+  --color-surface: #f8fafc;
+  --color-outline: #e2e8f0;
 
-  --font-display: "Libre Caslon Text", serif;
-  --font-body: "Source Sans 3", sans-serif;
-  --font-label: "Hanken Grotesk", sans-serif;
-}
-
-/* Fix scroll — Tailwind v4 resets sometimes block overflow */
-html {
-  height: auto;
-  overflow-y: scroll;
-}
-
-body {
-  min-height: 100vh;
-  height: auto;
-  overflow-x: hidden;
-  background-color: var(--color-background);
-  color: var(--color-on-background);
-  font-family: "Hanken Grotesk", sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-#root {
-  min-height: 100vh;
-  height: auto;
-}
-
-::selection {
-  background-color: var(--color-tertiary);
-  color: var(--color-on-tertiary);
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-serif: Georgia, ui-serif, serif;
 }
 
 /* Paywall gradient fade */
@@ -51,7 +18,7 @@ body {
   mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
 }
 
-/* Scrollbar utilities */
+/* Scrollbar utilities — ONLY hide scrollbar on specific elements, never on body/html */
 .hide-scrollbar::-webkit-scrollbar,
 .no-scrollbar::-webkit-scrollbar {
   display: none;
