@@ -6,39 +6,38 @@
   --color-primary-container: #242424;
   --color-on-primary-container: #8c8b8b;
   --color-secondary: #5e5e5d;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #e0dfde;
-  --color-on-secondary-container: #626361;
-  --color-tertiary: #280002;
+  --color-tertiary: #5d1a1a;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #4a0c0e;
-  --color-on-tertiary-container: #cd716c;
   --color-background: #fcf9f5;
   --color-on-background: #1c1c1a;
-  --color-surface: #fcf9f5;
-  --color-on-surface: #1c1c1a;
-  --color-surface-variant: #e5e2de;
-  --color-on-surface-variant: #444748;
+  --color-surface: #ffffff;
   --color-outline: #747878;
   --color-outline-variant: #c4c7c7;
 
-  --font-display-lg: "Libre Caslon Text", serif;
-  --font-display-lg-mobile: "Libre Caslon Text", serif;
-  --font-headline-md: "Libre Caslon Text", serif;
-  --font-headline-sm: "Libre Caslon Text", serif;
-  --font-body-lg: "Source Sans 3", sans-serif;
-  --font-body-md: "Source Sans 3", sans-serif;
-  --font-label-md: "Hanken Grotesk", sans-serif;
-  --font-label-sm: "Hanken Grotesk", sans-serif;
-  
-  --font-display: "Libre Caslon Text", serif; /* Default display font */
+  --font-display: "Libre Caslon Text", serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-label: "Hanken Grotesk", sans-serif;
+}
+
+/* Fix scroll — Tailwind v4 resets sometimes block overflow */
+html {
+  height: auto;
+  overflow-y: scroll;
 }
 
 body {
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
   background-color: var(--color-background);
   color: var(--color-on-background);
-  font-family: var(--font-body-md);
+  font-family: "Hanken Grotesk", sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  height: auto;
 }
 
 ::selection {
@@ -46,24 +45,18 @@ body {
   color: var(--color-on-tertiary);
 }
 
-.mask-image-gradient {
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+/* Paywall gradient fade */
+.paywall-fade {
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
+/* Scrollbar utilities */
+.hide-scrollbar::-webkit-scrollbar,
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
+.hide-scrollbar,
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
