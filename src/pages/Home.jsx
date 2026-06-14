@@ -1,262 +1,363 @@
-import { useState, useRef, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { Search, MapPin, Star, Sparkles, ChevronLeft, ChevronRight, ArrowRight, Coffee, Landmark, ShoppingBag, Globe, Orbit, LayoutGrid, Map, Instagram } from 'lucide-react'
-import UserNav from '../components/UserNav'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Lock, Sparkles, Globe, Instagram, Orbit, ChevronRight } from 'lucide-react'
 import Header from '../components/Header'
 import { useLanguage } from '../context/LanguageContext'
-import ProductFeed from '../components/ProductFeed'
 
-const editorPicks = [
+// ── Paid Content: Brand Stories & Spaces ──────────────────────────────────────
+const brandColumns = [
     {
-        name: 'Yuyeon Tea House',
-        nameKr: '유연다원',
-        location: 'Gyeongju',
-        locationKr: '경주',
-        badge: 'Heritage',
-        badgeKr: '헤리티지',
-        desc: 'A centuries-old Hanok where the art of tea brewing meets the silence of the surrounding bamboo forest.',
-        descKr: '수백 년 된 한옥에서 차를 우리는 예술과 대나무 숲의 고요함이 만나는 곳입니다.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAOeAEDReiO56NceRRAI74x11UkMAFpLTD8rCqj6Dt1pbF3arduDR00v0-ywXgvJV8TuH-x6mypHbt2yGFcQ2bkNRhYCFDYAUOO5qlimCTFvJ6yeN0tbXXHhSEv1PrWHsrBqlPg5uc11s0eSQEqTMSAMWxqC_IgFTc8TmkBMAh7gQGCkUbfhDSAy7xMO0NrAsZUO0eX83mN83tQ_lxjJMD1S2abzB2uQmcQmRQxtGUs5jIvKhCMXyT_UoSSIcB0hOsDt4_whSqdSjVN'
+        slug: 'void-space',
+        title: '침묵의 건축학',
+        titleEn: 'The Silent Architecture',
+        brand: 'Void Space Seoul',
+        location: '한남 · Seoul',
+        tag: '브랜드 스토리',
+        tagEn: 'Brand Story',
+        img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200',
+        featured: true
     },
     {
-        name: 'Void Space Seoul',
-        nameKr: '보이드 스페이스 서울',
-        location: 'Seoul, Hannam',
-        locationKr: '서울, 한남',
-        badge: 'Culture',
-        badgeKr: '컬처',
-        desc: 'Minimalist architecture hosting experimental digital art exhibitions that define Seoul\'s contemporary pulse.',
-        descKr: '서울의 현대적인 맥박을 정의하는 실험적인 디지털 아트 전시가 열리는 미니멀리즘 건축물입니다.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbwoL1fq_JksuTSIQIDc7aKzarYFCoKXSumbSeFD4TWpCcU4858QFMLYdYebKkiZR2jIFI1Ei9rgbQtdkXOHuljgW7VDJNzMAAwGaKuNkaLY6127SDCwTsk2kK1eC1_tfaDDAJHRQbbplp2pfiNDZuBrLhn6446CsRVlnIdLQvEPy5HilTe6nGGGoNYB8zN6L9ISkrK_tR1jP5sDMbVWukDfDARBmz7zviyycbc2XIbshKwgivg43cPtycFsPWD5743_ye5gxVo3r3'
+        slug: 'yuyeon-tea-house',
+        title: '정적의 예술',
+        titleEn: 'The Art of Stillness',
+        brand: 'Yuyeon Tea House',
+        location: '경주 · Gyeongju',
+        tag: '공간 탐방',
+        tagEn: 'Space',
+        img: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&q=80&w=800'
     },
     {
-        name: 'The Pine Hideaway',
-        nameKr: '소나무 은신처',
-        location: 'Pyeongchang',
-        locationKr: '평창',
-        badge: 'Healing Stay',
-        badgeKr: '힐링 스테이',
-        desc: 'Disconnect to reconnect. A glass-walled sanctuary tucked deep into the cedar forests of Gangwon province.',
-        descKr: '연결을 위해 접속을 끊으세요. 강원도 삼나무 숲 깊은 곳에 자리 잡은 유리벽 안식처입니다.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnz2ezosgYy1InE6M-vxahUlcD39OD0pvgs5qPupHwpGcZr1Ec3pwOUr1T6MSQydMR9XbCIw-loP0wEBYXtYYZjnGpO0K1a9Fhf--q4V1jW4KyxHNuX1p_Vuu749zGUQFvrKBVkUPN9YNv68yqozKkH86YlL2rpXyYlUXDAjM06W0X1bj6Yg-W6I2PdqzKRbR4-IpYDyvAqljF9nR-t6_JiBngrHivGFtmfN0OI1KLc_Vv_rttoDWEFpYL6tZKE1TwFmhMig6L_y3U'
+        slug: 'pine-hideaway',
+        title: '철학으로서의 숲',
+        titleEn: 'Forest as Philosophy',
+        brand: 'The Pine Hideaway',
+        location: '평창 · Pyeongchang',
+        tag: '헤리티지',
+        tagEn: 'Heritage',
+        img: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800'
     }
 ]
 
-const trendingSpaces = [
-    { name: 'Gaeul Coffee', nameKr: '가을 커피', sub: 'Seoul • Cafe', subKr: '서울 • 카페', rating: 4.9, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8hs2GzqCwBkGmzI2aDawlFFh-Y2btSLIoEKU6_lrMlmFIAeRn9pDsbW6_jRZ5ZChCQHFg53ONbi7_mawIVqbzM0KQBzTbg8D6YgNxWaP995MWHtBDKd1o9JGRYe9Q4m-LlfYUsYzVRFNDa1-5piIObKG57PxGHPfhkXuySAh9nwEGmM6FhL_gdNBaMNQ9JrxFZjAXLY9rlA4cu2Ugn3evEZkvOQWj6Ud6-AFQ48cDmCQbfnWmHJo7HMh-_AzGNe2Cb2vcqzp1XTmw' },
-    { name: 'Wave House', nameKr: '웨이브 하우스', sub: 'Busan • Stay', subKr: '부산 • 스테이', rating: 4.8, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCwR9B6yUh8_mTQDz3ukNqLmek6Nt6NUTWGxbmf1jxPDswxuV_aZx7ZqmDIYNqUKKDId3iXnbt5AJusFfmj9xR66QyWpvYsUb3yK6dTM38O1Q234n3QYIxoYbezqq0EfEO37w1Iu8rZ7Hj8BRG2QsE9hTM4Pv1QVHOKC-6IkekSfuv8L3gp5RsCZfbMqs_phA4qcKYCEr_5H2dfkV-u-B8d2-2Y51leMGRTqu8FLohzrjSmy5IQz91fJ097SART9qLwlKgTxMRky5Da' },
-    { name: 'Zen Attic', nameKr: '젠 다락방', sub: 'Jeju • Culture', subKr: '제주 • 컬처', rating: 5.0, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDObeqZadoeKjY0rvNBI7b6xlnW_z1zPjsKyYMGQg9f-elBoWq9bk-Zdaf8S70uqul6HHXJze4n332TbfZGyknUwrkahMNMZuoVTBslFIXnPvUUHmMQrkdmCD5xrZXkhlPF5v71u6Gol-muoQ-OwTaIc4HHbRW77IYLsC7ni6S5seCZ24s1n_Q5LayHdGZX9TPhYeElhp3H0qs8L4qBfXWwUrA7t0iIEhoczzznXmqLu1SFS5kvqJVZ6xVurzIP3hiMmfGoozddHWDS' },
-    { name: 'Neon Library', nameKr: '네온 라이브러리', sub: 'Seoul • Culture', subKr: '서울 • 컬처', rating: 4.7, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBHgCnS8Z0XjYLPwjNsmzPerwPFsLS5TOzybD0zm6Ha-zR4UhusmGnaSIUZZziy3FHZ2ZoXnCPo7AIIoAnU_FdGJedUA5zdwoUe21o_N1GkRmm15grWncJpdqaXwEmHel0zwomIUoNZUiUJURiWi0VuXWlggUPgsL75Txete1kIFfPoa7KkCgOgpAGDbGMtdls-0_q4EdBxpsr1BR-csF-GPuuUo7Jn3Ga6qohnoO65g4bPgUy0gavAcJWEdb80kBY0b-l0QgpCYKcN' }
-]
-
-const destinations = [
-    { value: 'ikseon-dong', label: 'IKSEON-DONG', labelKr: '익선동' },
-    { value: 'gyeongju', label: 'GYEONGJU', labelKr: '경주' },
-    { value: 'seochon', label: 'SEOCHON', labelKr: '서촌' },
-    { value: 'bukchon', label: 'BUKCHON', labelKr: '북촌' },
-]
-
-const categories = [
-    { value: 'cafe', label: 'CAFES', labelKr: '카페' },
-    { value: 'culture', label: 'CULTURE', labelKr: '컬처' },
-    { value: 'stay', label: 'STAY', labelKr: '스테이' },
-    { value: 'retail', label: 'RETAIL', labelKr: '리테일' },
+// ── Free Content: New Korean Products ─────────────────────────────────────────
+const newProducts = [
+    {
+        id: 'p1',
+        brand: 'NONFICTION',
+        name: 'Santal Cream Hand Wash',
+        nameKr: '산탈 크림 핸드워시',
+        category: 'Beauty',
+        categoryKr: '뷰티',
+        date: 'Today',
+        img: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+        id: 'p2',
+        brand: 'Tamburins',
+        name: 'Chamo Perfume Balm',
+        nameKr: '카모 퍼퓸 밤',
+        category: 'Fragrance',
+        categoryKr: '프래그런스',
+        date: 'Today',
+        img: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+        id: 'p3',
+        brand: 'Osoi',
+        name: 'Toni Mini Bag',
+        nameKr: '토니 미니백',
+        category: 'Fashion',
+        categoryKr: '패션',
+        date: 'Yesterday',
+        img: 'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+        id: 'p4',
+        brand: 'Gentle Monster',
+        name: 'Rococo 01',
+        nameKr: '로코코 01',
+        category: 'Eyewear',
+        categoryKr: '아이웨어',
+        date: 'Yesterday',
+        img: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+        id: 'p5',
+        brand: 'Aesop',
+        name: 'Resurrection Aromatique',
+        nameKr: '리서렉션 아로마틱',
+        category: 'Beauty',
+        categoryKr: '뷰티',
+        date: '2 days ago',
+        img: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+        id: 'p6',
+        brand: 'Matin Kim',
+        name: 'Leather Tote Bag',
+        nameKr: '레더 토트백',
+        category: 'Fashion',
+        categoryKr: '패션',
+        date: '2 days ago',
+        img: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=600'
+    }
 ]
 
 const Home = () => {
-    const navigate = useNavigate()
-    const { t } = useLanguage()
-    const [destination, setDestination] = useState(destinations[0])
-    const [category, setCategory] = useState(categories[0])
-    const [destOpen, setDestOpen] = useState(false)
-    const [catOpen, setCatOpen] = useState(false)
-    const scrollRef = useRef(null)
-    const destRef = useRef(null)
-    const catRef = useRef(null)
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (destRef.current && !destRef.current.contains(event.target)) setDestOpen(false)
-            if (catRef.current && !catRef.current.contains(event.target)) setCatOpen(false)
-        }
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => document.removeEventListener('mousedown', handleClickOutside)
-    }, [])
-
-    const handleExplore = () => {
-        navigate(`/search/${destination.value}`)
-    }
-
-    const scrollTrending = (dir) => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: dir * 300, behavior: 'smooth' })
-        }
-    }
+    const { t, lang } = useLanguage()
+    const [email, setEmail] = useState('')
+    const featured = brandColumns[0]
+    const rest = brandColumns.slice(1)
 
     return (
-        <div className="bg-slate-50 text-slate-800 antialiased selection:bg-primary selection:text-white min-h-screen font-display">
+        <div style={{ minHeight: '100vh' }}>
             <Header />
 
             <main>
-                {/* Longblack-style Hero Section: Today's Paid Column */}
-                <section className="relative w-full min-h-[85vh] flex items-center justify-center bg-slate-950 overflow-hidden group">
-                    <div className="absolute inset-0 z-0">
-                        <img 
-                            alt="Column Cover" 
-                            className="w-full h-full object-cover opacity-40 group-hover:opacity-50 group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0" 
-                            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000" 
+                {/* ── HERO: Featured Premium Column ────────────────────────── */}
+                <section className="relative w-full bg-[#0d0d0d] overflow-hidden" style={{ minHeight: '90vh' }}>
+                    {/* Background image */}
+                    <div className="absolute inset-0">
+                        <img
+                            src={featured.img}
+                            alt={featured.titleEn}
+                            className="w-full h-full object-cover opacity-35"
+                            style={{ objectPosition: 'center' }}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-10"></div>
+                        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0d0d0d 40%, rgba(13,13,13,0.4) 100%)' }} />
                     </div>
-                    
-                    <div className="relative z-20 text-center px-6 w-full max-w-[1000px] mx-auto mt-20">
-                        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 border border-primary/30 bg-primary/10 backdrop-blur-md rounded-full mb-8">
-                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-primary">
-                                {t("Today's Deep Dive", "오늘의 심층 칼럼")}
-                            </span>
-                        </div>
-                        
-                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase mb-6 font-display">
-                            {t("The Silent Architecture", "침묵의 건축학")}
-                        </h1>
-                        <h2 className="text-xl md:text-3xl text-slate-300 font-medium tracking-tight mb-10 max-w-3xl mx-auto">
-                            {t("How modern Korean spaces are redefining emptiness.", "현대 한국의 공간들이 비어있음을 재정의하는 방법")}
-                        </h2>
-                        
-                        <p className="text-sm text-slate-400 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-                            {t("In the heart of Seongsu, a new architectural movement is brewing. We sat down with the visionary behind Void Space Seoul to discuss why the absence of elements speaks louder than their presence.", "성수동 중심부에서 새로운 건축적 움직임이 일고 있습니다. 보이드 스페이스 서울의 설립자를 만나 요소의 부재가 존재보다 더 큰 울림을 주는 이유에 대해 이야기를 나눴습니다.")}
-                        </p>
-                        
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link to="/space/void-space" className="w-full sm:w-auto px-10 py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-colors">
-                                {t("Read Full Column", "칼럼 전체 읽기")}
-                            </Link>
-                            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                                {t("Requires Membership", "멤버십 필요")}
-                            </span>
+
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-col justify-end" style={{ minHeight: '90vh', padding: '0 2.5rem 5rem' }}>
+                        <div className="max-w-4xl">
+                            {/* Badge */}
+                            <div className="flex items-center gap-3 mb-6">
+                                <span className="inline-flex items-center gap-2 px-3 py-1.5 border border-white/20 rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-white/60">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse" />
+                                    {t("Today's Column", "오늘의 칼럼")}
+                                </span>
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#5d1a1a] rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-white">
+                                    <Lock className="w-2.5 h-2.5" />
+                                    Premium
+                                </span>
+                            </div>
+
+                            {/* Title */}
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tight mb-4 uppercase">
+                                {lang === 'KR' ? featured.title : featured.titleEn}
+                            </h1>
+                            <p className="text-white/50 text-base md:text-lg font-medium mb-2 tracking-wide">
+                                {featured.brand} · {featured.location}
+                            </p>
+                            <p className="text-white/60 text-base md:text-xl max-w-2xl mb-10 leading-relaxed font-light">
+                                {t(
+                                    "In the heart of Hannam, a new architectural philosophy is quietly taking root. We sat down with the visionary behind Void Space Seoul.",
+                                    "한남동 중심부에서, 새로운 건축 철학이 조용히 뿌리내리고 있습니다. 보이드 스페이스 서울의 설립자를 만났습니다."
+                                )}
+                            </p>
+
+                            {/* CTA */}
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                                <Link
+                                    to={`/space/${featured.slug}`}
+                                    className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0d0d0d] rounded-full font-black text-xs uppercase tracking-widest hover:bg-[#fcf9f5] transition-colors"
+                                >
+                                    {t("Read Full Column", "칼럼 읽기")}
+                                    <ArrowRight className="w-4 h-4" />
+                                </Link>
+                                <Link
+                                    to="/subscribe"
+                                    className="inline-flex items-center gap-2 text-white/50 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors"
+                                >
+                                    {t("Requires membership", "멤버십 필요")}
+                                    <ChevronRight className="w-3.5 h-3.5" />
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <ProductFeed t={t} />
-
-                {/* Recent Columns Grid */}
-                <section className="py-24 bg-[#fcf9f5] border-t border-slate-100 text-left">
+                {/* ── SECTION 1: Brand Stories & Spaces (Premium) ─────────── */}
+                <section className="bg-[#fcf9f5] py-20" style={{ borderTop: '1px solid #e8e5e1' }}>
                     <div className="max-w-[1440px] mx-auto px-6 md:px-10">
-                        <div className="flex justify-between items-end mb-12">
+
+                        {/* Section header */}
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                             <div>
-                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-primary/20">
-                                    Premium Columns
+                                <div className="flex items-center gap-3 mb-3">
+                                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#5d1a1a]/10 text-[#5d1a1a] rounded-full text-[10px] font-black uppercase tracking-widest border border-[#5d1a1a]/20">
+                                        <Lock className="w-2.5 h-2.5" />
+                                        {t("Premium", "유료")}
+                                    </span>
                                 </div>
-                                <h3 className="text-3xl font-black text-slate-900 uppercase tracking-tighter">
-                                    {t("Recent Deep Dives", "최신 심층 칼럼")}
-                                </h3>
-                                <p className="mt-2 text-slate-500 font-medium">
-                                    {t("Unlock exclusive access to in-depth brand stories.", "멤버십으로 브랜드의 깊은 이야기를 만나보세요.")}
+                                <h2 className="text-3xl md:text-4xl font-black text-[#1c1c1a] tracking-tight leading-tight">
+                                    {t("Brand Stories & Spaces", "브랜드 히스토리 & 공간")}
+                                </h2>
+                                <p className="text-[#747878] mt-2 text-base font-medium">
+                                    {t("In-depth columns on Korea's most compelling brands and their spaces.", "한국의 주목할 브랜드와 그들의 공간을 깊이 있게 탐구합니다.")}
                                 </p>
                             </div>
-                            <Link to="/subscribe" className="hidden md:flex items-center gap-2 font-black text-xs text-primary uppercase tracking-widest hover:gap-4 transition-all border border-primary/30 px-6 py-3 rounded-full">
-                                {t("Subscribe", "구독하기")} →
+                            <Link to="/subscribe" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#1c1c1a] border border-[#c4c7c7] px-6 py-3 rounded-full hover:border-[#1c1c1a] transition-colors whitespace-nowrap">
+                                {t("All Columns", "전체 칼럼")} →
                             </Link>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {[
-                                {
-                                    slug: 'void-space',
-                                    title: t('The Silent Architecture', '침묵의 건축학'),
-                                    sub: t('Void Space Seoul · Hannam', '보이드 스페이스 서울 · 한남'),
-                                    img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800'
-                                },
-                                {
-                                    slug: 'yuyeon-tea-house',
-                                    title: t('The Art of Stillness', '정적의 예술'),
-                                    sub: t('Yuyeon Tea House · Gyeongju', '유연다원 · 경주'),
-                                    img: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&q=80&w=800'
-                                },
-                                {
-                                    slug: 'pine-hideaway',
-                                    title: t('Forest as Philosophy', '철학으로서의 숲'),
-                                    sub: t('The Pine Hideaway · Pyeongchang', '소나무 은신처 · 평창'),
-                                    img: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800'
-                                }
-                            ].map((col) => (
-                                <Link to={`/space/${col.slug}`} key={col.slug} className="group block">
-                                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-slate-100">
-                                        <img src={col.img} alt={col.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                                        <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-white">
-                                            Premium
-                                        </div>
+
+                        {/* Column cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {rest.map((col) => (
+                                <Link to={`/space/${col.slug}`} key={col.slug} className="group block bg-white rounded-2xl overflow-hidden border border-[#e8e5e1] hover:border-[#c4c7c7] hover:shadow-lg transition-all duration-500">
+                                    <div className="relative aspect-[16/9] overflow-hidden">
+                                        <img
+                                            src={col.img}
+                                            alt={col.titleEn}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                                        <span className="absolute top-4 left-4 px-3 py-1 bg-[#5d1a1a] text-white rounded-full text-[9px] font-black uppercase tracking-widest">
+                                            {lang === 'KR' ? col.tag : col.tagEn}
+                                        </span>
+                                        <span className="absolute top-4 right-4 w-8 h-8 bg-white/90 backdrop-blur rounded-full flex items-center justify-center">
+                                            <Lock className="w-3.5 h-3.5 text-[#1c1c1a]" />
+                                        </span>
                                     </div>
-                                    <h4 className="text-xl font-black text-slate-900 group-hover:text-primary transition-colors tracking-tight mb-1">{col.title}</h4>
-                                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{col.sub}</p>
+                                    <div className="p-6">
+                                        <p className="text-[10px] font-black uppercase tracking-widest text-[#747878] mb-2">{col.brand} · {col.location}</p>
+                                        <h3 className="text-xl font-black text-[#1c1c1a] tracking-tight group-hover:text-[#5d1a1a] transition-colors">
+                                            {lang === 'KR' ? col.title : col.titleEn}
+                                        </h3>
+                                    </div>
                                 </Link>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* CTA Section */}
-                <section className="py-28 bg-slate-900 relative overflow-hidden text-left md:text-center">
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4" />
-                    <div className="max-w-7xl mx-auto px-4 relative z-10">
-                        <h3 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter uppercase">{t("SYNC WITH THE NEW KOREA.", "새로운 한국과 싱크하십시오.")}</h3>
-                        <p className="text-[11px] font-bold tracking-[0.4em] uppercase text-primary mb-14 drop-shadow-sm">
-                            {t("Receive encrypted transmission of the best hidden spaces.", "대한민국 최고의 히든 스페이스를 암호화된 전송으로 받아보세요.")}
+                {/* ── SECTION 2: New Korean Products (Free) ───────────────── */}
+                <section className="bg-white py-20" style={{ borderTop: '1px solid #e8e5e1' }}>
+                    <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+
+                        {/* Section header */}
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                            <div>
+                                <div className="flex items-center gap-3 mb-3">
+                                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-700 rounded-full text-[10px] font-black uppercase tracking-widest border border-green-100">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                                        {t("Free", "무료")}
+                                    </span>
+                                </div>
+                                <h2 className="text-3xl md:text-4xl font-black text-[#1c1c1a] tracking-tight leading-tight">
+                                    {t("New Korean Products", "한국 신상품 소개")}
+                                </h2>
+                                <p className="text-[#747878] mt-2 text-base font-medium">
+                                    {t("The latest drops from Korea's most exciting brands, curated daily.", "매일 업데이트되는 한국 브랜드의 새로운 제품들을 무료로 만나보세요.")}
+                                </p>
+                            </div>
+                            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#747878] whitespace-nowrap">
+                                <Sparkles className="w-3.5 h-3.5" />
+                                {t("Updated Daily", "매일 업데이트")}
+                            </span>
+                        </div>
+
+                        {/* Product grid */}
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                            {newProducts.map((product) => (
+                                <div key={product.id} className="group cursor-default">
+                                    <div className="relative aspect-[3/4] bg-[#f6f3ef] rounded-xl overflow-hidden mb-3 border border-[#e8e5e1]">
+                                        <img
+                                            src={product.img}
+                                            alt={product.name}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                        <div className="absolute top-3 left-3 px-2 py-0.5 bg-white/90 backdrop-blur rounded-full text-[8px] font-black uppercase tracking-wide text-[#1c1c1a]">
+                                            {lang === 'KR' ? product.categoryKr : product.category}
+                                        </div>
+                                    </div>
+                                    <p className="text-[9px] font-black uppercase tracking-widest text-[#747878] mb-0.5">{product.brand}</p>
+                                    <h4 className="text-sm font-black text-[#1c1c1a] leading-tight group-hover:text-[#5d1a1a] transition-colors">
+                                        {lang === 'KR' ? product.nameKr : product.name}
+                                    </h4>
+                                    <p className="text-[10px] text-[#c4c7c7] font-medium mt-0.5">{product.date}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ── SUBSCRIPTION CTA ────────────────────────────────────── */}
+                <section className="bg-[#1c1c1a] py-24" style={{ borderTop: '1px solid #2a2a28' }}>
+                    <div className="max-w-3xl mx-auto px-6 text-center">
+                        <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#747878] mb-6">KULT Membership</p>
+                        <h2 className="text-4xl md:text-6xl font-black text-white leading-none tracking-tight uppercase mb-6">
+                            {t("Read deeper.", "더 깊이 읽으세요.")}
+                        </h2>
+                        <p className="text-[#747878] text-lg font-light mb-10 leading-relaxed">
+                            {t(
+                                "Unlock all brand columns and spaces. Premium content, curated for those who want to understand Korea beyond the surface.",
+                                "모든 브랜드 칼럼과 공간 스토리를 열람하세요. 한국의 표면 너머를 알고 싶은 사람들을 위한 프리미엄 콘텐츠입니다."
+                            )}
                         </p>
-                        <div className="max-w-md mx-auto flex gap-3 p-2 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-xl focus-within:border-primary focus-within:bg-white/10 transition-all shadow-2xl">
-                            <input className="flex-1 bg-transparent border-none text-white placeholder:text-slate-500 text-xs font-bold uppercase tracking-widest px-6 focus:ring-0 h-14 md:h-16" placeholder={t("Terminal ID (Email)", "터미널 ID (이메일)")} type="email" />
-                            <button className="bg-primary text-white font-black px-10 rounded-xl hover:brightness-125 transition-all h-14 md:h-16 shadow-[0_10px_30px_rgba(17,17,212,0.4)] text-xs uppercase tracking-widest cursor-pointer">{t("Connect", "접속하기")}</button>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link
+                                to="/subscribe"
+                                className="px-10 py-4 bg-white text-[#1c1c1a] rounded-full font-black text-xs uppercase tracking-widest hover:bg-[#fcf9f5] transition-colors"
+                            >
+                                {t("Subscribe — ₩9,900/mo", "구독하기 — ₩9,900/월")}
+                            </Link>
+                            <Link
+                                to="/subscribe"
+                                className="px-10 py-4 border border-white/20 text-white rounded-full font-black text-xs uppercase tracking-widest hover:border-white/60 transition-colors"
+                            >
+                                {t("Buy Credits", "크레딧 구매")}
+                            </Link>
                         </div>
                     </div>
                 </section>
             </main>
 
-            {/* Footer */}
-            <footer className="bg-white border-t border-slate-100 py-20 text-left">
-                <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-16">
-                    <div>
-                        <div className="flex items-center gap-2 text-primary mb-8">
-                            <Orbit className="w-7 h-7" strokeWidth={1.5} />
-                            <h2 className="text-2xl font-black tracking-tighter text-slate-900">KULT</h2>
+            {/* ── FOOTER ───────────────────────────────────────────────── */}
+            <footer className="bg-[#fcf9f5]" style={{ borderTop: '1px solid #e8e5e1' }}>
+                <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-16 grid grid-cols-2 md:grid-cols-4 gap-12">
+                    <div className="col-span-2 md:col-span-1">
+                        <div className="flex items-center gap-2 mb-4">
+                            <Orbit className="w-6 h-6 text-[#1c1c1a]" strokeWidth={1.5} />
+                            <span className="font-black text-xl tracking-tighter text-[#1c1c1a]">KULT</span>
                         </div>
-                        <p className="text-sm text-slate-500 leading-relaxed max-w-xs font-light">
-                            {t("Curating the most authentic and modern Korean experiences for the discerning global traveler.", "전 세계 여행자들을 위해 가장 정통적이고 현대적인 한국의 경험을 큐레이팅합니다.")}
+                        <p className="text-sm text-[#747878] leading-relaxed font-light">
+                            {t("Curating the soul of Korea — brands, spaces, and new discoveries.", "한국의 브랜드, 공간, 그리고 새로운 발견을 큐레이팅합니다.")}
                         </p>
                     </div>
                     <div>
-                        <h4 className="font-bold text-xs uppercase tracking-[0.3em] mb-8 text-slate-900">{t("Explore", "탐험")}</h4>
-                        <ul className="space-y-5 text-sm text-slate-500">
-                            <li><span className="hover:text-primary transition-all duration-300">{t("Featured Cafes", "주요 카페")}</span></li>
-                            <li><span className="hover:text-primary transition-all duration-300">{t("Boutique Stays", "부티크 스테이")}</span></li>
-                            <li><span className="hover:text-primary transition-all duration-300">{t("Cultural Landmarks", "문화 랜드마크")}</span></li>
-                            <li><span className="hover:text-primary transition-all duration-300">{t("Concept Stores", "컨셉 스토어")}</span></li>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-[#1c1c1a] mb-5">{t("Content", "콘텐츠")}</h4>
+                        <ul className="space-y-3 text-sm text-[#747878]">
+                            <li><Link to="/subscribe" className="hover:text-[#1c1c1a] transition-colors">{t("Brand Columns", "브랜드 칼럼")}</Link></li>
+                            <li><span className="cursor-default">{t("New Products", "신상품")}</span></li>
+                            <li><Link to="/subscribe" className="hover:text-[#1c1c1a] transition-colors">{t("Subscribe", "구독하기")}</Link></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-bold text-xs uppercase tracking-[0.3em] mb-8 text-slate-900">{t("Support", "지원")}</h4>
-                        <ul className="space-y-5 text-sm text-slate-500">
-                            <li><span className="hover:text-primary transition-all duration-300">{t("Contact Us", "문의하기")}</span></li>
-                            <li><span className="hover:text-primary transition-all duration-300">{t("Privacy Policy", "개인정보 처리방침")}</span></li>
-                            <li><span className="hover:text-primary transition-all duration-300">{t("Terms of Service", "이용약관")}</span></li>
-                            <li><span className="hover:text-primary transition-all duration-300">{t("Partnership", "파트너십")}</span></li>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-[#1c1c1a] mb-5">{t("Company", "회사")}</h4>
+                        <ul className="space-y-3 text-sm text-[#747878]">
+                            <li><span className="cursor-default">{t("About", "소개")}</span></li>
+                            <li><span className="cursor-default">{t("Privacy", "개인정보")}</span></li>
+                            <li><span className="cursor-default">{t("Terms", "이용약관")}</span></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-bold text-xs uppercase tracking-[0.3em] mb-8 text-slate-900">{t("Social", "소셜")}</h4>
-                        <div className="flex gap-5">
-                            <span className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
-                                <Globe className="w-5 h-5" strokeWidth={1.5} />
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-[#1c1c1a] mb-5">Social</h4>
+                        <div className="flex gap-3">
+                            <span className="w-10 h-10 rounded-full border border-[#e8e5e1] flex items-center justify-center hover:border-[#1c1c1a] transition-colors cursor-default">
+                                <Instagram className="w-4 h-4 text-[#747878]" strokeWidth={1.5} />
                             </span>
-                            <span className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
-                                <Instagram className="w-5 h-5" strokeWidth={1.5} />
+                            <span className="w-10 h-10 rounded-full border border-[#e8e5e1] flex items-center justify-center hover:border-[#1c1c1a] transition-colors cursor-default">
+                                <Globe className="w-4 h-4 text-[#747878]" strokeWidth={1.5} />
                             </span>
                         </div>
                     </div>
                 </div>
-                <div className="max-w-7xl mx-auto px-4 mt-20 pt-10 border-t border-slate-50 text-center">
-                    <p className="text-[10px] text-slate-400 font-medium uppercase tracking-[0.2em]">© 2024 KULT. {t("CURATING KOREA'S FUTURE HERITAGE.", "대한민국의 미래 헤리티지를 큐레이팅합니다.")}</p>
+                <div className="max-w-[1440px] mx-auto px-6 md:px-10 pb-8" style={{ borderTop: '1px solid #e8e5e1', paddingTop: '2rem' }}>
+                    <p className="text-[10px] text-[#c4c7c7] font-medium uppercase tracking-widest">
+                        © 2024 KULT Media. {t("All rights reserved.", "All rights reserved.")}
+                    </p>
                 </div>
             </footer>
         </div>
