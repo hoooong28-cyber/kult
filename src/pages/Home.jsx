@@ -172,30 +172,30 @@ const Home = () => {
                     <div>
                         <h4 className="font-bold text-xs uppercase tracking-[0.3em] mb-8 text-slate-900">{t("Explore", "탐험")}</h4>
                         <ul className="space-y-5 text-sm text-slate-500">
-                            <li><Link className="hover:text-primary transition-all duration-300 hover:pl-2" to="/search/ikseon-dong">{t("Featured Cafes", "주요 카페")}</Link></li>
-                            <li><Link className="hover:text-primary transition-all duration-300 hover:pl-2" to="/search/seochon">{t("Boutique Stays", "부티크 스테이")}</Link></li>
-                            <li><Link className="hover:text-primary transition-all duration-300 hover:pl-2" to="/sectors">{t("Cultural Landmarks", "문화 랜드마크")}</Link></li>
-                            <li><Link className="hover:text-primary transition-all duration-300 hover:pl-2" to="/search">{t("Concept Stores", "컨셉 스토어")}</Link></li>
+                            <li><span className="hover:text-primary transition-all duration-300">{t("Featured Cafes", "주요 카페")}</span></li>
+                            <li><span className="hover:text-primary transition-all duration-300">{t("Boutique Stays", "부티크 스테이")}</span></li>
+                            <li><span className="hover:text-primary transition-all duration-300">{t("Cultural Landmarks", "문화 랜드마크")}</span></li>
+                            <li><span className="hover:text-primary transition-all duration-300">{t("Concept Stores", "컨셉 스토어")}</span></li>
                         </ul>
                     </div>
                     <div>
                         <h4 className="font-bold text-xs uppercase tracking-[0.3em] mb-8 text-slate-900">{t("Support", "지원")}</h4>
                         <ul className="space-y-5 text-sm text-slate-500">
-                            <li><a className="hover:text-primary transition-all duration-300 hover:pl-2" href="#">{t("Contact Us", "문의하기")}</a></li>
-                            <li><a className="hover:text-primary transition-all duration-300 hover:pl-2" href="#">{t("Privacy Policy", "개인정보 처리방침")}</a></li>
-                            <li><a className="hover:text-primary transition-all duration-300 hover:pl-2" href="#">{t("Terms of Service", "이용약관")}</a></li>
-                            <li><a className="hover:text-primary transition-all duration-300 hover:pl-2" href="#">{t("Partnership", "파트너십")}</a></li>
+                            <li><span className="hover:text-primary transition-all duration-300">{t("Contact Us", "문의하기")}</span></li>
+                            <li><span className="hover:text-primary transition-all duration-300">{t("Privacy Policy", "개인정보 처리방침")}</span></li>
+                            <li><span className="hover:text-primary transition-all duration-300">{t("Terms of Service", "이용약관")}</span></li>
+                            <li><span className="hover:text-primary transition-all duration-300">{t("Partnership", "파트너십")}</span></li>
                         </ul>
                     </div>
                     <div>
                         <h4 className="font-bold text-xs uppercase tracking-[0.3em] mb-8 text-slate-900">{t("Social", "소셜")}</h4>
                         <div className="flex gap-5">
-                            <a className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm" href="#">
+                            <span className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
                                 <Globe className="w-5 h-5" strokeWidth={1.5} />
-                            </a>
-                            <a className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm" href="#">
+                            </span>
+                            <span className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
                                 <Instagram className="w-5 h-5" strokeWidth={1.5} />
-                            </a>
+                            </span>
                         </div>
                     </div>
                 </div>
