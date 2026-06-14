@@ -141,6 +141,62 @@ const Home = () => {
 
                 <ProductFeed t={t} />
 
+                {/* Recent Columns Grid */}
+                <section className="py-24 bg-[#fcf9f5] border-t border-slate-100 text-left">
+                    <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+                        <div className="flex justify-between items-end mb-12">
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-primary/20">
+                                    Premium Columns
+                                </div>
+                                <h3 className="text-3xl font-black text-slate-900 uppercase tracking-tighter">
+                                    {t("Recent Deep Dives", "최신 심층 칼럼")}
+                                </h3>
+                                <p className="mt-2 text-slate-500 font-medium">
+                                    {t("Unlock exclusive access to in-depth brand stories.", "멤버십으로 브랜드의 깊은 이야기를 만나보세요.")}
+                                </p>
+                            </div>
+                            <Link to="/subscribe" className="hidden md:flex items-center gap-2 font-black text-xs text-primary uppercase tracking-widest hover:gap-4 transition-all border border-primary/30 px-6 py-3 rounded-full">
+                                {t("Subscribe", "구독하기")} →
+                            </Link>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {[
+                                {
+                                    slug: 'void-space',
+                                    title: t('The Silent Architecture', '침묵의 건축학'),
+                                    sub: t('Void Space Seoul · Hannam', '보이드 스페이스 서울 · 한남'),
+                                    img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800'
+                                },
+                                {
+                                    slug: 'yuyeon-tea-house',
+                                    title: t('The Art of Stillness', '정적의 예술'),
+                                    sub: t('Yuyeon Tea House · Gyeongju', '유연다원 · 경주'),
+                                    img: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&q=80&w=800'
+                                },
+                                {
+                                    slug: 'pine-hideaway',
+                                    title: t('Forest as Philosophy', '철학으로서의 숲'),
+                                    sub: t('The Pine Hideaway · Pyeongchang', '소나무 은신처 · 평창'),
+                                    img: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800'
+                                }
+                            ].map((col) => (
+                                <Link to={`/space/${col.slug}`} key={col.slug} className="group block">
+                                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-slate-100">
+                                        <img src={col.img} alt={col.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                                        <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-white">
+                                            Premium
+                                        </div>
+                                    </div>
+                                    <h4 className="text-xl font-black text-slate-900 group-hover:text-primary transition-colors tracking-tight mb-1">{col.title}</h4>
+                                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{col.sub}</p>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* CTA Section */}
                 <section className="py-28 bg-slate-900 relative overflow-hidden text-left md:text-center">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4" />
