@@ -16,6 +16,7 @@ const SpaceDetail = () => {
     const [space, setSpace] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [hasAccess, setHasAccess] = useState(false) // Simulated state for Paywall
 
     useEffect(() => {
         const fetchSpace = async () => {
@@ -134,9 +135,31 @@ const SpaceDetail = () => {
                             <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-8 lowercase tracking-tight">
                                 {t("a story of discovery", "발견의 이야기")}
                             </h2>
-                            <p className="text-lg md:text-xl text-slate-500 leading-[1.7] mb-12 whitespace-pre-wrap font-medium">
-                                {t(space.description, space.descriptionKr || space.description)}
-                            </p>
+                            <div className="relative">
+                                <p className={`text-lg md:text-xl text-slate-500 leading-[1.7] whitespace-pre-wrap font-medium ${!hasAccess ? 'h-64 overflow-hidden mask-image-gradient' : 'mb-12'}`} style={!hasAccess ? { WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)' } : {}}>
+                                    {t(space.description, space.descriptionKr || space.description)}
+                                    {!hasAccess && "\n\n" + t("This space is more than just architecture. We dive deep into the philosophy of its creator...", "이 공간은 단순한 건축물 그 이상입니다. 설립자의 철학과 그 이면에 숨겨진 깊은 이야기를 파헤칩니다...")}
+                                    {!hasAccess && "\n\n" + t("To uncover the full story, the hidden details, and our exclusive interview, unlock this column.", "전체 스토리와 숨겨진 디테일, 그리고 독점 인터뷰를 확인하시려면 이 칼럼을 잠금 해제하세요.")}
+                                </p>
+                            </div>
+
+                            {!hasAccess && (
+                                <div className="bg-slate-50 rounded-[2rem] p-8 md:p-12 text-center border border-primary/20 shadow-xl mb-12 relative overflow-hidden mt-8">
+                                    <div className="absolute top-0 right-0 p-8 opacity-5">
+                                        <Orbit className="w-48 h-48 text-primary" />
+                                    </div>
+                                    <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4 relative z-10">{t("Keep reading this column", "이 칼럼을 계속 읽으시겠어요?")}</h3>
+                                    <p className="text-slate-500 font-medium mb-8 max-w-md mx-auto relative z-10">{t("Join KULT to unlock the full story, exclusive interviews, and spatial insights.", "KULT 멤버십에 가입하고 전체 스토리와 독점 인터뷰를 확인하세요.")}</p>
+                                    <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+                                        <Link to="/subscribe" className="px-8 py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:brightness-110 shadow-lg shadow-primary/30 transition-all">
+                                            {t("Subscribe Now", "멤버십 구독하기")}
+                                        </Link>
+                                        <Link to="/subscribe" className="px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-2xl font-black text-xs uppercase tracking-widest hover:border-slate-900 transition-all">
+                                            {t("Use Credits", "크레딧으로 열람")}
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
 
                             {/* Metadata Row */}
                             <div className="grid grid-cols-1 sm:grid-cols-3 py-10 border-y border-slate-100 gap-8 sm:gap-0">
