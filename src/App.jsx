@@ -6,6 +6,7 @@ import SpaceDetail from './pages/SpaceDetail'
 import SectorSelector from './pages/SectorSelector'
 import Join from './pages/Join'
 import Admin from './pages/Admin'
+import Subscribe from './pages/Subscribe'
 import { LanguageProvider } from './context/LanguageContext'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
                     {/* Shared-layout pages */}
                     <Route path="/credits" element={<CreditCheckout />} />
+                    <Route path="/subscribe" element={<Subscribe />} />
                     <Route path="/sectors" element={<SectorSelector />} />
                     <Route path="/admin" element={<Admin />} />
                 </Routes>

@@ -32,7 +32,7 @@ const Header = () => {
                             <Link className="hover:text-primary transition-all duration-300" to="/">{t("Discover", "디스커버")}</Link>
                             <Link className="hover:text-primary transition-all duration-300" to="/sectors">{t("Archives", "아카이브")}</Link>
                             <Link className="hover:text-primary transition-all duration-300" to="/search">{t("Curations", "큐레이션")}</Link>
-                            <Link className="hover:text-primary transition-all duration-300" to="/credits">{t("Credits", "크레딧")}</Link>
+                            <Link className="hover:text-primary transition-all duration-300" to="/subscribe">{t("Subscribe", "구독하기")}</Link>
                         </nav>
                         <div className="h-4 w-[1px] bg-slate-200 hidden lg:block"></div>
                         <div className="flex items-center gap-2 md:gap-4">
