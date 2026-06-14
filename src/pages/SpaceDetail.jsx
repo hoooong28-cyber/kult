@@ -97,7 +97,7 @@ const SpaceDetail = () => {
             {/* Content Container */}
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-8">
                 {/* Back Link */}
-                <Link to={`/search/${space.region}`} className="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors mb-8 group">
+                <Link to="/" className="inline-flex items-center gap-2 text-slate-400 hover:text-primary transition-colors mb-8 group">
                     <ChevronLeft className="w-4 h-4" />
                     <span className="text-xs font-semibold tracking-wide lowercase">{t("Back to list", "목록으로 돌아가기")}</span>
                 </Link>
@@ -207,32 +207,29 @@ const SpaceDetail = () => {
                     <div className="flex flex-col gap-10 text-left">
                         {/* Action Card */}
                         <div className="bg-slate-50/50 p-10 rounded-[2.5rem] border border-slate-100/50">
-                            <button className="w-full h-16 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 mb-4">
+                            <button className="w-full h-16 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 mb-8">
                                 <Bookmark className="w-4 h-4 fill-white" />
                                 {t("Save to Curation", "큐레이션에 저장")}
-                            </button>
-                            <button className="w-full h-16 bg-white text-slate-900 border border-slate-200 rounded-2xl font-black text-xs uppercase tracking-widest hover:border-slate-900 transition-all mb-8">
-                                {t("Check Availability", "입장 가능 여부 확인")}
                             </button>
 
                             {/* Connectivity */}
                             <div className="flex flex-col gap-6 pt-6 border-t border-slate-200/50">
                                 <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-300">{t("Connect", "연결")}</h4>
                                 <div className="flex flex-col gap-4">
-                                    <a href="#" className="flex items-center justify-between group hover:text-primary transition-colors">
+                                    <div className="flex items-center justify-between group transition-colors cursor-pointer" onClick={() => window.open('https://example.com', '_blank')}>
                                         <div className="flex items-center gap-3">
                                             <Globe className="w-4 h-4 text-slate-400 group-hover:text-primary" />
                                             <span className="text-xs font-bold text-slate-600 group-hover:text-slate-900 uppercase tracking-tight">{t("Official Website", "공식 웹사이트")}</span>
                                         </div>
                                         <ExternalLink className="w-3.5 h-3.5 text-slate-300" />
-                                    </a>
-                                    <a href="#" className="flex items-center justify-between group hover:text-primary transition-colors">
+                                    </div>
+                                    <div className="flex items-center justify-between group transition-colors cursor-pointer" onClick={() => window.open('https://instagram.com', '_blank')}>
                                         <div className="flex items-center gap-3">
                                             <Instagram className="w-4 h-4 text-slate-400 group-hover:text-primary" />
                                             <span className="text-xs font-bold text-slate-600 group-hover:text-slate-900 uppercase tracking-tight">Instagram</span>
                                         </div>
                                         <ExternalLink className="w-3.5 h-3.5 text-slate-300" />
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -266,16 +263,16 @@ const SpaceDetail = () => {
                 </div>
             </div>
 
-            <footer className="w-full max-w-[1440px] mx-auto px-12 py-16 mt-32 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-8">
-                <div className="flex items-center gap-3 opacity-30 grayscale contrast-150">
-                    <img src="/logo.svg" className="w-6 h-6 grayscale" alt="KULT" />
+            <footer className="w-full max-w-[1440px] mx-auto px-12 py-16 mt-32 border-t border-slate-200/50 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div className="flex items-center gap-3 opacity-80">
+                    <Orbit className="w-6 h-6 text-primary" strokeWidth={1.5} />
                     <span className="text-[10px] font-black tracking-widest uppercase opacity-70">© 2024 KULT Media. All rights reserved.</span>
                 </div>
-                <div className="flex gap-10 text-[10px] font-black uppercase tracking-widest text-slate-300">
-                    <a href="#" className="hover:text-slate-900 transition-colors uppercase">Spaces</a>
-                    <a href="#" className="hover:text-slate-900 transition-colors uppercase">Manifesto</a>
-                    <a href="#" className="hover:text-slate-900 transition-colors uppercase">Curations</a>
-                    <a href="#" className="hover:text-slate-900 transition-colors uppercase">Privacy</a>
+                <div className="flex gap-10 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <span className="hover:text-slate-900 transition-colors uppercase">Spaces</span>
+                    <span className="hover:text-slate-900 transition-colors uppercase">Manifesto</span>
+                    <span className="hover:text-slate-900 transition-colors uppercase">Curations</span>
+                    <span className="hover:text-slate-900 transition-colors uppercase">Privacy</span>
                 </div>
             </footer>
         </div>
