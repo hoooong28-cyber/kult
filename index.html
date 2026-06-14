@@ -5,13 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KULT | Discover the Soul of Korea</title>
+    <meta name="description" content="KULT — Korea's premier editorial platform for brand stories, spaces, and new product discoveries." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300..900&family=Hanken+Grotesk:wght@300..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <style>
+        /* Hard override — ensure scroll is never blocked */
+        html, body {
+            overflow: auto !important;
+            height: auto !important;
+            min-height: 100%;
+        }
+        #root {
+            min-height: 100vh;
+        }
+    </style>
 </head>
 
-<body class="bg-[#fcf9f5] text-[#1c1c1a] antialiased">
+<body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 </body>
