@@ -10,68 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <style>
-        html {
-            overflow-y: scroll !important;
-            overflow-x: hidden !important;
-            height: auto !important;
-        }
-        body {
-            overflow: visible !important;
-            height: auto !important;
-            min-height: 100vh;
-        }
-        #root {
-            overflow: visible !important;
-            height: auto !important;
-            min-height: 100vh;
-        }
-        /* Scroll debug banner */
-        #scroll-debug {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0,0,0,0.85);
-            color: #0f0;
-            font: 11px monospace;
-            padding: 10px 14px;
-            border-radius: 8px;
-            z-index: 99999;
-            pointer-events: none;
-            line-height: 1.6;
-        }
-    </style>
 </head>
 
 <body>
     <div id="root"></div>
-    <!-- Temporary scroll debugger: shows live scroll position -->
-    <div id="scroll-debug">
-        scroll: 0px<br>
-        page: ...px<br>
-        vh: ...px
-    </div>
-    <script>
-        window.addEventListener('load', function() {
-            var dbg = document.getElementById('scroll-debug');
-            function update() {
-                var scrollY = Math.round(window.scrollY || document.documentElement.scrollTop);
-                var pageH = document.documentElement.scrollHeight;
-                var vh = window.innerHeight;
-                var htmlOverflow = getComputedStyle(document.documentElement).overflow;
-                var bodyOverflow = getComputedStyle(document.body).overflow;
-                dbg.innerHTML = 
-                    'scrollY: ' + scrollY + 'px<br>' +
-                    'page H: ' + pageH + 'px<br>' +
-                    'viewport: ' + vh + 'px<br>' +
-                    'html overflow: ' + htmlOverflow + '<br>' +
-                    'body overflow: ' + bodyOverflow;
-            }
-            update();
-            window.addEventListener('scroll', update);
-            setInterval(update, 500);
-        });
-    </script>
     <script type="module" src="/src/main.jsx"></script>
 </body>
 
