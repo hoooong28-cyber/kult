@@ -18,10 +18,10 @@ const dummySpaces = {
         category: 'Architecture',
         categoryKr: '건축',
         region: 'hannam',
-        imageUrl: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000',
+        imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=2000',
         galleryUrls: [
-            'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800'
+            'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
         ],
         description: 'A pioneering architectural studio in the heart of Hannam-dong, where the absence of conventional design elements speaks louder than their presence. Founded in 2018, Void Space Seoul has become a reference point for a generation of Korean designers who believe that emptiness is a form of fullness.',
         descriptionKr: '한남동 중심부에 위치한 선구적인 건축 스튜디오로, 일반적인 디자인 요소의 부재가 존재보다 더 큰 울림을 줍니다. 2018년에 설립된 보이드 스페이스 서울은 비어있음이 가득 참의 한 형태라고 믿는 한국 디자이너 세대의 레퍼런스 포인트가 되었습니다.',
@@ -34,8 +34,11 @@ const dummySpaces = {
         category: 'Heritage',
         categoryKr: '헤리티지',
         region: 'gyeongju',
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAOeAEDReiO56NceRRAI74x11UkMAFpLTD8rCqj6Dt1pbF3arduDR00v0-ywXgvJV8TuH-x6mypHbt2yGFcQ2bkNRhYCFDYAUOO5qlimCTFvJ6yeN0tbXXHhSEv1PrWHsrBqlPg5uc11s0eSQEqTMSAMWxqC_IgFTc8TmkBMAh7gQGCkUbfhDSAy7xMO0NrAsZUO0eX83mN83tQ_lxjJMD1S2abzB2uQmcQmRQxtGUs5jIvKhCMXyT_UoSSIcB0hOsDt4_whSqdSjVN',
-        galleryUrls: [],
+        imageUrl: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&q=80&w=2000',
+        galleryUrls: [
+            'https://images.unsplash.com/photo-1506057213367-028a17ec52e5?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&q=80&w=800'
+        ],
         description: 'A centuries-old Hanok where the art of tea brewing meets the silence of the surrounding bamboo forest. Nestled deep in Gyeongju\'s historical district, the estate has been passed down through seven generations of the Yuyeon family.',
         descriptionKr: '수백 년 된 한옥에서 차를 우리는 예술과 대나무 숲의 고요함이 만나는 곳입니다. 경주 역사 지구 깊숙이 자리 잡은 이 저택은 유연 가문 7대에 걸쳐 전해 내려왔습니다.',
         googleMapsUrl: 'https://maps.google.com',
@@ -47,8 +50,11 @@ const dummySpaces = {
         category: 'Healing Stay',
         categoryKr: '힐링 스테이',
         region: 'pyeongchang',
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnz2ezosgYy1InE6M-vxahUlcD39OD0pvgs5qPupHwpGcZr1Ec3pwOUr1T6MSQydMR9XbCIw-loP0wEBYXtYYZjnGpO0K1a9Fhf--q4V1jW4KyxHNuX1p_Vuu749zGUQFvrKBVkUPN9YNv68yqozKkH86YlL2rpXyYlUXDAjM06W0X1bj6Yg-W6I2PdqzKRbR4-IpYDyvAqljF9nR-t6_JiBngrHivGFtmfN0OI1KLc_Vv_rttoDWEFpYL6tZKE1TwFmhMig6L_y3U',
-        galleryUrls: [],
+        imageUrl: 'https://images.unsplash.com/photo-1549180030-48bf079fb38a?auto=format&fit=crop&q=80&w=2000',
+        galleryUrls: [
+            'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&q=80&w=800'
+        ],
         description: 'Disconnect to reconnect. A glass-walled sanctuary tucked deep into the cedar forests of Gangwon province, where the only sounds are wind, birdsong, and silence.',
         descriptionKr: '연결을 위해 접속을 끊으세요. 강원도 삼나무 숲 깊은 곳에 자리 잡은 유리벽 안식처로, 들리는 소리라곤 바람과 새소리, 그리고 정적뿐입니다.',
         googleMapsUrl: 'https://maps.google.com',
