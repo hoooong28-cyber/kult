@@ -26,7 +26,7 @@ const sideColumns = [
         titleKr: '보이드 스페이스: 비어있음을 큐레이팅하다',
         descEn: 'Inside Hannam\'s most enigmatic concrete shell where art becomes an atmospheric experience.',
         descKr: '예술이 분위기 경험이 되는 한남의 가장 수수께끼 같은 콘크리트 공간 내부.',
-        img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200'
+        img: 'https://web-resource.tamburins.com/store/store/category_store_kr.jpg/0ff2fd36-e2d9-4d67-9f1b-7a5267a9a865/category_store_kr.jpg'
     },
     {
         slug: 'pine-hideaway',
@@ -47,7 +47,7 @@ const products = [
         nameKr: '진생 리뉴잉 크림 v.05',
         descEn: 'The evolution of a legend. Enhanced bio-cell formula for deep restoration.',
         descKr: '전설의 진화. 심층 회복을 위한 향상된 바이오셀 포뮬러.',
-        img: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&q=80&w=800'
+        img: 'https://www.sulwhasoo.com/web/upload/share-image-1-570395dcac21168cb1deeabd5dd8d2db.jpg'
     },
     {
         id: 'p2',
@@ -74,7 +74,7 @@ const products = [
         nameKr: '오브젝트 012: 하이브리드 백',
         descEn: 'Deconstructed aesthetics meeting industrial durability in their latest drop.',
         descKr: '해체주의 미학과 산업적 내구성이 만난 최신 드롭.',
-        img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=800'
+        img: 'https://images.unsplash.com/photo-1605733513597-a8f8d410fe3c?auto=format&fit=crop&q=80&w=800'
     }
 ]
 
@@ -99,7 +99,7 @@ const Home = () => {
                             alt="Featured Korean Brand Space"
                             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transition: 'transform 3s ease', pointerEvents: 'none' }}
                             className="group-hover:scale-105"
-                            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=1600"
+                            src="https://web-resource.tamburins.com/image/share_banner_summer-tails.jpg"
                         />
                         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.2) 100%)', pointerEvents: 'none' }} />
                     </div>

@@ -18,10 +18,10 @@ const dummySpaces = {
         category: 'Architecture',
         categoryKr: '건축',
         region: 'hannam',
-        imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=2000',
+        imageUrl: 'https://web-resource.tamburins.com/store/store/category_store_kr.jpg/0ff2fd36-e2d9-4d67-9f1b-7a5267a9a865/category_store_kr.jpg',
         galleryUrls: [
-            'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
+            'https://web-resource.tamburins.com/image/share_banner_summer-tails.jpg',
+            'https://web-resource.tamburins.com/catalog/catalog/category_home_candle.jpg/38e37148-66f0-44bd-9294-558ab01f337f/category_home_candle.jpg'
         ],
         description: 'A pioneering architectural studio in the heart of Hannam-dong, where the absence of conventional design elements speaks louder than their presence. Founded in 2018, Void Space Seoul has become a reference point for a generation of Korean designers who believe that emptiness is a form of fullness.',
         descriptionKr: '한남동 중심부에 위치한 선구적인 건축 스튜디오로, 일반적인 디자인 요소의 부재가 존재보다 더 큰 울림을 줍니다. 2018년에 설립된 보이드 스페이스 서울은 비어있음이 가득 참의 한 형태라고 믿는 한국 디자이너 세대의 레퍼런스 포인트가 되었습니다.',
