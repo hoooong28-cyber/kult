@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import {
     MapPin, ChevronLeft,
-    Instagram, Globe, ExternalLink, Bookmark, AlertCircle, Orbit
+    Instagram, Globe, ExternalLink, Bookmark, AlertCircle, Orbit, Loader2
 } from 'lucide-react'
 import Header from '../components/Header'
 import { useLanguage } from '../context/LanguageContext'
+import { useAuth } from '../context/AuthContext'
 import { db } from '../firebase'
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc, updateDoc, arrayUnion, increment } from 'firebase/firestore'
 
 // Fallback dummy data indexed by slug
 const dummySpaces = {
@@ -24,7 +25,8 @@ const dummySpaces = {
         ],
         description: 'A pioneering architectural studio in the heart of Hannam-dong, where the absence of conventional design elements speaks louder than their presence. Founded in 2018, Void Space Seoul has become a reference point for a generation of Korean designers who believe that emptiness is a form of fullness.',
         descriptionKr: '한남동 중심부에 위치한 선구적인 건축 스튜디오로, 일반적인 디자인 요소의 부재가 존재보다 더 큰 울림을 줍니다. 2018년에 설립된 보이드 스페이스 서울은 비어있음이 가득 참의 한 형태라고 믿는 한국 디자이너 세대의 레퍼런스 포인트가 되었습니다.',
-        googleMapsUrl: 'https://maps.google.com'
+        googleMapsUrl: 'https://maps.google.com',
+        isPremium: true
     },
     'yuyeon-tea-house': {
         title: 'Yuyeon Tea House',
@@ -36,7 +38,8 @@ const dummySpaces = {
         galleryUrls: [],
         description: 'A centuries-old Hanok where the art of tea brewing meets the silence of the surrounding bamboo forest. Nestled deep in Gyeongju\'s historical district, the estate has been passed down through seven generations of the Yuyeon family.',
         descriptionKr: '수백 년 된 한옥에서 차를 우리는 예술과 대나무 숲의 고요함이 만나는 곳입니다. 경주 역사 지구 깊숙이 자리 잡은 이 저택은 유연 가문 7대에 걸쳐 전해 내려왔습니다.',
-        googleMapsUrl: 'https://maps.google.com'
+        googleMapsUrl: 'https://maps.google.com',
+        isPremium: false
     },
     'pine-hideaway': {
         title: 'The Pine Hideaway',
@@ -48,7 +51,8 @@ const dummySpaces = {
         galleryUrls: [],
         description: 'Disconnect to reconnect. A glass-walled sanctuary tucked deep into the cedar forests of Gangwon province, where the only sounds are wind, birdsong, and silence.',
         descriptionKr: '연결을 위해 접속을 끊으세요. 강원도 삼나무 숲 깊은 곳에 자리 잡은 유리벽 안식처로, 들리는 소리라곤 바람과 새소리, 그리고 정적뿐입니다.',
-        googleMapsUrl: 'https://maps.google.com'
+        googleMapsUrl: 'https://maps.google.com',
+        isPremium: false
     }
 }
 
@@ -56,10 +60,12 @@ const SpaceDetail = () => {
     const { id } = useParams()
     const navigate = useNavigate()
     const { t } = useLanguage()
+    const { currentUser, credits, isSubscribed, unlockedContent } = useAuth()
     const [space, setSpace] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [hasAccess, setHasAccess] = useState(false)
+    const [isUnlocking, setIsUnlocking] = useState(false)
 
     useEffect(() => {
         const fetchSpace = async () => {
@@ -98,6 +104,55 @@ const SpaceDetail = () => {
         }
         window.scrollTo(0, 0)
     }, [id, t])
+
+    useEffect(() => {
+        if (space) {
+            if (!space.isPremium) {
+                setHasAccess(true)
+            } else {
+                const hasPurchased = unlockedContent?.includes(id)
+                setHasAccess(!!(isSubscribed || hasPurchased))
+            }
+        }
+    }, [space, id, isSubscribed, unlockedContent])
+
+    const handleUnlock = async (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+
+        if (!currentUser) {
+            alert(t("Please sign in to unlock content", "로그인 후 콘텐츠를 잠금 해제해 주세요"))
+            navigate('/join')
+            return
+        }
+
+        if (credits < 5) {
+            alert(t("Insufficient credits. Please refill in the store.", "크레딧이 부족합니다. 스토어에서 충전해 주세요."))
+            navigate('/subscribe')
+            return
+        }
+
+        const confirmUnlock = window.confirm(t(
+            "Unlock this Premium Column for 5 credits?",
+            "이 프리미엄 칼럼을 5 크레딧으로 잠금 해제하시겠습니까?"
+        ))
+
+        if (!confirmUnlock) return
+
+        setIsUnlocking(true)
+        try {
+            const userRef = doc(db, 'users', currentUser.uid)
+            await updateDoc(userRef, {
+                credits: increment(-5),
+                unlockedContent: arrayUnion(id)
+            })
+        } catch (error) {
+            console.error("Error unlocking space:", error)
+            alert(t("Failed to unlock. Please try again.", "잠금 해제에 실패했습니다. 다시 시도해 주세요."))
+        } finally {
+            setIsUnlocking(false)
+        }
+    }
 
     if (loading) {
         return (
@@ -176,6 +231,9 @@ const SpaceDetail = () => {
                                     {!hasAccess && "\n\n" + t("This space is more than just architecture. We dive deep into the philosophy of its creator, uncovering the rituals, the obsessions, and the quiet revolution happening behind its walls.", "이 공간은 단순한 건축물 그 이상입니다. 창시자의 철학과 의식, 집착, 그리고 그 벽 뒤에서 일어나고 있는 조용한 혁명을 파헤칩니다.")}
                                     {!hasAccess && "\n\n" + t("Exclusive interview. Unseen photographs. The full story — unlocked only for KULT members.", "독점 인터뷰. 비공개 사진들. KULT 멤버에게만 공개되는 완전한 이야기.")}
                                 </p>
+                                {!hasAccess && (
+                                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fcf9f5] to-transparent pointer-events-none" />
+                                )}
                             </div>
 
                             {!hasAccess && (
@@ -190,9 +248,14 @@ const SpaceDetail = () => {
                                         <Link to="/subscribe" className="px-8 py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:brightness-110 shadow-lg shadow-primary/30 transition-all">
                                             {t("Subscribe Now", "멤버십 구독하기")}
                                         </Link>
-                                        <Link to="/subscribe" className="px-8 py-4 bg-slate-50 text-slate-900 border border-slate-200 rounded-2xl font-black text-xs uppercase tracking-widest hover:border-slate-900 transition-all">
-                                            {t("Use Credits", "크레딧으로 열람")}
-                                        </Link>
+                                        <button 
+                                            onClick={handleUnlock}
+                                            disabled={isUnlocking}
+                                            className="px-8 py-4 bg-slate-50 text-slate-900 border border-slate-200 rounded-2xl font-black text-xs uppercase tracking-widest hover:border-slate-900 hover:bg-slate-100 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                                        >
+                                            {isUnlocking && <Loader2 className="w-3.5 h-3.5 animate-spin text-slate-900" />}
+                                            {isUnlocking ? t("Unlocking...", "잠금 해제 중...") : t("Use Credits", "크레딧으로 열람")}
+                                        </button>
                                     </div>
                                 </div>
                             )}

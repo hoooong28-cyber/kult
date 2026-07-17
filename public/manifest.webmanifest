@@ -1,0 +1,22 @@
+{
+  "name": "KULT | Discover the Soul of Korea",
+  "short_name": "KULT",
+  "description": "KULT — Korea's premier editorial platform for brand stories, spaces, and new product discoveries.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#191a1f",
+  "theme_color": "#191a1f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

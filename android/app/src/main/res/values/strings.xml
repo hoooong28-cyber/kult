@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KULT</string>
+    <string name="title_activity_main">KULT</string>
+    <string name="package_name">com.kult.app</string>
+    <string name="custom_url_scheme">com.kult.app</string>
+</resources>

@@ -78,6 +78,10 @@ const products = [
     }
 ]
 
+const getPremiumStatus = (slug) => {
+    return slug === 'void-space';
+}
+
 const Home = () => {
     const { t, lang } = useLanguage()
     const [email, setEmail] = useState('')
@@ -196,9 +200,18 @@ const Home = () => {
                                             <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
                                             <span>{mainColumn.readTime}</span>
                                             <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
-                                            <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#1111d4' }}>
-                                                <Lock style={{ width: '10px', height: '10px' }} />
-                                                Premium
+                                            <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: getPremiumStatus(mainColumn.slug) ? '#1111d4' : '#64748b' }}>
+                                                {getPremiumStatus(mainColumn.slug) ? (
+                                                    <>
+                                                        <Lock style={{ width: '10px', height: '10px' }} />
+                                                        Premium
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <Globe style={{ width: '10px', height: '10px' }} />
+                                                        Free Access
+                                                    </>
+                                                )}
                                             </span>
                                         </div>
                                     </div>
@@ -215,6 +228,25 @@ const Home = () => {
                                                     style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }}
                                                     className="group-hover:scale-110"
                                                 />
+                                            </div>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '9px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+                                                <span style={{ color: '#94a3b8' }}>
+                                                    {col.slug === 'void-space' ? (lang === 'KR' ? '공간 정체성' : 'Spatial Identity') : (lang === 'KR' ? '힐링 스테이' : 'Healing Stay')}
+                                                </span>
+                                                <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: '#cbd5e1' }} />
+                                                <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: getPremiumStatus(col.slug) ? '#1111d4' : '#64748b' }}>
+                                                    {getPremiumStatus(col.slug) ? (
+                                                        <>
+                                                            <Lock style={{ width: '10px', height: '10px' }} />
+                                                            Premium
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <Globe style={{ width: '10px', height: '10px' }} />
+                                                            Free Access
+                                                        </>
+                                                    )}
+                                                </span>
                                             </div>
                                             <h4 style={{ fontFamily: 'Georgia, ui-serif, serif', fontSize: '1.125rem', fontWeight: 700, marginBottom: '0.5rem', lineHeight: 1.3 }}
                                                 className="group-hover:text-blue-700 transition-colors">
