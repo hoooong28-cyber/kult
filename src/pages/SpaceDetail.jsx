@@ -18,7 +18,7 @@ const dummySpaces = {
         category: 'Architecture',
         categoryKr: '건축',
         region: 'hannam',
-        imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000',
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbwoL1fq_JksuTSIQIDc7aKzarYFCoKXSumbSeFD4TWpCcU4858QFMLYdYebKkiZR2jIFI1Ei9rgbQtdkXOHuljgW7VDJNzMAAwGaKuNkaLY6127SDCwTsk2kK1eC1_tfaDDAJHRQbbplp2pfiNDZuBrLhn6446CsRVlnIdLQvEPy5HilTe6nGGGoNYB8zN6L9ISkrK_tR1jP5sDMbVWukDfDARBmz7zviyycbc2XIbshKwgivg43cPtycFsPWD5743_ye5gxVo3r3',
         galleryUrls: [
             'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800',
             'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
@@ -34,7 +34,7 @@ const dummySpaces = {
         category: 'Retail / Beauty',
         categoryKr: '뷰티 / 리테일',
         region: 'sinsa',
-        imageUrl: 'https://web-resource.tamburins.com/store/store/category_store_kr.jpg/0ff2fd36-e2d9-4d67-9f1b-7a5267a9a865/category_store_kr.jpg',
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCf1blu6c8imp44TnDdmZGqeo88chuE6BEd1swlYnJerkGIzHeO-hj3Sj2OAdeA8_G-AmyulffbP2Kxn2WlS6yP2njTuxHUvlZ2tGnTDim9sB68oLr25Q1AQC0oA-xS4YPl_WnL2JGpAhVcPEeCN_378EtQwAF0pu4JDZMZkb8sI89gb3zsUuL1cRZPyiXChVsAxicZ2D395HMTOF2lneOnhNSmwTtTgFdC__NG7FpMBmQfv-J3moka4CRT7j2oGad8s3of5yjYtxyd',
         galleryUrls: [
             'https://web-resource.tamburins.com/image/share_banner_summer-tails.jpg',
             'https://web-resource.tamburins.com/catalog/catalog/category_home_candle.jpg/38e37148-66f0-44bd-9294-558ab01f337f/category_home_candle.jpg'
@@ -50,7 +50,7 @@ const dummySpaces = {
         category: 'Heritage',
         categoryKr: '헤리티지',
         region: 'bukchon',
-        imageUrl: 'https://images.unsplash.com/photo-1610978939987-a25e24b455b8?auto=format&fit=crop&q=80&w=2000',
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAOeAEDReiO56NceRRAI74x11UkMAFpLTD8rCqj6Dt1pbF3arduDR00v0-ywXgvJV8TuH-x6mypHbt2yGFcQ2bkNRhYCFDYAUOO5qlimCTFvJ6yeN0tbXXHhSEv1PrWHsrBqlPg5uc11s0eSQEqTMSAMWxqC_IgFTc8TmkBMAh7gQGCkUbfhDSAy7xMO0NrAsZUO0eX83mN83tQ_lxjJMD1S2abzB2uQmcQmRQxtGUs5jIvKhCMXyT_UoSSIcB0hOsDt4_whSqdSjVN',
         galleryUrls: [
             'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800',
             'https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&q=80&w=800'
@@ -82,7 +82,7 @@ const dummySpaces = {
         category: 'Healing Stay',
         categoryKr: '힐링 스테이',
         region: 'pyeongchang',
-        imageUrl: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=2000',
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnz2ezosgYy1InE6M-vxahUlcD39OD0pvgs5qPupHwpGcZr1Ec3pwOUr1T6MSQydMR9XbCIw-loP0wEBYXtYYZjnGpO0K1a9Fhf--q4V1jW4KyxHNuX1p_Vuu749zGUQFvrKBVkUPN9YNv68yqozKkH86YlL2rpXyYlUXDAjM06W0X1bj6Yg-W6I2PdqzKRbR4-IpYDyvAqljF9nR-t6_JiBngrHivGFtmfN0OI1KLc_Vv_rttoDWEFpYL6tZKE1TwFmhMig6L_y3U',
         galleryUrls: [
             'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800',
             'https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&q=80&w=800'

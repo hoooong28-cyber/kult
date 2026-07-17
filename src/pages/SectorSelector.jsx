@@ -12,7 +12,7 @@ const sectorDataList = [
         status: 'Active Curation',
         statusKr: '활성 큐레이션',
         archives: 42,
-        img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIC80g9d0IWKmmqHudubq8mZ5BgpE2JbKahPBpTwYknXtx7pNYjTB8MuTD7frdR1RPdbfVCRqc8y2SDvlqo5_J7VBb2cyObOQqaxSEYKAFZVV4rDQR9T7sPiYiTxcaI3x7cU8AKha7JZ1qfiJRq7FytIK9BBEWwyjYqtjl9T8covdISOyqbEhz763wZHEDP0FezSxJ7BdchJ--ZXMrUsMBodxKasJnMdAFpmTc7WJSX525ndWmn9GP9SqT41tJaJSHA53GauLvWOiq',
         active: true
     },
     {
@@ -23,7 +23,7 @@ const sectorDataList = [
         status: 'Active Curation',
         statusKr: '활성 큐레이션',
         archives: 18,
-        img: 'https://images.unsplash.com/photo-1628134785730-18fb0d48f293?auto=format&fit=crop&q=80&w=1200',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA29z2mWyzpl2-eo7T1pzyNui_oa1oi3fokKNxr665w0KA9G0TQYCeGjLOLWqaAdI89pJfxK4kcgzjrMciF-KQvilS0ZAVoKczFbhrCCApBJd2WxXfLFaxSTNNUZbaaoLLisdl4uh_yc1j_fitAv7yXmgHeA0WG47kgCsMp0Y7rm7ZApqn73VVleKdHy_ZCh_GKpUyWWHYwxQ6nu7HXC7NzVV-2oACl_RMSDW8o8nioaX9phsxUelPQhDq4zyAmpltYRNuW45fvQFSU',
         active: true
     },
     {
@@ -34,7 +34,7 @@ const sectorDataList = [
         status: 'Active Curation',
         statusKr: '활성 큐레이션',
         archives: 24,
-        img: 'https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&q=80&w=1200',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8YR5tPT9pTneGYEvSLLV5_x-J_APubzxgFmwRxfWcXfnCSa1grE4Mexr5T7ltLlS3M6jAWsKN6xOZB3CIZ6zeyJiEwpjAtEK6QDJT5JKj8QPxk-caKmbkPBokxdKpRT6o3mZn-8ImXZc_0uWc7ST_xegoP_XaiuZKqBgrpXgOxkd__1I-37eLcieGLMdgnN7xEBOplZNOyucODSvyEYS0TweTR1FnLpcRTe4lTWdIjeWCrFDxcGWC0IiQaCh6CwKRNk2DRg9HbQpN',
         active: true
     },
     {
@@ -45,7 +45,7 @@ const sectorDataList = [
         status: 'Active Curation',
         statusKr: '활성 큐레이션',
         archives: 31,
-        img: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=1200',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA7lwNRyMUSOJVp9yrsokPC3L0Z-5aPQ5nYMSttXc-V4tRPAbxSeARm4rB2dpKUNdIof7w3O2wv_NKtPqw_FJbMbQ5_puO19mWZttTbmx-tm38GB7CZ5yOSgKAoiYqoOCIHq-nbOU6eG8IQ51GCDMXCwUNFA4oZB8hwY7qP_4xnBdpnT1cBZ7Jt-aeNp8dSR8sa5zIDOkriQt3Di-FqBCEqEkDLIG3xbV6OXQ9SYHpkNbO2uWL3nXfuzuexsB0ltjtlnVxatKGxCNCQ',
         active: true
     },
     {
@@ -56,7 +56,7 @@ const sectorDataList = [
         status: 'Standby',
         statusKr: '대기 중',
         archives: 56,
-        img: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=1200',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCVZUA-leW4oLlb-41KJm2OsPftBv_PrnYUcrpiidmBRXLLgPijZzmf-TprdoF-EAwPyzN-IJNNxs61XTfBEqciONPfjn3dDud7c6CI0-suC69lCBiQVj0Zw9P9hu-tDl0hhnukNBeGJI401b1i7HgY9qBPWgxvM9bd0QeBdzNCOZejJmgNiOYyK3oDBBfPXyRoH_PjTe5dKVhNvbGzlk1_3jo6ia8Jjbr70QPd5Kdycz3VO7co--2wzje7eOCkhFhJSU6rSIP_OsWH',
         active: false
     },
     {
@@ -67,7 +67,7 @@ const sectorDataList = [
         status: 'Active Curation',
         statusKr: '활성 큐레이션',
         archives: 29,
-        img: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1200',
+        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAoFxegLz1pgMdWyBefz0lb_ivpHplIN4SrpVOBNxGgmEEZi1PxoHAsiGAtRqegIJuHZE9PWJYoB_tahoowGZ2grJGGmN9rqexTb7TccqlYr5xmCQLkNpkqr77sw946CccyDsKgWaWFobVR8jaNlMDh7dtyMyL7Q30UrMhmrUzwNjqXlL74dsYntBzgCFMTwMyy_CDkvwNVKZHXSejMiaWEpWjAAmYUamP4aTEcn4m4J1lt94JMhwttbNOHuKJx5Lsx1bVErbXNpGC7',
         active: true,
         featured: true
     }
