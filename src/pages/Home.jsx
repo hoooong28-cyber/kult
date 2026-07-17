@@ -34,7 +34,7 @@ const sideColumns = [
         titleKr: '강원 포레스트 리트리트',
         descEn: 'How contemporary architects are weaving luxury stays into the dense cedar canopies of Pyeongchang.',
         descKr: '현대 건축가들이 평창의 빽빽한 삼나무 숲 사이에 럭셔리 스테이를 엮어내는 방법.',
-        img: 'https://images.unsplash.com/photo-1549180030-48bf079fb38a?auto=format&fit=crop&q=80&w=1200'
+        img: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=1200'
     }
 ]
 

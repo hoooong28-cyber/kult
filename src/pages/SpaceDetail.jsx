@@ -82,10 +82,10 @@ const dummySpaces = {
         category: 'Healing Stay',
         categoryKr: '힐링 스테이',
         region: 'pyeongchang',
-        imageUrl: 'https://images.unsplash.com/photo-1549180030-48bf079fb38a?auto=format&fit=crop&q=80&w=2000',
+        imageUrl: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=2000',
         galleryUrls: [
-            'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&q=80&w=800'
+            'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&q=80&w=800'
         ],
         description: 'Disconnect to reconnect. A glass-walled sanctuary tucked deep into the cedar forests of Gangwon province, where the only sounds are wind, birdsong, and silence.',
         descriptionKr: '연결을 위해 접속을 끊으세요. 강원도 삼나무 숲 깊은 곳에 자리 잡은 유리벽 안식처로, 들리는 소리라곤 바람과 새소리, 그리고 정적뿐입니다.',
