@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext'
 
 // ── Brand Space Columns (Paid) ──────────────────────────────────────────────
 const mainColumn = {
-    slug: 'void-space',
+    slug: 'arumjigi',
     titleEn: 'The Geometry of Solitude: On Arumjigi\'s Traditional-Modern Hybridity',
     titleKr: '고독의 기하학: 아름지기의 전통-현대 혼합성에 대하여',
     brand: 'Arumjigi Culture Keepers',
@@ -26,7 +26,7 @@ const sideColumns = [
         titleKr: '보이드 스페이스: 비어있음을 큐레이팅하다',
         descEn: 'Inside Hannam\'s most enigmatic concrete shell where art becomes an atmospheric experience.',
         descKr: '예술이 분위기 경험이 되는 한남의 가장 수수께끼 같은 콘크리트 공간 내부.',
-        img: 'https://web-resource.tamburins.com/store/store/category_store_kr.jpg/0ff2fd36-e2d9-4d67-9f1b-7a5267a9a865/category_store_kr.jpg'
+        img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200'
     },
     {
         slug: 'pine-hideaway',
@@ -79,7 +79,7 @@ const products = [
 ]
 
 const getPremiumStatus = (slug) => {
-    return slug === 'void-space';
+    return ['void-space', 'arumjigi', 'tamburins-sinsa'].includes(slug);
 }
 
 const Home = () => {
@@ -116,7 +116,7 @@ const Home = () => {
                                 {t('How a fragrance brand transformed the bustling streets of Sinsa-dong into a spatial narrative of time, texture, and scent.', '한 프래그런스 브랜드가 신사동의 분주한 거리를 시간, 질감, 향기의 공간적 내러티브로 변환한 방법.')}
                             </p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <Link to="/space/void-space" style={{ display: 'inline-block', padding: '14px 36px', background: '#fff', color: '#0d0d0d', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', textDecoration: 'none' }}
+                                <Link to="/space/tamburins-sinsa" style={{ display: 'inline-block', padding: '14px 36px', background: '#fff', color: '#0d0d0d', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', textDecoration: 'none' }}
                                     className="hover:bg-slate-100 transition-colors">
                                     {t('Read Story', '스토리 읽기')}
                                 </Link>

@@ -18,13 +18,45 @@ const dummySpaces = {
         category: 'Architecture',
         categoryKr: '건축',
         region: 'hannam',
+        imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000',
+        galleryUrls: [
+            'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
+        ],
+        description: 'A pioneering architectural studio in the heart of Hannam-dong, where the absence of conventional design elements speaks louder than their presence. Founded in 2018, Void Space Seoul has become a reference point for a generation of Korean designers who believe that emptiness is a form of fullness.',
+        descriptionKr: '한남동 중심부에 위치한 선구적인 건축 스튜디오로, 일반적인 디자인 요소의 부재가 존재보다 더 큰 울림을 줍니다. 2018년에 설립된 보이드 스페이스 서울은 비어있음이 가득 참의 한 형태라고 믿는 한국 디자이너 세대의 레퍼런스 포인트가 되었습니다.',
+        googleMapsUrl: 'https://maps.google.com',
+        isPremium: true
+    },
+    'tamburins-sinsa': {
+        title: 'The Silence of Tamburins: Rethinking Retail as a Sanctuary',
+        titleKr: '탬버린즈의 침묵: 리테일을 성소로 재고하다',
+        category: 'Retail / Beauty',
+        categoryKr: '뷰티 / 리테일',
+        region: 'sinsa',
         imageUrl: 'https://web-resource.tamburins.com/store/store/category_store_kr.jpg/0ff2fd36-e2d9-4d67-9f1b-7a5267a9a865/category_store_kr.jpg',
         galleryUrls: [
             'https://web-resource.tamburins.com/image/share_banner_summer-tails.jpg',
             'https://web-resource.tamburins.com/catalog/catalog/category_home_candle.jpg/38e37148-66f0-44bd-9294-558ab01f337f/category_home_candle.jpg'
         ],
-        description: 'A pioneering architectural studio in the heart of Hannam-dong, where the absence of conventional design elements speaks louder than their presence. Founded in 2018, Void Space Seoul has become a reference point for a generation of Korean designers who believe that emptiness is a form of fullness.',
-        descriptionKr: '한남동 중심부에 위치한 선구적인 건축 스튜디오로, 일반적인 디자인 요소의 부재가 존재보다 더 큰 울림을 줍니다. 2018년에 설립된 보이드 스페이스 서울은 비어있음이 가득 참의 한 형태라고 믿는 한국 디자이너 세대의 레퍼런스 포인트가 되었습니다.',
+        description: 'How a fragrance brand transformed the bustling streets of Sinsa-dong into a spatial narrative of time, texture, and scent. The flagship store functions as an immersive art installation, challenging traditional retail spaces.',
+        descriptionKr: '한 프래그런스 브랜드가 신사동의 분주한 거리를 시간, 질감, 향기의 공간적 내러티브로 변환한 방법입니다. 플래그십 스토어는 몰입형 예술 설치물처럼 기능하며 전통적인 판매 매장의 틀을 깨부눕니다.',
+        googleMapsUrl: 'https://maps.google.com',
+        isPremium: true
+    },
+    'arumjigi': {
+        title: 'The Geometry of Solitude: On Arumjigi\'s Traditional-Modern Hybridity',
+        titleKr: '고독의 기하학: 아름지기의 전통-현대 혼합성에 대하여',
+        category: 'Heritage',
+        categoryKr: '헤리티지',
+        region: 'bukchon',
+        imageUrl: 'https://images.unsplash.com/photo-1610978939987-a25e24b455b8?auto=format&fit=crop&q=80&w=2000',
+        galleryUrls: [
+            'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&q=80&w=800'
+        ],
+        description: 'Exploring how Arumjigi Culture Keepers Foundation bridges the gap between Joseon-era aesthetics and 21st-century minimalism in the heart of Seoul. The building connects a traditional wooden Hanok with a modern concrete structure.',
+        descriptionKr: '재단법인 아름지기가 서울 중심부에서 조선 시대의 미학과 21세기 미니멀리즘 사이의 간극을 어떻게 좁히고 있는지 탐구합니다. 이 사옥은 전통적인 목조 한옥과 현대적인 콘크리트 건축을 매끄럽게 연결합니다.',
         googleMapsUrl: 'https://maps.google.com',
         isPremium: true
     },
