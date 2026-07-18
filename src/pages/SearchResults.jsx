@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams, useSearchParams, useLocation } from 'react-router-dom'
 import { Search, MapPin, Star, Lock, X, SlidersHorizontal, ChevronRight, ChevronLeft, Orbit, LayoutGrid } from 'lucide-react'
 import UserNav from '../components/UserNav'
 import Header from '../components/Header'
@@ -66,12 +66,21 @@ const SearchResults = () => {
     const { sector } = useParams()
     const navigate = useNavigate()
     const { t } = useLanguage()
+    const [searchParams] = useSearchParams()
+    const queryTerm = searchParams.get('query') || ''
+    const location = useLocation()
     const [currentPage, setCurrentPage] = useState(1)
     const [destOpen, setDestOpen] = useState(false)
     const [catOpen, setCatOpen] = useState(false)
     const [dbSpaces, setDbSpaces] = useState([])
     const destRef = useRef(null)
     const catRef = useRef(null)
+
+    useEffect(() => {
+        if (location.state?.category) {
+            setSelectedCategory(location.state.category)
+        }
+    }, [location.state])
 
     useEffect(() => {
         const fetchDbSpaces = async () => {
@@ -142,7 +151,23 @@ const SearchResults = () => {
         ? mergedSpaces
         : mergedSpaces.filter(s => {
             const cat = s.category || ''
-            return cat.toLowerCase().includes(selectedCategory.toLowerCase())
+            const catKr = s.categoryKr || ''
+            return cat.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+                   catKr.toLowerCase().includes(selectedCategory.toLowerCase())
+        })
+
+    const queryFilteredSpaces = queryTerm.trim() === ''
+        ? filteredSpaces
+        : filteredSpaces.filter(s => {
+            const nameMatch = (s.name || '').toLowerCase().includes(queryTerm.toLowerCase()) || 
+                              (s.nameKr || '').toLowerCase().includes(queryTerm.toLowerCase())
+            const descMatch = (s.description || '').toLowerCase().includes(queryTerm.toLowerCase()) || 
+                              (s.descriptionKr || '').toLowerCase().includes(queryTerm.toLowerCase())
+            const catMatch = (s.category || '').toLowerCase().includes(queryTerm.toLowerCase()) || 
+                             (s.categoryKr || '').toLowerCase().includes(queryTerm.toLowerCase())
+            const locMatch = (s.location || '').toLowerCase().includes(queryTerm.toLowerCase()) || 
+                             (s.locationKr || '').toLowerCase().includes(queryTerm.toLowerCase())
+            return nameMatch || descMatch || catMatch || locMatch
         })
 
     return (
@@ -274,8 +299,8 @@ const SearchResults = () => {
 
                         {/* Grid Results */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                            {filteredSpaces.length > 0 ? (
-                                filteredSpaces.map((space) => (
+                            {queryFilteredSpaces.length > 0 ? (
+                                queryFilteredSpaces.map((space) => (
                                     <Link
                                         to={`/space/${space.id || encodeURIComponent(space.name)}`}
                                         key={space.name}
