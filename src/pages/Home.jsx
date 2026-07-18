@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ArrowRight, Lock, ChevronLeft, ChevronRight, Orbit, Globe, Instagram } from 'lucide-react'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { useLanguage } from '../context/LanguageContext'
 
 // ── Brand Space Columns (Paid) ──────────────────────────────────────────────
@@ -85,6 +86,23 @@ const getPremiumStatus = (slug) => {
 const Home = () => {
     const { t, lang } = useLanguage()
     const [email, setEmail] = useState('')
+    const navigate = useNavigate()
+
+    const handleRegionFilter = (value) => {
+        if (value === 'seoul' || value === 'all') {
+            navigate('/sectors')
+        } else if (value === 'gyeongju') {
+            navigate('/search/gyeongju')
+        } else {
+            alert(t(`${value.toUpperCase()} sector coming soon!`, `${value.toUpperCase()} 지구는 곧 업데이트될 예정입니다!`))
+        }
+    }
+
+    const handleCategorySelect = (val) => {
+        if (val) {
+            navigate('/search/seongsu', { state: { category: val } })
+        }
+    }
 
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
@@ -107,18 +125,18 @@ const Home = () => {
                     <div style={{ position: 'relative', zIndex: 10, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', maxWidth: '1280px', margin: '0 auto', padding: '0 2rem 5rem' }}>
                         <div style={{ maxWidth: '800px' }}>
                             <span style={{ display: 'inline-block', padding: '4px 14px', background: '#1111d4', color: '#fff', fontSize: '9px', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-                                {t('Featured Column', '피처드 칼럼')}
+                                {t('Curated Travel Route', '큐레이션 여행 가이드')}
                             </span>
                             <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', fontFamily: 'Georgia, ui-serif, serif', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
-                                {t('The Silence of Tamburins: Rethinking Retail as a Sanctuary', '탬버린즈의 침묵: 리테일을 성소로 재고하다')}
+                                {t('72 Hours in Seoul: A Curation of Concrete & Hanok', '서울에서의 72시간: 콘크리트와 한옥의 미학적 여정')}
                             </h1>
-                            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', fontWeight: 300, maxWidth: '520px', marginBottom: '2.5rem', lineHeight: 1.75, letterSpacing: '0.01em' }}>
-                                {t('How a fragrance brand transformed the bustling streets of Sinsa-dong into a spatial narrative of time, texture, and scent.', '한 프래그런스 브랜드가 신사동의 분주한 거리를 시간, 질감, 향기의 공간적 내러티브로 변환한 방법.')}
+                            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', fontWeight: 300, maxWidth: '620px', marginBottom: '2.5rem', lineHeight: 1.75, letterSpacing: '0.01em' }}>
+                                {t('The ultimate spatial playbook for the aesthetic explorer. Navigating the brutalist coffee sanctuaries of Seongsu-dong, the silent pine hideaways of Bukchon, and the sensory retail chambers of Sinsa-dong.', '미학적 탐험가를 위한 서울 공간 플레이북. 성수동의 브루탈리스트 카페, 북촌의 고요한 한옥 리트리트, 신사동의 감각적인 브랜드 쇼룸을 아우르는 72시간의 루트.')}
                             </p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <Link to="/space/tamburins-sinsa" style={{ display: 'inline-block', padding: '14px 36px', background: '#fff', color: '#0d0d0d', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', textDecoration: 'none' }}
+                                <Link to="/sectors" style={{ display: 'inline-block', padding: '14px 36px', background: '#fff', color: '#0d0d0d', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', textDecoration: 'none' }}
                                     className="hover:bg-slate-100 transition-colors">
-                                    {t('Read Story', '스토리 읽기')}
+                                    {t('Explore Districts', '지구별 가이드 탐색')}
                                 </Link>
                             </div>
                         </div>
@@ -130,24 +148,45 @@ const Home = () => {
                     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
                             {[
-                                { label: t('All Collections', '전체'), active: true },
-                                { label: 'Seoul', active: false },
-                                { label: 'Busan', active: false },
-                                { label: 'Jeju', active: false },
-                                { label: 'Gyeongju', active: false }
+                                { label: t('All Collections', '전체'), value: 'all' },
+                                { label: 'Seoul', value: 'seoul' },
+                                { label: 'Busan', value: 'busan' },
+                                { label: 'Jeju', value: 'jeju' },
+                                { label: 'Gyeongju', value: 'gyeongju' }
                             ].map(item => (
-                                <span key={item.label} style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', cursor: 'default', color: item.active ? '#0d0d0d' : '#94a3b8', borderBottom: item.active ? '1px solid #1111d4' : 'none', paddingBottom: '2px' }}>
+                                <button
+                                    key={item.value}
+                                    onClick={() => handleRegionFilter(item.value)}
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        fontSize: '10px',
+                                        fontWeight: 700,
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.2em',
+                                        cursor: 'pointer',
+                                        color: item.value === 'all' ? '#0d0d0d' : '#94a3b8',
+                                        borderBottom: item.value === 'all' ? '1px solid #1111d4' : 'none',
+                                        paddingBottom: '2px',
+                                        outline: 'none'
+                                    }}
+                                >
                                     {item.label}
-                                </span>
+                                </button>
                             ))}
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                             <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#64748b' }}>Category:</span>
-                            <select style={{ background: 'transparent', border: 'none', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#1111d4', cursor: 'pointer', outline: 'none' }}>
-                                <option>{t('Architecture', '건축')}</option>
-                                <option>{t('Wellness', '웰니스')}</option>
-                                <option>{t('Beauty', '뷰티')}</option>
-                                <option>{t('Fashion', '패션')}</option>
+                            <select
+                                onChange={(e) => handleCategorySelect(e.target.value)}
+                                defaultValue=""
+                                style={{ background: 'transparent', border: 'none', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#1111d4', cursor: 'pointer', outline: 'none' }}
+                            >
+                                <option value="" disabled>{t('Select Category', '카테고리 선택')}</option>
+                                <option value="cafe">{t('Cafe', '카페')}</option>
+                                <option value="culture">{t('Culture', '컬처')}</option>
+                                <option value="stay">{t('Stay', '스테이')}</option>
+                                <option value="heritage">{t('Heritage', '헤리티지')}</option>
                             </select>
                         </div>
                     </div>
@@ -298,8 +337,11 @@ const Home = () => {
                                         <p style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.6, marginBottom: '1rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                                             {lang === 'KR' ? product.descKr : product.descEn}
                                         </p>
-                                        <button style={{ width: '100%', padding: '10px 0', border: '1px solid #e2e8f0', fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', background: 'transparent', cursor: 'pointer', transition: 'all 0.2s' }}
-                                            className="hover:bg-slate-900 hover:text-white hover:border-slate-900">
+                                        <button 
+                                            onClick={() => navigate('/magazine')}
+                                            style={{ width: '100%', padding: '10px 0', border: '1px solid #e2e8f0', fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', background: 'transparent', cursor: 'pointer', transition: 'all 0.2s' }}
+                                            className="hover:bg-slate-900 hover:text-white hover:border-slate-900"
+                                        >
                                             {t('Explore News', '뉴스 보기')}
                                         </button>
                                     </div>
@@ -339,35 +381,6 @@ const Home = () => {
             </main>
 
             {/* ── Footer ───────────────────────────────────────────────── */}
-            <footer style={{ backgroundColor: '#fff', paddingTop: '5rem', paddingBottom: '2rem' }}>
-                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '3rem', paddingBottom: '3rem', borderBottom: '1px solid #f1f5f9' }}>
-                    <div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1.5rem', color: '#1111d4' }}>
-                            <Orbit strokeWidth={1.5} style={{ width: '24px', height: '24px' }} />
-                            <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.05em', color: '#0d0d0d' }}>KULT</span>
-                        </div>
-                        <p style={{ fontSize: '0.75rem', color: '#94a3b8', lineHeight: 1.7, maxWidth: '200px', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                            {t('A premium editorial platform curating the modern Korean identity.', '현대 한국의 정체성을 큐레이팅하는 프리미엄 에디토리얼 플랫폼.')}
-                        </p>
-                    </div>
-                    <div>
-                        <h4 style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '2rem', color: '#0d0d0d' }}>Platform</h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                            {[t('Space Columns', '공간 칼럼'), t('Product News', '신상품 뉴스'), t('Brand Directory', '브랜드 디렉토리')].map(item => (
-                                <li key={item}><span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#94a3b8', cursor: 'default' }}>{item}</span></li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '2rem', color: '#0d0d0d' }}>Magazine</h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                            {[t('About KULT', 'KULT 소개'), t('Editorial Team', '에디토리얼 팀'), t('Contact', '문의')].map(item => (
-                                <li key={item}><span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#94a3b8', cursor: 'default' }}>{item}</span></li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.3em', marginBottom: '2rem', color: '#0d0d0d' }}>Social</h4>
                         <div style={{ display: 'flex', gap: '0.75rem' }}>
                             {[Instagram, Globe].map((Icon, i) => (
                                 <span key={i} style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'default' }}
