@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import https from 'https';
 
-// Helper to fetch content (HTML or Binary Image)
 const fetchUrl = (url, headers = {}) => {
     return new Promise((resolve, reject) => {
         const parsedUrl = new URL(url);
@@ -20,7 +19,6 @@ const fetchUrl = (url, headers = {}) => {
     });
 };
 
-// Helper to download image
 const downloadImage = async (url, filepath) => {
     const res = await fetchUrl(url, {
         'Referer': 'https://search.naver.com/',
@@ -42,7 +40,6 @@ const downloadImage = async (url, filepath) => {
     }
 };
 
-// Main function to search and download first image
 const searchAndDownload = async (query, filename) => {
     try {
         const searchUrl = `https://search.naver.com/search.naver?where=image&query=${encodeURIComponent(query)}`;
@@ -54,8 +51,8 @@ const searchAndDownload = async (query, filename) => {
             resHtml.on('end', resolve);
         });
 
-        // Extract pstatic URLs
-        const regex = /https:\/\/search\.pstatic\.net\/common\/[^"'\\]+/g;
+        // Regex to match search.pstatic.net URLs, allowing word characters, symbols, and backslashes (json-escaped)
+        const regex = /https:\/\/search\.pstatic\.net\/common\/[^"'\s>]+/g;
         const matches = html.match(regex) || [];
         
         // Filter out profile images and thumbnails
@@ -68,21 +65,19 @@ const searchAndDownload = async (query, filename) => {
         });
         
         if (validImages && validImages.length > 0) {
-            // Clean up backslashes and unicode escapes in URL
-            let imageUrl = validImages[0]
-                .replace(/\\u0026/g, '&')
-                .replace(/\\u003d/g, '=')
-                .replace(/\\/g, '');
+            // Unescape Unicode escapes like \u0026
+            let imageUrl = validImages[0];
+            imageUrl = imageUrl.replace(/\\u0026/gi, '&')
+                               .replace(/\\u003d/gi, '=')
+                               .replace(/\\u002f/gi, '/')
+                               .replace(/\\/g, ''); // strip remaining backslashes
             
-            // If the URL is relative, prepend protocol
             if (imageUrl.startsWith('//')) {
                 imageUrl = 'https:' + imageUrl;
             }
 
-            // We can change type to a larger one like type=a340 or type=w960_sharp
-            if (imageUrl.includes('type=')) {
-                imageUrl = imageUrl.replace(/type=[^&]+/, 'type=a340');
-            }
+            // Remove any trailing backslash/quote residues if they exist
+            imageUrl = imageUrl.split('"')[0].split("'")[0];
 
             const targetPath = path.join('/Users/hoo__oong/Desktop/kult/public', filename);
             console.log(`Downloading real image for "${query}" from: ${imageUrl}`);
@@ -112,7 +107,7 @@ const run = async () => {
         await searchAndDownload(item.query, item.filename);
         await new Promise(r => setTimeout(r, 1000));
     }
-    console.log('All real images downloaded!');
+    console.log('All real images downloaded successfully!');
 };
 
 run();
