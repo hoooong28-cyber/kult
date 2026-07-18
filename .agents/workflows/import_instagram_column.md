@@ -13,7 +13,11 @@ Run the following command to download the text and images to a temporary directo
 *(Make sure to replace `[SHORTCODE]` with the actual shortcode, preserving the `-` before it as it's required for Instaloader syntax).*
 
 3. **Read Content & Plan Column:**
-Use `view_file` to read the downloaded `.txt` file containing the caption. Analyze the text and the number of downloaded `.jpg` images to plan the Magazine column structure. Follow the strict rules in [instagram_washing_guide.md](file:///Users/hoo__oong/Desktop/kult/.agents/workflows/instagram_washing_guide.md) to wash the content, rewrite the copy into a premium editorial tone (bilingual EN/KR), and map the images to the sections.
+- Use `view_file` to read the downloaded `.txt` file containing the caption.
+- Identify the key brands, venues, and products mentioned in the post.
+- **Perform Web Research**: Proactively use the search tools (Google Search) to research each entity's design philosophy, spatial concepts, and event details.
+- Follow the rules in [instagram_washing_guide.md](file:///Users/hoo__oong/Desktop/kult/.agents/workflows/instagram_washing_guide.md) to wash the content, rewrite the copy into a premium editorial tone (bilingual EN/KR), and enrich it with your research findings.
+- Assign a downloaded image to each section.
 
 4. **Copy Images to App Directory:**
 // turbo

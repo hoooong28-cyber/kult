@@ -43,3 +43,27 @@ This document defines the rules for transforming raw, marketing-heavy Instagram 
 - **Category**: Map to one of the KULT standard categories: `Architecture`, `Wellness`, `Retail / Beauty`, `Heritage`, `Healing Stay`.
 - **Region**: Map to lowercase regional slugs (e.g., `seongsu`, `sinsa`, `hannam`, `bukchon`, `gyeongju`).
 - **Premium Status**: Define if the column requires credits to unlock.
+
+---
+
+## 5. Deep Web Research & Content Enrichment (심층 웹 리서치를 통한 콘텐츠 보강)
+
+An Instagram caption is often too short or marketing-heavy to make a complete, high-end editorial. **You must actively research the brands, venues, and events mentioned** to enrich the article with factual, cultural, and design context.
+
+### 🔍 Research Protocol (리서치 프로토콜)
+1. **Identify Entities**: Extract names of brands, products, venues, architects, or designers from the scraped post.
+2. **Perform Web Searches**: Search for the official press releases, brand websites, designer interviews, and reviews.
+3. **Target Details**:
+   - **Philosophical Depth**: What is the core concept or inspiration behind the product or venue?
+   - **Spatial Design**: What materials, lighting, or architectural elements are used in the space?
+   - **Cultural Relevance**: How does this connect to current trends in Seoul's lifestyle or beauty scene?
+
+### ✍️ Content Enrichment Guidelines (콘텐츠 확장 기준)
+- **Length**: Expand each raw section text to **3-5 sentences** (approx. 100-150 words).
+- **Structure**:
+  - *Sentence 1-2*: The core event/product announcement and its immediate experience.
+  - *Sentence 3*: Spatial design or brand philosophy detail discovered via research.
+  - *Sentence 4*: Factual event information (locations, timelines, programs).
+- **Example**:
+  - *Raw Info*: Nars is hosting a liquid blush pop-up at Musinsa Seongsu.
+  - *Washed & Enriched*: Nars introduces its latest 'Insatiable Liquid Blush' collection at the Musinsa Megastore Seongsu, turning a cosmetic trial into an immersive spatial experience. The pop-up design reflects the brand's iconic minimalist geometry, contrasting bold pigments against rough concrete textures. Visitors can experience personalized shade-matching consults and receive custom-packaged gifts from July 12 to July 21.
