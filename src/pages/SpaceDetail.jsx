@@ -25,36 +25,36 @@ const dummySpaces = {
         ],
         description: `Seongsu-dong is a landscape where time and industry collide. Once filled with metal workshops and shoe factories, it has evolved into Seouls most avant-garde district. Here is our curated 24-hour spatial journey for the design-obsessed explorer.
 
-🛑 STOP 1. Cafe Onion Seongsu
+🛑 STOP 1. [Cafe Onion Seongsu](/space/cafe-onion-seongsu)
 - Theme: Raw Concrete & Bakery
 - Experience: A 1970s metal factory transformed into a brutalist coffee sanctuary. The decay of brick, crumbling plaster, and linear glass frames create a striking visual narrative.
 
-🛑 STOP 2. Tamburins Seongsu Flagship Store
+🛑 STOP 2. [Tamburins Seongsu](/space/tamburins-seongsu)
 - Theme: Sensory Retail & Architectural Void
 - Experience: A subterranean fragrance showroom built within an open-air concrete scaffolding. Experiencing scent between giant paintings, art installations, and concrete columns.
 
-🛑 STOP 3. LCDC Seoul
+🛑 STOP 3. [LCDC Seoul](/space/lcdc-seoul)
 - Theme: Curated Spatial Collage
 - Experience: A multi-story automotive repair shop transformed into a sleek complex. Independent fashion boutiques and design stationary brands gathered like pages of an editorial magazine.
 
-🛑 STOP 4. Ofr. Seoul & Seongsu Pop-up Exploration
+🛑 STOP 4. [Ofr. Seoul](/space/ofr-seoul)
 - Theme: Metal & Printed Matter
 - Experience: Browse global art magazines and posters stacked on industrial steel shelves, wrapping up the day with industrial street vibes.`,
         descriptionKr: `성수동은 시간과 산업이 격렬하게 충돌하는 도시적 풍경입니다. 한때 금속 정밀 공장 및 수제화 공장이 밀집했던 이곳은 이제 서울에서 가장 전위적인 미학의 지구가 되었습니다. 디자인에 깊은 애정을 가진 탐험가를 위해 엄선한 24시간 공간 여정을 소개합니다.
 
-🛑 STOP 1. 카페 어니언 성수 (Cafe Onion Seongsu)
+🛑 STOP 1. [어니언 성수](/space/cafe-onion-seongsu)
 - 테마: 날것의 콘크리트와 빵 (Raw Concrete & Bakery)
 - 경험: 1970년대 금속 부품 공장을 개조한 브루탈리즘의 안식처. 허물어진 붉은 벽돌, 뜯겨 나간 콘크리트 질감과 미니멀한 유리 프레임의 조화가 독특한 공간을 선사합니다.
 
-🛑 STOP 2. 탬버린즈 성수 플래그십 스토어 (Tamburins Seongsu)
+🛑 STOP 2. [탬버린즈 성수](/space/tamburins-seongsu)
 - 테마: 감각적 리테일과 공간의 여백
 - 경험: 건물 기둥 뼈대 가설재만 남겨진 구조 아래 자리 잡은 전시장 같은 프래그런스 쇼룸. 거대한 현대 미술작품과 콘크리트 기둥 사이에서 감도 높은 향기를 호흡해 보세요.
 
-🛑 STOP 3. LCDC 서울 (LCDC Seoul)
+🛑 STOP 3. [LCDC 서울](/space/lcdc-seoul)
 - 테마: 큐레이션된 공간의 콜라주
 - 경험: 옛 자동차 정비소 부지를 모던한 복합 공간으로 재탄생시킨 곳. 잡지 에디토리얼을 읽듯 중정을 둘러싼 독립 디자인 샵과 셀렉트 스토어를 탐험하세요.
 
-🛑 STOP 4. 오프레도 (Ofr. Seoul) & 골목 팝업
+🛑 STOP 4. [오프레 서울](/space/ofr-seoul)
 - 테마: 날것의 메탈과 종이 예술
 - 경험: 산업용 메탈 선반에 꽂혀 있는 전 세계의 다양한 예술 서적과 포스터 컬렉션을 뒤적이며, 성수동 특유의 에너제틱한 골목 정취와 함께 하루를 매듭짓습니다.`,
         googleMapsUrl: 'https://maps.google.com/maps?q=Seongsu-dong+Seoul',
@@ -139,8 +139,120 @@ const dummySpaces = {
         descriptionKr: '연결을 위해 접속을 끊으세요. 강원도 삼나무 숲 깊은 곳에 자리 잡은 유리벽 안식처로, 들리는 소리라곤 바람과 새소리, 그리고 정적뿐입니다.',
         googleMapsUrl: 'https://maps.google.com',
         isPremium: false
+    },
+    'cafe-onion-seongsu': {
+        title: 'Cafe Onion Seongsu: Raw Concrete & Industrial Bread',
+        titleKr: '어니언 성수: 거친 콘크리트와 금속이 빚어낸 베이커리 스페이스',
+        category: 'Cafe',
+        categoryKr: '카페',
+        region: 'seongsu',
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIC80g9d0IWKmmqHudubq8mZ5BgpE2JbKahPBpTwYknXtx7pNYjTB8MuTD7frdR1RPdbfVCRqc8y2SDvlqo5_J7VBb2cyObOQqaxSEYKAFZVV4rDQR9T7sPiYiTxcaI3x7cU8AKha7JZ1qfiJRq7FytIK9BBEWwyjYqtjl9T8covdISOyqbEhz763wZHEDP0FezSxJ7BdchJ--ZXMrUsMBodxKasJnMdAFpmTc7WJSX525ndWmn9GP9SqT41tJaJSHA53GauLvWOiq',
+        galleryUrls: [
+            'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800'
+        ],
+        description: 'Onion Seongsu is a sensory bakery cafe built inside a renovated 1970s metal part factory. It preserves the dilapidated brick walls, rusted steel gates, and decayed concrete structures, creating an aesthetic of collapse and reconstruction.',
+        descriptionKr: '어니언 성수는 1970년대 금속 부품 공장을 개조하여 만든 감각적인 베이커리 카페입니다. 세월의 흐름을 고스란히 담은 낡은 벽돌 벽, 녹슨 철제 구조물, 그리고 떨어져 나간 콘크리트 기둥을 그대로 보존하여 파괴와 재구성의 미학을 담고 있습니다.',
+        googleMapsUrl: 'https://maps.google.com/maps?q=Cafe+Onion+Seongsu',
+        isPremium: false
+    },
+    'tamburins-seongsu': {
+        title: 'Tamburins Seongsu: Fragrance Showroom in a Structural Frame',
+        titleKr: '탬버린즈 성수: 가설재 기둥 아래 흩뿌려진 향기의 서사',
+        category: 'Retail / Beauty',
+        categoryKr: '뷰티 / 리테일',
+        region: 'seongsu',
+        imageUrl: '/seongsu_boutique_hero.png',
+        galleryUrls: [
+            'https://web-resource.tamburins.com/image/share_banner_summer-tails.jpg',
+            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
+        ],
+        description: 'Tamburins Seongsu flagship showroom is an architectural void. By stripping the building down to its structural concrete scaffolding, they created an open-air display that houses sensory fragrance art installations and concrete design elements.',
+        descriptionKr: '탬버린즈 성수 플래그십 스토어는 기둥 구조(비계)만 남긴 채 벽면을 완전히 비워낸 건축학적 보이드 공간입니다. 날것의 노출 콘크리트 뼈대 구조물 아래, 거대한 현대 미술작품과 디자인적 향기 오브제를 전시하여 리테일의 새로운 경지를 보여줍니다.',
+        googleMapsUrl: 'https://maps.google.com/maps?q=Tamburins+Seongsu',
+        isPremium: false
+    },
+    'lcdc-seoul': {
+        title: 'LCDC Seoul: The Spatial Collage of Independent Curation',
+        titleKr: 'LCDC 서울: 감도 높은 라이프스타일 큐레이션 복합공간',
+        category: 'Culture',
+        categoryKr: '컬처',
+        region: 'seongsu',
+        imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800',
+        galleryUrls: [
+            'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&q=80&w=800'
+        ],
+        description: 'LCDC Seoul is a multi-story lifestyle complex built in a repurposed automotive repair shop. Centered around a sleek concrete courtyard, it curates independent fashion, design stationery, and custom craft boutiques under one unified architectural editorial theme.',
+        descriptionKr: 'LCDC 서울은 옛 자동차 정비소를 미니멀한 복합 문화 공간으로 탈바꿈시킨 공간입니다. 정방형의 모던한 콘크리트 중정을 중심으로, 감도 높은 패션, 스테이셔너리, 독립 공예 디자인 매장들이 조화롭게 들어서 있는 편집샵입니다.',
+        googleMapsUrl: 'https://maps.google.com/maps?q=LCDC+Seoul',
+        isPremium: false
+    },
+    'ofr-seoul': {
+        title: 'Ofr. Seoul: Avant-garde Print Matter & Metallic Archives',
+        titleKr: '오프레 서울: 가공되지 않은 금속 선반과 예술 서적의 미학',
+        category: 'Culture',
+        categoryKr: '컬처',
+        region: 'seongsu',
+        imageUrl: 'https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&q=80&w=800',
+        galleryUrls: [
+            'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800',
+            'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800'
+        ],
+        description: 'Ofr. Seoul is the Seoul branch of the Parisian independent art bookshop. Hidden inside a vintage brick building, it features global art books, fashion magazines, and indie prints stacked on industrial metallic racks.',
+        descriptionKr: '오프레 서울은 프랑스 파리의 유서 깊은 독립 예술 서점 Ofr.의 서울 지점입니다. 오래된 주택 건물의 빈티지한 골조 속에서, 차가운 산업용 금속 렉 선반 위에 전 세계의 감각적인 예술 서적, 패션 독립 잡지, 포스터들을 아카이브해 둡니다.',
+        googleMapsUrl: 'https://maps.google.com/maps?q=Ofr+Seoul',
+        isPremium: false
     }
 }
+
+const renderDescription = (text, t) => {
+    if (!text) return null;
+    const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+    
+    while ((match = regex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(text.substring(lastIndex, match.index));
+        }
+        
+        const linkText = match[1];
+        const linkUrl = match[2];
+        
+        if (linkUrl.startsWith('/')) {
+            parts.push(
+                <Link 
+                    key={match.index} 
+                    to={linkUrl} 
+                    className="text-primary hover:underline font-black bg-primary/5 px-2.5 py-1 rounded-xl inline-block mx-1 border border-primary/10 hover:bg-primary/20 transition-all"
+                >
+                    {linkText}
+                </Link>
+            );
+        } else {
+            parts.push(
+                <a 
+                    key={match.index} 
+                    href={linkUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-primary hover:underline font-bold inline-flex items-center gap-1"
+                >
+                    {linkText}
+                </a>
+            );
+        }
+        lastIndex = regex.lastIndex;
+    }
+    
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex));
+    }
+    
+    return parts;
+};
 
 const SpaceDetail = () => {
     const { id } = useParams()
@@ -336,7 +448,7 @@ const SpaceDetail = () => {
                             </h2>
                             <div className="relative">
                                 <p className={`text-lg md:text-xl text-slate-500 leading-[1.7] whitespace-pre-wrap font-medium ${!hasAccess ? 'h-64 overflow-hidden' : 'mb-12'}`} style={!hasAccess ? { WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)', maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)' } : {}}>
-                                    {t(space.description, space.descriptionKr || space.description)}
+                                    {renderDescription(t(space.description, space.descriptionKr || space.description), t)}
                                     {!hasAccess && "\n\n" + t("This space is more than just architecture. We dive deep into the philosophy of its creator, uncovering the rituals, the obsessions, and the quiet revolution happening behind its walls.", "이 공간은 단순한 건축물 그 이상입니다. 창시자의 철학과 의식, 집착, 그리고 그 벽 뒤에서 일어나고 있는 조용한 혁명을 파헤칩니다.")}
                                     {!hasAccess && "\n\n" + t("Exclusive interview. Unseen photographs. The full story — unlocked only for KULT members.", "독점 인터뷰. 비공개 사진들. KULT 멤버에게만 공개되는 완전한 이야기.")}
                                 </p>
