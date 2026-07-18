@@ -104,6 +104,29 @@ const SpaceDetail = () => {
     const [error, setError] = useState(null)
     const [hasAccess, setHasAccess] = useState(false)
     const [isUnlocking, setIsUnlocking] = useState(false)
+    const [isSaved, setIsSaved] = useState(false)
+
+    useEffect(() => {
+        if (id) {
+            const savedList = JSON.parse(localStorage.getItem('kult_curation') || '[]')
+            setIsSaved(savedList.includes(id))
+        }
+    }, [id])
+
+    const handleSaveToCuration = () => {
+        if (!id) return
+        const savedList = JSON.parse(localStorage.getItem('kult_curation') || '[]')
+        let newList
+        if (isSaved) {
+            newList = savedList.filter(item => item !== id)
+            alert(t("Removed from your Curation", "큐레이션에서 삭제되었습니다"))
+        } else {
+            newList = [...savedList, id]
+            alert(t("Saved to your Curation!", "큐레이션에 저장되었습니다!"))
+        }
+        localStorage.setItem('kult_curation', JSON.stringify(newList))
+        setIsSaved(!isSaved)
+    }
 
     useEffect(() => {
         const fetchSpace = async () => {
@@ -344,23 +367,30 @@ const SpaceDetail = () => {
                     <div className="flex flex-col gap-10 text-left">
                         {/* Action Card */}
                         <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
-                            <button className="w-full h-16 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 mb-8">
-                                <Bookmark className="w-4 h-4 fill-white" />
-                                {t("Save to Curation", "큐레이션에 저장")}
+                            <button 
+                                onClick={handleSaveToCuration}
+                                className={`w-full h-16 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 mb-8 shadow-xl ${
+                                    isSaved 
+                                        ? 'bg-slate-100 text-slate-800 border border-slate-200 shadow-slate-200/20' 
+                                        : 'bg-primary text-white shadow-primary/20'
+                                }`}
+                            >
+                                <Bookmark className={`w-4 h-4 ${isSaved ? 'fill-slate-800' : 'fill-white'}`} />
+                                {isSaved ? t("Saved in Curation", "큐레이션에 저장됨") : t("Save to Curation", "큐레이션에 저장")}
                             </button>
 
                             {/* Connectivity */}
                             <div className="flex flex-col gap-6 pt-6 border-t border-slate-100">
                                 <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-300">{t("Connect", "연결")}</h4>
                                 <div className="flex flex-col gap-4">
-                                    <div className="flex items-center justify-between group transition-colors cursor-pointer" onClick={() => window.open('https://example.com', '_blank')}>
+                                    <div className="flex items-center justify-between group transition-colors cursor-pointer" onClick={() => window.open(space.websiteUrl || `https://www.google.com/search?q=${encodeURIComponent((t(space.title, space.titleKr || space.title)) + ' ' + (space.region || ''))}`, '_blank')}>
                                         <div className="flex items-center gap-3">
                                             <Globe className="w-4 h-4 text-slate-400 group-hover:text-primary" />
                                             <span className="text-xs font-bold text-slate-600 group-hover:text-slate-900 uppercase tracking-tight">{t("Official Website", "공식 웹사이트")}</span>
                                         </div>
                                         <ExternalLink className="w-3.5 h-3.5 text-slate-300" />
                                     </div>
-                                    <div className="flex items-center justify-between group transition-colors cursor-pointer" onClick={() => window.open('https://instagram.com', '_blank')}>
+                                    <div className="flex items-center justify-between group transition-colors cursor-pointer" onClick={() => window.open(space.instagramUrl || `https://www.instagram.com/explore/tags/${encodeURIComponent((t(space.title, space.titleKr || space.title)).replace(/\s+/g, ''))}`, '_blank')}>
                                         <div className="flex items-center gap-3">
                                             <Instagram className="w-4 h-4 text-slate-400 group-hover:text-primary" />
                                             <span className="text-xs font-bold text-slate-600 group-hover:text-slate-900 uppercase tracking-tight">Instagram</span>

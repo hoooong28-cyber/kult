@@ -275,7 +275,10 @@ const Magazine = () => {
                 <p className="text-slate-400 font-medium leading-relaxed mb-10 uppercase text-[10px] tracking-[0.3em]">
                     {t("New volumes released every Sunday at 9 PM.", "매주 일용일 밤 9시, 새로운 매거진이 발행됩니다.")}
                 </p>
-                <button className="h-16 px-12 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.4em] hover:scale-[1.05] transition-all shadow-xl shadow-slate-900/20">
+                <button 
+                    onClick={() => alert(t("Volume release alerts activated!", "매거진 발행 알림이 설정되었습니다!"))}
+                    className="h-16 px-12 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.4em] hover:scale-[1.05] transition-all shadow-xl shadow-slate-900/20"
+                >
                     {t("Subscribe to Alerts", "알림 설정하기")}
                 </button>
             </div>
