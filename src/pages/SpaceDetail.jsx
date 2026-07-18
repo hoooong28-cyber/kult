@@ -119,37 +119,15 @@ const dummySpaces = {
             'https://images.unsplash.com/photo-1506057213367-028a17ec52e5?auto=format&fit=crop&q=80&w=800',
             'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&q=80&w=800'
         ],
-        description: 'A centuries-old Hanok where the art of tea brewing meets the silence of the surrounding bamboo forest. Nestled deep in Gyeongju\'s historical district, the estate has been passed down through seven generations of the Yuyeon family.',
-        descriptionKr: '수백 년 된 한옥에서 차를 우리는 예술과 대나무 숲의 고요함이 만나는 곳입니다. 경주 역사 지구 깊숙이 자리 잡은 이 저택은 유연 가문 7대에 걸쳐 전해 내려왔습니다.',
-        googleMapsUrl: 'https://maps.google.com',
-        isPremium: false
-    },
-    'pine-hideaway': {
-        title: 'The Pine Hideaway',
-        titleKr: '소나무 은신처',
-        category: 'Healing Stay',
-        categoryKr: '힐링 스테이',
-        region: 'pyeongchang',
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnz2ezosgYy1InE6M-vxahUlcD39OD0pvgs5qPupHwpGcZr1Ec3pwOUr1T6MSQydMR9XbCIw-loP0wEBYXtYYZjnGpO0K1a9Fhf--q4V1jW4KyxHNuX1p_Vuu749zGUQFvrKBVkUPN9YNv68yqozKkH86YlL2rpXyYlUXDAjM06W0X1bj6Yg-W6I2PdqzKRbR4-IpYDyvAqljF9nR-t6_JiBngrHivGFtmfN0OI1KLc_Vv_rttoDWEFpYL6tZKE1TwFmhMig6L_y3U',
-        galleryUrls: [
-            'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&q=80&w=800'
-        ],
-        description: 'Disconnect to reconnect. A glass-walled sanctuary tucked deep into the cedar forests of Gangwon province, where the only sounds are wind, birdsong, and silence.',
-        descriptionKr: '연결을 위해 접속을 끊으세요. 강원도 삼나무 숲 깊은 곳에 자리 잡은 유리벽 안식처로, 들리는 소리라곤 바람과 새소리, 그리고 정적뿐입니다.',
-        googleMapsUrl: 'https://maps.google.com',
-        isPremium: false
-    },
-    'cafe-onion-seongsu': {
+           'cafe-onion-seongsu': {
         title: 'Cafe Onion Seongsu: Raw Concrete & Industrial Bread',
         titleKr: '어니언 성수: 거친 콘크리트와 금속이 빚어낸 베이커리 스페이스',
         category: 'Cafe',
         categoryKr: '카페',
         region: 'seongsu',
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIC80g9d0IWKmmqHudubq8mZ5BgpE2JbKahPBpTwYknXtx7pNYjTB8MuTD7frdR1RPdbfVCRqc8y2SDvlqo5_J7VBb2cyObOQqaxSEYKAFZVV4rDQR9T7sPiYiTxcaI3x7cU8AKha7JZ1qfiJRq7FytIK9BBEWwyjYqtjl9T8covdISOyqbEhz763wZHEDP0FezSxJ7BdchJ--ZXMrUsMBodxKasJnMdAFpmTc7WJSX525ndWmn9GP9SqT41tJaJSHA53GauLvWOiq',
+        imageUrl: '/cafe_onion_seongsu.png',
         galleryUrls: [
-            'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800',
-            'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800'
+            '/cafe_onion_seongsu.png'
         ],
         description: 'Onion Seongsu is a sensory bakery cafe built inside a renovated 1970s metal part factory. It preserves the dilapidated brick walls, rusted steel gates, and decayed concrete structures, creating an aesthetic of collapse and reconstruction.',
         descriptionKr: '어니언 성수는 1970년대 금속 부품 공장을 개조하여 만든 감각적인 베이커리 카페입니다. 세월의 흐름을 고스란히 담은 낡은 벽돌 벽, 녹슨 철제 구조물, 그리고 떨어져 나간 콘크리트 기둥을 그대로 보존하여 파괴와 재구성의 미학을 담고 있습니다.',
@@ -162,13 +140,45 @@ const dummySpaces = {
         category: 'Retail / Beauty',
         categoryKr: '뷰티 / 리테일',
         region: 'seongsu',
-        imageUrl: '/seongsu_boutique_hero.png',
+        imageUrl: '/tamburins_seongsu.png',
         galleryUrls: [
-            'https://web-resource.tamburins.com/image/share_banner_summer-tails.jpg',
-            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
+            '/tamburins_seongsu.png'
         ],
         description: 'Tamburins Seongsu flagship showroom is an architectural void. By stripping the building down to its structural concrete scaffolding, they created an open-air display that houses sensory fragrance art installations and concrete design elements.',
         descriptionKr: '탬버린즈 성수 플래그십 스토어는 기둥 구조(비계)만 남긴 채 벽면을 완전히 비워낸 건축학적 보이드 공간입니다. 날것의 노출 콘크리트 뼈대 구조물 아래, 거대한 현대 미술작품과 디자인적 향기 오브제를 전시하여 리테일의 새로운 경지를 보여줍니다.',
+        googleMapsUrl: 'https://maps.google.com/maps?q=Tamburins+Seongsu',
+        isPremium: false
+    },
+    'lcdc-seoul': {
+        title: 'LCDC Seoul: The Spatial Collage of Independent Curation',
+        titleKr: 'LCDC 서울: 감도 높은 라이프스타일 큐레이션 복합공간',
+        category: 'Culture',
+        categoryKr: '컬처',
+        region: 'seongsu',
+        imageUrl: '/lcdc_seoul.png',
+        galleryUrls: [
+            '/lcdc_seoul.png'
+        ],
+        description: 'LCDC Seoul is a multi-story lifestyle complex built in a repurposed automotive repair shop. Centered around a sleek concrete courtyard, it curates independent fashion, design stationery, and custom craft boutiques under one unified architectural editorial theme.',
+        descriptionKr: 'LCDC 서울은 옛 자동차 정비소를 미니멀한 복합 문화 공간으로 탈바꿈시킨 공간입니다. 정방형의 모던한 콘크리트 중정을 중심으로, 감도 높은 패션, 스테이셔너리, 독립 공예 디자인 매장들이 조화롭게 들어서 있는 편집샵입니다.',
+        googleMapsUrl: 'https://maps.google.com/maps?q=LCDC+Seoul',
+        isPremium: false
+    },
+    'ofr-seoul': {
+        title: 'Ofr. Seoul: Avant-garde Print Matter & Metallic Archives',
+        titleKr: '오프레 서울: 가공되지 않은 금속 선반과 예술 서적의 미학',
+        category: 'Culture',
+        categoryKr: '컬처',
+        region: 'seongsu',
+        imageUrl: '/ofr_seoul.png',
+        galleryUrls: [
+            '/ofr_seoul.png'
+        ],
+        description: 'Ofr. Seoul is the Seoul branch of the Parisian independent art bookshop. Hidden inside a vintage brick building, it features global art books, fashion magazines, and indie prints stacked on industrial metallic racks.',
+        descriptionKr: '오프레 서울은 프랑스 파리의 유서 깊은 독립 예술 서점 Ofr.의 서울 지점입니다. 오래된 주택 건물의 빈티지한 골조 속에서, 차가운 산업용 금속 렉 선반 위에 전 세계의 감각적인 예술 서적, 패션 독립 잡지, 포스터들을 아카이브해 둡니다.',
+        googleMapsUrl: 'https://maps.google.com/maps?q=Ofr+Seoul',
+        isPremium: false
+    }�� 새로운 경지를 보여줍니다.',
         googleMapsUrl: 'https://maps.google.com/maps?q=Tamburins+Seongsu',
         isPremium: false
     },
