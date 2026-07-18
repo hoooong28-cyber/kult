@@ -1,10 +1,20 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { Orbit, Search, Globe } from 'lucide-react'
 import UserNav from './UserNav'
 import { useLanguage } from '../context/LanguageContext'
 
 const Header = () => {
     const { lang, toggleLang, t } = useLanguage()
+    const [searchQuery, setSearchQuery] = useState('')
+    const navigate = useNavigate()
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault()
+        if (searchQuery.trim()) {
+            navigate(`/search/seongsu?query=${encodeURIComponent(searchQuery.trim())}`)
+        }
+    }
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-2xl border-b border-slate-200">
@@ -17,14 +27,16 @@ const Header = () => {
                     </Link>
 
                     {/* Desktop Search (Simplified) */}
-                    <div className="hidden md:flex items-center bg-slate-100 border border-slate-200 rounded-full px-5 py-2 group focus-within:border-primary/50 transition-all duration-500">
+                    <form onSubmit={handleSearchSubmit} className="hidden md:flex items-center bg-slate-100 border border-slate-200 rounded-full px-5 py-2 group focus-within:border-primary/50 transition-all duration-500">
                         <Search className="w-4 h-4 text-slate-400 group-focus-within:text-primary transition-colors" strokeWidth={1.5} />
                         <input
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
                             className="bg-transparent border-none focus:ring-0 text-xs w-48 placeholder:text-slate-500 uppercase tracking-widest ml-2 text-slate-700 font-display"
                             placeholder={t("Search spaces...", "공간 검색...")}
                             type="text"
                         />
-                    </div>
+                    </form>
 
                     {/* Right Utilities */}
                     <div className="flex items-center gap-3 md:gap-10">
