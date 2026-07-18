@@ -1,4 +1,5 @@
-import { Orbit, Globe, Instagram, Signal } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Orbit, Globe, Instagram } from 'lucide-react'
 
 const Footer = () => {
     return (
@@ -18,24 +19,24 @@ const Footer = () => {
                         <div>
                             <h4 className="text-[10px] tracking-[0.4em] uppercase text-slate-900 font-black mb-10">Discovery</h4>
                             <ul className="space-y-6 text-[10px] tracking-[0.2em] uppercase font-bold text-slate-400">
-                                <li><a className="hover:text-primary transition-colors" href="#">Global Nodes</a></li>
-                                <li><a className="hover:text-primary transition-colors" href="#">SEO Dispatch</a></li>
-                                <li><a className="hover:text-primary transition-colors" href="#">TYO Archive</a></li>
+                                <li><Link className="hover:text-primary transition-colors" to="/sectors">Sectors</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" to="/magazine">Magazine</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" to="/">Home</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="text-[10px] tracking-[0.4em] uppercase text-slate-900 font-black mb-10">Operations</h4>
                             <ul className="space-y-6 text-[10px] tracking-[0.2em] uppercase font-bold text-slate-400">
-                                <li><a className="hover:text-primary transition-colors" href="#">Support Link</a></li>
-                                <li><a className="hover:text-primary transition-colors" href="#">Protocols</a></li>
-                                <li><a className="hover:text-primary transition-colors" href="#">Emergency</a></li>
+                                <li><Link className="hover:text-primary transition-colors" to="/subscribe">Subscribe</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" to="/join">Join</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" to="/credits">Credits</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="text-[10px] tracking-[0.4em] uppercase text-slate-900 font-black mb-10">Social</h4>
                             <ul className="space-y-6 text-[10px] tracking-[0.2em] uppercase font-bold text-slate-400">
-                                <li><a className="hover:text-primary transition-colors" href="#">Instagram</a></li>
-                                <li className="flex items-center gap-2"><Globe className="w-3.5 h-3.5" /> <a className="hover:text-primary transition-colors" href="#">Global Hub</a></li>
+                                <li><a className="hover:text-primary transition-colors" href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
+                                <li className="flex items-center gap-2"><Globe className="w-3.5 h-3.5" /> <a className="hover:text-primary transition-colors" href="https://kult-discovery.web.app" target="_blank" rel="noreferrer">Global Hub</a></li>
                             </ul>
                         </div>
                     </div>

@@ -91,10 +91,6 @@ const Home = () => {
     const handleRegionFilter = (value) => {
         if (value === 'seoul' || value === 'all') {
             navigate('/sectors')
-        } else if (value === 'gyeongju') {
-            navigate('/search/gyeongju')
-        } else {
-            alert(t(`${value.toUpperCase()} sector coming soon!`, `${value.toUpperCase()} 지구는 곧 업데이트될 예정입니다!`))
         }
     }
 
@@ -148,15 +144,16 @@ const Home = () => {
                     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
                             {[
-                                { label: t('All Collections', '전체'), value: 'all' },
-                                { label: 'Seoul', value: 'seoul' },
-                                { label: 'Busan', value: 'busan' },
-                                { label: 'Jeju', value: 'jeju' },
-                                { label: 'Gyeongju', value: 'gyeongju' }
+                                { label: t('All Collections', '전체'), value: 'all', enabled: true },
+                                { label: 'Seoul', value: 'seoul', enabled: true },
+                                { label: 'Busan', value: 'busan', enabled: false },
+                                { label: 'Jeju', value: 'jeju', enabled: false },
+                                { label: 'Gyeongju', value: 'gyeongju', enabled: false }
                             ].map(item => (
                                 <button
                                     key={item.value}
-                                    onClick={() => handleRegionFilter(item.value)}
+                                    onClick={() => item.enabled && handleRegionFilter(item.value)}
+                                    disabled={!item.enabled}
                                     style={{
                                         background: 'none',
                                         border: 'none',
@@ -164,11 +161,12 @@ const Home = () => {
                                         fontWeight: 700,
                                         textTransform: 'uppercase',
                                         letterSpacing: '0.2em',
-                                        cursor: 'pointer',
+                                        cursor: item.enabled ? 'pointer' : 'not-allowed',
                                         color: item.value === 'all' ? '#0d0d0d' : '#94a3b8',
                                         borderBottom: item.value === 'all' ? '1px solid #1111d4' : 'none',
                                         paddingBottom: '2px',
-                                        outline: 'none'
+                                        outline: 'none',
+                                        opacity: item.enabled ? 1 : 0.35
                                     }}
                                 >
                                     {item.label}
