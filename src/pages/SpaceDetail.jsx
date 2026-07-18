@@ -12,6 +12,54 @@ import { doc, getDoc, updateDoc, arrayUnion, increment } from 'firebase/firestor
 
 // Fallback dummy data indexed by slug
 const dummySpaces = {
+    'seongsu-route': {
+        title: '72 Hours in Seongsu: The Brutalist & Sensory Route',
+        titleKr: '성수에서의 72시간: 브루탈리즘과 감각의 여정',
+        category: 'Curated Route',
+        categoryKr: '큐레이션 루트',
+        region: 'seongsu',
+        imageUrl: '/seongsu_boutique_hero.png',
+        galleryUrls: [
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuAIC80g9d0IWKmmqHudubq8mZ5BgpE2JbKahPBpTwYknXtx7pNYjTB8MuTD7frdR1RPdbfVCRqc8y2SDvlqo5_J7VBb2cyObOQqaxSEYKAFZVV4rDQR9T7sPiYiTxcaI3x7cU8AKha7JZ1qfiJRq7FytIK9BBEWwyjYqtjl9T8covdISOyqbEhz763wZHEDP0FezSxJ7BdchJ--ZXMrUsMBodxKasJnMdAFpmTc7WJSX525ndWmn9GP9SqT41tJaJSHA53GauLvWOiq',
+            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
+        ],
+        description: `Seongsu-dong is a landscape where time and industry collide. Once filled with metal workshops and shoe factories, it has evolved into Seouls most avant-garde district. Here is our curated 24-hour spatial journey for the design-obsessed explorer.
+
+🛑 STOP 1. Cafe Onion Seongsu
+- Theme: Raw Concrete & Bakery
+- Experience: A 1970s metal factory transformed into a brutalist coffee sanctuary. The decay of brick, crumbling plaster, and linear glass frames create a striking visual narrative.
+
+🛑 STOP 2. Tamburins Seongsu Flagship Store
+- Theme: Sensory Retail & Architectural Void
+- Experience: A subterranean fragrance showroom built within an open-air concrete scaffolding. Experiencing scent between giant paintings, art installations, and concrete columns.
+
+🛑 STOP 3. LCDC Seoul
+- Theme: Curated Spatial Collage
+- Experience: A multi-story automotive repair shop transformed into a sleek complex. Independent fashion boutiques and design stationary brands gathered like pages of an editorial magazine.
+
+🛑 STOP 4. Ofr. Seoul & Seongsu Pop-up Exploration
+- Theme: Metal & Printed Matter
+- Experience: Browse global art magazines and posters stacked on industrial steel shelves, wrapping up the day with industrial street vibes.`,
+        descriptionKr: `성수동은 시간과 산업이 격렬하게 충돌하는 도시적 풍경입니다. 한때 금속 정밀 공장 및 수제화 공장이 밀집했던 이곳은 이제 서울에서 가장 전위적인 미학의 지구가 되었습니다. 디자인에 깊은 애정을 가진 탐험가를 위해 엄선한 24시간 공간 여정을 소개합니다.
+
+🛑 STOP 1. 카페 어니언 성수 (Cafe Onion Seongsu)
+- 테마: 날것의 콘크리트와 빵 (Raw Concrete & Bakery)
+- 경험: 1970년대 금속 부품 공장을 개조한 브루탈리즘의 안식처. 허물어진 붉은 벽돌, 뜯겨 나간 콘크리트 질감과 미니멀한 유리 프레임의 조화가 독특한 공간을 선사합니다.
+
+🛑 STOP 2. 탬버린즈 성수 플래그십 스토어 (Tamburins Seongsu)
+- 테마: 감각적 리테일과 공간의 여백
+- 경험: 건물 기둥 뼈대 가설재만 남겨진 구조 아래 자리 잡은 전시장 같은 프래그런스 쇼룸. 거대한 현대 미술작품과 콘크리트 기둥 사이에서 감도 높은 향기를 호흡해 보세요.
+
+🛑 STOP 3. LCDC 서울 (LCDC Seoul)
+- 테마: 큐레이션된 공간의 콜라주
+- 경험: 옛 자동차 정비소 부지를 모던한 복합 공간으로 재탄생시킨 곳. 잡지 에디토리얼을 읽듯 중정을 둘러싼 독립 디자인 샵과 셀렉트 스토어를 탐험하세요.
+
+🛑 STOP 4. 오프레도 (Ofr. Seoul) & 골목 팝업
+- 테마: 날것의 메탈과 종이 예술
+- 경험: 산업용 메탈 선반에 꽂혀 있는 전 세계의 다양한 예술 서적과 포스터 컬렉션을 뒤적이며, 성수동 특유의 에너제틱한 골목 정취와 함께 하루를 매듭짓습니다.`,
+        googleMapsUrl: 'https://maps.google.com/maps?q=Seongsu-dong+Seoul',
+        isPremium: false
+    },
     'void-space': {
         title: 'Void Space Seoul',
         titleKr: '보이드 스페이스 서울',

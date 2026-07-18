@@ -121,18 +121,18 @@ const Home = () => {
                     <div style={{ position: 'relative', zIndex: 10, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', maxWidth: '1280px', margin: '0 auto', padding: '0 2rem 5rem' }}>
                         <div style={{ maxWidth: '800px' }}>
                             <span style={{ display: 'inline-block', padding: '4px 14px', background: '#1111d4', color: '#fff', fontSize: '9px', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-                                {t('Curated Travel Route', '큐레이션 여행 가이드')}
+                                {t('Curated Route', '큐레이션 루트')}
                             </span>
                             <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', fontFamily: 'Georgia, ui-serif, serif', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
-                                {t('72 Hours in Seoul: A Curation of Concrete & Hanok', '서울에서의 72시간: 콘크리트와 한옥의 미학적 여정')}
+                                {t('72 Hours in Seongsu: The Brutalist & Sensory Route', '성수에서의 72시간: 브루탈리즘과 감각의 여정')}
                             </h1>
                             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', fontWeight: 300, maxWidth: '620px', marginBottom: '2.5rem', lineHeight: 1.75, letterSpacing: '0.01em' }}>
-                                {t('The ultimate spatial playbook for the aesthetic explorer. Navigating the brutalist coffee sanctuaries of Seongsu-dong, the silent pine hideaways of Bukchon, and the sensory retail chambers of Sinsa-dong.', '미학적 탐험가를 위한 서울 공간 플레이북. 성수동의 브루탈리스트 카페, 북촌의 고요한 한옥 리트리트, 신사동의 감각적인 브랜드 쇼룸을 아우르는 72시간의 루트.')}
+                                {t('The ultimate spatial playbook for the design-conscious traveler. Navigating raw concrete cafes, industrial art chambers, and avant-garde fragrance showrooms of Seouls trendsetting district.', '디자인에 민감한 여행자를 위한 궁극의 공간 가이드. 서울에서 가장 트렌디한 성수동의 날것의 콘크리트 카페, 산업적 예술 공간, 그리고 전위적인 쇼룸 루트.')}
                             </p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <Link to="/sectors" style={{ display: 'inline-block', padding: '14px 36px', background: '#fff', color: '#0d0d0d', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', textDecoration: 'none' }}
+                                <Link to="/space/seongsu-route" style={{ display: 'inline-block', padding: '14px 36px', background: '#fff', color: '#0d0d0d', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', textDecoration: 'none' }}
                                     className="hover:bg-slate-100 transition-colors">
-                                    {t('Explore Districts', '지구별 가이드 탐색')}
+                                    {t('Read Route Guide', '루트 가이드 읽기')}
                                 </Link>
                             </div>
                         </div>
