@@ -13,7 +13,7 @@ Run the following command to download the text and images to a temporary directo
 *(Make sure to replace `[SHORTCODE]` with the actual shortcode, preserving the `-` before it as it's required for Instaloader syntax).*
 
 3. **Read Content & Plan Column:**
-Use `view_file` to read the downloaded `.txt` file containing the caption. Analyze the text and the number of downloaded `.jpg` images to plan the Magazine column structure. Map the text to different sections (Morning, Afternoon, Evening, etc.) and assign an image to each section.
+Use `view_file` to read the downloaded `.txt` file containing the caption. Analyze the text and the number of downloaded `.jpg` images to plan the Magazine column structure. Follow the strict rules in [instagram_washing_guide.md](file:///Users/hoo__oong/Desktop/kult/.agents/workflows/instagram_washing_guide.md) to wash the content, rewrite the copy into a premium editorial tone (bilingual EN/KR), and map the images to the sections.
 
 4. **Copy Images to App Directory:**
 // turbo
