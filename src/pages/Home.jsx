@@ -379,22 +379,7 @@ const Home = () => {
             </main>
 
             {/* ── Footer ───────────────────────────────────────────────── */}
-                        <div style={{ display: 'flex', gap: '0.75rem' }}>
-                            {[Instagram, Globe].map((Icon, i) => (
-                                <span key={i} style={{ width: '40px', height: '40px', borderRadius: '50%', border: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'default' }}
-                                    className="hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all">
-                                    <Icon strokeWidth={1.5} style={{ width: '16px', height: '16px', color: '#64748b' }} />
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '2rem 2rem 0', textAlign: 'center' }}>
-                    <p style={{ fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.4em', color: '#cbd5e1' }}>
-                        © 2024 KULT Space & Brand Editorial. Seoul, South Korea.
-                    </p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 }
