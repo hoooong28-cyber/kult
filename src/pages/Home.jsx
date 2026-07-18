@@ -113,7 +113,7 @@ const Home = () => {
                             alt="Featured Korean Brand Space"
                             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transition: 'transform 3s ease', pointerEvents: 'none' }}
                             className="group-hover:scale-105"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf1blu6c8imp44TnDdmZGqeo88chuE6BEd1swlYnJerkGIzHeO-hj3Sj2OAdeA8_G-AmyulffbP2Kxn2WlS6yP2njTuxHUvlZ2tGnTDim9sB68oLr25Q1AQC0oA-xS4YPl_WnL2JGpAhVcPEeCN_378EtQwAF0pu4JDZMZkb8sI89gb3zsUuL1cRZPyiXChVsAxicZ2D395HMTOF2lneOnhNSmwTtTgFdC__NG7FpMBmQfv-J3moka4CRT7j2oGad8s3of5yjYtxyd"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOeAEDReiO56NceRRAI74x11UkMAFpLTD8rCqj6Dt1pbF3arduDR00v0-ywXgvJV8TuH-x6mypHbt2yGFcQ2bkNRhYCFDYAUOO5qlimCTFvJ6yeN0tbXXHhSEv1PrWHsrBqlPg5uc11s0eSQEqTMSAMWxqC_IgFTc8TmkBMAh7gQGCkUbfhDSAy7xMO0NrAsZUO0eX83mN83tQ_lxjJMD1S2abzB2uQmcQmRQxtGUs5jIvKhCMXyT_UoSSIcB0hOsDt4_whSqdSjVN"
                         />
                         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.2) 100%)', pointerEvents: 'none' }} />
                     </div>
