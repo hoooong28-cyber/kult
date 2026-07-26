@@ -17,7 +17,7 @@ const mainColumn = {
     tagKr: '공간 정체성',
     readTime: '12 Min Read',
     author: 'Min-kyu Park',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAOeAEDReiO56NceRRAI74x11UkMAFpLTD8rCqj6Dt1pbF3arduDR00v0-ywXgvJV8TuH-x6mypHbt2yGFcQ2bkNRhYCFDYAUOO5qlimCTFvJ6yeN0tbXXHhSEv1PrWHsrBqlPg5uc11s0eSQEqTMSAMWxqC_IgFTc8TmkBMAh7gQGCkUbfhDSAy7xMO0NrAsZUO0eX83mN83tQ_lxjJMD1S2abzB2uQmcQmRQxtGUs5jIvKhCMXyT_UoSSIcB0hOsDt4_whSqdSjVN',
+    img: 'https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&q=80&w=1200',
     desc: 'Exploring how Arumjigi Culture Keepers Foundation bridges the gap between Joseon-era aesthetics and 21st-century minimalism in the heart of Seoul.'
 }
 
@@ -28,7 +28,7 @@ const sideColumns = [
         titleKr: '보이드 스페이스: 비어있음을 큐레이팅하다',
         descEn: 'Inside Hannam\'s most enigmatic concrete shell where art becomes an atmospheric experience.',
         descKr: '예술이 분위기 경험이 되는 한남의 가장 수수께끼 같은 콘크리트 공간 내부.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbwoL1fq_JksuTSIQIDc7aKzarYFCoKXSumbSeFD4TWpCcU4858QFMLYdYebKkiZR2jIFI1Ei9rgbQtdkXOHuljgW7VDJNzMAAwGaKuNkaLY6127SDCwTsk2kK1eC1_tfaDDAJHRQbbplp2pfiNDZuBrLhn6446CsRVlnIdLQvEPy5HilTe6nGGGoNYB8zN6L9ISkrK_tR1jP5sDMbVWukDfDARBmz7zviyycbc2XIbshKwgivg43cPtycFsPWD5743_ye5gxVo3r3'
+        img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800'
     },
     {
         slug: 'pine-hideaway',
@@ -36,7 +36,7 @@ const sideColumns = [
         titleKr: '강원 포레스트 리트리트',
         descEn: 'How contemporary architects are weaving luxury stays into the dense cedar canopies of Pyeongchang.',
         descKr: '현대 건축가들이 평창의 빽빽한 삼나무 숲 사이에 럭셔리 스테이를 엮어내는 방법.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnz2ezosgYy1InE6M-vxahUlcD39OD0pvgs5qPupHwpGcZr1Ec3pwOUr1T6MSQydMR9XbCIw-loP0wEBYXtYYZjnGpO0K1a9Fhf--q4V1jW4KyxHNuX1p_Vuu749zGUQFvrKBVkUPN9YNv68yqozKkH86YlL2rpXyYlUXDAjM06W0X1bj6Yg-W6I2PdqzKRbR4-IpYDyvAqljF9nR-t6_JiBngrHivGFtmfN0OI1KLc_Vv_rttoDWEFpYL6tZKE1TwFmhMig6L_y3U'
+        img: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&q=80&w=800'
     }
 ]
 
@@ -49,7 +49,7 @@ const products = [
         nameKr: '진생 리뉴잉 크림 v.05',
         descEn: 'The evolution of a legend. Enhanced bio-cell formula for deep restoration.',
         descKr: '전설의 진화. 심층 회복을 위한 향상된 바이오셀 포뮬러.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuANx8Mn2dg7Tpng5l62dRg7UYS0QEnujBySMMIfqtmNElNn_BgWflDwnlrWZ4_sTc1qYwMLSdV-ddaZ-Su9DAtEOORvntUvQPUACDgmRRnbOfIEfni6kk_9TBsz_e5JoleZoWFsvH18S5WJJMMJ9qqGFMieeUt12ILpDnH-iqWMhKyej9azd5mIpNyidEp81uQGuQCIyvyyq533mRRUD8KVK4z2A0WvMCvPZFntBM4xgU2U4Btyp7VZWzapwuZGXcGlnHDeVFxHR62S'
+        img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'p2',
@@ -58,7 +58,7 @@ const products = [
         nameKr: '세라믹 시리즈: 인사 에디션',
         descEn: 'A collaboration between Nordic functionalism and Korean celadon heritage.',
         descKr: '북유럽 기능주의와 한국 청자 헤리티지의 협업.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC9UubJlP9tkI7cnHbMKmEYrn5HMBOrEQcb7Q8sl2D7_dgC-wla-wjWHzRS7JllUGrlGto2PR8Cbe5PqpNe01evzAbjq2BNYDX9BW8r7NaTWBNL6CC-X-GHGbwpSHgkUZ2ffJqA8g9sKWnI5J9XjNrTTjEXJfJIWmT3EgXSCxx6mNHKJcjJIzPhhI_orLcgc1rgaAHrmLHoTl_Ri-RstcqlLBrYCLOyPfsSEyaM6Y4NNpJq0qNm9fMBekHxUI0ulod90isikVVnpVCo'
+        img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'p3',
@@ -67,7 +67,7 @@ const products = [
         nameKr: '네온 아카이브 04 램프',
         descEn: 'The vibrant energy of Euljiro nights captured in a minimalist lighting fixture.',
         descKr: '을지로의 생동감 넘치는 야경 에너지를 담은 미니멀리스트 조명.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBHgCnS8Z0XjYLPwjNsmzPerwPFsLS5TOzybD0zm6Ha-zR4UhusmGnaSIUZZziy3FHZ2ZoXnCPo7AIIoAnU_FdGJedUA5zdwoUe21o_N1GkRmm15grWncJpdqaXwEmHel0zwomIUoNZUiUJURiWi0VuXWlggUPgsL75Txete1kIFfPoa7KkCgOgpAGDbGMtdls-0_q4EdBxpsr1BR-csF-GPuuUo7Jn3Ga6qohnoO65g4bPgUy0gavAcJWEdb80kBY0b-l0QgpCYKcN'
+        img: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'p4',
@@ -76,7 +76,7 @@ const products = [
         nameKr: '오브젝트 012: 하이브리드 백',
         descEn: 'Deconstructed aesthetics meeting industrial durability in their latest drop.',
         descKr: '해체주의 미학과 산업적 내구성이 만난 최신 드롭.',
-        img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8hs2GzqCwBkGmzI2aDawlFFh-Y2btSLIoEKU6_lrMlmFIAeRn9pDsbW6_jRZ5ZChCQHFg53ONbi7_mawIVqbzM0KQBzTbg8D6YgNxWaP995MWHtBDKd1o9JGRYe9Q4m-LlfYUsYzVRFNDa1-5piIObKG57PxGHPfhkXuySAh9nwEGmM6FhL_gdNBaMNQ9JrxFZjAXLY9rlA4cu2Ugn3evEZkvOQWj6Ud6-AFQ48cDmCQbfnWmHJo7HMh-_AzGNe2Cb2vcqzp1XTmw'
+        img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=800'
     }
 ]
 
