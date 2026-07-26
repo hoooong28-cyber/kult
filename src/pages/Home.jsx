@@ -130,11 +130,21 @@ const Home = () => {
                             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', fontWeight: 300, maxWidth: '620px', marginBottom: '2.5rem', lineHeight: 1.75, letterSpacing: '0.01em' }}>
                                 {t('The ultimate spatial playbook for the design-conscious traveler. Navigating raw concrete cafes, industrial art chambers, and avant-garde fragrance showrooms of Seouls trendsetting district.', '디자인에 민감한 여행자를 위한 궁극의 공간 가이드. 서울에서 가장 트렌디한 성수동의 날것의 콘크리트 카페, 산업적 예술 공간, 그리고 전위적인 쇼룸 루트.')}
                             </p>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                                 <Link to="/space/seongsu-route" style={{ display: 'inline-block', padding: '14px 36px', background: '#fff', color: '#0d0d0d', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', textDecoration: 'none' }}
                                     className="hover:bg-slate-100 transition-colors">
                                     {t('Read Route Guide', '루트 가이드 읽기')}
                                 </Link>
+                                <button 
+                                    onClick={() => {
+                                        const el = document.getElementById('concierge-section')
+                                        if (el) el.scrollIntoView({ behavior: 'smooth' })
+                                    }}
+                                    style={{ display: 'inline-flex', itemsCenter: 'center', gap: '8px', padding: '14px 32px', background: '#1111d4', color: '#fff', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', border: 'none', cursor: 'pointer' }}
+                                    className="hover:bg-slate-900 transition-colors"
+                                >
+                                    <span>🔥 {t('Book Concierge Spots', '컨시어지 핫플 예약')}</span>
+                                </button>
                             </div>
                         </div>
                     </div>
