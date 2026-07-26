@@ -166,7 +166,7 @@ const dummySpaces = {
         category: 'Heritage',
         categoryKr: '헤리티지',
         region: 'bukchon',
-        imageUrl: 'https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&q=80&w=1200',
+        imageUrl: 'https://images.unsplash.com/photo-1583037189850-1921ae7c6c34?auto=format&fit=crop&q=80&w=1200',
         description: 'Exploring how Arumjigi Culture Keepers Foundation bridges the gap between Joseon-era aesthetics and 21st-century minimalism.',
         descriptionKr: '재단법인 아름지기가 서울 중심부에서 조선 시대의 미학과 21세기 미니멀리즘 사이의 간극을 어떻게 좁히고 있는지 탐구합니다.',
         googleMapsUrl: 'https://maps.google.com',

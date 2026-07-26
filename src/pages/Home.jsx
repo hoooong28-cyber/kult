@@ -17,7 +17,7 @@ const mainColumn = {
     tagKr: '공간 정체성',
     readTime: '12 Min Read',
     author: 'Min-kyu Park',
-    img: 'https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&q=80&w=1200',
+    img: 'https://images.unsplash.com/photo-1583037189850-1921ae7c6c34?auto=format&fit=crop&q=80&w=1200',
     desc: 'Exploring how Arumjigi Culture Keepers Foundation bridges the gap between Joseon-era aesthetics and 21st-century minimalism in the heart of Seoul.'
 }
 
