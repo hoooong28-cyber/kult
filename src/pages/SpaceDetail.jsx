@@ -88,7 +88,7 @@ const dummySpaces = {
         region: 'seochon',
         distance: '2.4 KM',
         estTime: '4 HOURS',
-        imageUrl: 'https://lh3.googleusercontent.com/aida/AP1WRLvUfXO4knaZfRl5-NrTOXt6yGLMtKg1Ka-tNb7uTAH309pyHkZ_tqimERFq7CQArcZFJ-tuQZlm0kuOYkKQlrQjZmKEmWOO0EOqliQ7gBmfQ7mqIPxySBh54EnefkzioYvVz0DILHJhZ-F6UxpPSdhXLSlUUztXtJRjNbuJoWirH-YRm_s1bIxgeXqvl9ltrV6Uz9a4_Gr4HBwmaLKcF2n4m_KcIVQ9SovRk7LNVsba24-aDy_DchYhL9js',
+        imageUrl: 'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&q=80&w=1600',
         introSubtitle: 'In the shadows of Inwangsan Mountain, Seochon whispers stories of Joseon scholars and modern dreamers.',
         introSubtitleKr: '인왕산 그늘 아래, 서촌은 조선 학자들과 현대 꿈꾸는 이들의 이야기를 속삭입니다.',
         introNarrative: `This pilgrimage is designed to be experienced slowly. It is not just a route across a neighborhood, but a transition through states of mind: from the structured peace of a Hanok morning to the sensory depths of tea, and finally, the stark clarity of contemporary art.`,
@@ -107,7 +107,7 @@ const dummySpaces = {
                 nameKr: '누와: 한옥의 예술',
                 desc: 'Begin your morning at Nuwa, a micro-stay that redefined the Seochon experience. Here, the traditional "L" shaped Hanok structure is preserved but reimagined with a sunken bathtub and minimalist cedar furnishings.',
                 descKr: "서촌의 경험을 재정의한 미크로 스테이 누와에서 아침을 시작하세요. 'ㄴ'자 한옥 구조를 유지하면서 침강형 욕조와 미니멀한 삼나무 가구로 재해석되었습니다.",
-                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBoe7iuCxJAgAa9KoqLcpk0Vs8-iGiOofpJh9qwQGqBbf2uC_taW7T3IkklmfNbG7vXcTKVO6TDoJKJBuimt-yPbxYIhlmWbwwTU15ELNPun6Ij-L5sJdUpyAXn5zQWAKotkz4YpfonFYKWkSbGhnhW0Qv-_YncgwvnssQxXlu5bv4Lo8vdfk_JCnmapzOe43XXykM97zrUsaEOyWkMdJs-dlU6d7Xbnp5rQP_g5OA4sVgJaFP9APItHCMDHF8HNkcPhXdlaFIZjiyQ',
+                img: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800',
                 walk: '800M WALK'
             },
             {
@@ -118,7 +118,7 @@ const dummySpaces = {
                 nameKr: '인사동 전통 찻집',
                 desc: 'A short walk through winding alleyways brings you to a hidden sanctuary. Dark charred wood walls meet rough-hewn stone tables in a space designed for quiet contemplation.',
                 descKr: '미로 같은 골목길을 지난 후 도착하는 차의 안식처. 어두운 탄화목 벽과 정교한 차 우림 리추얼이 펼쳐집니다.',
-                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBXmb3rY-vF9M73YyFndIm1BeEiv3urM5ouB-BnnjA-awqHVeq_hSE8agPItosUkpnvwd-JhtTGqu0NhjWxCRSUk28uRQU67gswBZs8GMGqTJJOdRwmZ2MHaKHA4Ukc4ReXI9LdMMsIvumKq5WdsBtJ0NXn844gsuvDCUJT4w30WTKU_VodmxSl_uCGQFSVLH_lLVkjw7hUaFg9cDz7NisQdYYuzYKaReB_ZLfP2UbAX6U6c2LGIdc8YDkBKHvJvdjYlEUlSiAnJRMW',
+                img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=800',
                 walk: '1.6KM WALK'
             },
             {
@@ -129,7 +129,7 @@ const dummySpaces = {
                 nameKr: '한남 아츠 서촌 별관',
                 desc: 'Conclude your journey at this brutalist-inspired gallery. The soaring concrete walls and dramatic skylights create a temple of light.',
                 descKr: '브루탈리즘 콘크리트 갤러리에서 여정을 완결짓습니다. 천창에서 쏟아지는 빛과 강렬한 강철 설치 작품이 극적인 결말을 선사합니다.',
-                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7wq7lGmB1XZeXSozc2v111KYI1NSG4yudqexiHqKYZsv8w-sjRJ1Ei4i4pgZUDR8vXPhkVe034rp22c55gCEZ9o2f_d4DiGhM4jBwMrQ4riF4l3-vX7QfL2R81QcVASbb0DUXaQtsjTH2-5_xdwgoOqPlvLEimbFAQQG3Wa2zY8RWTnsZKsL06gg7V1nXVNolLO_gnOgc8e66j3xaSymmAioxgNW3O4s7eAYqokyzyDwRKWdyTM1FkqHBE0Qs68P8q_gwazk5MuQ3',
+                img: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&q=80&w=800',
                 walk: 'FINISH'
             }
         ],

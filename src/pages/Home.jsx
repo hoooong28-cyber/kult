@@ -28,7 +28,7 @@ const sideColumns = [
         titleKr: '서촌의 리듬: 아침 순례길',
         descEn: 'A 2.4km spatial journey through Joseon-era Hanok stays, tea sanctuaries, and brutalist art annexes.',
         descKr: '한옥 미크로스테이, 전통 차 성소, 브루탈리즘 갤러리를 잇는 2.4km 감성 순례길.',
-        img: 'https://lh3.googleusercontent.com/aida/AP1WRLvUfXO4knaZfRl5-NrTOXt6yGLMtKg1Ka-tNb7uTAH309pyHkZ_tqimERFq7CQArcZFJ-tuQZlm0kuOYkKQlrQjZmKEmWOO0EOqliQ7gBmfQ7mqIPxySBh54EnefkzioYvVz0DILHJhZ-F6UxpPSdhXLSlUUztXtJRjNbuJoWirH-YRm_s1bIxgeXqvl9ltrV6Uz9a4_Gr4HBwmaLKcF2n4m_KcIVQ9SovRk7LNVsba24-aDy_DchYhL9js'
+        img: 'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&q=80&w=800'
     },
     {
         slug: 'void-space',
