@@ -21,7 +21,7 @@ const dummySpaces = {
         region: 'seongsu',
         distance: '3.2 KM',
         estTime: '6 HOURS',
-        imageUrl: '/seongsu_boutique_hero.png',
+        imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600',
         introSubtitle: 'Where time and industry collide into Seoul\'s most avant-garde district.',
         introSubtitleKr: '시간과 산업이 격렬하게 충돌하는 서울에서 가장 전위적인 미학의 지구.',
         introNarrative: `Seongsu-dong is a landscape where time and industry collide. Once filled with metal workshops and shoe factories, it has evolved into Seoul's most avant-garde district. This 72-hour spatial journey is designed for the design-conscious explorer navigating raw concrete cafes, subterranean fragrance showrooms, and curated editorial complexes.`,

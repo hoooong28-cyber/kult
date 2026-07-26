@@ -119,10 +119,10 @@ const Home = () => {
                     {/* Background — pointer-events:none prevents it from blocking scroll */}
                     <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
                         <img
-                            alt="Featured Korean Brand Space"
+                            alt="72 Hours in Seongsu Brutalist Architecture"
                             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transition: 'transform 3s ease', pointerEvents: 'none' }}
                             className="group-hover:scale-105"
-                            src="/seongsu_boutique_hero.png"
+                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600"
                         />
                         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.2) 100%)', pointerEvents: 'none' }} />
                     </div>
