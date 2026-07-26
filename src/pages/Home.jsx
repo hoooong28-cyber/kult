@@ -17,7 +17,7 @@ const mainColumn = {
     tagKr: '공간 정체성',
     readTime: '12 Min Read',
     author: 'Min-kyu Park',
-    img: 'https://images.unsplash.com/photo-1583037189850-1921ae7c6c34?auto=format&fit=crop&q=80&w=1200',
+    img: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&q=80&w=1200',
     desc: 'Exploring how Arumjigi Culture Keepers Foundation bridges the gap between Joseon-era aesthetics and 21st-century minimalism in the heart of Seoul.'
 }
 
@@ -28,7 +28,7 @@ const sideColumns = [
         titleKr: '서촌의 리듬: 아침 순례길',
         descEn: 'A 2.4km spatial journey through Joseon-era Hanok stays, tea sanctuaries, and brutalist art annexes.',
         descKr: '한옥 미크로스테이, 전통 차 성소, 브루탈리즘 갤러리를 잇는 2.4km 감성 순례길.',
-        img: 'https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&q=80&w=800'
+        img: 'https://images.unsplash.com/photo-1609949279531-cf48d64bed89?auto=format&fit=crop&q=80&w=800'
     },
     {
         slug: 'void-space',
