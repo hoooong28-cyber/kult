@@ -28,7 +28,7 @@ const dummySpaces = {
         introNarrativeKr: `성수동은 시간과 산업이 격렬하게 충돌하는 도시적 풍경입니다. 한때 금속 정밀 공장 및 수제화 공장이 밀집했던 이곳은 이제 서울에서 가장 전위적인 미학의 지구가 되었습니다. 디자인에 깊은 애정을 가진 탐험가를 위해 엄선한 24시간 공간 여정을 소개합니다.`,
         curatorName: 'Min-kyu Park',
         curatorTitle: 'CHIEF CURATOR AT KULT',
-        curatorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400',
+        curatorAvatar: '/images/ig_post/seongsu_popup_1.png',
         curatorNote: `"Seongsu's magic doesn't happen at the destinations, but in the raw industrial friction between crumbling 1970s brick and 21st-century polished glass. Notice how the industrial noise gives way to subterranean scent chambers and quiet paper archives. The rhythm of the route is found in your footsteps on the gray pavement."`,
         curatorNoteKr: `"성수동의 진정한 매력은 목적지 자체가 아니라 허물어진 1970년대 벽돌과 21세기 유리 프레임이 부딪히는 날것의 마찰력에 있습니다. 공장의 소음이 프래그런스 쇼룸과 미니멀한 종이 서적으로 이어지는 감각적 전환에 집중해 보세요."`,
         stops: [
@@ -95,7 +95,7 @@ const dummySpaces = {
         introNarrativeKr: `이 순례길은 천천히 경험하도록 설계되었습니다. 단순한 동네 탐방을 넘어 마음의 상태를 전환하는 여정입니다: 한옥 아침의 구조화된 평화에서 차의 감각적 깊이로, 그리고 마침내 현대 미술의 명확함으로 나아갑니다.`,
         curatorName: 'Elena Kang',
         curatorTitle: 'CURATOR AT KULT',
-        curatorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
+        curatorAvatar: '/images/ig_post/seongsu_popup_3.png',
         curatorNote: `"Seochon's magic doesn't happen at the destinations, but in the 'in-between' spaces. Pay attention to the transition from the wide commercial Seochon-ro into the narrow 'Golk-mok' (alleys). Notice how the noise drops and the temperature feels cooler."`,
         curatorNoteKr: `"서촌의 진정한 마법은 목적지가 아닌 '사이의 공간'에서 일어납니다. 큰 길에서 좁은 골목길로 접어들 때 소음이 줄어들고 온도가 서늘해지는 감각에 집중해 보세요."`,
         stops: [
