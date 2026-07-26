@@ -42,6 +42,19 @@ const Header = () => {
                     <div className="flex items-center gap-3 md:gap-10">
                         <nav className="hidden lg:flex items-center gap-10 text-[10px] tracking-[0.2em] uppercase font-bold text-slate-400">
                             <Link className="hover:text-primary transition-all duration-300" to="/">{t("Discover", "디스커버")}</Link>
+                            <a 
+                                className="hover:text-primary transition-all duration-300 cursor-pointer flex items-center gap-1 text-primary font-black"
+                                onClick={() => {
+                                    const el = document.getElementById('concierge-section')
+                                    if (el) {
+                                        el.scrollIntoView({ behavior: 'smooth' })
+                                    } else {
+                                        navigate('/#concierge-section')
+                                    }
+                                }}
+                            >
+                                <span>🔥 {t("Concierge", "컨시어지")}</span>
+                            </a>
                             <Link className="hover:text-primary transition-all duration-300" to="/subscribe">{t("Subscribe", "구독하기")}</Link>
                         </nav>
                         <div className="h-4 w-[1px] bg-slate-200 hidden lg:block"></div>

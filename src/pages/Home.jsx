@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ArrowRight, Lock, ChevronLeft, ChevronRight, Orbit, Globe, Instagram } from 'lucide-react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import ConciergeBooking from '../components/ConciergeBooking'
 import { useLanguage } from '../context/LanguageContext'
 
 // ── Brand Space Columns (Paid) ──────────────────────────────────────────────
@@ -348,6 +349,9 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* ── Pillar 3: Inbound Concierge Booking ────────────────── */}
+                <ConciergeBooking />
 
                 {/* ── Newsletter CTA ─────────────────────────────────────── */}
                 <section style={{ padding: '6rem 0', backgroundColor: '#fff', borderTop: '1px solid #f1f5f9', borderBottom: '1px solid #f1f5f9' }}>
