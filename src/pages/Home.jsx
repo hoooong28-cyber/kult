@@ -23,6 +23,14 @@ const mainColumn = {
 
 const sideColumns = [
     {
+        slug: 'seochon-route',
+        titleEn: 'The Rhythm of Seochon: A Morning Pilgrimage',
+        titleKr: '서촌의 리듬: 아침 순례길',
+        descEn: 'A 2.4km spatial journey through Joseon-era Hanok stays, tea sanctuaries, and brutalist art annexes.',
+        descKr: '한옥 미크로스테이, 전통 차 성소, 브루탈리즘 갤러리를 잇는 2.4km 감성 순례길.',
+        img: 'https://lh3.googleusercontent.com/aida/AP1WRLvUfXO4knaZfRl5-NrTOXt6yGLMtKg1Ka-tNb7uTAH309pyHkZ_tqimERFq7CQArcZFJ-tuQZlm0kuOYkKQlrQjZmKEmWOO0EOqliQ7gBmfQ7mqIPxySBh54EnefkzioYvVz0DILHJhZ-F6UxpPSdhXLSlUUztXtJRjNbuJoWirH-YRm_s1bIxgeXqvl9ltrV6Uz9a4_Gr4HBwmaLKcF2n4m_KcIVQ9SovRk7LNVsba24-aDy_DchYhL9js'
+    },
+    {
         slug: 'void-space',
         titleEn: 'Void Space: Curating Emptiness',
         titleKr: '보이드 스페이스: 비어있음을 큐레이팅하다',

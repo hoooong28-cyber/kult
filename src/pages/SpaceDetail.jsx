@@ -12,6 +12,52 @@ import { doc, getDoc, updateDoc, arrayUnion, increment } from 'firebase/firestor
 
 // Fallback dummy data indexed by slug
 const dummySpaces = {
+    'seochon-route': {
+        title: 'The Rhythm of Seochon: A Morning Pilgrimage',
+        titleKr: '서촌의 리듬: 아침 순례길',
+        category: 'Curated Route',
+        categoryKr: '큐레이션 루트',
+        region: 'seochon',
+        distance: '2.4 KM',
+        estTime: '4 HOURS',
+        imageUrl: 'https://lh3.googleusercontent.com/aida/AP1WRLvUfXO4knaZfRl5-NrTOXt6yGLMtKg1Ka-tNb7uTAH309pyHkZ_tqimERFq7CQArcZFJ-tuQZlm0kuOYkKQlrQjZmKEmWOO0EOqliQ7gBmfQ7mqIPxySBh54EnefkzioYvVz0DILHJhZ-F6UxpPSdhXLSlUUztXtJRjNbuJoWirH-YRm_s1bIxgeXqvl9ltrV6Uz9a4_Gr4HBwmaLKcF2n4m_KcIVQ9SovRk7LNVsba24-aDy_DchYhL9js',
+        galleryUrls: [
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuBoe7iuCxJAgAa9KoqLcpk0Vs8-iGiOofpJh9qwQGqBbf2uC_taW7T3IkklmfNbG7vXcTKVO6TDoJKJBuimt-yPbxYIhlmWbwwTU15ELNPun6Ij-L5sJdUpyAXn5zQWAKotkz4YpfonFYKWkSbGhnhW0Qv-_YncgwvnssQxXlu5bv4Lo8vdfk_JCnmapzOe43XXykM97zrUsaEOyWkMdJs-dlU6d7Xbnp5rQP_g5OA4sVgJaFP9APItHCMDHF8HNkcPhXdlaFIZjiyQ',
+            'https://lh3.googleusercontent.com/aida-public/AB6AXuBXmb3rY-vF9M73YyFndIm1BeEiv3urM5ouB-BnnjA-awqHVeq_hSE8agPItosUkpnvwd-JhtTGqu0NhjWxCRSUk28uRQU67gswBZs8GMGqTJJOdRwmZ2MHaKHA4Ukc4ReXI9LdMMsIvumKq5WdsBtJ0NXn844gsuvDCUJT4w30WTKU_VodmxSl_uCGQFSVLH_lLVkjw7hUaFg9cDz7NisQdYYuzYKaReB_ZLfP2UbAX6U6c2LGIdc8YDkBKHvJvdjYlEUlSiAnJRMW'
+        ],
+        description: `In the shadows of Inwangsan Mountain, Seochon whispers stories of Joseon scholars and modern dreamers.
+
+This pilgrimage is designed to be experienced slowly. It is not just a route across a neighborhood, but a transition through states of mind: from the structured peace of a Hanok morning to the sensory depths of tea, and finally, the stark clarity of contemporary art.
+
+🛑 STOP 1. [Nuwa: The Art of Hanok](/space/nuwa-seochon)
+- Theme: 01 / THE AWAKENING (08:00 AM)
+- Experience: Begin your morning at Nuwa, a micro-stay that redefined the Seochon experience. Here, the traditional 'L' shaped Hanok structure is preserved but reimagined with a sunken bathtub and minimalist cedar furnishings. Wake up as the light hits the paper 'Changho' doors.
+
+🛑 STOP 2. [Insa-dong Tea House](/space/insadong-tea)
+- Theme: 02 / THE CONVERGENCE (10:30 AM)
+- Experience: A short walk through winding alleyways brings you to a hidden sanctuary. Dark charred wood walls meet rough-hewn stone tables in a space designed for quiet contemplation where pouring tea becomes a meditative performance.
+
+🛑 STOP 3. [Hannam Arts Seochon Annex](/space/hannam-arts)
+- Theme: 03 / THE CLARITY (12:00 PM)
+- Experience: Conclude your journey at this brutalist-inspired gallery. The soaring concrete walls and dramatic skylights create a temple of light. The current installation, a series of interlocking steel monoliths, challenges the softness of the morning with industrial precision.`,
+        descriptionKr: `인왕산 그늘 아래, 서촌은 조선 학자들과 현대 꿈꾸는 이들의 이야기를 속삭입니다.
+
+이 순례길은 천천히 경험하도록 설계되었습니다. 단순한 동네 탐방을 넘어 마음의 상태를 전환하는 여정입니다: 한옥 아침의 구조화된 평화에서 차의 감각적 깊이로, 그리고 마침내 현대 미술의 명확함으로 나아갑니다.
+
+🛑 STOP 1. [누와: 한옥의 예술](/space/nuwa-seochon)
+- 테마: 01 / THE AWAKENING (08:00 AM)
+- 경험: 서촌의 경험을 재정의한 미크로 스테이 누와에서 아침을 시작하세요. 'ㄴ'자 한옥 구조를 유지하면서 침강형 욕조와 미니멀한 삼나무 가구로 재해석되었습니다.
+
+🛑 STOP 2. [인사동 전통 찻집](/space/insadong-tea)
+- 테마: 02 / THE CONVERGENCE (10:30 AM)
+- 경험: 미로 같은 골목길을 지난 후 도착하는 차의 안식처. 어두운 탄화목 벽과 정교한 차 우림 리추얼이 펼쳐집니다.
+
+🛑 STOP 3. [한남 아츠 서촌 별관](/space/hannam-arts)
+- 테마: 03 / THE CLARITY (12:00 PM)
+- 경험: 브루탈리즘 콘크리트 갤러리에서 여정을 완결짓습니다. 천창에서 쏟아지는 빛과 강렬한 강철 설치 작품이 극적인 결말을 선사합니다.`,
+        googleMapsUrl: 'https://maps.google.com/maps?q=Seochon+Seoul',
+        isPremium: false
+    },
     'seongsu-route': {
         title: '72 Hours in Seongsu: The Brutalist & Sensory Route',
         titleKr: '성수에서의 72시간: 브루탈리즘과 감각의 여정',
