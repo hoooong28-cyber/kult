@@ -344,10 +344,10 @@ const Magazine = () => {
                             </span>
                             <span className="text-white/40 text-[10px] font-black tracking-widest uppercase">KULT Insider Exclusive</span>
                         </div>
-                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase transition-all duration-700">
+                        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight uppercase transition-all duration-700 max-w-4xl">
                             {t(magazine.title, magazine.titleKr)}
                         </h1>
-                        <p className="text-lg md:text-2xl text-white/70 font-medium leading-relaxed max-w-2xl mt-4">
+                        <p className="text-base md:text-xl text-white/70 font-medium leading-relaxed max-w-2xl mt-2">
                             {t(magazine.description, magazine.descriptionKr)}
                         </p>
                     </div>
@@ -366,8 +366,15 @@ const Magazine = () => {
                             </div>
                             <div className="flex-1 text-left flex flex-col gap-8">
                                 <div className="flex flex-col gap-4">
-                                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary block">Feature {idx + 1}</span>
-                                    <h2 className="text-4xl md:text-6xl font-black text-slate-900 uppercase tracking-tighter leading-[0.9]">
+                                    <div className="flex items-center gap-3 flex-wrap">
+                                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#1111d4] block">Feature {idx + 1}</span>
+                                        {section.source && (
+                                            <span className="text-[9px] font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 uppercase tracking-widest">
+                                                📍 {section.source}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-tight">
                                         {t(section.title, section.titleKr)}
                                     </h2>
                                 </div>
