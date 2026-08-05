@@ -12,12 +12,12 @@ import { onAuthStateChanged } from 'firebase/auth'
 import UnlockButton from '../components/UnlockButton'
 
 const MOCK_MAGAZINES = {
-    'vol-6': {
-        id: 'vol-6',
-        volume: 6,
+    'vol-5': {
+        id: 'vol-5',
+        volume: 5,
         title: "Olive Young Instagram Radar: PDRN Repair Ampoules & Heartleaf Calming Pads",
         titleKr: "올리브영 인스타그램 트렌드 레이더: PDRN 리페어 앰플 & 어성초 진정 패드",
-        issueDate: "2024.04.W2 (NEWEST RELEASE)",
+        issueDate: "2024.04.W1 (CURRENT DROP)",
         coverImage: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=1200",
         description: "Curated directly from Olive Young's official Instagram (@oliveyoung_official) & Seongsu Town Flagship: the viral PDRN repair ampoules and heartleaf soothing rituals sweeping global skincare.",
         descriptionKr: "올리브영 공식 인스타그램(@oliveyoung_official) & 올리브영 성수 타운 릴스 분석: 글로벌 뷰티팬들이 싹쓸이하는 PDRN 앰플부터 어성초 진정 패드까지 전격 해부.",
@@ -78,66 +78,6 @@ const MOCK_MAGAZINES = {
                 description: "Multi-story K-Beauty sanctuary featuring AI skin diagnostics, luxury fragrance lounges, and pop-up event zones.",
                 descriptionKr: "AI 피부 진단 랩과 럭셔리 프래그런스 라운지가 결합된 국내 최대 뷰티 타운.",
                 imageUrl: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800"
-            }
-        ]
-    },
-    'vol-5': {
-        id: 'vol-5',
-        volume: 5,
-        title: "X & Instagram K-Beauty Trend Radar: The Glass-Skin Bio-Ferment & Olfactory Vaults",
-        titleKr: "X & 인스타그램 뷰티 트렌드 레이더: 바이오 발효 도자기 피부 & 조향 성소",
-        issueDate: "2024.04.W1 (LATEST DROP)",
-        coverImage: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=1200",
-        description: "A deep dive into the viral K-Beauty trends dominating X (Twitter) and Instagram: from bio-fermented ginseng cell serums to Seongsu's subterranean scent showrooms.",
-        descriptionKr: "X(트위터)와 인스타그램을 뜨겁게 달군 K-뷰티 트렌드 리포트: 인삼 바이오 발효 세럼부터 성수동 지하 조향 쇼룸까지 전수 분석합니다.",
-        sections: [
-            {
-                title: "The Glass-Skin Bio-Ferment Surge",
-                titleKr: "X(트위터) 바이럴: 바이오 발효 도자기 피부의 파동",
-                source: "Source: X (Twitter) #GlassSkin2024 / @seoul_beauty_radar",
-                content: "Trending on X (#GlassSkin2024): Global beauty enthusiasts are transitioning from snail mucin to concentrated Korean bio-fermented ginseng peptides. Discover how micro-encapsulation delivers instant porcelain luminosity.",
-                contentKr: "X(#GlassSkin2024) 실시간 바이럴: 글로벌 뷰티 트렌드세터들이 인삼 바이오 발효 세럼에 열광하고 있습니다. 마이크로 캡슐화 기술이 선사하는 매끈한 도자기 피부 피니시 리포트.",
-                imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"
-            },
-            {
-                title: "Subterranean Olfactory Architecture",
-                titleKr: "인스타그램 릴스 바이럴: 성수/한남 지하 조향 성소",
-                source: "Source: Instagram @tamburins_official Reels & @space.archive",
-                content: "Viral on Instagram Reels: Showrooms like Tamburins Seongsu and NONFICTION Hannam are framing perfume testing like visiting subterranean brutalist art vaults.",
-                contentKr: "인스타그램 릴스 피드 바이럴: 성수동 탬버린즈와 한남동 논픽션 쇼룸이 조향 테이스팅을 지하 브루탈리즘 예술 관람으로 재정의하는 감각적 현장.",
-                imageUrl: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800"
-            }
-        ],
-        featuredProducts: [
-            {
-                brand: "Sulwhasoo",
-                name: "Ginseng Bio-Ferment Serum",
-                nameKr: "진생 바이오 발효 도자기 세럼",
-                description: "Viral on X: High-potency bio-fermented ginseng cell essence for radiant porcelain skin.",
-                descriptionKr: "X(트위터) 4,000+ RT 바이럴: 세포 활력을 극대화하는 광채 발효 인삼 에센스.",
-                imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
-                tag: "X VIRAL TOP 1"
-            },
-            {
-                brand: "Tamburins",
-                name: "Perfume Shell X Archive",
-                nameKr: "퍼퓸 쉘 X 아카이브",
-                description: "Viral on Instagram: Architectural hand perfume shell inspired by Seongsu concrete scaffolding.",
-                descriptionKr: "인스타그램 릴스 인기 폭발: 성수동 노출 콘크리트 기둥에서 영감을 받은 스파이시 샌달우드 핸드 퍼퓸.",
-                imageUrl: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800",
-                tag: "INSTAGRAM CHOICE"
-            }
-        ],
-        featuredSpaces: [
-            {
-                name: "Tamburins Seongsu Vault",
-                nameKr: "탬버린즈 성수 프래그런스 랩",
-                category: "SCENT SHOWROOM",
-                categoryKr: "조향 쇼룸",
-                tag: "SEONGSU",
-                description: "Open-air concrete scaffolding featuring giant art installations and subterranean scent testing chambers.",
-                descriptionKr: "노출 콘크리트 뼈대 구조 아래 전시장처럼 펼쳐지는 조향 성소.",
-                imageUrl: "/tamburins_seongsu.png"
             }
         ]
     },
