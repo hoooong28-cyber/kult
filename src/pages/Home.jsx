@@ -326,7 +326,7 @@ const Home = () => {
                             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', backgroundColor: 'rgba(17,17,212,0.1)', border: '1px solid rgba(17,17,212,0.2)', borderRadius: '9999px', marginBottom: '1rem' }}>
                                 <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#1111d4' }} className="animate-ping" />
                                 <span style={{ fontSize: '10px', fontWeight: 800, color: '#1111d4', letterSpacing: '0.3em', textTransform: 'uppercase' }}>
-                                    {t("VOL. 05 WEEKLY DROP — X & INSTAGRAM BEAUTY TREND RADAR", "VOL. 05 주간 릴리즈 — X & 인스타그램 뷰티 트렌드 레이더")}
+                                    {t("VOL. 06 WEEKLY DROP — OLIVE YOUNG INSTAGRAM RADAR", "VOL. 06 주간 릴리즈 — 올리브영 인스타그램 트렌드 레이더")}
                                 </span>
                             </div>
                             <h2 style={{ fontFamily: 'Georgia, ui-serif, serif', fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 700, color: '#0d0d0d', letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>
