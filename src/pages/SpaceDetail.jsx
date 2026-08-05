@@ -77,7 +77,7 @@ const dummySpaces = {
                 walk: 'FINISH'
             }
         ],
-        googleMapsUrl: 'https://maps.google.com/maps?q=Seongsu-dong+Seoul',
+        googleMapsUrl: 'https://www.google.com/maps/dir/Cafe+Onion+Seongsu/Tamburins+Seongsu/LCDC+Seoul/Ofr.+Seoul',
         isPremium: false
     },
     'seochon-route': {
@@ -133,7 +133,7 @@ const dummySpaces = {
                 walk: 'FINISH'
             }
         ],
-        googleMapsUrl: 'https://maps.google.com/maps?q=Seochon+Seoul',
+        googleMapsUrl: 'https://www.google.com/maps/dir/Nuwa+Seoul/Insa-dong+Tea+House/Hannam+Arts+Seochon',
         isPremium: false
     },
     'void-space': {
@@ -295,21 +295,36 @@ const SpaceDetail = () => {
                             </h1>
 
                             {/* Distance / Est Time Stats Bar */}
-                            <div className="flex items-center gap-8 border-t border-white/20 pt-6 max-w-xl">
-                                <div>
-                                    <p className="text-[9px] font-extrabold uppercase tracking-[0.3em] text-white/60">DISTANCE</p>
-                                    <p className="text-2xl font-serif font-bold text-white">{space.distance || '3.2 KM'}</p>
+                            <div className="flex flex-wrap items-center justify-between gap-6 border-t border-white/20 pt-6 max-w-4xl">
+                                <div className="flex items-center gap-6 sm:gap-8">
+                                    <div>
+                                        <p className="text-[9px] font-extrabold uppercase tracking-[0.3em] text-white/60">DISTANCE</p>
+                                        <p className="text-2xl font-serif font-bold text-white">{space.distance || '3.2 KM'}</p>
+                                    </div>
+                                    <div className="w-px h-8 bg-white/20" />
+                                    <div>
+                                        <p className="text-[9px] font-extrabold uppercase tracking-[0.3em] text-white/60">EST. TIME</p>
+                                        <p className="text-2xl font-serif font-bold text-white">{space.estTime || '6 HOURS'}</p>
+                                    </div>
+                                    <div className="w-px h-8 bg-white/20" />
+                                    <div>
+                                        <p className="text-[9px] font-extrabold uppercase tracking-[0.3em] text-white/60">CURATED STOPS</p>
+                                        <p className="text-2xl font-serif font-bold text-white">{space.stops?.length || 4} PLACES</p>
+                                    </div>
                                 </div>
-                                <div className="w-px h-8 bg-white/20" />
-                                <div>
-                                    <p className="text-[9px] font-extrabold uppercase tracking-[0.3em] text-white/60">EST. TIME</p>
-                                    <p className="text-2xl font-serif font-bold text-white">{space.estTime || '6 HOURS'}</p>
-                                </div>
-                                <div className="w-px h-8 bg-white/20" />
-                                <div>
-                                    <p className="text-[9px] font-extrabold uppercase tracking-[0.3em] text-white/60">CURATED STOPS</p>
-                                    <p className="text-2xl font-serif font-bold text-white">{space.stops?.length || 4} PLACES</p>
-                                </div>
+
+                                {space.googleMapsUrl && (
+                                    <a
+                                        href={space.googleMapsUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-5 py-3 bg-[#1111d4] hover:bg-blue-700 text-white rounded-xl text-xs font-bold uppercase tracking-widest transition-all flex items-center gap-2 shadow-xl hover:scale-[1.03]"
+                                    >
+                                        <MapPin className="w-4 h-4 text-white" />
+                                        <span>{t("Open Walk Route in Google Maps", "구글 맵스 도보 루트 열기")}</span>
+                                        <ExternalLink className="w-3.5 h-3.5 text-white/70" />
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </section>
