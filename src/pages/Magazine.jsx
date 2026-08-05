@@ -12,6 +12,75 @@ import { onAuthStateChanged } from 'firebase/auth'
 import UnlockButton from '../components/UnlockButton'
 
 const MOCK_MAGAZINES = {
+    'vol-6': {
+        id: 'vol-6',
+        volume: 6,
+        title: "Olive Young Instagram Radar: PDRN Repair Ampoules & Heartleaf Calming Pads",
+        titleKr: "올리브영 인스타그램 트렌드 레이더: PDRN 리페어 앰플 & 어성초 진정 패드",
+        issueDate: "2024.04.W2 (NEWEST RELEASE)",
+        coverImage: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=1200",
+        description: "Curated directly from Olive Young's official Instagram (@oliveyoung_official) & Seongsu Town Flagship: the viral PDRN repair ampoules and heartleaf soothing rituals sweeping global skincare.",
+        descriptionKr: "올리브영 공식 인스타그램(@oliveyoung_official) & 올리브영 성수 타운 릴스 분석: 글로벌 뷰티팬들이 싹쓸이하는 PDRN 앰플부터 어성초 진정 패드까지 전격 해부.",
+        sections: [
+            {
+                title: "The PDRN Repair Ampoule Phenomenon",
+                titleKr: "올리브영 인스타 릴스 1위: PDRN 리페어 앰플의 재생 파동",
+                source: "Source: Instagram @oliveyoung_official Reels & Seongsu Town Flagship",
+                content: "Trending on @oliveyoung_official: PDRN (salmon DNA) skin booster ampoules are taking Seongsu Town by storm. Known as 'dermatology in a bottle', these high-potency formulations rebuild skin barriers and restore glass elasticity overnight.",
+                contentKr: "올리브영 성수 타운 릴스 최다 조회수: '바르는 피부과'로 불리는 PDRN(연어 DNA) 고농축 앰플이 글로벌 유저들의 필수 구매템으로 등극. 손상된 장벽을 재건하고 유리알 탄력을 선사하는 뷰티 리포트.",
+                imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                title: "Heartleaf Soothing Pad Cult Ritual",
+                titleKr: "올리브영 랭킹 1위: 어성초 모공 진정 패드 리추얼",
+                source: "Source: Instagram @oliveyoung_official Global Best Seller Radar",
+                content: "Viral across Instagram luggage haul reels: Foreign travelers are filling entire suitcases with Korean Heartleaf (Anua) clear toner pads. High-concentration Houttuynia Cordata extracts soothe urban skin stress instantly.",
+                contentKr: "인스타그램 쇼핑 하울 릴스 바이럴: 해외 여행객들이 캐리어 가득 쟁여가는 올리브영 1위 어성초 모공 맑음 토너 패드. 도시형 피부 스트레스를 즉각 진정시키는 K-뷰티 필수 아이템.",
+                imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "Rejuran Healer",
+                name: "Turnover Dual Effect Ampoule",
+                nameKr: "리쥬란 턴오버 듀얼 이펙트 PDRN 앰플",
+                description: "Official Instagram Highlight: High-potency c-PDRN solution for clinic-level skin turnover.",
+                descriptionKr: "올리브영 공식 인스타 하이라이트: 피부과 턴오버 케어를 홈케어로 구현한 c-PDRN 앰플.",
+                imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
+                tag: "OLIVE YOUNG #1"
+            },
+            {
+                brand: "Anua",
+                name: "Heartleaf 77% Clear Toner Pad",
+                nameKr: "아누아 어성초 77% 모공 맑음 토너 패드",
+                description: "Viral Luggage Haul Item: Non-comedogenic heartleaf soothing pad for glass clarity.",
+                descriptionKr: "인스타그램 릴스 해외 유저 하울 1위: 민감성 피부를 유기농 어성초로 다독이는 진정 패드.",
+                imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
+                tag: "GLOBAL BEST"
+            },
+            {
+                brand: "SKIN1004",
+                name: "Hyalu-Cica Water-Fit Sun Serum",
+                nameKr: "스킨1004 히알루-시카 수분 선세럼",
+                description: "Instagram Trending Sunscreen: Ultra-lightweight watery sun serum with zero white cast.",
+                descriptionKr: "인스타그램 트렌딩 선케어: 백탁 없이 수분 크림처럼 스며드는 히알루론산 시카 선세럼.",
+                imageUrl: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800",
+                tag: "SUN CARE #1"
+            }
+        ],
+        featuredSpaces: [
+            {
+                name: "Olive Young Seongsu Town",
+                nameKr: "올리브영 성수 타운 혁신 플래그십",
+                category: "BEAUTY TOWN",
+                categoryKr: "뷰티 타운",
+                tag: "FLAGSHIP",
+                description: "Multi-story K-Beauty sanctuary featuring AI skin diagnostics, luxury fragrance lounges, and pop-up event zones.",
+                descriptionKr: "AI 피부 진단 랩과 럭셔리 프래그런스 라운지가 결합된 국내 최대 뷰티 타운.",
+                imageUrl: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800"
+            }
+        ]
+    },
     'vol-5': {
         id: 'vol-5',
         volume: 5,
