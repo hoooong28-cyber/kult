@@ -335,7 +335,7 @@ const Magazine = () => {
                                         : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
                                 }`}
                             >
-                                Vol. {vol.volume} {vol.volume === 4 && '⚡'}
+                                Vol. {vol.volume} {vol.volume === 5 && '⚡'}
                             </button>
                         ))}
                     </div>
