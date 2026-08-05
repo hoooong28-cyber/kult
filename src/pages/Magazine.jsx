@@ -242,7 +242,36 @@ const Magazine = () => {
         <div className="min-h-screen bg-white selection:bg-slate-900 selection:text-white pb-32">
             <Header />
 
-            {/* Editorial Hero */}
+            {/* Weekly Release Volume Archive Switcher */}
+            <div className="bg-[#191A1F] border-b border-white/10 py-4 px-6 text-white">
+                <div className="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                        <span className="text-[9px] font-extrabold uppercase tracking-[0.3em] text-[#1111d4] px-3 py-1 bg-[#1111d4]/20 rounded-full border border-[#1111d4]/40">
+                            ⚡ WEEKLY ISSUE ARCHIVE
+                        </span>
+                        <span className="text-white/40 text-xs hidden sm:inline">•</span>
+                        <span className="text-xs text-white/70 font-medium hidden sm:inline">
+                            {t("New editorial volume released every Sunday at 9 PM KST.", "매주 일요일 밤 9시, 새로운 주간 에디토리얼 볼륨이 발행됩니다.")}
+                        </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        {Object.values(MOCK_MAGAZINES).map((vol) => (
+                            <button
+                                key={vol.id}
+                                onClick={() => setSelectedVolId(vol.id)}
+                                className={`px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all ${
+                                    (magazine?.id === vol.id || selectedVolId === vol.id)
+                                        ? 'bg-white text-[#191A1F] shadow-lg scale-105'
+                                        : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
+                                }`}
+                            >
+                                Vol. {vol.volume} {vol.volume === 4 && '⚡'}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
             <div className="relative w-full h-[90vh] flex flex-col justify-end overflow-hidden">
                 <div className="absolute inset-0">
                     <img src={magazine.coverImage} className="w-full h-full object-cover" alt="Cover" />

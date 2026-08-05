@@ -323,9 +323,14 @@ const Home = () => {
                 <section style={{ padding: '6rem 0', backgroundColor: '#f8fafc' }}>
                     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
                         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                            <p style={{ fontSize: '11px', fontWeight: 700, color: '#1111d4', letterSpacing: '0.5em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>KULT Insider</p>
+                            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', backgroundColor: 'rgba(17,17,212,0.1)', border: '1px solid rgba(17,17,212,0.2)', borderRadius: '9999px', marginBottom: '1rem' }}>
+                                <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#1111d4' }} className="animate-ping" />
+                                <span style={{ fontSize: '10px', fontWeight: 800, color: '#1111d4', letterSpacing: '0.3em', textTransform: 'uppercase' }}>
+                                    {t("VOL. 04 WEEKLY DROP — SUNDAY 9 PM RELEASE", "VOL. 04 주간 릴리즈 — 매주 일요일 밤 9시 오픈")}
+                                </span>
+                            </div>
                             <h2 style={{ fontFamily: 'Georgia, ui-serif, serif', fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 700, color: '#0d0d0d', letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>
-                                {t('New Product News', '신상품 뉴스')}
+                                {t('New Product News & Weekly Selects', '주간 신상품 뉴스 & 에디토리얼 셀렉트')}
                             </h2>
                             <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#94a3b8' }}>
                                 {t('The Curated Release Radar: Beauty, Lifestyle & Fashion', '큐레이티드 릴리즈 레이더: 뷰티, 라이프스타일 & 패션')}
