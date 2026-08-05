@@ -11,39 +11,180 @@ import { doc, getDoc, collection, query, where, getDocs, limit, orderBy } from '
 import { onAuthStateChanged } from 'firebase/auth'
 import UnlockButton from '../components/UnlockButton'
 
-const MOCK_MAGAZINE = {
-    volume: 1,
-    title: "K-Beauty New Frontiers & Hidden Seongsu",
-    titleKr: "K-뷰티의 새로운 지평 & 숨겨진 성수",
-    issueDate: "2024.03.W3",
-    coverImage: "https://images.unsplash.com/photo-1616150638538-ffb0679a3fc4?auto=format&fit=crop&q=80&w=1200",
-    description: "Exploring this week's most anticipated beauty launches and the architectural wonders hidden in the back alleys of Seongsu-dong.",
-    descriptionKr: "이번 주 가장 기대를 모으고 있는 뷰티 런칭 소식과 성수동 골목길에 숨겨진 건축학적 경이로움을 탐험합니다.",
-    sections: [
-        {
-            title: "The Porcelain Evolution",
-            titleKr: "도자기 피부의 진화",
-            content: "The evolution of the classic. A more seamless, long-lasting porcelain finish that defines the new K-beauty standards of 2024.",
-            contentKr: "클래식의 진화. 2024년 새로운 K-뷰티 표준을 정의하는 더욱 매끄럽고 오래 지속되는 도자기 피니시.",
-            imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            title: "Floral Essence District",
-            titleKr: "플로럴 에센스 디스트릭트",
-            content: "Discover the power of rare Korean botanicals concentrated in a single drop of this revolutionary serum.",
-            contentKr: "혁신적인 세럼 한 방울에 응축된 희귀한 한국 식물 성분의 힘을 발견해보세요.",
-            imageUrl: "https://images.unsplash.com/photo-1594125355630-94824244aa16?auto=format&fit=crop&q=80&w=800"
-        }
-    ],
-    featuredSpaces: [
-        {
-            name: "Geometric Sanctuary",
-            category: "CONCEPT STORE",
-            tag: "HIDDEN",
-            description: "A subterranean sanctuary inspired by Brutalist caves. Accessible only through a nondescript steel door.",
-            imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800"
-        }
-    ]
+const MOCK_MAGAZINES = {
+    'vol-4': {
+        id: 'vol-4',
+        volume: 4,
+        title: "Euljiro Neon Nights & Fermented Skincare Science",
+        titleKr: "을지로 네온 나이츠 & 발효 스킨케어의 진화",
+        issueDate: "2024.03.W4 (CURRENT)",
+        coverImage: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=1200",
+        description: "Exploring Euljiro's industrial alleyway lighting studios and the latest fermented ginseng serums taking Seoul by storm.",
+        descriptionKr: "을지로 골목길 조명 스튜디오와 서울 뷰티 시장을 매료시킨 최신 발효 인삼 세럼 리포트를 공개합니다.",
+        sections: [
+            {
+                title: "Industrial Illumination",
+                titleKr: "산업 조명의 재해석",
+                content: "How raw metal fabricators in Euljiro 3-ga are collaborating with modern lighting designers to create sculpted neon fixtures.",
+                contentKr: "을지로 3가 금속 공업사와 모던 조명 디자이너들이 합작하여 조각적 네온 오브제를 제작하는 감각적인 현장.",
+                imageUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                title: "Fermented Bio-Active Surge",
+                titleKr: "바이오 발효 세럼의 파동",
+                content: "Traditional Korean fermentation science meets 21st-century micro-encapsulation for instant skin luminosity.",
+                contentKr: "전통 한국 발효 과학과 21세기 마이크로 캡슐 기술이 만나 즉각적인 피부 광채를 선사하는 신작 세럼.",
+                imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "Studio Odd",
+                name: "Neon Archive Lamp 04",
+                nameKr: "네온 아카이브 램프 04",
+                description: "Sculptural neon lamp crafted with industrial Euljiro steel frames.",
+                descriptionKr: "을지로 스틸 프레임으로 제작된 조각적 네온 램프.",
+                imageUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800",
+                tag: "NEW DROP"
+            },
+            {
+                brand: "Sulwhasoo",
+                name: "Ginseng Bio-Ferment Serum",
+                nameKr: "진생 바이오 발효 세럼",
+                description: "High-potency concentrated ginseng bio-essence for cell vitality.",
+                descriptionKr: "세포 활력을 높여주는 인삼 바이오 농축 에센스.",
+                imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
+                tag: "WEEKLY BEST"
+            }
+        ],
+        featuredSpaces: [
+            {
+                name: "Euljiro Lighting Lab",
+                nameKr: "을지로 조명 랩",
+                category: "DESIGN STUDIO",
+                categoryKr: "디자인 스튜디오",
+                tag: "EXCL",
+                description: "Subterranean metal gallery with interactive neon installation.",
+                descriptionKr: "인터랙티브 네온 전시가 펼쳐지는 지하 메탈 갤러리.",
+                imageUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800"
+            }
+        ]
+    },
+    'vol-3': {
+        id: 'vol-3',
+        volume: 3,
+        title: "Hannam Fragrance Mansions & Niche Olfactory Rituals",
+        titleKr: "한남 프래그런스 맨션 & 니치 조향 리추얼",
+        issueDate: "2024.03.W3",
+        coverImage: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1200",
+        description: "Inside the hidden scent ateliers of Hannam-dong and the rise of personal signature fragrance layering.",
+        descriptionKr: "한남동 숨은 향수 아틀리에와 개인 시그니처 향 레이어링 트렌드를 집중 조명합니다.",
+        sections: [
+            {
+                title: "Olfactory Architecture",
+                titleKr: "후각적 공간 건축",
+                content: "How subterranean scent chambers in Hannam redefine luxury retail into quiet sensory sanctuaries.",
+                contentKr: "한남동의 지하 조향 챔버가 럭셔리 리테일을 감각적 안식처로 재정의하는 방식.",
+                imageUrl: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "NONFICTION",
+                name: "Santal Cream Eau de Parfum",
+                nameKr: "상탈 크림 오 드 퍼퓸",
+                description: "Vetiver, sandalwood, and fresh cardamom blended in Seoul.",
+                descriptionKr: "베티버, 샌달우드, 카더몸이 조화롭게 피어나는 시그니처 향.",
+                imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
+                tag: "EDITORIAL CHOICE"
+            }
+        ],
+        featuredSpaces: [
+            {
+                name: "Hannam Scent Vault",
+                nameKr: "한남 센트 볼트",
+                category: "FRAGRANCE ATELIER",
+                categoryKr: "조향 아틀리에",
+                tag: "MUST VISIT",
+                description: "Concrete scent vault with custom fragrance blending bar.",
+                descriptionKr: "커스텀 조향 바가 설치된 콘크리트 향 안식처.",
+                imageUrl: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800"
+            }
+        ]
+    },
+    'vol-2': {
+        id: 'vol-2',
+        volume: 2,
+        title: "Seochon Hanok Sanctuary & Traditional Tea Rituals",
+        titleKr: "서촌 한옥 스테이 & 전통 차 리추얼",
+        issueDate: "2024.03.W2",
+        coverImage: "/images/seochon_alley.png",
+        description: "A slow morning pilgrimage through Seochon micro-stays, quiet alleyways, and handcrafted tea ceramics.",
+        descriptionKr: "서촌 한옥 미크로스테이와 조용한 골목길, 그리고 수공예 차 도자기 리추얼.",
+        sections: [
+            {
+                title: "The Art of Slow Living",
+                titleKr: "슬로우 라이프의 예술",
+                content: "Discover how traditional L-shaped Hanoks are being modernised with cedar bathtubs and stone courtyards.",
+                contentKr: "ㄴ자 전통 한옥이 삼나무 욕조와 석재 중정을 만났을 때 생겨나는 고요한 울림.",
+                imageUrl: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "HAY Korea",
+                name: "Celadon Ceramic Teapot",
+                nameKr: "청자 세라믹 티팟",
+                description: "Nordic minimal silhouette fused with Goryeo celadon glaze.",
+                descriptionKr: "북유럽 미니멀 실루엣과 고려청자 유약의 만남.",
+                imageUrl: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
+                tag: "LIMITED"
+            }
+        ],
+        featuredSpaces: [
+            {
+                name: "Nuwa Hanok Stay",
+                nameKr: "누와 한옥 스테이",
+                category: "MICRO HANOK STAY",
+                categoryKr: "한옥 미크로스테이",
+                tag: "SEOCHON",
+                description: "Sunken cedar bathtub surrounded by traditional paper Hanji windows.",
+                descriptionKr: "전통 한지 창문 아래 침강형 삼나무 욕조가 설치된 서촌 한옥.",
+                imageUrl: "/images/seochon_alley.png"
+            }
+        ]
+    },
+    'vol-1': {
+        id: 'vol-1',
+        volume: 1,
+        title: "K-Beauty New Frontiers & Hidden Seongsu",
+        titleKr: "K-뷰티의 새로운 지평 & 숨겨진 성수",
+        issueDate: "2024.03.W1",
+        coverImage: "https://images.unsplash.com/photo-1616150638538-ffb0679a3fc4?auto=format&fit=crop&q=80&w=1200",
+        description: "Exploring this week's most anticipated beauty launches and the architectural wonders hidden in the back alleys of Seongsu-dong.",
+        descriptionKr: "이번 주 가장 기대를 모으고 있는 뷰티 런칭 소식과 성수동 골목길에 숨겨진 건축학적 경이로움을 탐험합니다.",
+        sections: [
+            {
+                title: "The Porcelain Evolution",
+                titleKr: "도자기 피부의 진화",
+                content: "The evolution of the classic. A more seamless, long-lasting porcelain finish that defines the new K-beauty standards of 2024.",
+                contentKr: "클래식의 진화. 2024년 새로운 K-뷰티 표준을 정의하는 더욱 매끄럽고 오래 지속되는 도자기 피니시.",
+                imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredSpaces: [
+            {
+                name: "Cafe Onion Seongsu",
+                nameKr: "어니언 성수",
+                category: "BRUTALIST CAFE",
+                categoryKr: "브루탈리즘 카페",
+                tag: "SEONGSU",
+                description: "1970s metal factory transformed into a raw concrete coffee sanctuary.",
+                descriptionKr: "1970년대 금속 공장을 개조한 날것의 콘크리트 안식처.",
+                imageUrl: "/cafe_onion_seongsu.png"
+            }
+        ]
+    }
 }
 
 const Magazine = () => {
@@ -51,6 +192,7 @@ const Magazine = () => {
     const navigate = useNavigate()
     const { t } = useLanguage()
     const [magazine, setMagazine] = useState(null)
+    const [selectedVolId, setSelectedVolId] = useState('vol-4')
     const [loading, setLoading] = useState(true)
     const [currentUser, setCurrentUser] = useState(null)
 
@@ -59,31 +201,28 @@ const Magazine = () => {
             setLoading(true)
             try {
                 let magDoc;
-                if (id) {
-                    const docSnap = await getDoc(doc(db, 'magazines', id))
+                const targetId = id || selectedVolId
+                if (targetId && !targetId.startsWith('vol-')) {
+                    const docSnap = await getDoc(doc(db, 'magazines', targetId))
                     if (docSnap.exists()) magDoc = { id: docSnap.id, ...docSnap.data() }
                 } else {
-                    // Fetch latest
-                    const q = query(collection(db, 'magazines'), orderBy('volume', 'desc'), limit(1))
-                    const snapshot = await getDocs(q)
-                    if (!snapshot.empty) magDoc = { id: snapshot.docs[0].id, ...snapshot.docs[0].data() }
+                    magDoc = MOCK_MAGAZINES[targetId] || MOCK_MAGAZINES['vol-4']
                 }
 
                 if (magDoc) {
                     setMagazine(magDoc)
                 } else {
-                    console.log('Using mock magazine data as fallback')
-                    setMagazine(MOCK_MAGAZINE)
+                    setMagazine(MOCK_MAGAZINES['vol-4'])
                 }
             } catch (err) {
                 console.error("Error fetching magazine:", err)
-                setMagazine(MOCK_MAGAZINE)
+                setMagazine(MOCK_MAGAZINES['vol-4'])
             } finally {
                 setLoading(false)
             }
         }
         fetchMagazine()
-    }, [id])
+    }, [id, selectedVolId])
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => setCurrentUser(user))
