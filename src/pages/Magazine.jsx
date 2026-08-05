@@ -25,6 +25,7 @@ const MOCK_MAGAZINES = {
             {
                 title: "The Glass-Skin Bio-Ferment Surge",
                 titleKr: "X(트위터) 바이럴: 바이오 발효 도자기 피부의 파동",
+                source: "Source: X (Twitter) #GlassSkin2024 / @seoul_beauty_radar",
                 content: "Trending on X (#GlassSkin2024): Global beauty enthusiasts are transitioning from snail mucin to concentrated Korean bio-fermented ginseng peptides. Discover how micro-encapsulation delivers instant porcelain luminosity.",
                 contentKr: "X(#GlassSkin2024) 실시간 바이럴: 글로벌 뷰티 트렌드세터들이 인삼 바이오 발효 세럼에 열광하고 있습니다. 마이크로 캡슐화 기술이 선사하는 매끈한 도자기 피부 피니시 리포트.",
                 imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"
@@ -32,6 +33,7 @@ const MOCK_MAGAZINES = {
             {
                 title: "Subterranean Olfactory Architecture",
                 titleKr: "인스타그램 릴스 바이럴: 성수/한남 지하 조향 성소",
+                source: "Source: Instagram @tamburins_official Reels & @space.archive",
                 content: "Viral on Instagram Reels: Showrooms like Tamburins Seongsu and NONFICTION Hannam are framing perfume testing like visiting subterranean brutalist art vaults.",
                 contentKr: "인스타그램 릴스 피드 바이럴: 성수동 탬버린즈와 한남동 논픽션 쇼룸이 조향 테이스팅을 지하 브루탈리즘 예술 관람으로 재정의하는 감각적 현장.",
                 imageUrl: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800"
