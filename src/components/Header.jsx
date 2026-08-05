@@ -49,7 +49,7 @@ const Header = () => {
                                     if (el) {
                                         el.scrollIntoView({ behavior: 'smooth' })
                                     } else {
-                                        navigate('/#concierge-section')
+                                        navigate('/', { state: { scrollToConcierge: true } })
                                     }
                                 }}
                             >
