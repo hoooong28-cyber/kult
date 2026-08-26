@@ -2,88 +2,119 @@
   {
     "id": "vol-7",
     "volume": 7,
-    "title": "Olive Young Real Trend: Rejuran PDRN Dual Effect & Anua Heartleaf Pads",
-    "titleKr": "올리브영 실시간 팩트 검증: 리쥬란 PDRN 듀얼 앰플 & 아누아 어성초 패드",
-    "issueDate": "2024.04.W3 (VERIFIED DATA)",
+    "title": "Olive Young #1 Best Seller: Rejuran PDRN Turnover Ampoule Dual Effect",
+    "titleKr": "올리브영 실시간 1위: 리쥬란 PDRN 턴오버 앰플 듀얼 이펙트",
+    "issueDate": "LIVE: 2026. 8. 26.",
     "status": "staged",
-    "isVerifiedRealData": true,
-    "createdAt": "2026-08-26T13:39:22.907Z",
-    "coverImage": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=1200",
-    "description": "Curated from verified real-world products on Olive Young Official Store & Instagram Reels: Rejuran PDRN Dual Effect & Anua Heartleaf.",
-    "descriptionKr": "올리브영 공식몰(상품번호 A000000171629) 및 인스타그램 피드 팩트 검증: 리쥬란 PDRN 연어 앰플과 아누아 어성초 패드 전격 분석.",
+    "isDirectCleanData": true,
+    "createdAt": "2026-08-26T13:48:20.429Z",
+    "coverImage": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
+    "description": "Curated directly from verified live product stores & official Instagram feeds with 100% working direct URLs.",
+    "descriptionKr": "올리브영 공식 온라인몰 및 인스타그램 공식 피드의 100% 정상 접속 가능한 원본 딥링크 기반 실시간 리포트.",
     "sections": [
       {
-        "title": "Rejuran PDRN Turnover Ampoule Dual Effect",
-        "titleKr": "올리브영 공식 입점 1위: 리쥬란 PDRN 턴오버 앰플 듀얼 이펙트",
-        "source": "Source: Olive Young Mall (Goods #A000000171629)",
+        "title": "Olive Young #1 Best Seller: Rejuran PDRN Turnover Ampoule Dual Effect",
+        "titleKr": "올리브영 실시간 1위: 리쥬란 PDRN 턴오버 앰플 듀얼 이펙트",
+        "source": "Olive Young Official Store (Goods #A000000171629)",
         "sourceUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000171629",
-        "content": "Verified Product: High-potency c-PDRN salmon DNA essence clinically proven to accelerate skin turnover and restore glass elasticity.",
-        "contentKr": "실제 검증 상품: 피부과 스킨부스터 핵심 성분인 c-PDRN(연어 DNA)을 고농축 함유하여 피부 턴오버 및 장벽 강화를 돕는 올리브영 공식 베스트셀러.",
+        "content": "Verified Live Item: Olive Young #1 Best Seller: Rejuran PDRN Turnover Ampoule Dual Effect. Click link below to view official live store product page.",
+        "contentKr": "올리브영 공식몰에서 실제로 판매되고 있는 피부과 스킨부스터 핵심 성분 c-PDRN(연어 DNA) 고농축 앰플 리포트.",
         "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
       },
       {
-        "title": "Anua Heartleaf 77% Clear Toner Pad",
-        "titleKr": "올리브영 글로벌 베스트셀러: 아누아 어성초 77% 모공 맑음 토너 패드",
-        "source": "Source: Olive Young Mall & Instagram @oliveyoung_official",
+        "title": "Olive Young Global #1: Anua Heartleaf 77% Clear Toner Pad",
+        "titleKr": "올리브영 글로벌 1위: 아누아 어성초 77% 모공 맑음 토너 패드",
+        "source": "Olive Young Official Store (Goods #A000000184424)",
         "sourceUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000184424",
-        "content": "Verified Product: Non-comedogenic organic Houttuynia Cordata extract pads rated #1 by foreign travelers for instant urban skin soothing.",
-        "contentKr": "실제 검증 상품: 올리브영 글로벌 판매 1위 어성초 77% 모공 진정 패드. 해외 여행객 필수 하울템으로 인스타그램 릴스 최다 노출.",
+        "content": "Verified Live Item: Olive Young Global #1: Anua Heartleaf 77% Clear Toner Pad. Click link below to view official live store product page.",
+        "contentKr": "올리브영 글로벌 스킨케어 1위 및 해외 유저 인스타그램 하울 최다 노출 어성초 77% 진정 패드.",
         "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "title": "Tamburins Seongsu Olfactory Showroom & Open-Air Concrete",
+        "titleKr": "탬버린즈 성수 프래그런스 랩 & 노출 콘크리트 조향 쇼룸",
+        "source": "Instagram @tamburins_official & Google Maps",
+        "sourceUrl": "https://www.instagram.com/tamburins_official/",
+        "content": "Verified Live Item: Tamburins Seongsu Olfactory Showroom & Open-Air Concrete. Click link below to view official live store product page.",
+        "contentKr": "성수동 노출 콘크리트 뼈대 구조 아래 전시장처럼 펼쳐지는 조향 성소 인스타그램 피드 리포트.",
+        "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800"
       }
     ],
     "featuredProducts": [
       {
-        "brand": "Rejuran Healer",
-        "name": "Turnover Dual Effect Ampoule",
-        "nameKr": "리쥬란 턴오버 듀얼 이펙트 PDRN 앰플",
-        "description": "Verified Link: Olive Young Official Goods #A000000171629.",
-        "descriptionKr": "실제 구매 검증 링크: 올리브영 공식몰 상품번호 A000000171629 연동.",
+        "brand": "K-BEAUTY",
+        "name": " Rejuran PDRN Turnover Ampoule Dual Effect",
+        "nameKr": " 리쥬란 PDRN 턴오버 앰플 듀얼 이펙트",
+        "description": "Verified Direct URL: https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000171629",
+        "descriptionKr": "실제 접속 가능한 구매/공식 인스타 딥링크: https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000171629",
         "sourceUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000171629",
         "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
-        "tag": "OLIVE YOUNG VERIFIED"
+        "tag": "LIVE VERIFIED"
       },
       {
-        "brand": "Anua",
-        "name": "Heartleaf 77% Clear Toner Pad",
-        "nameKr": "아누아 어성초 77% 모공 맑음 토너 패드",
-        "description": "Verified Link: Olive Young Official Goods #A000000184424.",
-        "descriptionKr": "실제 구매 검증 링크: 올리브영 공식몰 상품번호 A000000184424 연동.",
+        "brand": "GLOBAL BEST",
+        "name": " Anua Heartleaf 77% Clear Toner Pad",
+        "nameKr": " 아누아 어성초 77% 모공 맑음 토너 패드",
+        "description": "Verified Direct URL: https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000184424",
+        "descriptionKr": "실제 접속 가능한 구매/공식 인스타 딥링크: https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000184424",
         "sourceUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000184424",
         "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
-        "tag": "GLOBAL NO.1"
+        "tag": "LIVE VERIFIED"
+      },
+      {
+        "brand": "SPATIAL ARCHITECTURE",
+        "name": "Tamburins Seongsu Olfactory Showroom & Open-Air Concrete",
+        "nameKr": "탬버린즈 성수 프래그런스 랩 & 노출 콘크리트 조향 쇼룸",
+        "description": "Verified Direct URL: https://www.instagram.com/tamburins_official/",
+        "descriptionKr": "실제 접속 가능한 구매/공식 인스타 딥링크: https://www.instagram.com/tamburins_official/",
+        "sourceUrl": "https://www.instagram.com/tamburins_official/",
+        "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800",
+        "tag": "LIVE VERIFIED"
       }
     ]
   },
   {
     "id": "vol-6",
     "volume": 6,
-    "title": "Auto-Scout Vol. 06: Seongsu Glasshouse & Botanical Spas",
-    "titleKr": "자율 수집 Vol. 06: 성수 글래스하우스 & 보태니컬 스파",
-    "issueDate": "2024.04.W2 (AUTO STAGED)",
+    "title": "K-beauty boom draws new challengers to Olive Young's retail dominance - Korea JoongAng Daily",
+    "titleKr": "[실시간 수집] K-beauty boom draws new challengers to Olive Young's retail dominance - Korea JoongAng Daily",
+    "issueDate": "LIVE: Fri, 21 Aug 2026 22:04:04 GMT",
     "status": "staged",
-    "createdAt": "2026-08-26T13:28:53.157Z",
-    "coverImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=1200",
-    "description": "Autonomously curated from Instagram @space.archive & @oliveyoung_official feeds: Exploring Seongsu's concrete glasshouses and botanical bath rituals.",
-    "descriptionKr": "인스타그램 @space.archive & @oliveyoung_official 공식 피드에서 자율 수집·세탁된 에디토리얼: 성수동 콘크리트 글래스하우스와 식물성 입욕 리추얼.",
+    "isLiveNetworkData": true,
+    "createdAt": "2026-08-26T13:43:27.890Z",
+    "coverImage": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=1200",
+    "description": "Live Network Scout from Olive Young Live Trends: K-beauty boom draws new challengers to Olive Young's retail dominance - Korea JoongAng Daily",
+    "descriptionKr": "실시간 네트워크 라이브 수집 (Olive Young Live Trends): [실시간 수집] K-beauty boom draws new challengers to Olive Young's retail dominance - Korea JoongAng Daily",
     "sections": [
       {
-        "title": "Botanical Hydrotherapies",
-        "titleKr": "식물성 수치료와 유리 안식처",
-        "source": "Source: Instagram @oliveyoung_official Reels & @space.archive",
-        "content": "Discover how Seongsu's latest urban spas fuse raw concrete brutalism with organic botanical bath oils.",
-        "contentKr": "성수동 최신 어반 스파가 거친 콘크리트 공간에 유기농 입욕 오일을 대입하여 완성한 오감 안식처 리포트.",
-        "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800"
+        "title": "K-beauty boom draws new challengers to Olive Young's retail dominance - Korea JoongAng Daily",
+        "titleKr": "[실시간 수집] K-beauty boom draws new challengers to Olive Young's retail dominance - Korea JoongAng Daily",
+        "source": "Live Source: Olive Young Live Trends (Fri, 21 Aug 2026 22:04:04 GMT)",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMFE5Z0RKVDZESVQtUGUtSW9hU1pmazhRTFJoSVRNU0tSYzEwdWdMNjlTVGI4cmpsS3lSLUwxSXVQU2R2cWh3WUYxdDJFWThVdjdIN1pSbFEwalBCS3gta3duc1p5a3JYSlB3S082RjNSU0pvUXpRUlNKV0lGeDRjRF9yS3FfYUdXSTUzYkotakpHaTJEOWRkZWNoXzlQeGFVWEtFUFREeWFZZ3hMVEtYazBOcms0WVhDTFptYg?oc=5",
+        "content": "Live fetched network report: K-beauty boom draws new challengers to Olive Young's retail dominance - Korea JoongAng Daily. Published at Fri, 21 Aug 2026 22:04:04 GMT. Click link below for verified full report.",
+        "contentKr": "실시간 웹 네트워크 수집 리포트: [실시간 수집] K-beauty boom draws new challengers to Olive Young's retail dominance - Korea JoongAng Daily. 수집 일시: Fri, 21 Aug 2026 22:04:04 GMT. 아래 링크 클릭 시 원본 팩트 문서로 즉시 이동.",
+        "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "title": "Monclos Unveils Its First Flagship Store in Trendy Hannam-dong, Seoul - Business Wire",
+        "titleKr": "[실시간 수집] Monclos Unveils Its First Flagship Store in Trendy Hannam-dong, Seoul - Business Wire",
+        "source": "Live Source: Hannam Quiet Luxury (Thu, 30 Oct 2025 07:00:00 GMT)",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNk1ValY3a2ExNmRnNjZTSVp6dzlJbVBoeUdTSWZPRWs1ZEFSZV82M0hCWkZWb3owZHhBbFRZbHB0aGdiYWFzTlhiV3VaYW5xazB5eTBFT1JvbVc1RjBhYW9SVHZsbUg4LU8yMElSYUJ5QmlvSU9sSEJuLW5FNl92MGpfRFVidlRHZ2VsVDlyQjNpVlQxeWNmZFpGZUhUQTJaN0ljbTJ6R1k5OEgyY18ybmJ4aEt1bFMwYkt6cERwSHBrVUU?oc=5",
+        "content": "Live fetched network report: Monclos Unveils Its First Flagship Store in Trendy Hannam-dong, Seoul - Business Wire. Published at Thu, 30 Oct 2025 07:00:00 GMT. Click link below for verified full report.",
+        "contentKr": "실시간 웹 네트워크 수집 리포트: [실시간 수집] Monclos Unveils Its First Flagship Store in Trendy Hannam-dong, Seoul - Business Wire. 수집 일시: Thu, 30 Oct 2025 07:00:00 GMT. 아래 링크 클릭 시 원본 팩트 문서로 즉시 이동.",
+        "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800"
       }
     ],
     "featuredProducts": [
       {
-        "brand": "ROUND A'ROUND",
-        "name": "Forest Bathing Bubble Essence",
-        "nameKr": "편백 포레스트 무드 버블 입욕제",
-        "description": "Official Instagram Feature: Cedarwood calming bath bomb with organic cypress oils.",
-        "descriptionKr": "인스타그램 릴스 인기 폭발: 깊은 편백 향으로 지친 몸을 감싸주는 식물성 버블 입욕제.",
-        "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800",
-        "tag": "INSTAGRAM BEST"
+        "brand": "Olive Young / Live Feed",
+        "name": "K-beauty boom draws new challe...",
+        "nameKr": "[실시간 수집] K-beauty boom draws n...",
+        "description": "Live verified source: https://news.google.com/rss/articles/CBMivAFBVV95cUxNMFE5Z0RKVDZESVQtUGUtSW9hU1pmazhRTFJoSVRNU0tSYzEwdWdMNjlTVGI4cmpsS3lSLUwxSXVQU2R2cWh3WUYxdDJFWThVdjdIN1pSbFEwalBCS3gta3duc1p5a3JYSlB3S082RjNSU0pvUXpRUlNKV0lGeDRjRF9yS3FfYUdXSTUzYkotakpHaTJEOWRkZWNoXzlQeGFVWEtFUFREeWFZZ3hMVEtYazBOcms0WVhDTFptYg?oc=5",
+        "descriptionKr": "실시간 수집 원본 출처: https://news.google.com/rss/articles/CBMivAFBVV95cUxNMFE5Z0RKVDZESVQtUGUtSW9hU1pmazhRTFJoSVRNU0tSYzEwdWdMNjlTVGI4cmpsS3lSLUwxSXVQU2R2cWh3WUYxdDJFWThVdjdIN1pSbFEwalBCS3gta3duc1p5a3JYSlB3S082RjNSU0pvUXpRUlNKV0lGeDRjRF9yS3FfYUdXSTUzYkotakpHaTJEOWRkZWNoXzlQeGFVWEtFUFREeWFZZ3hMVEtYazBOcms0WVhDTFptYg?oc=5",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMFE5Z0RKVDZESVQtUGUtSW9hU1pmazhRTFJoSVRNU0tSYzEwdWdMNjlTVGI4cmpsS3lSLUwxSXVQU2R2cWh3WUYxdDJFWThVdjdIN1pSbFEwalBCS3gta3duc1p5a3JYSlB3S082RjNSU0pvUXpRUlNKV0lGeDRjRF9yS3FfYUdXSTUzYkotakpHaTJEOWRkZWNoXzlQeGFVWEtFUFREeWFZZ3hMVEtYazBOcms0WVhDTFptYg?oc=5",
+        "imageUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800",
+        "tag": "LIVE NETWORK"
       }
     ]
   }

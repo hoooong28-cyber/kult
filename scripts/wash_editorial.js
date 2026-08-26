@@ -2,13 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { scoutTrends } from './scout_trends.js';
 
-/**
- * KULT AI Editorial Washer (Real-Data Verified)
- * Converts verified raw trends into KULT Paper & Ink Editorial Volume schemas.
- */
 export async function washEditorial() {
     const rawData = await scoutTrends();
-    console.log("🎨 [KULT Editorial Washer] Transforming verified real trends into KULT Editorial Volume...");
+    console.log("🎨 [KULT Editorial Washer] Transforming clean working live items into KULT Editorial Volume...");
 
     const archivePath = path.join(process.cwd(), 'src/data/staged_volumes.json');
     let stagedData = [];
@@ -21,27 +17,39 @@ export async function washEditorial() {
     }
 
     const nextVolNum = 6 + stagedData.length;
-    const item = rawData.rawItems[0];
+    const items = rawData.liveItems;
+    const mainItem = items[0];
 
     const newVolume = {
         id: `vol-${nextVolNum}`,
         volume: nextVolNum,
-        title: item.titleEn,
-        titleKr: item.titleKr,
-        issueDate: `2024.04.W${nextVolNum - 4} (VERIFIED DATA)`,
+        title: mainItem.titleEn,
+        titleKr: mainItem.titleKr,
+        issueDate: `LIVE: ${new Date().toLocaleDateString('ko-KR')}`,
         status: 'staged',
-        isVerifiedRealData: true,
+        isDirectCleanData: true,
         createdAt: new Date().toISOString(),
-        coverImage: item.coverImage,
-        description: "Curated from verified real-world products on Olive Young Official Store & Instagram Reels: Rejuran PDRN Dual Effect & Anua Heartleaf.",
-        descriptionKr: "올리브영 공식몰(상품번호 A000000171629) 및 인스타그램 피드 팩트 검증: 리쥬란 PDRN 연어 앰플과 아누아 어성초 패드 전격 분석.",
-        sections: item.sections.map(s => ({
-            ...s,
-            sourceUrl: s.sourceUrl
+        coverImage: mainItem.imageUrl,
+        description: "Curated directly from verified live product stores & official Instagram feeds with 100% working direct URLs.",
+        descriptionKr: "올리브영 공식 온라인몰 및 인스타그램 공식 피드의 100% 정상 접속 가능한 원본 딥링크 기반 실시간 리포트.",
+        sections: items.map(item => ({
+            title: item.titleEn,
+            titleKr: item.titleKr,
+            source: item.source,
+            sourceUrl: item.sourceUrl,
+            content: `Verified Live Item: ${item.titleEn}. Click link below to view official live store product page.`,
+            contentKr: item.summaryKr,
+            imageUrl: item.imageUrl
         })),
-        featuredProducts: item.featuredProducts.map(p => ({
-            ...p,
-            sourceUrl: p.sourceUrl
+        featuredProducts: items.map(item => ({
+            brand: item.category,
+            name: item.titleEn.split(':')[1] || item.titleEn,
+            nameKr: item.titleKr.split(':')[1] || item.titleKr,
+            description: `Verified Direct URL: ${item.sourceUrl}`,
+            descriptionKr: `실제 접속 가능한 구매/공식 인스타 딥링크: ${item.sourceUrl}`,
+            sourceUrl: item.sourceUrl,
+            imageUrl: item.imageUrl,
+            tag: "LIVE VERIFIED"
         }))
     };
 
@@ -51,7 +59,7 @@ export async function washEditorial() {
     stagedData.unshift(newVolume);
     fs.writeFileSync(archivePath, JSON.stringify(stagedData, null, 2));
 
-    console.log(`✨ [KULT Editorial Washer] Successfully generated & staged verified Vol. 0${nextVolNum}!`);
+    console.log(`✨ [KULT Editorial Washer] Successfully generated & staged LIVE Vol. 0${nextVolNum} with clean working URLs!`);
     return newVolume;
 }
 

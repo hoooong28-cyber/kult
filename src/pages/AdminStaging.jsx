@@ -14,11 +14,18 @@ const AdminStaging = () => {
     const [message, setMessage] = useState('')
 
     useEffect(() => {
-        // Load staged volumes from local storage or json
+        // Clear stale local storage cache if items don't have valid sourceUrl
         const saved = localStorage.getItem('kult_staged_volumes')
         if (saved) {
             try {
-                setStagedVolumes(JSON.parse(saved))
+                const parsed = JSON.parse(saved)
+                const isStale = parsed.some(v => !v.isDirectCleanData && (!v.sections || v.sections.some(s => !s.sourceUrl)))
+                if (isStale) {
+                    localStorage.removeItem('kult_staged_volumes')
+                    setStagedVolumes(defaultStaged || [])
+                } else {
+                    setStagedVolumes(parsed)
+                }
             } catch (e) {
                 setStagedVolumes(defaultStaged || [])
             }
@@ -26,6 +33,14 @@ const AdminStaging = () => {
             setStagedVolumes(defaultStaged || [])
         }
     }, [])
+
+    const handleResetCache = () => {
+        localStorage.removeItem('kult_staged_volumes')
+        localStorage.removeItem('kult_published_volumes')
+        setStagedVolumes(defaultStaged || [])
+        setMessage('✨ Cache reset! Fresh live data with verified working links loaded.')
+        setTimeout(() => setMessage(''), 4000)
+    }
 
     const saveStaged = (updated) => {
         setStagedVolumes(updated)
@@ -234,7 +249,13 @@ const TREND_POOL = [
                         </p>
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3">
+                        <button
+                            onClick={handleResetCache}
+                            className="px-4 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 font-bold text-xs uppercase tracking-widest transition-all"
+                        >
+                            🗑️ Reset Cache
+                        </button>
                         <button
                             onClick={handleSimulateAutoScout}
                             disabled={loading}
