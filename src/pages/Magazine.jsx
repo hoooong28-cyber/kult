@@ -389,9 +389,20 @@ const Magazine = () => {
                                     <div className="flex items-center gap-3 flex-wrap">
                                         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#1111d4] block">Feature {idx + 1}</span>
                                         {section.source && (
-                                            <span className="text-[9px] font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 uppercase tracking-widest">
-                                                📍 {section.source}
-                                            </span>
+                                            section.sourceUrl ? (
+                                                <a
+                                                    href={section.sourceUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-[9px] font-bold text-[#1111d4] bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full border border-blue-200 uppercase tracking-widest transition-colors inline-flex items-center gap-1"
+                                                >
+                                                    <span>📍 {section.source} ↗</span>
+                                                </a>
+                                            ) : (
+                                                <span className="text-[9px] font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 uppercase tracking-widest">
+                                                    📍 {section.source}
+                                                </span>
+                                            )
                                         )}
                                     </div>
                                     <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-tight">

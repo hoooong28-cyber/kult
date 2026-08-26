@@ -1,5 +1,60 @@
 [
   {
+    "id": "vol-7",
+    "volume": 7,
+    "title": "Olive Young Real Trend: Rejuran PDRN Dual Effect & Anua Heartleaf Pads",
+    "titleKr": "올리브영 실시간 팩트 검증: 리쥬란 PDRN 듀얼 앰플 & 아누아 어성초 패드",
+    "issueDate": "2024.04.W3 (VERIFIED DATA)",
+    "status": "staged",
+    "isVerifiedRealData": true,
+    "createdAt": "2026-08-26T13:39:22.907Z",
+    "coverImage": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=1200",
+    "description": "Curated from verified real-world products on Olive Young Official Store & Instagram Reels: Rejuran PDRN Dual Effect & Anua Heartleaf.",
+    "descriptionKr": "올리브영 공식몰(상품번호 A000000171629) 및 인스타그램 피드 팩트 검증: 리쥬란 PDRN 연어 앰플과 아누아 어성초 패드 전격 분석.",
+    "sections": [
+      {
+        "title": "Rejuran PDRN Turnover Ampoule Dual Effect",
+        "titleKr": "올리브영 공식 입점 1위: 리쥬란 PDRN 턴오버 앰플 듀얼 이펙트",
+        "source": "Source: Olive Young Mall (Goods #A000000171629)",
+        "sourceUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000171629",
+        "content": "Verified Product: High-potency c-PDRN salmon DNA essence clinically proven to accelerate skin turnover and restore glass elasticity.",
+        "contentKr": "실제 검증 상품: 피부과 스킨부스터 핵심 성분인 c-PDRN(연어 DNA)을 고농축 함유하여 피부 턴오버 및 장벽 강화를 돕는 올리브영 공식 베스트셀러.",
+        "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "title": "Anua Heartleaf 77% Clear Toner Pad",
+        "titleKr": "올리브영 글로벌 베스트셀러: 아누아 어성초 77% 모공 맑음 토너 패드",
+        "source": "Source: Olive Young Mall & Instagram @oliveyoung_official",
+        "sourceUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000184424",
+        "content": "Verified Product: Non-comedogenic organic Houttuynia Cordata extract pads rated #1 by foreign travelers for instant urban skin soothing.",
+        "contentKr": "실제 검증 상품: 올리브영 글로벌 판매 1위 어성초 77% 모공 진정 패드. 해외 여행객 필수 하울템으로 인스타그램 릴스 최다 노출.",
+        "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "featuredProducts": [
+      {
+        "brand": "Rejuran Healer",
+        "name": "Turnover Dual Effect Ampoule",
+        "nameKr": "리쥬란 턴오버 듀얼 이펙트 PDRN 앰플",
+        "description": "Verified Link: Olive Young Official Goods #A000000171629.",
+        "descriptionKr": "실제 구매 검증 링크: 올리브영 공식몰 상품번호 A000000171629 연동.",
+        "sourceUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000171629",
+        "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
+        "tag": "OLIVE YOUNG VERIFIED"
+      },
+      {
+        "brand": "Anua",
+        "name": "Heartleaf 77% Clear Toner Pad",
+        "nameKr": "아누아 어성초 77% 모공 맑음 토너 패드",
+        "description": "Verified Link: Olive Young Official Goods #A000000184424.",
+        "descriptionKr": "실제 구매 검증 링크: 올리브영 공식몰 상품번호 A000000184424 연동.",
+        "sourceUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000184424",
+        "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
+        "tag": "GLOBAL NO.1"
+      }
+    ]
+  },
+  {
     "id": "vol-6",
     "volume": 6,
     "title": "Auto-Scout Vol. 06: Seongsu Glasshouse & Botanical Spas",

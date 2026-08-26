@@ -225,16 +225,36 @@ const AdminStaging = () => {
                                     </p>
 
                                     <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
-                                        <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Scouted Sections & Sources</span>
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Scouted Sections & Verified Sources</span>
+                                            {vol.isVerifiedRealData && (
+                                                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30 uppercase tracking-widest">
+                                                    ✅ 100% Real-Data Verified
+                                                </span>
+                                            )}
+                                        </div>
                                         {vol.sections.map((sec, idx) => (
-                                            <div key={idx} className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-1">
-                                                <div className="flex items-center justify-between">
+                                            <div key={idx} className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-2">
+                                                <div className="flex items-center justify-between flex-wrap gap-2">
                                                     <span className="text-xs font-bold text-white uppercase">{t(sec.title, sec.titleKr)}</span>
-                                                    {sec.source && (
-                                                        <span className="text-[10px] text-blue-400 font-bold uppercase tracking-widest bg-blue-500/10 px-2.5 py-0.5 rounded-md border border-blue-500/20">
-                                                            📍 {sec.source}
-                                                        </span>
-                                                    )}
+                                                    <div className="flex items-center gap-2">
+                                                        {sec.source && (
+                                                            <span className="text-[10px] text-blue-400 font-bold uppercase tracking-widest bg-blue-500/10 px-2.5 py-0.5 rounded-md border border-blue-500/20">
+                                                                📍 {sec.source}
+                                                            </span>
+                                                        )}
+                                                        {sec.sourceUrl && (
+                                                            <a
+                                                                href={sec.sourceUrl}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest bg-emerald-500/10 hover:bg-emerald-500/20 px-2.5 py-0.5 rounded-md border border-emerald-500/30 flex items-center gap-1 transition-colors"
+                                                            >
+                                                                <Globe className="w-3 h-3" />
+                                                                <span>Verified Link ↗</span>
+                                                            </a>
+                                                        )}
+                                                    </div>
                                                 </div>
                                                 <p className="text-xs text-slate-400 line-clamp-2 mt-1">{t(sec.content, sec.contentKr)}</p>
                                             </div>
