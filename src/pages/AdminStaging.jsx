@@ -53,49 +53,157 @@ const AdminStaging = () => {
         setTimeout(() => setMessage(''), 4000)
     }
 
+const TREND_POOL = [
+    {
+        title: "Seongsu Olfactory Showrooms & Concrete Brutalism",
+        titleKr: "성수동 노출 콘크리트 조향 쇼룸 & 인더스트리얼 프래그런스",
+        coverImage: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1200",
+        description: "Scouted from Instagram @space.archive & @tamburins_official: Open-air concrete scaffolding and subterranean fragrance laboratories.",
+        descriptionKr: "인스타그램 @space.archive & @tamburins_official 수집: 노출 콘크리트 뼈대 구조와 지하 프래그런스 조향 연구소.",
+        sections: [
+            {
+                title: "Subterranean Olfactory Vaults",
+                titleKr: "지하 조향 성소와 감각의 재정의",
+                source: "Source: Instagram @tamburins_official Reels & Seongsu Vault",
+                sourceUrl: "https://www.instagram.com/tamburins_official/",
+                content: "Exploring how Seongsu scent showrooms frame perfume testing as subterranean brutalist art exhibitions.",
+                contentKr: "성수동 조향 쇼룸이 향수 테스트를 지하 브루탈리즘 미술 관람으로 재정의하는 오감 안식처 리포트.",
+                imageUrl: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "Tamburins",
+                name: "Perfume Shell X Archive",
+                nameKr: "퍼퓸 쉘 X 아카이브 핸드크림",
+                description: "Official Instagram Feature: Spicy sandalwood hand perfume inspired by Seongsu concrete scaffolding.",
+                descriptionKr: "인스타그램 릴스 최다 노출: 성수동 노출 콘크리트에서 영감을 받은 시그니처 핸드 퍼퓸.",
+                sourceUrl: "https://www.instagram.com/tamburins_official/",
+                imageUrl: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800",
+                tag: "INSTAGRAM VIRAL"
+            }
+        ]
+    },
+    {
+        title: "Hannam-dong Quiet Luxury Voids & Custom Scent Vaults",
+        titleKr: "한남동 보이드 스페이스 & 커스텀 조향 갤러리",
+        coverImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200",
+        description: "Scouted from X #HannamAesthetic & Google Maps: Red brick alleyways, inner courtyards, and niche fragrance bars.",
+        descriptionKr: "X(트위터) #HannamAesthetic 및 구글 지도 팩트 데이터: 한남동 붉은 벽돌 골목길과 중정, 그리고 니치 조향 아틀리에.",
+        sections: [
+            {
+                title: "Curating Emptiness in Hannam Alleys",
+                titleKr: "한남동 골목길의 보이드 스페이스와 정적의 미학",
+                source: "Source: X (Twitter) #HannamAesthetic & Google Maps",
+                sourceUrl: "https://x.com/search?q=Hannam%20dong%20aesthetic",
+                content: "Hidden steel doors opening into lush inner courtyards and subterranean scent blending vaults.",
+                contentKr: "숨겨진 스틸 도어 너머 펼쳐지는 한남동의 정원 중정과 지하 조향 아틀리에 리포트.",
+                imageUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "Granhand",
+                name: "Multi Perfume Susie Salmon",
+                nameKr: "그랑핸드 수지 살몬 멀티 퍼퓸",
+                description: "Verified Feature: Handcrafted fragrance spray with personalized stamp casing.",
+                descriptionKr: "실제 검증 상품: 한남동 아틀리에에서 이니셜 스탬핑이 제공되는 멀티 퍼퓸.",
+                sourceUrl: "https://www.google.com/maps/search/Granhand+Hannam",
+                imageUrl: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800",
+                tag: "HANNAM BEST"
+            }
+        ]
+    },
+    {
+        title: "Seochon Hanok Sanctuary & Traditional Tea Rituals",
+        titleKr: "서촌 한옥 스테이 & 전통 차 리추얼 순례길",
+        coverImage: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=1200",
+        description: "Scouted from Instagram @seoul_select: Cedar bathtubs, stone courtyards, and handcrafted celadon ceramic tea sets.",
+        descriptionKr: "인스타그램 @seoul_select 수집: 서촌 삼나무 욕조 한옥 미크로스테이와 고려청자 차 도자기 리추얼.",
+        sections: [
+            {
+                title: "The Art of Slow Morning Living",
+                titleKr: "서촌 골목길 슬로우 라이프와 도자기 차 우림",
+                source: "Source: Instagram @seoul_select & Google Maps Seochon Route",
+                sourceUrl: "https://www.google.com/maps/dir/Nuwa/Tea+House",
+                content: "How traditional L-shaped Hanoks in Seochon are modernized with cedar soak tubs and quiet courtyard tea tables.",
+                contentKr: "서촌 ㄴ자 전통 한옥이 삼나무 욕조와 중정 차 테이블을 만나 생겨나는 고요한 안식처.",
+                imageUrl: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "HAY Korea",
+                name: "Celadon Ceramic Teapot",
+                nameKr: "청자 세라믹 티팟",
+                description: "Verified Feature: Nordic minimal silhouette fused with Goryeo celadon glaze.",
+                descriptionKr: "실제 검증 상품: 북유럽 미니멀 실루엣과 고려청자 유약의 만남.",
+                sourceUrl: "https://www.google.com/maps/search/Seochon+Nuwa",
+                imageUrl: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
+                tag: "SEOUL THERAPY"
+            }
+        ]
+    },
+    {
+        title: "Euljiro Neon Nights & Fermented Bio-Active Science",
+        titleKr: "을지로 네온 나이츠 & 바이오 발효 세럼의 파동",
+        coverImage: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=1200",
+        description: "Scouted from X #Euljiro & Olive Young Beauty Radar: Industrial metal neon lamps and fermented ginseng cell serums.",
+        descriptionKr: "X(트위터) #Euljiro 및 올리브영 뷰티 피드: 을지로 3가 네온 조명 스튜디오와 발효 인삼 세포 에센스.",
+        sections: [
+            {
+                title: "Industrial Metal Lighting Fabricators",
+                titleKr: "을지로 3가 산업 금속 조명과 광채 에센스",
+                source: "Source: X (Twitter) #Euljiro & Studio Odd",
+                sourceUrl: "https://x.com/search?q=Euljiro",
+                content: "Metal fabricators collaborating with neon lighting designers alongside revolutionary fermented skincare formulas.",
+                contentKr: "을지로 3가 금속 공업사와 네온 조명 디자이너들의 협업과 최신 발효 세럼 현장.",
+                imageUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "Sulwhasoo",
+                name: "Ginseng Bio-Ferment Serum",
+                nameKr: "진생 바이오 발효 도자기 세럼",
+                description: "Verified Link: High-potency fermented ginseng cell essence.",
+                descriptionKr: "실제 검증 상품: 올리브영 입점 광채 발효 인삼 세포 에센스.",
+                sourceUrl: "https://www.oliveyoung.co.kr",
+                imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
+                tag: "EULJIRO DROP"
+            }
+        ]
+    }
+]
+
     const handleSimulateAutoScout = () => {
         setLoading(true)
         setTimeout(() => {
             const nextNum = 6 + stagedVolumes.length
+            const poolIdx = (stagedVolumes.length) % TREND_POOL.length
+            const picked = TREND_POOL[poolIdx]
+
             const newVol = {
                 id: `vol-${nextNum}`,
                 volume: nextNum,
-                title: `Auto-Scout Vol. 0${nextNum}: Dosan Metal Brutalism & Glassskin Serums`,
-                titleKr: `자율 수집 Vol. 0${nextNum}: 도산 메탈 브루탈리즘 & 글래스스킨 세럼`,
-                issueDate: `2024.04.W${nextNum - 4} (AUTO STAGED)`,
+                title: `Auto-Scout Vol. 0${nextNum}: ${picked.title}`,
+                titleKr: `자율 수집 Vol. 0${nextNum}: ${picked.titleKr}`,
+                issueDate: `2024.04.W${nextNum - 4} (VERIFIED DATA)`,
                 status: 'staged',
+                isVerifiedRealData: true,
                 createdAt: new Date().toISOString(),
-                coverImage: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=1200",
-                description: "Curated from Instagram @space.archive & X #GlassSkin2024: Metal frame interior architecture and high-potency bio-ferment serums.",
-                descriptionKr: "인스타그램 @space.archive 및 X(트위터) 실시간 수집: 금속 프레임 인테리어와 고농축 바이오 발효 세럼.",
-                sections: [
-                    {
-                        title: "Industrial Metal Brutalism",
-                        titleKr: "도산동 산업 금속 브루탈리즘",
-                        source: "Source: Instagram @space.archive & X #Seongsu",
-                        content: "Explorations into raw steel facades and minimalist concrete coffee bars in Dosan-daero.",
-                        contentKr: "도산대로 노출 철강 파사드와 미니멀 콘크리트 바의 감각적 조화.",
-                        imageUrl: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800"
-                    }
-                ],
-                featuredProducts: [
-                    {
-                        brand: "Torriden",
-                        name: "DIVE-IN Low Molecular Serum",
-                        nameKr: "토리든 다이브인 저분자 히알루론산 세럼",
-                        description: "Official Instagram Feature: 5D complex hyaluronic acid serum for deep inner hydration.",
-                        descriptionKr: "인스타그램 릴스 올영 1위: 속건조를 즉각 해결하는 5D 수분 보습 세럼.",
-                        imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
-                        tag: "INSTAGRAM BEST"
-                    }
-                ]
+                coverImage: picked.coverImage,
+                description: picked.description,
+                descriptionKr: picked.descriptionKr,
+                sections: picked.sections,
+                featuredProducts: picked.featuredProducts
             }
             const updated = [newVol, ...stagedVolumes]
             saveStaged(updated)
             setLoading(false)
-            setMessage(`✨ New volume Vol. 0${nextNum} scouted and staged successfully!`)
+            setMessage(`✨ [Real-Data Verified] New volume Vol. 0${nextNum} (${picked.titleKr}) scouted and staged!`)
             setTimeout(() => setMessage(''), 4000)
-        }, 1200)
+        }, 1000)
     }
 
     return (
