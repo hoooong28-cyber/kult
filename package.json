@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"npm run autosave\"",
     "autosave": "nodemon --watch src --watch public -e js,jsx,css,html --delay 10 --exec \"git add . && git commit -m 'Auto-save' || true\"",
+    "scout:live": "node scripts/convert_news_to_volume.js",
+    "scout:cron": "node scripts/auto_scout_cron.js",
     "build": "vite build",
     "preview": "vite preview",
     "app:sync": "npm run build && npx cap sync",
