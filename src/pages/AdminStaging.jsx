@@ -14,25 +14,9 @@ const AdminStaging = () => {
     const [message, setMessage] = useState('')
 
     useEffect(() => {
-        // Force reset cache to load 100% 1:1 real news matched volumes
-        const saved = localStorage.getItem('kult_staged_volumes')
-        if (saved) {
-            try {
-                const parsed = JSON.parse(saved)
-                const isStale = parsed.some(v => !v.isRealNewsMatched)
-                if (isStale) {
-                    localStorage.removeItem('kult_staged_volumes')
-                    localStorage.removeItem('kult_published_volumes')
-                    setStagedVolumes(defaultStaged || [])
-                } else {
-                    setStagedVolumes(parsed)
-                }
-            } catch (e) {
-                setStagedVolumes(defaultStaged || [])
-            }
-        } else {
-            setStagedVolumes(defaultStaged || [])
-        }
+        // Always load clean defaultStaged directly
+        localStorage.removeItem('kult_staged_volumes')
+        setStagedVolumes(defaultStaged || [])
     }, [])
 
     const handleResetCache = () => {
