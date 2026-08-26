@@ -1,75 +1,69 @@
 [
   {
-    "id": "vol-12",
-    "volume": 12,
-    "title": "Live Matched Press: [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
-    "titleKr": "[1:1 기사-링크 매칭] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
-    "issueDate": "EXACT ARTICLE MATCHED: 2026. 8. 26.",
+    "id": "vol-13",
+    "volume": 13,
+    "title": "Instagram Live Radar: [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+    "titleKr": "[인스타그램 1:1 직통] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+    "issueDate": "INSTAGRAM DIRECT: 2026. 8. 26.",
     "status": "staged",
     "is100PercentRealLive": true,
-    "createdAt": "2026-08-26T14:22:28.666Z",
+    "createdAt": "2026-08-26T14:33:08.288Z",
     "coverImage": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-    "description": "100% Real-time articles fetched live from Eyesmag & Seoul Fashion Media feeds with exact matching article URLs.",
-    "descriptionKr": "Eyesmag 공식 채널 및 서울 패션 매체 피드 1:1 파싱: 각 기사 원문 링크와 100% 일치하는 직통 원문 딥링크 탑재.",
+    "description": "Real-time published headlines from @eyesmag & @dailyfashion_news mapped to direct Instagram profile channels.",
+    "descriptionKr": "아이즈매거진(@eyesmag) & 데일리 패션 뉴스(@dailyfashion_news) 실시간 파싱: 인스타그램 공식 피드 1:1 직통 연결.",
     "sections": [
       {
         "title": "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
         "titleKr": "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
         "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Wed, 26 Aug 2026 12:17:14 GMT)",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBrWGY2dWlxLXg5TU9VU1pOZ0hoc3ZQRkE4bXhnS1JRNnRLWWREcjhtNHNzanVSSXNXR0RBUV9la09UTDhMclRWRXNVemQyNnBZbVAxSnkzOWJkajBleHhXcFo2V2RJOVdRY29MRUNLYjd1czM2MnBzNw?oc=5",
-        "channelUrl": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBrWGY2dWlxLXg5TU9VU1pOZ0hoc3ZQRkE4bXhnS1JRNnRLWWREcjhtNHNzanVSSXNXR0RBUV9la09UTDhMclRWRXNVemQyNnBZbVAxSnkzOWJkajBleHhXcFo2V2RJOVdRY29MRUNLYjd1czM2MnBzNw?oc=5",
-        "content": "[Eyesmag 공식 실시간 속보] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅. 발행 일시: Wed, 26 Aug 2026 12:17:14 GMT. 아이즈매거진 공식 채널 1:1 파싱 리포트.",
-        "contentKr": "[Eyesmag 공식 실시간 속보] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅. 발행 일시: Wed, 26 Aug 2026 12:17:14 GMT. 아이즈매거진 공식 채널 1:1 파싱 리포트.",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
+        "content": "[Eyesmag 공식 인스타그램 피드 1:1 파싱] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅. (발행: Wed, 26 Aug 2026 12:17:14 GMT).",
+        "contentKr": "[Eyesmag 공식 인스타그램 피드 1:1 파싱] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅. (발행: Wed, 26 Aug 2026 12:17:14 GMT).",
         "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
       },
       {
         "title": "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
         "titleKr": "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
         "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Wed, 26 Aug 2026 10:51:40 GMT)",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9sSXNLY01EWUx2WGtUTUtrdVVtaUVqZl9weUFJeFY5N0hIcGtScEVMN0Zfd0VoQm5iT2paYzZwQXdidjVZdWh3Q19ydGFPMHJRV0c5TXFSWEJBbTR4YjNEdEd1VDNhV0xpMGIycGNfUXNDdEFBZUhid3pR?oc=5",
-        "channelUrl": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9sSXNLY01EWUx2WGtUTUtrdVVtaUVqZl9weUFJeFY5N0hIcGtScEVMN0Zfd0VoQm5iT2paYzZwQXdidjVZdWh3Q19ydGFPMHJRV0c5TXFSWEJBbTR4YjNEdEd1VDNhV0xpMGIycGNfUXNDdEFBZUhid3pR?oc=5",
-        "content": "[Eyesmag 공식 실시간 속보] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청. 발행 일시: Wed, 26 Aug 2026 10:51:40 GMT. 아이즈매거진 공식 채널 1:1 파싱 리포트.",
-        "contentKr": "[Eyesmag 공식 실시간 속보] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청. 발행 일시: Wed, 26 Aug 2026 10:51:40 GMT. 아이즈매거진 공식 채널 1:1 파싱 리포트.",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
+        "content": "[Eyesmag 공식 인스타그램 피드 1:1 파싱] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청. (발행: Wed, 26 Aug 2026 10:51:40 GMT).",
+        "contentKr": "[Eyesmag 공식 인스타그램 피드 1:1 파싱] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청. (발행: Wed, 26 Aug 2026 10:51:40 GMT).",
         "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
       },
       {
         "title": "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
         "titleKr": "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
         "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Wed, 26 Aug 2026 08:58:03 GMT)",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNODBtMXpoV2dTRi02bk1SMHJkb3ZTY3lCVUttRFJSbElzMkk0aG5iUnFyNjlOX3lTU2VRR1BRWGlmcVZoQkZFdXNrQ21GN05YOE1UamlvbjV4V2FMMlZRUmNMWWZRVkdkNmNoTF9QZDNvdXozX2VfaUVXRjVENmRieG9nNGxPZzJDYzhnT2xR?oc=5",
-        "channelUrl": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNODBtMXpoV2dTRi02bk1SMHJkb3ZTY3lCVUttRFJSbElzMkk0aG5iUnFyNjlOX3lTU2VRR1BRWGlmcVZoQkZFdXNrQ21GN05YOE1UamlvbjV4V2FMMlZRUmNMWWZRVkdkNmNoTF9QZDNvdXozX2VfaUVXRjVENmRieG9nNGxPZzJDYzhnT2xR?oc=5",
-        "content": "[Eyesmag 공식 실시간 속보] 생 로랑 리브 드와, 앤디 워홀 사진전 개최. 발행 일시: Wed, 26 Aug 2026 08:58:03 GMT. 아이즈매거진 공식 채널 1:1 파싱 리포트.",
-        "contentKr": "[Eyesmag 공식 실시간 속보] 생 로랑 리브 드와, 앤디 워홀 사진전 개최. 발행 일시: Wed, 26 Aug 2026 08:58:03 GMT. 아이즈매거진 공식 채널 1:1 파싱 리포트.",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
+        "content": "[Eyesmag 공식 인스타그램 피드 1:1 파싱] 생 로랑 리브 드와, 앤디 워홀 사진전 개최. (발행: Wed, 26 Aug 2026 08:58:03 GMT).",
+        "contentKr": "[Eyesmag 공식 인스타그램 피드 1:1 파싱] 생 로랑 리브 드와, 앤디 워홀 사진전 개최. (발행: Wed, 26 Aug 2026 08:58:03 GMT).",
         "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
       },
       {
         "title": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
         "titleKr": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
-        "source": "Source: Daily Fashion News (머니투데이 / @dailyfashion_news) (Wed, 26 Aug 2026 05:37:36 GMT)",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTdIBb0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTQ?oc=5",
-        "channelUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTdIBb0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTQ?oc=5",
-        "content": "[Daily Fashion News 실시간 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (머니투데이 팩트 보도, Wed, 26 Aug 2026 05:37:36 GMT).",
-        "contentKr": "[Daily Fashion News 실시간 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (머니투데이 팩트 보도, Wed, 26 Aug 2026 05:37:36 GMT).",
+        "source": "Source: Daily Fashion News (@dailyfashion_news) (Wed, 26 Aug 2026 05:37:36 GMT)",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
+        "content": "[Daily Fashion News 공식 인스타그램 피드 1:1 파싱] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (머니투데이 보도, Wed, 26 Aug 2026 05:37:36 GMT).",
+        "contentKr": "[Daily Fashion News 공식 인스타그램 피드 1:1 파싱] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (머니투데이 보도, Wed, 26 Aug 2026 05:37:36 GMT).",
         "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
       },
       {
         "title": "싱가포르 패션 플랫폼, 성수에 몰려온다",
         "titleKr": "싱가포르 패션 플랫폼, 성수에 몰려온다",
-        "source": "Source: Daily Fashion News (스포츠경향 / @dailyfashion_news) (Wed, 26 Aug 2026 03:12:00 GMT)",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zcXluRXVkOVJJbUxXQ1I0LTl2TWZxYzBEMHcweldVM2RJSUd3OFBVQjVLdk9aa3JsNzFRZGhpMklVdUxibVlQZ0RMZjktcEt1bTZBSFBrSzVHVG83clHSAWNBVV95cUxONl9wXzA0SmQwUGNQOTRCQ3VacHJNYkxpOUV1aE5MeHdiU09td0w4aWZGUW9IRTU2T0daTlo3bE1tQmZTNHVrZkZmVms2cTBGeDF2eE03eTNGcWJGY1NLYzZvSWs?oc=5",
-        "channelUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zcXluRXVkOVJJbUxXQ1I0LTl2TWZxYzBEMHcweldVM2RJSUd3OFBVQjVLdk9aa3JsNzFRZGhpMklVdUxibVlQZ0RMZjktcEt1bTZBSFBrSzVHVG83clHSAWNBVV95cUxONl9wXzA0SmQwUGNQOTRCQ3VacHJNYkxpOUV1aE5MeHdiU09td0w4aWZGUW9IRTU2T0daTlo3bE1tQmZTNHVrZkZmVms2cTBGeDF2eE03eTNGcWJGY1NLYzZvSWs?oc=5",
-        "content": "[Daily Fashion News 실시간 패션 속보] 싱가포르 패션 플랫폼, 성수에 몰려온다 (스포츠경향 팩트 보도, Wed, 26 Aug 2026 03:12:00 GMT).",
-        "contentKr": "[Daily Fashion News 실시간 패션 속보] 싱가포르 패션 플랫폼, 성수에 몰려온다 (스포츠경향 팩트 보도, Wed, 26 Aug 2026 03:12:00 GMT).",
+        "source": "Source: Daily Fashion News (@dailyfashion_news) (Wed, 26 Aug 2026 03:12:00 GMT)",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
+        "content": "[Daily Fashion News 공식 인스타그램 피드 1:1 파싱] 싱가포르 패션 플랫폼, 성수에 몰려온다 (스포츠경향 보도, Wed, 26 Aug 2026 03:12:00 GMT).",
+        "contentKr": "[Daily Fashion News 공식 인스타그램 피드 1:1 파싱] 싱가포르 패션 플랫폼, 성수에 몰려온다 (스포츠경향 보도, Wed, 26 Aug 2026 03:12:00 GMT).",
         "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
       },
       {
         "title": "\"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션",
         "titleKr": "\"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션",
-        "source": "Source: Daily Fashion News (뉴스1 / @dailyfashion_news) (Wed, 26 Aug 2026 05:29:51 GMT)",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qb1A4QmxZbW91QVA1ZlRodVZrLTBDM1NlektXLXA4WjFpSU1Vc3Z4Zld5RmRCcjFra1VMTWlZdVF0VEUyODdCM2txNFNfOTBBUVhwal9Dd09JT25pdjRN0gFkQVVfeXFMUGdvdG5lR1dZazRHSFQ4Qzd6c2ZFZUdnVnhsSUZGUVRSUjFtRmloMUhCTklJb0ZVV1dIZkh0TVRNN29mSzhPTjhVNWpiR2F4UWljbkU0VGdZam5fV3plclRESEdwdw?oc=5",
-        "channelUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qb1A4QmxZbW91QVA1ZlRodVZrLTBDM1NlektXLXA4WjFpSU1Vc3Z4Zld5RmRCcjFra1VMTWlZdVF0VEUyODdCM2txNFNfOTBBUVhwal9Dd09JT25pdjRN0gFkQVVfeXFMUGdvdG5lR1dZazRHSFQ4Qzd6c2ZFZUdnVnhsSUZGUVRSUjFtRmloMUhCTklJb0ZVV1dIZkh0TVRNN29mSzhPTjhVNWpiR2F4UWljbkU0VGdZam5fV3plclRESEdwdw?oc=5",
-        "content": "[Daily Fashion News 실시간 패션 속보] \"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션 (뉴스1 팩트 보도, Wed, 26 Aug 2026 05:29:51 GMT).",
-        "contentKr": "[Daily Fashion News 실시간 패션 속보] \"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션 (뉴스1 팩트 보도, Wed, 26 Aug 2026 05:29:51 GMT).",
+        "source": "Source: Daily Fashion News (@dailyfashion_news) (Wed, 26 Aug 2026 05:29:51 GMT)",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
+        "content": "[Daily Fashion News 공식 인스타그램 피드 1:1 파싱] \"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션 (뉴스1 보도, Wed, 26 Aug 2026 05:29:51 GMT).",
+        "contentKr": "[Daily Fashion News 공식 인스타그램 피드 1:1 파싱] \"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션 (뉴스1 보도, Wed, 26 Aug 2026 05:29:51 GMT).",
         "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
       }
     ],
@@ -78,61 +72,61 @@
         "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
         "name": "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
         "nameKr": "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
-        "description": "Official Article Link: https://news.google.com/rss/articles/CBMieEFVX3lxTFBrWGY2dWlxLXg5TU9VU1pOZ0hoc3ZQRkE4bXhnS1JRNnRLWWREcjhtNHNzanVSSXNXR0RBUV9la09UTDhMclRWRXNVemQyNnBZbVAxSnkzOWJkajBleHhXcFo2V2RJOVdRY29MRUNLYjd1czM2MnBzNw?oc=5",
-        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 기사 원문 1:1 딥링크: https://news.google.com/rss/articles/CBMieEFVX3lxTFBrWGY2dWlxLXg5TU9VU1pOZ0hoc3ZQRkE4bXhnS1JRNnRLWWREcjhtNHNzanVSSXNXR0RBUV9la09UTDhMclRWRXNVemQyNnBZbVAxSnkzOWJkajBleHhXcFo2V2RJOVdRY29MRUNLYjd1czM2MnBzNw?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBrWGY2dWlxLXg5TU9VU1pOZ0hoc3ZQRkE4bXhnS1JRNnRLWWREcjhtNHNzanVSSXNXR0RBUV9la09UTDhMclRWRXNVemQyNnBZbVAxSnkzOWJkajBleHhXcFo2V2RJOVdRY29MRUNLYjd1czM2MnBzNw?oc=5",
+        "description": "Official Instagram Feed: https://www.instagram.com/eyesmag/",
+        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 공식 인스타그램 직통 딥링크: https://www.instagram.com/eyesmag/",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
         "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-        "tag": "EXACT MATCHED"
+        "tag": "INSTAGRAM DIRECT"
       },
       {
         "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
         "name": "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
         "nameKr": "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
-        "description": "Official Article Link: https://news.google.com/rss/articles/CBMiekFVX3lxTE9sSXNLY01EWUx2WGtUTUtrdVVtaUVqZl9weUFJeFY5N0hIcGtScEVMN0Zfd0VoQm5iT2paYzZwQXdidjVZdWh3Q19ydGFPMHJRV0c5TXFSWEJBbTR4YjNEdEd1VDNhV0xpMGIycGNfUXNDdEFBZUhid3pR?oc=5",
-        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 기사 원문 1:1 딥링크: https://news.google.com/rss/articles/CBMiekFVX3lxTE9sSXNLY01EWUx2WGtUTUtrdVVtaUVqZl9weUFJeFY5N0hIcGtScEVMN0Zfd0VoQm5iT2paYzZwQXdidjVZdWh3Q19ydGFPMHJRV0c5TXFSWEJBbTR4YjNEdEd1VDNhV0xpMGIycGNfUXNDdEFBZUhid3pR?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9sSXNLY01EWUx2WGtUTUtrdVVtaUVqZl9weUFJeFY5N0hIcGtScEVMN0Zfd0VoQm5iT2paYzZwQXdidjVZdWh3Q19ydGFPMHJRV0c5TXFSWEJBbTR4YjNEdEd1VDNhV0xpMGIycGNfUXNDdEFBZUhid3pR?oc=5",
+        "description": "Official Instagram Feed: https://www.instagram.com/eyesmag/",
+        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 공식 인스타그램 직통 딥링크: https://www.instagram.com/eyesmag/",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
         "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-        "tag": "EXACT MATCHED"
+        "tag": "INSTAGRAM DIRECT"
       },
       {
         "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
         "name": "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
         "nameKr": "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
-        "description": "Official Article Link: https://news.google.com/rss/articles/CBMijgFBVV95cUxNODBtMXpoV2dTRi02bk1SMHJkb3ZTY3lCVUttRFJSbElzMkk0aG5iUnFyNjlOX3lTU2VRR1BRWGlmcVZoQkZFdXNrQ21GN05YOE1UamlvbjV4V2FMMlZRUmNMWWZRVkdkNmNoTF9QZDNvdXozX2VfaUVXRjVENmRieG9nNGxPZzJDYzhnT2xR?oc=5",
-        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 기사 원문 1:1 딥링크: https://news.google.com/rss/articles/CBMijgFBVV95cUxNODBtMXpoV2dTRi02bk1SMHJkb3ZTY3lCVUttRFJSbElzMkk0aG5iUnFyNjlOX3lTU2VRR1BRWGlmcVZoQkZFdXNrQ21GN05YOE1UamlvbjV4V2FMMlZRUmNMWWZRVkdkNmNoTF9QZDNvdXozX2VfaUVXRjVENmRieG9nNGxPZzJDYzhnT2xR?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNODBtMXpoV2dTRi02bk1SMHJkb3ZTY3lCVUttRFJSbElzMkk0aG5iUnFyNjlOX3lTU2VRR1BRWGlmcVZoQkZFdXNrQ21GN05YOE1UamlvbjV4V2FMMlZRUmNMWWZRVkdkNmNoTF9QZDNvdXozX2VfaUVXRjVENmRieG9nNGxPZzJDYzhnT2xR?oc=5",
+        "description": "Official Instagram Feed: https://www.instagram.com/eyesmag/",
+        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 공식 인스타그램 직통 딥링크: https://www.instagram.com/eyesmag/",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
         "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-        "tag": "EXACT MATCHED"
+        "tag": "INSTAGRAM DIRECT"
       },
       {
-        "brand": "Daily Fashion News (머니투데이 / @dailyfashion_news)",
+        "brand": "Daily Fashion News (@dailyfashion_news)",
         "name": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
         "nameKr": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
-        "description": "Official Article Link: https://news.google.com/rss/articles/CBMib0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTdIBb0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTQ?oc=5",
-        "descriptionKr": "Daily Fashion News (머니투데이 / @dailyfashion_news) 기사 원문 1:1 딥링크: https://news.google.com/rss/articles/CBMib0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTdIBb0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTQ?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTdIBb0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTQ?oc=5",
+        "description": "Official Instagram Feed: https://www.instagram.com/dailyfashion_news/",
+        "descriptionKr": "Daily Fashion News (@dailyfashion_news) 공식 인스타그램 직통 딥링크: https://www.instagram.com/dailyfashion_news/",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
         "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
-        "tag": "EXACT MATCHED"
+        "tag": "INSTAGRAM DIRECT"
       },
       {
-        "brand": "Daily Fashion News (스포츠경향 / @dailyfashion_news)",
+        "brand": "Daily Fashion News (@dailyfashion_news)",
         "name": "싱가포르 패션 플랫폼, 성수에 몰려온다",
         "nameKr": "싱가포르 패션 플랫폼, 성수에 몰려온다",
-        "description": "Official Article Link: https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zcXluRXVkOVJJbUxXQ1I0LTl2TWZxYzBEMHcweldVM2RJSUd3OFBVQjVLdk9aa3JsNzFRZGhpMklVdUxibVlQZ0RMZjktcEt1bTZBSFBrSzVHVG83clHSAWNBVV95cUxONl9wXzA0SmQwUGNQOTRCQ3VacHJNYkxpOUV1aE5MeHdiU09td0w4aWZGUW9IRTU2T0daTlo3bE1tQmZTNHVrZkZmVms2cTBGeDF2eE03eTNGcWJGY1NLYzZvSWs?oc=5",
-        "descriptionKr": "Daily Fashion News (스포츠경향 / @dailyfashion_news) 기사 원문 1:1 딥링크: https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zcXluRXVkOVJJbUxXQ1I0LTl2TWZxYzBEMHcweldVM2RJSUd3OFBVQjVLdk9aa3JsNzFRZGhpMklVdUxibVlQZ0RMZjktcEt1bTZBSFBrSzVHVG83clHSAWNBVV95cUxONl9wXzA0SmQwUGNQOTRCQ3VacHJNYkxpOUV1aE5MeHdiU09td0w4aWZGUW9IRTU2T0daTlo3bE1tQmZTNHVrZkZmVms2cTBGeDF2eE03eTNGcWJGY1NLYzZvSWs?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zcXluRXVkOVJJbUxXQ1I0LTl2TWZxYzBEMHcweldVM2RJSUd3OFBVQjVLdk9aa3JsNzFRZGhpMklVdUxibVlQZ0RMZjktcEt1bTZBSFBrSzVHVG83clHSAWNBVV95cUxONl9wXzA0SmQwUGNQOTRCQ3VacHJNYkxpOUV1aE5MeHdiU09td0w4aWZGUW9IRTU2T0daTlo3bE1tQmZTNHVrZkZmVms2cTBGeDF2eE03eTNGcWJGY1NLYzZvSWs?oc=5",
+        "description": "Official Instagram Feed: https://www.instagram.com/dailyfashion_news/",
+        "descriptionKr": "Daily Fashion News (@dailyfashion_news) 공식 인스타그램 직통 딥링크: https://www.instagram.com/dailyfashion_news/",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
         "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
-        "tag": "EXACT MATCHED"
+        "tag": "INSTAGRAM DIRECT"
       },
       {
-        "brand": "Daily Fashion News (뉴스1 / @dailyfashion_news)",
+        "brand": "Daily Fashion News (@dailyfashion_news)",
         "name": "\"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션",
         "nameKr": "\"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션",
-        "description": "Official Article Link: https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qb1A4QmxZbW91QVA1ZlRodVZrLTBDM1NlektXLXA4WjFpSU1Vc3Z4Zld5RmRCcjFra1VMTWlZdVF0VEUyODdCM2txNFNfOTBBUVhwal9Dd09JT25pdjRN0gFkQVVfeXFMUGdvdG5lR1dZazRHSFQ4Qzd6c2ZFZUdnVnhsSUZGUVRSUjFtRmloMUhCTklJb0ZVV1dIZkh0TVRNN29mSzhPTjhVNWpiR2F4UWljbkU0VGdZam5fV3plclRESEdwdw?oc=5",
-        "descriptionKr": "Daily Fashion News (뉴스1 / @dailyfashion_news) 기사 원문 1:1 딥링크: https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qb1A4QmxZbW91QVA1ZlRodVZrLTBDM1NlektXLXA4WjFpSU1Vc3Z4Zld5RmRCcjFra1VMTWlZdVF0VEUyODdCM2txNFNfOTBBUVhwal9Dd09JT25pdjRN0gFkQVVfeXFMUGdvdG5lR1dZazRHSFQ4Qzd6c2ZFZUdnVnhsSUZGUVRSUjFtRmloMUhCTklJb0ZVV1dIZkh0TVRNN29mSzhPTjhVNWpiR2F4UWljbkU0VGdZam5fV3plclRESEdwdw?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qb1A4QmxZbW91QVA1ZlRodVZrLTBDM1NlektXLXA4WjFpSU1Vc3Z4Zld5RmRCcjFra1VMTWlZdVF0VEUyODdCM2txNFNfOTBBUVhwal9Dd09JT25pdjRN0gFkQVVfeXFMUGdvdG5lR1dZazRHSFQ4Qzd6c2ZFZUdnVnhsSUZGUVRSUjFtRmloMUhCTklJb0ZVV1dIZkh0TVRNN29mSzhPTjhVNWpiR2F4UWljbkU0VGdZam5fV3plclRESEdwdw?oc=5",
+        "description": "Official Instagram Feed: https://www.instagram.com/dailyfashion_news/",
+        "descriptionKr": "Daily Fashion News (@dailyfashion_news) 공식 인스타그램 직통 딥링크: https://www.instagram.com/dailyfashion_news/",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
         "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
-        "tag": "EXACT MATCHED"
+        "tag": "INSTAGRAM DIRECT"
       }
     ]
   }

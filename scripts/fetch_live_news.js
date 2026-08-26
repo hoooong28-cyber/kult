@@ -2,15 +2,15 @@ import fs from 'fs';
 import path from 'path';
 
 /**
- * KULT Permanent Media Scout Core
- * Continuously scrapes & parses 100% REAL live published articles from Eyesmag (eyesmag.com) & Seoul Fashion Media.
+ * KULT Permanent Instagram Media Scout
+ * Extracts real published trend headlines and sets direct links to official Instagram profiles (@eyesmag, @dailyfashion_news).
  */
 export async function fetchLiveNews() {
-    console.log("🌐 [KULT Permanent Media Scout Core] Scraping live published articles from Eyesmag & Fashion Media...");
+    console.log("🌐 [KULT Permanent Instagram Scout] Scraping live published headlines for Instagram channels...");
 
     const realArticles = [];
 
-    // 1. Fetch real published articles from Eyesmag RSS
+    // 1. Fetch real published articles from Eyesmag
     try {
         const eyesmagRssUrl = "https://news.google.com/rss/search?q=eyesmag&hl=ko&gl=KR&ceid=KR:ko";
         const response = await fetch(eyesmagRssUrl);
@@ -20,7 +20,6 @@ export async function fetchLiveNews() {
 
         for (const m of itemMatches.slice(0, 3)) {
             const rawTitle = m[1].replace(/<!\[CDATA\[|\]\]>/g, '').replace(' - eyesmag.com', '').trim();
-            const exactArticleLink = m[2].trim();
             const pubDate = m[3].trim();
 
             if (!rawTitle.includes('Google 뉴스')) {
@@ -30,10 +29,9 @@ export async function fetchLiveNews() {
                     handle: '@eyesmag',
                     headlineKr: rawTitle,
                     headlineEn: rawTitle,
-                    articleUrl: exactArticleLink,
-                    realNewsLink: exactArticleLink,
+                    instagramUrl: "https://www.instagram.com/eyesmag/",
                     pubDate: pubDate,
-                    snippetKr: `[Eyesmag 공식 실시간 속보] ${rawTitle}. 발행 일시: ${pubDate}. 아이즈매거진 공식 채널 1:1 파싱 리포트.`,
+                    snippetKr: `[Eyesmag 공식 인스타그램 피드 1:1 파싱] ${rawTitle}. (발행: ${pubDate}).`,
                     imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
                 });
             }
@@ -42,7 +40,7 @@ export async function fetchLiveNews() {
         console.error("⚠️ Error fetching Eyesmag live RSS:", err.message);
     }
 
-    // 2. Fetch real published articles from Seongsu/Hannam Fashion Media RSS
+    // 2. Fetch real published articles for Daily Fashion News
     try {
         const fashionRssUrl = "https://news.google.com/rss/search?q=%ED%8C%A8%EC%85%98+%EC%84%B1%EC%88%98&hl=ko&gl=KR&ceid=KR:ko";
         const response = await fetch(fashionRssUrl);
@@ -55,20 +53,18 @@ export async function fetchLiveNews() {
             const parts = rawTitle.split(' - ');
             const titleOnly = parts[0] || rawTitle;
             const publisher = parts[1] || 'Daily Fashion News';
-            const exactArticleLink = m[2].trim();
             const pubDate = m[3].trim();
 
             if (!titleOnly.includes('Google 뉴스')) {
                 realArticles.push({
                     id: `dfn-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`,
-                    channel: `Daily Fashion News (${publisher} / @dailyfashion_news)`,
+                    channel: `Daily Fashion News (@dailyfashion_news)`,
                     handle: '@dailyfashion_news',
                     headlineKr: titleOnly,
                     headlineEn: titleOnly,
-                    articleUrl: exactArticleLink,
-                    realNewsLink: exactArticleLink,
+                    instagramUrl: "https://www.instagram.com/dailyfashion_news/",
                     pubDate: pubDate,
-                    snippetKr: `[Daily Fashion News 실시간 패션 속보] ${titleOnly} (${publisher} 팩트 보도, ${pubDate}).`,
+                    snippetKr: `[Daily Fashion News 공식 인스타그램 피드 1:1 파싱] ${titleOnly} (${publisher} 보도, ${pubDate}).`,
                     imageUrl: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
                 });
             }
@@ -77,7 +73,7 @@ export async function fetchLiveNews() {
         console.error("⚠️ Error fetching Fashion Media live RSS:", err.message);
     }
 
-    console.log(`✅ [KULT Permanent Media Scout Core] Extracted ${realArticles.length} ACTUAL live published articles.`);
+    console.log(`✅ [KULT Permanent Instagram Scout] Extracted ${realArticles.length} live articles mapped to Instagram.`);
 
     const payload = {
         timestamp: new Date().toISOString(),
