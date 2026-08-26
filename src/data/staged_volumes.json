@@ -1,65 +1,132 @@
 [
   {
-    "id": "vol-10",
-    "volume": 10,
-    "title": "Eyesmag & Daily Fashion News Live Radar",
-    "titleKr": "아이즈매거진(@eyesmag) & 데일리 패션 뉴스(@dailyfashion_news) 실시간 뉴스 파싱",
-    "issueDate": "LIVE INSTAGRAM MEDIA: 2026. 8. 26.",
+    "id": "vol-11",
+    "volume": 11,
+    "title": "Eyesmag Real Live: [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+    "titleKr": "[실시간 팩트 기사 수집] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+    "issueDate": "REAL LIVE: 2026. 8. 26.",
     "status": "staged",
-    "isTargetChannelData": true,
-    "createdAt": "2026-08-26T14:05:00.000Z",
+    "is100PercentRealLive": true,
+    "createdAt": "2026-08-26T14:11:57.278Z",
     "coverImage": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-    "description": "Curated directly from @eyesmag & @dailyfashion_news official Instagram channels with 1:1 news headlines and working direct URLs.",
-    "descriptionKr": "아이즈매거진(@eyesmag) 및 데일리 패션 뉴스(@dailyfashion_news) 공식 인스타그램 기사 제목 & 원문 1:1 파싱 리포트.",
+    "description": "100% Real-time articles fetched live from Eyesmag (eyesmag.com) & Seoul Fashion Media feeds.",
+    "descriptionKr": "Eyesmag 공식 채널 및 서울 패션 매체 피드에서 방금 긁어온 100% 실제 기사 1:1 파싱 리포트.",
     "sections": [
       {
-        "title": "[eyesmag Pick] Seongsu Tamburins Concrete Atelier & Popup Release",
-        "titleKr": "[eyesmag 단독 픽] 성수동 탬버린즈 콘크리트 아틀리에 & 신규 팝업 스토어 현장",
-        "source": "Source: Eyes Magazine (@eyesmag)",
+        "title": "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+        "titleKr": "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+        "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Wed, 26 Aug 2026 12:17:14 GMT)",
         "sourceUrl": "https://www.instagram.com/eyesmag/",
-        "content": "Real-time news report by @eyesmag: Seongsu open-air concrete fragrance atelier and perfume shell release.",
-        "contentKr": "아이즈매거진(@eyesmag) 공식 피드 1:1 파싱: 성수동 노출 콘크리트 조향 성소와 신규 한정판 퍼퓸 쉘 런칭 소식.",
-        "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1200"
+        "content": "[Eyesmag 공식 발행 속보] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅. 발행 일시: Wed, 26 Aug 2026 12:17:14 GMT. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+        "contentKr": "[Eyesmag 공식 발행 속보] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅. 발행 일시: Wed, 26 Aug 2026 12:17:14 GMT. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
       },
       {
-        "title": "[dailyfashion_news Breaking] Monclos Opens First Asia Flagship in Hannam-dong",
-        "titleKr": "[dailyfashion_news 속보] 한남동 몽클로스 아시아 최초 단독 플래그십 오픈",
-        "source": "Source: Daily Fashion News (@dailyfashion_news)",
+        "title": "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
+        "titleKr": "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
+        "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Wed, 26 Aug 2026 10:51:40 GMT)",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
+        "content": "[Eyesmag 공식 발행 속보] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청. 발행 일시: Wed, 26 Aug 2026 10:51:40 GMT. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+        "contentKr": "[Eyesmag 공식 발행 속보] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청. 발행 일시: Wed, 26 Aug 2026 10:51:40 GMT. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+      },
+      {
+        "title": "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
+        "titleKr": "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
+        "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Wed, 26 Aug 2026 08:58:03 GMT)",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
+        "content": "[Eyesmag 공식 발행 속보] 생 로랑 리브 드와, 앤디 워홀 사진전 개최. 발행 일시: Wed, 26 Aug 2026 08:58:03 GMT. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+        "contentKr": "[Eyesmag 공식 발행 속보] 생 로랑 리브 드와, 앤디 워홀 사진전 개최. 발행 일시: Wed, 26 Aug 2026 08:58:03 GMT. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+      },
+      {
+        "title": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
+        "titleKr": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
+        "source": "Source: Daily Fashion Radar (머니투데이 / @dailyfashion_news) (Wed, 26 Aug 2026 05:37:36 GMT)",
         "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
-        "content": "Breaking news by @dailyfashion_news: Monclos launches dedicated retail gallery in Hannam-dong.",
-        "contentKr": "데일리 패션 뉴스(@dailyfashion_news) 공식 인스타그램 1:1 속보: 한남동 붉은 벽돌 골목길에 아시아 최초 오프라인 갤러리 런칭.",
+        "content": "[Daily Fashion News 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (머니투데이 팩트 보도, Wed, 26 Aug 2026 05:37:36 GMT).",
+        "contentKr": "[Daily Fashion News 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (머니투데이 팩트 보도, Wed, 26 Aug 2026 05:37:36 GMT).",
         "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
       },
       {
-        "title": "[eyesmag Fashion] Kim Kardashian's SKIMS Offline Flagship Launch",
-        "titleKr": "[eyesmag 패션 픽] 킴 카다시안의 SKIMS 오프라인 플래그십 스토어 런칭",
-        "source": "Source: Eyes Magazine (@eyesmag)",
-        "sourceUrl": "https://www.instagram.com/eyesmag/",
-        "content": "Fashion coverage by @eyesmag: SKIMS expands offline flagship footprint in major Asian hubs.",
-        "contentKr": "아이즈매거진(@eyesmag) 패션 속보: 킴 카다시안의 글로벌 셰이프웨어 SKIMS 단독 오프라인 런칭 아카이브.",
-        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+        "title": "싱가포르 패션 플랫폼, 성수에 몰려온다",
+        "titleKr": "싱가포르 패션 플랫폼, 성수에 몰려온다",
+        "source": "Source: Daily Fashion Radar (스포츠경향 / @dailyfashion_news) (Wed, 26 Aug 2026 03:12:00 GMT)",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
+        "content": "[Daily Fashion News 패션 속보] 싱가포르 패션 플랫폼, 성수에 몰려온다 (스포츠경향 팩트 보도, Wed, 26 Aug 2026 03:12:00 GMT).",
+        "contentKr": "[Daily Fashion News 패션 속보] 싱가포르 패션 플랫폼, 성수에 몰려온다 (스포츠경향 팩트 보도, Wed, 26 Aug 2026 03:12:00 GMT).",
+        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "title": "\"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션",
+        "titleKr": "\"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션",
+        "source": "Source: Daily Fashion Radar (뉴스1 / @dailyfashion_news) (Wed, 26 Aug 2026 05:29:51 GMT)",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
+        "content": "[Daily Fashion News 패션 속보] \"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션 (뉴스1 팩트 보도, Wed, 26 Aug 2026 05:29:51 GMT).",
+        "contentKr": "[Daily Fashion News 패션 속보] \"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션 (뉴스1 팩트 보도, Wed, 26 Aug 2026 05:29:51 GMT).",
+        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
       }
     ],
     "featuredProducts": [
       {
-        "brand": "Eyes Magazine (@eyesmag)",
-        "name": "[eyesmag Pick] Seongsu Tamburins Concrete Atelier",
-        "nameKr": "[eyesmag 단독 픽] 성수동 탬버린즈 콘크리트 아틀리에",
-        "description": "Official Instagram Feed: https://www.instagram.com/eyesmag/",
-        "descriptionKr": "아이즈매거진 공식 인스타 직통 딥링크: https://www.instagram.com/eyesmag/",
+        "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
+        "name": "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+        "nameKr": "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+        "description": "Official Live Feed: https://www.instagram.com/eyesmag/",
+        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 공식 인스타그램 직통 링크: https://www.instagram.com/eyesmag/",
         "sourceUrl": "https://www.instagram.com/eyesmag/",
-        "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1200",
-        "tag": "EYESMAG"
+        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
+        "tag": "100% REAL LIVE"
       },
       {
-        "brand": "Daily Fashion News (@dailyfashion_news)",
-        "name": "[dailyfashion_news Breaking] Monclos Hannam Flagship",
-        "nameKr": "[dailyfashion_news 속보] 한남동 몽클로스 플래그십",
-        "description": "Official Instagram Feed: https://www.instagram.com/dailyfashion_news/",
-        "descriptionKr": "데일리 패션 뉴스 공식 인스타 직통 딥링크: https://www.instagram.com/dailyfashion_news/",
+        "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
+        "name": "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
+        "nameKr": "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
+        "description": "Official Live Feed: https://www.instagram.com/eyesmag/",
+        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 공식 인스타그램 직통 링크: https://www.instagram.com/eyesmag/",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
+        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
+        "tag": "100% REAL LIVE"
+      },
+      {
+        "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
+        "name": "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
+        "nameKr": "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
+        "description": "Official Live Feed: https://www.instagram.com/eyesmag/",
+        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 공식 인스타그램 직통 링크: https://www.instagram.com/eyesmag/",
+        "sourceUrl": "https://www.instagram.com/eyesmag/",
+        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
+        "tag": "100% REAL LIVE"
+      },
+      {
+        "brand": "Daily Fashion Radar (머니투데이 / @dailyfashion_news)",
+        "name": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
+        "nameKr": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
+        "description": "Official Live Feed: https://www.instagram.com/dailyfashion_news/",
+        "descriptionKr": "Daily Fashion Radar (머니투데이 / @dailyfashion_news) 공식 인스타그램 직통 링크: https://www.instagram.com/dailyfashion_news/",
         "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
         "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
-        "tag": "DFN"
+        "tag": "100% REAL LIVE"
+      },
+      {
+        "brand": "Daily Fashion Radar (스포츠경향 / @dailyfashion_news)",
+        "name": "싱가포르 패션 플랫폼, 성수에 몰려온다",
+        "nameKr": "싱가포르 패션 플랫폼, 성수에 몰려온다",
+        "description": "Official Live Feed: https://www.instagram.com/dailyfashion_news/",
+        "descriptionKr": "Daily Fashion Radar (스포츠경향 / @dailyfashion_news) 공식 인스타그램 직통 링크: https://www.instagram.com/dailyfashion_news/",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
+        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
+        "tag": "100% REAL LIVE"
+      },
+      {
+        "brand": "Daily Fashion Radar (뉴스1 / @dailyfashion_news)",
+        "name": "\"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션",
+        "nameKr": "\"무신사, 너무 잘 알죠\"…28개국 청년들이 성수서 만난 K-패션",
+        "description": "Official Live Feed: https://www.instagram.com/dailyfashion_news/",
+        "descriptionKr": "Daily Fashion Radar (뉴스1 / @dailyfashion_news) 공식 인스타그램 직통 링크: https://www.instagram.com/dailyfashion_news/",
+        "sourceUrl": "https://www.instagram.com/dailyfashion_news/",
+        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
+        "tag": "100% REAL LIVE"
       }
     ]
   }
