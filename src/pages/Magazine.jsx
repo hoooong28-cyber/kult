@@ -372,7 +372,7 @@ const Magazine = () => {
     const navigate = useNavigate()
     const { t } = useLanguage()
     const [magazine, setMagazine] = useState(null)
-    const [selectedVolId, setSelectedVolId] = useState('vol-13')
+    const [selectedVolId, setSelectedVolId] = useState('vol-14')
     const [loading, setLoading] = useState(true)
     const [currentUser, setCurrentUser] = useState(null)
 
@@ -386,17 +386,17 @@ const Magazine = () => {
                     const docSnap = await getDoc(doc(db, 'magazines', targetId))
                     if (docSnap.exists()) magDoc = { id: docSnap.id, ...docSnap.data() }
                 } else {
-                    magDoc = MOCK_MAGAZINES[targetId] || MOCK_MAGAZINES['vol-13']
+                    magDoc = MOCK_MAGAZINES[targetId] || MOCK_MAGAZINES['vol-14']
                 }
 
                 if (magDoc) {
                     setMagazine(magDoc)
                 } else {
-                    setMagazine(MOCK_MAGAZINES['vol-13'])
+                    setMagazine(MOCK_MAGAZINES['vol-14'])
                 }
             } catch (err) {
                 console.error("Error fetching magazine:", err)
-                setMagazine(MOCK_MAGAZINES['vol-13'])
+                setMagazine(MOCK_MAGAZINES['vol-14'])
             } finally {
                 setLoading(false)
             }
