@@ -62,12 +62,6 @@ const MOCK_MAGAZINES = {
                 tag: "DIRECT VERIFIED"
             }
         ]
-    }
-}1pYeDJSWWJOeTRsWWVKZTItR1ptTnVnZGRncXNia0FObDRkRlBwVktYaGZhVXgtM2tKVDJwdUFkVVQ5Ti1pc19VLTlNb0ZzN2dXc09QNzBiUG1wNEdJaXplMHE5MnZYS09ZOVEzbXZBX05oV2RiM3dqbF9PSVREaGFiUkZ0OVE?oc=5",
-                imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
-                tag: "PRESS MATCHED"
-            }
-        ]
     },
     'vol-5': {
         id: 'vol-5',
