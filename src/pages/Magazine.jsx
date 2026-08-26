@@ -12,6 +12,48 @@ import { onAuthStateChanged } from 'firebase/auth'
 import UnlockButton from '../components/UnlockButton'
 
 const MOCK_MAGAZINES = {
+    'vol-8': {
+        id: 'vol-8',
+        volume: 8,
+        title: "Live Press Radar: Brochu Walker & SKIMS Open First Asia Flagships in Seoul",
+        titleKr: "실시간 언론 속보: Brochu Walker & 킴 카다시안 SKIMS 서울 플래그십 런칭",
+        issueDate: "LIVE PRESS: 2026.08.W4 (NEWEST)",
+        coverImage: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=1200",
+        description: "1:1 Matched press news directly parsed from FashionNetwork & Fashion United live feeds.",
+        descriptionKr: "FashionNetwork & Fashion United 실시간 기사 1:1 파싱: 팩트 검증 언론사 속보 기사 1:1 매칭.",
+        sections: [
+            {
+                title: "Brochu Walker opens first-ever flagship store in Seoul, South Korea",
+                titleKr: "[실시간 뉴스 1:1 매칭] Brochu Walker 서울 최초 단독 플래그십 오픈",
+                source: "Source: Fashion United Press",
+                sourceUrl: "https://news.google.com/rss/articles/CBMiugFBVV95cUxOeGJqTTAyeHB2QXRaRjBVZTU2WDZvWHBENDRVdlpRSjJnV1QwRHU5VjIzbUlvRUR6eTR4V1pYeDJSWWJOeTRsWWVKZTItR1ptTnVnZGRncXNia0FObDRkRlBwVktYaGZhVXgtM2tKVDJwdUFkVVQ5Ti1pc19VLTlNb0ZzN2dXc09QNzBiUG1wNEdJaXplMHE5MnZYS09ZOVEzbXZBX05oV2RiM3dqbF9PSVREaGFiUkZ0OVE?oc=5",
+                content: "Live news report by Fashion United regarding Brochu Walker opening its first-ever flagship store in Seoul, South Korea.",
+                contentKr: "Fashion United 언론사 실시간 1:1 매칭 기사: 럭셔리 니트웨어 Brochu Walker가 한국 서울에 최초 단독 플래그십 스토어를 공식 런칭하는 속보.",
+                imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                title: "Skims to open first Asia flagships in Hong Kong and Seoul",
+                titleKr: "[실시간 뉴스 1:1 매칭] 킴 카다시안의 SKIMS, 서울 및 홍콩 아시아 첫 플래그십 오픈",
+                source: "Source: FashionNetwork Press",
+                sourceUrl: "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbTdwRkpnX3Vza3JwZWZRR2JGQUFQZ3JlVFlrbUQ1Z3F4N0o4ZmctM0xmZ3ZuM0hhN2tF",
+                content: "Live news report by FashionNetwork regarding SKIMS expanding its global retail footprint with dedicated Flagships in Seoul.",
+                contentKr: "FashionNetwork 언론사 실시간 1:1 매칭 기사: 글로벌 언론사 속보 — SKIMS가 서울에 아시아 최초 플래그십 매장을 오픈하는 팩트 기사.",
+                imageUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "Fashion United",
+                name: "Brochu Walker Seoul Flagship Launch",
+                nameKr: "Brochu Walker 서울 단독 플래그십 런칭",
+                description: "Official Article 1:1 Match: Fashion United",
+                descriptionKr: "기사 원문 1:1 매칭 링크: Fashion United",
+                sourceUrl: "https://news.google.com/rss/articles/CBMiugFBVV95cUxOeGJqTTAyeHB2QXRaRjBVZTU2WDZvWHBENDRVdlpRSjJnV1QwRHU5VjIzbUlvRUR6eTR4V1pYeDJSWWJOeTRsWWVKZTItR1ptTnVnZGRncXNia0FObDRkRlBwVktYaGZhVXgtM2tKVDJwdUFkVVQ5Ti1pc19VLTlNb0ZzN2dXc09QNzBiUG1wNEdJaXplMHE5MnZYS09ZOVEzbXZBX05oV2RiM3dqbF9PSVREaGFiUkZ0OVE?oc=5",
+                imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
+                tag: "PRESS MATCHED"
+            }
+        ]
+    },
     'vol-5': {
         id: 'vol-5',
         volume: 5,
