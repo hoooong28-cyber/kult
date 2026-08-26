@@ -6,6 +6,7 @@ import SpaceDetail from './pages/SpaceDetail'
 import SectorSelector from './pages/SectorSelector'
 import Join from './pages/Join'
 import Admin from './pages/Admin'
+import AdminStaging from './pages/AdminStaging'
 import Subscribe from './pages/Subscribe'
 import Magazine from './pages/Magazine'
 import { LanguageProvider } from './context/LanguageContext'
@@ -29,6 +30,7 @@ function App() {
                         <Route path="/subscribe" element={<Subscribe />} />
                         <Route path="/sectors" element={<SectorSelector />} />
                         <Route path="/admin" element={<Admin />} />
+                        <Route path="/admin/staging" element={<AdminStaging />} />
                         <Route path="/magazine" element={<Magazine />} />
                         <Route path="/magazine/:id" element={<Magazine />} />
                     </Routes>

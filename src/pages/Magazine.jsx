@@ -324,20 +324,29 @@ const Magazine = () => {
                         </span>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                        {Object.values(MOCK_MAGAZINES).map((vol) => (
-                            <button
-                                key={vol.id}
-                                onClick={() => setSelectedVolId(vol.id)}
-                                className={`px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all ${
-                                    (magazine?.id === vol.id || selectedVolId === vol.id)
-                                        ? 'bg-white text-[#191A1F] shadow-lg scale-105'
-                                        : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
-                                }`}
-                            >
-                                Vol. {vol.volume} {vol.volume === 5 && '⚡'}
-                            </button>
-                        ))}
+                    <div className="flex items-center gap-3">
+                        <Link
+                            to="/admin/staging"
+                            className="px-3.5 py-1.5 rounded-full bg-[#1111d4]/20 border border-[#1111d4]/40 text-[#1111d4] hover:bg-[#1111d4] hover:text-white transition-all text-xs font-bold uppercase tracking-wider flex items-center gap-1.5"
+                        >
+                            <span>⚙️ Staging Queue</span>
+                        </Link>
+
+                        <div className="flex items-center gap-2">
+                            {Object.values(MOCK_MAGAZINES).map((vol) => (
+                                <button
+                                    key={vol.id}
+                                    onClick={() => setSelectedVolId(vol.id)}
+                                    className={`px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all ${
+                                        (magazine?.id === vol.id || selectedVolId === vol.id)
+                                            ? 'bg-white text-[#191A1F] shadow-lg scale-105'
+                                            : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
+                                    }`}
+                                >
+                                    Vol. {vol.volume} {vol.volume === 5 && '⚡'}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
