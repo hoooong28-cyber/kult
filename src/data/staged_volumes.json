@@ -1,5 +1,79 @@
 [
   {
+    "id": "vol-8",
+    "volume": 8,
+    "title": "Live Trend Radar: Brochu Walker opens first-ever flagship store in Seoul, South Korea",
+    "titleKr": "실시간 뉴스 레이더: [실시간 뉴스] Brochu Walker opens first-ever flagship store in Seoul, South Korea",
+    "issueDate": "LIVE NEWS: 2026. 8. 26.",
+    "status": "staged",
+    "isRealNewsMatched": true,
+    "createdAt": "2026-08-26T13:53:09.831Z",
+    "coverImage": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=1200",
+    "description": "Autonomously compiled from live press feeds (Fashion United). 1:1 matched news reports and verified article links.",
+    "descriptionKr": "실시간 언론사 뉴스 피드(Fashion United) 1:1 자율 파싱: 팩트 검증 기사 원문 및 링크 1:1 매칭.",
+    "sections": [
+      {
+        "title": "Brochu Walker opens first-ever flagship store in Seoul, South Korea",
+        "titleKr": "[실시간 뉴스] Brochu Walker opens first-ever flagship store in Seoul, South Korea",
+        "source": "Source: Fashion United (Fri, 17 Jul 2026 07:00:00 GMT)",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOeGJqTTAyeHB2QXRaRjBVZTU2WDZvWHBENDRVdlpRSjJnV1QwRHU5VjIzbUlvRUR6eTR4V1pYeDJSWWJOeTRsWWVKZTItR1ptTnVnZGRncXNia0FObDRkRlBwVktYaGZhVXgtM2tKVDJwdUFkVVQ5Ti1pc19VLTlNb0ZzN2dXc09QNzBiUG1wNEdJaXplMHE5MnZYS09ZOVEzbXZBX05oV2RiM3dqbF9PSVREaGFiUkZ0OVE?oc=5",
+        "content": "Live news report by Fashion United regarding Brochu Walker opens first-ever flagship store in Seoul, South Korea. Published on Fri, 17 Jul 2026 07:00:00 GMT.",
+        "contentKr": "Fashion United에서 제공하는 실시간 속보: Brochu Walker opens first-ever flagship store in Seoul, South Korea (Fri, 17 Jul 2026 07:00:00 GMT 발행).",
+        "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "title": "Skims to open first Asia flagships in Hong Kong and Seoul",
+        "titleKr": "[실시간 뉴스] Skims to open first Asia flagships in Hong Kong and Seoul",
+        "source": "Source: FashionNetwork (Thu, 04 Jun 2026 07:00:00 GMT)",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbTdwRkpnX3Vza3JwZWZRR2JGQUFQZ3JlVFlrbUQ1Z3F4N0o4ZmctM0xmZ3ZuMEdhTjlzMGZ5RHRySWpPaE1iZTlwOVNRcGVlQ2ZXSHU3VkdTMExtZnlMM1V3clpNY3gwdzlHLUdZelZsOHI4NFVnRFVuNksxRnJ3aTRFbEpMWDJSdDhMVWUzN3haRmVYVE1Lb19oUkoweXJZUzRmdnQycWw?oc=5",
+        "content": "Live news report by FashionNetwork regarding Skims to open first Asia flagships in Hong Kong and Seoul. Published on Thu, 04 Jun 2026 07:00:00 GMT.",
+        "contentKr": "FashionNetwork에서 제공하는 실시간 속보: Skims to open first Asia flagships in Hong Kong and Seoul (Thu, 04 Jun 2026 07:00:00 GMT 발행).",
+        "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "title": "New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong",
+        "titleKr": "[실시간 뉴스] New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong",
+        "source": "Source: Aju Press (Fri, 29 May 2026 07:00:00 GMT)",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52M1hSYWlSdHk3LUIwaTF1aE5pa0ptdkk2MU94Wkc2c21SYWE4UllDNXZ0Rk9aSmktOUVwN2c1LUZSQTFMREFWVzNvQVBsMnl2M2dSTzRQMlcwUmPSAVdBVV95cUxONUVjTTZsWlFYeldrd2lyNnUxbUlRczR5ZzBIV181WExOY0NPNXF3V2ZaNU9LWUhtMlZWVGxaYk8zclJZNmM2ekRZel9BMjM1emJDOURMTzA?oc=5",
+        "content": "Live news report by Aju Press regarding New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong. Published on Fri, 29 May 2026 07:00:00 GMT.",
+        "contentKr": "Aju Press에서 제공하는 실시간 속보: New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong (Fri, 29 May 2026 07:00:00 GMT 발행).",
+        "imageUrl": "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "featuredProducts": [
+      {
+        "brand": "Fashion United",
+        "name": "Brochu Walker opens first-ever flagship store in Seoul, South Korea",
+        "nameKr": "[실시간 뉴스] Brochu Walker opens first-ever flagship store in Seoul, South Korea",
+        "description": "Official Press Link: https://news.google.com/rss/articles/CBMiugFBVV95cUxOeGJqTTAyeHB2QXRaRjBVZTU2WDZvWHBENDRVdlpRSjJnV1QwRHU5VjIzbUlvRUR6eTR4V1pYeDJSWWJOeTRsWWVKZTItR1ptTnVnZGRncXNia0FObDRkRlBwVktYaGZhVXgtM2tKVDJwdUFkVVQ5Ti1pc19VLTlNb0ZzN2dXc09QNzBiUG1wNEdJaXplMHE5MnZYS09ZOVEzbXZBX05oV2RiM3dqbF9PSVREaGFiUkZ0OVE?oc=5",
+        "descriptionKr": "언론사 원문 기사 1:1 매칭 링크: https://news.google.com/rss/articles/CBMiugFBVV95cUxOeGJqTTAyeHB2QXRaRjBVZTU2WDZvWHBENDRVdlpRSjJnV1QwRHU5VjIzbUlvRUR6eTR4V1pYeDJSWWJOeTRsWWVKZTItR1ptTnVnZGRncXNia0FObDRkRlBwVktYaGZhVXgtM2tKVDJwdUFkVVQ5Ti1pc19VLTlNb0ZzN2dXc09QNzBiUG1wNEdJaXplMHE5MnZYS09ZOVEzbXZBX05oV2RiM3dqbF9PSVREaGFiUkZ0OVE?oc=5",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOeGJqTTAyeHB2QXRaRjBVZTU2WDZvWHBENDRVdlpRSjJnV1QwRHU5VjIzbUlvRUR6eTR4V1pYeDJSWWJOeTRsWWVKZTItR1ptTnVnZGRncXNia0FObDRkRlBwVktYaGZhVXgtM2tKVDJwdUFkVVQ5Ti1pc19VLTlNb0ZzN2dXc09QNzBiUG1wNEdJaXplMHE5MnZYS09ZOVEzbXZBX05oV2RiM3dqbF9PSVREaGFiUkZ0OVE?oc=5",
+        "imageUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800",
+        "tag": "PRESS VERIFIED"
+      },
+      {
+        "brand": "FashionNetwork",
+        "name": "Skims to open first Asia flagships in Hong Kong and Seoul",
+        "nameKr": "[실시간 뉴스] Skims to open first Asia flagships in Hong Kong and Seoul",
+        "description": "Official Press Link: https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbTdwRkpnX3Vza3JwZWZRR2JGQUFQZ3JlVFlrbUQ1Z3F4N0o4ZmctM0xmZ3ZuMEdhTjlzMGZ5RHRySWpPaE1iZTlwOVNRcGVlQ2ZXSHU3VkdTMExtZnlMM1V3clpNY3gwdzlHLUdZelZsOHI4NFVnRFVuNksxRnJ3aTRFbEpMWDJSdDhMVWUzN3haRmVYVE1Lb19oUkoweXJZUzRmdnQycWw?oc=5",
+        "descriptionKr": "언론사 원문 기사 1:1 매칭 링크: https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbTdwRkpnX3Vza3JwZWZRR2JGQUFQZ3JlVFlrbUQ1Z3F4N0o4ZmctM0xmZ3ZuMEdhTjlzMGZ5RHRySWpPaE1iZTlwOVNRcGVlQ2ZXSHU3VkdTMExtZnlMM1V3clpNY3gwdzlHLUdZelZsOHI4NFVnRFVuNksxRnJ3aTRFbEpMWDJSdDhMVWUzN3haRmVYVE1Lb19oUkoweXJZUzRmdnQycWw?oc=5",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbTdwRkpnX3Vza3JwZWZRR2JGQUFQZ3JlVFlrbUQ1Z3F4N0o4ZmctM0xmZ3ZuMEdhTjlzMGZ5RHRySWpPaE1iZTlwOVNRcGVlQ2ZXSHU3VkdTMExtZnlMM1V3clpNY3gwdzlHLUdZelZsOHI4NFVnRFVuNksxRnJ3aTRFbEpMWDJSdDhMVWUzN3haRmVYVE1Lb19oUkoweXJZUzRmdnQycWw?oc=5",
+        "imageUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800",
+        "tag": "PRESS VERIFIED"
+      },
+      {
+        "brand": "Aju Press",
+        "name": "New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong",
+        "nameKr": "[실시간 뉴스] New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong",
+        "description": "Official Press Link: https://news.google.com/rss/articles/CBMiW0FVX3lxTE52M1hSYWlSdHk3LUIwaTF1aE5pa0ptdkk2MU94Wkc2c21SYWE4UllDNXZ0Rk9aSmktOUVwN2c1LUZSQTFMREFWVzNvQVBsMnl2M2dSTzRQMlcwUmPSAVdBVV95cUxONUVjTTZsWlFYeldrd2lyNnUxbUlRczR5ZzBIV181WExOY0NPNXF3V2ZaNU9LWUhtMlZWVGxaYk8zclJZNmM2ekRZel9BMjM1emJDOURMTzA?oc=5",
+        "descriptionKr": "언론사 원문 기사 1:1 매칭 링크: https://news.google.com/rss/articles/CBMiW0FVX3lxTE52M1hSYWlSdHk3LUIwaTF1aE5pa0ptdkk2MU94Wkc2c21SYWE4UllDNXZ0Rk9aSmktOUVwN2c1LUZSQTFMREFWVzNvQVBsMnl2M2dSTzRQMlcwUmPSAVdBVV95cUxONUVjTTZsWlFYeldrd2lyNnUxbUlRczR5ZzBIV181WExOY0NPNXF3V2ZaNU9LWUhtMlZWVGxaYk8zclJZNmM2ekRZel9BMjM1emJDOURMTzA?oc=5",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52M1hSYWlSdHk3LUIwaTF1aE5pa0ptdkk2MU94Wkc2c21SYWE4UllDNXZ0Rk9aSmktOUVwN2c1LUZSQTFMREFWVzNvQVBsMnl2M2dSTzRQMlcwUmPSAVdBVV95cUxONUVjTTZsWlFYeldrd2lyNnUxbUlRczR5ZzBIV181WExOY0NPNXF3V2ZaNU9LWUhtMlZWVGxaYk8zclJZNmM2ekRZel9BMjM1emJDOURMTzA?oc=5",
+        "imageUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800",
+        "tag": "PRESS VERIFIED"
+      }
+    ]
+  },
+  {
     "id": "vol-7",
     "volume": 7,
     "title": "Olive Young #1 Best Seller: Rejuran PDRN Turnover Ampoule Dual Effect",
