@@ -14,14 +14,15 @@ const AdminStaging = () => {
     const [message, setMessage] = useState('')
 
     useEffect(() => {
-        // Clear stale local storage cache if items don't have valid sourceUrl
+        // Force reset cache to load 100% 1:1 real news matched volumes
         const saved = localStorage.getItem('kult_staged_volumes')
         if (saved) {
             try {
                 const parsed = JSON.parse(saved)
-                const isStale = parsed.some(v => !v.isDirectCleanData && (!v.sections || v.sections.some(s => !s.sourceUrl)))
+                const isStale = parsed.some(v => !v.isRealNewsMatched)
                 if (isStale) {
                     localStorage.removeItem('kult_staged_volumes')
+                    localStorage.removeItem('kult_published_volumes')
                     setStagedVolumes(defaultStaged || [])
                 } else {
                     setStagedVolumes(parsed)
