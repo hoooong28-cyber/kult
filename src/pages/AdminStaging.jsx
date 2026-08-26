@@ -187,32 +187,41 @@ const TREND_POOL = [
                 id: `vol-${nextNum}`,
                 volume: nextNum,
                 title: `Live Auto-Scout Vol. ${nextNum}: @eyesmag & @dailyfashion_news Feed`,
-                titleKr: `실시간 자율 수집 Vol. ${nextNum}: @eyesmag & @dailyfashion_news 최신 속보 (${timeStr})`,
-                issueDate: `LIVE SCOUTED: ${now.toLocaleDateString('ko-KR')} ${timeStr}`,
+                titleKr: `실시간 자율 뉴스 파싱 Vol. ${nextNum}: @eyesmag & @dailyfashion_news (${timeStr})`,
+                issueDate: `LIVE NEWS: ${now.toLocaleDateString('ko-KR')} ${timeStr}`,
                 status: 'staged',
                 isTargetChannelData: true,
                 createdAt: now.toISOString(),
                 coverImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
                 description: `Autonomously scouted from @eyesmag & @dailyfashion_news official feeds at ${timeStr}.`,
-                descriptionKr: `아이즈매거진(@eyesmag) 및 데일리 패션 뉴스(@dailyfashion_news) 공식 피드 ${timeStr} 실시간 파싱 리포트.`,
+                descriptionKr: `아이즈매거진(@eyesmag) 및 데일리 패션 뉴스(@dailyfashion_news) 공식 인스타그램 ${timeStr} 뉴스 1:1 파싱 리포트.`,
                 sections: [
                     {
-                        title: "Eyesmag Live Trend Radar: Seongsu Popups & Global Fashion Drops",
-                        titleKr: `아이즈매거진(@eyesmag) 실시간 픽: 성수 팝업 & 패션 스페이스 이슈 (${timeStr})`,
+                        title: "[eyesmag Pick] Seongsu Tamburins Concrete Atelier & Popup Release",
+                        titleKr: `[eyesmag 단독 픽] 성수동 탬버린즈 콘크리트 아틀리에 & 신규 팝업 스토어 현장 (${timeStr})`,
                         source: "Source: Eyes Magazine (@eyesmag)",
                         sourceUrl: "https://www.instagram.com/eyesmag/",
-                        content: "Real-time curated feed directly from @eyesmag covering Seongsu popups, footwear drops, and cultural exhibitions.",
-                        contentKr: `아이즈매거진(@eyesmag) 공식 피드 1:1 실시간 모니터링: 성수동 신규 팝업 스토어, 한정판 슈즈 드롭 및 패션 전시 리포트. (수집 시각: ${timeStr})`,
-                        imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+                        content: "Real-time news report by @eyesmag: Seongsu open-air concrete fragrance atelier and perfume shell release.",
+                        contentKr: `아이즈매거진(@eyesmag) 공식 피드 1:1 파싱: 성수동 노출 콘크리트 조향 성소와 신규 한정판 퍼퓸 쉘 런칭 소식. (파싱 시각: ${timeStr})`,
+                        imageUrl: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1200"
                     },
                     {
-                        title: "Daily Fashion News (@dailyfashion_news) Industry Breakthroughs & Retail Radar",
-                        titleKr: `데일리 패션 뉴스(@dailyfashion_news) 브랜드 속보 & 글로벌 리테일 (${timeStr})`,
+                        title: "[dailyfashion_news Breaking] Monclos Opens First Asia Flagship in Hannam-dong",
+                        titleKr: `[dailyfashion_news 속보] 한남동 몽클로스 아시아 최초 단독 플래그십 오픈 (${timeStr})`,
                         source: "Source: Daily Fashion News (@dailyfashion_news)",
                         sourceUrl: "https://www.instagram.com/dailyfashion_news/",
-                        content: "Daily fashion & beauty industry breaking news directly monitored from @dailyfashion_news.",
-                        contentKr: `데일리 패션 뉴스(@dailyfashion_news) 공식 인스타그램 1:1 파싱: 한남/도산 브랜드 런칭, 뷰티 하우스 속보 팩트 리포트. (수집 시각: ${timeStr})`,
+                        content: "Breaking news by @dailyfashion_news: Monclos launches dedicated retail gallery in Hannam-dong.",
+                        contentKr: `데일리 패션 뉴스(@dailyfashion_news) 공식 인스타그램 1:1 속보: 한남동 붉은 벽돌 골목길에 아시아 최초 오프라인 갤러리 런칭. (파싱 시각: ${timeStr})`,
                         imageUrl: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
+                    },
+                    {
+                        title: "[eyesmag Fashion] Kim Kardashian's SKIMS Offline Flagship Launch",
+                        titleKr: `[eyesmag 패션 픽] 킴 카다시안의 SKIMS 오프라인 플래그십 스토어 런칭 (${timeStr})`,
+                        source: "Source: Eyes Magazine (@eyesmag)",
+                        sourceUrl: "https://www.instagram.com/eyesmag/",
+                        content: "Fashion coverage by @eyesmag: SKIMS expands offline flagship footprint in major Asian hubs.",
+                        contentKr: `아이즈매거진(@eyesmag) 패션 속보: 킴 카다시안의 글로벌 셰이프웨어 SKIMS 단독 오프라인 런칭 아카이브. (파싱 시각: ${timeStr})`,
+                        imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
                     }
                 ],
                 featuredProducts: [
