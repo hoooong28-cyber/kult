@@ -1,39 +1,42 @@
 {
-  "timestamp": "2026-08-26T13:53:09.807Z",
+  "timestamp": "2026-08-26T13:56:54.118Z",
   "totalArticles": 3,
   "articles": [
     {
-      "id": "news-1787752389332-bqqm",
-      "category": "FASHION",
-      "headlineEn": "Brochu Walker opens first-ever flagship store in Seoul, South Korea",
-      "headlineKr": "[실시간 뉴스] Brochu Walker opens first-ever flagship store in Seoul, South Korea",
-      "publisher": "Fashion United",
-      "articleUrl": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOeGJqTTAyeHB2QXRaRjBVZTU2WDZvWHBENDRVdlpRSjJnV1QwRHU5VjIzbUlvRUR6eTR4V1pYeDJSWWJOeTRsWWVKZTItR1ptTnVnZGRncXNia0FObDRkRlBwVktYaGZhVXgtM2tKVDJwdUFkVVQ5Ti1pc19VLTlNb0ZzN2dXc09QNzBiUG1wNEdJaXplMHE5MnZYS09ZOVEzbXZBX05oV2RiM3dqbF9PSVREaGFiUkZ0OVE?oc=5",
-      "pubDate": "Fri, 17 Jul 2026 07:00:00 GMT",
-      "snippetEn": "Live news report by Fashion United regarding Brochu Walker opens first-ever flagship store in Seoul, South Korea. Published on Fri, 17 Jul 2026 07:00:00 GMT.",
-      "snippetKr": "Fashion United에서 제공하는 실시간 속보: Brochu Walker opens first-ever flagship store in Seoul, South Korea (Fri, 17 Jul 2026 07:00:00 GMT 발행)."
+      "id": "direct-1787752614118-1",
+      "category": "GLOBAL FASHION",
+      "headlineEn": "Kim Kardashian's SKIMS Official Flagship Expansion & Apparel Archive",
+      "headlineKr": "킴 카다시안의 SKIMS 공식 브랜딩 & 플래그십 리포트",
+      "publisher": "SKIMS Official Press",
+      "articleUrl": "https://skims.com",
+      "pubDate": "LIVE DIRECT",
+      "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
+      "snippetEn": "Official report on Kim Kardashian's revolutionary shapewear brand SKIMS expanding global retail operations.",
+      "snippetKr": "킴 카다시안이 설립한 글로벌 셰이프웨어 브랜드 SKIMS의 공식 오프라인 플래그십 확대 및 뷰티 피드 1:1 파싱."
     },
     {
-      "id": "news-1787752389332-kvyr",
-      "category": "FASHION",
-      "headlineEn": "Skims to open first Asia flagships in Hong Kong and Seoul",
-      "headlineKr": "[실시간 뉴스] Skims to open first Asia flagships in Hong Kong and Seoul",
-      "publisher": "FashionNetwork",
-      "articleUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbTdwRkpnX3Vza3JwZWZRR2JGQUFQZ3JlVFlrbUQ1Z3F4N0o4ZmctM0xmZ3ZuMEdhTjlzMGZ5RHRySWpPaE1iZTlwOVNRcGVlQ2ZXSHU3VkdTMExtZnlMM1V3clpNY3gwdzlHLUdZelZsOHI4NFVnRFVuNksxRnJ3aTRFbEpMWDJSdDhMVWUzN3haRmVYVE1Lb19oUkoweXJZUzRmdnQycWw?oc=5",
-      "pubDate": "Thu, 04 Jun 2026 07:00:00 GMT",
-      "snippetEn": "Live news report by FashionNetwork regarding Skims to open first Asia flagships in Hong Kong and Seoul. Published on Thu, 04 Jun 2026 07:00:00 GMT.",
-      "snippetKr": "FashionNetwork에서 제공하는 실시간 속보: Skims to open first Asia flagships in Hong Kong and Seoul (Thu, 04 Jun 2026 07:00:00 GMT 발행)."
+      "id": "direct-1787752614118-2",
+      "category": "K-BEAUTY BEST",
+      "headlineEn": "Olive Young #1 Best Seller: Rejuran PDRN Turnover Ampoule Dual Effect",
+      "headlineKr": "올리브영 실시간 1위: 리쥬란 PDRN 턴오버 앰플 듀얼 이펙트",
+      "publisher": "Olive Young Official Store",
+      "articleUrl": "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000171629",
+      "pubDate": "LIVE DIRECT",
+      "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=1200",
+      "snippetEn": "Direct store analysis of dermatology-grade c-PDRN salmon DNA turnover ampoule on Olive Young Official Store.",
+      "snippetKr": "올리브영 공식몰(상품번호 A000000171629)에서 실제로 판매 중인 바르는 연어 DNA 스킨부스터 앰플 1:1 리포트."
     },
     {
-      "id": "news-1787752389332-di0b",
-      "category": "FASHION",
-      "headlineEn": "New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong",
-      "headlineKr": "[실시간 뉴스] New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong",
-      "publisher": "Aju Press",
-      "articleUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52M1hSYWlSdHk3LUIwaTF1aE5pa0ptdkk2MU94Wkc2c21SYWE4UllDNXZ0Rk9aSmktOUVwN2c1LUZSQTFMREFWVzNvQVBsMnl2M2dSTzRQMlcwUmPSAVdBVV95cUxONUVjTTZsWlFYeldrd2lyNnUxbUlRczR5ZzBIV181WExOY0NPNXF3V2ZaNU9LWUhtMlZWVGxaYk8zclJZNmM2ekRZel9BMjM1emJDOURMTzA?oc=5",
-      "pubDate": "Fri, 29 May 2026 07:00:00 GMT",
-      "snippetEn": "Live news report by Aju Press regarding New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong. Published on Fri, 29 May 2026 07:00:00 GMT.",
-      "snippetKr": "Aju Press에서 제공하는 실시간 속보: New York–inspired fashion brand opens flagship store in Seouls Yeonnam-dong (Fri, 29 May 2026 07:00:00 GMT 발행)."
+      "id": "direct-1787752614118-3",
+      "category": "SEONGSU SPATIAL",
+      "headlineEn": "Tamburins Seongsu Flagship Olfactory Atelier & Concrete Architecture",
+      "headlineKr": "성수동 탬버린즈 프래그런스 아틀리에 & 노출 콘크리트 조향 건축",
+      "publisher": "Tamburins Official Press",
+      "articleUrl": "https://www.tamburins.com",
+      "pubDate": "LIVE DIRECT",
+      "imageUrl": "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&q=80&w=1200",
+      "snippetEn": "Spatial design and perfume shell analysis of Tamburins Seongsu flagship olfactory showroom.",
+      "snippetKr": "성수동 노출 콘크리트 조향 건축물 탬버린즈 프래그런스 아틀리에의 퍼퓸 쉘 및 시그니처 향수 1:1 분석."
     }
   ]
 }
