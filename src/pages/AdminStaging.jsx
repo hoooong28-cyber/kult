@@ -232,11 +232,9 @@ const TREND_POOL = [
             const updated = [newVol, ...stagedVolumes]
             saveStaged(updated)
             setLoading(false)
-            setMessage(`✨ [1:1 Real News Matched] New Volume Vol. 0${nextNum} (SKIMS & Brochu Walker Seoul) generated!`)
+            setMessage(`✨ [Instagram Live Scouted] @eyesmag & @dailyfashion_news feed Volume Vol. ${nextNum} generated!`)
             setTimeout(() => setMessage(''), 4000)
-        } catch (e) {
-            setLoading(false)
-        }
+        }, 1000)
     }
 
     return (
