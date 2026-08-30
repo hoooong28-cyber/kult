@@ -645,7 +645,12 @@ const Magazine = () => {
                                         href={section.sourceUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-2 inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-[#1111d4] text-white font-extrabold text-xs uppercase tracking-widest transition-all shadow-lg hover:shadow-blue-500/20 group w-fit"
+                                        onClick={(e) => {
+                                            if (section.sourceUrl) {
+                                                window.open(section.sourceUrl, '_blank', 'noopener,noreferrer');
+                                            }
+                                        }}
+                                        className="mt-2 inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-[#1111d4] text-white font-extrabold text-xs uppercase tracking-widest transition-all shadow-lg hover:shadow-blue-500/20 group w-fit cursor-pointer"
                                     >
                                         <ExternalLink className="w-4 h-4 text-blue-400 group-hover:text-white transition-colors" />
                                         <span>🔗 VERIFIED ARTICLE DIRECT LINK (원문 딥링크 1:1 이동) ↗</span>
