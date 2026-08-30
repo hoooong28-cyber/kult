@@ -15,38 +15,38 @@ const MOCK_MAGAZINES = {
     'vol-1': {
         id: 'vol-1',
         volume: 1,
-        title: "시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴",
-        titleKr: "시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴 서울 헤리티지 전시",
+        title: "시간의 위엄을 깎아내는 271년의 아티잔십: 바쉐론 콘스탄틴 <ART OF TIME>",
+        titleKr: "시간의 위엄을 깎아내는 271년의 아티잔십: 바쉐론 콘스탄틴 <ART OF TIME: 에나멜드 마스터피스> 서울 전시",
         issueDate: "DAILY BRAND ISSUE: 2026. 8. 30.",
-        coverImage: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=1200",
-        description: "Why we seek mechanical horology permanence in an era of digital transience. Vacheron Constantin Seoul Flagship Atelier (2026.8.30 - 10.15).",
-        descriptionKr: "디지털 픽셀의 시대를 넘어, 270년 아날로그 시간에 대한 위엄을 깎아내는 바쉐론 콘스탄틴의 서울 헤리티지 전시 비평 & 3-Photo 비주얼 갤러리 리포트.",
+        coverImage: "https://upload.wikimedia.org/wikipedia/commons/4/47/Vacheron_Constantin_Patrimony_gold_watch.jpg",
+        description: "Vacheron Constantin <ART OF TIME: Enamelled Masterpieces> Exhibition at Maison 1755 Seoul (2026.9.5 - 9.22).",
+        descriptionKr: "바쉐론 콘스탄틴의 271년 전통 에나멜링 아티잔십과 한국 프라이빗 컬렉션 최초 공개: 메종 1755 서울 헤리티지 전시 비평 & 3-Photo 비주얼 리포트.",
         sections: [
             {
-                title: "시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴 서울 전시",
-                titleKr: "시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴 서울 전시",
+                title: "시간의 위엄을 깎아내는 271년의 아티잔십: 바쉐론 콘스탄틴 <ART OF TIME> 서울 전시",
+                titleKr: "시간의 위엄을 깎아내는 271년의 아티잔십: 바쉐론 콘스탄틴 <ART OF TIME: 에나멜드 마스터피스> 서울 전시",
                 source: "SEOUL TREND RADAR | LUXURY HOROLOGY",
-                sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
-                content: `모든 것이 0과 1의 디지털 픽셀로 순간 삭제되는 초격차의 시대, 우리는 왜 270년 동안 멈추지 않고 째깍이는 메커니컬 무브먼트의 아날로그 진동에 이토록 강렬하게 매료되는가? 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴(Vacheron Constantin)이 서울 장인정신의 성소에서 공개한 헤리티지 타임피스 아카이브는 단순한 시계 전시의 범주를 아득히 뛰어넘습니다.\n\n📍 [EXHIBITION & VISITOR GUIDE]\n• 장소 (Location): 서울 강남구 압구정로 458, 바쉐론 콘스탄틴 서울 플래그십 아틀리에 & 갤러리\n• 기간 (Period): 2026. 08. 30. - 2026. 10. 15. (운영시간 11:00 - 20:00)\n• 방문 팁 (Visitor Tip): 네이버 사전 예약 및 현장 프라이빗 도슨트 투어 수신 가능 (무료 입장)\n\n이번 전시의 핵심은 수작업으로 새겨 넣은 기요셰(Guilloché) 파티나와 노출 칼라트라바 케이스 속에서 톱니바퀴처럼 정교하게 맞물리는 컴플리케이션 아키텍처에 있습니다. 시속 300km로 질주하는 서울 한복판에서, 바쉐론 콘스탄틴의 공간은 휘발하는 유행에 지친 글로벌 방문객들에게 영속성(Permanence)의 가치가 무엇인지를 무언의 조각으로 증명합니다.\n\n이번 전시는 2026년 서울에서 경험할 수 있는 최고의 럭셔리 호놀로지 성소입니다. 아날로그 톱니바퀴가 완성하는 둔탁하지만 고귀한 시간의 위엄 속에서, 21세기 인간이 소멸해 가는 감각의 여백을 되찾는 영적 안식을 직접 확인해보시길 바랍니다.`,
-                contentKr: `모든 것이 0과 1의 디지털 픽셀로 순간 삭제되는 초격차의 시대, 우리는 왜 270년 동안 멈추지 않고 째깍이는 메커니컬 무브먼트의 아날로그 진동에 이토록 강렬하게 매료되는가? 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴(Vacheron Constantin)이 서울 장인정신의 성소에서 공개한 헤리티지 타임피스 아카이브는 단순한 시계 전시의 범주를 아득히 뛰어넘습니다.\n\n📍 [EXHIBITION & VISITOR GUIDE]\n• 장소 (Location): 서울 강남구 압구정로 458, 바쉐론 콘스탄틴 서울 플래그십 아틀리에 & 갤러리\n• 기간 (Period): 2026. 08. 30. - 2026. 10. 15. (운영시간 11:00 - 20:00)\n• 방문 팁 (Visitor Tip): 네이버 사전 예약 및 현장 프라이빗 도슨트 투어 수신 가능 (무료 입장)\n\n이번 전시의 핵심은 수작업으로 새겨 넣은 기요셰(Guilloché) 파티나와 노출 칼라트라바 케이스 속에서 톱니바퀴처럼 정교하게 맞물리는 컴플리케이션 아키텍처에 있습니다. 시속 300km로 질주하는 서울 한복판에서, 바쉐론 콘스탄틴의 공간은 휘발하는 유행에 지친 글로벌 방문객들에게 영속성(Permanence)의 가치가 무엇인지를 무언의 조각으로 증명합니다.\n\n이번 전시는 2026년 서울에서 경험할 수 있는 최고의 럭셔리 호놀로지 성소입니다. 아날로그 톱니바퀴가 완성하는 둔탁하지만 고귀한 시간의 위엄 속에서, 21세기 인간이 소멸해 가는 감각의 여백을 되찾는 영적 안식을 직접 확인해보시길 바랍니다.`,
-                editorQuoteKr: "“모든 것이 픽셀로 소멸하는 시대, 270년 기계식 무브먼트가 들려주는 아날로그 시간의 위엄.” — Chief Editorial Director",
-                imageUrl: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=1200",
+                sourceUrl: "https://www.vacheron-constantin.com/kr/ko/",
+                content: `모든 것이 0과 1의 디지털 픽셀로 순간 삭제되는 초격차의 시대, 우리는 왜 271년 동안 멈추지 않고 째깍이는 메커니컬 무브먼트의 아날로그 진동에 이토록 강렬하게 매료되는가? 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴(Vacheron Constantin)이 서울 메종 1755에서 국내 두 번째 공공 전시 <ART OF TIME: 에나멜드 마스터피스>를 공개합니다.\n\n📍 [EXHIBITION & VISITOR GUIDE]\n• 전시명 (Exhibition): 바쉐론 콘스탄틴 <ART OF TIME: 에나멜드 마스터피스>\n• 장소 (Location): 서울 강남구 압구정로 430, 메종 1755 서울 (Maison 1755 Seoul)\n• 기간 (Period): 2026. 09. 05. - 2026. 09. 22. (공식 사전 예약 오픈)\n• 핵심 포인트 (Key Highlight): 미니어처 페인팅, 샹르베, 클루아조네, 그리자이유 등 4대 에나멜링 기법 타임피스 및 한국 컬렉터 소장 프라이빗 컬렉션 대중 최초 공개\n\n이번 전시의 핵심은 수작업으로 에나멜 유약을 얹어 800도 가마에서 구워낸 영롱한 파티나와 노출 칼라트라바 케이스 속에서 톱니바퀴처럼 정교하게 맞물리는 컴플리케이션 아키텍처에 있습니다. 시속 300km로 질주하는 서울 한복판에서, 바쉐론 콘스탄틴의 메종 1755 공간은 휘발하는 유행에 지친 글로벌 방문객들에게 영속성(Permanence)의 가치가 무엇인지를 무언의 조각으로 증명합니다.\n\n이번 전시는 2026년 서울에서 경험할 수 있는 최고의 럭셔리 호놀로지 성소입니다. 아날로그 톱니바퀴가 완성하는 둔탁하지만 고귀한 시간의 위엄 속에서, 21세기 인간이 소멸해 가는 감각의 여백을 되찾는 영적 안식을 직접 확인해보시길 바랍니다.`,
+                contentKr: `모든 것이 0과 1의 디지털 픽셀로 순간 삭제되는 초격차의 시대, 우리는 왜 271년 동안 멈추지 않고 째깍이는 메커니컬 무브먼트의 아날로그 진동에 이토록 강렬하게 매료되는가? 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴(Vacheron Constantin)이 서울 메종 1755에서 국내 두 번째 공공 전시 <ART OF TIME: 에나멜드 마스터피스>를 공개합니다.\n\n📍 [EXHIBITION & VISITOR GUIDE]\n• 전시명 (Exhibition): 바쉐론 콘스탄틴 <ART OF TIME: 에나멜드 마스터피스>\n• 장소 (Location): 서울 강남구 압구정로 430, 메종 1755 서울 (Maison 1755 Seoul)\n• 기간 (Period): 2026. 09. 05. - 2026. 09. 22. (공식 사전 예약 오픈)\n• 핵심 포인트 (Key Highlight): 미니어처 페인팅, 샹르베, 클루아조네, 그리자이유 등 4대 에나멜링 기법 타임피스 및 한국 컬렉터 소장 프라이빗 컬렉션 대중 최초 공개\n\n이번 전시의 핵심은 수작업으로 에나멜 유약을 얹어 800도 가마에서 구워낸 영롱한 파티나와 노출 칼라트라바 케이스 속에서 톱니바퀴처럼 정교하게 맞물리는 컴플리케이션 아키텍처에 있습니다. 시속 300km로 질주하는 서울 한복판에서, 바쉐론 콘스탄틴의 메종 1755 공간은 휘발하는 유행에 지친 글로벌 방문객들에게 영속성(Permanence)의 가치가 무엇인지를 무언의 조각으로 증명합니다.\n\n이번 전시는 2026년 서울에서 경험할 수 있는 최고의 럭셔리 호놀로지 성소입니다. 아날로그 톱니바퀴가 완성하는 둔탁하지만 고귀한 시간의 위엄 속에서, 21세기 인간이 소멸해 가는 감각의 여백을 되찾는 영적 안식을 직접 확인해보시길 바랍니다.`,
+                editorQuoteKr: "“모든 것이 픽셀로 소멸하는 시대, 271년 기계식 무브먼트가 들려주는 아날로그 시간의 위엄.” — Chief Editorial Director",
+                imageUrl: "https://upload.wikimedia.org/wikipedia/commons/4/47/Vacheron_Constantin_Patrimony_gold_watch.jpg",
                 gallery: [
-                    "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=1200",
-                    "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=1200",
-                    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=1200"
+                    "https://upload.wikimedia.org/wikipedia/commons/4/47/Vacheron_Constantin_Patrimony_gold_watch.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/c/c5/Vacheron_Constantin_Americaine_del_1921.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/3/30/Particolare_del_Vacheron_Constantin_ref._6087.jpg"
                 ]
             }
         ],
         featuredProducts: [
             {
                 brand: "VACHERON CONSTANTIN SEOUL",
-                name: "시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴",
-                nameKr: "시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴",
-                description: "Official Direct Link: https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
-                descriptionKr: "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크 (서울 강남구 압구정로 458)",
-                sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
-                imageUrl: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=1200",
+                name: "시간의 위엄을 깎아내는 271년의 아티잔십: 바쉐론 콘스탄틴 <ART OF TIME>",
+                nameKr: "시간의 위엄을 깎아내는 271년의 아티잔십: 바쉐론 콘스탄틴 <ART OF TIME>",
+                description: "Official Direct Link: https://www.vacheron-constantin.com/kr/ko/",
+                descriptionKr: "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크 (서울 강남구 압구정로 430 메종 1755 서울)",
+                sourceUrl: "https://www.vacheron-constantin.com/kr/ko/",
+                imageUrl: "https://upload.wikimedia.org/wikipedia/commons/4/47/Vacheron_Constantin_Patrimony_gold_watch.jpg",
                 tag: "DAILY BRAND"
             }
         ]

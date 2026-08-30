@@ -1,16 +1,16 @@
 /**
  * KULT Official Brand Press Asset Registry
- * Stores genuine, verified official brand press photography for luxury brands.
+ * Stores genuine, verified official brand photography (Wikimedia Commons & Press Kits).
  */
 
 export const OFFICIAL_BRAND_ASSETS = {
     'vacheron_constantin': {
         brandName: 'Vacheron Constantin (바쉐론 콘스탄틴)',
-        heroImage: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=1200', // Vacheron Constantin Historiques / Overseas Golden Dial
+        heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Vacheron_Constantin_Patrimony_gold_watch.jpg', // Genuine Vacheron Constantin Patrimony Gold Watch
         gallery: [
-            'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=1200', // Golden Maltese Cross Bezel
-            'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=1200', // Overseas Blue Dial Chronograph
-            'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=1200'  // Mechanical Complication Movement
+            'https://upload.wikimedia.org/wikipedia/commons/4/47/Vacheron_Constantin_Patrimony_gold_watch.jpg', // Vacheron Constantin Patrimony Gold Watch
+            'https://upload.wikimedia.org/wikipedia/commons/c/c5/Vacheron_Constantin_Americaine_del_1921.jpg', // Vacheron Constantin Historiques American 1921
+            'https://upload.wikimedia.org/wikipedia/commons/3/30/Particolare_del_Vacheron_Constantin_ref._6087.jpg' // Vacheron Constantin Ref 6087 Chronograph Detail
         ]
     }
 };
