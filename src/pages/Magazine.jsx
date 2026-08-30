@@ -170,63 +170,79 @@ const Magazine = () => {
             {(activeMag.sections || []).length > 0 && (
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 mt-32 flex flex-col gap-40">
                     {activeMag.sections.map((section, idx) => (
-                        <div key={idx} className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-16 md:gap-24`}>
-                            <div className="flex-1 w-full">
-                                <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden bg-slate-50 shadow-2xl shadow-slate-200/50 group">
-                                    <img src={section.imageUrl} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt={section.title} />
+                        <div key={idx} className="flex flex-col gap-12">
+                            <div className="flex flex-col md:flex-row items-start gap-12 md:gap-20">
+                                <div className="flex-1 w-full">
+                                    <div className="aspect-[4/5] rounded-[3rem] overflow-hidden bg-slate-50 shadow-2xl shadow-slate-200/50 group">
+                                        <img src={section.imageUrl} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt={section.title} />
+                                    </div>
+                                </div>
+                                <div className="flex-1 text-left flex flex-col gap-8">
+                                    <div className="flex flex-col gap-4">
+                                        <div className="flex items-center gap-3 flex-wrap">
+                                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#1111d4] block">FEATURE EDITION</span>
+                                            {section.source && (
+                                                section.sourceUrl ? (
+                                                    <a
+                                                        href={section.sourceUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-[9px] font-bold text-[#1111d4] bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full border border-blue-200 uppercase tracking-widest transition-colors inline-flex items-center gap-1"
+                                                    >
+                                                        <span>📍 {section.source} ↗</span>
+                                                    </a>
+                                                ) : (
+                                                    <span className="text-[9px] font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 uppercase tracking-widest">
+                                                        📍 {section.source}
+                                                    </span>
+                                                )
+                                            )}
+                                        </div>
+                                        <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-tight">
+                                            {t(section.title, section.titleKr)}
+                                        </h2>
+                                    </div>
+                                    <div className="h-px w-20 bg-slate-200" />
+                                    <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed whitespace-pre-line text-left">
+                                        {t(section.content, section.contentKr)}
+                                    </p>
+                                    {section.editorQuoteKr && (
+                                        <div className="p-5 rounded-2xl bg-slate-900 text-white font-bold text-xs md:text-sm leading-relaxed border border-slate-800 text-left">
+                                            {section.editorQuoteKr}
+                                        </div>
+                                    )}
+                                    {section.sourceUrl && (
+                                        <a
+                                            href={section.sourceUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => {
+                                                if (section.sourceUrl) {
+                                                    window.open(section.sourceUrl, '_blank', 'noopener,noreferrer');
+                                                }
+                                            }}
+                                            className="mt-2 inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-[#1111d4] text-white font-extrabold text-xs uppercase tracking-widest transition-all shadow-lg hover:shadow-blue-500/20 group w-fit cursor-pointer"
+                                        >
+                                            <ExternalLink className="w-4 h-4 text-blue-400 group-hover:text-white transition-colors" />
+                                            <span>🔗 VERIFIED ARTICLE DIRECT LINK (원문 딥링크 1:1 이동) ↗</span>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
-                            <div className="flex-1 text-left flex flex-col gap-8">
-                                <div className="flex flex-col gap-4">
-                                    <div className="flex items-center gap-3 flex-wrap">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#1111d4] block">Feature {idx + 1}</span>
-                                        {section.source && (
-                                            section.sourceUrl ? (
-                                                <a
-                                                    href={section.sourceUrl}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-[9px] font-bold text-[#1111d4] bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full border border-blue-200 uppercase tracking-widest transition-colors inline-flex items-center gap-1"
-                                                >
-                                                    <span>📍 {section.source} ↗</span>
-                                                </a>
-                                            ) : (
-                                                <span className="text-[9px] font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 uppercase tracking-widest">
-                                                    📍 {section.source}
-                                                </span>
-                                            )
-                                        )}
+
+                            {/* Multi-Photo Gallery Architecture */}
+                            {section.gallery && section.gallery.length > 0 && (
+                                <div className="mt-8 flex flex-col gap-6">
+                                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 text-left">EXHIBITION VISUAL GALLERY ({section.gallery.length} PHOTOS)</span>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                        {section.gallery.map((imgUrl, gIdx) => (
+                                            <div key={gIdx} className="aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 shadow-lg group">
+                                                <img src={imgUrl} className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" alt={`Gallery ${gIdx}`} />
+                                            </div>
+                                        ))}
                                     </div>
-                                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tight leading-tight">
-                                        {t(section.title, section.titleKr)}
-                                    </h2>
                                 </div>
-                                <div className="h-px w-20 bg-slate-200" />
-                                <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-xl whitespace-pre-line">
-                                    {t(section.content, section.contentKr)}
-                                </p>
-                                {section.editorQuoteKr && (
-                                    <div className="p-4 rounded-2xl bg-slate-900 text-white font-bold text-xs leading-relaxed border border-slate-800">
-                                        {section.editorQuoteKr}
-                                    </div>
-                                )}
-                                {section.sourceUrl && (
-                                    <a
-                                        href={section.sourceUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => {
-                                            if (section.sourceUrl) {
-                                                window.open(section.sourceUrl, '_blank', 'noopener,noreferrer');
-                                            }
-                                        }}
-                                        className="mt-2 inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-[#1111d4] text-white font-extrabold text-xs uppercase tracking-widest transition-all shadow-lg hover:shadow-blue-500/20 group w-fit cursor-pointer"
-                                    >
-                                        <ExternalLink className="w-4 h-4 text-blue-400 group-hover:text-white transition-colors" />
-                                        <span>🔗 VERIFIED ARTICLE DIRECT LINK (원문 딥링크 1:1 이동) ↗</span>
-                                    </a>
-                                )}
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>
