@@ -3,12 +3,12 @@ import path from 'path';
 import { fetchLiveNews } from './fetch_live_news.js';
 
 /**
- * KULT Weekly Editorial Volume Converter
- * Converts real-time live published news into KULT Weekly Issue Volume 20.
+ * KULT Editorial Volume Converter (KULT Brand Identity Edition)
+ * Maps live trend headlines to KULT's signature Brutalist editorial schema with unique topic-matched visuals.
  */
 export async function convertNewsToVolume() {
     const newsPayload = await fetchLiveNews();
-    console.log("🎨 [KULT Weekly Converter] Compiling weekly editorial volume from Eyesmag & Daily Fashion News...");
+    console.log("🎨 [KULT Editorial Converter] Generating KULT signature volume with unique topic-matched visuals...");
 
     const archivePath = path.join(process.cwd(), 'src/data/staged_volumes.json');
     const articles = newsPayload.articles;
@@ -22,45 +22,45 @@ export async function convertNewsToVolume() {
     const todayStr = new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
 
     const newVolume = {
-        id: "vol-20",
-        volume: 20,
-        title: `KULT Weekly Issue: ${leadArticle.headlineKr}`,
-        titleKr: `[주간 KULT 팩트 뉴스] ${leadArticle.headlineKr}`,
-        issueDate: `WEEKLY ISSUE: ${todayStr}`,
+        id: "vol-21",
+        volume: 21,
+        title: `KULT Editorial: ${leadArticle.headlineKr}`,
+        titleKr: `[KULT 시그니처 팩트 리포트] ${leadArticle.headlineKr}`,
+        issueDate: `KULT EDITORIAL ISSUE: ${todayStr}`,
         status: 'staged',
         is100PercentRealLive: true,
         createdAt: new Date().toISOString(),
-        coverImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-        description: `Weekly curated trend report scouted live from @eyesmag & @dailyfashion_news official channels.`,
-        descriptionKr: `지난 일주일 간 아이즈매거진(@eyesmag) 및 데일리 패션 뉴스(@dailyfashion_news)에서 출간된 최신 트렌드 팩트 기사 종합 리포트.`,
+        coverImage: leadArticle.imageUrl,
+        description: `KULT signature trend radar curated live with 100% verified 1:1 direct article permalinks and topic-matched visuals.`,
+        descriptionKr: `KULT 독자 파이프라인으로 엄선된 서울 패션, 럭셔리 스페이스, 트렌드 이슈 1:1 파싱 팩트 리포트.`,
         sections: articles.map(art => ({
             title: art.headlineKr,
             titleKr: art.headlineKr,
-            source: `Source: ${art.channel} (${art.pubDate})`,
+            source: art.channel,
             sourceUrl: art.verifiedUrl,
             content: art.snippetKr,
             contentKr: art.snippetKr,
             imageUrl: art.imageUrl
         })),
         featuredProducts: articles.map(art => ({
-            brand: art.channel,
+            brand: "KULT CURATED",
             name: art.headlineKr,
             nameKr: art.headlineKr,
-            description: `Verified Direct Link: ${art.verifiedUrl}`,
-            descriptionKr: `${art.channel} 1:1 개별 기사 직통 원문 딥링크: ${art.verifiedUrl}`,
+            description: `Official Verified Article Permalink: ${art.verifiedUrl}`,
+            descriptionKr: `KULT 팩트 검증 1:1 직통 원문 딥링크: ${art.verifiedUrl}`,
             sourceUrl: art.verifiedUrl,
             imageUrl: art.imageUrl,
-            tag: "WEEKLY ISSUE"
+            tag: "KULT EXCLUSIVE"
         }))
     };
 
     const dir = path.dirname(archivePath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-    // Save Vol 20 into staged_volumes.json
+    // Save Vol 21 into staged_volumes.json
     fs.writeFileSync(archivePath, JSON.stringify([newVolume], null, 2));
 
-    console.log(`✨ [KULT Weekly Converter] Successfully generated Vol. 20 Weekly Issue!`);
+    console.log(`✨ [KULT Editorial Converter] Successfully generated KULT Vol. 21!`);
     return newVolume;
 }
 

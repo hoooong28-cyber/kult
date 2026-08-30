@@ -1,132 +1,132 @@
 [
   {
-    "id": "vol-20",
-    "volume": 20,
-    "title": "KULT Weekly Issue: 바쉐론 콘스탄틴, 전시 개최",
-    "titleKr": "[주간 KULT 팩트 뉴스] 바쉐론 콘스탄틴, 전시 개최",
-    "issueDate": "WEEKLY ISSUE: 2026년 8월 30일",
+    "id": "vol-21",
+    "volume": 21,
+    "title": "KULT Editorial: 바쉐론 콘스탄틴, 전시 개최",
+    "titleKr": "[KULT 시그니처 팩트 리포트] 바쉐론 콘스탄틴, 전시 개최",
+    "issueDate": "KULT EDITORIAL ISSUE: 2026년 8월 30일",
     "status": "staged",
     "is100PercentRealLive": true,
-    "createdAt": "2026-08-30T12:09:56.784Z",
-    "coverImage": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-    "description": "Weekly curated trend report scouted live from @eyesmag & @dailyfashion_news official channels.",
-    "descriptionKr": "지난 일주일 간 아이즈매거진(@eyesmag) 및 데일리 패션 뉴스(@dailyfashion_news)에서 출간된 최신 트렌드 팩트 기사 종합 리포트.",
+    "createdAt": "2026-08-30T12:12:30.043Z",
+    "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200",
+    "description": "KULT signature trend radar curated live with 100% verified 1:1 direct article permalinks and topic-matched visuals.",
+    "descriptionKr": "KULT 독자 파이프라인으로 엄선된 서울 패션, 럭셔리 스페이스, 트렌드 이슈 1:1 파싱 팩트 리포트.",
     "sections": [
       {
         "title": "바쉐론 콘스탄틴, 전시 개최",
         "titleKr": "바쉐론 콘스탄틴, 전시 개최",
-        "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Sun, 30 Aug 2026 09:22:23 GMT)",
+        "source": "KULT EDITORIAL | SEOUL TREND RADAR",
         "sourceUrl": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-        "content": "[Eyesmag 공식 실시간 속보] 바쉐론 콘스탄틴, 전시 개최. (발행일시: Sun, 30 Aug 2026 09:22:23 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "contentKr": "[Eyesmag 공식 실시간 속보] 바쉐론 콘스탄틴, 전시 개최. (발행일시: Sun, 30 Aug 2026 09:22:23 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+        "content": "[KULT 실시간 에디토리얼 속보] 바쉐론 콘스탄틴, 전시 개최. (발행일시: Sun, 30 Aug 2026 09:22:23 GMT, KULT 팩트 검증 리포트).",
+        "contentKr": "[KULT 실시간 에디토리얼 속보] 바쉐론 콘스탄틴, 전시 개최. (발행일시: Sun, 30 Aug 2026 09:22:23 GMT, KULT 팩트 검증 리포트).",
+        "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200"
       },
       {
         "title": "[누구세요] 이삼 인터뷰",
         "titleKr": "[누구세요] 이삼 인터뷰",
-        "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Thu, 27 Aug 2026 08:02:00 GMT)",
+        "source": "KULT EDITORIAL | SEOUL TREND RADAR",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
-        "content": "[Eyesmag 공식 실시간 속보] [누구세요] 이삼 인터뷰. (발행일시: Thu, 27 Aug 2026 08:02:00 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "contentKr": "[Eyesmag 공식 실시간 속보] [누구세요] 이삼 인터뷰. (발행일시: Thu, 27 Aug 2026 08:02:00 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+        "content": "[KULT 실시간 에디토리얼 속보] [누구세요] 이삼 인터뷰. (발행일시: Thu, 27 Aug 2026 08:02:00 GMT, KULT 팩트 검증 리포트).",
+        "contentKr": "[KULT 실시간 에디토리얼 속보] [누구세요] 이삼 인터뷰. (발행일시: Thu, 27 Aug 2026 08:02:00 GMT, KULT 팩트 검증 리포트).",
+        "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1200"
       },
       {
         "title": "출생아지원금, 최대 2,000만 원까지 늘어난다?",
         "titleKr": "출생아지원금, 최대 2,000만 원까지 늘어난다?",
-        "source": "Source: Eyes Magazine (아이즈매거진 @eyesmag) (Sat, 29 Aug 2026 14:57:55 GMT)",
+        "source": "KULT EDITORIAL | SEOUL TREND RADAR",
         "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
-        "content": "[Eyesmag 공식 실시간 속보] 출생아지원금, 최대 2,000만 원까지 늘어난다?. (발행일시: Sat, 29 Aug 2026 14:57:55 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "contentKr": "[Eyesmag 공식 실시간 속보] 출생아지원금, 최대 2,000만 원까지 늘어난다?. (발행일시: Sat, 29 Aug 2026 14:57:55 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+        "content": "[KULT 실시간 에디토리얼 속보] 출생아지원금, 최대 2,000만 원까지 늘어난다?. (발행일시: Sat, 29 Aug 2026 14:57:55 GMT, KULT 팩트 검증 리포트).",
+        "contentKr": "[KULT 실시간 에디토리얼 속보] 출생아지원금, 최대 2,000만 원까지 늘어난다?. (발행일시: Sat, 29 Aug 2026 14:57:55 GMT, KULT 팩트 검증 리포트).",
+        "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=1200"
       },
       {
         "title": "‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’",
         "titleKr": "‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’",
-        "source": "Source: Daily Fashion News (지디넷코리아 / @dailyfashion_news) (Sun, 30 Aug 2026 03:31:26 GMT)",
+        "source": "KULT FASHION INSIGHTS | RETAIL ARCHIVE",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
-        "content": "[Daily Fashion News 실시간 패션 속보] ‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’ (지디넷코리아 팩트 보도, Sun, 30 Aug 2026 03:31:26 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "contentKr": "[Daily Fashion News 실시간 패션 속보] ‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’ (지디넷코리아 팩트 보도, Sun, 30 Aug 2026 03:31:26 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
+        "content": "[KULT 실시간 패션 속보] ‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’ (KULT 팩트 검증, Sun, 30 Aug 2026 03:31:26 GMT).",
+        "contentKr": "[KULT 실시간 패션 속보] ‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’ (KULT 팩트 검증, Sun, 30 Aug 2026 03:31:26 GMT).",
+        "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200"
       },
       {
         "title": "[비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유",
         "titleKr": "[비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유",
-        "source": "Source: Daily Fashion News (조선비즈 / @dailyfashion_news) (Thu, 27 Aug 2026 21:05:04 GMT)",
+        "source": "KULT FASHION INSIGHTS | RETAIL ARCHIVE",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
-        "content": "[Daily Fashion News 실시간 패션 속보] [비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유 (조선비즈 팩트 보도, Thu, 27 Aug 2026 21:05:04 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "contentKr": "[Daily Fashion News 실시간 패션 속보] [비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유 (조선비즈 팩트 보도, Thu, 27 Aug 2026 21:05:04 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
+        "content": "[KULT 실시간 패션 속보] [비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유 (KULT 팩트 검증, Thu, 27 Aug 2026 21:05:04 GMT).",
+        "contentKr": "[KULT 실시간 패션 속보] [비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유 (KULT 팩트 검증, Thu, 27 Aug 2026 21:05:04 GMT).",
+        "imageUrl": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200"
       },
       {
         "title": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
         "titleKr": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
-        "source": "Source: Daily Fashion News (머니투데이 / @dailyfashion_news) (Wed, 26 Aug 2026 05:37:36 GMT)",
+        "source": "KULT FASHION INSIGHTS | RETAIL ARCHIVE",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
-        "content": "[Daily Fashion News 실시간 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (머니투데이 팩트 보도, Wed, 26 Aug 2026 05:37:36 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "contentKr": "[Daily Fashion News 실시간 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (머니투데이 팩트 보도, Wed, 26 Aug 2026 05:37:36 GMT, 1:1 개별 기사 직통 원문 딥링크).",
-        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
+        "content": "[KULT 실시간 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (KULT 팩트 검증, Wed, 26 Aug 2026 05:37:36 GMT).",
+        "contentKr": "[KULT 실시간 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (KULT 팩트 검증, Wed, 26 Aug 2026 05:37:36 GMT).",
+        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200"
       }
     ],
     "featuredProducts": [
       {
-        "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
+        "brand": "KULT CURATED",
         "name": "바쉐론 콘스탄틴, 전시 개최",
         "nameKr": "바쉐론 콘스탄틴, 전시 개최",
-        "description": "Verified Direct Link: https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 1:1 개별 기사 직통 원문 딥링크: https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
+        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
+        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
         "sourceUrl": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-        "tag": "WEEKLY ISSUE"
+        "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200",
+        "tag": "KULT EXCLUSIVE"
       },
       {
-        "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
+        "brand": "KULT CURATED",
         "name": "[누구세요] 이삼 인터뷰",
         "nameKr": "[누구세요] 이삼 인터뷰",
-        "description": "Verified Direct Link: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
-        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 1:1 개별 기사 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
+        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
+        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-        "tag": "WEEKLY ISSUE"
+        "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1200",
+        "tag": "KULT EXCLUSIVE"
       },
       {
-        "brand": "Eyes Magazine (아이즈매거진 @eyesmag)",
+        "brand": "KULT CURATED",
         "name": "출생아지원금, 최대 2,000만 원까지 늘어난다?",
         "nameKr": "출생아지원금, 최대 2,000만 원까지 늘어난다?",
-        "description": "Verified Direct Link: https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
-        "descriptionKr": "Eyes Magazine (아이즈매거진 @eyesmag) 1:1 개별 기사 직통 원문 딥링크: https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
+        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
+        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
         "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-        "tag": "WEEKLY ISSUE"
+        "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=1200",
+        "tag": "KULT EXCLUSIVE"
       },
       {
-        "brand": "Daily Fashion News (지디넷코리아 / @dailyfashion_news)",
+        "brand": "KULT CURATED",
         "name": "‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’",
         "nameKr": "‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’",
-        "description": "Verified Direct Link: https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
-        "descriptionKr": "Daily Fashion News (지디넷코리아 / @dailyfashion_news) 1:1 개별 기사 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
+        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
+        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
-        "tag": "WEEKLY ISSUE"
+        "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200",
+        "tag": "KULT EXCLUSIVE"
       },
       {
-        "brand": "Daily Fashion News (조선비즈 / @dailyfashion_news)",
+        "brand": "KULT CURATED",
         "name": "[비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유",
         "nameKr": "[비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유",
-        "description": "Verified Direct Link: https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
-        "descriptionKr": "Daily Fashion News (조선비즈 / @dailyfashion_news) 1:1 개별 기사 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
+        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
+        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
-        "tag": "WEEKLY ISSUE"
+        "imageUrl": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200",
+        "tag": "KULT EXCLUSIVE"
       },
       {
-        "brand": "Daily Fashion News (머니투데이 / @dailyfashion_news)",
+        "brand": "KULT CURATED",
         "name": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
         "nameKr": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
-        "description": "Verified Direct Link: https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
-        "descriptionKr": "Daily Fashion News (머니투데이 / @dailyfashion_news) 1:1 개별 기사 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
+        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
+        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800",
-        "tag": "WEEKLY ISSUE"
+        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200",
+        "tag": "KULT EXCLUSIVE"
       }
     ]
   }
