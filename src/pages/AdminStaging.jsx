@@ -336,7 +336,7 @@ const TREND_POOL = [
                                     <span className={`px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest ${
                                         vol.status === 'published' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
                                     }`}>
-                                        {vol.status === 'published' ? '✅ LIVE PUBLISHED' : '⏳ STAGED DRAFT'}
+                                        {vol.status === 'published' ? '✅ READERS LIVE PUBLISHED' : '📁 RAW RESEARCH DATA (원사 리서치 데이터)'}
                                     </span>
                                     <span className="text-xs text-slate-400 font-bold uppercase tracking-widest">
                                         Vol. {vol.volume} • {vol.issueDate}
@@ -349,16 +349,16 @@ const TREND_POOL = [
                                         className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-widest transition-colors flex items-center gap-2"
                                     >
                                         <Eye className="w-4 h-4" />
-                                        <span>Preview Magazine</span>
+                                        <span>Preview Reader View</span>
                                     </Link>
 
                                     {vol.status !== 'published' && (
                                         <button
                                             onClick={() => handlePublish(vol.id)}
-                                            className="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs uppercase tracking-widest transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20"
+                                            className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 text-slate-950 font-extrabold text-xs uppercase tracking-widest transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20"
                                         >
-                                            <Send className="w-4 h-4" />
-                                            <span>Approve & Publish Now</span>
+                                            <Sparkles className="w-4 h-4" />
+                                            <span>✨ Transform & Publish for Readers (유저용 명품 글 가공 & 라이브 출판)</span>
                                         </button>
                                     )}
                                 </div>
