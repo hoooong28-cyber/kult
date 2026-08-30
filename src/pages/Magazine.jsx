@@ -12,111 +12,41 @@ import { onAuthStateChanged } from 'firebase/auth'
 import UnlockButton from '../components/UnlockButton'
 
 const MOCK_MAGAZINES = {
-    'vol-22': {
-        id: 'vol-22',
-        volume: 22,
-        title: "KULT BRUTALIST COLUMNS: Vacheron Constantin Heritage Exhibition",
-        titleKr: "[KULT 심층 칼럼] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴, 전시 개최",
-        issueDate: "KULT EDITORIAL COLUMNS: 2026. 8. 30.",
+    'vol-1': {
+        id: 'vol-1',
+        volume: 1,
+        title: "KULT DAILY BRAND: Vacheron Constantin Heritage Exhibition",
+        titleKr: "[KULT 1일 1브랜드 칼럼] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴",
+        issueDate: "DAILY BRAND ISSUE: 2026. 8. 30.",
         coverImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
-        description: "Full multi-paragraph KULT Brutalist Editorial Columns with in-depth cultural analysis, Chief Editor takeaways, and direct verified links.",
-        descriptionKr: "단순 요약을 넘어 KULT 에디토리얼 팀이 심층 집필한 3단락 전문 트렌드 칼럼 & 총괄 에디터 인사이트 코멘트 리포트.",
+        description: "Daily 1-Brand Exclusive Column: In-depth heritage watchmaking, spatial experience guide, and verified direct links for global visitors.",
+        descriptionKr: "하루 딱 1개의 독보적 브랜드 심층 집필: 270년 스위스 장인정신과 서울 공간 체험 가이드가 담긴 KULT 시그니처 1일 1칼럼.",
         sections: [
             {
-                title: "[KULT COLUMNS] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴, 전시 개최",
-                titleKr: "[KULT COLUMNS] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴, 전시 개최",
+                title: "[KULT DAILY BRAND] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴 서울 전시",
+                titleKr: "[KULT DAILY BRAND] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴 서울 전시",
                 source: "KULT EDITORIAL | SEOUL TREND RADAR",
                 sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
                 content: `서울 하이엔드 워치 씬에 새로운 이정표가 세워졌습니다. 270년 역사를 자랑하는 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴이 서울 장인정신의 성소에서 독보적인 헤리티지 타임피스 아카이브를 전격 공개했습니다.\n\n이번 전시에서는 복잡한 컴플리케이션 기아와 노출 칼라트라바 케이스, 그리고 수작업 기요셰 파티나가 돋보이는 희귀 아카이브들이 1:1로 공개됩니다. 럭셔리 워치 컬렉터뿐만 아니라 서울의 하이엔드 디자인 문화를 경험하려는 외국인 관광객들에게 강력히 추천하는 공간입니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 하반기 서울에서 반드시 방문해야 할 'Top 1 럭셔리 호놀로지 스페이스'로 선정했습니다. 단순한 시계 관람을 넘어 건축적 미학과 오트 오르롤로주의 감성을 오감으로 체감해 보시길 바랍니다.`,
                 contentKr: `서울 하이엔드 워치 씬에 새로운 이정표가 세워졌습니다. 270년 역사를 자랑하는 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴이 서울 장인정신의 성소에서 독보적인 헤리티지 타임피스 아카이브를 전격 공개했습니다.\n\n이번 전시에서는 복잡한 컴플리케이션 기아와 노출 칼라트라바 케이스, 그리고 수작업 기요셰 파티나가 돋보이는 희귀 아카이브들이 1:1로 공개됩니다. 럭셔리 워치 컬렉터뿐만 아니라 서울의 하이엔드 디자인 문화를 경험하려는 외국인 관광객들에게 강력히 추천하는 공간입니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 하반기 서울에서 반드시 방문해야 할 'Top 1 럭셔리 호놀로지 스페이스'로 선정했습니다. 단순한 시계 관람을 넘어 건축적 미학과 오트 오르롤로주의 감성을 오감으로 체감해 보시길 바랍니다.`,
                 editorQuoteKr: "“시간을 측정하는 도구를 넘어, 서울의 스페이셜 아키텍처와 결합한 하이 워치메이킹 예술의 결정체.” — KULT Chief Editorial Director",
                 imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200"
-            },
-            {
-                title: "[KULT COLUMNS] K-컬처와 팝 아이콘의 컬트적 파급력: 미노이 인터뷰",
-                titleKr: "[KULT COLUMNS] K-컬처와 팝 아이콘의 컬트적 파급력: 미노이 인터뷰",
-                source: "KULT EDITORIAL | SEOUL TREND RADAR",
-                sourceUrl: "https://www.eyesmag.com/posts/157832/minoi-interview",
-                content: `글로벌 K-컬처 씬의 스타일 아이콘들이 보여주는 독창적인 행보가 젊은 세대의 트렌드 지형을 다시 재편하고 있습니다. 단순한 서브컬처를 넘어 아시아 패션과 라이프스타일 전반에 직격타를 날리는 문화적 컬트 현상입니다.\n\n이들의 스타일링과 에피소드는 단순한 엔터테인먼트를 넘어 성수동, 한남동의 길거리 패션과 팝업 스토어의 테마로 직결됩니다. 독보적인 톤앤매너와 과감한 비주얼 연출은 유행에 민감한 글로벌 방문객들에게 유일무이한 영감을 제공합니다.\n\nKULT 에디토리얼 팀은 이들이 이끄는 비주얼 아카이브를 서울의 트렌드 서브컬처 지표로 정의하며, 그들이 선보이는 패션 피스들에 대한 깊이 있는 분석을 계속해 나갈 것입니다.`,
-                contentKr: `글로벌 K-컬처 씬의 스타일 아이콘들이 보여주는 독창적인 행보가 젊은 세대의 트렌드 지형을 다시 재편하고 있습니다. 단순한 서브컬처를 넘어 아시아 패션과 라이프스타일 전반에 직격타를 날리는 문화적 컬트 현상입니다.\n\n이들의 스타일링과 에피소드는 단순한 엔터테인먼트를 넘어 성수동, 한남동의 길거리 패션과 팝업 스토어의 테마로 직결됩니다. 독보적인 톤앤매너와 과감한 비주얼 연출은 유행에 민감한 글로벌 방문객들에게 유일무이한 영감을 제공합니다.\n\nKULT 에디토리얼 팀은 이들이 이끄는 비주얼 아카이브를 서울의 트렌드 서브컬처 지표로 정의하며, 그들이 선보이는 패션 피스들에 대한 깊이 있는 분석을 계속해 나갈 것입니다.`,
-                editorQuoteKr: "“유행을 좇는 것이 아닌, 유행 그 자체가 되는 K-아이콘들의 대담한 브루탈리즘 모노로그.” — KULT Cultural Editor",
-                imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200"
-            },
-            {
-                title: "[KULT COLUMNS] 오프라인 리테일의 브루탈리즘 혁명: 성수/명동 오프라인 매장 확대",
-                titleKr: "[KULT COLUMNS] 오프라인 리테일의 브루탈리즘 혁명: 성수/명동 오프라인 매장 확대",
-                source: "KULT FASHION INSIGHTS | RETAIL ARCHIVE",
-                sourceUrl: "https://www.fashionbiz.co.kr/article/view.asp?cate=1&idx=205601",
-                content: `온라인 패션 리테일의 거물들이 서울의 대표적 아티잔 거리인 성수, 명동, 북촌의 노출 콘크리트 골목으로 쏟아져 나오고 있습니다. 단편적인 브랜드 경험을 넘어 오프라인 스페이스 자체를 브랜드 메시지로 변환시키는 대대적인 공간 혁명입니다.\n\n노출 콘크리트 미학과 거대한 철제 프레임, 그리고 공간을 압도하는 향과 음악이 결합된 성수동 플래그십 아틀리에는 이제 글로벌 여행객들의 필수 방문 성지가 되었습니다. 단독 런칭 피스와 한정판 리테일 캡슐 컬렉션은 오직 서울 오프라인 매장에서만 경험할 수 있는 희소성을 가집니다.\n\n서울을 찾는 외국인 관광객이라면 디지털 화면을 벗어나 성수동과 한남동의 거대한 리테일 갤러리를 직접 밟아보는 것이 2026년 K-패션의 진수를 가장 깊게 경험하는 길입니다.`,
-                contentKr: `온라인 패션 리테일의 거물들이 서울의 대표적 아티잔 거리인 성수, 명동, 북촌의 노출 콘크리트 골목으로 쏟아져 나오고 있습니다. 단편적인 브랜드 경험을 넘어 오프라인 스페이스 자체를 브랜드 메시지로 변환시키는 대대적인 공간 혁명입니다.\n\n노출 콘크리트 미학과 거대한 철제 프레임, 그리고 공간을 압도하는 향과 음악이 결합된 성수동 플래그십 아틀리에는 이제 글로벌 여행객들의 필수 방문 성지가 되었습니다. 단독 런칭 피스와 한정판 리테일 캡슐 컬렉션은 오직 서울 오프라인 매장에서만 경험할 수 있는 희소성을 가집니다.\n\n서울을 찾는 외국인 관광객이라면 디지털 화면을 벗어나 성수동과 한남동의 거대한 리테일 갤러리를 직접 밟아보는 것이 2026년 K-패션의 진수를 가장 깊게 경험하는 길입니다.`,
-                editorQuoteKr: "“공간 자체가 패션이 되는 순간. 디지털 픽셀을 넘어 날것의 콘크리트로 완성된 오프라인 성소.” — KULT Retail Architecture Lead",
-                imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200"
             }
         ],
         featuredProducts: [
             {
                 brand: "VACHERON CONSTANTIN SEOUL",
-                name: "Heritage Horology Exhibition",
-                nameKr: "바쉐론 콘스탄틴 서울 헤리티지 시계 전시회",
+                name: "[KULT DAILY BRAND] 바쉐론 콘스탄틴 서울 헤리티지 시계 전시회",
+                nameKr: "[KULT DAILY BRAND] 바쉐론 콘스탄틴 서울 헤리티지 시계 전시회",
                 description: "Official Direct Link: https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
                 descriptionKr: "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크",
                 sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
                 imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
-                tag: "FULL COLUMN"
+                tag: "DAILY BRAND"
             }
         ]
-    },
-    'vol-21': {
-        id: 'vol-21',
-        volume: 21,
-        title: "SEOUL TOURIST GUIDE: Vacheron Constantin Heritage Exhibition & Seongsu Luxury Atelier",
-        titleKr: "[글로벌 관광객 큐레이션] 바쉐론 콘스탄틴 서울 헤리티지 전시 & 성수 럭셔리 아틀리에",
-        issueDate: "SEOUL TOURIST EDITION: 2026. 8. 30.",
-        coverImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
-        description: "Essential Seoul trend & space guide for global visitors: Vacheron Constantin luxury timepiece exhibition, Seongsu flagship architecture, and Hannam retail spots.",
-        descriptionKr: "서울을 방문하는 글로벌 관광객을 위한 필수 핫스팟 리포트: 바쉐론 콘스탄틴 헤리티지 시계 전시, 성수동 노출 콘크리트 아틀리에, 한남동 단독 플래그십 파이프라인.",
-        sections: [
-            {
-                title: "Vacheron Constantin Seoul Heritage Exhibition & Horology Atelier",
-                titleKr: "[SEOUL SPOTLIGHT] 바쉐론 콘스탄틴 서울 헤리티지 시계 전시회 개최",
-                source: "KULT SEOUL TOURIST GUIDE | LUXURY HOROLOGY",
-                sourceUrl: "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-                content: "A must-visit horological sanctuary in Seoul. Vacheron Constantin showcases 270 years of Swiss high watchmaking art in Gangnam/Seongsu space.",
-                contentKr: "서울을 방문하는 시계 마니아와 글로벌 관광객을 위한 필수 전시 핫스팟. 270년 스위스 하이 워치메이킹 바쉐론 콘스탄틴의 헤리티지 타임피스 1:1 아카이브.",
-                imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200"
-            },
-            {
-                title: "Seongsu Brutalist Architecture & Olfactory Perfume Showrooms",
-                titleKr: "[SEOUL SPOTLIGHT] 성수동 노출 콘크리트 조향 건축 & 퍼퓸 쉘 팝업",
-                source: "KULT SEOUL TOURIST GUIDE | SPATIAL DISCOVERY",
-                sourceUrl: "https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
-                content: "Explore Seongsu-dong, the Brooklyn of Seoul. Concrete architecture, olfactory scent bars, and exclusive flagship popups.",
-                contentKr: "서울의 브루클린이라 불리는 성수동 연무장길 조향 성소탐방: 노출 콘크리트 플래그십 아틀리에와 해외 관광객 전용 기프트 큐레이션.",
-                imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200"
-            },
-            {
-                title: "Hannam-dong Luxury Retail Flagships & K-Fashion Hotspots",
-                titleKr: "[SEOUL SPOTLIGHT] 한남동 붉은 벽돌 골목길 패션 플래그십 & 글로벌 갤러리",
-                source: "KULT SEOUL TOURIST GUIDE | SHOPPING ARCHIVE",
-                sourceUrl: "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
-                content: "Hannam-dong fashion walking tour for global travelers. High-end designer boutiques, red-brick galleries, and curated cafes.",
-                contentKr: "외국인 관광객이 가장 사랑하는 한남동 디자이너 거리 탐방: 붉은 벽돌 건축물 속 글로벌 아시아 플래그십 스토어 및 프라이빗 갤러리.",
-                imageUrl: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200"
-            }
-        ],
-        featuredProducts: [
-            {
-                brand: "VACHERON CONSTANTIN SEOUL",
-                name: "Heritage Horology Exhibition Gangnam",
-                nameKr: "바쉐론 콘스탄틴 서울 헤리티지 시계 전시회",
-                description: "Official Exhibition Link: https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-                descriptionKr: "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크",
-                sourceUrl: "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-                imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
-                tag: "TOURIST MUST-VISIT"
-            }
-        ]
-    },
+    }
+}
     'vol-20': {
         id: 'vol-20',
         volume: 20,
