@@ -16,28 +16,28 @@ const MOCK_MAGAZINES = {
         id: 'vol-1',
         volume: 1,
         title: "KULT DAILY BRAND: Vacheron Constantin Heritage Exhibition",
-        titleKr: "[KULT 1일 1브랜드 칼럼] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴",
+        titleKr: "[KULT DAILY BRAND] 시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴",
         issueDate: "DAILY BRAND ISSUE: 2026. 8. 30.",
         coverImage: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&q=80&w=1200",
-        description: "Daily 1-Brand Exclusive Column: In-depth heritage watchmaking, spatial experience guide, and verified direct links for global visitors.",
-        descriptionKr: "하루 딱 1개의 독보적 브랜드 심층 집필: 270년 스위스 장인정신과 서울 공간 체험 가이드가 담긴 KULT 시그니처 1일 1칼럼.",
+        description: "Daily 1-Brand Exclusive Essay: Why we seek mechanical horology permanence in an era of digital transience.",
+        descriptionKr: "디지털 픽셀의 시대를 넘어, 270년 아날로그 시간에 대한 위엄을 깎아내는 바쉐론 콘스탄틴의 서울 헤리티지 성소 비평.",
         sections: [
             {
-                title: "[KULT DAILY BRAND] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴 서울 전시",
-                titleKr: "[KULT DAILY BRAND] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴 서울 전시",
+                title: "[KULT DAILY BRAND] 시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴 서울 전시",
+                titleKr: "[KULT DAILY BRAND] 시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴 서울 전시",
                 source: "KULT EDITORIAL | SEOUL TREND RADAR",
                 sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
-                content: `서울 하이엔드 워치 씬에 새로운 이정표가 세워졌습니다. 270년 역사를 자랑하는 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴이 서울 장인정신의 성소에서 독보적인 헤리티지 타임피스 아카이브를 전격 공개했습니다.\n\n이번 전시에서는 복잡한 컴플리케이션 기아와 노출 칼라트라바 케이스, 그리고 수작업 기요셰 파티나가 돋보이는 희귀 아카이브들이 1:1로 공개됩니다. 럭셔리 워치 컬렉터뿐만 아니라 서울의 하이엔드 디자인 문화를 경험하려는 외국인 관광객들에게 강력히 추천하는 공간입니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 하반기 서울에서 반드시 방문해야 할 'Top 1 럭셔리 호놀로지 스페이스'로 선정했습니다. 단순한 시계 관람을 넘어 건축적 미학과 오트 오르롤로주의 감성을 오감으로 체감해 보시길 바랍니다.`,
-                contentKr: `서울 하이엔드 워치 씬에 새로운 이정표가 세워졌습니다. 270년 역사를 자랑하는 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴이 서울 장인정신의 성소에서 독보적인 헤리티지 타임피스 아카이브를 전격 공개했습니다.\n\n이번 전시에서는 복잡한 컴플리케이션 기아와 노출 칼라트라바 케이스, 그리고 수작업 기요셰 파티나가 돋보이는 희귀 아카이브들이 1:1로 공개됩니다. 럭셔리 워치 컬렉터뿐만 아니라 서울의 하이엔드 디자인 문화를 경험하려는 외국인 관광객들에게 강력히 추천하는 공간입니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 하반기 서울에서 반드시 방문해야 할 'Top 1 럭셔리 호놀로지 스페이스'로 선정했습니다. 단순한 시계 관람을 넘어 건축적 미학과 오트 오르롤로주의 감성을 오감으로 체감해 보시길 바랍니다.`,
-                editorQuoteKr: "“시간을 측정하는 도구를 넘어, 서울의 스페이셜 아키텍처와 결합한 하이 워치메이킹 예술의 결정체.” — KULT Chief Editorial Director",
+                content: `모든 것이 0과 1의 디지털 픽셀로 순간 삭제되는 초격차의 시대, 우리는 왜 270년 동안 멈추지 않고 째깍이는 메커니컬 무브먼트의 아날로그 진동에 이토록 강렬하게 매료되는가? 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴(Vacheron Constantin)이 서울 장인정신의 성소에서 공개한 헤리티지 타임피스 아카이브는 단순한 시계 전시의 범주를 아득히 뛰어넘습니다.\n\n이번 전시의 핵심은 수작업으로 새겨 넣은 기요셰(Guilloché) 파티나와 노출 칼라트라바 케이스 속에서 톱니바퀴처럼 정교하게 맞물리는 컴플리케이션 아키텍처에 있습니다. 시속 300km로 질주하는 서울 한복판에서, 바쉐론 콘스탄틴의 공간은 휘발하는 유행에 지친 글로벌 방문객들에게 영속성(Permanence)의 가치가 무엇인지를 무언의 조각으로 증명합니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 서울에서 경험할 수 있는 'Top 1 럭셔리 호놀로지 성소'로 정의합니다. 아날로그 톱니바퀴가 완성하는 둔탁하지만 고귀한 시간의 위엄 속에서, 21세기 인간이 소멸해 가는 감각의 여백을 되찾는 영적 안식을 경험해 보시길 바랍니다.`,
+                contentKr: `모든 것이 0과 1의 디지털 픽셀로 순간 삭제되는 초격차의 시대, 우리는 왜 270년 동안 멈추지 않고 째깍이는 메커니컬 무브먼트의 아날로그 진동에 이토록 강렬하게 매료되는가? 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴(Vacheron Constantin)이 서울 장인정신의 성소에서 공개한 헤리티지 타임피스 아카이브는 단순한 시계 전시의 범주를 아득히 뛰어넘습니다.\n\n이번 전시의 핵심은 수작업으로 새겨 넣은 기요셰(Guilloché) 파티나와 노출 칼라트라바 케이스 속에서 톱니바퀴처럼 정교하게 맞물리는 컴플리케이션 아키텍처에 있습니다. 시속 300km로 질주하는 서울 한복판에서, 바쉐론 콘스탄틴의 공간은 휘발하는 유행에 지친 글로벌 방문객들에게 영속성(Permanence)의 가치가 무엇인지를 무언의 조각으로 증명합니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 서울에서 경험할 수 있는 'Top 1 럭셔리 호놀로지 성소'로 정의합니다. 아날로그 톱니바퀴가 완성하는 둔탁하지만 고귀한 시간의 위엄 속에서, 21세기 인간이 소멸해 가는 감각의 여백을 되찾는 영적 안식을 경험해 보시길 바랍니다.`,
+                editorQuoteKr: "“모든 것이 픽셀로 소멸하는 시대, 270년 기계식 무브먼트가 들려주는 아날로그 시간의 위엄.” — KULT Chief Editorial Director",
                 imageUrl: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&q=80&w=1200"
             }
         ],
         featuredProducts: [
             {
                 brand: "VACHERON CONSTANTIN SEOUL",
-                name: "[KULT DAILY BRAND] 바쉐론 콘스탄틴 서울 헤리티지 시계 전시회",
-                nameKr: "[KULT DAILY BRAND] 바쉐론 콘스탄틴 서울 헤리티지 시계 전시회",
+                name: "[KULT DAILY BRAND] 시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴",
+                nameKr: "[KULT DAILY BRAND] 시간의 위엄을 깎아내는 270년의 아티잔십: 바쉐론 콘스탄틴",
                 description: "Official Direct Link: https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
                 descriptionKr: "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크",
                 sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
