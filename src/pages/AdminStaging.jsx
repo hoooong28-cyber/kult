@@ -402,10 +402,10 @@ const TREND_POOL = [
                                                                 href={sec.sourceUrl}
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
-                                                                className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest bg-emerald-500/10 hover:bg-emerald-500/20 px-2.5 py-0.5 rounded-md border border-emerald-500/30 flex items-center gap-1 transition-colors"
+                                                                className="text-xs text-emerald-300 font-extrabold uppercase tracking-widest bg-emerald-500/20 hover:bg-emerald-500/30 px-4 py-1.5 rounded-lg border border-emerald-500/40 flex items-center gap-1.5 transition-all shadow-md shadow-emerald-500/10"
                                                             >
-                                                                <Globe className="w-3 h-3" />
-                                                                <span>Verified Link ↗</span>
+                                                                <Globe className="w-3.5 h-3.5" />
+                                                                <span>🔗 VERIFIED ARTICLE DIRECT LINK (원문 딥링크 1:1 이동) ↗</span>
                                                             </a>
                                                         )}
                                                     </div>

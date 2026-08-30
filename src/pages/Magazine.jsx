@@ -632,9 +632,25 @@ const Magazine = () => {
                                     </h2>
                                 </div>
                                 <div className="h-px w-20 bg-slate-200" />
-                                <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
+                                <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-xl whitespace-pre-line">
                                     {t(section.content, section.contentKr)}
                                 </p>
+                                {section.editorQuoteKr && (
+                                    <div className="p-4 rounded-2xl bg-slate-900 text-white font-bold text-xs leading-relaxed border border-slate-800">
+                                        {section.editorQuoteKr}
+                                    </div>
+                                )}
+                                {section.sourceUrl && (
+                                    <a
+                                        href={section.sourceUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-2 inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-[#1111d4] text-white font-extrabold text-xs uppercase tracking-widest transition-all shadow-lg hover:shadow-blue-500/20 group w-fit"
+                                    >
+                                        <ExternalLink className="w-4 h-4 text-blue-400 group-hover:text-white transition-colors" />
+                                        <span>🔗 VERIFIED ARTICLE DIRECT LINK (원문 딥링크 1:1 이동) ↗</span>
+                                    </a>
+                                )}
                             </div>
                         </div>
                     ))}
