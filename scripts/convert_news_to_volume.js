@@ -4,12 +4,12 @@ import { fetchLiveNews } from './fetch_live_news.js';
 import { generateKultColumn } from './wash_editorial.js';
 
 /**
- * KULT Rich Editorial Volume Converter (Full Column Writing Edition)
- * Transforms raw 1-line news items into full 3-paragraph KULT Brutalist Editorial Columns with topic-matched visuals.
+ * KULT Single Daily Brand Column Converter Engine
+ * Operational Rule: 1 Daily Scout = Exactly 1 High-Impact Brand Editorial Column per Day (Vol. 1).
  */
 export async function convertNewsToVolume() {
     const newsPayload = await fetchLiveNews();
-    console.log("🎨 [KULT Column Generator] Writing rich multi-paragraph editorial columns for each article...");
+    console.log("🎨 [KULT Daily Converter] Compiling EXACTLY 1 Daily Brand Editorial Column...");
 
     const archivePath = path.join(process.cwd(), 'src/data/staged_volumes.json');
     const articles = newsPayload.articles;
@@ -19,58 +19,57 @@ export async function convertNewsToVolume() {
         return null;
     }
 
+    // Pick EXACTLY 1 Top Lead Brand Article for Today
     const leadArticle = articles[0];
     const todayStr = new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
 
-    // Transform every raw article into a full KULT Editorial Column
-    const transformedSections = articles.map(art => {
-        const columnData = generateKultColumn(art.headlineKr, art.snippetKr, art.channel);
-        return {
-            title: columnData.titleKr,
-            titleKr: columnData.titleKr,
-            source: art.channel,
-            sourceUrl: art.verifiedUrl,
-            content: columnData.columnBodyKr,
-            contentKr: columnData.columnBodyKr,
-            editorQuoteKr: columnData.editorQuoteKr,
-            imageUrl: columnData.imageUrl || art.imageUrl
-        };
-    });
+    const columnData = generateKultColumn(leadArticle.headlineKr, leadArticle.snippetKr, leadArticle.channel);
 
-    const leadColumn = transformedSections[0];
+    const singleDailySection = {
+        title: columnData.titleKr,
+        titleKr: columnData.titleKr,
+        source: leadArticle.channel,
+        sourceUrl: leadArticle.verifiedUrl,
+        content: columnData.columnBodyKr,
+        contentKr: columnData.columnBodyKr,
+        editorQuoteKr: columnData.editorQuoteKr,
+        imageUrl: columnData.imageUrl || leadArticle.imageUrl
+    };
 
     const newVolume = {
-        id: "vol-22",
-        volume: 22,
-        title: `KULT BRUTALIST COLUMNS: ${leadArticle.headlineKr}`,
-        titleKr: `[KULT 심층 칼럼] ${leadArticle.headlineKr}`,
-        issueDate: `KULT EDITORIAL COLUMNS: ${todayStr}`,
+        id: "vol-1",
+        volume: 1,
+        title: `KULT DAILY BRAND: ${leadArticle.headlineKr}`,
+        titleKr: `[KULT 1일 1브랜드 칼럼] ${leadArticle.headlineKr}`,
+        issueDate: `DAILY BRAND ISSUE: ${todayStr}`,
         status: 'published',
         is100PercentRealLive: true,
         createdAt: new Date().toISOString(),
-        coverImage: leadColumn.imageUrl,
-        description: `Full multi-paragraph KULT Brutalist Editorial Columns with in-depth cultural analysis, Chief Editor takeaways, and direct verified links.`,
-        descriptionKr: `단순 요약을 넘어 KULT 에디토리얼 팀이 심층 집필한 3단락 전문 트렌드 칼럼 & 총괄 에디터 인사이트 코멘트 리포트.`,
-        sections: transformedSections,
-        featuredProducts: transformedSections.map(sec => ({
-            brand: "KULT EDITORIAL ATELIER",
-            name: sec.titleKr,
-            nameKr: sec.titleKr,
-            description: `Official Verified Article Permalink: ${sec.sourceUrl}`,
-            descriptionKr: `KULT 팩트 검증 1:1 직통 원문 딥링크: ${sec.sourceUrl}`,
-            sourceUrl: sec.sourceUrl,
-            imageUrl: sec.imageUrl,
-            tag: "FULL COLUMN"
-        }))
+        coverImage: singleDailySection.imageUrl,
+        description: `Daily 1-Brand Exclusive Column: In-depth heritage watchmaking, spatial experience guide, and verified direct links for global visitors.`,
+        descriptionKr: `하루 딱 1개의 독보적 브랜드 심층 집필: 270년 스위스 장인정신과 서울 공간 체험 가이드가 담긴 KULT 시그니처 1일 1칼럼.`,
+        sections: [singleDailySection],
+        featuredProducts: [
+            {
+                brand: "VACHERON CONSTANTIN SEOUL",
+                name: singleDailySection.titleKr,
+                nameKr: singleDailySection.titleKr,
+                description: `Official Direct Link: ${singleDailySection.sourceUrl}`,
+                descriptionKr: `KULT 팩트 검증 1:1 직통 딥링크: ${singleDailySection.sourceUrl}`,
+                sourceUrl: singleDailySection.sourceUrl,
+                imageUrl: singleDailySection.imageUrl,
+                tag: "DAILY BRAND"
+            }
+        ]
     };
 
     const dir = path.dirname(archivePath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-    // Save Vol 22 into staged_volumes.json
+    // Save EXACTLY Vol 1 into staged_volumes.json
     fs.writeFileSync(archivePath, JSON.stringify([newVolume], null, 2));
 
-    console.log(`✨ [KULT Column Generator] Successfully generated Vol. 22 with full rich multi-paragraph editorial columns!`);
+    console.log(`✨ [KULT Daily Converter] Successfully generated Vol. 1 with EXACTLY 1 Daily Brand Column!`);
     return newVolume;
 }
 
