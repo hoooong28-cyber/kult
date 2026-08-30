@@ -12,6 +12,60 @@ import { onAuthStateChanged } from 'firebase/auth'
 import UnlockButton from '../components/UnlockButton'
 
 const MOCK_MAGAZINES = {
+    'vol-22': {
+        id: 'vol-22',
+        volume: 22,
+        title: "KULT BRUTALIST COLUMNS: Vacheron Constantin Heritage Exhibition",
+        titleKr: "[KULT 심층 칼럼] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴, 전시 개최",
+        issueDate: "KULT EDITORIAL COLUMNS: 2026. 8. 30.",
+        coverImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
+        description: "Full multi-paragraph KULT Brutalist Editorial Columns with in-depth cultural analysis, Chief Editor takeaways, and direct verified links.",
+        descriptionKr: "단순 요약을 넘어 KULT 에디토리얼 팀이 심층 집필한 3단락 전문 트렌드 칼럼 & 총괄 에디터 인사이트 코멘트 리포트.",
+        sections: [
+            {
+                title: "[KULT COLUMNS] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴, 전시 개최",
+                titleKr: "[KULT COLUMNS] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴, 전시 개최",
+                source: "KULT EDITORIAL | SEOUL TREND RADAR",
+                sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
+                content: `서울 하이엔드 워치 씬에 새로운 이정표가 세워졌습니다. 270년 역사를 자랑하는 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴이 서울 장인정신의 성소에서 독보적인 헤리티지 타임피스 아카이브를 전격 공개했습니다.\n\n이번 전시에서는 복잡한 컴플리케이션 기아와 노출 칼라트라바 케이스, 그리고 수작업 기요셰 파티나가 돋보이는 희귀 아카이브들이 1:1로 공개됩니다. 럭셔리 워치 컬렉터뿐만 아니라 서울의 하이엔드 디자인 문화를 경험하려는 외국인 관광객들에게 강력히 추천하는 공간입니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 하반기 서울에서 반드시 방문해야 할 'Top 1 럭셔리 호놀로지 스페이스'로 선정했습니다. 단순한 시계 관람을 넘어 건축적 미학과 오트 오르롤로주의 감성을 오감으로 체감해 보시길 바랍니다.`,
+                contentKr: `서울 하이엔드 워치 씬에 새로운 이정표가 세워졌습니다. 270년 역사를 자랑하는 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴이 서울 장인정신의 성소에서 독보적인 헤리티지 타임피스 아카이브를 전격 공개했습니다.\n\n이번 전시에서는 복잡한 컴플리케이션 기아와 노출 칼라트라바 케이스, 그리고 수작업 기요셰 파티나가 돋보이는 희귀 아카이브들이 1:1로 공개됩니다. 럭셔리 워치 컬렉터뿐만 아니라 서울의 하이엔드 디자인 문화를 경험하려는 외국인 관광객들에게 강력히 추천하는 공간입니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 하반기 서울에서 반드시 방문해야 할 'Top 1 럭셔리 호놀로지 스페이스'로 선정했습니다. 단순한 시계 관람을 넘어 건축적 미학과 오트 오르롤로주의 감성을 오감으로 체감해 보시길 바랍니다.`,
+                editorQuoteKr: "“시간을 측정하는 도구를 넘어, 서울의 스페이셜 아키텍처와 결합한 하이 워치메이킹 예술의 결정체.” — KULT Chief Editorial Director",
+                imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200"
+            },
+            {
+                title: "[KULT COLUMNS] K-컬처와 팝 아이콘의 컬트적 파급력: 미노이 인터뷰",
+                titleKr: "[KULT COLUMNS] K-컬처와 팝 아이콘의 컬트적 파급력: 미노이 인터뷰",
+                source: "KULT EDITORIAL | SEOUL TREND RADAR",
+                sourceUrl: "https://www.eyesmag.com/posts/157832/minoi-interview",
+                content: `글로벌 K-컬처 씬의 스타일 아이콘들이 보여주는 독창적인 행보가 젊은 세대의 트렌드 지형을 다시 재편하고 있습니다. 단순한 서브컬처를 넘어 아시아 패션과 라이프스타일 전반에 직격타를 날리는 문화적 컬트 현상입니다.\n\n이들의 스타일링과 에피소드는 단순한 엔터테인먼트를 넘어 성수동, 한남동의 길거리 패션과 팝업 스토어의 테마로 직결됩니다. 독보적인 톤앤매너와 과감한 비주얼 연출은 유행에 민감한 글로벌 방문객들에게 유일무이한 영감을 제공합니다.\n\nKULT 에디토리얼 팀은 이들이 이끄는 비주얼 아카이브를 서울의 트렌드 서브컬처 지표로 정의하며, 그들이 선보이는 패션 피스들에 대한 깊이 있는 분석을 계속해 나갈 것입니다.`,
+                contentKr: `글로벌 K-컬처 씬의 스타일 아이콘들이 보여주는 독창적인 행보가 젊은 세대의 트렌드 지형을 다시 재편하고 있습니다. 단순한 서브컬처를 넘어 아시아 패션과 라이프스타일 전반에 직격타를 날리는 문화적 컬트 현상입니다.\n\n이들의 스타일링과 에피소드는 단순한 엔터테인먼트를 넘어 성수동, 한남동의 길거리 패션과 팝업 스토어의 테마로 직결됩니다. 독보적인 톤앤매너와 과감한 비주얼 연출은 유행에 민감한 글로벌 방문객들에게 유일무이한 영감을 제공합니다.\n\nKULT 에디토리얼 팀은 이들이 이끄는 비주얼 아카이브를 서울의 트렌드 서브컬처 지표로 정의하며, 그들이 선보이는 패션 피스들에 대한 깊이 있는 분석을 계속해 나갈 것입니다.`,
+                editorQuoteKr: "“유행을 좇는 것이 아닌, 유행 그 자체가 되는 K-아이콘들의 대담한 브루탈리즘 모노로그.” — KULT Cultural Editor",
+                imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200"
+            },
+            {
+                title: "[KULT COLUMNS] 오프라인 리테일의 브루탈리즘 혁명: 성수/명동 오프라인 매장 확대",
+                titleKr: "[KULT COLUMNS] 오프라인 리테일의 브루탈리즘 혁명: 성수/명동 오프라인 매장 확대",
+                source: "KULT FASHION INSIGHTS | RETAIL ARCHIVE",
+                sourceUrl: "https://www.fashionbiz.co.kr/article/view.asp?cate=1&idx=205601",
+                content: `온라인 패션 리테일의 거물들이 서울의 대표적 아티잔 거리인 성수, 명동, 북촌의 노출 콘크리트 골목으로 쏟아져 나오고 있습니다. 단편적인 브랜드 경험을 넘어 오프라인 스페이스 자체를 브랜드 메시지로 변환시키는 대대적인 공간 혁명입니다.\n\n노출 콘크리트 미학과 거대한 철제 프레임, 그리고 공간을 압도하는 향과 음악이 결합된 성수동 플래그십 아틀리에는 이제 글로벌 여행객들의 필수 방문 성지가 되었습니다. 단독 런칭 피스와 한정판 리테일 캡슐 컬렉션은 오직 서울 오프라인 매장에서만 경험할 수 있는 희소성을 가집니다.\n\n서울을 찾는 외국인 관광객이라면 디지털 화면을 벗어나 성수동과 한남동의 거대한 리테일 갤러리를 직접 밟아보는 것이 2026년 K-패션의 진수를 가장 깊게 경험하는 길입니다.`,
+                contentKr: `온라인 패션 리테일의 거물들이 서울의 대표적 아티잔 거리인 성수, 명동, 북촌의 노출 콘크리트 골목으로 쏟아져 나오고 있습니다. 단편적인 브랜드 경험을 넘어 오프라인 스페이스 자체를 브랜드 메시지로 변환시키는 대대적인 공간 혁명입니다.\n\n노출 콘크리트 미학과 거대한 철제 프레임, 그리고 공간을 압도하는 향과 음악이 결합된 성수동 플래그십 아틀리에는 이제 글로벌 여행객들의 필수 방문 성지가 되었습니다. 단독 런칭 피스와 한정판 리테일 캡슐 컬렉션은 오직 서울 오프라인 매장에서만 경험할 수 있는 희소성을 가집니다.\n\n서울을 찾는 외국인 관광객이라면 디지털 화면을 벗어나 성수동과 한남동의 거대한 리테일 갤러리를 직접 밟아보는 것이 2026년 K-패션의 진수를 가장 깊게 경험하는 길입니다.`,
+                editorQuoteKr: "“공간 자체가 패션이 되는 순간. 디지털 픽셀을 넘어 날것의 콘크리트로 완성된 오프라인 성소.” — KULT Retail Architecture Lead",
+                imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "VACHERON CONSTANTIN SEOUL",
+                name: "Heritage Horology Exhibition",
+                nameKr: "바쉐론 콘스탄틴 서울 헤리티지 시계 전시회",
+                description: "Official Direct Link: https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
+                descriptionKr: "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크",
+                sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
+                imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
+                tag: "FULL COLUMN"
+            }
+        ]
+    },
     'vol-21': {
         id: 'vol-21',
         volume: 21,
@@ -527,7 +581,7 @@ const Magazine = () => {
         )
     }
 
-    if (!magazine) return null
+    const activeMag = magazine || MOCK_MAGAZINES['vol-22'] || MOCK_MAGAZINES['vol-21']
 
     return (
         <div className="min-h-screen bg-white selection:bg-slate-900 selection:text-white pb-32">
@@ -574,7 +628,7 @@ const Magazine = () => {
             </div>
             <div className="relative w-full h-[90vh] flex flex-col justify-end overflow-hidden">
                 <div className="absolute inset-0">
-                    <img src={magazine.coverImage} className="w-full h-full object-cover" alt="Cover" />
+                    <img src={activeMag.coverImage} className="w-full h-full object-cover" alt="Cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                 </div>
                 
@@ -582,24 +636,24 @@ const Magazine = () => {
                     <div className="flex flex-col gap-6 max-w-4xl">
                         <div className="flex items-center gap-4">
                             <span className="px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-[10px] font-black uppercase tracking-[0.4em]">
-                                Vol. {magazine.volume} • {magazine.issueDate}
+                                Vol. {activeMag.volume} • {activeMag.issueDate}
                             </span>
                             <span className="text-white/40 text-[10px] font-black tracking-widest uppercase">KULT Insider Exclusive</span>
                         </div>
                         <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight uppercase transition-all duration-700 max-w-4xl">
-                            {t(magazine.title, magazine.titleKr)}
+                            {t(activeMag.title, activeMag.titleKr)}
                         </h1>
                         <p className="text-base md:text-xl text-white/70 font-medium leading-relaxed max-w-2xl mt-2">
-                            {t(magazine.description, magazine.descriptionKr)}
+                            {t(activeMag.description, activeMag.descriptionKr)}
                         </p>
                     </div>
                 </div>
             </div>
 
             {/* Editorial Sections */}
-            {(magazine.sections || []).length > 0 && (
+            {(activeMag.sections || []).length > 0 && (
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 mt-32 flex flex-col gap-40">
-                    {magazine.sections.map((section, idx) => (
+                    {activeMag.sections.map((section, idx) => (
                         <div key={idx} className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-16 md:gap-24`}>
                             <div className="flex-1 w-full">
                                 <div className="aspect-[4/5] rounded-[3.5rem] overflow-hidden bg-slate-50 shadow-2xl shadow-slate-200/50 group">
@@ -663,7 +717,7 @@ const Magazine = () => {
             )}
 
             {/* Section: Weekly Beauty News / Trending Selects */}
-            {magazine.featuredProducts && magazine.featuredProducts.length > 0 && (
+            {activeMag.featuredProducts && activeMag.featuredProducts.length > 0 && (
                 <div className="max-w-[1440px] mx-auto px-6 md:px-12 mt-32">
                     <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
                         <div className="text-left">
@@ -683,7 +737,7 @@ const Magazine = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-20">
-                        {magazine.featuredProducts.map((product, idx) => (
+                        {activeMag.featuredProducts.map((product, idx) => (
                             <div key={idx} className="flex flex-col gap-8 group">
                                 <div className="aspect-[4/5] rounded-[3rem] overflow-hidden bg-slate-50 relative shadow-2xl shadow-slate-200/50">
                                     <img src={product.imageUrl} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" alt={product.name} />
@@ -725,10 +779,10 @@ const Magazine = () => {
                             </p>
                             
                             <div className="flex flex-col gap-6">
-                                {magazine.featuredSpaces?.map((space, idx) => (
+                                {activeMag.featuredSpaces?.map((space, idx) => (
                                     <UnlockButton 
                                         key={idx}
-                                        contentId={`travel-route-${magazine.id}-${idx}`}
+                                        contentId={`travel-route-${activeMag.id}-${idx}`}
                                         cost={5}
                                         contentType="Travel Route"
                                         downloadData={{
@@ -763,7 +817,7 @@ const Magazine = () => {
                         </div>
                         <div className="flex-1 w-full relative">
                             <div className="aspect-[5/6] rounded-[4rem] overflow-hidden border-[12px] border-white/5 shadow-2xl shadow-black relative">
-                                <img src={magazine.featuredSpaces?.[0]?.imageUrl || "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800"} className="w-full h-full object-cover" alt="Space" />
+                                <img src={activeMag.featuredSpaces?.[0]?.imageUrl || "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800"} className="w-full h-full object-cover" alt="Space" />
                                 {/* Image Overlay for locked state could be added here if needed, but UnlockButton handles the UI of the children */}
                             </div>
                             <div className="absolute -bottom-10 -left-10 p-10 bg-primary rounded-[3rem] shadow-3xl hidden md:block">
