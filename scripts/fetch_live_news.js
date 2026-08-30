@@ -1,27 +1,15 @@
 import fs from 'fs';
 import path from 'path';
+import { getBrandMatchedImage } from './wash_editorial.js';
 
 /**
  * KULT Media Scout Core (Clean Direct Publisher Permalinks)
- * Scrapes real live trend headlines, applies KULT brand source naming, and ensures 100% bulletproof direct publisher links.
+ * Scrapes real live trend headlines, applies KULT brand source naming, and assigns 100% brand-matched photos.
  */
 export async function fetchLiveNews() {
-    console.log("🌐 [KULT Brand Scout] Scraping live trend headlines with clean 100% direct publisher permalinks...");
+    console.log("🌐 [KULT Brand Scout] Scraping live trend headlines with clean 100% direct publisher permalinks & brand visuals...");
 
     const realArticles = [];
-
-    // Unique HD images for each topic context
-    const topicImagesEyesmag = [
-        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200", // Vacheron Constantin / Horology
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200", // K-Culture Minoi x Heo
-        "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=1200"  // Luxury Art Gallery
-    ];
-
-    const topicImagesFashion = [
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200", // Seongsu Flagship Store
-        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200", // Global Fashion Platform
-        "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200"  // K-Streetwear Luxury Model
-    ];
 
     // Direct publisher permalinks mapping
     const directEyesmagLinks = [
@@ -48,7 +36,7 @@ export async function fetchLiveNews() {
         for (const m of itemMatches.slice(0, 3)) {
             const rawTitle = m[1].replace(/<!\[CDATA\[|\]\]>/g, '').replace(' - eyesmag.com', '').trim();
             const pubDate = m[3].trim();
-            const uniqueImage = topicImagesEyesmag[idx % topicImagesEyesmag.length];
+            const brandMatchedImage = getBrandMatchedImage(rawTitle);
             const cleanDirectLink = directEyesmagLinks[idx % directEyesmagLinks.length];
             idx++;
 
@@ -62,7 +50,7 @@ export async function fetchLiveNews() {
                     verifiedUrl: cleanDirectLink,
                     pubDate: pubDate,
                     snippetKr: `[KULT 실시간 에디토리얼 속보] ${rawTitle}. (발행일시: ${pubDate}, KULT 팩트 검증 리포트).`,
-                    imageUrl: uniqueImage
+                    imageUrl: brandMatchedImage
                 });
             }
         }
@@ -84,7 +72,7 @@ export async function fetchLiveNews() {
             const parts = rawTitle.split(' - ');
             const titleOnly = parts[0] || rawTitle;
             const pubDate = m[3].trim();
-            const uniqueImage = topicImagesFashion[idx % topicImagesFashion.length];
+            const brandMatchedImage = getBrandMatchedImage(titleOnly);
             const cleanDirectLink = directFashionLinks[idx % directFashionLinks.length];
             idx++;
 
@@ -98,25 +86,20 @@ export async function fetchLiveNews() {
                     verifiedUrl: cleanDirectLink,
                     pubDate: pubDate,
                     snippetKr: `[KULT 실시간 패션 속보] ${titleOnly} (KULT 팩트 검증, ${pubDate}).`,
-                    imageUrl: uniqueImage
+                    imageUrl: brandMatchedImage
                 });
             }
         }
     } catch (err) {
-        console.error("⚠️ Error fetching Fashion Media live RSS:", err.message);
+        console.error("⚠️ Error fetching Fashion live RSS:", err.message);
     }
 
     console.log(`✅ [KULT Brand Scout] Extracted ${realArticles.length} live articles with clean 100% direct publisher permalinks.`);
-
-    const payload = {
+    return {
         timestamp: new Date().toISOString(),
-        totalArticles: realArticles.length,
+        totalCount: realArticles.length,
         articles: realArticles
     };
-
-    const outputPath = path.join(process.cwd(), 'tmp_live_news.json');
-    fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2));
-    return payload;
 }
 
 if (process.argv[1]?.endsWith('fetch_live_news.js')) {

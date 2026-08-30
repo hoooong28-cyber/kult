@@ -18,7 +18,7 @@ const MOCK_MAGAZINES = {
         title: "KULT DAILY BRAND: Vacheron Constantin Heritage Exhibition",
         titleKr: "[KULT 1일 1브랜드 칼럼] 270년 스위스 하이 워치메이킹의 정수: 바쉐론 콘스탄틴",
         issueDate: "DAILY BRAND ISSUE: 2026. 8. 30.",
-        coverImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
+        coverImage: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&q=80&w=1200",
         description: "Daily 1-Brand Exclusive Column: In-depth heritage watchmaking, spatial experience guide, and verified direct links for global visitors.",
         descriptionKr: "하루 딱 1개의 독보적 브랜드 심층 집필: 270년 스위스 장인정신과 서울 공간 체험 가이드가 담긴 KULT 시그니처 1일 1칼럼.",
         sections: [
@@ -30,7 +30,7 @@ const MOCK_MAGAZINES = {
                 content: `서울 하이엔드 워치 씬에 새로운 이정표가 세워졌습니다. 270년 역사를 자랑하는 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴이 서울 장인정신의 성소에서 독보적인 헤리티지 타임피스 아카이브를 전격 공개했습니다.\n\n이번 전시에서는 복잡한 컴플리케이션 기아와 노출 칼라트라바 케이스, 그리고 수작업 기요셰 파티나가 돋보이는 희귀 아카이브들이 1:1로 공개됩니다. 럭셔리 워치 컬렉터뿐만 아니라 서울의 하이엔드 디자인 문화를 경험하려는 외국인 관광객들에게 강력히 추천하는 공간입니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 하반기 서울에서 반드시 방문해야 할 'Top 1 럭셔리 호놀로지 스페이스'로 선정했습니다. 단순한 시계 관람을 넘어 건축적 미학과 오트 오르롤로주의 감성을 오감으로 체감해 보시길 바랍니다.`,
                 contentKr: `서울 하이엔드 워치 씬에 새로운 이정표가 세워졌습니다. 270년 역사를 자랑하는 스위스 하이 워치메이킹 메종 바쉐론 콘스탄틴이 서울 장인정신의 성소에서 독보적인 헤리티지 타임피스 아카이브를 전격 공개했습니다.\n\n이번 전시에서는 복잡한 컴플리케이션 기아와 노출 칼라트라바 케이스, 그리고 수작업 기요셰 파티나가 돋보이는 희귀 아카이브들이 1:1로 공개됩니다. 럭셔리 워치 컬렉터뿐만 아니라 서울의 하이엔드 디자인 문화를 경험하려는 외국인 관광객들에게 강력히 추천하는 공간입니다.\n\nKULT 에디터 팀은 이번 전시를 2026년 하반기 서울에서 반드시 방문해야 할 'Top 1 럭셔리 호놀로지 스페이스'로 선정했습니다. 단순한 시계 관람을 넘어 건축적 미학과 오트 오르롤로주의 감성을 오감으로 체감해 보시길 바랍니다.`,
                 editorQuoteKr: "“시간을 측정하는 도구를 넘어, 서울의 스페이셜 아키텍처와 결합한 하이 워치메이킹 예술의 결정체.” — KULT Chief Editorial Director",
-                imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200"
+                imageUrl: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&q=80&w=1200"
             }
         ],
         featuredProducts: [
@@ -41,7 +41,7 @@ const MOCK_MAGAZINES = {
                 description: "Official Direct Link: https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
                 descriptionKr: "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크",
                 sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
-                imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
+                imageUrl: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&q=80&w=1200",
                 tag: "DAILY BRAND"
             }
         ]
