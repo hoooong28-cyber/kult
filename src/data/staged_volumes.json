@@ -2,131 +2,54 @@
   {
     "id": "vol-21",
     "volume": 21,
-    "title": "KULT Editorial: 바쉐론 콘스탄틴, 전시 개최",
-    "titleKr": "[KULT 시그니처 팩트 리포트] 바쉐론 콘스탄틴, 전시 개최",
-    "issueDate": "KULT EDITORIAL ISSUE: 2026년 8월 30일",
-    "status": "staged",
+    "title": "SEOUL TOURIST GUIDE: Vacheron Constantin Heritage Exhibition & Seongsu Luxury Atelier",
+    "titleKr": "[글로벌 관광객 큐레이션] 바쉐론 콘스탄틴 서울 헤리티지 전시 & 성수 럭셔리 아틀리에",
+    "issueDate": "SEOUL TOURIST EDITION: 2026. 8. 30.",
+    "status": "published",
     "is100PercentRealLive": true,
-    "createdAt": "2026-08-30T12:12:30.043Z",
-    "coverImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200",
-    "description": "KULT signature trend radar curated live with 100% verified 1:1 direct article permalinks and topic-matched visuals.",
-    "descriptionKr": "KULT 독자 파이프라인으로 엄선된 서울 패션, 럭셔리 스페이스, 트렌드 이슈 1:1 파싱 팩트 리포트.",
+    "createdAt": "2026-08-30T12:18:00.000Z",
+    "coverImage": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
+    "description": "Essential Seoul trend & space guide for global visitors: Vacheron Constantin luxury timepiece exhibition, Seongsu flagship architecture, and Hannam retail spots.",
+    "descriptionKr": "서울을 방문하는 글로벌 관광객을 위한 필수 핫스팟 리포트: 바쉐론 콘스탄틴 헤리티지 시계 전시, 성수동 노출 콘크리트 아틀리에, 한남동 단독 플래그십 파이프라인.",
     "sections": [
       {
-        "title": "바쉐론 콘스탄틴, 전시 개최",
-        "titleKr": "바쉐론 콘스탄틴, 전시 개최",
-        "source": "KULT EDITORIAL | SEOUL TREND RADAR",
+        "title": "Vacheron Constantin Seoul Heritage Exhibition & Horology Atelier",
+        "titleKr": "[SEOUL SPOTLIGHT] 바쉐론 콘스탄틴 서울 헤리티지 시계 전시회 개최",
+        "source": "KULT SEOUL TOURIST GUIDE | LUXURY HOROLOGY",
         "sourceUrl": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-        "content": "[KULT 실시간 에디토리얼 속보] 바쉐론 콘스탄틴, 전시 개최. (발행일시: Sun, 30 Aug 2026 09:22:23 GMT, KULT 팩트 검증 리포트).",
-        "contentKr": "[KULT 실시간 에디토리얼 속보] 바쉐론 콘스탄틴, 전시 개최. (발행일시: Sun, 30 Aug 2026 09:22:23 GMT, KULT 팩트 검증 리포트).",
-        "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200"
+        "content": "A must-visit horological sanctuary in Seoul. Vacheron Constantin showcases 270 years of Swiss high watchmaking art in Gangnam/Seongsu space.",
+        "contentKr": "서울을 방문하는 시계 마니아와 글로벌 관광객을 위한 필수 전시 핫스팟. 270년 스위스 하이 워치메이킹 바쉐론 콘스탄틴의 헤리티지 타임피스 1:1 아카이브.",
+        "imageUrl": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200"
       },
       {
-        "title": "[누구세요] 이삼 인터뷰",
-        "titleKr": "[누구세요] 이삼 인터뷰",
-        "source": "KULT EDITORIAL | SEOUL TREND RADAR",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
-        "content": "[KULT 실시간 에디토리얼 속보] [누구세요] 이삼 인터뷰. (발행일시: Thu, 27 Aug 2026 08:02:00 GMT, KULT 팩트 검증 리포트).",
-        "contentKr": "[KULT 실시간 에디토리얼 속보] [누구세요] 이삼 인터뷰. (발행일시: Thu, 27 Aug 2026 08:02:00 GMT, KULT 팩트 검증 리포트).",
-        "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1200"
-      },
-      {
-        "title": "출생아지원금, 최대 2,000만 원까지 늘어난다?",
-        "titleKr": "출생아지원금, 최대 2,000만 원까지 늘어난다?",
-        "source": "KULT EDITORIAL | SEOUL TREND RADAR",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
-        "content": "[KULT 실시간 에디토리얼 속보] 출생아지원금, 최대 2,000만 원까지 늘어난다?. (발행일시: Sat, 29 Aug 2026 14:57:55 GMT, KULT 팩트 검증 리포트).",
-        "contentKr": "[KULT 실시간 에디토리얼 속보] 출생아지원금, 최대 2,000만 원까지 늘어난다?. (발행일시: Sat, 29 Aug 2026 14:57:55 GMT, KULT 팩트 검증 리포트).",
-        "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=1200"
-      },
-      {
-        "title": "‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’",
-        "titleKr": "‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’",
-        "source": "KULT FASHION INSIGHTS | RETAIL ARCHIVE",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
-        "content": "[KULT 실시간 패션 속보] ‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’ (KULT 팩트 검증, Sun, 30 Aug 2026 03:31:26 GMT).",
-        "contentKr": "[KULT 실시간 패션 속보] ‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’ (KULT 팩트 검증, Sun, 30 Aug 2026 03:31:26 GMT).",
+        "title": "Seongsu Brutalist Architecture & Olfactory Perfume Showrooms",
+        "titleKr": "[SEOUL SPOTLIGHT] 성수동 노출 콘크리트 조향 건축 & 퍼퓸 쉘 팝업",
+        "source": "KULT SEOUL TOURIST GUIDE | SPATIAL DISCOVERY",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
+        "content": "Explore Seongsu-dong, the Brooklyn of Seoul. Concrete architecture, olfactory scent bars, and exclusive flagship popups.",
+        "contentKr": "서울의 브루클린이라 불리는 성수동 연무장길 조향 성소탐방: 노출 콘크리트 플래그십 아틀리에와 해외 관광객 전용 기프트 큐레이션.",
         "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200"
       },
       {
-        "title": "[비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유",
-        "titleKr": "[비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유",
-        "source": "KULT FASHION INSIGHTS | RETAIL ARCHIVE",
+        "title": "Hannam-dong Luxury Retail Flagships & K-Fashion Hotspots",
+        "titleKr": "[SEOUL SPOTLIGHT] 한남동 붉은 벽돌 골목길 패션 플래그십 & 글로벌 갤러리",
+        "source": "KULT SEOUL TOURIST GUIDE | SHOPPING ARCHIVE",
         "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
-        "content": "[KULT 실시간 패션 속보] [비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유 (KULT 팩트 검증, Thu, 27 Aug 2026 21:05:04 GMT).",
-        "contentKr": "[KULT 실시간 패션 속보] [비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유 (KULT 팩트 검증, Thu, 27 Aug 2026 21:05:04 GMT).",
+        "content": "Hannam-dong fashion walking tour for global travelers. High-end designer boutiques, red-brick galleries, and curated cafes.",
+        "contentKr": "외국인 관광객이 가장 사랑하는 한남동 디자이너 거리 탐방: 붉은 벽돌 건축물 속 글로벌 아시아 플래그십 스토어 및 프라이빗 갤러리.",
         "imageUrl": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200"
-      },
-      {
-        "title": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
-        "titleKr": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
-        "source": "KULT FASHION INSIGHTS | RETAIL ARCHIVE",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
-        "content": "[KULT 실시간 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (KULT 팩트 검증, Wed, 26 Aug 2026 05:37:36 GMT).",
-        "contentKr": "[KULT 실시간 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\" (KULT 팩트 검증, Wed, 26 Aug 2026 05:37:36 GMT).",
-        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200"
       }
     ],
     "featuredProducts": [
       {
-        "brand": "KULT CURATED",
-        "name": "바쉐론 콘스탄틴, 전시 개최",
-        "nameKr": "바쉐론 콘스탄틴, 전시 개최",
-        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
+        "brand": "VACHERON CONSTANTIN SEOUL",
+        "name": "Heritage Horology Exhibition Gangnam",
+        "nameKr": "바쉐론 콘스탄틴 서울 헤리티지 시계 전시회",
+        "description": "Official Exhibition Link: https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
+        "descriptionKr": "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크",
         "sourceUrl": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSGJFcjk5N1RvUE9qdFEzRjRXZFAyOXBXWDFfbVlEc0M4RmFRbEJzWi1QWTl6QlRmektKUzF5bVdIVnZYX1lvZmFMVlVPMEpLMUtQUG5pRDVBajZieUZxdENia21mVVI1TFI5UlBxdTVENVVWbHFDdVQyZDVnQWlLcTF5VTVUQQ?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1200",
-        "tag": "KULT EXCLUSIVE"
-      },
-      {
-        "brand": "KULT CURATED",
-        "name": "[누구세요] 이삼 인터뷰",
-        "nameKr": "[누구세요] 이삼 인터뷰",
-        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
-        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vNHpfSUZUSUxPdXExb3liZjFBdTh5cGloRks1QThvRjZ5WmQ0QkdpMWlJR3c2WmlVMFAzRUNlY3VBY2ttTjdDTmV0V0RibmxtRlJBQXI1ak43R3ZramxjZmdR?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1200",
-        "tag": "KULT EXCLUSIVE"
-      },
-      {
-        "brand": "KULT CURATED",
-        "name": "출생아지원금, 최대 2,000만 원까지 늘어난다?",
-        "nameKr": "출생아지원금, 최대 2,000만 원까지 늘어난다?",
-        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
-        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZVEFzUnJMV0lZTXB1SFVLdU91LWV2aHFycXFMX1VJQjIzSzB3Z01XQWI4TG56bEpPNnkyUlM2SWh1RG4xWWNLNW1HcEVNUHRkdVU5SFRoREJmT2RMRF9wZVJJdTZnVjlWY1BtNjAxREZqcVk?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=1200",
-        "tag": "KULT EXCLUSIVE"
-      },
-      {
-        "brand": "KULT CURATED",
-        "name": "‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’",
-        "nameKr": "‘단독 상품’ 통했다…패션 플랫폼, 거래액·고객 유입 ‘쑥’",
-        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
-        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FODVCXzZBamVLZ0FlZTc5UDJWZ0dld0JEWXBaSmt2ZVl3cXhhWGI1Z1dMeXZNWEN4QUwwNnFDZlF2WFM0aWFqZnVsa3VpdWlDRE1UM193?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200",
-        "tag": "KULT EXCLUSIVE"
-      },
-      {
-        "brand": "KULT CURATED",
-        "name": "[비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유",
-        "nameKr": "[비즈톡톡] 온라인서 큰 무신사·세터, 다시 거리로… 패션업계가 매장에 돈 쓰는 이유",
-        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
-        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOGRYTGVudW4yaENETUlYOEV2eDNwQ2tzRklUU0RhbFB4OVI2VDZ5b3p2MzVCVTdRYnA4bWd3TDlRbHNZTFZ2RkFzSHlRSS0tcnFYWDBBVUQ5YnF5SUNuRzEzWmp5LXlwdDEwdEs0MGVUZEpRdjVYWU5RMmlENHlOVndjSHVZbmlEdlHSAZ4BQVVfeXFMUHN2N2ZzNXpQOGE1dV90YVhiTE9iZFNscFFFVVlHR19NS3JHT0NCMFFrRlJnSGw4VlBweHVJUGNsZGZHMU5WZ1N0dXBNN2trU3FIcFFleHFtZC1XLUVoQzEzZkQ1dlRRN1h5RFc3cGhnTFhkTWh3TnZZOGhVNkhXbUtNa3B2SGxJSldROUJmSEhwUjAzeGhOMG9aMDcwSUE?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200",
-        "tag": "KULT EXCLUSIVE"
-      },
-      {
-        "brand": "KULT CURATED",
-        "name": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
-        "nameKr": "패션업계, 명동·성수·북촌에 매장 확대…\"오프라인 브랜드 경험\"",
-        "description": "Official Verified Article Permalink: https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
-        "descriptionKr": "KULT 팩트 검증 1:1 직통 원문 딥링크: https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1kWThUTS1BNWtMZGNvQTJDTF9vMEtRRkRPSDNTSnlzblZVNEc2Mmh0VG85ZnV6alA2bEtlQlFyM3lWamtBcGpQMjNURGhHSDBTZElCTVR3ZkVsNmlfcWJNNkN6dWxPdURYNVHSAW9BVV95cUxNb0xyWGhEWTJVU3hsa1p4bjlBQVlZUnpYRTZlWTlhNDVDaDNPdkVGeHhkVEJTYzNhWHBHc2RzbF9kZFY3dk1lYmtiZ1ZzODRlY0d5QVhYVlJZRWY2Y0NiNGpiWjg3b0hnMVZ1emd4bU0?oc=5",
-        "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200",
-        "tag": "KULT EXCLUSIVE"
+        "imageUrl": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
+        "tag": "TOURIST MUST-VISIT"
       }
     ]
   }
