@@ -3,12 +3,12 @@ import path from 'path';
 import { fetchLiveNews } from './fetch_live_news.js';
 
 /**
- * KULT News-to-Volume Converter (Individual Article Direct Link Edition)
- * Converts live published headlines into Volume 16 with exact 1:1 individual article permalink URLs.
+ * KULT Weekly Editorial Volume Converter
+ * Converts real-time live published news into KULT Weekly Issue Volume 20.
  */
 export async function convertNewsToVolume() {
     const newsPayload = await fetchLiveNews();
-    console.log("🎨 [KULT News Converter] Mapping live published headlines to 1:1 individual article direct links...");
+    console.log("🎨 [KULT Weekly Converter] Compiling weekly editorial volume from Eyesmag & Daily Fashion News...");
 
     const archivePath = path.join(process.cwd(), 'src/data/staged_volumes.json');
     const articles = newsPayload.articles;
@@ -19,19 +19,20 @@ export async function convertNewsToVolume() {
     }
 
     const leadArticle = articles[0];
+    const todayStr = new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
 
     const newVolume = {
-        id: "vol-16",
-        volume: 16,
-        title: `Direct Article Permalinks: ${leadArticle.headlineKr}`,
-        titleKr: `[1:1 개별 기사 직통 연결] ${leadArticle.headlineKr}`,
-        issueDate: `ARTICLE PERMALINK: ${new Date().toLocaleDateString('ko-KR')}`,
+        id: "vol-20",
+        volume: 20,
+        title: `KULT Weekly Issue: ${leadArticle.headlineKr}`,
+        titleKr: `[주간 KULT 팩트 뉴스] ${leadArticle.headlineKr}`,
+        issueDate: `WEEKLY ISSUE: ${todayStr}`,
         status: 'staged',
         is100PercentRealLive: true,
         createdAt: new Date().toISOString(),
         coverImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
-        description: `100% Direct individual article permalinks for every headline. Ready for Meta Graph API integration.`,
-        descriptionKr: `각 기사 제목마다 해당 팩트 보도 개별 기사 원문 직통 딥링크 1:1 파싱 탑재. (조만간 Meta API 토큰 연동 예정).`,
+        description: `Weekly curated trend report scouted live from @eyesmag & @dailyfashion_news official channels.`,
+        descriptionKr: `지난 일주일 간 아이즈매거진(@eyesmag) 및 데일리 패션 뉴스(@dailyfashion_news)에서 출간된 최신 트렌드 팩트 기사 종합 리포트.`,
         sections: articles.map(art => ({
             title: art.headlineKr,
             titleKr: art.headlineKr,
@@ -45,21 +46,21 @@ export async function convertNewsToVolume() {
             brand: art.channel,
             name: art.headlineKr,
             nameKr: art.headlineKr,
-            description: `Official Article Permalink: ${art.verifiedUrl}`,
-            descriptionKr: `${art.channel} 개별 기사 원문 직통 딥링크: ${art.verifiedUrl}`,
+            description: `Verified Direct Link: ${art.verifiedUrl}`,
+            descriptionKr: `${art.channel} 1:1 개별 기사 직통 원문 딥링크: ${art.verifiedUrl}`,
             sourceUrl: art.verifiedUrl,
             imageUrl: art.imageUrl,
-            tag: "ARTICLE DIRECT"
+            tag: "WEEKLY ISSUE"
         }))
     };
 
     const dir = path.dirname(archivePath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-    // Always clean replace with single Vol 16
+    // Save Vol 20 into staged_volumes.json
     fs.writeFileSync(archivePath, JSON.stringify([newVolume], null, 2));
 
-    console.log(`✨ [KULT News Converter] Successfully generated Vol. 16 with 1:1 individual article permalink URLs!`);
+    console.log(`✨ [KULT Weekly Converter] Successfully generated Vol. 20 Weekly Issue!`);
     return newVolume;
 }
 

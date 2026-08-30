@@ -12,6 +12,66 @@ import { onAuthStateChanged } from 'firebase/auth'
 import UnlockButton from '../components/UnlockButton'
 
 const MOCK_MAGAZINES = {
+    'vol-20': {
+        id: 'vol-20',
+        volume: 20,
+        title: "KULT Weekly Issue: Eyesmag & Daily Fashion News Live Radar",
+        titleKr: "주간 KULT 팩트 리포트: 아이즈매거진(@eyesmag) & 데일리 패션 뉴스",
+        issueDate: "WEEKLY ISSUE: 2026.08.30 (100% FACT VERIFIED)",
+        coverImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
+        description: "Weekly curated trend report scouted live from @eyesmag & @dailyfashion_news official channels.",
+        descriptionKr: "지난 일주일 간 아이즈매거진(@eyesmag) 및 데일리 패션 뉴스(@dailyfashion_news)에서 출간된 최신 트렌드 팩트 기사 종합 리포트.",
+        sections: [
+            {
+                title: "[72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+                titleKr: "[Eyesmag 공식 팩트 기사] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅",
+                source: "Source: Eyes Magazine (@eyesmag)",
+                sourceUrl: "https://news.google.com/rss/articles/CBMieEFVX3lxTFBrWGY2dWlxLXg5TU9VU1pOZ0hoc3ZQRkE4bXhnS1JRNnRLWWREcjhtNHNzanVSSXNXR0RBUV9la09UTDhMclRWRXNVemQyNnBZbVAxSnkzOWJkajBleHhXcFo2V2RJOVdRY29MRUNLYjd1czM2MnBzNw?oc=5",
+                content: "[Eyesmag 공식 발행 속보] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+                contentKr: "[Eyesmag 공식 발행 속보] [72분 소개팅] 미노이 x 허성범 숨 막히는 72분 소개팅. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+                imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+            },
+            {
+                title: "지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
+                titleKr: "[Eyesmag 공식 팩트 기사] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청",
+                source: "Source: Eyes Magazine (@eyesmag)",
+                sourceUrl: "https://news.google.com/rss/articles/CBMiekFVX3lxTE9sSXNLY01EWUx2WGtUTUtrdVVtaUVqZl9weUFJeFY5N0hIcGtScEVMN0Zfd0VoQm5iT2paYzZwQXdidjVZdWh3Q19ydGFPMHJRV0c5TXFSWEJBbTR4YjNEdEd1VDNhV0xpMGIycGNfUXNDdEFBZUhid3pR?oc=5",
+                content: "[Eyesmag 공식 발행 속보] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+                contentKr: "[Eyesmag 공식 발행 속보] 지드래곤, 빅뱅 20주년 공연에 독립·참전유공자 후손 초청. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+                imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+            },
+            {
+                title: "생 로랑 리브 드와, 앤디 워홀 사진전 개최",
+                titleKr: "[Eyesmag 공식 팩트 기사] 생 로랑 리브 드와, 앤디 워홀 사진전 개최",
+                source: "Source: Eyes Magazine (@eyesmag)",
+                sourceUrl: "https://news.google.com/rss/articles/CBMijgFBVV95cUxNODBtMXpoV2dTRi02bk1SMHJkb3ZTY3lCVUttRFJSbElzMkk0aG5iUnFyNjlOX3lTU2VRR1BRWGlmcVZoQkZFdXNrQ21GN05YOE1UamlvbjV4V2FMMlZRUmNMWWZRVkdkNmNoTF9QZDNvdXozX2VfaUVXRjVENmRieG9nNGxPZzJDYzhnT2xR?oc=5",
+                content: "[Eyesmag 공식 발행 속보] 생 로랑 리브 드와, 앤디 워홀 사진전 개최. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+                contentKr: "[Eyesmag 공식 발행 속보] 생 로랑 리브 드와, 앤디 워홀 사진전 개최. 아이즈매거진 공식 채널 1:1 파싱 팩트 리포트.",
+                imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200"
+            },
+            {
+                title: "패션업계, 명동·성수·북촌에 매장 확대…'오프라인 브랜드 경험'",
+                titleKr: "[Daily Fashion News 팩트 속보] 패션업계, 명동·성수·북촌에 매장 확대…'오프라인 브랜드 경험'",
+                source: "Source: Daily Fashion News (머니투데이 / @dailyfashion_news)",
+                sourceUrl: "https://news.google.com/rss/articles/CBMib0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTdIBb0FVX3lxTE1vTHJYaERZMlVTeGxrWnhuOUFBWVlSelhFNmVZOWE0NUNoM092RUZ4eGRUQlNjM2FYcEdzZHNsX2RkVjd2TWVia2JnVnM4NGVjR3lBWFhWUllFZjZjQ2I0amJaODdvSGcxVnV6Z3htTQ?oc=5",
+                content: "[Daily Fashion News 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…'오프라인 브랜드 경험'.",
+                contentKr: "[Daily Fashion News 패션 속보] 패션업계, 명동·성수·북촌에 매장 확대…'오프라인 브랜드 경험'.",
+                imageUrl: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
+            }
+        ],
+        featuredProducts: [
+            {
+                brand: "Eyes Magazine (@eyesmag)",
+                name: "[72분 소개팅] 미노이 x 허성범",
+                nameKr: "[72분 소개팅] 미노이 x 허성범",
+                description: "Verified ArticlePermalink: https://news.google.com/rss/articles/CBMieEFVX3lxTFBrWGY2dWlxLXg5TU9VU1pOZ0hoc3ZQRkE4bXhnS1JRNnRLWWREcjhtNHNzanVSSXNXR0RBUV9la09UTDhMclRWRXNVemQyNnBZbVAxSnkzOWJkajBleHhXcFo2V2RJOVdRY29MRUNLYjd1czM2MnBzNw?oc=5",
+                descriptionKr: "아이즈매거진 개별 기사 직통 딥링크",
+                sourceUrl: "https://news.google.com/rss/articles/CBMieEFVX3lxTFBrWGY2dWlxLXg5TU9VU1pOZ0hoc3ZQRkE4bXhnS1JRNnRLWWREcjhtNHNzanVSSXNXR0RBUV9la09UTDhMclRWRXNVemQyNnBZbVAxSnkzOWJkajBleHhXcFo2V2RJOVdRY29MRUNLYjd1czM2MnBzNw?oc=5",
+                imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200",
+                tag: "WEEKLY ISSUE"
+            }
+        ]
+    },
     'vol-11': {
         id: 'vol-11',
         volume: 11,
@@ -372,7 +432,7 @@ const Magazine = () => {
     const navigate = useNavigate()
     const { t } = useLanguage()
     const [magazine, setMagazine] = useState(null)
-    const [selectedVolId, setSelectedVolId] = useState('vol-16')
+    const [selectedVolId, setSelectedVolId] = useState('vol-20')
     const [loading, setLoading] = useState(true)
     const [currentUser, setCurrentUser] = useState(null)
 
@@ -386,17 +446,17 @@ const Magazine = () => {
                     const docSnap = await getDoc(doc(db, 'magazines', targetId))
                     if (docSnap.exists()) magDoc = { id: docSnap.id, ...docSnap.data() }
                 } else {
-                    magDoc = MOCK_MAGAZINES[targetId] || MOCK_MAGAZINES['vol-16']
+                    magDoc = MOCK_MAGAZINES[targetId] || MOCK_MAGAZINES['vol-20']
                 }
 
                 if (magDoc) {
                     setMagazine(magDoc)
                 } else {
-                    setMagazine(MOCK_MAGAZINES['vol-16'])
+                    setMagazine(MOCK_MAGAZINES['vol-20'])
                 }
             } catch (err) {
                 console.error("Error fetching magazine:", err)
-                setMagazine(MOCK_MAGAZINES['vol-16'])
+                setMagazine(MOCK_MAGAZINES['vol-20'])
             } finally {
                 setLoading(false)
             }
