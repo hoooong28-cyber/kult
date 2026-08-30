@@ -42,9 +42,11 @@ const MOCK_MAGAZINES = {
                 descriptionKr: "바쉐론 콘스탄틴 공식 팩트 검증 1:1 직통 딥링크",
                 sourceUrl: "https://www.eyesmag.com/posts/157947/vacheron-constantin-exhibition",
                 imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1200",
+                tag: "DAILY BRAND"
+            }
         ]
-    }
-}
+    },
+    'vol-20': {
                 titleKr: "[Daily Fashion News 팩트 속보] 패션업계, 명동·성수·북촌에 매장 확대…'오프라인 브랜드 경험'",
                 source: "Source: Daily Fashion News (@dailyfashion_news)",
                 sourceUrl: "https://www.instagram.com/dailyfashion_news/",
