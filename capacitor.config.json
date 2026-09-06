@@ -1,8 +1,0 @@
-{
-  "appId": "com.kult.app",
-  "appName": "KULT",
-  "webDir": "dist",
-  "server": {
-    "androidScheme": "https"
-  }
-}

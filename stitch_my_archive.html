@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff9ee;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#fff9ee", "on-primary": "#ffffff", "on-tertiary-container": "#bf703a", "secondary-fixed-dim": "#ffb3b0", "primary-container": "#1c1c1a", "secondary-fixed": "#ffdad8", "inverse-on-surface": "#f6f0e6", "surface-container-low": "#f9f3e9", "on-primary-fixed": "#1c1c1a", "on-secondary": "#ffffff", "primary": "#010100", "primary-fixed": "#e5e2de", "primary-fixed-dim": "#c8c6c3", "surface-tint": "#5f5e5c", "on-tertiary-fixed-variant": "#733500", "on-secondary-fixed-variant": "#7a2e2e", "surface-container-high": "#eee7dd", "secondary": "#984543", "surface-variant": "#e8e2d8", "surface-bright": "#fff9ee", "on-surface": "#1d1b15", "on-primary-fixed-variant": "#474744", "tertiary-container": "#321300", "tertiary-fixed": "#ffdbc7", "on-background": "#1d1b15", "surface-container-lowest": "#ffffff", "outline-variant": "#c8c7bf", "on-secondary-fixed": "#3f0207", "on-secondary-container": "#782c2c", "tertiary-fixed-dim": "#ffb689", "on-surface-variant": "#474741", "inverse-primary": "#c8c6c3", "on-tertiary": "#ffffff", "on-error": "#ffffff", "surface-container-highest": "#e8e2d8", "secondary-container": "#fe9693", "surface-dim": "#dfd9cf", "on-tertiary-fixed": "#311300", "tertiary": "#010000", "on-error-container": "#93000a", "outline": "#777771", "error-container": "#ffdad6", "on-primary-container": "#858481", "surface-container": "#f3ede3", "surface": "#fff9ee", "error": "#ba1a1a", "inverse-surface": "#33302a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.75rem", "margin-tablet": "2rem", "space-2xl": "4rem", "space-xl": "2.5rem", "space-3xl": "6rem", "hairline": "1px", "gutter-mobile": "1rem", "margin-desktop": "4rem", "space-lg": "1.5rem", "gutter-desktop": "2rem", "margin-mobile": "1.25rem", "space-xxs": "0.25rem", "space-xs": "0.5rem", "gutter-tablet": "1.5rem", "space-md": "1rem" }, "fontFamily": { "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-hero": ["Playfair Display"], "headline-sm": ["Playfair Display"], "headline-lg": ["Playfair Display"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "quote-editorial": ["Playfair Display"], "headline-md": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "label-caps": ["Plus Jakarta Sans"], "display-hero-mobile": ["Playfair Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "500" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "quote-editorial": ["24px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><img alt="Brand logo. - Primary color: #1c1c1a
+- Font: playfairDisplay
+- Mode: light
+- Roundness: rounded-lg
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WCspyoTbCUGaC3atO9rLFBHdLvNTqk1jcMbFglbhmXSjDoAed118_RKVEU2_0cOjGe8wD54mfSMv30YC9Ne5j04hpFnGd0E0-g0sy-ppEzFJ2ObUzSWjVN7XXu-ERAuiXXcxGgvSn_mw1t_qpS5BI53UwzH1-UkGIcAJihd_xZ1ACY41ZpcYSfGT7DkEa7WIzhaTiX030umpZynAh_8EACgytsBcNgHrIMMFIN7Fl4XplPIfJXd3Qk1iE"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight ml-space-xxs">KULT</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest pl-space-xs">Archive</span></div><div class="flex items-center gap-space-sm"><div class="flex flex-col items-end pr-space-xxs"><span class="font-headline-sm text-label-sm text-on-surface font-medium">My Archive</span><span class="font-label-caps text-label-caps text-on-surface-variant">ISSUE 04</span></div><a class="flex items-center justify-center min-w-[44px] min-h-[44px]" data-path="my-archive" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" src="https://lh3.googleusercontent.com/aida/AEtjO1Wx2zsihGE_kSL-5qiOLKit31oVUOcpDQb-93ecle7UxWVpszzsGa_m3xGTIPAfbPDuAY8aVC41ooM0LhF5H3fjO-5ZlZmsxePKElGZM1x6i8LMBXmFbwiy_tOk4DU_y5leNFLskPOio-0eZEvQBBtODNoct0AEfMGR5Rm88kJzx-vJg2W5h32u3M5kzPuXsWF3-IMZNCfLiL8fdcFODquDzV8KWvyr57ERF-zma_3Hi0e9Hl2MtCPjNw"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Issue Sub-masthead Bar -->
+<div class="w-full bg-surface-container-low px-margin-mobile py-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Seoul Archival Index</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<span class="font-label-caps text-label-caps tracking-widest">VOL. 04 / PERSPECTIVES</span>
+<span class="font-label-caps text-label-caps text-secondary font-semibold">18°C 맑음</span>
+</div>
+</div>
+<!-- Profile & Taste Identity Module -->
+<section class="px-margin-mobile pt-space-lg pb-space-md">
+<div class="bg-surface-container rounded-lg p-space-md shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="relative shrink-0">
+<img alt="송민지 (Eleanor Song)" class="w-20 h-20 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1Wx2zsihGE_kSL-5qiOLKit31oVUOcpDQb-93ecle7UxWVpszzsGa_m3xGTIPAfbPDuAY8aVC41ooM0LhF5H3fjO-5ZlZmsxePKElGZM1x6i8LMBXmFbwiy_tOk4DU_y5leNFLskPOio-0eZEvQBBtODNoct0AEfMGR5Rm88kJzx-vJg2W5h32u3M5kzPuXsWF3-IMZNCfLiL8fdcFODquDzV8KWvyr57ERF-zma_3Hi0e9Hl2MtCPjNw"/>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 bg-primary text-on-primary rounded-full flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-space-xs">
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">송민지</h1>
+<span class="font-label-md text-label-md text-on-surface-variant">Eleanor</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-tertiary-container mt-space-xxs">EDITORIAL CURATOR</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+            서울의 침묵과 조도를 기록하는 에디터. 종이와 목재 질감, 아침의 긴 그림자를 사랑합니다.
+          </p>
+</div>
+</div>
+<!-- Taste Keywords Tags -->
+<div class="mt-space-md pt-space-sm bg-surface-container-high/60 -mx-space-md px-space-md py-space-xs rounded-b-lg">
+<div class="flex flex-wrap gap-space-xs items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mr-space-xxs">TASTE AXIS</span>
+<span class="px-space-xs py-0.5 rounded bg-surface font-label-sm text-label-sm text-on-surface shadow-xs">#자연광_사색</span>
+<span class="px-space-xs py-0.5 rounded bg-surface font-label-sm text-label-sm text-on-surface shadow-xs">#미니멀_우드</span>
+<span class="px-space-xs py-0.5 rounded bg-surface font-label-sm text-label-sm text-on-surface shadow-xs">#아날로그_노트</span>
+<span class="px-space-xs py-0.5 rounded bg-surface font-label-sm text-label-sm text-on-surface shadow-xs">#필터커피</span>
+</div>
+</div>
+</div>
+<!-- Editorial Stats Mosaic -->
+<div class="grid grid-cols-3 gap-space-xs mt-space-xs">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col items-center justify-center text-center shadow-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ARCHIVED</span>
+<div class="flex items-baseline gap-space-xxs mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">48</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">곳</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant/80 mt-0.5">저장한 공간</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col items-center justify-center text-center shadow-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">LOGGED</span>
+<div class="flex items-baseline gap-space-xxs mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">29</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">편</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant/80 mt-0.5">방문 기록</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col items-center justify-center text-center shadow-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">TWINS</span>
+<div class="flex items-baseline gap-space-xxs mt-0.5">
+<span class="font-headline-md text-headline-md text-secondary">156</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">명</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant/80 mt-0.5">취향 메이트</span>
+</div>
+</div>
+</section>
+<!-- Section Segment Tab Switcher -->
+<div class="px-margin-mobile mt-space-xs sticky top-16 z-40 bg-surface/95 backdrop-blur-md pt-space-xs pb-space-sm">
+<div class="flex bg-surface-container-high p-1 rounded-lg shadow-inner">
+<button class="flex-1 py-space-xs rounded font-label-md text-label-md transition-all text-center flex items-center justify-center gap-space-xs bg-surface text-on-surface shadow-xs font-semibold" id="tab-collections" onclick="switchView('collections')">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+<span>내 아카이브 서재</span>
+</button>
+<button class="flex-1 py-space-xs rounded font-label-md text-label-md transition-all text-center flex items-center justify-center gap-space-xs text-on-surface-variant hover:text-on-surface" id="tab-twins" onclick="switchView('twins')">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+<span>테이스트 트윈 추천</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</button>
+</div>
+</div>
+<!-- VIEW 1: Collections Content Panel -->
+<div class="flex flex-col w-full px-margin-mobile space-y-space-md mt-space-xs" id="panel-collections">
+<!-- Folder Action Bar -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-tertiary-container uppercase tracking-wider">Curated Portfolios</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(3개의 테마)</span>
+</div>
+<button class="inline-flex items-center gap-space-xxs text-primary hover:text-secondary font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>새 서재 추가</span>
+</button>
+</div>
+<!-- Folder Card 1 -->
+<article class="bg-surface-container rounded-lg overflow-hidden shadow-sm flex flex-col group transition-transform active:scale-[0.99]">
+<div class="relative w-full h-44 overflow-hidden">
+<img class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" data-alt="Warm sunlight pouring into a peaceful Seoul roastery library cafe with raw exposed concrete and dark reclaimed timber tables, filled with quiet readers and open paper notebooks, atmospheric moody shadows, analog film grain aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_pb3aDa6ekEMfUoub0pBmyBfuVNGhsxnO1r4i465FasGpmmV3oaPAh_ShmA2EOcLbwd3nRQCgvl-EpQwDuHxa_CqqiSno90kDgBWen9gQcpCXCtr3fcLUMskMcax5KhaJQYwZUMOqIBL0tcUo7a1TcoB4hRDq9TPTlB1vj_T4vSaBsN4qq9khr6XyAO_gyz0CouEWjasxAkRYTw805e0bSlt_W_n8ke9tgMoyMdb7Ui-jI5bG3mkH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface/90 backdrop-blur-sm text-on-surface px-space-xs py-0.5 rounded font-label-caps text-label-caps shadow-sm">
+          14 SPACES
+        </div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm text-on-primary">
+<span class="font-label-caps text-label-caps tracking-widest text-secondary-fixed">CURATION NO. 01</span>
+<h2 class="font-headline-sm text-headline-sm text-on-primary drop-shadow-sm mt-space-xxs">혼자만의 몰입과 글쓰기</h2>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs bg-surface-container">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+          낮은 음악 소리와 따스한 필터커피 향, 사색을 방해하지 않는 고요한 좌석 배치가 마련된 14곳의 안식처.
+        </p>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">앤트러사이트 서교</span>
+<span class="text-[10px] text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">어니언 미아</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Folder Card 2 -->
+<article class="bg-surface-container rounded-lg overflow-hidden shadow-sm flex flex-col group transition-transform active:scale-[0.99]">
+<div class="relative w-full h-44 overflow-hidden">
+<img class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" data-alt="Sophisticated artisanal coffee roastery in Seongsu Seoul with industrial steel counters, warm incandescent spotlighting, rows of ceramic pour-over drippers and single origin beans, cinematic modern editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6T2f53QISfJX-fgAlXLc-nGLlrWUVBHtqIFVU0MW1t8IAlYOiOKd-aNG4q0-xpV3AXxiFor7GsU18EttjItkeWuuwGuzFMIlOHzKJduu0A2AbB8naWY1IJVash8JIXwT8jGyP_03VSYtbJiwUNewq77o6HZEMYlehCtzw26na6OpvAgtoXtNLOol3gLktN7nkVn9Q79Rj3doiiEwUbBDgZ4QoQbe3i1NCUc5ZIcu8aw40l9-S5Eha"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface/90 backdrop-blur-sm text-on-surface px-space-xs py-0.5 rounded font-label-caps text-label-caps shadow-sm">
+          19 SPACES
+        </div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm text-on-primary">
+<span class="font-label-caps text-label-caps tracking-widest text-secondary-fixed">CURATION NO. 02</span>
+<h2 class="font-headline-sm text-headline-sm text-on-primary drop-shadow-sm mt-space-xxs">성수 &amp; 한남 로스터리 투어</h2>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs bg-surface-container">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+          원두 본연의 테루아를 섬세하게 다루는 바리스타들의 작업실. 이른 오전 방문을 추천하는 리스트.
+        </p>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">로우키</span>
+<span class="text-[10px] text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">피어커피</span>
+<span class="text-[10px] text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">센터커피</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Folder Card 3 -->
+<article class="bg-surface-container rounded-lg overflow-hidden shadow-sm flex flex-col group transition-transform active:scale-[0.99]">
+<div class="relative w-full h-44 overflow-hidden">
+<img class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" data-alt="Traditional Korean Hanok courtyard tea house in Bukchon Seoul on a gentle rainy afternoon, raindrops falling from tiled Giwa roof eaves onto polished moss stones, soft natural muted lighting, calm contemplative atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwASc1DEeZClYsQxeA8YrvnCvqsqa3mLh5UgyqHw866kzA6C0w572RsygS3vJ07UaWXJ59ETNXc2q4D_Er8bzGmftI9EFU1BZ0RPjvoMC0C1iAucr62v4RpfldVs97spDMQUCL7aJ98lBTrxGZlCe70binC1k5AZav4zNCrS7f3Ocg2kv6Vld_lqw-48A1GR4uXGC5dM1AkHYf-whVfQ_eJCO0Qe6ciXwaKjsZmHGAlqSQm0CCUql8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface/90 backdrop-blur-sm text-on-surface px-space-xs py-0.5 rounded font-label-caps text-label-caps shadow-sm">
+          8 SPACES
+        </div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm text-on-primary">
+<span class="font-label-caps text-label-caps tracking-widest text-secondary-fixed">CURATION NO. 03</span>
+<h2 class="font-headline-sm text-headline-sm text-on-primary drop-shadow-sm mt-space-xxs">주말 비오는 날 생각나는 한옥</h2>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs bg-surface-container">
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+          기와 처마 끝으로 떨어지는 빗소리를 들으며 덖음 차 한 잔의 온기를 누릴 수 있는 서촌과 삼청동의 기록.
+        </p>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">이이엄</span>
+<span class="text-[10px] text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">올모스트홈 카페</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+<!-- VIEW 2: Taste Twins Recommendations Module (Always visible below or toggled smoothly) -->
+<section class="px-margin-mobile pt-space-xl pb-space-2xl" id="panel-twins">
+<!-- Editorial Section Header -->
+<div class="flex items-end justify-between mb-space-md">
+<div>
+<span class="font-label-caps text-label-caps text-on-tertiary-container uppercase tracking-widest">Aesthetic Resonance</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-space-xxs">나와 감도가 닮은 테이스트 트윈</h2>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">arrow_back_ios_new</span>
+<span class="font-label-sm text-label-sm">AI MATCH</span>
+</div>
+</div>
+<div class="space-y-space-md">
+<!-- Twin Card 1: David Vance -->
+<div class="bg-surface-container rounded-lg p-space-md shadow-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-high overflow-hidden shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Portrait of an architect David in a sleek black turtleneck holding a sketchbook, Scandinavian architectural background with soft natural window illumination, calm intellectual gaze, editorial lifestyle portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqeIpL9WI1SIZOE9RORgUKaJBHqk790PmsMnYStrbdq6ZDBkF8LhDrJjegMhFCExBAHCONCQtDgWns-2zIfbxBAyTGTLcrdmciMD4xaZox7s-KwliRqMw3nlh-zfg4knzwo9ly_J6H1c9byZTCvs-iJIzjElTt4yFHeSH8uKQvPUlA76qhSzK8CaLLoF9CCKE8YOVxG5IXABbyXTEHfBbwGwTLag0qNA7yyPSpVaBZ3h0_d-WUwyd1"/>
+</div>
+<span class="absolute -top-1 -left-1 px-1.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-caps text-[9px] font-bold shadow-xs">
+                95%
+              </span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">David Vance</h3>
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">건축가 • 3년 차 서울 거주</span>
+</div>
+</div>
+<button class="px-space-sm py-1.5 rounded bg-surface text-on-surface font-label-sm text-label-sm shadow-xs hover:bg-surface-container-high transition-colors">
+            구독하기
+          </button>
+</div>
+<!-- Resonance Quote -->
+<div class="mt-space-sm p-space-sm bg-surface rounded text-on-surface">
+<p class="font-quote-editorial text-[14px] leading-relaxed italic text-on-surface">
+            "미드센추리 가구와 밝은 채광, 벽면의 여백이 주는 침묵을 선호합니다."
+          </p>
+</div>
+<!-- Shared Taste Axis & Match Reasons -->
+<div class="mt-space-sm flex items-center justify-between text-on-surface-variant text-label-sm font-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">handshake</span>
+<span>공통 선호: <strong>미니멀 우드, 단일 원두, 높은 천장</strong></span>
+</div>
+</div>
+<!-- Direct Shortcut Link -->
+<div class="mt-space-sm pt-space-xs bg-surface-container-low p-space-xs rounded flex items-center justify-between">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-[16px] text-secondary">bookmark</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">David의 최근 저장:</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">로우키 성수 (Filter Bar)</span>
+</div>
+<a class="shrink-0 font-label-sm text-label-sm text-secondary font-medium flex items-center hover:underline pl-space-xs" href="#">
+<span>컬렉션 보기</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Twin Card 2: 최소라 -->
+<div class="bg-surface-container rounded-lg p-space-md shadow-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-high overflow-hidden shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Portrait of Korean female book curator Sora with round wireframe glasses and a cozy knit sweater standing before floor-to-ceiling bookshelves in an independent bookshop, warm tungsten light, thoughtful gentle smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLs-0NC5QpeOGcwQTldCjoBPurfSO_48DIKUrhgvGljy_JW9SvkbnA_pPgELJ-6TihHXnGWXEqtgDgT-7nPVFmRlEN7_A2cDn8RpiVKqTLIXwz3H7C9269TU3F-NyyvqVoBbBHidWUZF32qoPKor_kIpJhvIiGETB5-fW8vHVb3-tPt7KbGDE6SrR06E_bVRHHWGJgignrOePUJEjK17J_mSb_GTGnagYLOomWSeZE4D_hAe3EXdHS"/>
+</div>
+<span class="absolute -top-1 -left-1 px-1.5 py-0.5 rounded-full bg-primary text-on-primary font-label-caps text-[9px] font-bold shadow-xs">
+                92%
+              </span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">최소라</h3>
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">독립출판 편집자 • 종로구</span>
+</div>
+</div>
+<button class="px-space-sm py-1.5 rounded bg-surface text-on-surface font-label-sm text-label-sm shadow-xs hover:bg-surface-container-high transition-colors">
+            구독하기
+          </button>
+</div>
+<!-- Resonance Quote -->
+<div class="mt-space-sm p-space-sm bg-surface rounded text-on-surface">
+<p class="font-quote-editorial text-[14px] leading-relaxed italic text-on-surface">
+            "스피커에서 흘러나오는 재즈와 잉크 냄새가 섞인 조용한 책방 겸 커피바 탐색가."
+          </p>
+</div>
+<!-- Match Highlight -->
+<div class="mt-space-sm flex items-center justify-between text-on-surface-variant text-label-sm font-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">auto_stories</span>
+<span>공통 선호: <strong>종이책 서가, 저조도 조명, 핸드드립</strong></span>
+</div>
+</div>
+<!-- Action Callout -->
+<div class="mt-space-sm pt-space-xs">
+<button class="w-full py-space-xs px-space-sm rounded bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-space-xs hover:bg-secondary transition-colors shadow-xs">
+<span class="material-symbols-outlined text-[16px]">map</span>
+<span>소라의 비밀 지도 엿보기 (34곳)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Curator's Pull-Quote Module of the Week -->
+<div class="mt-space-xl p-space-lg bg-surface-container-low rounded-lg text-center shadow-xs">
+<span class="font-label-caps text-label-caps text-on-tertiary-container uppercase tracking-widest">EDITOR NOTE</span>
+<p class="font-quote-editorial text-quote-editorial text-on-surface my-space-sm leading-snug">
+        “취향이란 비슷한 조도 아래에서 머문 이들이 나누는 무언의 대화다.”
+      </p>
+<div class="flex items-center justify-center gap-space-xs">
+<span class="w-4 h-px bg-on-surface-variant/40"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">KULT Issue 04 Editorial Staff</span>
+<span class="w-4 h-px bg-on-surface-variant/40"></span>
+</div>
+</div>
+</section>
+<!-- Script for Tab Switching Micro-interaction -->
+<script>
+    function switchView(tabName) {
+      const btnCollections = document.getElementById('tab-collections');
+      const btnTwins = document.getElementById('tab-twins');
+      const panelCollections = document.getElementById('panel-collections');
+      const panelTwins = document.getElementById('panel-twins');
+
+      if (tabName === 'collections') {
+        btnCollections.className = 'flex-1 py-space-xs rounded font-label-md text-label-md transition-all text-center flex items-center justify-center gap-space-xs bg-surface text-on-surface shadow-xs font-semibold';
+        btnTwins.className = 'flex-1 py-space-xs rounded font-label-md text-label-md transition-all text-center flex items-center justify-center gap-space-xs text-on-surface-variant hover:text-on-surface';
+        
+        panelCollections.classList.remove('hidden');
+        panelCollections.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        btnTwins.className = 'flex-1 py-space-xs rounded font-label-md text-label-md transition-all text-center flex items-center justify-center gap-space-xs bg-surface text-on-surface shadow-xs font-semibold';
+        btnCollections.className = 'flex-1 py-space-xs rounded font-label-md text-label-md transition-all text-center flex items-center justify-center gap-space-xs text-on-surface-variant hover:text-on-surface';
+        
+        panelTwins.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-margin-mobile"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-space-xxs text-on-surface-variant transition-colors" data-path="map-explore" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label-sm text-label-sm tracking-tight">지도 탐색</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-space-xxs text-on-surface-variant transition-colors" data-path="curated-feed" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm tracking-tight">공간 피드</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-space-xxs text-on-surface-variant transition-colors" data-path="taste-twins" href="#"><span class="material-symbols-outlined text-[22px]">group_work</span><span class="font-label-sm text-label-sm tracking-tight">취향 메이트</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-space-xxs transition-colors text-primary font-bold" data-path="my-archive" href="#"><span class="material-symbols-outlined text-[22px]">bookmark</span><span class="font-label-sm text-label-sm tracking-tight">내 서재</span></a></div></nav></body></html>

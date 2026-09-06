@@ -1,0 +1,80 @@
+{
+  "curator": {
+    "id": "founder",
+    "display_name": "KULT Founder & Curator",
+    "identity_tag": "성수동 브런치 & 작업형 카페 매니아",
+    "bio": "서울 거주 5년차, 성수동과 서울숲 골목 구석구석의 조용한 작업 공간과 에스프레소 바를 직접 탐방하고 큐레이션합니다.",
+    "source_list_url": "https://map.naver.com",
+    "instagram_or_link": "https://instagram.com/kult_magazine",
+    "status": "active",
+    "joined_date": "2026-09-01"
+  },
+  "cafes": [
+    {
+      "id": "cuco-seongsu",
+      "name": "Cuco",
+      "name_local": "쿠코 성수",
+      "neighborhood": "Seongsu",
+      "address": "서울 성동구 아차산로11길 12 진일빌딩 1층",
+      "lat": 37.5451,
+      "lng": 127.0583,
+      "tags": {
+        "wifi": true,
+        "outlet_availability": "many",
+        "noise_level": "quiet",
+        "kid_free_zone": false,
+        "english_menu": true,
+        "card_only": true,
+        "good_for": ["date", "solo", "work"],
+        "price_range": "$$"
+      },
+      "hours": "화요일 정기휴무, 11:00-22:00",
+      "last_verified_date": "2026-09-01",
+      "notes": "공장 개조 형태의 높은 층고와 통창. 노트북 작업하기 좋고 예약 가능한 브런치 맛집."
+    },
+    {
+      "id": "center-coffee-seoulforest",
+      "name": "Center Coffee",
+      "name_local": "센터커피 서울숲점",
+      "neighborhood": "Seoul Forest",
+      "address": "서울 성동구 서울숲2길 28-11",
+      "lat": 37.5468,
+      "lng": 127.0422,
+      "tags": {
+        "wifi": true,
+        "outlet_availability": "few",
+        "noise_level": "moderate",
+        "kid_free_zone": false,
+        "english_menu": true,
+        "card_only": true,
+        "good_for": ["coffee", "date", "solo"],
+        "price_range": "$$"
+      },
+      "hours": "매일 10:00-21:00",
+      "last_verified_date": "2026-09-02",
+      "notes": "서울숲 공원 조망권이 훌륭한 하이엔드 필터 커피 전문점. 바리스타들의 친절한 메뉴 설명."
+    },
+    {
+      "id": "lowkey-seongsu",
+      "name": "Lowkey",
+      "name_local": "로우키 성수",
+      "neighborhood": "Seongsu",
+      "address": "서울 성동구 연무장3길 6",
+      "lat": 37.5432,
+      "lng": 127.0520,
+      "tags": {
+        "wifi": true,
+        "outlet_availability": "many",
+        "noise_level": "quiet",
+        "kid_free_zone": false,
+        "english_menu": true,
+        "card_only": true,
+        "good_for": ["work", "solo"],
+        "price_range": "$$"
+      },
+      "hours": "매일 10:00-20:00",
+      "last_verified_date": "2026-09-03",
+      "notes": "아늑한 지하 작업 공간과 스페셜티 원두 픽스쳐. 혼자 집중해서 글쓰거나 작업하기에 최적."
+    }
+  ]
+}
