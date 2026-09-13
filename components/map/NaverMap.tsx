@@ -39,25 +39,50 @@ export default function NaverMap({
       return;
     }
 
-    if (!clientId) {
+    if (!clientId || clientId === 'your_naver_map_client_id') {
       setMapError(true);
       return;
     }
 
+    // Intercept Naver Map alert box if authentication fails
+    const originalAlert = window.alert;
+    window.alert = (msg?: any) => {
+      if (typeof msg === 'string' && msg.includes('네이버 지도')) {
+        console.warn('Naver Map Auth Warning suppressed:', msg);
+        setMapError(true);
+        return;
+      }
+      originalAlert(msg);
+    };
+
     const script = document.createElement('script');
-    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${clientId}`;
+    // Try ncpClientId parameter for Naver Cloud Platform API v3
+    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${clientId}&submodules=geocoding`;
     script.async = true;
-    script.onload = () => setMapLoaded(true);
-    script.onerror = () => setMapError(true);
+    script.onload = () => {
+      window.alert = originalAlert;
+      setMapLoaded(true);
+    };
+    script.onerror = () => {
+      window.alert = originalAlert;
+      setMapError(true);
+    };
     document.head.appendChild(script);
 
-    return () => {};
+    return () => {
+      window.alert = originalAlert;
+    };
   }, []);
 
   useEffect(() => {
     if (!mapLoaded || mapError || !mapContainerRef.current || cafes.length === 0) return;
 
     try {
+      if (!window.naver || !window.naver.maps) {
+        setMapError(true);
+        return;
+      }
+
       const defaultCenter = new window.naver.maps.LatLng(
         cafes[0].lat || 37.5445,
         cafes[0].lng || 127.0560
