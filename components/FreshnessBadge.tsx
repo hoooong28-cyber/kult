@@ -10,30 +10,27 @@ interface FreshnessBadgeProps {
 }
 
 export default function FreshnessBadge({
-  monthsAgo,
   isStale,
   badgeLabel,
   className = '',
 }: FreshnessBadgeProps) {
   if (isStale) {
-    // Faded badge for 3+ months stale verification
     return (
       <span
-        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-stone-800/60 text-stone-400 border border-stone-700/50 opacity-80 ${className}`}
+        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-[#f6f3ef] text-[#706F6C] border border-[#e5e2de] ${className}`}
         title="Verified over 3 months ago. Information may have changed."
       >
-        <AlertCircle className="w-3.5 h-3.5 text-amber-500/80" />
+        <AlertCircle className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>{badgeLabel}</span>
       </span>
     );
   }
 
-  // Fresh verification badge (< 3 months)
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-[#e6f4ea] text-[#137333] border border-[#ceead6] ${className}`}
     >
-      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+      <ShieldCheck className="w-3.5 h-3.5 text-[#137333]" />
       <span>{badgeLabel}</span>
     </span>
   );

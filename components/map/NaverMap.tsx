@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { CuratedCafe } from '@/lib/types';
-import { MapPin, Navigation, ExternalLink } from 'lucide-react';
+import { MapPin, ExternalLink } from 'lucide-react';
 
 interface NaverMapProps {
   cafes: CuratedCafe[];
@@ -31,7 +31,6 @@ export default function NaverMap({
   const [mapLoaded, setMapLoaded] = useState(false);
   const [mapError, setMapError] = useState(false);
 
-  // Load Naver Map Script dynamically
   useEffect(() => {
     const clientId = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID;
 
@@ -41,7 +40,6 @@ export default function NaverMap({
     }
 
     if (!clientId) {
-      // If no API client ID is configured, fallback to custom map UI mode
       setMapError(true);
       return;
     }
@@ -53,12 +51,9 @@ export default function NaverMap({
     script.onerror = () => setMapError(true);
     document.head.appendChild(script);
 
-    return () => {
-      // cleanup if unmounted before script load
-    };
+    return () => {};
   }, []);
 
-  // Initialize Naver Map instance when script is ready
   useEffect(() => {
     if (!mapLoaded || mapError || !mapContainerRef.current || cafes.length === 0) return;
 
@@ -81,13 +76,11 @@ export default function NaverMap({
       const map = new window.naver.maps.Map(mapContainerRef.current, mapOptions);
       mapInstanceRef.current = map;
 
-      // Clear old markers
       markersRef.current.forEach((marker) => marker.setMap(null));
       markersRef.current.clear();
 
       const bounds = new window.naver.maps.LatLngBounds();
 
-      // Create Markers
       cafes.forEach((cafe) => {
         if (!cafe.lat || !cafe.lng) return;
 
@@ -100,10 +93,10 @@ export default function NaverMap({
           title: cafe.name,
           icon: {
             content: `
-              <div class="cursor-pointer transition-transform transform hover:scale-110 flex items-center gap-1.5 px-2.5 py-1.5 bg-stone-900 text-stone-100 text-xs font-semibold rounded-full shadow-md border ${
-                selectedCafeId === cafe.id ? 'border-amber-400 ring-2 ring-amber-400/50 bg-amber-900 text-white' : 'border-stone-700'
+              <div class="cursor-pointer transition-transform transform hover:scale-105 flex items-center gap-1.5 px-3 py-1.5 bg-[#1c1c1a] text-[#fcf9f5] text-xs font-semibold rounded-full shadow-sm border ${
+                selectedCafeId === cafe.id ? 'border-[#bf703a] ring-2 ring-[#bf703a]/40 bg-[#1c1c1a]' : 'border-[#e5e2de]'
               }">
-                <span class="w-2 h-2 rounded-full ${cafe.freshness.is_stale ? 'bg-amber-500' : 'bg-emerald-400'}"></span>
+                <span class="w-2 h-2 rounded-full ${cafe.freshness.is_stale ? 'bg-[#bf703a]' : 'bg-[#137333]'}"></span>
                 <span>${cafe.name}</span>
               </div>
             `,
@@ -122,12 +115,11 @@ export default function NaverMap({
         map.panToBounds(bounds);
       }
     } catch (e) {
-      console.warn('Naver map init error, falling back to map preview:', e);
+      console.warn('Naver map init error, falling back to preview:', e);
       setMapError(true);
     }
   }, [mapLoaded, mapError, cafes, selectedCafeId, onSelectCafe]);
 
-  // Pan to selected cafe when selectedCafeId changes
   useEffect(() => {
     if (!mapInstanceRef.current || !selectedCafeId) return;
 
@@ -139,35 +131,32 @@ export default function NaverMap({
     }
   }, [selectedCafeId, cafes]);
 
-  // Fallback Interactive Map View if script error or API Key missing
   if (mapError || !mapLoaded) {
     return (
       <div
-        className={`relative w-full rounded-2xl bg-stone-900 border border-stone-800 p-6 flex flex-col justify-between overflow-hidden shadow-inner ${className}`}
+        className={`relative w-full rounded-2xl bg-[#ffffff] border border-[#e5e2de] p-6 flex flex-col justify-between overflow-hidden shadow-xs ${className}`}
         style={{ height }}
       >
-        {/* Subtle grid pattern background */}
         <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
+          className="absolute inset-0 opacity-15 pointer-events-none"
           style={{
-            backgroundImage: `radial-gradient(#e7e5e4 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(#706F6C 1px, transparent 1px)`,
             backgroundSize: '24px 24px',
           }}
         />
 
         <div className="relative z-10 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-amber-400" />
-            <span className="text-sm font-semibold text-stone-200 uppercase tracking-wider">
-              NAVER Map Interactive View ({cafes.length} Cafes)
+            <MapPin className="w-5 h-5 text-[#bf703a]" />
+            <span className="text-xs font-mono font-semibold text-[#1c1c1a] uppercase tracking-wider">
+              NAVER Map Interactive View ({cafes.length} Spots)
             </span>
           </div>
-          <span className="text-xs px-2.5 py-1 rounded-full bg-stone-800 text-stone-400 border border-stone-700">
+          <span className="text-xs px-2.5 py-1 rounded-full bg-[#f6f3ef] text-[#5e5e5d] border border-[#e5e2de] font-mono">
             {cafes[0]?.neighborhood || 'Seoul'}
           </span>
         </div>
 
-        {/* Interactive marker pills */}
         <div className="relative z-10 my-auto py-4 flex flex-wrap gap-3 justify-center items-center">
           {cafes.map((cafe) => {
             const isSelected = selectedCafeId === cafe.id;
@@ -177,23 +166,23 @@ export default function NaverMap({
                 onClick={() => onSelectCafe && onSelectCafe(cafe.id)}
                 className={`group flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${
                   isSelected
-                    ? 'bg-amber-400 text-stone-950 border-amber-300 ring-2 ring-amber-400/30 scale-105 shadow-lg'
-                    : 'bg-stone-850 hover:bg-stone-800 text-stone-200 border-stone-700'
+                    ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a] ring-2 ring-[#1c1c1a]/20 scale-105 shadow-sm font-semibold'
+                    : 'bg-[#f6f3ef] hover:bg-[#eae6df] text-[#1c1c1a] border-[#e5e2de]'
                 }`}
               >
                 <span
                   className={`w-2 h-2 rounded-full ${
-                    cafe.freshness.is_stale ? 'bg-amber-500' : 'bg-emerald-400'
+                    cafe.freshness.is_stale ? 'bg-[#bf703a]' : 'bg-[#137333]'
                   }`}
                 />
                 <span>{cafe.name}</span>
-                <span className="text-xs opacity-75">({cafe.name_local})</span>
+                <span className="text-xs opacity-75 font-mono">({cafe.name_local})</span>
               </button>
             );
           })}
         </div>
 
-        <div className="relative z-10 flex items-center justify-between text-xs text-stone-400 border-t border-stone-800/80 pt-3">
+        <div className="relative z-10 flex items-center justify-between text-xs text-[#5e5e5d] border-t border-[#e5e2de] pt-3">
           <span>Click cafe pin to select and inspect notes</span>
           <a
             href={`https://map.naver.com/v5/search/${encodeURIComponent(
@@ -201,9 +190,9 @@ export default function NaverMap({
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-amber-400 hover:underline"
+            className="flex items-center gap-1 text-[#1c1c1a] hover:text-[#bf703a] font-mono font-semibold hover:underline"
           >
-            <span>Open Naver Map App</span>
+            <span>Open Naver Map</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>
@@ -214,7 +203,7 @@ export default function NaverMap({
   return (
     <div
       ref={mapContainerRef}
-      className={`w-full rounded-2xl overflow-hidden shadow-lg border border-stone-800 ${className}`}
+      className={`w-full rounded-2xl overflow-hidden shadow-xs border border-[#e5e2de] ${className}`}
       style={{ height }}
     />
   );

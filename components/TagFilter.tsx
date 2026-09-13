@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Wifi, Plug, Volume2, Baby, Globe, CreditCard, Laptop, Heart, User } from 'lucide-react';
-import { CafeFilterParams, NoiseLevel, OutletAvailability } from '@/lib/types';
+import { Plug, Volume2, Baby, Globe, Laptop, Heart, User } from 'lucide-react';
+import { CafeFilterParams } from '@/lib/types';
 
 interface TagFilterProps {
   filters: CafeFilterParams;
@@ -33,11 +33,11 @@ export default function TagFilter({ filters, onChange, onReset }: TagFilterProps
         }
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition-all ${
           isQuiet
-            ? 'bg-amber-400/15 text-amber-300 border-amber-400/50'
-            : 'bg-stone-900/80 hover:bg-stone-850 text-stone-300 border-stone-800'
+            ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a]'
+            : 'bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border-[#e5e2de]'
         }`}
       >
-        <Volume2 className="w-3.5 h-3.5 text-amber-400" />
+        <Volume2 className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>Quiet Noise</span>
       </button>
 
@@ -50,11 +50,11 @@ export default function TagFilter({ filters, onChange, onReset }: TagFilterProps
         }
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition-all ${
           hasOutlets
-            ? 'bg-amber-400/15 text-amber-300 border-amber-400/50'
-            : 'bg-stone-900/80 hover:bg-stone-850 text-stone-300 border-stone-800'
+            ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a]'
+            : 'bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border-[#e5e2de]'
         }`}
       >
-        <Plug className="w-3.5 h-3.5 text-amber-400" />
+        <Plug className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>Power Outlets</span>
       </button>
 
@@ -67,11 +67,11 @@ export default function TagFilter({ filters, onChange, onReset }: TagFilterProps
         }
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition-all ${
           isEnglishMenu
-            ? 'bg-amber-400/15 text-amber-300 border-amber-400/50'
-            : 'bg-stone-900/80 hover:bg-stone-850 text-stone-300 border-stone-800'
+            ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a]'
+            : 'bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border-[#e5e2de]'
         }`}
       >
-        <Globe className="w-3.5 h-3.5 text-amber-400" />
+        <Globe className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>English Menu</span>
       </button>
 
@@ -84,11 +84,11 @@ export default function TagFilter({ filters, onChange, onReset }: TagFilterProps
         }
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition-all ${
           isWork
-            ? 'bg-amber-400/15 text-amber-300 border-amber-400/50'
-            : 'bg-stone-900/80 hover:bg-stone-850 text-stone-300 border-stone-800'
+            ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a]'
+            : 'bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border-[#e5e2de]'
         }`}
       >
-        <Laptop className="w-3.5 h-3.5 text-amber-400" />
+        <Laptop className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>Laptop / Work</span>
       </button>
 
@@ -101,11 +101,11 @@ export default function TagFilter({ filters, onChange, onReset }: TagFilterProps
         }
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition-all ${
           isSolo
-            ? 'bg-amber-400/15 text-amber-300 border-amber-400/50'
-            : 'bg-stone-900/80 hover:bg-stone-850 text-stone-300 border-stone-800'
+            ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a]'
+            : 'bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border-[#e5e2de]'
         }`}
       >
-        <User className="w-3.5 h-3.5 text-amber-400" />
+        <User className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>Solo Friendly</span>
       </button>
 
@@ -118,11 +118,11 @@ export default function TagFilter({ filters, onChange, onReset }: TagFilterProps
         }
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition-all ${
           isDate
-            ? 'bg-amber-400/15 text-amber-300 border-amber-400/50'
-            : 'bg-stone-900/80 hover:bg-stone-850 text-stone-300 border-stone-800'
+            ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a]'
+            : 'bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border-[#e5e2de]'
         }`}
       >
-        <Heart className="w-3.5 h-3.5 text-amber-400" />
+        <Heart className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>Date Spot</span>
       </button>
 
@@ -135,11 +135,11 @@ export default function TagFilter({ filters, onChange, onReset }: TagFilterProps
         }
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition-all ${
           isKidFree
-            ? 'bg-amber-400/15 text-amber-300 border-amber-400/50'
-            : 'bg-stone-900/80 hover:bg-stone-850 text-stone-300 border-stone-800'
+            ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a]'
+            : 'bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border-[#e5e2de]'
         }`}
       >
-        <Baby className="w-3.5 h-3.5 text-amber-400" />
+        <Baby className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>Kid-Free Zone</span>
       </button>
 
@@ -147,7 +147,7 @@ export default function TagFilter({ filters, onChange, onReset }: TagFilterProps
       {hasActiveFilters && (
         <button
           onClick={onReset}
-          className="text-xs text-stone-400 hover:text-stone-200 underline ml-2 py-1"
+          className="text-xs text-[#706F6C] hover:text-[#1c1c1a] underline ml-2 py-1"
         >
           Clear filters
         </button>
