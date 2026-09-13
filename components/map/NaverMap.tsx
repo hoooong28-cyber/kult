@@ -8,6 +8,7 @@ interface NaverMapProps {
   cafes: CuratedCafe[];
   selectedCafeId?: string | null;
   onSelectCafe?: (cafeId: string) => void;
+  onSelectMarker?: (cafeId: string) => void;
   className?: string;
   height?: string;
 }
@@ -22,6 +23,7 @@ export default function NaverMap({
   cafes,
   selectedCafeId,
   onSelectCafe,
+  onSelectMarker,
   className = '',
   height = '450px',
 }: NaverMapProps) {
@@ -145,7 +147,8 @@ export default function NaverMap({
         });
 
         window.naver.maps.Event.addListener(marker, 'click', () => {
-          if (onSelectCafe) onSelectCafe(cafe.id);
+          const handleSelect = onSelectMarker || onSelectCafe;
+          if (handleSelect) handleSelect(cafe.id);
         });
 
         markersRef.current.set(cafe.id, marker);

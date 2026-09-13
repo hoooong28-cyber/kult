@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { CuratedCafe } from '@/lib/types';
 import FreshnessBadge from './FreshnessBadge';
-import { MapPin, Clock, Quote, ExternalLink, Volume2, Globe, HelpCircle } from 'lucide-react';
+import { isCafeSaved, toggleSaveCafe, subscribeArchiveChanges } from '@/lib/archiveStore';
+import { MapPin, Clock, Quote, ExternalLink, Volume2, Globe, HelpCircle, Bookmark } from 'lucide-react';
 
 interface CafeCardProps {
   cafe: CuratedCafe;
@@ -14,6 +15,21 @@ interface CafeCardProps {
 
 export default function CafeCard({ cafe, isSelected = false, onSelect }: CafeCardProps) {
   const primaryCurator = cafe.curators[0];
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    setSaved(isCafeSaved(cafe.id));
+    const unsubscribe = subscribeArchiveChanges(() => {
+      setSaved(isCafeSaved(cafe.id));
+    });
+    return () => unsubscribe();
+  }, [cafe.id]);
+
+  const handleBookmarkClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const newState = toggleSaveCafe(cafe.id);
+    setSaved(newState);
+  };
 
   return (
     <div
@@ -44,12 +60,26 @@ export default function CafeCard({ cafe, isSelected = false, onSelect }: CafeCar
             </div>
           </div>
 
-          <FreshnessBadge
-            lastVerifiedDate={cafe.last_verified_date}
-            monthsAgo={cafe.freshness.months_ago}
-            isStale={cafe.freshness.is_stale}
-            badgeLabel={cafe.freshness.badge_label}
-          />
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleBookmarkClick}
+              title={saved ? '아카이브에서 제거' : '내 아카이브에 저장'}
+              className={`p-2 rounded-xl transition-all ${
+                saved
+                  ? 'bg-[#1c1c1a] text-[#fcf9f5] shadow-xs'
+                  : 'bg-[#f0ede9] text-[#5e5e5d] hover:text-[#1c1c1a] hover:bg-[#e5e2de]'
+              }`}
+            >
+              <Bookmark className={`w-4 h-4 ${saved ? 'fill-current' : ''}`} />
+            </button>
+
+            <FreshnessBadge
+              lastVerifiedDate={cafe.last_verified_date}
+              monthsAgo={cafe.freshness.months_ago}
+              isStale={cafe.freshness.is_stale}
+              badgeLabel={cafe.freshness.badge_label}
+            />
+          </div>
         </div>
 
         {/* Curator Commentary */}

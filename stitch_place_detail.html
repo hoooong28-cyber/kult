@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff9ee;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#fff9ee", "on-primary": "#ffffff", "on-tertiary-container": "#bf703a", "secondary-fixed-dim": "#ffb3b0", "primary-container": "#1c1c1a", "secondary-fixed": "#ffdad8", "inverse-on-surface": "#f6f0e6", "surface-container-low": "#f9f3e9", "on-primary-fixed": "#1c1c1a", "on-secondary": "#ffffff", "primary": "#010100", "primary-fixed": "#e5e2de", "primary-fixed-dim": "#c8c6c3", "surface-tint": "#5f5e5c", "on-tertiary-fixed-variant": "#733500", "on-secondary-fixed-variant": "#7a2e2e", "surface-container-high": "#eee7dd", "secondary": "#984543", "surface-variant": "#e8e2d8", "surface-bright": "#fff9ee", "on-surface": "#1d1b15", "on-primary-fixed-variant": "#474744", "tertiary-container": "#321300", "tertiary-fixed": "#ffdbc7", "on-background": "#1d1b15", "surface-container-lowest": "#ffffff", "outline-variant": "#c8c7bf", "on-secondary-fixed": "#3f0207", "on-secondary-container": "#782c2c", "tertiary-fixed-dim": "#ffb689", "on-surface-variant": "#474741", "inverse-primary": "#c8c6c3", "on-tertiary": "#ffffff", "on-error": "#ffffff", "surface-container-highest": "#e8e2d8", "secondary-container": "#fe9693", "surface-dim": "#dfd9cf", "on-tertiary-fixed": "#311300", "tertiary": "#010000", "on-error-container": "#93000a", "outline": "#777771", "error-container": "#ffdad6", "on-primary-container": "#858481", "surface-container": "#f3ede3", "surface": "#fff9ee", "error": "#ba1a1a", "inverse-surface": "#33302a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.75rem", "margin-tablet": "2rem", "space-2xl": "4rem", "space-xl": "2.5rem", "space-3xl": "6rem", "hairline": "1px", "gutter-mobile": "1rem", "margin-desktop": "4rem", "space-lg": "1.5rem", "gutter-desktop": "2rem", "margin-mobile": "1.25rem", "space-xxs": "0.25rem", "space-xs": "0.5rem", "gutter-tablet": "1.5rem", "space-md": "1rem" }, "fontFamily": { "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-hero": ["Playfair Display"], "headline-sm": ["Playfair Display"], "headline-lg": ["Playfair Display"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "quote-editorial": ["Playfair Display"], "headline-md": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "label-caps": ["Plus Jakarta Sans"], "display-hero-mobile": ["Playfair Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "500" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "quote-editorial": ["24px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="돌아가기" class="flex items-center justify-center min-w-[44px] min-h-[44px] text-on-surface hover:text-secondary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="Brand logo. - Primary color: #1c1c1a
+- Font: playfairDisplay
+- Mode: light
+- Roundness: rounded-lg
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WCspyoTbCUGaC3atO9rLFBHdLvNTqk1jcMbFglbhmXSjDoAed118_RKVEU2_0cOjGe8wD54mfSMv30YC9Ne5j04hpFnGd0E0-g0sy-ppEzFJ2ObUzSWjVN7XXu-ERAuiXXcxGgvSn_mw1t_qpS5BI53UwzH1-UkGIcAJihd_xZ1ACY41ZpcYSfGT7DkEa7WIzhaTiX030umpZynAh_8EACgytsBcNgHrIMMFIN7Fl4XplPIfJXd3Qk1iE"/><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate max-w-[190px]">Venue Detail</h1></div><div class="flex items-center gap-space-xs"><button aria-label="공유" class="flex items-center justify-center min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">share</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" src="https://lh3.googleusercontent.com/aida/AEtjO1Wx2zsihGE_kSL-5qiOLKit31oVUOcpDQb-93ecle7UxWVpszzsGa_m3xGTIPAfbPDuAY8aVC41ooM0LhF5H3fjO-5ZlZmsxePKElGZM1x6i8LMBXmFbwiy_tOk4DU_y5leNFLskPOio-0eZEvQBBtODNoct0AEfMGR5Rm88kJzx-vJg2W5h32u3M5kzPuXsWF3-IMZNCfLiL8fdcFODquDzV8KWvyr57ERF-zma_3Hi0e9Hl2MtCPjNw"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-32">
+<div class="relative w-full aspect-[4/5] sm:aspect-[16/10] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105" data-alt="Editorial photograph of Anthracite Seogyo cafe interior in Seoul, looking out through massive floor-to-ceiling glass windows towards a serene courtyard filled with Japanese black pine trees and mossy stones. Soft natural afternoon sunlight pouring onto dark aged wooden communal tables, subtle film grain aesthetic, contemplative slow living mood, warm earthy tones, no humans in frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKVZdS8A6Q2q_gvKCJn4JrHVTs6QQXMTQRM4kQ3gfHqq7UHKzLaqZjIxh5Ca1gqDSe_R-FLYYlfEEGYAErRd0P10D1H6uyy7q1GlBiQz9OR55_JK7rnbtgtrRCiz8n9hW8eCl7uaTG6i0wwTutJhmlp_6kLOquH5naesMk2fVO719V55c3lEjJjpIE8BgCbBxOa0e3gtL-JK6oc22xDiSaPJ5_VAtUEOQCAdHocezBHLYd770Fm5xB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute top-4 right-4 flex items-center gap-space-xs">
+<span class="px-2.5 py-1 bg-surface/90 text-on-surface font-label-caps text-label-caps tracking-widest uppercase shadow-sm">
+        Vol. 14 / Mapo
+      </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex flex-col gap-space-xxs text-on-primary">
+<span class="font-label-caps text-label-caps text-secondary-fixed tracking-widest uppercase">Curated Quiet Escape #07</span>
+<p class="font-headline-sm text-headline-sm leading-tight drop-shadow-sm text-on-primary">앤트러사이트 서교</p>
+</div>
+</div>
+<div class="px-margin-mobile pt-space-md flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xxs">
+<div class="flex items-baseline justify-between gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">앤트러사이트 서교</h2>
+<span class="font-label-caps text-label-caps text-on-tertiary-container bg-surface-container-high px-2 py-0.5">OPEN 09:00 - 22:00</span>
+</div>
+<p class="font-quote-editorial text-body-md text-on-surface-variant italic">
+        Anthracite Seogyo — A quiet sanctuary among Japanese black pine trees
+      </p>
+<div class="flex items-center gap-space-xs pt-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
+<span class="font-body-sm text-body-sm">서울 마포구 월드컵로12길 11 (망원역 1번 출구 도보 5분)</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<button class="flex items-center justify-center gap-space-xs py-3 px-4 bg-primary text-on-primary font-label-md text-label-md transition-all active:scale-[0.98] hover:bg-on-secondary-fixed-variant" id="archiveMainBtn" onclick="toggleArchive()">
+<span class="material-symbols-outlined text-[18px]" id="archiveIcon">bookmark_border</span>
+<span id="archiveText">내 컬렉션에 저장</span>
+</button>
+<button class="flex items-center justify-center gap-space-xs py-3 px-4 bg-surface-container text-on-surface font-label-md text-label-md transition-all active:scale-[0.98] hover:bg-surface-container-high" id="visitedBtn" onclick="toggleVisited()">
+<span class="material-symbols-outlined text-[18px] text-secondary" id="visitedIcon">check_circle</span>
+<span id="visitedText">가본 곳 체크</span>
+</button>
+</div>
+<div class="w-full h-1px bg-surface-container-high my-space-xs"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span>
+<h3 class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface">이 공간을 아끼는 취향 메이트</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3명의 기록</span>
+</div>
+<div class="flex items-center gap-space-sm overflow-x-auto pb-2 -mx-margin-mobile px-margin-mobile scrollbar-none">
+<div class="flex-shrink-0 flex items-center gap-space-xs bg-surface-container-low p-2 pr-3">
+<img class="w-9 h-9 object-cover rounded-full" data-alt="Close up portrait photograph of an Asian woman in vintage wool sweater reading a novel at a wooden table in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4NLrATomN2dk-UbOaSf8Sv2x8EKoP6zeXz_Fhvhmc_aCkNNIKQh2-H9Sd0ipnYA2ghvmWqI_OmvLsOs0OSF6TLG9r_YYcraLSKi3lTDQv_0uqPM9sbfZCI4Qdrp9pPV0js64Kp0Rq0MvVlQDRbbHyvzqdsufZuwBwh4Er_xL020xjsJxfmsnrR80zPOQMwTybXPaY2n1esZ5sPSbRDYHSfIoL9cNhaowTJlgpzIYgntd3Uz6Lfthi"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface leading-tight">김서현</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">96% 취향 일치</span>
+</div>
+</div>
+<div class="flex-shrink-0 flex items-center gap-space-xs bg-surface-container-low p-2 pr-3">
+<img class="w-9 h-9 object-cover rounded-full" data-alt="Editorial portrait of a bearded man wearing wire-rim glasses and minimalist dark coat holding an espresso cup, soft directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASRoNylV3PwxvTKwVACuctkwtRispav1HYlg7UhsfRB5-9G8BCaPz-7vS06ErRAVQUztzuHxC-Y_d3kJspOwfTNFOGGIz_O8Z58tPOyPq0f9ldJJKoXoXL63XGVgurn3w1QSLZn7KLy5wVnqnlDPR7qS_AijDf3sdWXzRGga5CTvDDmyOltYOTQPmtPuoAUWR73Y6lu7I3jqvfSb1NK7ty8QIhNN6VKU58JAe4AAIBW0VIB49Kb9U4"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface leading-tight">David V.</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">91% 취향 일치</span>
+</div>
+</div>
+<div class="flex-shrink-0 flex items-center gap-space-xs bg-surface-container-low p-2 pr-3">
+<img class="w-9 h-9 object-cover rounded-full" data-alt="Clean aesthetic profile portrait of a Korean designer with clean minimal look smiling thoughtfully in an art gallery cafe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGFTNNZVOzGXHvxBR6kMbHwzLFDT8WPmBuXOpjeSYwjqsVts2AAB_hcHAuhY-vp1cVrAJFsoufFyOlQfLwD-St4dy7GGpNBcpYdRpdWkx3mMrjnE7MYBH30kpJFV_m9nZpY6N8YD05GXd_VLvnS3kpbR6C0a3sigCkdTm8kwwD5zSIVL19j_wWunkWfo4eoHEWGfAx1HCZY642h_TMoltM5q71bOo1ws3pACuj6rT9PPKQWMuL0IB9"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface leading-tight">이민우</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">88% 취향 일치</span>
+</div>
+</div>
+</div>
+<div class="relative bg-surface-container p-space-sm">
+<span class="material-symbols-outlined absolute top-2 right-2 text-surface-container-highest text-[32px] select-none pointer-events-none">format_quote</span>
+<p class="font-quote-editorial text-body-md text-on-surface italic leading-relaxed pr-6">
+          “음악 소리가 매우 낮고 중정 정원이 계절마다 변해 사색하며 글쓰기에 완벽한 장소입니다. 커피 한 잔과 함께 온전한 고요를 만날 수 있어요.”
+        </p>
+<div class="flex items-center gap-space-xs mt-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">CURATOR NOTE</span>
+<span class="text-on-surface-variant text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">김서현 에디터의 코멘트</span>
+</div>
+</div>
+</div>
+<div class="w-full h-1px bg-surface-container-high my-space-xs"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface">공간 스펙 &amp; 아카이브 체크리스트</h3>
+<span class="font-label-caps text-label-caps text-on-tertiary-container bg-surface-container px-2 py-0.5">VERIFIED</span>
+</div>
+<div class="grid grid-cols-1 gap-space-xs">
+<div class="flex items-center justify-between p-3 bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">power</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">콘센트 구비율</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">노트북 작업 환경</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-20 h-2 bg-surface-variant overflow-hidden">
+<div class="w-[70%] h-full bg-primary"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">테이블 70%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">volume_down</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">소음 레벨</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">속삭이는 대화 위주</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-secondary font-semibold">45 dB</span>
+</div>
+<div class="flex items-start justify-between p-3 bg-surface-container-low">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant mt-0.5">chair</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">좌석 구성</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">원목 대형 쉐어드 테이블 및 통창 1인석</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface bg-surface-container px-2 py-0.5">혼작 최적</span>
+</div>
+<div class="flex items-start justify-between p-3 bg-surface-container-low">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant mt-0.5">local_cafe</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">추천 메뉴 페어링</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">에티오피아 예가체프 드립 &amp; 말차 레몬 파운드</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-tertiary-container bg-surface-container px-2 py-0.5">SIGNATURE</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<h3 class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface">위치 및 주변 분위기</h3>
+<div class="w-full h-44 bg-cover bg-center overflow-hidden relative" data-location="Seoul Seogyo-dong Anthracite" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcH6yCHbfswuUpsblFYdiiNiRlZkCCnIxoZxj2kKLQ82ud6TDmOpAQq_P2yxO6xRjSkz2_jQkrAlYqxbubpQ08XPErH-FWjfshG_PE11fWaR9evWLBDKVBDwyLoP7_SgbsHq8boZL-RF7kE6ZhKyfvIvqhLPuCEDw2CImSQQPMW9Yd9JSBp2j3Rwd73ZJJhGgUmH_KiI98gTv5_Y41WFDX86lRLwCl5ByMI_F_iDLQL-ZpW90QSLqR');">
+<div class="absolute inset-0 bg-primary/20 backdrop-brightness-95"></div>
+<div class="absolute bottom-3 left-3 bg-surface/95 px-3 py-1.5 flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">navigation</span>
+<span class="font-label-sm text-label-sm text-on-surface">망원역 1번 출구 도보 320m</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md px-margin-mobile py-3 pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.06)] flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-secondary tracking-wider uppercase">ARCHIVE QUICK ACTION</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">앤트러사이트 서교</span>
+</div>
+<button class="flex-shrink-0 flex items-center gap-space-xs bg-primary text-on-primary px-5 py-3 font-label-md text-label-md transition-colors hover:bg-on-secondary-fixed-variant active:scale-95" onclick="openFolderModal()">
+<span class="material-symbols-outlined text-[18px]">create_new_folder</span>
+<span>내 보관함에 담기</span>
+</button>
+</div>
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-xs hidden flex items-end justify-center" id="folderModal">
+<div class="w-full max-w-md bg-surface p-margin-mobile flex flex-col gap-space-md shadow-2xl transition-all animate-in fade-in slide-in-from-bottom duration-200">
+<div class="flex items-center justify-between pb-space-xs border-b-0">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary">ARCHIVE SELECTOR</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">어느 보관함에 담을까요?</h4>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeFolderModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<button class="folder-item flex items-center justify-between p-3 bg-surface-container text-left hover:bg-surface-container-high transition-colors" onclick="selectFolder(this, '작업하기 좋은 곳')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface">laptop_mac</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">작업하기 좋은 곳</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14개 공간 아카이브됨</span>
+</div>
+</div>
+<span class="material-symbols-outlined check-icon text-[18px] text-primary hidden">check</span>
+</button>
+<button class="folder-item flex items-center justify-between p-3 bg-surface-container text-left hover:bg-surface-container-high transition-colors" onclick="selectFolder(this, '주말 혼자만의 시간')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface">auto_stories</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">주말 혼자만의 시간</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8개 공간 아카이브됨</span>
+</div>
+</div>
+<span class="material-symbols-outlined check-icon text-[18px] text-primary hidden">check</span>
+</button>
+<button class="folder-item flex items-center justify-between p-3 bg-surface-container text-left hover:bg-surface-container-high transition-colors" onclick="selectFolder(this, '영감이 번지는 공간들')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface">lightbulb</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">영감이 번지는 공간들</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">21개 공간 아카이브됨</span>
+</div>
+</div>
+<span class="material-symbols-outlined check-icon text-[18px] text-primary hidden">check</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="w-full py-3.5 bg-primary text-on-primary font-label-md text-label-md text-center transition-colors active:scale-[0.99] hover:bg-on-secondary-fixed-variant" onclick="confirmFolderSelection()">
+          선택한 보관함에 추가
+        </button>
+</div>
+</div>
+</div>
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 bg-primary text-on-primary font-label-sm text-label-sm shadow-xl flex items-center gap-space-xs pointer-events-none opacity-0 transition-opacity duration-300" id="toast">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">bookmark_added</span>
+<span id="toastMsg">보관함에 성공적으로 저장되었습니다.</span>
+</div>
+</div>
+<script>
+  let isArchived = false;
+  let isVisited = false;
+  let selectedFolderName = '';
+
+  function toggleArchive() {
+    isArchived = !isArchived;
+    const icon = document.getElementById('archiveIcon');
+    const text = document.getElementById('archiveText');
+    const btn = document.getElementById('archiveMainBtn');
+    
+    if (isArchived) {
+      icon.innerText = 'bookmark';
+      icon.style.fontVariationSettings = "'FILL' 1";
+      text.innerText = '아카이브됨';
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-secondary');
+      showToast('내 아카이브에 안전하게 보관되었습니다.');
+    } else {
+      icon.innerText = 'bookmark_border';
+      icon.style.fontVariationSettings = "'FILL' 0";
+      text.innerText = '내 컬렉션에 저장';
+      btn.classList.remove('bg-secondary');
+      btn.classList.add('bg-primary');
+      showToast('아카이브에서 제거되었습니다.');
+    }
+  }
+
+  function toggleVisited() {
+    isVisited = !isVisited;
+    const icon = document.getElementById('visitedIcon');
+    const text = document.getElementById('visitedText');
+    const btn = document.getElementById('visitedBtn');
+
+    if (isVisited) {
+      icon.innerText = 'task_alt';
+      icon.style.fontVariationSettings = "'FILL' 1";
+      text.innerText = '방문 완료';
+      btn.classList.remove('bg-surface-container');
+      btn.classList.add('bg-secondary-fixed');
+      btn.classList.add('text-on-secondary-fixed');
+      showToast('방문 완료 장소로 기록되었습니다.');
+    } else {
+      icon.innerText = 'check_circle';
+      icon.style.fontVariationSettings = "'FILL' 0";
+      text.innerText = '가본 곳 체크';
+      btn.classList.remove('bg-secondary-fixed');
+      btn.classList.remove('text-on-secondary-fixed');
+      btn.classList.add('bg-surface-container');
+    }
+  }
+
+  function openFolderModal() {
+    const modal = document.getElementById('folderModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeFolderModal() {
+    const modal = document.getElementById('folderModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function selectFolder(element, folderName) {
+    selectedFolderName = folderName;
+    document.querySelectorAll('.folder-item').forEach(item => {
+      item.classList.remove('bg-surface-container-highest');
+      const check = item.querySelector('.check-icon');
+      if (check) check.classList.add('hidden');
+    });
+    element.classList.add('bg-surface-container-highest');
+    const check = element.querySelector('.check-icon');
+    if (check) check.classList.remove('hidden');
+  }
+
+  function confirmFolderSelection() {
+    if (!selectedFolderName) {
+      selectedFolderName = '작업하기 좋은 곳';
+    }
+    closeFolderModal();
+    showToast(`'${selectedFolderName}' 보관함에 담았습니다.`);
+    if (!isArchived) {
+      toggleArchive();
+    }
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    toastMsg.innerText = msg;
+    toast.classList.remove('opacity-0');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0');
+    }, 2400);
+  }
+</script></main></body></html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KULT Magazine — Seoul Gazette Homepage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FCF9F5',
+            'paper-card': '#F7F3EC',
+            'paper-subtle': '#EFE9DE',
+            charcoal: '#1C1C1A',
+            'charcoal-light': '#2D2D2A',
+            taupe: '#5E5E5D',
+            amber: '#BF703A',
+            'amber-light': '#D98952',
+            sand: '#D5CDC0'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            reader: ['"Newsreader"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FCF9F5;
+      color: #1C1C1A;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+    .thin-border {
+      border-color: #E6DFD3;
+    }
+    .print-rule {
+      background: repeating-linear-gradient(to right, #1C1C1A 0, #1C1C1A 6px, transparent 6px, transparent 10px);
+    }
+  </style>
+</head>
+<body class="bg-paper text-charcoal font-sans selection:bg-amber selection:text-white pb-24">
+
+  <!-- TOP EDITORIAL MASTHEAD & UTILITY BAR -->
+  <header class="w-full border-b thin-border bg-paper sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+    <!-- Top Utility Marquee Bar -->
+    <div class="border-b thin-border px-4 md:px-12 py-2 flex items-center justify-between text-[11px] tracking-[0.18em] uppercase text-taupe">
+      <div class="flex items-center gap-4">
+        <span class="font-medium text-charcoal">SEOUL GAZETTE</span>
+        <span class="w-1 h-1 rounded-full bg-sand"></span>
+        <span class="flex items-center gap-1.5 text-charcoal font-medium">
+          <svg class="w-3.5 h-3.5 text-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          18°C SUNNY · CRISP MORNING
+        </span>
+        <span class="hidden sm:inline w-1 h-1 rounded-full bg-sand"></span>
+        <span class="hidden sm:inline">AUTUMN ISSUE NO. 14</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="hidden md:inline hover:text-charcoal cursor-pointer transition-colors">PRINT EDITION IN STORES</span>
+        <span class="w-1 h-1 rounded-full bg-sand hidden md:inline"></span>
+        <a href="#my-archive" class="flex items-center gap-2 text-charcoal hover:text-amber transition-colors font-semibold">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+          </svg>
+          MY ARCHIVE <span class="text-[10px] bg-charcoal text-paper px-1.5 py-0.5 rounded-full font-mono">03</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Editorial Masthead -->
+    <div class="max-w-7xl mx-auto px-4 md:px-12 py-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div class="flex items-baseline gap-4">
+        <h1 class="font-serif text-3xl md:text-5xl font-bold tracking-tight text-charcoal">
+          KULT <span class="font-light italic text-taupe font-serif">Archive</span>
+        </h1>
+        <div class="h-6 w-px bg-sand hidden sm:block"></div>
+        <div class="text-[11px] tracking-[0.2em] uppercase text-taupe hidden sm:block">
+          <div class="font-bold text-charcoal">VOL. 14 / SEOUL GAZETTE</div>
+          <div class="text-[10px] text-taupe">SANCTUARIES FOR WORK, QUIET & TASTE</div>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex items-center gap-8 text-[12px] tracking-[0.16em] uppercase font-semibold text-taupe overflow-x-auto pb-1 md:pb-0">
+        <a href="#curated" class="text-charcoal border-b-2 border-charcoal pb-1 whitespace-nowrap">Gazette Index</a>
+        <a href="#cover-story" class="hover:text-charcoal transition-colors whitespace-nowrap">Editorial Pick</a>
+        <a href="#portfolios" class="hover:text-charcoal transition-colors whitespace-nowrap">Curated Portfolios</a>
+        <a href="#map-explore" class="hover:text-charcoal transition-colors whitespace-nowrap">Neighborhood Map</a>
+        <a href="#contribute" class="hover:text-amber transition-colors text-amber whitespace-nowrap">Submit A Spot</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 md:px-12 pt-8 space-y-20">
+
+    <!-- LEAD COVER STORY (HERO FEATURE SPREAD) -->
+    <section id="cover-story" class="relative group">
+      <!-- Magazine Hero Layout -->
+      <div class="relative w-full rounded-2xl overflow-hidden border thin-border bg-charcoal shadow-sm">
+        <div class="aspect-[16/9] md:aspect-[21/9] w-full relative">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuiXxnVcz3gUizI92whppMKI1BD_ba3DjT0pF-4fvG14iIucdnkqLJLGmwUmOXyryfgusKZkwx4rDHrlwf_LX-w2a9DQ22xKKYbX9rKFQVrGJMdxitCpmnh7h5y4GCGgElgEdx7o6fpfYlrvTlpcVdpUk3vw4Rz1Cw9-oRxCfRMLl2lKL4_HsyOyiaIfbdCjy3LKdmiOAClDWpTLpvPMJXqArP01i_cXtOJnuZ8sH0TNWOCoSm5sZMw7HOZ2e98gfiiZRM_8JUU1Y" 
+            alt="Anthracite Seogyo Zen Courtyard" 
+            class="w-full h-full object-cover object-center opacity-90 transition-transform duration-1000 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"></div>
+        </div>
+
+        <!-- Overlaid Editorial Story Typography -->
+        <div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-paper flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-2xl space-y-3">
+            <div class="flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-semibold text-amber-light">
+              <span class="px-2 py-0.5 border border-amber-light/40 rounded">COVER STORY</span>
+              <span>SPECIAL ISSUE · SEOUL 2025</span>
+            </div>
+            <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight text-paper leading-[1.1]">
+              The Quiet Living &amp; Roastery Index
+            </h2>
+            <p class="font-reader text-paper/85 text-base md:text-xl font-light italic leading-relaxed pt-1">
+              "Curated sanctuaries for slow living, writing, and specialty filter coffee across the historic &amp; industrial quarters of Seoul."
+            </p>
+          </div>
+
+          <!-- Hero Action / Metadata -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 shrink-0">
+            <div class="text-right hidden lg:block border-r thin-border pr-6 border-paper/20">
+              <div class="text-[11px] tracking-[0.16em] uppercase text-paper/60">FEATURING</div>
+              <div class="font-serif text-paper text-lg">Anthracite Seogyo</div>
+              <div class="text-[11px] text-amber-light font-mono">280 LUX · 40dB SILENCE</div>
+            </div>
+            <a href="#editor-story" class="inline-flex items-center gap-3 bg-paper text-charcoal hover:bg-amber hover:text-white px-6 py-3.5 rounded-full text-xs font-semibold tracking-[0.14em] uppercase transition-all duration-200 shadow-md">
+              <span>Read Full Cover Feature</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: LEAD EDITOR'S CHOICE FEATURE STORY -->
+    <section id="editor-story" class="space-y-8">
+      <!-- Section Header with Monocle/B Magazine Rule -->
+      <div class="flex items-end justify-between border-b-2 border-charcoal pb-4">
+        <div>
+          <span class="text-[11px] tracking-[0.2em] uppercase font-bold text-amber">SECTION 01 / EDITORIAL ESSAY</span>
+          <h3 class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-charcoal mt-1">
+            Lead Curator's Choice
+          </h3>
+        </div>
+        <span class="text-xs font-mono text-taupe uppercase tracking-widest hidden sm:inline">VERIFIED REPORT · MAPO-GU</span>
+      </div>
+
+      <!-- Feature Card Spread -->
+      <div class="bg-paper-card border thin-border rounded-2xl p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Story Column (Left 7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="px-2.5 py-1 bg-charcoal text-paper rounded text-[10px] font-mono tracking-widest uppercase">SPOT NO. 01</span>
+            <span class="text-[12px] tracking-[0.16em] uppercase font-semibold text-taupe">SEOGYO-DONG, MAPO</span>
+            <span class="w-1 h-1 rounded-full bg-sand"></span>
+            <span class="text-[12px] font-mono text-amber font-semibold">★ 98% TASTE MATCH</span>
+          </div>
+
+          <h4 class="font-serif text-3xl md:text-4xl font-normal text-charcoal leading-tight">
+            Anthracite Seogyo: <br/>
+            <span class="italic font-light text-taupe">Silence, Pine Garden &amp; Tactile Timber</span>
+          </h4>
+
+          <!-- Quote Block -->
+          <blockquote class="border-l-2 border-amber pl-5 py-1 my-4 italic font-reader text-lg md:text-xl text-charcoal/90">
+            "Where soft jazz meets quiet courtyard views. No loud espresso machines; each cup of Ethiopian Geisha is poured with ceremonial deliberation onto solid dark timber."
+          </blockquote>
+
+          <p class="text-sm md:text-base text-taupe leading-relaxed font-sans">
+            Originally a private villa built in the 1970s, Anthracite Seogyo reinterprets the Korean domestic garden into a multi-tiered sanctuary of absolute calm. Natural western sunlight filters through dense black pine branches at 14:00, creating an ideal 280-lux illumination for reading, notebook journaling, and thoughtful discourse.
+          </p>
+
+          <!-- Curator Badge & Verification -->
+          <div class="pt-4 border-t thin-border flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <img 
+                src="https://lh3.googleusercontent.com/aida/AEtjO1XaQ91ch6T1MLsNSvedDSJ3aCoYnrk0Qbnv4zByfHFDnj6FBHmL4zVueSloGv49UgxltMW6m8woVNPKqVD5IPTyqpNCv1j99AO3ygNWGmilDrsgVxV2jV0Y40Dfs4k743DJA5pQ6KX2_80I7P6saN_OxUtDpkL8wC3Rg8J4JSeTfW2syuJCI4GCJDQwYnVSPVuCC7rGElX8mz954oq3zPwXMKu5TvxsAqJwp-tEWhch1Zt9g5_mMK3w4A" 
+                alt="Min-Ji Eleanor Song" 
+                class="w-11 h-11 rounded-full object-cover border thin-border"
+              />
+              <div>
+                <div class="text-xs font-bold text-charcoal flex items-center gap-1.5">
+                  Min-Ji Eleanor Song 
+                  <span class="text-[10px] font-mono font-normal text-taupe">(@editor.seohyun)</span>
+                </div>
+                <div class="text-[11px] text-taupe">Senior Editorial Essayist · 48 Sanctuaries Catalogued</div>
+              </div>
+            </div>
+
+            <!-- Verified Specs Badge Pills -->
+            <div class="flex items-center gap-2">
+              <div class="bg-paper border thin-border px-3 py-1.5 rounded-lg flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+                <span class="text-xs font-mono font-semibold text-charcoal">45 dB Quiet</span>
+              </div>
+              <div class="bg-paper border thin-border px-3 py-1.5 rounded-lg flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-amber" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="text-xs font-mono font-semibold text-charcoal">70% Outlets</span>
+              </div>
+              <button class="bg-charcoal hover:bg-amber text-paper px-4 py-1.5 rounded-lg text-xs font-semibold tracking-wider transition-colors">
+                Save Spot
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Gallery / Visual Column (Right 5 Cols) -->
+        <div class="lg:col-span-5 relative space-y-4">
+          <div class="rounded-xl overflow-hidden border thin-border shadow-sm aspect-[4/3] relative">
+            <img 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuiXxnVcz3gUizI92whppMKI1BD_ba3DjT0pF-4fvG14iIucdnkqLJLGmwUmOXyryfgusKZkwx4rDHrlwf_LX-w2a9DQ22xKKYbX9rKFQVrGJMdxitCpmnh7h5y4GCGgElgEdx7o6fpfYlrvTlpcVdpUk3vw4Rz1Cw9-oRxCfRMLl2lKL4_HsyOyiaIfbdCjy3LKdmiOAClDWpTLpvPMJXqArP01i_cXtOJnuZ8sH0TNWOCoSm5sZMw7HOZ2e98gfiiZRM_8JUU1Y" 
+              alt="Anthracite Seogyo Garden View" 
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute bottom-3 left-3 bg-charcoal/80 backdrop-blur-sm text-paper px-3 py-1 rounded text-[10px] font-mono tracking-widest uppercase">
+              FIG 01. 2F GARDEN OVERLOOK
+            </div>
+          </div>
+          
+          <!-- Tactile Spec Grid -->
+          <div class="grid grid-cols-2 gap-3 text-xs font-sans">
+            <div class="bg-paper p-3 rounded-lg border thin-border">
+              <span class="text-[10px] uppercase tracking-wider text-taupe block mb-1">ACOUSTIC RHYTHM</span>
+              <span class="font-medium text-charcoal">Subtle Low Vinyl Jazz</span>
+            </div>
+            <div class="bg-paper p-3 rounded-lg border thin-border">
+              <span class="text-[10px] uppercase tracking-wider text-taupe block mb-1">SIGNATURE PAIRING</span>
+              <span class="font-medium text-charcoal">Butter Fat Drip &amp; Fig Financier</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: VISUAL EDITORIAL PORTFOLIOS GRID -->
+    <section id="portfolios" class="space-y-8">
+      <div class="flex items-end justify-between border-b-2 border-charcoal pb-4">
+        <div>
+          <span class="text-[11px] tracking-[0.2em] uppercase font-bold text-amber">SECTION 02 / CURATED COLLECTIONS</span>
+          <h3 class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-charcoal mt-1">
+            Thematic Issue Portfolios
+          </h3>
+        </div>
+        <span class="text-xs font-medium text-taupe">3 THEMATIC SPREADS</span>
+      </div>
+
+      <!-- 3 Visual Magazine Cover Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Collection 01 -->
+        <article class="bg-paper-card border thin-border rounded-2xl overflow-hidden group flex flex-col justify-between hover:shadow-lg transition-all duration-300">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuiXxnVcz3gUizI92whppMKI1BD_ba3DjT0pF-4fvG14iIucdnkqLJLGmwUmOXyryfgusKZkwx4rDHrlwf_LX-w2a9DQ22xKKYbX9rKFQVrGJMdxitCpmnh7h5y4GCGgElgEdx7o6fpfYlrvTlpcVdpUk3vw4Rz1Cw9-oRxCfRMLl2lKL4_HsyOyiaIfbdCjy3LKdmiOAClDWpTLpvPMJXqArP01i_cXtOJnuZ8sH0TNWOCoSm5sZMw7HOZ2e98gfiiZRM_8JUU1Y" 
+                alt="Solo Writing Sanctuaries" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute top-3 left-3 bg-charcoal/85 backdrop-blur-sm text-paper px-2.5 py-1 rounded text-[10px] font-mono tracking-widest uppercase">
+                COLLECTION 01
+              </div>
+              <div class="absolute top-3 right-3 bg-paper/90 backdrop-blur-sm text-charcoal px-2.5 py-1 rounded text-[10px] font-mono font-bold">
+                14 SPACES
+              </div>
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="font-serif text-2xl font-bold text-charcoal group-hover:text-amber transition-colors leading-snug">
+                Solo Writing &amp; Deep Focus Sanctuaries
+              </h4>
+              <p class="font-reader italic text-taupe text-sm leading-relaxed">
+                "Where low-volume acoustics, generous desk depth, and morning sunlight allow sustained creative focus."
+              </p>
+            </div>
+          </div>
+          
+          <div class="px-6 pb-6 pt-2 border-t thin-border flex items-center justify-between">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-taupe">CURATED BY @YOONA.ARCH</span>
+            <span class="text-xs font-bold text-charcoal group-hover:translate-x-1 transition-transform flex items-center gap-1">
+              Explore Portfolio →
+            </span>
+          </div>
+        </article>
+
+        <!-- Collection 02 -->
+        <article class="bg-paper-card border thin-border rounded-2xl overflow-hidden group flex flex-col justify-between hover:shadow-lg transition-all duration-300">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6f9k9ugV1Uifq1e_xYwCPJxWiKGj-DSeZB0yuTW5-JrhUmYnE0Cc5aS9HG2gPKbDqEEAH8ozZYnX_-mUPpVy_jp-8Sw0fjrDg9SKnrnIWYJsfx6FzSVuPwPfMbMC0nBIexbEnvdeO3OOTuymclN7aKFYG935RO4LidtOb2HjnopeafBKduPlpA-zkNPa3K47YMk3kSmVYd3lp8Jrza-i8BwEaSfIph0kDW0yXLhBpo4lOJrtcQVE9OOLFg7KwT_9i7ACyz7UI6dw" 
+                alt="Seongsu Roastery Tour" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute top-3 left-3 bg-charcoal/85 backdrop-blur-sm text-paper px-2.5 py-1 rounded text-[10px] font-mono tracking-widest uppercase">
+                COLLECTION 02
+              </div>
+              <div class="absolute top-3 right-3 bg-paper/90 backdrop-blur-sm text-charcoal px-2.5 py-1 rounded text-[10px] font-mono font-bold">
+                19 SPACES
+              </div>
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="font-serif text-2xl font-bold text-charcoal group-hover:text-amber transition-colors leading-snug">
+                Seongsu &amp; Hannam Artisanal Roastery Tour
+              </h4>
+              <p class="font-reader italic text-taupe text-sm leading-relaxed">
+                "Raw poured concrete meets single-origin micro lot roasting, handcrafted wooden bars, and vintage McIntosh audio."
+              </p>
+            </div>
+          </div>
+          
+          <div class="px-6 pb-6 pt-2 border-t thin-border flex items-center justify-between">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-taupe">CURATED BY @DAVID.VANCE</span>
+            <span class="text-xs font-bold text-charcoal group-hover:translate-x-1 transition-transform flex items-center gap-1">
+              Explore Portfolio →
+            </span>
+          </div>
+        </article>
+
+        <!-- Collection 03 -->
+        <article class="bg-paper-card border thin-border rounded-2xl overflow-hidden group flex flex-col justify-between hover:shadow-lg transition-all duration-300">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzM5sZETTMGUYG5RISr2eZvPoh9DlcOY0M7TSs607VDSzr-vY8VOY1Cpww0r4b4qVBxfJYewmPNApFGuNKU1E9qBoTVp0fr7dIgrH6CB3Pj5Y5Y0uBj2In7eVVQkPa_BP1g_7PnY7S48LuAuiulFAkOiwcwCBUARsbv-U9hflgXFyRle2BDRkku4fK6OBiBXPJHH-4vOT2fPXW2SW8ZfWVK9_d-ZyH2lbHcC9u7_QfEDudugnE9fuuTGgyUljXYI2JxGC-YmRfKCc" 
+                alt="Rainy Day Hanok Courtyards" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute top-3 left-3 bg-charcoal/85 backdrop-blur-sm text-paper px-2.5 py-1 rounded text-[10px] font-mono tracking-widest uppercase">
+                COLLECTION 03
+              </div>
+              <div class="absolute top-3 right-3 bg-paper/90 backdrop-blur-sm text-charcoal px-2.5 py-1 rounded text-[10px] font-mono font-bold">
+                08 SPACES
+              </div>
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="font-serif text-2xl font-bold text-charcoal group-hover:text-amber transition-colors leading-snug">
+                Rainy Day Hanok Courtyards
+              </h4>
+              <p class="font-reader italic text-taupe text-sm leading-relaxed">
+                "Listening to rainwater cascade off traditional eaves in Bukchon and Seochon over slow steamed roasted tea."
+              </p>
+            </div>
+          </div>
+          
+          <div class="px-6 pb-6 pt-2 border-t thin-border flex items-center justify-between">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-taupe">CURATED BY @SORA.CHOI</span>
+            <span class="text-xs font-bold text-charcoal group-hover:translate-x-1 transition-transform flex items-center gap-1">
+              Explore Portfolio →
+            </span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CITY GAZETTE & INTERACTIVE MAP EXPLORATION -->
+    <section id="map-explore" class="space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-charcoal pb-4 gap-4">
+        <div>
+          <span class="text-[11px] tracking-[0.2em] uppercase font-bold text-amber">SECTION 03 / CARTOGRAPHY &amp; DIRECTORY</span>
+          <h3 class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-charcoal mt-1">
+            Seoul City Gazette &amp; Cartography
+          </h3>
+        </div>
+        
+        <!-- Toggle Live Map View Button -->
+        <button class="inline-flex items-center gap-2 bg-charcoal hover:bg-amber text-paper px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-colors self-start sm:self-auto">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+          </svg>
+          Expand Full Cartographic Map
+        </button>
+      </div>
+
+      <!-- Minimalist Search & Neighborhood Selector -->
+      <div class="bg-paper-card border thin-border rounded-2xl p-6 space-y-4">
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <!-- Search Input -->
+          <div class="relative w-full md:w-1/2">
+            <svg class="w-4 h-4 text-taupe absolute left-4 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input 
+              type="text" 
+              placeholder="Search by sanctuary name, district, or acoustic keyword..." 
+              class="w-full pl-11 pr-4 py-3 bg-paper border thin-border rounded-xl text-sm font-sans focus:outline-none focus:border-charcoal transition-colors placeholder:text-taupe/60"
+            />
+          </div>
+
+          <!-- Neighborhood Pills -->
+          <div class="flex items-center gap-2 w-full md:w-1/2 overflow-x-auto pb-1 md:pb-0 text-xs">
+            <button class="px-4 py-2 bg-charcoal text-paper font-semibold rounded-full whitespace-nowrap">All Quarters (32)</button>
+            <button class="px-4 py-2 bg-paper border thin-border text-charcoal hover:border-charcoal font-medium rounded-full whitespace-nowrap transition-colors">Seongsu (09)</button>
+            <button class="px-4 py-2 bg-paper border thin-border text-charcoal hover:border-charcoal font-medium rounded-full whitespace-nowrap transition-colors">Mapo / Seogyo (11)</button>
+            <button class="px-4 py-2 bg-paper border thin-border text-charcoal hover:border-charcoal font-medium rounded-full whitespace-nowrap transition-colors">Seochon &amp; Bukchon (07)</button>
+            <button class="px-4 py-2 bg-paper border thin-border text-charcoal hover:border-charcoal font-medium rounded-full whitespace-nowrap transition-colors">Hannam (05)</button>
+          </div>
+        </div>
+
+        <!-- Filter Sub-tags -->
+        <div class="flex flex-wrap items-center gap-4 pt-3 border-t thin-border text-xs text-taupe">
+          <span class="uppercase tracking-wider font-mono text-[10px] text-charcoal font-bold">VERIFIED ATTRIBUTES:</span>
+          <label class="flex items-center gap-1.5 cursor-pointer hover:text-charcoal">
+            <input type="checkbox" checked class="rounded border-sand text-amber focus:ring-0">
+            <span>Quiet Acoustic (&lt;48dB)</span>
+          </label>
+          <label class="flex items-center gap-1.5 cursor-pointer hover:text-charcoal">
+            <input type="checkbox" checked class="rounded border-sand text-amber focus:ring-0">
+            <span>Dedicated Power Outlets</span>
+          </label>
+          <label class="flex items-center gap-1.5 cursor-pointer hover:text-charcoal">
+            <input type="checkbox" class="rounded border-sand text-amber focus:ring-0">
+            <span>Natural West/South Light</span>
+          </label>
+          <label class="flex items-center gap-1.5 cursor-pointer hover:text-charcoal">
+            <input type="checkbox" class="rounded border-sand text-amber focus:ring-0">
+            <span>Garden / Courtyard</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2-Column Clean Editorial Card Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Sanctuary Card A: Lowkey Seongsu -->
+        <div class="bg-paper-card border thin-border rounded-2xl p-6 hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-xs font-bold text-amber">02</span>
+                <span class="text-[11px] font-mono tracking-widest uppercase text-taupe">SEONGSU-DONG · BASEMENT SANCTUARY</span>
+              </div>
+              <span class="text-[10px] font-mono bg-paper border thin-border px-2 py-0.5 rounded text-charcoal">VERIFIED NOV 2024</span>
+            </div>
+
+            <div class="flex gap-4">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6f9k9ugV1Uifq1e_xYwCPJxWiKGj-DSeZB0yuTW5-JrhUmYnE0Cc5aS9HG2gPKbDqEEAH8ozZYnX_-mUPpVy_jp-8Sw0fjrDg9SKnrnIWYJsfx6FzSVuPwPfMbMC0nBIexbEnvdeO3OOTuymclN7aKFYG935RO4LidtOb2HjnopeafBKduPlpA-zkNPa3K47YMk3kSmVYd3lp8Jrza-i8BwEaSfIph0kDW0yXLhBpo4lOJrtcQVE9OOLFg7KwT_9i7ACyz7UI6dw" 
+                alt="Lowkey Seongsu Interior" 
+                class="w-28 h-28 rounded-xl object-cover border thin-border shrink-0"
+              />
+              <div class="space-y-1">
+                <h4 class="font-serif text-2xl font-bold text-charcoal">Lowkey Seongsu (로우키)</h4>
+                <p class="text-xs text-taupe font-mono">6 Yeonmujang 3-gil, Seongdong-gu</p>
+                <p class="font-reader italic text-xs text-charcoal/80 line-clamp-2 pt-1">
+                  "Subterranean acoustic haven where baristas draft handwritten origin cards. Low amber lighting and soft velvet seating."
+                </p>
+              </div>
+            </div>
+
+            <!-- Space Specs Grid -->
+            <div class="grid grid-cols-3 gap-2 pt-2 border-t thin-border text-center">
+              <div class="bg-paper p-2 rounded-lg border thin-border">
+                <div class="text-[10px] font-mono text-taupe uppercase">ACOUSTICS</div>
+                <div class="text-xs font-bold text-charcoal mt-0.5">42 dB Low Whisper</div>
+              </div>
+              <div class="bg-paper p-2 rounded-lg border thin-border">
+                <div class="text-[10px] font-mono text-taupe uppercase">OUTLETS</div>
+                <div class="text-xs font-bold text-charcoal mt-0.5">Along Wall Bench</div>
+              </div>
+              <div class="bg-paper p-2 rounded-lg border thin-border">
+                <div class="text-[10px] font-mono text-taupe uppercase">PAIRING</div>
+                <div class="text-xs font-bold text-amber mt-0.5">Geisha Hand Drip</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-2 border-t thin-border">
+            <span class="text-xs text-taupe font-medium">Curated by @david.vance</span>
+            <div class="flex gap-2">
+              <button class="px-3 py-1.5 border thin-border hover:border-charcoal rounded-lg text-xs font-medium text-charcoal transition-colors">
+                View On Map
+              </button>
+              <button class="px-3 py-1.5 bg-charcoal hover:bg-amber text-paper rounded-lg text-xs font-medium transition-colors">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sanctuary Card B: Cafe Eek Samcheong -->
+        <div class="bg-paper-card border thin-border rounded-2xl p-6 hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-xs font-bold text-amber">03</span>
+                <span class="text-[11px] font-mono tracking-widest uppercase text-taupe">SAMCHEONG-DONG · HANOK STUDY</span>
+              </div>
+              <span class="text-[10px] font-mono bg-paper border thin-border px-2 py-0.5 rounded text-charcoal">VERIFIED DEC 2024</span>
+            </div>
+
+            <div class="flex gap-4">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzM5sZETTMGUYG5RISr2eZvPoh9DlcOY0M7TSs607VDSzr-vY8VOY1Cpww0r4b4qVBxfJYewmPNApFGuNKU1E9qBoTVp0fr7dIgrH6CB3Pj5Y5Y0uBj2In7eVVQkPa_BP1g_7PnY7S48LuAuiulFAkOiwcwCBUARsbv-U9hflgXFyRle2BDRkku4fK6OBiBXPJHH-4vOT2fPXW2SW8ZfWVK9_d-ZyH2lbHcC9u7_QfEDudugnE9fuuTGgyUljXYI2JxGC-YmRfKCc" 
+                alt="Cafe Eek Hanok Interior" 
+                class="w-28 h-28 rounded-xl object-cover border thin-border shrink-0"
+              />
+              <div class="space-y-1">
+                <h4 class="font-serif text-2xl font-bold text-charcoal">Cafe Eek (카페 이잌)</h4>
+                <p class="text-xs text-taupe font-mono">18 Bukchon-ro 5-gil, Jongno-gu</p>
+                <p class="font-reader italic text-xs text-charcoal/80 line-clamp-2 pt-1">
+                  "Nestled under historic tiled eaves with a serene rain garden. Curated Japanese art monographs and delicate tea pairings."
+                </p>
+              </div>
+            </div>
+
+            <!-- Space Specs Grid -->
+            <div class="grid grid-cols-3 gap-2 pt-2 border-t thin-border text-center">
+              <div class="bg-paper p-2 rounded-lg border thin-border">
+                <div class="text-[10px] font-mono text-taupe uppercase">ACOUSTICS</div>
+                <div class="text-xs font-bold text-charcoal mt-0.5">38 dB Garden Breeze</div>
+              </div>
+              <div class="bg-paper p-2 rounded-lg border thin-border">
+                <div class="text-[10px] font-mono text-taupe uppercase">OUTLETS</div>
+                <div class="text-xs font-bold text-charcoal mt-0.5">Shared Wood Desk</div>
+              </div>
+              <div class="bg-paper p-2 rounded-lg border thin-border">
+                <div class="text-[10px] font-mono text-taupe uppercase">PAIRING</div>
+                <div class="text-xs font-bold text-amber mt-0.5">Smoked Bohea Tea</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-2 border-t thin-border">
+            <span class="text-xs text-taupe font-medium">Curated by @sora.choi</span>
+            <div class="flex gap-2">
+              <button class="px-3 py-1.5 border thin-border hover:border-charcoal rounded-lg text-xs font-medium text-charcoal transition-colors">
+                View On Map
+              </button>
+              <button class="px-3 py-1.5 bg-charcoal hover:bg-amber text-paper rounded-lg text-xs font-medium transition-colors">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: EDITORIAL CONTRIBUTOR CALLOUT BANNER -->
+    <section id="contribute" class="relative overflow-hidden rounded-2xl border-2 border-charcoal bg-charcoal text-paper p-8 md:p-12">
+      <!-- Decorative Print Rule Accent -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-amber"></div>
+
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-3 text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start gap-2 text-[11px] font-mono tracking-widest uppercase text-amber-light font-semibold">
+            <span>CALL FOR NOMINATIONS</span>
+            <span>·</span>
+            <span>ISSUE NO. 15 DISPATCH</span>
+          </div>
+          <h3 class="font-serif text-3xl md:text-4xl font-normal tracking-tight text-paper">
+            Join KULT Editorial Staff — <br/>
+            <span class="italic font-light text-sand">Submit Your Curated Seoul Gazette</span>
+          </h3>
+          <p class="font-reader text-paper/75 text-sm md:text-base font-light italic max-w-xl">
+            "We review recommendations from long-term nomad researchers, architects, and local designers. Submit an acoustic work sanctuary with verified decibels and outlet counts."
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+          <button class="bg-amber hover:bg-amber-light text-white font-semibold px-6 py-3.5 rounded-full text-xs tracking-wider uppercase transition-all shadow-md whitespace-nowrap">
+            Submit Recommendation
+          </button>
+          <button class="border border-paper/30 hover:border-paper text-paper px-5 py-3.5 rounded-full text-xs tracking-wider uppercase transition-all whitespace-nowrap">
+            Editorial Guidelines
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SOPHISTICATED FOOTER & COLOPHON -->
+  <footer class="max-w-7xl mx-auto px-4 md:px-12 pt-20 mt-20 border-t thin-border text-taupe text-xs space-y-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="space-y-3">
+        <div class="font-serif text-2xl font-bold text-charcoal">KULT | SEOUL</div>
+        <p class="font-reader italic text-taupe leading-relaxed">
+          A quarterly visual gazette on quiet living, tactile workspaces, and specialty coffee architecture in Seoul.
+        </p>
+      </div>
+
+      <div>
+        <h5 class="text-[11px] font-mono uppercase tracking-widest text-charcoal font-bold mb-3">GAZETTE INDEX</h5>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-charcoal transition-colors">Vol. 14: Autumn Sanctuaries</a></li>
+          <li><a href="#" class="hover:text-charcoal transition-colors">Vol. 13: The Coffee Cellars</a></li>
+          <li><a href="#" class="hover:text-charcoal transition-colors">Vol. 12: Hanok Wind &amp; Tea</a></li>
+          <li><a href="#" class="hover:text-charcoal transition-colors">Print Stockists Worldwide</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-[11px] font-mono uppercase tracking-widest text-charcoal font-bold mb-3">CURATOR NETWORK</h5>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-charcoal transition-colors">Eleanor Song (Editorial Lead)</a></li>
+          <li><a href="#" class="hover:text-charcoal transition-colors">David Vance (Architecture)</a></li>
+          <li><a href="#" class="hover:text-charcoal transition-colors">Sora Choi (Literary &amp; Books)</a></li>
+          <li><a href="#" class="hover:text-charcoal transition-colors">Taste Match Protocol</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-[11px] font-mono uppercase tracking-widest text-charcoal font-bold mb-3">PUBLICATION COLOPHON</h5>
+        <p class="text-[11px] leading-relaxed text-taupe">
+          Published quarterly in Yongsan-gu, Seoul. Printed on FSC certified 120gsm unbleached paper. Distributed globally to independent bookshops and quiet hotel lobbies.
+        </p>
+        <div class="pt-3 font-mono text-[10px] text-charcoal">ISSN 2984-1849 · SEOUL, KOREA</div>
+      </div>
+    </div>
+
+    <div class="border-t thin-border pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-taupe gap-4">
+      <div>© 2025 KULT Magazine Publishing Co. All rights reserved.</div>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-charcoal transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-charcoal transition-colors">Terms of Curation</a>
+        <a href="#" class="hover:text-charcoal transition-colors">Submissions</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

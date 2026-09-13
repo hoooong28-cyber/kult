@@ -2,13 +2,14 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Coffee, Bookmark, MessageSquarePlus, Sparkles } from 'lucide-react';
+import { Coffee, Bookmark, MessageSquarePlus, User, UserPlus } from 'lucide-react';
 
 interface HeaderProps {
   onOpenReport?: () => void;
+  onOpenAuth?: () => void;
 }
 
-export default function Header({ onOpenReport }: HeaderProps) {
+export default function Header({ onOpenReport, onOpenAuth }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 bg-[#fcf9f5]/95 backdrop-blur-md border-b border-[#e5e2de] px-4 sm:px-8 py-3.5 transition-all shadow-[0_1px_8px_rgba(0,0,0,0.03)]">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
@@ -33,15 +34,19 @@ export default function Header({ onOpenReport }: HeaderProps) {
         </Link>
 
         {/* Action items */}
-        <div className="flex items-center gap-2.5">
-          <div className="hidden md:flex items-center gap-1.5 text-xs text-[#444748] px-3 py-1.5 rounded-full bg-[#f6f3ef] border border-[#e5e2de]">
-            <Sparkles className="w-3.5 h-3.5 text-[#bf703a]" />
-            <span className="font-medium">Human-Curated List</span>
-          </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={onOpenAuth}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-[#f0ede9] hover:bg-[#e5e2de] text-[#1c1c1a] border border-[#e5e2de] transition-colors shadow-xs"
+          >
+            <UserPlus className="w-3.5 h-3.5 text-[#bf703a]" />
+            <span className="hidden sm:inline">에디터 가입</span>
+            <span className="sm:hidden">가입</span>
+          </button>
 
           <Link
             href="/archive"
-            className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#1c1c1a] text-[#fcf9f5] hover:bg-[#31302e] transition-colors shadow-xs"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#1c1c1a] text-[#fcf9f5] hover:bg-[#31302e] transition-colors shadow-xs"
           >
             <Bookmark className="w-4 h-4" />
             <span className="hidden sm:inline">My Archive</span>
@@ -50,7 +55,7 @@ export default function Header({ onOpenReport }: HeaderProps) {
 
           <button
             onClick={onOpenReport}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border border-[#c4c7c7] transition-colors shadow-xs"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#ffffff] hover:bg-[#f6f3ef] text-[#1c1c1a] border border-[#c4c7c7] transition-colors shadow-xs"
           >
             <MessageSquarePlus className="w-4 h-4 text-[#bf703a]" />
             <span className="hidden sm:inline">Suggest / Report</span>
