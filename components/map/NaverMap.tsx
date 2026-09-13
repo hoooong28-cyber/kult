@@ -55,19 +55,34 @@ export default function NaverMap({
       originalAlert(msg);
     };
 
-    const script = document.createElement('script');
-    // Try ncpClientId parameter for Naver Cloud Platform API v3
-    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${clientId}&submodules=geocoding`;
-    script.async = true;
-    script.onload = () => {
-      window.alert = originalAlert;
-      setMapLoaded(true);
+    const loadScript = (useNcpParam: boolean) => {
+      const paramName = useNcpParam ? 'ncpClientId' : 'clientId';
+      const script = document.createElement('script');
+      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?${paramName}=${clientId}&submodules=geocoding`;
+      script.async = true;
+      script.onload = () => {
+        window.alert = originalAlert;
+        if (window.naver && window.naver.maps) {
+          setMapLoaded(true);
+        } else if (useNcpParam) {
+          // Retry with clientId parameter if ncpClientId fails
+          loadScript(false);
+        } else {
+          setMapError(true);
+        }
+      };
+      script.onerror = () => {
+        window.alert = originalAlert;
+        if (useNcpParam) {
+          loadScript(false);
+        } else {
+          setMapError(true);
+        }
+      };
+      document.head.appendChild(script);
     };
-    script.onerror = () => {
-      window.alert = originalAlert;
-      setMapError(true);
-    };
-    document.head.appendChild(script);
+
+    loadScript(true);
 
     return () => {
       window.alert = originalAlert;
