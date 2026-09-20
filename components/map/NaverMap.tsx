@@ -58,34 +58,29 @@ export default function NaverMap({
       if (originalAlert) originalAlert(msg);
     };
 
-    const loadScript = (useNcpParam: boolean) => {
-      const paramName = useNcpParam ? 'ncpClientId' : 'clientId';
+    const loadScript = () => {
       const script = document.createElement('script');
-      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?${paramName}=${clientId}&submodules=geocoding`;
+      // NCP Maps JS SDK: ncpClientId + geocoding submodule (both enabled in Naver Console)
+      script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${clientId}&submodules=geocoding`;
       script.async = true;
       script.onload = () => {
         window.alert = originalAlert;
         if (window.naver && window.naver.maps) {
           setMapLoaded(true);
-        } else if (useNcpParam) {
-          loadScript(false);
         } else {
+          console.warn('Naver Maps SDK loaded but naver.maps not found');
           setMapError(true);
         }
       };
       script.onerror = (err) => {
         console.warn('Naver Map script load error:', err);
         window.alert = originalAlert;
-        if (useNcpParam) {
-          loadScript(false);
-        } else {
-          setMapError(true);
-        }
+        setMapError(true);
       };
       document.head.appendChild(script);
     };
 
-    loadScript(true);
+    loadScript();
 
     return () => {
       window.alert = originalAlert;
@@ -145,8 +140,7 @@ export default function NaverMap({
           title: cafe.name,
           icon: {
             content: `
-              <div class="cursor-pointer transition-transform transform hover:scale-105 flex items-center gap-1.5 px-3 py-1.5 bg-[#1c1c1a] text-[#fcf9f5] text-xs font-semibold rounded-full shadow-md border ${
-                isSelected ? 'border-[#bf703a] ring-2 ring-[#bf703a]/40 scale-110' : 'border-[#e5e2de]'
+              <div class="cursor-pointer transition-transform transform hover:scale-105 flex items-center gap-1.5 px-3 py-1.5 bg-[#1c1c1a] text-[#fcf9f5] text-xs font-semibold rounded-full shadow-md border ${isSelected ? 'border-[#bf703a] ring-2 ring-[#bf703a]/40 scale-110' : 'border-[#e5e2de]'
               }">
                 <span class="w-2 h-2 rounded-full ${isStale ? 'bg-[#bf703a]' : 'bg-[#137333]'}"></span>
                 <span>${cafe.name}</span>
@@ -225,16 +219,14 @@ export default function NaverMap({
                   const handleSelect = onSelectMarker || onSelectCafe;
                   if (handleSelect) handleSelect(cafe.id);
                 }}
-                className={`group flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${
-                  isSelected
-                    ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a] ring-2 ring-[#1c1c1a]/20 scale-105 shadow-sm font-semibold'
-                    : 'bg-[#f6f3ef] hover:bg-[#eae6df] text-[#1c1c1a] border-[#e5e2de]'
-                }`}
+                className={`group flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${isSelected
+                  ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a] ring-2 ring-[#1c1c1a]/20 scale-105 shadow-sm font-semibold'
+                  : 'bg-[#f6f3ef] hover:bg-[#eae6df] text-[#1c1c1a] border-[#e5e2de]'
+                  }`}
               >
                 <span
-                  className={`w-2 h-2 rounded-full ${
-                    isStale ? 'bg-[#bf703a]' : 'bg-[#137333]'
-                  }`}
+                  className={`w-2 h-2 rounded-full ${isStale ? 'bg-[#bf703a]' : 'bg-[#137333]'
+                    }`}
                 />
                 <span>{cafe.name}</span>
                 <span className="text-xs opacity-75 font-mono">({cafe.name_local})</span>
