@@ -42,6 +42,7 @@ export default function NaverMap({
     }
 
     if (!clientId || clientId === 'your_naver_map_client_id') {
+      console.warn('Naver Map Client ID is missing or set to placeholder.');
       setMapError(true);
       return;
     }
@@ -54,7 +55,7 @@ export default function NaverMap({
         setMapError(true);
         return;
       }
-      originalAlert(msg);
+      if (originalAlert) originalAlert(msg);
     };
 
     const loadScript = (useNcpParam: boolean) => {
@@ -67,13 +68,13 @@ export default function NaverMap({
         if (window.naver && window.naver.maps) {
           setMapLoaded(true);
         } else if (useNcpParam) {
-          // Retry with clientId parameter if ncpClientId fails
           loadScript(false);
         } else {
           setMapError(true);
         }
       };
-      script.onerror = () => {
+      script.onerror = (err) => {
+        console.warn('Naver Map script load error:', err);
         window.alert = originalAlert;
         if (useNcpParam) {
           loadScript(false);
@@ -91,6 +92,7 @@ export default function NaverMap({
     };
   }, []);
 
+  // Map Instance Initialization & Marker Rendering
   useEffect(() => {
     if (!mapLoaded || mapError || !mapContainerRef.current || cafes.length === 0) return;
 
@@ -115,19 +117,27 @@ export default function NaverMap({
         },
       };
 
-      const map = new window.naver.maps.Map(mapContainerRef.current, mapOptions);
-      mapInstanceRef.current = map;
+      if (!mapInstanceRef.current) {
+        mapInstanceRef.current = new window.naver.maps.Map(mapContainerRef.current, mapOptions);
+      }
+      const map = mapInstanceRef.current;
 
+      // Clear existing markers
       markersRef.current.forEach((marker) => marker.setMap(null));
       markersRef.current.clear();
 
       const bounds = new window.naver.maps.LatLngBounds();
+      let validCoordsCount = 0;
 
       cafes.forEach((cafe) => {
         if (!cafe.lat || !cafe.lng) return;
 
         const position = new window.naver.maps.LatLng(cafe.lat, cafe.lng);
         bounds.extend(position);
+        validCoordsCount++;
+
+        const isSelected = selectedCafeId === cafe.id;
+        const isStale = cafe.freshness?.is_stale ?? false;
 
         const marker = new window.naver.maps.Marker({
           position,
@@ -135,10 +145,10 @@ export default function NaverMap({
           title: cafe.name,
           icon: {
             content: `
-              <div class="cursor-pointer transition-transform transform hover:scale-105 flex items-center gap-1.5 px-3 py-1.5 bg-[#1c1c1a] text-[#fcf9f5] text-xs font-semibold rounded-full shadow-sm border ${
-                selectedCafeId === cafe.id ? 'border-[#bf703a] ring-2 ring-[#bf703a]/40 bg-[#1c1c1a]' : 'border-[#e5e2de]'
+              <div class="cursor-pointer transition-transform transform hover:scale-105 flex items-center gap-1.5 px-3 py-1.5 bg-[#1c1c1a] text-[#fcf9f5] text-xs font-semibold rounded-full shadow-md border ${
+                isSelected ? 'border-[#bf703a] ring-2 ring-[#bf703a]/40 scale-110' : 'border-[#e5e2de]'
               }">
-                <span class="w-2 h-2 rounded-full ${cafe.freshness.is_stale ? 'bg-[#bf703a]' : 'bg-[#137333]'}"></span>
+                <span class="w-2 h-2 rounded-full ${isStale ? 'bg-[#bf703a]' : 'bg-[#137333]'}"></span>
                 <span>${cafe.name}</span>
               </div>
             `,
@@ -154,15 +164,19 @@ export default function NaverMap({
         markersRef.current.set(cafe.id, marker);
       });
 
-      if (cafes.length > 1) {
-        map.panToBounds(bounds);
+      if (validCoordsCount > 1) {
+        // FIX: fitBounds is the correct Naver Maps SDK v3 method (panToBounds does not exist)
+        map.fitBounds(bounds);
+      } else if (validCoordsCount === 1) {
+        map.setCenter(new window.naver.maps.LatLng(cafes[0].lat, cafes[0].lng));
       }
     } catch (e) {
-      console.warn('Naver map init error, falling back to preview:', e);
+      console.warn('Naver map init error, falling back to preview container:', e);
       setMapError(true);
     }
-  }, [mapLoaded, mapError, cafes, selectedCafeId, onSelectCafe]);
+  }, [mapLoaded, mapError, cafes]);
 
+  // Handle selected cafe pan & zoom
   useEffect(() => {
     if (!mapInstanceRef.current || !selectedCafeId) return;
 
@@ -203,10 +217,14 @@ export default function NaverMap({
         <div className="relative z-10 my-auto py-4 flex flex-wrap gap-3 justify-center items-center">
           {cafes.map((cafe) => {
             const isSelected = selectedCafeId === cafe.id;
+            const isStale = cafe.freshness?.is_stale ?? false;
             return (
               <button
                 key={cafe.id}
-                onClick={() => onSelectCafe && onSelectCafe(cafe.id)}
+                onClick={() => {
+                  const handleSelect = onSelectMarker || onSelectCafe;
+                  if (handleSelect) handleSelect(cafe.id);
+                }}
                 className={`group flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium transition-all ${
                   isSelected
                     ? 'bg-[#1c1c1a] text-[#fcf9f5] border-[#1c1c1a] ring-2 ring-[#1c1c1a]/20 scale-105 shadow-sm font-semibold'
@@ -215,7 +233,7 @@ export default function NaverMap({
               >
                 <span
                   className={`w-2 h-2 rounded-full ${
-                    cafe.freshness.is_stale ? 'bg-[#bf703a]' : 'bg-[#137333]'
+                    isStale ? 'bg-[#bf703a]' : 'bg-[#137333]'
                   }`}
                 />
                 <span>{cafe.name}</span>
@@ -251,3 +269,4 @@ export default function NaverMap({
     />
   );
 }
+
