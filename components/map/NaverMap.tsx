@@ -61,7 +61,7 @@ export default function NaverMap({
     const loadScript = () => {
       const script = document.createElement('script');
       // NCP Maps JS SDK: ncpClientId + geocoding submodule (both enabled in Naver Console)
-      script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${clientId}&submodules=geocoding`;
+      script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${clientId}&submodules=geocoder`;
       script.async = true;
       script.onload = () => {
         window.alert = originalAlert;
