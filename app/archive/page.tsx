@@ -6,6 +6,7 @@ import ReportModal from '@/components/ReportModal';
 import EditProfileModal from '@/components/EditProfileModal';
 import CreatePostModal from '@/components/CreatePostModal';
 import AuthModal from '@/components/AuthModal';
+import NaverImportPanel from '@/components/NaverImportPanel';
 import Link from 'next/link';
 import { getSavedCafeIds, subscribeArchiveChanges, toggleSaveCafe } from '@/lib/archiveStore';
 import { analyzeSavedTaste, TasteAnalysisResult } from '@/lib/tasteEngine';
@@ -49,6 +50,7 @@ import {
 } from 'lucide-react';
 
 export default function ArchivePage() {
+  const [importedCount, setImportedCount] = useState(0);
   const [activeTab, setActiveTab] = useState<'collections' | 'posts' | 'twins'>('collections');
   const [isReportOpen, setIsReportOpen] = useState(false);
   const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);
@@ -219,7 +221,7 @@ export default function ArchivePage() {
             <div className="bg-stone-950/60 border border-stone-850 p-4 rounded-2xl text-center space-y-1">
               <span className="text-[10px] font-mono uppercase tracking-widest text-stone-400">ARCHIVED</span>
               <div className="font-serif text-2xl sm:text-3xl font-extrabold text-stone-100">
-                {savedIds.length > 0 ? savedIds.length : 48}
+                {savedIds.length + importedCount}
                 <span className="text-xs font-sans font-normal text-stone-400 ml-1">곳</span>
               </div>
               <p className="text-[11px] text-stone-500">저장한 공간</p>
@@ -374,6 +376,8 @@ export default function ArchivePage() {
         </div>
 
         {/* 4. TAB 1: COLLECTIONS VIEW */}
+        <NaverImportPanel onCountChange={setImportedCount} />
+
         {activeTab === 'collections' && (
           <div className="space-y-6">
             <div className="flex items-center justify-between">

@@ -89,3 +89,37 @@ npm run dev
 # Build production bundle
 npm run build
 ```
+
+## KULT deployment and Naver saved-list import
+
+The user-facing site is https://kult-eight-bice.vercel.app. The repository homepage
+currently points at a different Vercel domain; verify deployment targets before publishing.
+
+`/archive` now includes a Naver shared-list importer. Paste a list's sharing link,
+preview the places, then save them. The same list can be refreshed; its snapshot is
+replaced, and places are deduplicated across lists by Naver place ID. Unavailable
+places retain an explicit warning. Imported places remain separate from editorially
+verified cafe records so unknown hours, tags and verification dates are not invented.
+
+- Storage: this browser's localStorage, not account-level or cross-device storage.
+- Refresh: explicit “최신 목록 다시 불러오기”; no background synchronization.
+- Reader: `POST /api/import/naver`, public/unlisted shared lists only, no Naver login
+  credentials or cookies. Uses the current public save-page JSON response, not a
+  documented developer API. Upstream changes may require adapter updates.
+- Limits: 500 places per list, 20 per request, 25-second upstream deadline. Partial
+  responses are rejected instead of overwriting a saved snapshot.
+- Requests are restricted to exact Naver hosts and supported list paths; every
+  short-link redirect is validated. Redirects from the JSON endpoint are rejected.
+- This feature does not add the user's list to the shared repository or publish it
+  to other users. Existing local demo profiles are not real authentication.
+
+Validation (Node 22.18+ or Node 24):
+
+```sh
+node --test tests/naverImport.test.mjs
+npm run build
+```
+
+Before production release, verify the target Vercel deployment's network can reach
+Naver's public endpoint and test import/refresh with a shared list. Never remove
+Vercel deployment protection or change Naver map domains as part of this feature.
