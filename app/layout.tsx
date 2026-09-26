@@ -48,7 +48,7 @@ export default function RootLayout({
               <span className="font-mono text-[#747878] uppercase">Human-Curated Gazette</span>
             </div>
             <p className="text-[#5e5e5d]">
-              Not AI-generated. Personally tested & verified by local Seoul curators.
+              Local curator picks and clearly labeled test places. Check each place’s verification status.
             </p>
           </div>
         </footer>

@@ -1,0 +1,156 @@
+{
+  "curator": {
+    "id": "test-spaces",
+    "display_name": "KULT 테스트 공간",
+    "identity_tag": "테스트 콘텐츠",
+    "bio": "공유 목록 가져오기와 지도 표시를 확인하기 위한 공간입니다. 회원 개인 아카이브와 별도로 관리합니다.",
+    "status": "active",
+    "joined_date": "2026-09-26"
+  },
+  "cafes": [
+    {
+      "id": "demo-naver-1274280104",
+      "name": "코르츠",
+      "name_local": "코르츠",
+      "is_demo": true,
+      "naver_place_id": "1274280104",
+      "neighborhood": "Yongsan",
+      "address": "서울특별시 용산구 한강로2가 426 102동 108호, 109호",
+      "lat": 37.535148,
+      "lng": 126.9713197,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "공유 목록에서 가져온 코르츠 테스트 장소입니다. 위치는 네이버 장소 정보 기준이며, 영업시간과 시설은 아직 확인하지 않았습니다."
+    },
+    {
+      "id": "demo-naver-1121205227",
+      "name": "뽀르누서울",
+      "name_local": "뽀르누서울",
+      "is_demo": true,
+      "naver_place_id": "1121205227",
+      "neighborhood": "Yongsan",
+      "address": "서울특별시 용산구 주성동 1-18 1층",
+      "lat": 37.5235799,
+      "lng": 126.9979101,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "공유 목록에서 가져온 뽀르누서울 테스트 장소입니다. 위치는 네이버 장소 정보 기준이며, 영업시간과 시설은 아직 확인하지 않았습니다."
+    },
+    {
+      "id": "demo-naver-1741866041",
+      "name": "피에트라",
+      "name_local": "피에트라",
+      "is_demo": true,
+      "naver_place_id": "1741866041",
+      "neighborhood": "Yeonnam",
+      "address": "서울특별시 마포구 연남동 375-116 1층",
+      "lat": 37.5661556,
+      "lng": 126.9200124,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "공유 목록에서 가져온 피에트라 테스트 장소입니다. 위치는 네이버 장소 정보 기준이며, 영업시간과 시설은 아직 확인하지 않았습니다."
+    },
+    {
+      "id": "demo-naver-1883924356",
+      "name": "이미커피",
+      "name_local": "이미커피",
+      "is_demo": true,
+      "naver_place_id": "1883924356",
+      "neighborhood": "Hongdae",
+      "address": "서울특별시 마포구 동교동 201-10 1층",
+      "lat": 37.5574767,
+      "lng": 126.9219163,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "공유 목록에서 가져온 이미커피 테스트 장소입니다. 위치는 네이버 장소 정보 기준이며, 영업시간과 시설은 아직 확인하지 않았습니다."
+    },
+    {
+      "id": "demo-naver-1612839292",
+      "name": "코티지블루",
+      "name_local": "코티지블루",
+      "is_demo": true,
+      "naver_place_id": "1612839292",
+      "neighborhood": "Yeonnam",
+      "address": "서울특별시 마포구 연남동 565-14 2층 코티지블루",
+      "lat": 37.560408,
+      "lng": 126.9207305,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "공유 목록에서 가져온 코티지블루 테스트 장소입니다. 위치는 네이버 장소 정보 기준이며, 영업시간과 시설은 아직 확인하지 않았습니다."
+    },
+    {
+      "id": "demo-naver-1985216398",
+      "name": "하우스키루",
+      "name_local": "하우스키루",
+      "is_demo": true,
+      "naver_place_id": "1985216398",
+      "neighborhood": "Hongdae",
+      "address": "서울특별시 마포구 동교동 184-14 1층",
+      "lat": 37.5558444,
+      "lng": 126.931162,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "공유 목록에서 가져온 하우스키루 테스트 장소입니다. 위치는 네이버 장소 정보 기준이며, 영업시간과 시설은 아직 확인하지 않았습니다."
+    }
+  ]
+}

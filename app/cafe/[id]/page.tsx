@@ -59,6 +59,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
           </Link>
           <div className="flex items-center gap-2">
             <FreshnessBadge
+              isDemo={cafe.is_demo}
               lastVerifiedDate={cafe.last_verified_date}
               monthsAgo={cafe.freshness.months_ago}
               isStale={cafe.freshness.is_stale}
@@ -88,7 +89,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
             </div>
 
             <a
-              href={`https://map.naver.com/v5/search/${encodeURIComponent(cafe.address)}`}
+              href={cafe.naver_place_id ? `https://map.naver.com/p/entry/place/${cafe.naver_place_id}` : `https://map.naver.com/v5/search/${encodeURIComponent(cafe.address)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-stone-950 font-semibold text-xs hover:bg-amber-300 shadow-md transition-colors self-start"
@@ -110,7 +111,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
 
           <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
             <Quote className="w-4 h-4" />
-            <span>Curator Interview Commentary</span>
+            <span>{cafe.is_demo ? '테스트 장소 안내' : 'Curator Interview Commentary'}</span>
           </div>
 
           <blockquote className="font-serif text-xl sm:text-2xl text-stone-100 italic leading-relaxed border-l-4 border-amber-400 pl-4 py-1">
@@ -143,7 +144,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
                 href={`/curator/${primaryCurator.id}`}
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-stone-800 text-stone-200 hover:bg-stone-750 border border-stone-700 transition-colors shrink-0"
               >
-                <span>Full Curator Interview & Picks</span>
+                <span>{cafe.is_demo ? '테스트 공간의 전체 장소' : 'Full Curator Interview & Picks'}</span>
                 <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
               </Link>
             </div>
@@ -200,7 +201,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
                 <span className="text-stone-400 block font-medium">Kid-Free Zone</span>
                 <span className="font-semibold text-stone-200 flex items-center gap-1.5">
                   <Baby className="w-4 h-4 text-amber-400" />
-                  {cafe.tags.kid_free_zone ? 'Yes (Adults only)' : 'No / All ages'}
+                  {cafe.tags.kid_free_zone === null ? 'Unverified (미확인)' : cafe.tags.kid_free_zone ? 'Yes (Adults only)' : 'No / All ages'}
                 </span>
               </div>
 
@@ -208,7 +209,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
                 <span className="text-stone-400 block font-medium">Card Payments</span>
                 <span className="font-semibold text-stone-200 flex items-center gap-1.5">
                   <CreditCard className="w-4 h-4 text-emerald-400" />
-                  {cafe.tags.card_only ? 'Card Preferred' : 'Card & Cash'}
+                  {cafe.tags.card_only === null ? 'Unverified (미확인)' : cafe.tags.card_only ? 'Card Preferred' : 'Card & Cash'}
                 </span>
               </div>
             </div>

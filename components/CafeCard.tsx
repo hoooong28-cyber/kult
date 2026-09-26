@@ -74,6 +74,7 @@ export default function CafeCard({ cafe, isSelected = false, onSelect }: CafeCar
             </button>
 
             <FreshnessBadge
+              isDemo={cafe.is_demo}
               lastVerifiedDate={cafe.last_verified_date}
               monthsAgo={cafe.freshness.months_ago}
               isStale={cafe.freshness.is_stale}
@@ -88,7 +89,7 @@ export default function CafeCard({ cafe, isSelected = false, onSelect }: CafeCar
             <Quote className="w-4 h-4 text-[#bf703a] shrink-0 mt-0.5" />
             <div>
               <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-[#bf703a] block mb-1">
-                Curator Commentary
+                {cafe.is_demo ? '테스트 장소 안내' : 'Curator Commentary'}
               </span>
               <p className="italic font-serif text-[#1c1c1a]">{cafe.notes}</p>
             </div>

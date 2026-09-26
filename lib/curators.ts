@@ -130,7 +130,9 @@ export async function getMergedCafes(): Promise<CuratedCafe[]> {
       const key = `${cafe.name.toLowerCase().trim()}_${cafe.address.toLowerCase().replace(/\s+/g, '')}`;
 
       const coords = await resolveCoordinates(cafe.address, cafe.lat, cafe.lng);
-      const freshness = calculateFreshness(cafe.last_verified_date);
+      const freshness = cafe.is_demo
+        ? { months_ago: 0, is_stale: true, badge_label: '테스트 장소 · 방문 미확인' }
+        : calculateFreshness(cafe.last_verified_date);
 
       if (cafeMap.has(key)) {
         const existing = cafeMap.get(key)!;

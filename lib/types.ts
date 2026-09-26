@@ -17,6 +17,8 @@ export interface Cafe {
   id: string;
   name: string;
   name_local: string;
+  is_demo?: boolean;
+  naver_place_id?: string;
   neighborhood: string;
   address: string;
   lat: number | null;

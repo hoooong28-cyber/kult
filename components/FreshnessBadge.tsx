@@ -5,15 +5,21 @@ interface FreshnessBadgeProps {
   lastVerifiedDate: string;
   monthsAgo: number;
   isStale: boolean;
+  isDemo?: boolean;
   badgeLabel: string;
   className?: string;
 }
 
 export default function FreshnessBadge({
   isStale,
+  isDemo,
   badgeLabel,
   className = '',
 }: FreshnessBadgeProps) {
+  if (isDemo) {
+    return <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium bg-[#f6f3ef] text-[#706F6C] border border-[#e5e2de] ${className}`} title="공유 목록에서 가져온 테스트 장소입니다. 방문 검증 전입니다.">테스트 장소</span>;
+  }
+
   if (isStale) {
     return (
       <span
