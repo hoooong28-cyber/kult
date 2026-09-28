@@ -18,6 +18,7 @@ import {
   getUserPosts,
   subscribeUser,
   subscribePosts,
+  logOutUser,
   UserProfile,
   UserPost,
 } from '@/lib/userStore';
@@ -169,53 +170,111 @@ export default function ArchivePage() {
             <Feather className="w-48 h-48 text-amber-400" />
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
-            <div className="flex items-start sm:items-center gap-5">
-              <div className="relative shrink-0">
-                <img
-                  src={currentUser?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'}
-                  alt={currentUser?.name || '송민지'}
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover ring-2 ring-amber-400/30 shadow-md"
-                />
-                <div className="absolute -bottom-2 -right-2 bg-amber-400 text-stone-950 p-1.5 rounded-xl shadow-md">
-                  <BookOpen className="w-4 h-4 stroke-[2.5]" />
+          {currentUser ? (
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+              <div className="flex items-start sm:items-center gap-5">
+                <div className="relative shrink-0">
+                  <img
+                    src={currentUser.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'}
+                    alt={currentUser.name}
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover ring-2 ring-amber-400/30 shadow-md"
+                  />
+                  <div className="absolute -bottom-2 -right-2 bg-amber-400 text-stone-950 p-1.5 rounded-xl shadow-md">
+                    <BookOpen className="w-4 h-4 stroke-[2.5]" />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h1 className="font-serif text-2xl sm:text-3xl font-bold text-stone-100 tracking-tight">
+                      {currentUser.name}
+                    </h1>
+                    <span className="px-2.5 py-0.5 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/30 text-[10px] font-bold uppercase tracking-wider">
+                      {currentUser.identityTag || 'EDITORIAL CURATOR'}
+                    </span>
+                  </div>
+
+                  <p className="text-stone-300 text-xs sm:text-sm max-w-xl leading-relaxed">
+                    {currentUser.bio || '서울의 조용한 작업 공간을 수집하는 에디터입니다.'}
+                  </p>
                 </div>
               </div>
 
-              <div className="space-y-1.5">
-                <div className="flex items-center gap-3 flex-wrap">
-                  <h1 className="font-serif text-2xl sm:text-3xl font-bold text-stone-100 tracking-tight">
-                    {currentUser?.name || '송민지'}
-                  </h1>
-                  <span className="px-2.5 py-0.5 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/30 text-[10px] font-bold uppercase tracking-wider">
-                    {currentUser?.identityTag || 'EDITORIAL CURATOR'}
-                  </span>
-                </div>
+              <div className="flex items-center gap-2.5 self-stretch sm:self-auto justify-end flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => setIsEditProfileOpen(true)}
+                  className="px-4 py-2 rounded-xl bg-stone-850 hover:bg-stone-800 border border-stone-750 text-stone-300 hover:text-stone-100 text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-sm"
+                >
+                  <Edit3 className="w-3.5 h-3.5 text-amber-400" />
+                  <span>소개글 수정</span>
+                </button>
 
-                <p className="text-stone-300 text-xs sm:text-sm max-w-xl leading-relaxed">
-                  {currentUser?.bio || '서울의 침묵과 조도를 기록하는 에디터. 종이와 목재 질감, 아침의 긴 그림자를 사랑합니다.'}
-                </p>
+                <button
+                  type="button"
+                  onClick={() => setIsCreatePostOpen(true)}
+                  className="px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition-colors flex items-center gap-1.5 shadow-md"
+                >
+                  <PlusCircle className="w-4 h-4" />
+                  <span>공간 기고하기</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    logOutUser();
+                    setCurrentUser(null);
+                  }}
+                  className="px-3 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-800 text-stone-400 hover:text-stone-200 text-xs font-medium transition-colors"
+                >
+                  로그아웃
+                </button>
               </div>
             </div>
+          ) : (
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+              <div className="flex items-start sm:items-center gap-5">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-stone-850 border border-stone-750 flex items-center justify-center text-amber-400 shadow-md shrink-0">
+                  <UserPlus className="w-10 h-10 stroke-[1.5]" />
+                </div>
 
-            <div className="flex items-center gap-2.5 self-stretch sm:self-auto justify-end flex-wrap">
-              <button
-                onClick={() => setIsEditProfileOpen(true)}
-                className="px-4 py-2 rounded-xl bg-stone-850 hover:bg-stone-800 border border-stone-750 text-stone-300 hover:text-stone-100 text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-sm"
-              >
-                <Edit3 className="w-3.5 h-3.5 text-amber-400" />
-                <span>소개글 수정</span>
-              </button>
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h1 className="font-serif text-2xl sm:text-3xl font-bold text-stone-100 tracking-tight">
+                      에디터 가입 / 로그인
+                    </h1>
+                    <span className="px-2.5 py-0.5 rounded-full bg-stone-800 text-stone-400 border border-stone-700 text-[10px] font-bold uppercase tracking-wider">
+                      GUEST VISITOR
+                    </span>
+                  </div>
 
-              <button
-                onClick={() => setIsCreatePostOpen(true)}
-                className="px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition-colors flex items-center gap-1.5 shadow-md"
-              >
-                <PlusCircle className="w-4 h-4" />
-                <span>공간 기고하기</span>
-              </button>
+                  <p className="text-stone-400 text-xs sm:text-sm max-w-xl leading-relaxed">
+                    로그인하시면 저장해둔 나만의 카페 서재를 동기화하고 새 공간 아티클을 직접 기고할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 self-stretch sm:self-auto justify-end flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => setIsAuthOpen(true)}
+                  className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition-colors flex items-center gap-1.5 shadow-md"
+                >
+                  <UserPlus className="w-4 h-4" />
+                  <span>에디터 가입 및 로그인</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setIsCreatePostOpen(true)}
+                  className="px-4 py-2.5 rounded-xl bg-stone-850 hover:bg-stone-800 border border-stone-750 text-stone-300 text-xs font-semibold transition-colors flex items-center gap-1.5"
+                >
+                  <PlusCircle className="w-4 h-4 text-amber-400" />
+                  <span>공간 기고하기</span>
+                </button>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* EDITORIAL STATS MOSAIC */}
           <div className="grid grid-cols-3 gap-3 pt-2">
@@ -380,142 +439,245 @@ export default function ArchivePage() {
         <NaverImportPanel onCountChange={setImportedCount} />
 
         {activeTab === 'collections' && (
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
-                  CURATED PORTFOLIOS
-                </span>
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-100 mt-1">
-                  테마별 나만의 서재 리스트
-                </h2>
+          <div className="space-y-10">
+            {/* 1. REAL USER SAVED CAFES LIST */}
+            <div className="space-y-6">
+              <div className="flex items-center justify-between border-b border-stone-850 pb-4">
+                <div>
+                  <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+                    MY SAVED SANCTUARIES
+                  </span>
+                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-100 mt-1">
+                    내가 저장해둔 공간 ({allCafes.filter((c) => savedIds.includes(c.id)).length}곳)
+                  </h2>
+                </div>
+
+                <Link
+                  href="/"
+                  className="px-4 py-2 rounded-xl bg-stone-900 hover:bg-stone-850 border border-stone-800 text-amber-300 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                >
+                  <Compass className="w-4 h-4 text-amber-400" />
+                  <span>새 공간 탐색하기</span>
+                </Link>
               </div>
 
-              <button
-                onClick={() => setIsCreatePostOpen(true)}
-                className="px-4 py-2 rounded-xl bg-stone-900 hover:bg-stone-850 border border-stone-800 text-amber-300 text-xs font-semibold flex items-center gap-1.5 transition-colors"
-              >
-                <FolderPlus className="w-4 h-4 text-amber-400" />
-                <span>새 아티클 기고</span>
-              </button>
+              {allCafes.filter((c) => savedIds.includes(c.id)).length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {allCafes
+                    .filter((c) => savedIds.includes(c.id))
+                    .map((cafe) => (
+                      <div
+                        key={cafe.id}
+                        className="bg-stone-900 border border-stone-850 hover:border-amber-400/40 rounded-3xl p-6 space-y-4 shadow-xl transition-all flex flex-col justify-between group"
+                      >
+                        <div className="space-y-3">
+                          <div className="flex items-start justify-between gap-3">
+                            <div>
+                              <div className="flex items-center gap-1.5 text-xs text-amber-400 font-medium">
+                                <MapPin className="w-3.5 h-3.5" />
+                                <span>{cafe.neighborhood}</span>
+                              </div>
+                              <h3 className="font-serif text-xl font-bold text-stone-100 mt-1 group-hover:text-amber-300 transition-colors">
+                                {cafe.name}
+                              </h3>
+                              <p className="text-xs text-stone-400">{cafe.name_local}</p>
+                            </div>
+
+                            <button
+                              type="button"
+                              onClick={() => handleToggleBookmark(cafe.id)}
+                              className="px-3 py-1.5 rounded-xl bg-amber-400 text-stone-950 font-bold text-xs flex items-center gap-1 shadow-sm hover:bg-stone-800 hover:text-stone-100 transition-colors shrink-0"
+                              title="아카이브에서 제거"
+                            >
+                              <Bookmark className="w-3.5 h-3.5 fill-current" />
+                              <span>저장됨</span>
+                            </button>
+                          </div>
+
+                          <div className="p-3.5 rounded-2xl bg-stone-950 border border-stone-850 italic font-serif text-xs text-stone-300 leading-relaxed">
+                            "{cafe.notes}"
+                          </div>
+
+                          <div className="flex flex-wrap gap-2 text-[11px] font-mono">
+                            {cafe.tags.good_for.map((tag) => (
+                              <span key={tag} className="px-2.5 py-0.5 rounded-md bg-stone-800 text-stone-300 border border-stone-750 capitalize">
+                                For {tag}
+                              </span>
+                            ))}
+                            {cafe.tags.noise_level && (
+                              <span className="px-2.5 py-0.5 rounded-md bg-stone-800 text-amber-300 border border-stone-750 flex items-center gap-1">
+                                <Volume2 className="w-3 h-3 text-amber-400" /> {cafe.tags.noise_level}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        <div className="pt-3 border-t border-stone-850 flex items-center justify-between text-xs">
+                          <span className="text-stone-500 font-mono text-[11px] truncate max-w-[240px]">
+                            {cafe.address}
+                          </span>
+                          <Link
+                            href={`/cafe/${cafe.id}`}
+                            className="text-amber-400 font-bold hover:underline flex items-center gap-1 font-mono shrink-0"
+                          >
+                            <span>공간 상세 →</span>
+                          </Link>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                <div className="bg-stone-900/60 border border-stone-850 rounded-3xl p-8 sm:p-12 text-center space-y-4">
+                  <div className="w-16 h-16 rounded-2xl bg-amber-400/10 border border-amber-400/20 text-amber-400 flex items-center justify-center mx-auto shadow-inner">
+                    <Bookmark className="w-8 h-8 stroke-[1.5]" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="font-serif text-xl font-bold text-stone-100">
+                      아직 저장한 공간이 없습니다
+                    </h3>
+                    <p className="text-xs sm:text-sm text-stone-400 max-w-md mx-auto leading-relaxed">
+                      메인 가제트 탐색 페이지에서 마음에 드는 공간의 Bookmark 아이콘을 눌러 나만의 아카이브 서재를 채워보세요.
+                    </p>
+                  </div>
+                  <Link
+                    href="/"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs shadow-md transition-colors"
+                  >
+                    <span>서울 가제트 공간 탐색하기</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              )}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Folder Card 1 */}
-              <article className="bg-stone-900 border border-stone-850 rounded-2xl overflow-hidden group hover:border-amber-400/50 transition-all shadow-lg flex flex-col">
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80"
-                    alt="혼자만의 몰입과 글쓰기"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
-                  <div className="absolute top-3 right-3 bg-stone-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-amber-300 border border-stone-800">
-                    14 SPACES
-                  </div>
-                  <div className="absolute bottom-3 left-4 right-4">
-                    <span className="text-[10px] font-mono tracking-widest uppercase text-amber-400 font-bold">
-                      CURATION NO. 01
-                    </span>
-                    <h3 className="font-serif text-lg font-bold text-stone-100 mt-0.5">
-                      혼자만의 몰입과 글쓰기
-                    </h3>
-                  </div>
+            {/* 2. THEMATIC EDITORIAL COLLECTIONS */}
+            <div className="space-y-6 pt-4 border-t border-stone-850">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-mono uppercase tracking-widest text-amber-400/90 font-bold">
+                    RECOMMENDED PORTFOLIOS
+                  </span>
+                  <h3 className="font-serif text-lg font-bold text-stone-100 mt-0.5">
+                    KULT 테마별 추천 서재 큐레이션
+                  </h3>
                 </div>
+              </div>
 
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                  <p className="text-xs text-stone-300 leading-relaxed line-clamp-2">
-                    낮은 음악 소리와 따스한 필터커피 향, 사색을 방해하지 않는 고요한 좌석 배치가 마련된 14곳의 안식처.
-                  </p>
-
-                  <div className="pt-3 border-t border-stone-850 flex items-center justify-between text-xs text-stone-400">
-                    <div className="flex items-center gap-1.5 font-medium text-stone-300">
-                      <span>앤트러사이트 서교</span>
-                      <span className="text-stone-600">•</span>
-                      <span>어니언 미아</span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Folder Card 1 */}
+                <article className="bg-stone-900 border border-stone-850 rounded-2xl overflow-hidden group hover:border-amber-400/50 transition-all shadow-lg flex flex-col">
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80"
+                      alt="혼자만의 몰입과 글쓰기"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+                    <div className="absolute top-3 right-3 bg-stone-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-amber-300 border border-stone-800">
+                      14 SPACES
                     </div>
-                    <ArrowRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </article>
-
-              {/* Folder Card 2 */}
-              <article className="bg-stone-900 border border-stone-850 rounded-2xl overflow-hidden group hover:border-amber-400/50 transition-all shadow-lg flex flex-col">
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80"
-                    alt="성수 & 한남 로스터리 투어"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
-                  <div className="absolute top-3 right-3 bg-stone-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-amber-300 border border-stone-800">
-                    19 SPACES
-                  </div>
-                  <div className="absolute bottom-3 left-4 right-4">
-                    <span className="text-[10px] font-mono tracking-widest uppercase text-amber-400 font-bold">
-                      CURATION NO. 02
-                    </span>
-                    <h3 className="font-serif text-lg font-bold text-stone-100 mt-0.5">
-                      성수 & 한남 로스터리 투어
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                  <p className="text-xs text-stone-300 leading-relaxed line-clamp-2">
-                    원두 본연의 테루아를 섬세하게 다루는 바리스타들의 작업실. 이른 오전 방문을 추천하는 리스트.
-                  </p>
-
-                  <div className="pt-3 border-t border-stone-850 flex items-center justify-between text-xs text-stone-400">
-                    <div className="flex items-center gap-1.5 font-medium text-stone-300">
-                      <span>로우키</span>
-                      <span className="text-stone-600">•</span>
-                      <span>피어커피</span>
-                      <span className="text-stone-600">•</span>
-                      <span>센터커피</span>
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <span className="text-[10px] font-mono tracking-widest uppercase text-amber-400 font-bold">
+                        CURATION NO. 01
+                      </span>
+                      <h4 className="font-serif text-lg font-bold text-stone-100 mt-0.5">
+                        혼자만의 몰입과 글쓰기
+                      </h4>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
                   </div>
-                </div>
-              </article>
 
-              {/* Folder Card 3 */}
-              <article className="bg-stone-900 border border-stone-850 rounded-2xl overflow-hidden group hover:border-amber-400/50 transition-all shadow-lg flex flex-col">
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80"
-                    alt="주말 비오는 날 생각나는 한옥"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
-                  <div className="absolute top-3 right-3 bg-stone-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-amber-300 border border-stone-800">
-                    8 SPACES
-                  </div>
-                  <div className="absolute bottom-3 left-4 right-4">
-                    <span className="text-[10px] font-mono tracking-widest uppercase text-amber-400 font-bold">
-                      CURATION NO. 03
-                    </span>
-                    <h3 className="font-serif text-lg font-bold text-stone-100 mt-0.5">
-                      주말 비오는 날 생각나는 한옥
-                    </h3>
-                  </div>
-                </div>
+                  <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
+                    <p className="text-xs text-stone-300 leading-relaxed line-clamp-2">
+                      낮은 음악 소리와 따스한 필터커피 향, 사색을 방해하지 않는 고요한 좌석 배치.
+                    </p>
 
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                  <p className="text-xs text-stone-300 leading-relaxed line-clamp-2">
-                    기와 처마 끝으로 떨어지는 빗소리를 들으며 덖음 차 한 잔의 온기를 누릴 수 있는 서촌과 삼청동의 기록.
-                  </p>
-
-                  <div className="pt-3 border-t border-stone-850 flex items-center justify-between text-xs text-stone-400">
-                    <div className="flex items-center gap-1.5 font-medium text-stone-300">
-                      <span>이이엄</span>
-                      <span className="text-stone-600">•</span>
-                      <span>올모스트홈 카페</span>
+                    <div className="pt-2 border-t border-stone-850 flex items-center justify-between text-xs text-stone-400">
+                      <div className="flex items-center gap-1.5 font-medium text-stone-300 text-[11px]">
+                        <span>앤트러사이트 서교</span>
+                        <span className="text-stone-600">•</span>
+                        <span>어니언 미아</span>
+                      </div>
+                      <ArrowRight className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-1 transition-transform" />
                     </div>
-                    <ArrowRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
                   </div>
-                </div>
-              </article>
+                </article>
+
+                {/* Folder Card 2 */}
+                <article className="bg-stone-900 border border-stone-850 rounded-2xl overflow-hidden group hover:border-amber-400/50 transition-all shadow-lg flex flex-col">
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80"
+                      alt="성수 & 한남 로스터리 투어"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+                    <div className="absolute top-3 right-3 bg-stone-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-amber-300 border border-stone-800">
+                      19 SPACES
+                    </div>
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <span className="text-[10px] font-mono tracking-widest uppercase text-amber-400 font-bold">
+                        CURATION NO. 02
+                      </span>
+                      <h4 className="font-serif text-lg font-bold text-stone-100 mt-0.5">
+                        성수 &amp; 한남 로스터리 투어
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
+                    <p className="text-xs text-stone-300 leading-relaxed line-clamp-2">
+                      원두 본연의 테루아를 섬세하게 다루는 바리스타들의 작업실.
+                    </p>
+
+                    <div className="pt-2 border-t border-stone-850 flex items-center justify-between text-xs text-stone-400">
+                      <div className="flex items-center gap-1.5 font-medium text-stone-300 text-[11px]">
+                        <span>로우키</span>
+                        <span className="text-stone-600">•</span>
+                        <span>피어커피</span>
+                      </div>
+                      <ArrowRight className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </article>
+
+                {/* Folder Card 3 */}
+                <article className="bg-stone-900 border border-stone-850 rounded-2xl overflow-hidden group hover:border-amber-400/50 transition-all shadow-lg flex flex-col">
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80"
+                      alt="주말 비오는 날 생각나는 한옥"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+                    <div className="absolute top-3 right-3 bg-stone-950/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold text-amber-300 border border-stone-800">
+                      8 SPACES
+                    </div>
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <span className="text-[10px] font-mono tracking-widest uppercase text-amber-400 font-bold">
+                        CURATION NO. 03
+                      </span>
+                      <h4 className="font-serif text-lg font-bold text-stone-100 mt-0.5">
+                        주말 비오는 날 생각나는 한옥
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
+                    <p className="text-xs text-stone-300 leading-relaxed line-clamp-2">
+                      기와 처마 끝 빗소리를 들으며 덖음 차 한 잔의 온기를 누리는 공간.
+                    </p>
+
+                    <div className="pt-2 border-t border-stone-850 flex items-center justify-between text-xs text-stone-400">
+                      <div className="flex items-center gap-1.5 font-medium text-stone-300 text-[11px]">
+                        <span>이이엄</span>
+                        <span className="text-stone-600">•</span>
+                        <span>올모스트홈</span>
+                      </div>
+                      <ArrowRight className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         )}

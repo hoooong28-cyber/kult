@@ -64,17 +64,14 @@ const userListeners: Set<UserListener> = new Set();
 const postsListeners: Set<PostsListener> = new Set();
 
 export function getCurrentUser(): UserProfile | null {
-  if (typeof window === 'undefined') return DEFAULT_USER;
+  if (typeof window === 'undefined') return null;
   try {
     const raw = localStorage.getItem(USER_KEY);
-    if (!raw) {
-      localStorage.setItem(USER_KEY, JSON.stringify(DEFAULT_USER));
-      return DEFAULT_USER;
-    }
+    if (!raw) return null;
     return JSON.parse(raw);
   } catch (e) {
     console.error('Failed to parse current user:', e);
-    return DEFAULT_USER;
+    return null;
   }
 }
 
