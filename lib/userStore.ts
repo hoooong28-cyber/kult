@@ -98,7 +98,29 @@ export function signUpUser(
   return newUser;
 }
 
+export const STAFF_TEST_ACCOUNT: UserProfile = {
+  id: 'user-kult-admin',
+  name: 'KULT 운영진 (Editorial Staff)',
+  email: 'admin@kult.magazine',
+  identityTag: 'STAFF EDITORIAL DIRECTORY',
+  bio: 'KULT 공식 에디토리얼 운영진 계정입니다. 서울 스페셜티 카페 큐레이션 검증 및 테스트를 수행합니다.',
+  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+  joinedDate: '2026-09-01',
+};
+
+export function logInStaffTestAccount(): UserProfile {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(USER_KEY, JSON.stringify(STAFF_TEST_ACCOUNT));
+  }
+  notifyUserListeners(STAFF_TEST_ACCOUNT);
+  return STAFF_TEST_ACCOUNT;
+}
+
 export function logInUser(email: string): UserProfile {
+  if (email.toLowerCase().includes('admin') || email.toLowerCase() === 'admin@kult.magazine') {
+    return logInStaffTestAccount();
+  }
+
   const existing = getCurrentUser();
   if (existing && existing.email === email) return existing;
   

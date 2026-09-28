@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, UserPlus, LogIn, Sparkles, Feather } from 'lucide-react';
-import { signUpUser, logInUser, getCurrentUser } from '@/lib/userStore';
+import { X, UserPlus, LogIn, Sparkles, Feather, ShieldCheck } from 'lucide-react';
+import { signUpUser, logInUser, logInStaffTestAccount } from '@/lib/userStore';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -22,10 +22,9 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (mode === 'signup') {
-      signUpUser(name || 'KULT Editor', email, bio, identityTag);
+      signUpUser(name || 'KULT Editor', email || 'editor@kult.magazine', bio, identityTag);
     } else {
-      // Simulate login
-      signUpUser('송민지', email || 'eleanor@kult.magazine', bio, identityTag);
+      logInUser(email || 'admin@kult.magazine');
     }
     onClose();
   };
@@ -164,6 +163,25 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           >
             <span>{mode === 'signup' ? '가입 완료 및 에디터 계정 생성' : '아카이브 로그인'}</span>
           </button>
+
+          {/* Quick Staff Test Account Button */}
+          <div className="pt-4 mt-2 border-t border-[#E6DFD3]/15 space-y-2">
+            <div className="flex items-center justify-between text-[11px] font-mono text-[#5E5E5D]">
+              <span>STAFF TEST ACCOUNT</span>
+              <span className="text-[#BF703A] font-semibold">admin@kult.magazine</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                logInStaffTestAccount();
+                onClose();
+              }}
+              className="w-full py-2.5 rounded-xl bg-[#2D2D2A] hover:bg-[#BF703A] text-[#BF703A] hover:text-white border border-[#BF703A]/40 font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-sm active:scale-95"
+            >
+              <ShieldCheck className="w-4 h-4 text-[#BF703A]" />
+              <span>⚡ 운영진 테스트 계정 1초 로그인</span>
+            </button>
+          </div>
         </form>
       </div>
     </div>
