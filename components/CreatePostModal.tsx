@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 import { X, Send, Coffee, MapPin, Volume2, Plug } from 'lucide-react';
 import { createPublishedPost } from '@/lib/userStore';
+import { CuratedCafe } from '@/lib/types';
 
 interface CreatePostModalProps {
   isOpen: boolean;
   onClose: () => void;
+  cafes?: CuratedCafe[];
 }
 
 export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProps) {

@@ -7,6 +7,7 @@ import EditProfileModal from '@/components/EditProfileModal';
 import CreatePostModal from '@/components/CreatePostModal';
 import AuthModal from '@/components/AuthModal';
 import NaverImportPanel from '@/components/NaverImportPanel';
+import MobileBottomNav from '@/components/MobileBottomNav';
 import Link from 'next/link';
 import { getSavedCafeIds, subscribeArchiveChanges, toggleSaveCafe } from '@/lib/archiveStore';
 import { analyzeSavedTaste, TasteAnalysisResult } from '@/lib/tasteEngine';
@@ -139,8 +140,8 @@ export default function ArchivePage() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-950 text-stone-100 flex flex-col font-sans selection:bg-amber-400 selection:text-stone-950">
-      <Header onOpenReport={() => setIsReportOpen(true)} onOpenAuth={() => setIsAuthOpen(true)} />
+    <div className="min-h-screen bg-stone-950 text-stone-100 flex flex-col font-sans selection:bg-amber-400 selection:text-stone-950 pb-28 md:pb-12">
+      <Header onOpenReport={() => setIsReportOpen(true)} onOpenAuth={() => setIsAuthOpen(true)} onOpenCreatePost={() => setIsCreatePostOpen(true)} />
 
       {/* 1. ISSUE SUB-MASTHEAD BAR */}
       <div className="border-b border-stone-850 bg-stone-900/60 px-4 sm:px-8 py-2.5 backdrop-blur-sm">
@@ -755,8 +756,14 @@ export default function ArchivePage() {
       {/* MODALS */}
       <ReportModal isOpen={isReportOpen} onClose={() => setIsReportOpen(false)} />
       <EditProfileModal isOpen={isEditProfileOpen} onClose={() => setIsEditProfileOpen(false)} />
-      <CreatePostModal isOpen={isCreatePostOpen} onClose={() => setIsCreatePostOpen(false)} />
+      <CreatePostModal isOpen={isCreatePostOpen} onClose={() => setIsCreatePostOpen(false)} cafes={allCafes} />
       <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
+
+      <MobileBottomNav
+        onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenCreatePost={() => setIsCreatePostOpen(true)}
+      />
     </div>
   );
 }
+

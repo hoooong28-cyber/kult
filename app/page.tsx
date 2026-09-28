@@ -5,9 +5,12 @@ import Header from '@/components/Header';
 import CafeCard from '@/components/CafeCard';
 import NaverMap from '@/components/map/NaverMap';
 import ReportModal from '@/components/ReportModal';
+import AuthModal from '@/components/AuthModal';
+import CreatePostModal from '@/components/CreatePostModal';
+import MobileBottomNav from '@/components/MobileBottomNav';
 import { CafeFilterParams, CuratedCafe } from '@/lib/types';
 import { toggleSaveCafe, isCafeSaved, subscribeArchiveChanges } from '@/lib/archiveStore';
-import { Map, LayoutGrid, Search, Sparkles, Coffee, ArrowRight, Sun, Volume2, Plug, Bookmark, Check } from 'lucide-react';
+import { Map, LayoutGrid, Search, Sparkles, Coffee, ArrowRight, Sun, Volume2, Plug, Bookmark, Check, List } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomePage() {
@@ -18,6 +21,8 @@ export default function HomePage() {
   const [selectedCafeId, setSelectedCafeId] = useState<string | null>(null);
   const [showFullMap, setShowFullMap] = useState(false);
   const [isReportOpen, setIsReportOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isCreatePostOpen, setIsCreatePostOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [savedAnthracite, setSavedAnthracite] = useState(false);
 
@@ -107,8 +112,12 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FCF9F5] text-[#1C1C1A] flex flex-col font-sans selection:bg-[#BF703A] selection:text-white pb-24">
-      <Header onOpenReport={() => setIsReportOpen(true)} />
+    <div className="min-h-screen bg-[#FCF9F5] text-[#1C1C1A] flex flex-col font-sans selection:bg-[#BF703A] selection:text-white pb-28 md:pb-24">
+      <Header
+        onOpenReport={() => setIsReportOpen(true)}
+        onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenCreatePost={() => setIsCreatePostOpen(true)}
+      />
 
       {/* TOP MARQUEE UTILITY BAR */}
       <div className="border-b border-[#E6DFD3] bg-[#FCF9F5] px-4 md:px-12 py-2 flex items-center justify-between text-[11px] tracking-[0.18em] uppercase text-[#5E5E5D]">
@@ -553,6 +562,20 @@ export default function HomePage() {
       </footer>
 
       <ReportModal isOpen={isReportOpen} onClose={() => setIsReportOpen(false)} />
+      <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
+      <CreatePostModal
+        isOpen={isCreatePostOpen}
+        onClose={() => setIsCreatePostOpen(false)}
+        cafes={allCafes}
+      />
+
+      <MobileBottomNav
+        onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenCreatePost={() => setIsCreatePostOpen(true)}
+        onToggleMap={() => setShowFullMap(!showFullMap)}
+        isMapActive={showFullMap}
+      />
     </div>
   );
 }
+
