@@ -102,6 +102,24 @@ export default function HomePage() {
     setFilteredCafes(result);
   }, [allCafes, selectedNeighborhood, filters]);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#map-explore') {
+      setShowFullMap(true);
+      setTimeout(() => {
+        const el = document.getElementById('map-explore');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  }, []);
+
+  const handleToggleMap = () => {
+    setShowFullMap(true);
+    setTimeout(() => {
+      const el = document.getElementById('map-explore');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  };
+
   const handleFilterChange = (updated: Partial<CafeFilterParams>) => {
     setFilters((prev) => ({ ...prev, ...updated }));
   };
@@ -572,7 +590,7 @@ export default function HomePage() {
       <MobileBottomNav
         onOpenAuth={() => setIsAuthOpen(true)}
         onOpenCreatePost={() => setIsCreatePostOpen(true)}
-        onToggleMap={() => setShowFullMap(!showFullMap)}
+        onToggleMap={handleToggleMap}
         isMapActive={showFullMap}
       />
     </div>
