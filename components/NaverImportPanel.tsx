@@ -1,5 +1,6 @@
 'use client';
 
+import { MapLink } from './Interaction';
 import { useEffect, useMemo, useState } from 'react';
 import { ImportedList, mergeImportedLists, uniqueImportedPlaces } from '@/lib/naverImport';
 
@@ -116,7 +117,7 @@ export default function NaverImportPanel({
             {!place.available && <p className="text-xs text-orange-300">폐업 또는 정보 없음 · 확인 필요</p>}
             <p className="text-xs text-stone-400">{place.address || '주소 정보 없음'}</p>
             {place.memo && <p className="text-sm text-stone-300 whitespace-pre-wrap">{place.memo}</p>}
-            <a href={place.url} target="_blank" rel="noopener noreferrer" className="inline-block text-xs text-amber-200 underline">네이버 지도에서 보기 ↗</a>
+            <MapLink href={place.url} placeId={place.id} className="inline-block text-xs text-amber-200 underline">네이버 지도에서 보기 ↗</MapLink>
           </article>)}
         </div>
         {visible.length === 0 && <p className="text-sm text-stone-400">검색 결과가 없습니다.</p>}

@@ -5,8 +5,8 @@ const id = 'a'.repeat(32);
 const url = `https://map.naver.com/p/favorite/sharedPlace/folder/${id}`;
 const item = n => ({bookmarkId:n,name:`Place ${n}`,sid:String(n),available:n!==3,px:127,py:37,address:'Seoul',mcidName:'카페'});
 const page = (start,total=24) => Response.json({folder:{name:'Test',bookmarkCount:total},bookmarkList:Array.from({length:Math.min(20,total-start)},(_,i)=>item(start+i+1))});
-test('rejects SSRF targets and non-list links',()=>{
- for(const u of ['http://naver.me/x','https://naver.me.evil.com/x','https://naver.me@127.0.0.1/x','https://naver.me:444/x','https://map.naver.com/p/entry/place/123','https://127.0.0.1']) assert.throws(()=>validateListUrl(u));
+test('rejects SSRF targets and insecure URLs',()=>{
+ for(const u of ['http://naver.me/x','https://naver.me.evil.com/x','https://naver.me@127.0.0.1/x','https://naver.me:444/x','https://127.0.0.1']) assert.throws(()=>validateListUrl(u));
 });
 test('short link + pagination imports 24 including unavailable place',async()=>{
  const calls=[];
@@ -33,3 +33,5 @@ test('refresh replaces a list and deduplicates shared places across lists',async
 test('empty lists are a valid snapshot',async()=>{
  assert.equal((await fetchSharedList(url,async()=>page(0,0))).places.length,0);
 });
+
+test('accepts single-place links supported by current main',()=>{assert.equal(validateListUrl('https://map.naver.com/p/entry/place/123').hostname,'map.naver.com');});

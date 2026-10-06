@@ -1,4 +1,8 @@
 import React from 'react';
+import SavePlaceButton from '@/components/SavePlaceButton';
+import StoryCards from '@/components/StoryCards';
+import { storiesForPlace } from '@/lib/stories';
+import { PageInteraction, MapLink, SourceLink, ShareButton } from '@/components/Interaction';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getCafeById } from '@/lib/curators';
@@ -87,6 +91,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <PageInteraction key={id} event="place_open" place_id={id} />
       {/* Top Header Navigation */}
       <nav className="sticky top-0 z-40 bg-stone-950/90 backdrop-blur-md border-b border-stone-850 px-4 sm:px-8 py-3.5">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
@@ -111,6 +116,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
 
       {/* Main Content Container */}
       <main className="max-w-5xl mx-auto px-4 sm:px-8 py-8 sm:py-12 flex-1 w-full space-y-8">
+        <div className="flex flex-wrap gap-3"><SavePlaceButton placeId={id} /><ShareButton context={{place_id:id}} /><Link href="/archive" className="min-h-11 px-4 py-3 text-sm underline">내 KULT 보기</Link></div>
         {/* Title Header */}
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 uppercase tracking-widest mb-2">
@@ -128,15 +134,13 @@ export default async function CafeDetailPage({ params }: PageProps) {
               </p>
             </div>
 
-            <a
+            <MapLink placeId={id}
               href={cafe.naver_place_id ? `https://map.naver.com/p/entry/place/${cafe.naver_place_id}` : `https://map.naver.com/v5/search/${encodeURIComponent(cafe.address)}`}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-stone-950 font-semibold text-xs hover:bg-amber-300 shadow-md transition-colors self-start"
             >
               <span>Open in NAVER Map</span>
               <ExternalLink className="w-4 h-4" />
-            </a>
+            </MapLink>
           </div>
 
           <p className="text-sm text-stone-300 mt-3 flex items-center gap-1.5">
@@ -180,13 +184,13 @@ export default async function CafeDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              <Link
+              <SourceLink source="curator"
                 href={`/curator/${primaryCurator.id}`}
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-stone-800 text-stone-200 hover:bg-stone-750 border border-stone-700 transition-colors shrink-0"
               >
                 <span>{cafe.is_demo ? '테스트 공간의 전체 장소' : 'Full Curator Interview & Picks'}</span>
                 <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
-              </Link>
+              </SourceLink>
             </div>
           )}
         </section>
@@ -289,6 +293,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+        <StoryCards stories={storiesForPlace(id)} source="editorial" />
       </main>
     </div>
   );

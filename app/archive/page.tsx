@@ -1,5 +1,6 @@
 'use client';
 
+import { MapLink } from '@/components/Interaction';
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import ReportModal from '@/components/ReportModal';
@@ -162,7 +163,7 @@ export default function ArchivePage() {
       setIsAuthOpen(true);
       return;
     }
-    toggleFollow(curatorId);
+    try { toggleFollow(curatorId); } catch { alert('팔로우 저장에 실패했습니다. 다시 시도해 주세요.'); }
   };
 
   const handleToggleBookmark = (cafeId: string) => {
@@ -170,7 +171,7 @@ export default function ArchivePage() {
       setIsAuthOpen(true);
       return;
     }
-    toggleSaveCafe(cafeId);
+    try { toggleSaveCafe(cafeId, {recommendation_source: 'curated_list'}); } catch { alert('공간 저장에 실패했습니다. 다시 시도해 주세요.'); }
   };
 
   return (
@@ -550,7 +551,7 @@ export default function ArchivePage() {
                             {cafe.address}
                           </span>
                           <Link
-                            href={`/cafe/${cafe.id}`}
+                            href={`/cafe/${cafe.id}?source=curated_list`}
                             className="text-amber-400 font-bold hover:underline flex items-center gap-1 font-mono shrink-0"
                           >
                             <span>공간 상세 →</span>
@@ -594,14 +595,12 @@ export default function ArchivePage() {
 
                       <div className="pt-3 border-t border-stone-850 flex items-center justify-between text-xs">
                         <span className="text-stone-500 font-mono text-[11px]">네이버 지도 연동 데이터</span>
-                        <a
+                        <MapLink placeId={place.id}
                           href={place.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           className="text-amber-400 font-bold hover:underline flex items-center gap-1 font-mono shrink-0"
                         >
                           <span>네이버 지도에서 보기 ↗</span>
-                        </a>
+                        </MapLink>
                       </div>
                     </div>
                   ))}

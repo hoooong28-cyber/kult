@@ -1,64 +1,34 @@
 'use client';
-
-const STORAGE_KEY = 'kult_saved_cafe_ids';
-
-// Default initial saved cafes for demo
-const DEFAULT_SAVED_IDS = ['cuco-seongsu', 'lowkey-seongsu'];
-
-type Listener = (savedIds: string[]) => void;
-const listeners: Set<Listener> = new Set();
-
+import { track, type InteractionContext } from './interactions.ts';
+const KEY = 'kult_saved_cafe_ids';
+type Listener = (ids: string[]) => void;
+const listeners = new Set<Listener>();
+function read(): string[] {
+  const raw = window.localStorage.getItem(KEY);
+  if (!raw) return [];
+  const ids: unknown = JSON.parse(raw);
+  if (!Array.isArray(ids) || !ids.every(id => typeof id === 'string')) throw new Error('저장 데이터를 읽을 수 없습니다. 기존 데이터는 유지됩니다.');
+  return ids;
+}
 export function getSavedCafeIds(): string[] {
-  if (typeof window === 'undefined') return DEFAULT_SAVED_IDS;
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SAVED_IDS));
-      return DEFAULT_SAVED_IDS;
-    }
-    return JSON.parse(raw);
-  } catch (e) {
-    console.error('Failed to load saved cafe IDs:', e);
-    return DEFAULT_SAVED_IDS;
-  }
+  if (typeof window === 'undefined') return [];
+  try { return read(); } catch { return []; }
 }
-
-export function isCafeSaved(cafeId: string): boolean {
-  const ids = getSavedCafeIds();
-  return ids.includes(cafeId);
-}
-
-export function toggleSaveCafe(cafeId: string): boolean {
+export function isCafeSaved(id: string) { return getSavedCafeIds().includes(id); }
+export function toggleSaveCafe(cafeId: string, context: InteractionContext = {}): boolean {
   if (typeof window === 'undefined') return false;
-  const current = getSavedCafeIds();
-  let updated: string[];
-  let isSaved: boolean;
-
-  if (current.includes(cafeId)) {
-    updated = current.filter((id) => id !== cafeId);
-    isSaved = false;
-  } else {
-    updated = [...current, cafeId];
-    isSaved = true;
-  }
-
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-    notifyListeners(updated);
-  } catch (e) {
-    console.error('Failed to update saved cafe IDs:', e);
-  }
-
-  return isSaved;
+  const current = read();
+  const enabled = !current.includes(cafeId);
+  const updated = enabled ? [...current, cafeId] : current.filter(id => id !== cafeId);
+  window.localStorage.setItem(KEY, JSON.stringify(updated));
+  listeners.forEach(listener => listener(updated));
+  window.dispatchEvent(new Event('kult_saved_cafe_ids:changed'));
+  track(enabled ? 'place_save' : 'place_unsave', { ...context, place_id: cafeId });
+  return enabled;
 }
-
 export function subscribeArchiveChanges(listener: Listener): () => void {
   listeners.add(listener);
-  return () => {
-    listeners.delete(listener);
-  };
-}
-
-function notifyListeners(savedIds: string[]) {
-  listeners.forEach((listener) => listener(savedIds));
+  const storage = (event: StorageEvent) => { if (event.key === KEY || event.key === null) listener(getSavedCafeIds()); };
+  if (typeof window !== 'undefined') window.addEventListener('storage', storage);
+  return () => { listeners.delete(listener); if (typeof window !== 'undefined') window.removeEventListener('storage', storage); };
 }

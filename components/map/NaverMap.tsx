@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { MapLink } from '../Interaction';
 import { CuratedCafe } from '@/lib/types';
 import { MapPin, ExternalLink } from 'lucide-react';
 
@@ -237,17 +238,15 @@ export default function NaverMap({
 
         <div className="relative z-10 flex items-center justify-between text-xs text-[#5e5e5d] border-t border-[#e5e2de] pt-3">
           <span>Click cafe pin to select and inspect notes</span>
-          <a
+          <MapLink placeId={cafes[0]?.id}
             href={`https://map.naver.com/v5/search/${encodeURIComponent(
               cafes[0]?.address || '성수동 카페'
             )}`}
-            target="_blank"
-            rel="noopener noreferrer"
             className="flex items-center gap-1 text-[#1c1c1a] hover:text-[#bf703a] font-mono font-semibold hover:underline"
           >
             <span>Open Naver Map</span>
             <ExternalLink className="w-3 h-3" />
-          </a>
+          </MapLink>
         </div>
       </div>
     );

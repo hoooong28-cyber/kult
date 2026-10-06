@@ -1,4 +1,8 @@
 import React from 'react';
+import FollowCuratorButton from '@/components/FollowCuratorButton';
+import StoryCards from '@/components/StoryCards';
+import { storiesForCurator } from '@/lib/stories';
+import { PageInteraction } from '@/components/Interaction';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getCuratorById } from '@/lib/curators';
@@ -35,6 +39,7 @@ export default async function CuratorProfilePage({ params }: CuratorPageProps) {
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100 flex flex-col">
       <Header />
+      <PageInteraction key={id} event="curator_view" curator_id={id} />
 
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-12 space-y-10">
         {/* Back Link */}
@@ -46,6 +51,7 @@ export default async function CuratorProfilePage({ params }: CuratorPageProps) {
           <span>Back to All Curators & Spots</span>
         </Link>
 
+        <FollowCuratorButton curatorId={id} />
         {/* Magazine Interview Profile Hero Card */}
         <section className="relative bg-gradient-to-b from-stone-900 via-stone-900/90 to-stone-950 border border-stone-800 rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden">
           {/* Decorative background accent */}
@@ -141,7 +147,7 @@ export default async function CuratorProfilePage({ params }: CuratorPageProps) {
             {/* Cafe Cards Grid */}
             <div className="lg:col-span-7 space-y-4">
               {cafes.map((cafe) => (
-                <CafeCard key={cafe.id} cafe={cafe} />
+                <CafeCard key={cafe.id} cafe={cafe} source="curator" />
               ))}
             </div>
 
@@ -155,6 +161,7 @@ export default async function CuratorProfilePage({ params }: CuratorPageProps) {
             </div>
           </div>
         </section>
+        <StoryCards stories={storiesForCurator(id)} source="curator" />
       </main>
     </div>
   );

@@ -3,13 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import CafeCard from '@/components/CafeCard';
+import StoryCards from '@/components/StoryCards';
+import { stories } from '@/lib/stories';
+import { track } from '@/lib/interactions';
 import NaverMap from '@/components/map/NaverMap';
 import ReportModal from '@/components/ReportModal';
 import AuthModal from '@/components/AuthModal';
 import CreatePostModal from '@/components/CreatePostModal';
 import MobileBottomNav from '@/components/MobileBottomNav';
 import { CafeFilterParams, CuratedCafe } from '@/lib/types';
-import { toggleSaveCafe, isCafeSaved, subscribeArchiveChanges } from '@/lib/archiveStore';
 import { Map, LayoutGrid, Search, Sparkles, Coffee, ArrowRight, Sun, Volume2, Plug, Bookmark, Check, List } from 'lucide-react';
 import Link from 'next/link';
 
@@ -24,7 +26,6 @@ export default function HomePage() {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isCreatePostOpen, setIsCreatePostOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [savedAnthracite, setSavedAnthracite] = useState(false);
 
   const [filters, setFilters] = useState<CafeFilterParams>({
     neighborhood: 'all',
@@ -50,12 +51,6 @@ export default function HomePage() {
 
     loadData();
 
-    // Saved state check for hero spot
-    setSavedAnthracite(isCafeSaved('cuco-seongsu'));
-    const unsubscribe = subscribeArchiveChanges(() => {
-      setSavedAnthracite(isCafeSaved('cuco-seongsu'));
-    });
-    return () => unsubscribe();
   }, []);
 
   useEffect(() => {
@@ -113,6 +108,7 @@ export default function HomePage() {
   }, []);
 
   const handleToggleMap = () => {
+    if (!showFullMap) track('map_open', {recommendation_source: 'map'});
     setShowFullMap(true);
     setTimeout(() => {
       const el = document.getElementById('map-explore');
@@ -264,16 +260,7 @@ export default function HomePage() {
                     <Sun className="w-3.5 h-3.5 text-[#BF703A]" />
                     <span className="text-xs font-mono font-semibold text-[#1C1C1A]">햇살 채광 · 좌석 여유</span>
                   </div>
-                  <button
-                    onClick={() => toggleSaveCafe('cuco-seongsu')}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-semibold tracking-wider transition-colors ${
-                      savedAnthracite
-                        ? 'bg-[#BF703A] text-white'
-                        : 'bg-[#1C1C1A] hover:bg-[#BF703A] text-[#FCF9F5]'
-                    }`}
-                  >
-                    {savedAnthracite ? 'Saved' : 'Save Spot'}
-                  </button>
+                  <Link href="/story/seongsu-work-and-coffee?source=editorial" className="px-4 py-3 rounded-lg text-xs font-semibold bg-[#1C1C1A] text-[#FCF9F5]">Read KULT Stories →</Link>
                 </div>
               </div>
             </div>
@@ -304,6 +291,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <StoryCards stories={stories} source="editorial" />
 
         {/* SECTION 2: VISUAL EDITORIAL PORTFOLIOS GRID */}
         <section id="portfolios" className="space-y-8">
@@ -433,7 +422,7 @@ export default function HomePage() {
             </div>
 
             <button
-              onClick={() => setShowFullMap(!showFullMap)}
+              onClick={() => { if (!showFullMap) track('map_open', {recommendation_source: 'editorial'}); setShowFullMap(!showFullMap); }}
               className="inline-flex items-center gap-2 bg-[#1C1C1A] hover:bg-[#BF703A] text-[#FCF9F5] px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-colors self-start sm:self-auto"
             >
               <Map className="w-4 h-4" />
@@ -498,6 +487,7 @@ export default function HomePage() {
                 <CafeCard
                   key={cafe.id}
                   cafe={cafe}
+                  source={filters.search_query ? 'search' : 'editorial'}
                   isSelected={selectedCafeId === cafe.id}
                   onSelect={() => setSelectedCafeId(cafe.id)}
                   onRequireAuth={() => setIsAuthOpen(true)}

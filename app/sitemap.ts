@@ -1,3 +1,4 @@
+import { stories } from '@/lib/stories';
 import { MetadataRoute } from 'next';
 import { getMergedCafes, getAllCurators } from '@/lib/curators';
 
@@ -42,5 +43,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
+  for (const story of stories) routes.push({url: `${baseUrl}/story/${story.id}`, changeFrequency: 'monthly', priority: 0.7});
   return routes;
 }
