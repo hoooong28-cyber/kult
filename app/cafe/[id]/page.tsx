@@ -29,9 +29,21 @@ export async function generateMetadata({ params }: PageProps) {
   const cafe = await getCafeById(id);
   if (!cafe) return { title: 'Cafe Not Found — Seoul Expat Cafes' };
 
+  const images = (cafe as { images?: string[] }).images || [];
+
   return {
-    title: `${cafe.name} (${cafe.name_local}) — Seoul Expat Cafe Review`,
+    title: `${cafe.name} (${cafe.name_local}) — Seoul Expat Cafe Review | KULT`,
     description: `Curated recommendation for ${cafe.name} in ${cafe.neighborhood}, Seoul. ${cafe.notes}`,
+    other: {
+      'geo.position': `${cafe.lat};${cafe.lng}`,
+      'geo.region': 'KR-11',
+      'geo.placename': `${cafe.neighborhood}, Seoul`,
+    },
+    openGraph: {
+      title: `${cafe.name} (${cafe.name_local}) — KULT Magazine`,
+      description: `Curated recommendation for ${cafe.name} in ${cafe.neighborhood}, Seoul. ${cafe.notes}`,
+      images: images.length > 0 ? [images[0]] : [],
+    },
   };
 }
 
@@ -44,9 +56,37 @@ export default async function CafeDetailPage({ params }: PageProps) {
   }
 
   const primaryCurator = cafe.curators[0];
+  const images = (cafe as { images?: string[] }).images || [];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CafeOrCoffeeShop',
+    name: cafe.name,
+    alternateName: cafe.name_local,
+    description: cafe.notes,
+    image: images,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: cafe.address,
+      addressLocality: cafe.neighborhood,
+      addressRegion: 'Seoul',
+      addressCountry: 'KR',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: cafe.lat,
+      longitude: cafe.lng,
+    },
+    hasMap: `https://maps.google.com/?q=${cafe.lat},${cafe.lng}`,
+    servesCuisine: 'Coffee, Desserts, Speciality Drinks',
+  };
 
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100 flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Top Header Navigation */}
       <nav className="sticky top-0 z-40 bg-stone-950/90 backdrop-blur-md border-b border-stone-850 px-4 sm:px-8 py-3.5">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
