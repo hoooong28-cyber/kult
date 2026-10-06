@@ -7,13 +7,16 @@ import FreshnessBadge from './FreshnessBadge';
 import { isCafeSaved, toggleSaveCafe, subscribeArchiveChanges } from '@/lib/archiveStore';
 import { MapPin, Clock, Quote, ExternalLink, Volume2, Globe, HelpCircle, Bookmark } from 'lucide-react';
 
+import { getCurrentUser } from '@/lib/userStore';
+
 interface CafeCardProps {
   cafe: CuratedCafe;
   isSelected?: boolean;
   onSelect?: () => void;
+  onRequireAuth?: () => void;
 }
 
-export default function CafeCard({ cafe, isSelected = false, onSelect }: CafeCardProps) {
+export default function CafeCard({ cafe, isSelected = false, onSelect, onRequireAuth }: CafeCardProps) {
   const primaryCurator = cafe.curators[0];
   const [saved, setSaved] = useState(false);
 
@@ -27,6 +30,14 @@ export default function CafeCard({ cafe, isSelected = false, onSelect }: CafeCar
 
   const handleBookmarkClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    if (!getCurrentUser()) {
+      if (onRequireAuth) {
+        onRequireAuth();
+      } else {
+        alert('회원가입/로그인 후 나만의 아카이브 서재에 공간을 보관하실 수 있습니다.');
+      }
+      return;
+    }
     const newState = toggleSaveCafe(cafe.id);
     setSaved(newState);
   };

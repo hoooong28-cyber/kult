@@ -3,9 +3,17 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ImportedList, mergeImportedLists, uniqueImportedPlaces } from '@/lib/naverImport';
 
+import { getCurrentUser } from '@/lib/userStore';
+
 const STORAGE_KEY = 'kult_naver_imported_lists_v1';
 
-export default function NaverImportPanel({ onCountChange }: { onCountChange: (count: number) => void }) {
+export default function NaverImportPanel({
+  onCountChange,
+  onRequireAuth,
+}: {
+  onCountChange: (count: number) => void;
+  onRequireAuth?: () => void;
+}) {
   const [url, setUrl] = useState('');
   const [lists, setLists] = useState<ImportedList[]>([]);
   const [preview, setPreview] = useState<ImportedList | null>(null);
@@ -32,6 +40,11 @@ export default function NaverImportPanel({ onCountChange }: { onCountChange: (co
   const visible = places.filter(p => `${p.name} ${p.address} ${p.category}`.toLowerCase().includes(query.toLowerCase()));
 
   async function loadList(link: string) {
+    if (!getCurrentUser()) {
+      if (onRequireAuth) onRequireAuth();
+      setError('회원가입 또는 로그인 후 네이버 지도를 가져올 수 있습니다.');
+      return;
+    }
     setBusy(true); setError(''); setMessage(''); setPreview(null);
     try {
       const response = await fetch('/api/import/naver', {

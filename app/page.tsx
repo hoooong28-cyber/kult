@@ -495,7 +495,13 @@ export default function HomePage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredCafes.map((cafe) => (
-                <CafeCard key={cafe.id} cafe={cafe} isSelected={selectedCafeId === cafe.id} onSelect={() => setSelectedCafeId(cafe.id)} />
+                <CafeCard
+                  key={cafe.id}
+                  cafe={cafe}
+                  isSelected={selectedCafeId === cafe.id}
+                  onSelect={() => setSelectedCafeId(cafe.id)}
+                  onRequireAuth={() => setIsAuthOpen(true)}
+                />
               ))}
             </div>
           )}

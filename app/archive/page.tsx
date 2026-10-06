@@ -158,10 +158,18 @@ export default function ArchivePage() {
   }, [savedIds, followingIds, allCafes]);
 
   const handleToggleFollow = (curatorId: string) => {
+    if (!currentUser) {
+      setIsAuthOpen(true);
+      return;
+    }
     toggleFollow(curatorId);
   };
 
   const handleToggleBookmark = (cafeId: string) => {
+    if (!currentUser) {
+      setIsAuthOpen(true);
+      return;
+    }
     toggleSaveCafe(cafeId);
   };
 
@@ -461,7 +469,7 @@ export default function ArchivePage() {
         </div>
 
         {/* 4. TAB 1: COLLECTIONS VIEW */}
-        <NaverImportPanel onCountChange={setImportedCount} />
+        <NaverImportPanel onCountChange={setImportedCount} onRequireAuth={() => setIsAuthOpen(true)} />
 
         {activeTab === 'collections' && (
           <div className="space-y-10">
