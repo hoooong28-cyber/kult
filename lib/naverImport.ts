@@ -27,20 +27,15 @@ export function validateListUrl(input: string): URL {
   let url: URL;
   try { url = new URL(value); } catch { throw new ImportError('올바른 네이버 지도 공유 링크를 넣어주세요.'); }
   if (url.protocol !== 'https:' || url.username || url.password || url.port ||
-      !['naver.me', 'map.naver.com', 'pages.map.naver.com'].includes(url.hostname)) {
-    throw new ImportError('네이버 지도 저장 목록의 HTTPS 공유 링크만 사용할 수 있습니다.');
+      !['naver.me', 'map.naver.com', 'pages.map.naver.com', 'm.place.naver.com', 'place.naver.com'].includes(url.hostname)) {
+    throw new ImportError('네이버 지도 공유 링크(naver.me, map.naver.com 등)만 사용할 수 있습니다.');
   }
-  const validPath = url.hostname === 'naver.me'
-    ? /^\/[a-zA-Z0-9]+\/?$/.test(url.pathname)
-    : url.hostname === 'map.naver.com'
-      ? /^\/(?:p|v5)\/favorite\/(?:sharedPlace|[\w:=-]+)\/folder\/[a-f0-9]{32}\/?$/i.test(url.pathname)
-      : /^\/save-pages\/(?:pc|mobile)\/detail-list\/[a-f0-9]{32}\/?$/i.test(url.pathname);
-  if (!validPath) throw new ImportError('개별 장소나 내 지도 주소가 아닌 ‘리스트 공유’ 링크를 넣어주세요.');
   return url;
 }
 
 export function shareIdFromUrl(url: URL): string | null {
-  return url.hostname === 'naver.me' ? null : url.pathname.match(/\/([a-f0-9]{32})\/?$/i)?.[1] || null;
+  const match = url.pathname.match(/\/([a-f0-9]{32})\/?$/i) || url.searchParams.get('folderId')?.match(/^([a-f0-9]{32})$/i);
+  return match ? match[1] : null;
 }
 
 type RecordValue = Record<string, unknown>;
@@ -97,12 +92,39 @@ export async function fetchSharedList(input: string, request: typeof fetch = fet
     const location = response.headers.get('location');
     await response.body?.cancel();
     if (![301, 302, 303, 307, 308].includes(response.status) || !location) {
-      throw new ImportError('공유 링크를 열 수 없습니다. 네이버 지도에서 리스트 공유 링크를 다시 복사해주세요.');
+      break;
     }
     url = validateListUrl(new URL(location, url).href);
     shareId = shareIdFromUrl(url);
   }
-  if (!shareId) throw new ImportError('공유 링크의 연결 단계가 너무 많습니다.');
+
+  // Fallback for single place links (e.g. /entry/place/12345 or /restaurant/12345)
+  if (!shareId) {
+    const sidMatch = url.pathname.match(/\/(?:entry\/place|restaurant|place)\/(\d+)/) || url.searchParams.get('sid');
+    const sid = Array.isArray(sidMatch) ? sidMatch[1] : sidMatch;
+    if (sid) {
+      return {
+        shareId: `single-place-${sid}`,
+        name: '네이버 지도 공유 장소',
+        sourceUrl: input,
+        importedAt: new Date().toISOString(),
+        places: [
+          {
+            id: `naver-place-${sid}`,
+            name: '네이버 지도 공유 장소',
+            address: '네이버 지도로 공유된 장소',
+            category: '카페 / 공간',
+            lat: null,
+            lng: null,
+            available: true,
+            memo: `공유된 네이버 지도 장소 링크: ${input}`,
+            url: `https://map.naver.com/p/entry/place/${sid}`,
+          },
+        ],
+      };
+    }
+    throw new ImportError('공유 링크를 읽지 못했습니다. 네이버 지도 앱/웹의 리스트 공유 링크(naver.me 등)를 다시 복사해주세요.');
+  }
 
   const places: ImportedPlace[] = [];
   let name = '', total = 0;

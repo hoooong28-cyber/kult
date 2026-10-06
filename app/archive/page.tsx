@@ -23,6 +23,7 @@ import {
   UserPost,
 } from '@/lib/userStore';
 import { CuratedCafe } from '@/lib/types';
+import { ImportedPlace, uniqueImportedPlaces } from '@/lib/naverImport';
 import {
   BookOpen,
   Bookmark,
@@ -62,11 +63,28 @@ export default function ArchivePage() {
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [followingIds, setFollowingIds] = useState<string[]>([]);
   const [allCafes, setAllCafes] = useState<CuratedCafe[]>([]);
+  const [naverImportedPlaces, setNaverImportedPlaces] = useState<ImportedPlace[]>([]);
   const [tasteResult, setTasteResult] = useState<TasteAnalysisResult | null>(null);
   const [clusterProfile, setClusterProfile] = useState<TasteClusterProfile | null>(null);
 
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
   const [userPosts, setUserPosts] = useState<UserPost[]>([]);
+
+  const loadNaverPlaces = () => {
+    try {
+      const raw = localStorage.getItem('kult_naver_imported_lists_v1');
+      if (raw) {
+        const lists = JSON.parse(raw);
+        if (Array.isArray(lists)) {
+          const unique = uniqueImportedPlaces(lists);
+          setNaverImportedPlaces(unique);
+          setImportedCount(unique.length);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to load imported NAVER places:', e);
+    }
+  };
 
   useEffect(() => {
     // Initial load
@@ -74,6 +92,7 @@ export default function ArchivePage() {
     setUserPosts(getUserPosts());
     setSavedIds(getSavedCafeIds());
     setFollowingIds(getFollowingIds());
+    loadNaverPlaces();
 
     // Fetch cafes
     async function fetchCafes() {
@@ -114,11 +133,17 @@ export default function ArchivePage() {
       setUserPosts(posts);
     });
 
+    const handleNaverUpdate = () => {
+      loadNaverPlaces();
+    };
+    window.addEventListener('kult_naver_import_updated', handleNaverUpdate);
+
     return () => {
       unsubArchive();
       unsubFollow();
       unsubUser();
       unsubPosts();
+      window.removeEventListener('kult_naver_import_updated', handleNaverUpdate);
     };
   }, []);
 
@@ -448,7 +473,7 @@ export default function ArchivePage() {
                     MY SAVED SANCTUARIES
                   </span>
                   <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-100 mt-1">
-                    내가 저장해둔 공간 ({allCafes.filter((c) => savedIds.includes(c.id)).length}곳)
+                    내가 저장해둔 공간 ({allCafes.filter((c) => savedIds.includes(c.id)).length + naverImportedPlaces.length}곳)
                   </h2>
                 </div>
 
@@ -461,7 +486,7 @@ export default function ArchivePage() {
                 </Link>
               </div>
 
-              {allCafes.filter((c) => savedIds.includes(c.id)).length > 0 ? (
+              {(allCafes.filter((c) => savedIds.includes(c.id)).length > 0 || naverImportedPlaces.length > 0) ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {allCafes
                     .filter((c) => savedIds.includes(c.id))
@@ -525,6 +550,53 @@ export default function ArchivePage() {
                         </div>
                       </div>
                     ))}
+
+                  {/* NAVER Map Imported Places */}
+                  {naverImportedPlaces.map((place) => (
+                    <div
+                      key={place.id}
+                      className="bg-stone-900 border border-stone-850 hover:border-amber-400/40 rounded-3xl p-6 space-y-4 shadow-xl transition-all flex flex-col justify-between group"
+                    >
+                      <div className="space-y-3">
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <div className="flex items-center gap-1.5 text-xs text-amber-400 font-medium">
+                              <MapPin className="w-3.5 h-3.5" />
+                              <span>네이버 지도 가져온 장소</span>
+                            </div>
+                            <h3 className="font-serif text-xl font-bold text-stone-100 mt-1 group-hover:text-amber-300 transition-colors">
+                              {place.name}
+                            </h3>
+                            <p className="text-xs text-stone-400">{place.category || '카페/공간'}</p>
+                          </div>
+
+                          <span className="px-2.5 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 font-mono text-[10px] font-bold shrink-0">
+                            NAVER MAP
+                          </span>
+                        </div>
+
+                        <p className="text-xs text-stone-400 font-mono">{place.address || '주소 정보'}</p>
+
+                        {place.memo && (
+                          <div className="p-3.5 rounded-2xl bg-stone-950 border border-stone-850 italic font-serif text-xs text-stone-300 leading-relaxed">
+                            "{place.memo}"
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="pt-3 border-t border-stone-850 flex items-center justify-between text-xs">
+                        <span className="text-stone-500 font-mono text-[11px]">네이버 지도 연동 데이터</span>
+                        <a
+                          href={place.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-amber-400 font-bold hover:underline flex items-center gap-1 font-mono shrink-0"
+                        >
+                          <span>네이버 지도에서 보기 ↗</span>
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               ) : (
                 <div className="bg-stone-900/60 border border-stone-850 rounded-3xl p-8 sm:p-12 text-center space-y-4">

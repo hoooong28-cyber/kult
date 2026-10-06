@@ -51,7 +51,10 @@ export default function NaverImportPanel({ onCountChange }: { onCountChange: (co
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
       setLists(updated); setPreview(null);
-      setMessage(`‘${preview.name}’ ${preview.places.length}개 장소를 저장했습니다.`);
+      setMessage(`‘${preview.name}’ ${preview.places.length}개 장소를 저장했습니다. 내 아카이브 서재에 즉시 반영되었습니다.`);
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('kult_naver_import_updated'));
+      }
     } catch { setError('브라우저 저장 공간이 부족하거나 차단되어 저장하지 못했습니다.'); }
   }
 
