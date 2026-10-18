@@ -6,6 +6,7 @@ interface FreshnessBadgeProps {
   monthsAgo: number;
   isStale: boolean;
   isDemo?: boolean;
+  isDiscovery?: boolean;
   badgeLabel: string;
   className?: string;
 }
@@ -13,9 +14,12 @@ interface FreshnessBadgeProps {
 export default function FreshnessBadge({
   isStale,
   isDemo,
+  isDiscovery,
   badgeLabel,
   className = '',
 }: FreshnessBadgeProps) {
+  if (isDiscovery) return <span className={`inline-flex px-2.5 py-1 rounded-full text-xs border border-amber-500/30 text-amber-600 ${className}`}>발견한 공간 · 방문 미확인</span>;
+
   if (isDemo) {
     return <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium bg-[#f6f3ef] text-[#706F6C] border border-[#e5e2de] ${className}`} title="공유 목록에서 가져온 테스트 장소입니다. 방문 검증 전입니다.">테스트 장소</span>;
   }

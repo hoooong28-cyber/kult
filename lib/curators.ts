@@ -1,4 +1,5 @@
 import fs from 'fs';
+import discoveries from '../data/discoveries.json';
 import path from 'path';
 import { Cafe, CuratorFileContent, CuratorProfile, CuratedCafe, CafeFilterParams } from './types';
 import { resolveCoordinates } from './geocoding';
@@ -153,7 +154,12 @@ export async function getMergedCafes(): Promise<CuratedCafe[]> {
     }
   }
 
-  return Array.from(cafeMap.values());
+  // Research discoveries have no invented curator or approximate map coordinates.
+  const discovered = (discoveries as Cafe[]).map(cafe => ({
+    ...cafe, curated_by: [], curators: [],
+    freshness: { months_ago: 0, is_stale: true, badge_label: '발견한 공간 · 방문 미확인' },
+  }));
+  return [...cafeMap.values(), ...discovered];
 }
 
 /**

@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps) {
     title: `${cafe.name} (${cafe.name_local}) — Seoul Expat Cafe Review | KULT`,
     description: `Curated recommendation for ${cafe.name} in ${cafe.neighborhood}, Seoul. ${cafe.notes}`,
     other: {
-      'geo.position': `${cafe.lat};${cafe.lng}`,
+      ...(cafe.lat !== null && cafe.lng !== null ? { 'geo.position': `${cafe.lat};${cafe.lng}` } : {}),
       'geo.region': 'KR-11',
       'geo.placename': `${cafe.neighborhood}, Seoul`,
     },
@@ -76,12 +76,12 @@ export default async function CafeDetailPage({ params }: PageProps) {
       addressRegion: 'Seoul',
       addressCountry: 'KR',
     },
-    geo: {
+    geo: cafe.lat !== null && cafe.lng !== null ? {
       '@type': 'GeoCoordinates',
       latitude: cafe.lat,
       longitude: cafe.lng,
-    },
-    hasMap: `https://maps.google.com/?q=${cafe.lat},${cafe.lng}`,
+    } : undefined,
+    hasMap: `https://map.naver.com/p/search/${encodeURIComponent(cafe.name_local + " " + cafe.address)}`,
     servesCuisine: 'Coffee, Desserts, Speciality Drinks',
   };
 
@@ -105,6 +105,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
           <div className="flex items-center gap-2">
             <FreshnessBadge
               isDemo={cafe.is_demo}
+              isDiscovery={cafe.content_status === 'discovered'}
               lastVerifiedDate={cafe.last_verified_date}
               monthsAgo={cafe.freshness.months_ago}
               isStale={cafe.freshness.is_stale}
@@ -135,7 +136,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
             </div>
 
             <MapLink placeId={id}
-              href={cafe.naver_place_id ? `https://map.naver.com/p/entry/place/${cafe.naver_place_id}` : `https://map.naver.com/v5/search/${encodeURIComponent(cafe.address)}`}
+              href={cafe.naver_place_id ? `https://map.naver.com/p/entry/place/${cafe.naver_place_id}` : `https://map.naver.com/v5/search/${encodeURIComponent(cafe.name_local + " " + cafe.address)}`}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-stone-950 font-semibold text-xs hover:bg-amber-300 shadow-md transition-colors self-start"
             >
               <span>Open in NAVER Map</span>
@@ -155,13 +156,18 @@ export default async function CafeDetailPage({ params }: PageProps) {
 
           <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
             <Quote className="w-4 h-4" />
-            <span>{cafe.is_demo ? '테스트 장소 안내' : 'Curator Interview Commentary'}</span>
+            <span>{cafe.content_status === 'discovered' ? 'DISCOVERY NOTE · 발견 기록' : cafe.is_demo ? '테스트 장소 안내' : 'Curator Interview Commentary'}</span>
           </div>
 
           <blockquote className="font-serif text-xl sm:text-2xl text-stone-100 italic leading-relaxed border-l-4 border-amber-400 pl-4 py-1">
             "{cafe.notes}"
           </blockquote>
 
+          {cafe.discovery_source && <div className="text-sm text-stone-400 space-y-2">
+            <p>기사 소개 기준의 정보입니다. 현재 운영·메뉴·공간 특징은 아직 검증하지 않았습니다.</p>
+            <a className="underline underline-offset-4 text-amber-300" href={cafe.discovery_source.url} target="_blank" rel="noopener noreferrer">{cafe.discovery_source.title} · {cafe.discovery_source.published_at}</a>
+            <Link href="/discoveries" className="block underline py-2">발견한 공간 15곳 모두 보기</Link>
+          </div>}
           {/* Curator Profile Attribution Card */}
           {primaryCurator && (
             <div className="pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -289,7 +295,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
 
             <div className="pt-2">
               <span className="text-xs text-stone-400 block mb-2 font-medium">Interactive Map Location</span>
-              <NaverMap cafes={[cafe]} selectedCafeId={cafe.id} height="220px" />
+              {cafe.lat !== null && cafe.lng !== null ? <NaverMap cafes={[cafe]} selectedCafeId={cafe.id} height="220px" /> : <p className="text-sm text-stone-400">정확한 지도 위치를 확인 중입니다. 위의 네이버 지도 링크에서 이름과 주소로 검색할 수 있어요.</p>}
             </div>
           </div>
         </section>

@@ -1,0 +1,437 @@
+[
+  {
+    "id": "discovery-haus-bakery-service",
+    "name": "하우스베이커리서비스",
+    "name_local": "하우스베이커리서비스",
+    "content_status": "discovered",
+    "neighborhood": "용산구 · 해방촌",
+    "address": "서울 용산구 신흥로9길 4",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "인더스트리얼·빈티지 공간과 페이스트리를 소개한 기사에서 발견했습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/04/new-cafe-3/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-04-02",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-musuhi",
+    "name": "무수히",
+    "name_local": "무수히",
+    "content_status": "discovered",
+    "neighborhood": "중구 · 신당",
+    "address": "서울 중구 청구로14길 34",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "작은 바 좌석과 계절 갸토를 다룬 소개에서 발견했습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/04/new-cafe-3/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-04-02",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-edition-denmark-noksapyeong",
+    "name": "에디션덴마크 녹사평",
+    "name_local": "에디션덴마크 녹사평",
+    "content_status": "discovered",
+    "neighborhood": "용산구 · 녹사평",
+    "address": "서울 용산구 녹사평대로 244",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "가구 쇼룸과 함께 즐기는 커피·티 공간으로 소개되었습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/04/new-cafe-3/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-04-02",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-kurarie",
+    "name": "쿠라리에",
+    "name_local": "쿠라리에",
+    "content_status": "discovered",
+    "neighborhood": "강남구 · 압구정",
+    "address": "서울 강남구 언주로 842",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "나무·유리·액자를 활용한 공간과 디저트를 소개한 기사에서 발견했습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/04/new-cafe-3/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-04-02",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-standard-system",
+    "name": "스탠다드 시스템",
+    "name_local": "스탠다드 시스템",
+    "content_status": "discovered",
+    "neighborhood": "강남구",
+    "address": "서울 강남구 선릉로148길 48-5",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "원두 선택과 디저트 페어링 경험으로 소개되었습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/07/hottest-cafe/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-07-21",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-coffee-nelr",
+    "name": "커피 네르",
+    "name_local": "커피 네르",
+    "content_status": "discovered",
+    "neighborhood": "마포구 · 망원",
+    "address": "서울 마포구 월드컵로19길 25-1 4층",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "냉침 커피 기반 브루오레를 소개한 기사에서 발견했습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/07/hottest-cafe/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-07-21",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-rewind-seoul",
+    "name": "리와인드 서울",
+    "name_local": "리와인드 서울",
+    "content_status": "discovered",
+    "neighborhood": "종로구 · 안국",
+    "address": "서울 종로구 율곡로 33 2층",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "공예박물관 정원 전망과 말차 음료로 소개되었습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/07/hottest-cafe/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-07-21",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-yoonsoop",
+    "name": "윤숲",
+    "name_local": "윤숲",
+    "content_status": "discovered",
+    "neighborhood": "광진구 · 군자",
+    "address": "서울 광진구 면목로7길 8",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "제철 과일 디저트와 후르츠 산도를 소개한 기사에서 발견했습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/07/hottest-cafe/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-07-21",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-cafe-corner-hannam",
+    "name": "카페 코너",
+    "name_local": "카페 코너",
+    "content_status": "discovered",
+    "neighborhood": "용산구 · 한남",
+    "address": "서울 용산구 한남대로40길 14-5",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "패션 브랜드와 연결된 테라스 카페로 소개되었습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/09/terrace-cafe-2/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-09-15",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-huijak",
+    "name": "희작",
+    "name_local": "희작",
+    "content_status": "discovered",
+    "neighborhood": "종로구 · 부암동",
+    "address": "서울 종로구 백석동길 155",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "인왕산 전망과 통창·천창·테라스를 소개한 기사에서 발견했습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/09/terrace-cafe-2/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-09-15",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-tbab",
+    "name": "티비에이비",
+    "name_local": "티비에이비",
+    "content_status": "discovered",
+    "neighborhood": "종로구 · 홍지문",
+    "address": "서울 종로구 자하문로45길 8-11",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "돌문 입구와 자연을 바라보는 테라스로 소개되었습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/09/terrace-cafe-2/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-09-15",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-33-apartment-seochon",
+    "name": "33아파트먼트 서촌",
+    "name_local": "33아파트먼트 서촌",
+    "content_status": "discovered",
+    "neighborhood": "종로구 · 서촌",
+    "address": "서울 종로구 자하문로11길 21-16",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "한옥·우드톤·중정과 로스팅 커피를 소개한 기사에서 발견했습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/09/terrace-cafe-2/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-09-15",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-scarf-seongsu",
+    "name": "스카프",
+    "name_local": "스카프",
+    "content_status": "discovered",
+    "neighborhood": "성동구 · 성수",
+    "address": "서울 성동구 성덕정19길 10",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "킷사텐 스타일과 LP, 낮 카페·밤 바 운영으로 소개되었습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/02/cafeandbar/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-02-13",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-fuglen-seoul",
+    "name": "푸글렌 서울",
+    "name_local": "푸글렌 서울",
+    "content_status": "discovered",
+    "neighborhood": "마포구 · 상수",
+    "address": "서울 마포구 와우산로 43",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "북유럽 빈티지 가구와 라이트 로스팅 커피·칵테일로 소개되었습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/02/cafeandbar/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-02-13",
+      "checked_at": "2026-10-18"
+    }
+  },
+  {
+    "id": "discovery-house-of-vinyl-yeonnam",
+    "name": "하우스오브바이닐 연남점",
+    "name_local": "하우스오브바이닐 연남점",
+    "content_status": "discovered",
+    "neighborhood": "마포구 · 연남",
+    "address": "서울 마포구 동교로 230 지하 1층",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "LP 음악과 노출 콘크리트, 낮은 조도의 공간으로 소개되었습니다. 방문·리뷰 검증 전인 발견 기록입니다.",
+    "discovery_source": {
+      "url": "https://www.marieclairekorea.com/culture/lifestyle/2026/03/music-cafe/",
+      "title": "마리끌레르 공간 소개",
+      "published_at": "2026-03-20",
+      "checked_at": "2026-10-18"
+    }
+  }
+]

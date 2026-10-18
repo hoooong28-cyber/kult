@@ -38,9 +38,10 @@ export default function HomePage() {
         const res = await fetch('/api/cafes');
         if (res.ok) {
           const data = await res.json();
-          setAllCafes(data.cafes || []);
-          setFilteredCafes(data.cafes || []);
-          setNeighborhoods(data.neighborhoods || []);
+          const existingCafes: CuratedCafe[] = (data.cafes || []).filter((c: CuratedCafe) => c.content_status !== 'discovered');
+          setAllCafes(existingCafes);
+          setFilteredCafes(existingCafes);
+          setNeighborhoods([...new Set(existingCafes.map(c => c.neighborhood))]);
         }
       } catch (e) {
         console.error('Failed to load cafe data:', e);
@@ -133,6 +134,9 @@ export default function HomePage() {
         onOpenCreatePost={() => setIsCreatePostOpen(true)}
       />
 
+      <Link href="/discoveries" className="block border-b border-[#E6DFD3] px-5 py-4 text-sm text-center hover:bg-[#f6f3ef]">
+        DISCOVERED IN SEOUL · 새로 발견한 서울 공간 15곳 <span className="underline ml-2">둘러보기 →</span>
+      </Link>
       {/* TOP MARQUEE UTILITY BAR */}
       <div className="border-b border-[#E6DFD3] bg-[#FCF9F5] px-4 md:px-12 py-2 flex items-center justify-between text-[11px] tracking-[0.18em] uppercase text-[#5E5E5D]">
         <div className="flex items-center gap-4">

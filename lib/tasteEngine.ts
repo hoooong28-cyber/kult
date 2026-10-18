@@ -23,7 +23,8 @@ export function analyzeSavedTaste(
   savedCafeIds: string[],
   allCafes: CuratedCafe[]
 ): TasteAnalysisResult {
-  if (!allCafes || allCafes.length === 0) {
+  allCafes = (allCafes || []).filter(c => c.content_status !== 'discovered');
+  if (allCafes.length === 0) {
     return {
       savedCount: 0,
       savedNames: [],
