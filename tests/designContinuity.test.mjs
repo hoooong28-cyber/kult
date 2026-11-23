@@ -13,10 +13,15 @@ test('main KULT discovery surfaces use the same masthead and live brand base', (
     assert.ok(globals.includes(`--kult-${name}: ${value}`));
   }
   assert.match(get('app/picks/[slug]/picks.module.css'), /font-family:var\(--kult-font-display\)/);
-  assert.match(get('app/page.tsx'), /오늘 어디 갈까요\?/);
+  assert.match(get('app/page.tsx'), /오늘의 큐레이션 장소는\?/);
   assert.doesNotMatch(get('app/page.tsx'), /<VenuePhoto|<NaverMap|어떤 약속이에요/);
   assert.match(get('app/explore/page.tsx'), /삼각지 약속/);
-  assert.match(get('app/page.tsx'), /\/picks\/area\?purpose=/);
+  const home = get('app/page.tsx');
+  assert.match(home, /href=\{['"]\/\?purpose=['"] \+ option\.id\}/);
+  assert.match(home, /area\.slug \+ ['"]\?purpose=['"] \+ purpose\.id/);
+  assert.match(home, /resolvePickPurpose\(\(await searchParams\)\.purpose\)/);
+  assert.match(home, /\/archive#naver-import/);
+  assert.match(home, /cuco-seongsu-interior\.jpg/);
   assert.match(get('app/picks/area/page.tsx'), /어느 동네로 갈까요\?/);
   assert.match(get('app/picks/area/page.tsx'), /area\.slug \+ '\?purpose=' \+ purpose\.id/);
   for (const page of ['app/page.tsx', 'app/explore/page.tsx', 'app/discoveries/page.tsx', 'app/picks/page.tsx', 'app/picks/[slug]/page.tsx']) {
