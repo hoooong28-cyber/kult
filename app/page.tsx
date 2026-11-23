@@ -13,7 +13,7 @@ export default function HomePage() {
     <section className={styles.entry} aria-labelledby="entry-title">
       <div className={styles.inner}>
         <p className={styles.eyebrow} lang="en">KULT <span /> SEOUL CITY GUIDE</p>
-        <h1 id="entry-title">오늘 어디 갈까요?</h1>
+        <h1 id="entry-title">오늘의 큐레이션 장소는?</h1>
         <p className={styles.dek}>같이 가는 사람과 동네를 골라 서울의 카페와 식당을 찾아보세요.</p>
         <nav className={styles.choices} aria-label="방문 목적 선택">
           {pickPurposes.map(purpose => {
