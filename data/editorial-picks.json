@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "samgakji",
+    "area": "삼각지",
+    "area_en": "Samgakji",
+    "title": "우리 삼각지 가는데, 어디 갈래?",
+    "title_en": "Where should we meet in Samgakji?",
+    "source": "discovery",
+    "places": [
+      {
+        "id": "discovery-mongtan-samgakji",
+        "reason": "짚불 우대갈비가 먹고 싶을 때. 대기 방식은 가기 전에 확인해요.",
+        "reason_en": "Straw-grilled beef ribs. Check the wait before you go.",
+        "purposes": [
+          "friends"
+        ]
+      },
+      {
+        "id": "discovery-always-august-samgakji",
+        "reason": "자체 로스팅한 스페셜티 커피가 목적이라면.",
+        "reason_en": "An in-house roastery for specialty coffee.",
+        "purposes": [
+          "friends",
+          "solo"
+        ]
+      },
+      {
+        "id": "discovery-mna-samgakji",
+        "reason": "초록빛 바와 빈티지 가구. 커피 대신 자스민 밀크티를 마시고 싶을 때.",
+        "reason_en": "A green bar, vintage furniture and jasmine milk tea.",
+        "purposes": [
+          "date",
+          "friends"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "seongsu-brunch-or-coffee",
+    "area": "성수",
+    "area_en": "Seongsu",
+    "title": "브런치 먹을까, 커피 마실까?",
+    "title_en": "Brunch or specialty coffee?",
+    "source": "curation",
+    "places": [
+      {
+        "id": "cuco-seongsu",
+        "reason": "높은 천장과 큰 창이 있는 공간에서 브런치까지.",
+        "reason_en": "Brunch in a spacious, high-ceilinged room.",
+        "purposes": [
+          "date",
+          "friends"
+        ]
+      },
+      {
+        "id": "lowkey-seongsu",
+        "reason": "스페셜티 커피를 마시고 싶을 때. 아늑한 지하 공간이 있어요.",
+        "reason_en": "Specialty coffee and a cozy downstairs space.",
+        "purposes": [
+          "solo"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "haebangchon-dessert",
+    "area": "해방촌",
+    "area_en": "Haebangchon",
+    "title": "페이스트리 먹을까, 아이스크림에 와인 곁들일까?",
+    "title_en": "A pastry, or ice cream with wine?",
+    "source": "discovery",
+    "places": [
+      {
+        "id": "discovery-haus-bakery-service",
+        "reason": "빈티지한 인더스트리얼 공간과 페이스트리로 소개된 곳.",
+        "reason_en": "A bakery featured for its pastries and vintage industrial interior.",
+        "purposes": [
+          "friends",
+          "solo"
+        ]
+      },
+      {
+        "id": "discovery-a-glass-of-haebangchon",
+        "reason": "신흥시장 안에서 아이스크림과 와인을 함께 즐기는 곳으로 소개됐어요.",
+        "reason_en": "Featured for pairing ice cream with wine inside Sinheung Market.",
+        "purposes": [
+          "date",
+          "friends"
+        ]
+      }
+    ]
+  }
+]

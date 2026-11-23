@@ -1,4 +1,4 @@
-import { CuratedCafe } from './types';
+import type { CuratedCafe } from './types';
 
 export interface RecommendedCafeMatch {
   cafe: CuratedCafe;
@@ -23,7 +23,7 @@ export function analyzeSavedTaste(
   savedCafeIds: string[],
   allCafes: CuratedCafe[]
 ): TasteAnalysisResult {
-  allCafes = (allCafes || []).filter(c => c.content_status !== 'discovered');
+  allCafes = (allCafes || []).filter(c => c.content_status !== 'discovered' && c.business_status !== 'closed');
   if (allCafes.length === 0) {
     return {
       savedCount: 0,

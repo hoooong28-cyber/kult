@@ -1,0 +1,4 @@
+{
+  "excluded_place_ids": ["center-coffee-seoulforest"],
+  "approved_asset_hosts": ["freight.cargo.site", "upload.wikimedia.org"]
+}

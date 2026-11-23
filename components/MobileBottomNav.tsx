@@ -30,7 +30,7 @@ export default function MobileBottomNav({
       onToggleMap();
     } else {
       // If not on homepage, navigate to homepage map section
-      router.push('/#map-explore');
+      router.push('/explore#map-explore');
     }
   };
 
@@ -100,7 +100,7 @@ export default function MobileBottomNav({
         className="flex flex-col items-center justify-center gap-0.5 min-w-[56px] py-1 px-2 rounded-xl text-[#706F6C] hover:text-[#1C1C1A] transition-all"
       >
         <User className="w-5 h-5 stroke-[1.8]" />
-        <span className="text-[10px] font-mono tracking-tight">Account</span>
+        <span className="text-[10px] font-mono tracking-tight">Profile</span>
       </button>
     </nav>
   );

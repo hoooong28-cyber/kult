@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, Check, Sliders, Feather } from 'lucide-react';
-import { getCurrentUser, updateUserProfile, UserProfile } from '@/lib/userStore';
+import { getCurrentUser, updateUserProfile } from '@/lib/userStore';
 
 interface EditProfileModalProps {
   isOpen: boolean;
@@ -13,9 +13,11 @@ export default function EditProfileModal({ isOpen, onClose }: EditProfileModalPr
   const [name, setName] = useState('');
   const [identityTag, setIdentityTag] = useState('');
   const [bio, setBio] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (isOpen) {
+      setError('');
       const u = getCurrentUser();
       if (u) {
         setName(u.name);
@@ -29,7 +31,8 @@ export default function EditProfileModal({ isOpen, onClose }: EditProfileModalPr
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    updateUserProfile(name, bio, identityTag);
+    try { updateUserProfile(name, bio, identityTag); }
+    catch { setError('프로필을 수정할 수 없습니다. 프로필을 다시 열거나 닉네임을 확인해 주세요.'); return; }
     onClose();
   };
 
@@ -52,11 +55,12 @@ export default function EditProfileModal({ isOpen, onClose }: EditProfileModalPr
             본인 소개글 및 프로필 관리
           </h3>
           <p className="text-xs text-[#5E5E5D] font-serif italic">
-            독자들에게 보여질 본인의 큐레이터 닉네임, 수식어, 소개글을 변경합니다.
+            이 브라우저에 저장된 닉네임과 소개글을 변경합니다.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          {error && <p className="text-sm text-red-300" role="alert">{error}</p>}
           <div>
             <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5E5E5D] mb-1">
               큐레이터 성함 / 닉네임 (Display Name)
@@ -65,6 +69,7 @@ export default function EditProfileModal({ isOpen, onClose }: EditProfileModalPr
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              maxLength={40}
               required
               className="w-full px-4 py-2.5 rounded-xl bg-[#2D2D2A] border border-[#E6DFD3]/15 text-[#FCF9F5] text-xs focus:outline-none focus:border-[#BF703A]"
             />

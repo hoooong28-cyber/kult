@@ -1,4 +1,4 @@
-import { CuratedCafe } from './types';
+import type { CuratedCafe } from './types';
 
 export interface TasteClusterProfile {
   clusterName: string; // e.g. "ACOUSTIC WORK NOMAD"
@@ -13,7 +13,7 @@ export function classifyUserTasteCluster(
   followingIds: string[],
   allCafes: CuratedCafe[]
 ): TasteClusterProfile {
-  const savedCafes = allCafes.filter((c) => savedCafeIds.includes(c.id));
+  const savedCafes = allCafes.filter((c) => c.business_status !== 'closed' && savedCafeIds.includes(c.id));
 
   let quietCount = 0;
   let outletCount = 0;

@@ -13,6 +13,7 @@ interface FreshnessBadgeProps {
 
 export default function FreshnessBadge({
   isStale,
+  lastVerifiedDate,
   isDemo,
   isDiscovery,
   badgeLabel,
@@ -28,7 +29,7 @@ export default function FreshnessBadge({
     return (
       <span
         className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-[#f6f3ef] text-[#706F6C] border border-[#e5e2de] ${className}`}
-        title="Verified over 3 months ago. Information may have changed."
+        title={lastVerifiedDate ? "Verified over 3 months ago. Information may have changed." : "운영 정보를 아직 확인하지 않았어요 · Operating details not yet verified"}
       >
         <AlertCircle className="w-3.5 h-3.5 text-[#bf703a]" />
         <span>{badgeLabel}</span>

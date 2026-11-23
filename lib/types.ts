@@ -18,6 +18,8 @@ export interface Cafe {
   name: string;
   name_local: string;
   is_demo?: boolean;
+  business_status?: 'closed';
+  closure_source_url?: string;
   content_status?: 'discovered';
   discovery_source?: { url: string; title: string; published_at: string; checked_at: string };
   naver_place_id?: string;

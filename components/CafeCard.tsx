@@ -4,10 +4,12 @@ import React from 'react';
 import Link from 'next/link';
 import { CuratedCafe } from '@/lib/types';
 import FreshnessBadge from './FreshnessBadge';
+import VenuePhoto from './VenuePhoto';
+import { getVenuePhoto } from '@/lib/venuePhotos';
 import { MapPin, Clock, Quote, ExternalLink, Volume2, Globe, HelpCircle, Bookmark } from 'lucide-react';
 
 import SavePlaceButton from './SavePlaceButton';
-import { Impression } from './Interaction';
+import { Impression, MapLink } from './Interaction';
 import { withSource, type RecommendationSource } from '@/lib/interactions';
 
 interface CafeCardProps {
@@ -19,6 +21,32 @@ interface CafeCardProps {
 }
 
 export default function CafeCard({ cafe, isSelected = false, onSelect, onRequireAuth, source = 'editorial' }: CafeCardProps) {
+  if (cafe.is_demo || cafe.business_status === 'closed') return null;
+  const hasPhoto = Boolean(getVenuePhoto(cafe));
+  if (!hasPhoto) {
+    const map = cafe.naver_place_id && /^[1-9]\d*$/.test(cafe.naver_place_id)
+      ? 'https://map.naver.com/p/entry/place/' + cafe.naver_place_id
+      : 'https://map.naver.com/p/search/' + encodeURIComponent((cafe.name_local || cafe.name) + ' ' + cafe.address);
+    return <Impression event="place_impression" place_id={cafe.id} recommendation_source={source}>
+      <article onClick={onSelect} className={`min-w-0 rounded-2xl border bg-white px-4 py-3 ${isSelected ? 'border-[var(--kult-ink)]' : 'border-[var(--kult-rule)]'}`}>
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <p className="text-xs text-[var(--kult-accent-text)]">{cafe.neighborhood}</p>
+            <h3 className="break-words font-serif text-xl font-bold text-[var(--kult-ink)]">
+              <Link href={withSource(`/cafe/${cafe.id}`, source)} onClick={event => event.stopPropagation()} className="hover:underline">{cafe.name_local || cafe.name} ↗</Link>
+            </h3>
+          </div>
+          <SavePlaceButton placeId={cafe.id} source={source} compact />
+        </div>
+        {cafe.notes && <p className="mt-2 text-sm leading-relaxed text-[var(--kult-ink)]">{cafe.notes}</p>}
+        <p className="mt-1 text-xs leading-relaxed text-[var(--kult-muted)]">{cafe.address}</p>
+        <div onClick={event => event.stopPropagation()} className="mt-1 flex flex-wrap items-center gap-x-3 text-xs underline underline-offset-2">
+          {(cafe.naver_place_id || cafe.address) && <MapLink href={map} placeId={cafe.id} className="inline-flex min-h-11 items-center">지도 열기 ↗</MapLink>}
+          {cafe.discovery_source && <a href={cafe.discovery_source.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center">소개 출처 ↗</a>}
+        </div>
+      </article>
+    </Impression>;
+  }
   const primaryCurator = cafe.curators[0];
 
   return (
@@ -31,6 +59,7 @@ export default function CafeCard({ cafe, isSelected = false, onSelect, onRequire
       }`}
     >
       <div>
+        <VenuePhoto cafe={cafe} />
         {/* Header: Name & Freshness Badge */}
         <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
           <div>

@@ -1,3 +1,4 @@
+import VenuePhoto from '@/components/VenuePhoto';
 import React from 'react';
 import SavePlaceButton from '@/components/SavePlaceButton';
 import StoryCards from '@/components/StoryCards';
@@ -32,6 +33,11 @@ export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
   const cafe = await getCafeById(id);
   if (!cafe) return { title: 'Cafe Not Found — Seoul Expat Cafes' };
+  if (cafe.business_status === 'closed') return {
+    title: `${cafe.name_local} · 영업 종료 | KULT`,
+    description: '영업을 종료한 지점의 보관 기록입니다.',
+    robots: { index: false, follow: true },
+  };
 
   const images = (cafe as { images?: string[] }).images || [];
 
@@ -57,6 +63,27 @@ export default async function CafeDetailPage({ params }: PageProps) {
 
   if (!cafe) {
     notFound();
+  }
+
+  if (cafe.business_status === 'closed') {
+    return (
+      <main className="min-h-screen bg-stone-950 text-stone-100">
+        <div className="mx-auto max-w-3xl space-y-5 px-5 py-12">
+          <Link href="/archive" className="inline-flex items-center gap-2 text-sm text-amber-300 underline">
+            <ArrowLeft className="h-4 w-4" /> 내 KULT로 돌아가기
+          </Link>
+          <p className="inline-block rounded-lg border border-stone-700 bg-stone-800 px-3 py-1 text-sm font-semibold">영업 종료</p>
+          <h1 className="font-serif text-3xl font-bold">{cafe.name_local}</h1>
+          <p className="text-sm text-stone-400">이전 주소: {cafe.address}</p>
+          <p className="text-stone-300">이 지점은 영업을 종료했습니다. 기존에 저장한 장소를 다시 볼 수 있도록 이 기록은 남겨두었어요.</p>
+          {cafe.closure_source_url && (
+            <a href={cafe.closure_source_url} target="_blank" rel="noopener noreferrer" className="inline-block text-sm text-stone-300 underline">
+              영업 종료 안내 출처 보기 ↗
+            </a>
+          )}
+        </div>
+      </main>
+    );
   }
 
   const primaryCurator = cafe.curators[0];
@@ -150,6 +177,8 @@ export default async function CafeDetailPage({ params }: PageProps) {
           </p>
         </div>
 
+        <VenuePhoto cafe={cafe} variant="detail" />
+
         {/* Highlighted Curator Interview Commentary Quote Box */}
         <section className="p-6 sm:p-8 rounded-2xl bg-stone-900 border border-stone-800 shadow-xl relative overflow-hidden space-y-6">
           <div className="absolute top-0 right-0 w-36 h-36 bg-amber-400/5 rounded-full blur-3xl pointer-events-none" />
@@ -166,7 +195,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
           {cafe.discovery_source && <div className="text-sm text-stone-400 space-y-2">
             <p>기사 소개 기준의 정보입니다. 현재 운영·메뉴·공간 특징은 아직 검증하지 않았습니다.</p>
             <a className="underline underline-offset-4 text-amber-300" href={cafe.discovery_source.url} target="_blank" rel="noopener noreferrer">{cafe.discovery_source.title} · {cafe.discovery_source.published_at}</a>
-            <Link href="/discoveries" className="block underline py-2">발견한 공간 15곳 모두 보기</Link>
+            <Link href="/discoveries" className="block underline py-2">발견한 공간 모두 보기</Link>
           </div>}
           {/* Curator Profile Attribution Card */}
           {primaryCurator && (

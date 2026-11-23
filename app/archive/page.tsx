@@ -8,11 +8,12 @@ import EditProfileModal from '@/components/EditProfileModal';
 import CreatePostModal from '@/components/CreatePostModal';
 import AuthModal from '@/components/AuthModal';
 import NaverImportPanel from '@/components/NaverImportPanel';
+import NaverIndividualSave from '@/components/NaverIndividualSave';
 import MobileBottomNav from '@/components/MobileBottomNav';
 import Link from 'next/link';
 import { getSavedCafeIds, subscribeArchiveChanges, toggleSaveCafe } from '@/lib/archiveStore';
 import { analyzeSavedTaste, TasteAnalysisResult } from '@/lib/tasteEngine';
-import { getFollowingIds, isFollowing, toggleFollow, subscribeFollowChanges } from '@/lib/followStore';
+import { getFollowingIds, subscribeFollowChanges } from '@/lib/followStore';
 import { classifyUserTasteCluster, TasteClusterProfile } from '@/lib/tasteClusterEngine';
 import {
   getCurrentUser,
@@ -25,6 +26,7 @@ import {
 } from '@/lib/userStore';
 import { CuratedCafe } from '@/lib/types';
 import { ImportedPlace, uniqueImportedPlaces } from '@/lib/naverImport';
+import { getLocalNaverLists, importedListEvent } from '@/lib/localNaverLists';
 import {
   BookOpen,
   Bookmark,
@@ -36,18 +38,15 @@ import {
   Sun,
   Sliders,
   MapPin,
-  CheckCircle2,
   Share2,
   ChevronRight,
   Heart,
-  Quote,
   Feather,
   Flame,
   Volume2,
   Plug,
   PlusCircle,
   Edit3,
-  UserCheck,
   UserPlus,
   BarChart3,
   Layers
@@ -73,18 +72,14 @@ export default function ArchivePage() {
 
   const loadNaverPlaces = () => {
     try {
-      const raw = localStorage.getItem('kult_naver_imported_lists_v1');
-      if (raw) {
-        const lists = JSON.parse(raw);
-        if (Array.isArray(lists)) {
-          const unique = uniqueImportedPlaces(lists);
-          setNaverImportedPlaces(unique);
-          setImportedCount(unique.length);
-        }
-      }
-    } catch (e) {
-      console.error('Failed to load imported NAVER places:', e);
+      const unique = uniqueImportedPlaces(getLocalNaverLists());
+      setNaverImportedPlaces(unique);
+      setImportedCount(unique.length);
+    } catch {
+      setNaverImportedPlaces([]);
+      setImportedCount(0);
     }
+
   };
 
   useEffect(() => {
@@ -98,7 +93,7 @@ export default function ArchivePage() {
     // Fetch cafes
     async function fetchCafes() {
       try {
-        const res = await fetch('/api/cafes');
+        const res = await fetch('/api/cafes?includeClosed=1');
         if (res.ok) {
           const data = await res.json();
           const cafesList: CuratedCafe[] = data.cafes || [];
@@ -128,6 +123,7 @@ export default function ArchivePage() {
 
     const unsubUser = subscribeUser((user) => {
       setCurrentUser(user);
+      loadNaverPlaces();
     });
 
     const unsubPosts = subscribePosts((posts) => {
@@ -137,14 +133,14 @@ export default function ArchivePage() {
     const handleNaverUpdate = () => {
       loadNaverPlaces();
     };
-    window.addEventListener('kult_naver_import_updated', handleNaverUpdate);
+    window.addEventListener(importedListEvent, handleNaverUpdate);
 
     return () => {
       unsubArchive();
       unsubFollow();
       unsubUser();
       unsubPosts();
-      window.removeEventListener('kult_naver_import_updated', handleNaverUpdate);
+      window.removeEventListener(importedListEvent, handleNaverUpdate);
     };
   }, []);
 
@@ -158,14 +154,6 @@ export default function ArchivePage() {
     }
   }, [savedIds, followingIds, allCafes]);
 
-  const handleToggleFollow = (curatorId: string) => {
-    if (!currentUser) {
-      setIsAuthOpen(true);
-      return;
-    }
-    try { toggleFollow(curatorId); } catch { alert('팔로우 저장에 실패했습니다. 다시 시도해 주세요.'); }
-  };
-
   const handleToggleBookmark = (cafeId: string) => {
     if (!currentUser) {
       setIsAuthOpen(true);
@@ -176,7 +164,7 @@ export default function ArchivePage() {
 
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100 flex flex-col font-sans selection:bg-amber-400 selection:text-stone-950 pb-28 md:pb-12">
-      <Header onOpenReport={() => setIsReportOpen(true)} onOpenAuth={() => setIsAuthOpen(true)} onOpenCreatePost={() => setIsCreatePostOpen(true)} />
+      <Header onOpenReport={() => setIsReportOpen(true)} onOpenAuth={() => currentUser ? setIsEditProfileOpen(true) : setIsAuthOpen(true)} onOpenCreatePost={() => setIsCreatePostOpen(true)} />
 
       {/* 1. ISSUE SUB-MASTHEAD BAR */}
       <div className="border-b border-stone-850 bg-stone-900/60 px-4 sm:px-8 py-2.5 backdrop-blur-sm">
@@ -198,6 +186,14 @@ export default function ArchivePage() {
       </div>
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 space-y-10">
+        <NaverImportPanel onCountChange={setImportedCount} />
+        <Link href="/taste-neighbors" className="inline-flex min-h-11 items-center font-bold text-amber-300 underline">취향이 닮은 사람 찾기 ↗</Link>
+        <section id="naver-single" className="scroll-mt-24">
+          {currentUser ? <NaverIndividualSave key={currentUser.id} profileId={currentUser.id} cafes={allCafes} /> :
+            <button type="button" onClick={() => setIsAuthOpen(true)} className="min-h-11 px-4 rounded-xl border border-stone-700 text-sm">
+              장소 링크 하나 저장하기 ↗
+            </button>}
+        </section>
         {/* 2. PROFILE & EDITORIAL IDENTITY MODULE */}
         <section className="bg-gradient-to-b from-stone-900/90 to-stone-900/50 rounded-3xl border border-stone-850 p-6 sm:p-8 space-y-6 shadow-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
@@ -208,11 +204,13 @@ export default function ArchivePage() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
               <div className="flex items-start sm:items-center gap-5">
                 <div className="relative shrink-0">
-                  <img
-                    src={currentUser.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'}
-                    alt={currentUser.name}
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover ring-2 ring-amber-400/30 shadow-md"
-                  />
+                  {currentUser.avatar ? (
+                    <img src={currentUser.avatar} alt="" className="w-20 h-20 rounded-2xl object-cover ring-2 ring-amber-400/30 shadow-md sm:w-24 sm:h-24" />
+                  ) : (
+                    <div className="grid h-20 w-20 place-items-center rounded-2xl bg-stone-800 font-serif text-3xl text-amber-300 sm:h-24 sm:w-24" aria-hidden="true">
+                      {Array.from(currentUser.name)[0]}
+                    </div>
+                  )}
                   <div className="absolute -bottom-2 -right-2 bg-amber-400 text-stone-950 p-1.5 rounded-xl shadow-md">
                     <BookOpen className="w-4 h-4 stroke-[2.5]" />
                   </div>
@@ -224,13 +222,15 @@ export default function ArchivePage() {
                       {currentUser.name}
                     </h1>
                     <span className="px-2.5 py-0.5 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/30 text-[10px] font-bold uppercase tracking-wider">
-                      {currentUser.identityTag || 'EDITORIAL CURATOR'}
+                      브라우저 프로필
                     </span>
                   </div>
 
-                  <p className="text-stone-300 text-xs sm:text-sm max-w-xl leading-relaxed">
-                    {currentUser.bio || '서울의 조용한 작업 공간을 수집하는 에디터입니다.'}
-                  </p>
+                  {(currentUser.identityTag || currentUser.bio) && (
+                    <p className="text-xs leading-relaxed text-stone-300 sm:text-sm">
+                      {[currentUser.identityTag, currentUser.bio].filter(Boolean).join(' · ')}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -250,7 +250,7 @@ export default function ArchivePage() {
                   className="px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition-colors flex items-center gap-1.5 shadow-md"
                 >
                   <PlusCircle className="w-4 h-4" />
-                  <span>공간 기고하기</span>
+                  <span>공간 메모 쓰기</span>
                 </button>
 
                 <button
@@ -261,7 +261,7 @@ export default function ArchivePage() {
                   }}
                   className="px-3 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-800 text-stone-400 hover:text-stone-200 text-xs font-medium transition-colors"
                 >
-                  로그아웃
+                  이 탭에서 프로필 닫기
                 </button>
               </div>
             </div>
@@ -275,15 +275,15 @@ export default function ArchivePage() {
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-3 flex-wrap">
                     <h1 className="font-serif text-2xl sm:text-3xl font-bold text-stone-100 tracking-tight">
-                      에디터 가입 / 로그인
+                      My Archive
                     </h1>
                     <span className="px-2.5 py-0.5 rounded-full bg-stone-800 text-stone-400 border border-stone-700 text-[10px] font-bold uppercase tracking-wider">
-                      GUEST VISITOR
+                      게스트
                     </span>
                   </div>
 
                   <p className="text-stone-400 text-xs sm:text-sm max-w-xl leading-relaxed">
-                    로그인하시면 저장해둔 나만의 카페 서재를 동기화하고 새 공간 아티클을 직접 기고할 수 있습니다.
+                    지금은 게스트예요. 이 탭에서 브라우저 프로필을 직접 열기 전에는 프로필이나 저장 기록을 표시하지 않아요.
                   </p>
                 </div>
               </div>
@@ -295,21 +295,17 @@ export default function ArchivePage() {
                   className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition-colors flex items-center gap-1.5 shadow-md"
                 >
                   <UserPlus className="w-4 h-4" />
-                  <span>에디터 가입 및 로그인</span>
+                  <span>브라우저 프로필 열기</span>
                 </button>
 
-                <button
-                  type="button"
-                  onClick={() => setIsCreatePostOpen(true)}
-                  className="px-4 py-2.5 rounded-xl bg-stone-850 hover:bg-stone-800 border border-stone-750 text-stone-300 text-xs font-semibold transition-colors flex items-center gap-1.5"
-                >
-                  <PlusCircle className="w-4 h-4 text-amber-400" />
-                  <span>공간 기고하기</span>
-                </button>
+                <Link href="/" className="rounded-xl border border-stone-700 px-4 py-2.5 text-xs font-semibold text-stone-300 hover:text-stone-100">
+                  공간 둘러보기 →
+                </Link>
               </div>
             </div>
           )}
 
+          {currentUser && <>
           {/* EDITORIAL STATS MOSAIC */}
           <div className="grid grid-cols-3 gap-3 pt-2">
             <div className="bg-stone-950/60 border border-stone-850 p-4 rounded-2xl text-center space-y-1">
@@ -322,12 +318,12 @@ export default function ArchivePage() {
             </div>
 
             <div className="bg-stone-950/60 border border-stone-850 p-4 rounded-2xl text-center space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-stone-400">PUBLISHED</span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-stone-400">NOTES</span>
               <div className="font-serif text-2xl sm:text-3xl font-extrabold text-amber-400">
                 {userPosts.length}
                 <span className="text-xs font-sans font-normal text-stone-400 ml-1">편</span>
               </div>
-              <p className="text-[11px] text-stone-500">내가 기고한 아티클</p>
+              <p className="text-[11px] text-stone-500">내 공간 메모</p>
             </div>
 
             <div className="bg-stone-950/60 border border-stone-850 p-4 rounded-2xl text-center space-y-1">
@@ -341,8 +337,10 @@ export default function ArchivePage() {
           </div>
 
 
+          </>}
         </section>
 
+        {currentUser && <>
         {/* 🌟 SPOTIFY-STYLE HIDDEN BACKEND TASTE ENGINE RECOMMENDATION MODULE */}
         {tasteResult && tasteResult.recommendations.length > 0 && (
           <section className="bg-stone-900/80 border border-amber-400/30 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden">
@@ -464,13 +462,12 @@ export default function ArchivePage() {
               }`}
             >
               <Users className="w-4 h-4" />
-              <span>취향 메이트 팔로잉</span>
+              <span>취향이 닮은 사람</span>
             </button>
           </div>
         </div>
 
         {/* 4. TAB 1: COLLECTIONS VIEW */}
-        <NaverImportPanel onCountChange={setImportedCount} onRequireAuth={() => setIsAuthOpen(true)} />
 
         {activeTab === 'collections' && (
           <div className="space-y-10">
@@ -515,6 +512,7 @@ export default function ArchivePage() {
                                 {cafe.name}
                               </h3>
                               <p className="text-xs text-stone-400">{cafe.name_local}</p>
+                              {cafe.business_status === 'closed' && <span className="mt-2 inline-block rounded bg-stone-800 px-2 py-1 text-xs font-semibold text-stone-200">영업 종료</span>}
                             </div>
 
                             <button
@@ -528,6 +526,9 @@ export default function ArchivePage() {
                             </button>
                           </div>
 
+                          {cafe.business_status === 'closed' ? (
+                            <p className="text-xs text-stone-400">이 지점은 영업을 종료했지만 저장 기록은 유지돼요.</p>
+                          ) : <>
                           <div className="p-3.5 rounded-2xl bg-stone-950 border border-stone-850 italic font-serif text-xs text-stone-300 leading-relaxed">
                             "{cafe.notes}"
                           </div>
@@ -544,6 +545,7 @@ export default function ArchivePage() {
                               </span>
                             )}
                           </div>
+                          </>}
                         </div>
 
                         <div className="pt-3 border-t border-stone-850 flex items-center justify-between text-xs">
@@ -767,10 +769,10 @@ export default function ArchivePage() {
             <div className="flex items-center justify-between">
               <div>
                 <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
-                  PUBLISHED DISPATCHES
+                  BROWSER NOTES
                 </span>
                 <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-100 mt-1">
-                  내가 직접 기고한 공간 아티클 ({userPosts.length}편)
+                  내가 작성한 공간 메모 ({userPosts.length}편)
                 </h2>
               </div>
 
@@ -779,7 +781,7 @@ export default function ArchivePage() {
                 className="px-4 py-2 rounded-xl bg-amber-400 text-stone-950 font-bold text-xs flex items-center gap-1.5 shadow-md hover:bg-amber-300 transition-colors"
               >
                 <PlusCircle className="w-4 h-4" />
-                <span>새 공간 기고</span>
+                <span>새 공간 메모</span>
               </button>
             </div>
 
@@ -830,153 +832,15 @@ export default function ArchivePage() {
           </div>
         )}
 
-        {/* 6. TAB 3: TASTE TWINS & SOCIAL FOLLOW TRACKING VIEW */}
         {activeTab === 'twins' && (
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
-                  AESTHETIC RESONANCE &amp; SOCIAL GRAPH
-                </span>
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-stone-100 mt-1">
-                  나와 감도가 닮은 큐레이터 팔로잉 ({followingIds.length}명)
-                </h2>
-              </div>
-              <div className="inline-flex items-center gap-1.5 text-xs text-amber-300 bg-amber-400/10 border border-amber-400/30 px-3 py-1.5 rounded-full font-mono font-bold">
-                <Users className="w-3.5 h-3.5 text-amber-400" />
-                <span>SOCIAL GRAPH CLUSTERING</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Twin Card 1: David Vance */}
-              <div className="bg-stone-900 border border-stone-850 rounded-3xl p-6 space-y-5 shadow-lg relative overflow-hidden">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="relative shrink-0">
-                      <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
-                        alt="David Vance"
-                        className="w-14 h-14 rounded-2xl object-cover ring-2 ring-stone-750"
-                      />
-                      <span className="absolute -top-2 -left-2 bg-amber-400 text-stone-950 font-mono text-[10px] font-extrabold px-1.5 py-0.5 rounded-full shadow-md">
-                        95%
-                      </span>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-serif text-lg font-bold text-stone-100">David Vance</h3>
-                        <CheckCircle2 className="w-4 h-4 text-amber-400" />
-                      </div>
-                      <p className="text-xs text-stone-400">건축가 • 3년 차 서울 거주</p>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => handleToggleFollow('david')}
-                    className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                      isFollowing('david')
-                        ? 'bg-amber-400 text-stone-950 font-bold shadow-md'
-                        : 'bg-stone-850 hover:bg-stone-800 text-stone-200 border border-stone-750'
-                    }`}
-                  >
-                    {isFollowing('david') ? (
-                      <>
-                        <UserCheck className="w-3.5 h-3.5" />
-                        <span>팔로잉 (Subscribed)</span>
-                      </>
-                    ) : (
-                      <>
-                        <UserPlus className="w-3.5 h-3.5 text-amber-400" />
-                        <span>팔로우 하기</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                <div className="bg-stone-950/70 border border-stone-850 p-4 rounded-2xl text-stone-300 text-xs italic leading-relaxed relative">
-                  <Quote className="w-4 h-4 text-amber-400/40 absolute top-3 left-3" />
-                  <p className="pl-5">
-                    "미드센추리 가구와 밝은 채광, 벽면의 여백이 주는 침묵을 선호합니다."
-                  </p>
-                </div>
-
-                <div className="text-xs text-stone-400 space-y-2 pt-2 border-t border-stone-850">
-                  <div className="flex items-center gap-2 text-stone-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                    <span>
-                      공통 저장 공간: <strong className="text-amber-300 font-semibold">로우키 성수, 센터커피 서울숲</strong>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Twin Card 2: 최소라 */}
-              <div className="bg-stone-900 border border-stone-850 rounded-3xl p-6 space-y-5 shadow-lg relative overflow-hidden">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="relative shrink-0">
-                      <img
-                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"
-                        alt="최소라"
-                        className="w-14 h-14 rounded-2xl object-cover ring-2 ring-stone-750"
-                      />
-                      <span className="absolute -top-2 -left-2 bg-amber-400 text-stone-950 font-mono text-[10px] font-extrabold px-1.5 py-0.5 rounded-full shadow-md">
-                        92%
-                      </span>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-serif text-lg font-bold text-stone-100">최소라</h3>
-                        <CheckCircle2 className="w-4 h-4 text-amber-400" />
-                      </div>
-                      <p className="text-xs text-stone-400">독립출판 편집자 • 종로구</p>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => handleToggleFollow('sora')}
-                    className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                      isFollowing('sora')
-                        ? 'bg-amber-400 text-stone-950 font-bold shadow-md'
-                        : 'bg-stone-850 hover:bg-stone-800 text-stone-200 border border-stone-750'
-                    }`}
-                  >
-                    {isFollowing('sora') ? (
-                      <>
-                        <UserCheck className="w-3.5 h-3.5" />
-                        <span>팔로잉 (Subscribed)</span>
-                      </>
-                    ) : (
-                      <>
-                        <UserPlus className="w-3.5 h-3.5 text-amber-400" />
-                        <span>팔로우 하기</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                <div className="bg-stone-950/70 border border-stone-850 p-4 rounded-2xl text-stone-300 text-xs italic leading-relaxed relative">
-                  <Quote className="w-4 h-4 text-amber-400/40 absolute top-3 left-3" />
-                  <p className="pl-5">
-                    "스피커에서 흘러나오는 재즈와 잉크 냄새가 섞인 조용한 책방 겸 커피바 탐색가."
-                  </p>
-                </div>
-
-                <div className="text-xs text-stone-400 space-y-2 pt-2 border-t border-stone-850">
-                  <div className="flex items-center gap-2 text-stone-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                    <span>
-                      공통 저장 공간: <strong className="text-amber-300 font-semibold">카페 이잌 삼청, 올모스트홈</strong>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <section className="space-y-3 rounded-2xl border border-stone-800 p-6">
+            <h2 className="font-serif text-xl font-bold">취향이 닮은 사람</h2>
+            <p className="text-sm text-stone-300">나와 같은 곳을 저장한 사람은 또 어디를 좋아할까요?</p>
+            <Link href="/taste-neighbors" className="inline-flex min-h-11 items-center font-bold text-amber-300 underline">비슷한 저장 목록 보기 ↗</Link>
+          </section>
         )}
+
+        </>}
 
         {/* 7. CURATOR PULL-QUOTE MODULE OF THE WEEK */}
         <section className="bg-gradient-to-r from-stone-900 via-stone-850 to-stone-900 border border-stone-850 rounded-3xl p-8 text-center space-y-4 shadow-xl">
@@ -997,7 +861,7 @@ export default function ArchivePage() {
       {/* MODALS */}
       <ReportModal isOpen={isReportOpen} onClose={() => setIsReportOpen(false)} />
       <EditProfileModal isOpen={isEditProfileOpen} onClose={() => setIsEditProfileOpen(false)} />
-      <CreatePostModal isOpen={isCreatePostOpen} onClose={() => setIsCreatePostOpen(false)} cafes={allCafes} />
+      <CreatePostModal isOpen={isCreatePostOpen} onClose={() => setIsCreatePostOpen(false)} cafes={allCafes.filter(cafe => cafe.business_status !== 'closed')} />
       <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
 
       <MobileBottomNav

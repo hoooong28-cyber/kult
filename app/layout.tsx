@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'SEOUL EXPAT CAFES — Human-Curated Gazette & Local Guide',
+  title: 'KULT Seoul · 서울 약속 장소 가이드',
   description:
-    'Human-curated cafe recommendations for Seoul expats, remote workers, and residents. Filter by quiet spaces, power outlets, English menus, and kid-free zones.',
+    '실제 사진으로 서울의 카페와 음식점을 둘러보고, 약속 장소를 친구에게 공유하세요.',
   keywords: [
     'Seoul Expat Cafes',
     'Seoul Cafe Work',
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     'Seoul Quiet Cafe',
   ],
   openGraph: {
-    title: 'SEOUL EXPAT CAFES — Human-Curated Local Guide',
-    description: 'Find quiet cafes, laptop-friendly spots, and English-friendly brunch cafes in Seoul.',
+    title: 'KULT Seoul · 서울 약속 장소 가이드',
+    description: 'Choose a place to meet in Seoul. Browse real venue photos and share your shortlist.',
     type: 'website',
-    locale: 'en_US',
+    locale: 'ko_KR',
   },
 };
 
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="ko" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -40,10 +40,10 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#fcf9f5] text-[#1c1c1a] flex flex-col antialiased selection:bg-[#1c1c1a] selection:text-[#fcf9f5]">
         <main className="flex-1">{children}</main>
 
-        <footer className="mt-16 border-t border-[#e2dec] bg-[#f4efe6] py-10 px-6 text-center text-xs text-[#5e5e5d]">
+        <footer className="mt-16 border-t border-[var(--kult-rule)] bg-[var(--kult-cream)] py-10 px-6 text-center text-xs text-[#5e5e5d]">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <span className="font-serif font-bold text-[#1c1c1a] tracking-tight">SEOUL EXPAT CAFES</span>
+              <span className="font-serif font-bold text-[#1c1c1a] tracking-tight">KULT SEOUL</span>
               <span>•</span>
               <span className="font-mono text-[#747878] uppercase">Human-Curated Gazette</span>
             </div>

@@ -1,0 +1,76 @@
+# Design System: KULT Seoul
+
+Scope: Korean-first editorial meetup finder. This document is a Google Stitch design brief. Preserve the existing KULT identity; revise home, neighborhood choice, results and the opt-in editorial collection. This is not deployed.
+
+## 1. Visual Theme & Atmosphere
+
+A small Seoul city guide, typeset like a contemporary bookshop recommendation card: warm paper, generous margins, quiet confidence. Density 3/10, asymmetry 6/10, motion 2/10. On entry, give only the setting and a clear choice. On results, show an authentic venue photo only if approved; photo-free results must still be useful.
+
+One job: land → choose the purpose → choose a Seoul neighborhood → compare purpose-matched places → open a map or share. A received link lands directly on the same results without a question, signup or splash screen.
+
+## 2. Color Palette & Roles
+
+| Color | Hex | Role |
+|---|---|---|
+| Warm Paper | #FCF9F5 | Main canvas; light text on dark controls |
+| Reading Cream | #F7F3EC | Recessed panel and hover fill |
+| Card White | #FFFFFF | Photo card background |
+| Charcoal Ink | #1C1C1A | Main copy and dominant action |
+| Muted Ink | #5E5E5D | Secondary text and credits |
+| Paper Rule | #E6DFD3 | 1px separators and borders |
+| Terracotta | #BF703A | Single accent hue; decorative rules and punctuation |
+| Deep Terracotta | #8B4829 | Same hue, darker for small text and focus outlines |
+
+Keep navigation ink-first; don't put tiny white text on the brighter terracotta. No second accent, gradients, neon, pure black or cool-gray overlay.
+
+## 3. Typography Rules
+
+- Preserve KULT's existing Playfair Display for Latin display and local KULT Hangul Editorial (Noto Serif CJK KR Bold) for Korean. If the preview cannot access local assets, use Noto Serif KR Bold rather than distorting Hangul.
+- Body: existing Source Sans 3 and KULT Hangul Sans (Noto Sans CJK KR); 15–16px, 1.55–1.65 leading, 65ch maximum. Captions: 12–13px.
+- Home display: 38–42px around 390px, up to 72px desktop, weight 700, line-height 1.12, tracking no tighter than −0.055em. Keep ‘오늘 어디 갈까요?’ together where possible; never break a Korean word.
+- Result heading: 32px on mobile, up to 52px desktop. Korean first and English as a quieter guide cue. No Inter or generic default serif as the visible design face; no condensed pseudo-Hangul.
+
+## 4. Component Stylings and Copy
+
+**Home: one decision, no venue photo.** Use the existing KULT masthead. Use a small inline terracotta rule as visual punctuation in the eyebrow, not a stock or generated picture. Left-align the editorial headline.
+
+- Eyebrow: SEOUL CITY GUIDE
+- Headline: 오늘 어디 갈까요?
+- Supporting line: 같이 가는 사람과 동네를 골라 서울의 카페와 식당을 찾아보세요.
+- Three equal-priority options grouped as one vertical chooser: 데이트 / 친구 모임 / 혼자 가기, with quieter Date / With friends / Solo cues. Each row 56–64px, with fine dividers, optional line icon and a right arrow. One tap opens “어느 동네로 갈까요?” with 삼각지 / 해방촌 / 성수 when applicable. One more tap opens district-and-purpose results; no Continue button.
+- Keep 동네별로 보기 and 내 아카이브 as quiet utility links below, not secondary CTAs. Do not add a home map, venue directory, carousel or forced login.
+
+**Results: decision details with an optional approved photo.** Keep the same masthead and type. Use 선택 바꾸기, the occasion heading (e.g. 데이트하기 좋은 곳), and one visible 링크 복사 action for available results. A copied/shared URL preserves the selected occasion and district if present.
+
+- Card sequence: optional approved photo → name and district → one reason to choose → Korean address and one verified practical caveat if available → 지도 열기. Credit beneath photo. Photo aspect 16:10, card radius 16px, 1px Paper Rule, no text on the photo, no heavy shadow.
+- Use only the existing approved real CUCO Seongsu interior if available in the preview. Show every real, purpose-matched Samgakji record without an approved photo as a compact text-first card. No placeholder or photo-preparation badge. No stock, AI or placeholder venue imagery, invented venues or claims of live opening.
+- Touch targets at least 44×44px; 2px focus outline with 3px offset; press feedback with a subtle opacity change or 1px translation. Semantic headings, keyboard-visible focus, and alt text describing the actual photo.
+- Preserve image dimensions during load; a reserved skeleton is for an actual pending load only. Clipboard success: 링크를 복사했어요. If clipboard fails, offer a selectable URL. Forms are out of scope; future forms require visible labels and inline errors.
+
+## 5. Layout Principles
+
+Use CSS Grid with max width 1280px; 48px desktop gutters. On desktop, a left-weighted 5:4 hero puts copy on the left and the vertical chooser to the right, aligned high, with open space. Avoid three adjacent equal feature cards. A single result may occupy roughly 60% of the desktop measure; add a second card only if there is an actual purpose-matched place.
+
+Below 768px, use one column, 16px gutters and 24–32px internal section rhythm. Keep three choices visible without scrolling at 390×844 where possible. No horizontal overflow or stacked/overlapping text. Use natural height and 100dvh minimum only for genuinely fullscreen states. Inspect at 320, 390, 768 and 1440px; check Hangul wrap, keyboard focus, photo crop and back/direct URL behavior.
+
+## 6. Motion & Interaction
+
+Quiet 120–180ms ease-out press, hover and status transitions using only transform and opacity. If a spring is used, use stiffness 100 / damping 20. Stagger is optional and must not hide choices or delay taps. Allow subtle skeleton shimmer only while genuinely loading; no perpetual motion on the decisions themselves. Honor reduced motion.
+
+## 7. Anti-Patterns
+
+No rebrand, neon glow, gradients, emojis, glass panels, custom cursors, centered promotional hero, three equal marketing cards, giant taglines, bouncing scroll arrows, signup before value, unlicensed images from search, fake venue photos, ratings, numbers, social proof or ‘currently open’ claims.
+
+## Stitch generation request
+
+Design Home, Neighborhood Choice and Result at 390×844 and 1440×900, plus a separate no-photo result frame. Use exact Korean copy above. Connect option rows to neighborhood choice and matching results, and 선택 바꾸기 back to Home. Include a direct link example /picks/samgakji?purpose=date. The legacy /picks?purpose=date remains a direct citywide results link. Do not create a substitute photo if the approved CUCO asset is not supplied. Return design frames only; do not publish or modify the live site.
+
+### Main alternate entry: import from Naver Map
+Keep the meetup chooser unchanged. Immediately below it, place one Reading Cream panel with a 1px Paper Rule and 16px radius. Copy: “네이버 지도에 모아둔 곳이 있나요?” with “저장 목록 가져오기” as the first action and “장소 하나 저장하기” secondary. Both targets are 44px tall. Link directly to the corresponding archive section. Keep other utility links after this panel. Do not expose or transmit a saved link in a URL query or auto-publish imported places.
+
+## Editorial collection: K’s Seoul Evenings
+
+Use the existing results shell, masthead and text-first place card; no additional visual language. Caption “KULT COLLECTION / BY K”, title “K가 고른 서울의 저녁”, then the share control and place cards. The list represents three individual places across different neighborhoods, not a route. No sign-in wall for reading or sharing, and no payment cues. Save uses the existing private browser archive. Add a quiet utility link on home without altering its purpose chooser. Never include private data in the URL or prefill from a user archive.
+
+## Taste neighbors
+Use the collection paper shell and existing Korean editorial type. Lead with “취향이 닮은 사람.” The only first action is selecting actual saved places (nothing preselected). Explain comparison and publication separately. Show matching names and a simple common-place count, not a synthetic percentage, fake profile, or mock result. Make empty states honest and public visibility reversible. Use the existing navigation, ink/cream controls, and 44px targets.

@@ -6,9 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "photos:discover": "node scripts/discover-venue-photos.mjs",
+    "photos:sync": "node scripts/sync-venue-photos.mjs",
+    "photos:naver": "node scripts/plan-naver-photo-search.mjs",
+    "preview:local": "next dev --hostname 127.0.0.1 --port 3000"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.2",
     "@tailwindcss/postcss": "^4.0.7",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",

@@ -34,6 +34,8 @@
     },
     {
       "id": "center-coffee-seoulforest",
+      "business_status": "closed",
+      "closure_source_url": "https://onedodaily.kr/blog/?bmode=view&idx=169166461",
       "name": "Center Coffee",
       "name_local": "센터커피 서울숲점",
       "neighborhood": "Seoul Forest",
@@ -56,6 +58,7 @@
     },
     {
       "id": "lowkey-seongsu",
+      "naver_place_id": "1393890643",
       "name": "Lowkey",
       "name_local": "로우키 성수",
       "neighborhood": "Seongsu",

@@ -433,5 +433,238 @@
       "published_at": "2026-03-20",
       "checked_at": "2026-10-18"
     }
+  },
+  {
+    "id": "discovery-a-glass-of-haebangchon",
+    "name": "A Glass Of",
+    "name_local": "어글라스오브",
+    "content_status": "discovered",
+    "neighborhood": "용산구 · 해방촌",
+    "address": "서울 용산구 신흥로11길 63 1층 101호",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "신흥시장 안에서 노출 콘크리트 인테리어와 아이스크림·와인 페어링을 소개한 방문기에서 발견했습니다.",
+    "discovery_source": {
+      "url": "https://indpmusic.co.kr/magazine/visit-yongsan-aglassof",
+      "title": "인디피 뮤직 매거진 · 어글라스오브 방문기",
+      "published_at": "2026-10-07",
+      "checked_at": "2026-11-22"
+    }
+  },
+  {
+    "id": "discovery-mna-samgakji",
+    "name": "MNA Samgakji",
+    "name_local": "엠엔에이 삼각지",
+    "content_status": "discovered",
+    "neighborhood": "용산구 · 삼각지",
+    "address": "서울 용산구 한강대로 206-1",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "초록빛 바, 붉은 계단, 빈티지 가구, 자스민 밀크티를 다룬 방문기에서 발견했습니다.",
+    "discovery_source": {
+      "url": "https://namcandler.tistory.com/entry/samgakji-cafe-mna-red-green-jasmine-milk-tea",
+      "title": "캔들러 · 엠엔에이 삼각지 방문기",
+      "published_at": "2026-10-25",
+      "checked_at": "2026-11-22"
+    }
+  },
+  {
+    "id": "discovery-tim-hortons-banff-town-seongsu",
+    "name": "Tim Hortons Banff Town Seongsu",
+    "name_local": "팀홀튼 밴프 타운 성수",
+    "content_status": "discovered",
+    "neighborhood": "성동구 · 성수",
+    "address": "서울 성동구 아차산로9길 8",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "캐나다 밴프를 테마로 한 실내와 화덕 베이글을 다룬 현장 보도에서 발견했습니다. 11월 3일 인스타그램 공간 소개도 확인했습니다.",
+    "discovery_source": {
+      "url": "https://biz.newdaily.co.kr/site/data/html/2026/10/29/2026102900222.html",
+      "title": "뉴데일리 · 팀홀튼 밴프 타운 성수 현장 취재",
+      "published_at": "2026-10-29",
+      "checked_at": "2026-11-22"
+    }
+  },
+  {
+    "id": "discovery-mongtan-samgakji",
+    "name": "Mongtan",
+    "name_local": "몽탄",
+    "content_status": "discovered",
+    "neighborhood": "용산구 · 삼각지",
+    "address": "서울 용산구 백범로99길 50",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "삼각지 본점은 짚불구이와 우대갈비로 소개된 식당입니다. 영업 및 대기 방식은 출발 전 지도에서 확인해 주세요.",
+    "discovery_source": {
+      "url": "https://www.esquirekorea.co.kr/article/44089",
+      "title": "에스콰이어 · 몽탄 본점 현장 소개",
+      "published_at": "2020-01-09",
+      "checked_at": "2026-11-22"
+    }
+  },
+  {
+    "id": "discovery-always-august-samgakji",
+    "name": "Always Au8ust Roastery",
+    "name_local": "올웨이즈어거스트 로스터리 삼각지점",
+    "content_status": "discovered",
+    "neighborhood": "용산구 · 삼각지",
+    "address": "서울 용산구 한강대로 179 1층",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "삼각지점은 자체 로스팅 커피로 소개됐어요. 브랜드 공식 소개에서 삼각지 매장을 확인했습니다.",
+    "discovery_source": {
+      "url": "https://alleymag.com/alley/yongridan-gil/life/play/yongridan-alwaysaugust/",
+      "title": "앨리매거진 · 올웨이즈어거스트 삼각지점",
+      "published_at": "2026-10-11",
+      "checked_at": "2026-11-22"
+    }
+  },
+  {
+    "id": "discovery-wildduck-canteen-haebangchon",
+    "name": "Wildduck & Canteen",
+    "name_local": "와일드덕칸틴",
+    "content_status": "discovered",
+    "neighborhood": "용산구 · 해방촌",
+    "address": "서울 용산구 신흥로 33 1층",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "빈티지 가구와 오픈 키친이 있는 해방촌 와인바 겸 레스토랑.",
+    "discovery_source": {
+      "url": "https://prd.esquirekorea.co.kr/article/1913135",
+      "title": "에스콰이어 · 해방촌 공간 소개",
+      "published_at": "2026-11-16",
+      "checked_at": "2026-11-22"
+    }
+  },
+  {
+    "id": "discovery-chungwang-yeonhui",
+    "name": "Chungwang",
+    "name_local": "춘광",
+    "content_status": "discovered",
+    "neighborhood": "서대문구 · 연희동",
+    "address": "서울 서대문구 연희맛로 31-10",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "전통주와 제철 한식 안주를 곁들이는 연희동 골목의 한식주점.",
+    "discovery_source": {
+      "url": "https://www.foodbevg.com/KR/Guochuan/112951684374617/%EA%B3%BC%EC%B2%9C%EB%8F%84%EA%B0%80gwacheondoga",
+      "title": "과천도가 · 연희동 춘광 막걸리 취급 소개",
+      "published_at": "2025-04-09",
+      "checked_at": "2026-11-22"
+    }
+  },
+  {
+    "id": "discovery-salt-and-kelp-seogyo",
+    "name": "Salt & Kelp",
+    "name_local": "소금과다시마",
+    "content_status": "discovered",
+    "neighborhood": "마포구 · 서교동",
+    "address": "서울 마포구 잔다리로7길 38 이막빌딩 1층",
+    "lat": null,
+    "lng": null,
+    "tags": {
+      "wifi": null,
+      "outlet_availability": "unknown",
+      "noise_level": "unknown",
+      "kid_free_zone": null,
+      "english_menu": null,
+      "card_only": null,
+      "good_for": [],
+      "price_range": "unknown"
+    },
+    "hours": "영업시간·현재 운영 여부 미확인",
+    "last_verified_date": "",
+    "notes": "콘부 파스타와 작은 일본식 안주를 나눠 먹는 서교동 이자카야.",
+    "discovery_source": {
+      "url": "https://sirogongbang.tistory.com/entry/2026-Seoul-Restaurant-09",
+      "title": "소금과 다시마 · 2026년 현장 방문 기록",
+      "published_at": "2026-04-12",
+      "checked_at": "2026-11-22"
+    },
+    "naver_place_id": "1570604636"
   }
 ]

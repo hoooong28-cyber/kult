@@ -1,0 +1,57 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { purposePicks, picks, resolveEditorialPick, resolvePickPurpose, resolvePurposeShortlist } from '../lib/editorialPicks.ts';
+import discoveries from '../data/discoveries.json' with { type: 'json' };
+import fs from 'node:fs';
+import { getVenuePhoto } from '../lib/venuePhotos.ts';
+import founder from '../data/curators/founder.json' with { type: 'json' };
+
+const catalog = [...founder.cafes, ...discoveries];
+
+test('Samgakji research is grouped by the visitor purpose', () => {
+  const pick = resolveEditorialPick('samgakji', catalog);
+  assert.equal(pick.source, 'discovery');
+  assert.deepEqual(pick.places.map(p => p.purposes), [['friends'], ['friends', 'solo'], ['date', 'friends']]);
+  for (const { cafe } of pick.places) {
+    assert.equal(cafe.neighborhood, '용산구 · 삼각지');
+    assert.equal(cafe.last_verified_date, '');
+    assert.equal(new URL(cafe.discovery_source.url).protocol, 'https:');
+  }
+});
+
+test('unknown collections, demos, closed records and provenance mismatches do not appear', () => {
+  assert.equal(resolveEditorialPick('unknown', catalog), null);
+  const closed = catalog.map(c => c.id === 'discovery-mongtan-samgakji' ? { ...c, business_status: 'closed' } : c);
+  assert.equal(resolveEditorialPick('samgakji', closed).places.length, 2);
+  const onlyOne = closed.map(c => c.id === 'discovery-mna-samgakji' ? { ...c, is_demo: true } : c);
+  assert.equal(resolveEditorialPick('samgakji', onlyOne).places.length, 1);
+  assert.equal(resolveEditorialPick('samgakji', catalog.filter(c => c.neighborhood !== '용산구 · 삼각지')), null);
+  assert.equal(resolveEditorialPick('seongsu-brunch-or-coffee', catalog.map(c =>
+    c.id === 'lowkey-seongsu' ? { ...c, content_status: 'discovered' } : c)).places[0].cafe.id, 'cuco-seongsu');
+  assert.equal(new Set(picks.map(p => p.slug)).size, picks.length);
+});
+
+test('purpose and exact-branch photo checks do not exclude legitimate photo-free venues', () => {
+  assert.deepEqual(['date', 'friends', 'solo'].map(id => resolvePickPurpose(id).label), ['데이트', '친구 모임', '혼자 가기']);
+  assert.equal(resolvePickPurpose(['date', 'solo']), undefined);
+  assert.equal(resolvePickPurpose('unknown'), undefined);
+  const list = resolveEditorialPick('seongsu-brunch-or-coffee', catalog).places;
+  assert.deepEqual(purposePicks(list, 'date').map(p => p.cafe.id), ['cuco-seongsu']);
+  const solo = purposePicks(list, 'solo');
+  assert.deepEqual(solo.map(p => p.cafe.id), ['lowkey-seongsu']);
+  assert.equal(getVenuePhoto(solo[0].cafe), null);
+  const image = getVenuePhoto(list[0].cafe);
+  assert.ok(fs.readFileSync(new URL('../public' + image.src, import.meta.url)).length > 1024);
+  assert.equal(getVenuePhoto({ ...list[0].cafe, address: 'another branch' }), null);
+  assert.equal(purposePicks(resolveEditorialPick('samgakji', catalog).places).length, 3);
+});
+
+test('citywide purpose results include real matches, excluding closed and demo records', () => {
+  const ids = (purpose, rows = catalog) => resolvePurposeShortlist(rows, purpose).map(row => row.cafe.id);
+  assert.deepEqual(ids('date'), ['discovery-mna-samgakji', 'cuco-seongsu', 'discovery-a-glass-of-haebangchon']);
+  assert.deepEqual(ids('friends'), ['discovery-mongtan-samgakji', 'discovery-always-august-samgakji', 'discovery-mna-samgakji', 'cuco-seongsu', 'discovery-haus-bakery-service', 'discovery-a-glass-of-haebangchon']);
+  assert.deepEqual(ids('solo'), ['discovery-always-august-samgakji', 'lowkey-seongsu', 'discovery-haus-bakery-service']);
+  const altered = catalog.map(c => c.id === 'lowkey-seongsu' ? { ...c, is_demo: true } :
+    c.id === 'discovery-haus-bakery-service' ? { ...c, business_status: 'closed' } : c);
+  assert.deepEqual(ids('solo', altered), ['discovery-always-august-samgakji']);
+});

@@ -2,18 +2,16 @@
 
 import { MapLink } from './Interaction';
 import { useEffect, useMemo, useState } from 'react';
-import { ImportedList, mergeImportedLists, uniqueImportedPlaces } from '@/lib/naverImport';
+import { ImportedList, uniqueImportedPlaces } from '@/lib/naverImport';
 
-import { getCurrentUser } from '@/lib/userStore';
-
-const STORAGE_KEY = 'kult_naver_imported_lists_v1';
+import { getCurrentUser, subscribeUser } from '@/lib/userStore';
+import { getLocalNaverLists, importedListEvent, saveLocalNaverList } from '@/lib/localNaverLists';
+import AuthModal from './AuthModal';
 
 export default function NaverImportPanel({
   onCountChange,
-  onRequireAuth,
 }: {
   onCountChange: (count: number) => void;
-  onRequireAuth?: () => void;
 }) {
   const [url, setUrl] = useState('');
   const [lists, setLists] = useState<ImportedList[]>([]);
@@ -23,29 +21,35 @@ export default function NaverImportPanel({
   const [message, setMessage] = useState('');
   const [query, setQuery] = useState('');
   const [ready, setReady] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const stored = JSON.parse(raw);
-        if (!Array.isArray(stored) || !stored.every(list => typeof list.shareId === 'string' && Array.isArray(list.places) && list.places.every((p: { id?: unknown; name?: unknown; address?: unknown; category?: unknown; url?: unknown }) => typeof p.id === 'string' && typeof p.name === 'string' && typeof p.address === 'string' && typeof p.category === 'string' && typeof p.url === 'string' && p.url.startsWith('https://map.naver.com/')))) throw new Error();
-        setLists(stored);
+    const refresh = () => {
+      try { setLists(getLocalNaverLists()); setReady(true); }
+      catch {
+        setLists([]);
+        setReady(false);
+        setError('저장된 목록을 읽지 못했어요. 기존 데이터는 덮어쓰지 않았어요.');
       }
-      setReady(true);
-    } catch { setError('저장된 목록을 읽지 못했습니다. 브라우저 저장소를 확인해주세요. 기존 데이터는 덮어쓰지 않았습니다.'); }
+    };
+    refresh();
+    const unsubscribe = subscribeUser(profile => { setMessage(''); if (!profile) setPreview(null); refresh(); });
+    window.addEventListener(importedListEvent, refresh);
+    window.addEventListener('storage', refresh);
+    return () => {
+      unsubscribe();
+      window.removeEventListener(importedListEvent, refresh);
+      window.removeEventListener('storage', refresh);
+    };
   }, []);
+
 
   const places = useMemo(() => uniqueImportedPlaces(lists), [lists]);
   useEffect(() => { onCountChange(places.length); }, [places.length, onCountChange]);
   const visible = places.filter(p => `${p.name} ${p.address} ${p.category}`.toLowerCase().includes(query.toLowerCase()));
 
   async function loadList(link: string) {
-    if (!getCurrentUser()) {
-      if (onRequireAuth) onRequireAuth();
-      setError('회원가입 또는 로그인 후 네이버 지도를 가져올 수 있습니다.');
-      return;
-    }
+    const ownerAtRequest = getCurrentUser()?.id;
     setBusy(true); setError(''); setMessage(''); setPreview(null);
     try {
       const response = await fetch('/api/import/naver', {
@@ -54,6 +58,7 @@ export default function NaverImportPanel({
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || '목록을 불러오지 못했습니다.');
+      if (ownerAtRequest && ownerAtRequest !== getCurrentUser()?.id) return;
       setPreview(data.list);
     } catch (e) { setError(e instanceof Error && e.name !== 'TimeoutError' ? e.message : '응답이 늦어지고 있습니다. 잠시 후 다시 시도해주세요.'); }
     finally { setBusy(false); }
@@ -61,24 +66,20 @@ export default function NaverImportPanel({
 
   function savePreview() {
     if (!preview || !ready) return;
-    const updated = mergeImportedLists(lists, preview);
+    if (!getCurrentUser()) { setAuthOpen(true); return; }
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-      setLists(updated); setPreview(null);
+      setLists(saveLocalNaverList(preview)); setPreview(null);
       setMessage(`‘${preview.name}’ ${preview.places.length}개 장소를 저장했습니다. 내 아카이브 서재에 즉시 반영되었습니다.`);
-      if (typeof window !== 'undefined') {
-        window.dispatchEvent(new Event('kult_naver_import_updated'));
-      }
     } catch { setError('브라우저 저장 공간이 부족하거나 차단되어 저장하지 못했습니다.'); }
   }
 
   return (
-    <section aria-labelledby="naver-import-title" className="rounded-3xl border border-stone-700 bg-stone-900 p-5 sm:p-8 space-y-5">
+    <section id="naver-import" aria-labelledby="naver-import-title" className="scroll-mt-24 rounded-3xl border border-stone-700 bg-stone-900 p-5 sm:p-8 space-y-5">
       <div>
         <p className="text-xs text-amber-300 tracking-widest mb-2">MY PLACES</p>
         <h2 id="naver-import-title" className="font-serif text-2xl font-bold">네이버 지도에서 내 장소 가져오기</h2>
         <p className="text-sm text-stone-300 mt-2">네이버 지도 → 저장 → 리스트 → 공유에서 복사한 링크를 넣어주세요.</p>
-        <p className="text-xs text-stone-400 mt-2">일부 공개·전체 공개 목록을 지원합니다. 장소는 이 브라우저에 저장되며 다른 기기와 동기화되지 않습니다.</p>
+        <p className="text-xs text-stone-400 mt-2">일부 공개 또는 전체 공개 목록을 먼저 미리볼 수 있어요. 저장은 이 브라우저 프로필에 남고 다른 기기와 동기화되지 않아요.</p>
       </div>
       <form onSubmit={e => { e.preventDefault(); void loadList(url); }} className="flex flex-col sm:flex-row gap-3">
         <div className="flex-1">
@@ -122,6 +123,7 @@ export default function NaverImportPanel({
         </div>
         {visible.length === 0 && <p className="text-sm text-stone-400">검색 결과가 없습니다.</p>}
       </div>}
+      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} onActivated={() => { setAuthOpen(false); savePreview(); }} />
     </section>
   );
 }

@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
 import { X, Send, Coffee, MapPin, Volume2, Plug } from 'lucide-react';
-import { createPublishedPost } from '@/lib/userStore';
+import { createPublishedPost, getCurrentUser } from '@/lib/userStore';
+import AuthModal from './AuthModal';
 import { CuratedCafe } from '@/lib/types';
 
 interface CreatePostModalProps {
@@ -21,12 +22,16 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
   const [outletRatio, setOutletRatio] = useState('70% Outlets');
   const [signaturePairing, setSignaturePairing] = useState('필터커피 & 휘낭시에');
   const [coverImage, setCoverImage] = useState('');
+  const [error, setError] = useState('');
+  const [, refreshProfile] = useReducer((attempt: number) => attempt + 1, 0);
 
   if (!isOpen) return null;
+  if (!getCurrentUser()) return <AuthModal isOpen onClose={onClose} onActivated={refreshProfile} />;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    createPublishedPost({
+    try {
+      createPublishedPost({
       title,
       titleLocal: titleLocal || title,
       neighborhood,
@@ -38,7 +43,12 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
       coverImage:
         coverImage ||
         'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80',
-    });
+      });
+    } catch {
+      setError('공간 메모를 저장하지 못했습니다. 이 탭의 프로필과 브라우저 저장 설정을 확인해 주세요.');
+      return;
+    }
+    setError('');
     onClose();
   };
 
@@ -55,17 +65,18 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
         <div className="mb-6 space-y-1">
           <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#BF703A] uppercase tracking-widest">
             <Coffee className="w-4 h-4 text-[#BF703A]" />
-            <span>PUBLISH NEW SPACE ARTICLE</span>
+            <span>SAVE A SPACE NOTE</span>
           </div>
           <h3 className="font-serif text-2xl font-bold text-[#FCF9F5]">
-            새 에디토리얼 공간 기고하기
+            새 공간 메모 쓰기
           </h3>
           <p className="text-xs text-[#5E5E5D] font-serif italic">
-            본인이 직접 탐방한 조용한 서울의 작업 공간과 스페셜티 큐레이션을 기록합니다.
+            이 브라우저에 공간 메모를 저장해요. 온라인에 공개하거나 발행하지 않습니다.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          {error && <p className="text-sm text-red-300" role="alert">{error}</p>}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5E5E5D] mb-1">
@@ -208,7 +219,7 @@ export default function CreatePostModal({ isOpen, onClose }: CreatePostModalProp
               className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-semibold bg-[#BF703A] hover:bg-[#D98952] text-white transition-all shadow-md"
             >
               <Send className="w-4 h-4" />
-              <span>기사 아티클 발행하기</span>
+              <span>이 브라우저에 저장</span>
             </button>
           </div>
         </form>

@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
 import { getMergedCafes, getNeighborhoods, getAllCurators } from '@/lib/curators';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const cafes = await getMergedCafes();
+    const includeClosed = new URL(request.url).searchParams.get('includeClosed') === '1';
+    const cafes = await getMergedCafes({ includeClosed });
     const neighborhoods = await getNeighborhoods();
     const curators = await getAllCurators();
 
