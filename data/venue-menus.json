@@ -1,0 +1,38 @@
+{
+  "cuco-seongsu": {
+    "address": "서울 성동구 아차산로11길 12 진일빌딩 1층",
+    "source": { "label": "토스플레이스 메뉴", "url": "https://place.tossplace.com/seoul/seongsu-station/%EC%BF%A0%EC%BD%94/", "date": "2026-11-05", "kind": "menu" },
+    "items": [
+      { "name": "쿠코 커피", "price": 6500 },
+      { "name": "토마토 파스타", "price": 17000 },
+      { "name": "무화과 샌드위치", "price": 14000 }
+    ]
+  },
+  "discovery-mna-samgakji": {
+    "address": "서울 용산구 한강대로 206-1",
+    "source": { "label": "캔들러 방문기", "url": "https://namcandler.tistory.com/entry/samgakji-cafe-mna-red-green-jasmine-milk-tea", "date": "2026-10-25", "kind": "visit" },
+    "items": [
+      { "name": "자스민 밀크티" },
+      { "name": "배치브루" },
+      { "name": "스위트 포테이토 브레드" }
+    ]
+  },
+  "discovery-always-august-samgakji": {
+    "address": "서울 용산구 한강대로 179 1층",
+    "naver_place_id": "2051980514",
+    "source": { "label": "네이버 지도에서 메뉴 보기", "url": "https://m.place.naver.com/restaurant/2051980514/menu", "date": "2026-11-24", "kind": "menu_link" },
+    "menuBoard": { "url": "https://m.place.naver.com/restaurant/2051980514/photo?filterType=AI+View&subFilter=MENU", "verifiedDate": "2026-11-24" },
+    "items": []
+  },
+  "lowkey-seongsu": {
+    "address": "서울 성동구 연무장3길 6",
+    "naver_place_id": "1393890643",
+    "source": { "label": "네이버 지도 메뉴", "url": "https://m.place.naver.com/restaurant/1393890643/menu/list", "date": "2026-09-16", "kind": "menu" },
+    "menuBoardInSource": true,
+    "items": [
+      { "name": "아메리카노", "price": 5800 },
+      { "name": "카페라떼", "price": 6500 },
+      { "name": "들깨크림라떼", "price": 8500 }
+    ]
+  }
+}

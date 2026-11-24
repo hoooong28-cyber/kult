@@ -1,4 +1,7 @@
 import VenuePhoto from '@/components/VenuePhoto';
+import VenueMenu from '@/components/VenueMenu';
+import { getVenueMenu } from '@/lib/venueMenus';
+import { getVenuePhoto } from '@/lib/venuePhotos';
 import React from 'react';
 import SavePlaceButton from '@/components/SavePlaceButton';
 import StoryCards from '@/components/StoryCards';
@@ -87,6 +90,8 @@ export default async function CafeDetailPage({ params }: PageProps) {
   }
 
   const primaryCurator = cafe.curators[0];
+  const hasVenueMenu = Boolean(getVenueMenu(cafe));
+  const hasVenuePhoto = Boolean(getVenuePhoto(cafe));
   const images = (cafe as { images?: string[] }).images || [];
 
   const jsonLd = {
@@ -175,9 +180,14 @@ export default async function CafeDetailPage({ params }: PageProps) {
             <MapPin className="w-4 h-4 text-stone-500 shrink-0" />
             <span>{cafe.address}</span>
           </p>
+          {(hasVenuePhoto || hasVenueMenu) && <nav aria-label="사진과 메뉴 바로 가기" className="mt-2 flex flex-wrap gap-x-5 text-sm text-stone-200">
+            {hasVenuePhoto && <a href="#venue-photo" className="inline-flex min-h-11 items-center underline underline-offset-4">공간 사진과 출처</a>}
+            {hasVenueMenu && <a href="#venue-menu" className="inline-flex min-h-11 items-center underline underline-offset-4">메뉴와 출처</a>}
+          </nav>}
         </div>
 
         <VenuePhoto cafe={cafe} variant="detail" />
+        <VenueMenu cafe={cafe} />
 
         {/* Highlighted Curator Interview Commentary Quote Box */}
         <section className="p-6 sm:p-8 rounded-2xl bg-stone-900 border border-stone-800 shadow-xl relative overflow-hidden space-y-6">

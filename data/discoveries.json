@@ -557,6 +557,7 @@
     "content_status": "discovered",
     "neighborhood": "용산구 · 삼각지",
     "address": "서울 용산구 한강대로 179 1층",
+    "naver_place_id": "2051980514",
     "lat": null,
     "lng": null,
     "tags": {
