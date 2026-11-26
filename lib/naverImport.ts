@@ -109,7 +109,8 @@ export async function fetchSharedList(input: string, request: typeof fetch = fet
   let retryAvailable = true;
   async function read(target: string, init: RequestInit): Promise<Response> {
     for (;;) {
-      const signal = AbortSignal.any([deadline, AbortSignal.timeout(9000)]);
+      const requestBudget = new URL(target).hostname === 'naver.me' ? 4500 : 15000;
+      const signal = AbortSignal.any([deadline, AbortSignal.timeout(requestBudget)]);
       try {
         const response = await request(target, { ...init, signal, cache: 'no-store' });
         if (!(retryAvailable && [500, 502, 503, 504].includes(response.status))) return response;
