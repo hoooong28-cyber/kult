@@ -6,16 +6,16 @@ import CopyPlaceAddress from './CopyPlaceAddress';
 import SavePlaceButton from './SavePlaceButton';
 import styles from '@/app/picks/[slug]/picks.module.css';
 
-export default function EditorialPlaceCard({ cafe, area, index, reason, reasonEn, allowSave = false }: {
-  cafe: CuratedCafe; area: string; index: number; reason: string; reasonEn: string; allowSave?: boolean;
+export default function EditorialPlaceCard({ cafe, area, index, reason, reasonEn, eagerPhoto = false, allowSave = false }: {
+  cafe: CuratedCafe; area: string; index: number; reason: string; reasonEn: string; eagerPhoto?: boolean; allowSave?: boolean;
 }) {
   if (cafe.is_demo || cafe.business_status === 'closed') return null;
   const hasPhoto = Boolean(getVenuePhoto(cafe));
-  const map = cafe.naver_place_id && /^[1-9]\d*$/.test(cafe.naver_place_id)
-    ? 'https://map.naver.com/p/entry/place/' + cafe.naver_place_id
-    : 'https://map.naver.com/p/search/' + encodeURIComponent((cafe.name_local || cafe.name) + ' ' + cafe.address);
+  const exactMap = cafe.naver_place_id && /^[1-9]\d*$/.test(cafe.naver_place_id)
+    ? 'https://map.naver.com/p/entry/place/' + cafe.naver_place_id : null;
+  const map = exactMap ?? 'https://map.naver.com/p/search/' + encodeURIComponent((cafe.name_local || cafe.name) + ' ' + cafe.address);
   return <article className={hasPhoto ? styles.card : `${styles.card} ${styles.textCard}`}>
-    {hasPhoto && <VenuePhoto cafe={cafe} variant="editorial" />}
+    {hasPhoto && <VenuePhoto cafe={cafe} variant="editorial" eager={eagerPhoto} />}
     <div className={styles.cardCopy}>
       <p className={styles.cardKicker}>{String(index + 1).padStart(2, '0')} / {area}</p>
       <h3><Link href={'/cafe/' + cafe.id}>{cafe.name_local || cafe.name} <span aria-hidden="true">↗</span></Link></h3>
@@ -24,6 +24,7 @@ export default function EditorialPlaceCard({ cafe, area, index, reason, reasonEn
       <p className={styles.address}>{cafe.address}</p>
       <div className={styles.cardActions}>
         <a href={map} target="_blank" rel="noopener noreferrer" className={styles.map}>지도 열기 <span aria-hidden="true">↗</span></a>
+        {!hasPhoto && exactMap && <a href={exactMap + '?placePath=%2Fphoto'} target="_blank" rel="noopener noreferrer" className={styles.map}>네이버 사진 보기 <span aria-hidden="true">↗</span></a>}
         <CopyPlaceAddress address={cafe.address} />
         {allowSave && <SavePlaceButton placeId={cafe.id} />}
       </div>

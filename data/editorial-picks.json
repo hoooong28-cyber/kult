@@ -13,7 +13,10 @@
         "reason_en": "Straw-grilled beef ribs. Check the wait before you go.",
         "purposes": [
           "friends"
-        ]
+        ],
+        "purpose_rank": {
+          "friends": 1
+        }
       },
       {
         "id": "discovery-always-august-samgakji",
@@ -22,7 +25,21 @@
         "purposes": [
           "friends",
           "solo"
-        ]
+        ],
+        "purpose_rank": {
+          "friends": 2,
+          "solo": 2
+        },
+        "purpose_copy": {
+          "friends": {
+            "ko": "삼각지에서 만나 자체 로스팅 커피를 마시고 싶을 때.",
+            "en": "Meet in Samgakji for in-house roasted coffee."
+          },
+          "solo": {
+            "ko": "혼자 들러 자체 로스팅한 스페셜티 커피를 맛볼 때.",
+            "en": "A solo stop for coffee roasted in-house."
+          }
+        }
       },
       {
         "id": "discovery-mna-samgakji",
@@ -31,7 +48,11 @@
         "purposes": [
           "date",
           "friends"
-        ]
+        ],
+        "purpose_rank": {
+          "date": 1,
+          "friends": 3
+        }
       },
       {
         "id": "demo-naver-1274280104",
@@ -40,7 +61,10 @@
         "reason_en": "A coffee and matcha stop near Samgakji Station Exit 5.",
         "purposes": [
           "solo"
-        ]
+        ],
+        "purpose_rank": {
+          "solo": 1
+        }
       }
     ]
   },
@@ -59,7 +83,21 @@
         "purposes": [
           "date",
           "friends"
-        ]
+        ],
+        "purpose_rank": {
+          "date": 1,
+          "friends": 1
+        },
+        "purpose_copy": {
+          "date": {
+            "ko": "큰 창이 있는 실내에서 브런치로 시작하는 데이트.",
+            "en": "A brunch date in a room with big windows."
+          },
+          "friends": {
+            "ko": "친구와 브런치 먹고 커피까지 한 자리에서.",
+            "en": "Meet friends for brunch and stay for coffee."
+          }
+        }
       },
       {
         "id": "lowkey-seongsu",
@@ -67,7 +105,10 @@
         "reason_en": "Specialty coffee and a cozy downstairs space.",
         "purposes": [
           "solo"
-        ]
+        ],
+        "purpose_rank": {
+          "solo": 1
+        }
       }
     ]
   },
@@ -86,7 +127,11 @@
         "purposes": [
           "friends",
           "solo"
-        ]
+        ],
+        "purpose_rank": {
+          "friends": 1,
+          "solo": 1
+        }
       },
       {
         "id": "discovery-a-glass-of-haebangchon",
@@ -95,7 +140,11 @@
         "purposes": [
           "date",
           "friends"
-        ]
+        ],
+        "purpose_rank": {
+          "date": 1,
+          "friends": 2
+        }
       }
     ]
   },
@@ -114,7 +163,21 @@
         "purposes": [
           "date",
           "solo"
-        ]
+        ],
+        "purpose_rank": {
+          "date": 2,
+          "solo": 2
+        },
+        "purpose_copy": {
+          "date": {
+            "ko": "산책 데이트 중 아이스크림 한 스쿱.",
+            "en": "A scoop of ice cream on a walk together."
+          },
+          "solo": {
+            "ko": "혼자 연남동을 걷다가 아이스크림이 생각날 때.",
+            "en": "An ice cream break on a solo walk through Yeonnam."
+          }
+        }
       },
       {
         "id": "demo-naver-1612839292",
@@ -123,7 +186,11 @@
         "purposes": [
           "date",
           "friends"
-        ]
+        ],
+        "purpose_rank": {
+          "date": 3,
+          "friends": 1
+        }
       },
       {
         "id": "demo-naver-1883924356",
@@ -131,7 +198,10 @@
         "reason_en": "A coffee stop in Donggyo, near Hongik University Station.",
         "purposes": [
           "solo"
-        ]
+        ],
+        "purpose_rank": {
+          "solo": 1
+        }
       },
       {
         "id": "demo-naver-1985216398",
@@ -139,7 +209,10 @@
         "reason_en": "A café and dessert stop in Donggyo near the station.",
         "purposes": [
           "friends"
-        ]
+        ],
+        "purpose_rank": {
+          "friends": 2
+        }
       },
       {
         "id": "nonostante-yeonnam",
@@ -148,7 +221,21 @@
         "purposes": [
           "date",
           "friends"
-        ]
+        ],
+        "purpose_rank": {
+          "date": 1,
+          "friends": 3
+        },
+        "purpose_copy": {
+          "date": {
+            "ko": "연남동 골목에서 파스타와 와인을 곁들이는 저녁.",
+            "en": "An evening of pasta and wine down a Yeonnam side street."
+          },
+          "friends": {
+            "ko": "친구와 파스타를 나눠 먹으며 와인을 곁들일 때.",
+            "en": "Share pasta and wine with friends."
+          }
+        }
       }
     ]
   }

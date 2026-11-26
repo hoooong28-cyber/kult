@@ -27,8 +27,16 @@ export function resolvePickPurpose(value?: string | string[]) {
   return pickPurposes.find(purpose => purpose.id === value);
 }
 
-export function purposePicks<T extends { purposes: string[] }>(entries: T[], purpose?: PickPurpose) {
-  return entries.filter(entry => !purpose || entry.purposes.includes(purpose));
+type PurposeCopy = { ko: string; en: string };
+type PurposeEntry = { purposes: string[]; purpose_rank?: Partial<Record<PickPurpose, number>>; purpose_copy?: Partial<Record<PickPurpose, PurposeCopy>> };
+export function purposePicks<T extends PurposeEntry>(entries: T[], purpose?: PickPurpose) {
+  if (!purpose) return entries;
+  return entries.filter(entry => entry.purposes.includes(purpose))
+    .sort((a, b) => (a.purpose_rank?.[purpose] ?? Infinity) - (b.purpose_rank?.[purpose] ?? Infinity));
+}
+
+export function pickCopy(entry: PurposeEntry & { reason: string; reason_en: string }, purpose?: PickPurpose) {
+  return (purpose && entry.purpose_copy?.[purpose]) || { ko: entry.reason, en: entry.reason_en };
 }
 
 export function resolvePurposeShortlist<T extends { id: string; is_demo?: boolean; business_status?: string; content_status?: string }>(

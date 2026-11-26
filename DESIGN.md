@@ -84,3 +84,7 @@ Reference patterns: [Catchtable](https://apps.apple.com/kr/app/%EC%BA%90%EC%B9%9
 - Use a subtle 01/02 step marker. After a purpose is selected, expose live counts derived from KULT’s eligible venues on each neighborhood row; retain “목적 바꾸기”. Treat counts as matching venue counts, never availability or waiting times.
 - Include a secondary “동네는 아직 미정” row, with the same purpose held in the URL. It goes to the existing citywide results. “동네 고르기” returns with that purpose intact. No calendar, party size, location permission, reviews, or booking signals.
 - Keep the fine editorial dividers, single-column rows, at least 44px touch targets, reduced-motion handling, and a visible keyboard focus. Count labels and navigation should wrap without overflow. In a received link, do not force people through onboarding.
+
+### Stitch refinement: purpose-first recommendation cards
+
+Place the venue title and a purpose-specific reason on each card. Rank by the selected occasion, not photo inventory; prefer distinct leads when legitimate options exist, never force uniqueness by inventing a venue. An overlap remains reasonable when distinguishable reasons support both. The first approved exact-branch photo is visible on the result list and loads eagerly; other validated images may load lazily. If no approved image is available, keep the compact card and link the verified Naver photo gallery without embedding, copying or staging a fake photo. Keep the palette, existing hierarchy, and no-placeholder rule.

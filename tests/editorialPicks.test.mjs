@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { purposePicks, picks, resolveEditorialPick, resolvePickPurpose, resolvePurposeShortlist, resolvePurposeAreas } from '../lib/editorialPicks.ts';
+import { pickCopy, purposePicks, picks, resolveEditorialPick, resolvePickPurpose, resolvePurposeShortlist, resolvePurposeAreas } from '../lib/editorialPicks.ts';
 import discoveries from '../data/discoveries.json' with { type: 'json' };
 import fs from 'node:fs';
 import { getVenuePhoto } from '../lib/venuePhotos.ts';
@@ -51,10 +51,10 @@ test('citywide purpose results include real matches, excluding closed and demo r
   const ids = (purpose, rows = catalog) => resolvePurposeShortlist(rows, purpose).filter(row => row.slug !== 'yeonnam').map(row => row.cafe.id);
   assert.deepEqual(ids('date'), ['discovery-mna-samgakji', 'cuco-seongsu', 'discovery-a-glass-of-haebangchon']);
   assert.deepEqual(ids('friends'), ['discovery-mongtan-samgakji', 'discovery-always-august-samgakji', 'discovery-mna-samgakji', 'cuco-seongsu', 'discovery-haus-bakery-service', 'discovery-a-glass-of-haebangchon']);
-  assert.deepEqual(ids('solo'), ['discovery-always-august-samgakji', 'demo-naver-1274280104', 'lowkey-seongsu', 'discovery-haus-bakery-service']);
+  assert.deepEqual(ids('solo'), ['demo-naver-1274280104', 'discovery-always-august-samgakji', 'lowkey-seongsu', 'discovery-haus-bakery-service']);
   const altered = catalog.map(c => c.id === 'lowkey-seongsu' ? { ...c, is_demo: true } :
     c.id === 'discovery-haus-bakery-service' ? { ...c, business_status: 'closed' } : c);
-  assert.deepEqual(ids('solo', altered), ['discovery-always-august-samgakji','demo-naver-1274280104']);
+  assert.deepEqual(ids('solo', altered), ['demo-naver-1274280104','discovery-always-august-samgakji']);
 });
 
 test('Yeonnam shows five exact venues, retains Donggyo addresses, and filters by occasion', () => {
@@ -73,4 +73,11 @@ test('purpose entry shows only available matches by neighborhood and by city', (
  assert.deepEqual(resolvePurposeAreas([], 'friends'),[]);
  const closed=catalog.map(c=>c.id==='nonostante-yeonnam'?{...c,business_status:'closed'}:c);
  assert.equal(resolvePurposeAreas(closed,'friends').find(area=>area.slug==='yeonnam').count,2);
+});
+test('Yeonnam purpose tabs get distinct first picks and shared places receive different explanations', () => {
+ const p=resolveEditorialPick('yeonnam',catalog);
+ assert.deepEqual(['date','friends','solo'].map(k=>purposePicks(p.places,k)[0].cafe.naver_place_id),['1976051967','1612839292','1883924356']);
+ const shared=resolveEditorialPick('seongsu-brunch-or-coffee',catalog).places.find(x=>x.cafe.id==='cuco-seongsu');
+ assert.notEqual(pickCopy(shared,'date').ko,pickCopy(shared,'friends').ko);
+ assert.equal(pickCopy(shared,undefined).ko,shared.reason);
 });

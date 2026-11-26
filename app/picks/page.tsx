@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { getVenuePhoto } from '@/lib/venuePhotos';
 import { redirect } from 'next/navigation';
 import Header from '@/components/Header';
 import EditorialPlaceCard from '@/components/EditorialPlaceCard';
 import ShareEditorialPick from '@/components/ShareEditorialPick';
 import { getMergedCafes } from '@/lib/curators';
-import { resolvePickPurpose, resolvePurposeShortlist } from '@/lib/editorialPicks';
+import { pickCopy, resolvePickPurpose, resolvePurposeShortlist } from '@/lib/editorialPicks';
 import styles from './[slug]/picks.module.css';
 
 type Props = { searchParams: Promise<{ purpose?: string | string[] }> };
@@ -19,6 +20,7 @@ export default async function PurposeResultsPage({ searchParams }: Props) {
   const purpose = resolvePickPurpose((await searchParams).purpose);
   if (!purpose) redirect('/');
   const places = resolvePurposeShortlist(await getMergedCafes(), purpose.id);
+  const photoIndex = places.findIndex(item => getVenuePhoto(item.cafe));
   const path = '/picks?purpose=' + purpose.id;
 
   return <div className={styles.paper} lang="ko">
@@ -40,7 +42,7 @@ export default async function PurposeResultsPage({ searchParams }: Props) {
         <p className={styles.purposeSummary}>{purpose.label} · 서울 전체 {places.length}곳</p>
         <div className={styles.grid}>
           {places.map((item, index) => <EditorialPlaceCard key={item.cafe.id} cafe={item.cafe}
-            area={item.area} index={index} reason={item.reason} reasonEn={item.reason_en} />)}
+            area={item.area} index={index} eagerPhoto={index === photoIndex} reason={pickCopy(item, purpose.id).ko} reasonEn={pickCopy(item, purpose.id).en} />)}
         </div>
         <p className={styles.fineprint}>출발 전 지도에서 영업시간을 확인해 주세요.</p>
       </> : <div className={styles.empty}>
