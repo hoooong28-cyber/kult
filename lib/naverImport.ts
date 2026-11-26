@@ -204,19 +204,42 @@ export async function fetchSharedList(input: string, request: typeof fetch = fet
     throw new ImportError('공유 링크를 읽지 못했습니다. 네이버 지도 앱/웹의 리스트 공유 링크(naver.me 등)를 다시 복사해주세요.');
   }
 
-  const places: ImportedPlace[] = [];
-  let name = '', total = 0;
-  for (let start = 0; start < 500; start += 20) {
-    const endpoint = new URL(`https://pages.map.naver.com/save-pages/api/maps-bookmark/v3/shares/${shareId}/bookmarks`);
-    endpoint.search = new URLSearchParams({start: String(start), limit: '20', sort: 'lastUseTime', placeInfo: 'true'}).toString();
-    const payload = await readBookmarkPage(endpoint, request, signal);
-    const page = parseBookmarkPage(payload, shareId);
-    if (start > 0 && page.total !== total) throw new ImportError('가져오는 동안 목록이 변경됐습니다. 다시 불러와주세요.');
-    name = page.name; total = page.total;
-    if (total > 500) throw new ImportError('한 목록당 최대 500개를 가져올 수 있습니다. 목록을 나눠주세요.');
-    places.push(...page.places);
-    if (places.length >= total) break;
-    if (page.rawCount !== 20) throw new ImportError('일부 장소를 읽지 못했습니다. 저장하지 않았으니 다시 불러와주세요.');
+  const pageSize = 20;
+  const concurrency = 4;
+  const folderId = shareId;
+  const fetchPage = async (start: number, pageSignal: AbortSignal) => {
+    const endpoint = new URL(`https://pages.map.naver.com/save-pages/api/maps-bookmark/v3/shares/${folderId}/bookmarks`);
+    endpoint.search = new URLSearchParams({start: String(start), limit: String(pageSize), sort: 'lastUseTime', placeInfo: 'true'}).toString();
+    return parseBookmarkPage(await readBookmarkPage(endpoint, request, pageSignal), folderId);
+  };
+
+  const first = await fetchPage(0, signal);
+  const { name, total } = first;
+  if (total > 500) throw new ImportError('한 목록당 최대 500개를 가져올 수 있습니다. 목록을 나눠주세요.');
+  if (total > pageSize && first.rawCount !== pageSize) {
+    throw new ImportError('일부 장소를 읽지 못했습니다. 저장하지 않았으니 다시 불러와주세요.');
+  }
+  const places = [...first.places];
+  const offsets: number[] = [];
+  for (let start = pageSize; start < total; start += pageSize) offsets.push(start);
+
+  for (let i = 0; i < offsets.length; i += concurrency) {
+    const controller = new AbortController();
+    const batchSignal = AbortSignal.any([signal, controller.signal]);
+    try {
+      const pages = await Promise.all(offsets.slice(i, i + concurrency).map(async start => {
+        const page = await fetchPage(start, batchSignal);
+        if (page.total !== total) throw new ImportError('가져오는 동안 목록이 변경됐습니다. 다시 불러와주세요.');
+        if (start + pageSize < total && page.rawCount !== pageSize) {
+          throw new ImportError('일부 장소를 읽지 못했습니다. 저장하지 않았으니 다시 불러와주세요.');
+        }
+        return page;
+      }));
+      for (const page of pages) places.push(...page.places);
+    } catch (error) {
+      controller.abort();
+      throw error;
+    }
   }
   const unique = [...new Map(places.map(place => [place.id, place])).values()];
   if (places.length !== total || unique.length !== total) throw new ImportError('목록이 변경되었거나 중복된 응답이 있습니다. 다시 불러와주세요.');
