@@ -71,7 +71,7 @@ export default async function EditorialPickPage({ params, searchParams }: Props)
           {places.map((place, index) => <EditorialPlaceCard key={place.cafe.id} cafe={place.cafe} area={pick.area}
             index={index} reason={place.reason} reasonEn={place.reason_en} />)}
         </div>}
-        {places.length > 0 && <p className={styles.fineprint}>{pick.source === 'discovery' ? '외부 소개를 바탕으로 고른 후보예요.' : '기존 큐레이션에서 고른 장소예요.'} 출발 전에 지도에서 영업시간을 확인해 주세요.</p>}
+        {places.length > 0 && <p className={styles.fineprint}>{pick.source === 'discovery' ? '외부 소개를 바탕으로 고른 후보예요.' : pick.source === 'mixed' ? 'KULT 큐레이션과 확인한 외부 소개를 함께 담았어요.' : '기존 큐레이션에서 고른 장소예요.'} 출발 전에 지도에서 영업시간을 확인해 주세요.</p>}
       </section>
     </div>
   </div>;

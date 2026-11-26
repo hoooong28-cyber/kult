@@ -5,7 +5,7 @@
     "area_en": "Samgakji",
     "title": "우리 삼각지 가는데, 어디 갈래?",
     "title_en": "Where should we meet in Samgakji?",
-    "source": "discovery",
+    "source": "mixed",
     "places": [
       {
         "id": "discovery-mongtan-samgakji",
@@ -31,6 +31,15 @@
         "purposes": [
           "date",
           "friends"
+        ]
+      },
+      {
+        "id": "demo-naver-1274280104",
+        "source": "curation",
+        "reason": "삼각지역 5번 출구 쪽에서 로스팅 커피나 말차를 마시고 싶을 때.",
+        "reason_en": "A coffee and matcha stop near Samgakji Station Exit 5.",
+        "purposes": [
+          "solo"
         ]
       }
     ]

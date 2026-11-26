@@ -10,10 +10,11 @@ const catalog = [...founder.cafes, ...discoveries];
 
 test('Samgakji research is grouped by the visitor purpose', () => {
   const pick = resolveEditorialPick('samgakji', catalog);
-  assert.equal(pick.source, 'discovery');
-  assert.deepEqual(pick.places.map(p => p.purposes), [['friends'], ['friends', 'solo'], ['date', 'friends']]);
+  assert.equal(pick.source, 'mixed');
+  assert.deepEqual(pick.places.map(p => p.purposes), [['friends'], ['friends', 'solo'], ['date', 'friends'], ['solo']]);
   for (const { cafe } of pick.places) {
     assert.equal(cafe.neighborhood, '용산구 · 삼각지');
+    if (cafe.id === 'demo-naver-1274280104') { assert.equal(cafe.naver_place_id,'1274280104'); continue; }
     assert.equal(cafe.last_verified_date, '');
     assert.equal(new URL(cafe.discovery_source.url).protocol, 'https:');
   }
@@ -22,9 +23,9 @@ test('Samgakji research is grouped by the visitor purpose', () => {
 test('unknown collections, demos, closed records and provenance mismatches do not appear', () => {
   assert.equal(resolveEditorialPick('unknown', catalog), null);
   const closed = catalog.map(c => c.id === 'discovery-mongtan-samgakji' ? { ...c, business_status: 'closed' } : c);
-  assert.equal(resolveEditorialPick('samgakji', closed).places.length, 2);
+  assert.equal(resolveEditorialPick('samgakji', closed).places.length, 3);
   const onlyOne = closed.map(c => c.id === 'discovery-mna-samgakji' ? { ...c, is_demo: true } : c);
-  assert.equal(resolveEditorialPick('samgakji', onlyOne).places.length, 1);
+  assert.equal(resolveEditorialPick('samgakji', onlyOne).places.length, 2);
   assert.equal(resolveEditorialPick('samgakji', catalog.filter(c => c.neighborhood !== '용산구 · 삼각지')), null);
   assert.equal(resolveEditorialPick('seongsu-brunch-or-coffee', catalog.map(c =>
     c.id === 'lowkey-seongsu' ? { ...c, content_status: 'discovered' } : c)).places[0].cafe.id, 'cuco-seongsu');
@@ -43,17 +44,17 @@ test('purpose and exact-branch photo checks do not exclude legitimate photo-free
   const image = getVenuePhoto(list[0].cafe);
   assert.ok(fs.readFileSync(new URL('../public' + image.src, import.meta.url)).length > 1024);
   assert.equal(getVenuePhoto({ ...list[0].cafe, address: 'another branch' }), null);
-  assert.equal(purposePicks(resolveEditorialPick('samgakji', catalog).places).length, 3);
+  assert.equal(purposePicks(resolveEditorialPick('samgakji', catalog).places).length, 4);
 });
 
 test('citywide purpose results include real matches, excluding closed and demo records', () => {
   const ids = (purpose, rows = catalog) => resolvePurposeShortlist(rows, purpose).filter(row => row.slug !== 'yeonnam').map(row => row.cafe.id);
   assert.deepEqual(ids('date'), ['discovery-mna-samgakji', 'cuco-seongsu', 'discovery-a-glass-of-haebangchon']);
   assert.deepEqual(ids('friends'), ['discovery-mongtan-samgakji', 'discovery-always-august-samgakji', 'discovery-mna-samgakji', 'cuco-seongsu', 'discovery-haus-bakery-service', 'discovery-a-glass-of-haebangchon']);
-  assert.deepEqual(ids('solo'), ['discovery-always-august-samgakji', 'lowkey-seongsu', 'discovery-haus-bakery-service']);
+  assert.deepEqual(ids('solo'), ['discovery-always-august-samgakji', 'demo-naver-1274280104', 'lowkey-seongsu', 'discovery-haus-bakery-service']);
   const altered = catalog.map(c => c.id === 'lowkey-seongsu' ? { ...c, is_demo: true } :
     c.id === 'discovery-haus-bakery-service' ? { ...c, business_status: 'closed' } : c);
-  assert.deepEqual(ids('solo', altered), ['discovery-always-august-samgakji']);
+  assert.deepEqual(ids('solo', altered), ['discovery-always-august-samgakji','demo-naver-1274280104']);
 });
 
 test('Yeonnam shows five exact venues, retains Donggyo addresses, and filters by occasion', () => {

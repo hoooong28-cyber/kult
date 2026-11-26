@@ -6,10 +6,10 @@ export function resolveEditorialPick<T extends { id: string; is_demo?: boolean; 
   slug: string, catalog: T[],
 ) {
   const pick = picks.find(item => item.slug === slug);
-  if (!pick || pick.places.length < 2 || pick.places.length > (pick.source === 'neighborhood' ? 5 : 3) || new Set(pick.places.map(place => place.id)).size !== pick.places.length) return null;
+  if (!pick || pick.places.length < 2 || pick.places.length > (pick.source === 'neighborhood' ? 5 : pick.source === 'mixed' ? 4 : 3) || new Set(pick.places.map(place => place.id)).size !== pick.places.length) return null;
   const entries = pick.places.flatMap(place => {
     const cafe = catalog.find(cafe => cafe.id === place.id && !cafe.is_demo && cafe.business_status !== 'closed'
-      && (pick.source === 'discovery' ? cafe.content_status === 'discovered' : !cafe.content_status));
+      && ((pick.source === 'discovery' || (pick.source === 'mixed' && (!('source' in place) || place.source !== 'curation'))) ? cafe.content_status === 'discovered' : !cafe.content_status));
     return cafe ? [{ ...place, cafe }] : [];
   });
   return entries.length ? { ...pick, places: entries } : null;

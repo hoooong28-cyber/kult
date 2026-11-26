@@ -204,6 +204,29 @@
       "hours": "네이버 지도에서 최신 영업시간 확인",
       "last_verified_date": "2026-11-26",
       "notes": "연남동 골목의 이탈리안 다이닝과 와인바."
+    },
+    {
+      "id": "demo-naver-1274280104",
+      "name": "코르츠",
+      "name_local": "코르츠",
+      "naver_place_id": "1274280104",
+      "neighborhood": "용산구 · 삼각지",
+      "address": "서울특별시 용산구 한강로2가 426 102동 108호, 109호",
+      "lat": 37.535148,
+      "lng": 126.9713197,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "네이버 지도에서 최신 영업시간 확인",
+      "last_verified_date": "2026-11-26",
+      "notes": "삼각지역 5번 출구 쪽에서 로스팅 커피나 말차를 마시고 싶을 때."
     }
   ]
 }

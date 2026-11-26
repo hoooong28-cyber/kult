@@ -9,30 +9,6 @@
   },
   "cafes": [
     {
-      "id": "demo-naver-1274280104",
-      "name": "코르츠",
-      "name_local": "코르츠",
-      "is_demo": true,
-      "naver_place_id": "1274280104",
-      "neighborhood": "Yongsan",
-      "address": "서울특별시 용산구 한강로2가 426 102동 108호, 109호",
-      "lat": 37.535148,
-      "lng": 126.9713197,
-      "tags": {
-        "wifi": null,
-        "outlet_availability": "unknown",
-        "noise_level": "unknown",
-        "kid_free_zone": null,
-        "english_menu": null,
-        "card_only": null,
-        "good_for": [],
-        "price_range": "unknown"
-      },
-      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
-      "last_verified_date": "",
-      "notes": "공유 목록에서 가져온 코르츠 테스트 장소입니다. 위치는 네이버 장소 정보 기준이며, 영업시간과 시설은 아직 확인하지 않았습니다."
-    },
-    {
       "id": "demo-naver-1121205227",
       "name": "뽀르누서울",
       "name_local": "뽀르누서울",
