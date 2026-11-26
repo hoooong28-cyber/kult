@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { purposePicks, picks, resolveEditorialPick, resolvePickPurpose, resolvePurposeShortlist } from '../lib/editorialPicks.ts';
+import { purposePicks, picks, resolveEditorialPick, resolvePickPurpose, resolvePurposeShortlist, resolvePurposeAreas } from '../lib/editorialPicks.ts';
 import discoveries from '../data/discoveries.json' with { type: 'json' };
 import fs from 'node:fs';
 import { getVenuePhoto } from '../lib/venuePhotos.ts';
@@ -63,4 +63,14 @@ test('Yeonnam shows five exact venues, retains Donggyo addresses, and filters by
   assert.deepEqual(result.places.map(p => p.cafe.naver_place_id), ['1741866041','1612839292','1883924356','1985216398','1976051967']);
   assert.equal(result.places.filter(p => p.cafe.address.includes('동교동')).length, 2);
   assert.deepEqual(['date','friends','solo'].map(p => purposePicks(result.places,p).length), [3,3,2]);
+});
+
+test('purpose entry shows only available matches by neighborhood and by city', () => {
+ assert.equal(resolvePurposeAreas(catalog, 'friends').find(area => area.slug === 'samgakji').count,3);
+ assert.equal(resolvePurposeAreas(catalog, 'friends').find(area => area.slug === 'yeonnam').count,3);
+ assert.equal(resolvePurposeAreas(catalog, 'solo').find(area => area.slug === 'yeonnam').count,2);
+ assert.equal(resolvePurposeShortlist(catalog, 'friends').length,9);
+ assert.deepEqual(resolvePurposeAreas([], 'friends'),[]);
+ const closed=catalog.map(c=>c.id==='nonostante-yeonnam'?{...c,business_status:'closed'}:c);
+ assert.equal(resolvePurposeAreas(closed,'friends').find(area=>area.slug==='yeonnam').count,2);
 });

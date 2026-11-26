@@ -50,3 +50,7 @@
 .resultIntro h1{font-family:var(--kult-font-display);font-size:clamp(2rem,5.25vw,4rem);letter-spacing:-.06em;font-weight:700;line-height:1.12;margin-top:7px;word-break:keep-all}
 .more{display:flex;gap:18px;flex-wrap:wrap;margin-top:21px;border-top:1px solid var(--kult-rule)}
 .empty h2{font-size:1.12rem;margin:8px 0;font-weight:800}
+
+.areaCount{flex:0 0 auto;font-size:.83rem;font-weight:500;color:var(--kult-muted);font-variant-numeric:tabular-nums}
+.areaCount span{margin-left:.45rem;color:var(--kult-accent-text)}
+.purposeSummary{margin:0 0 14px;font-size:.9rem;color:var(--kult-muted);line-height:1.5}

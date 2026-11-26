@@ -74,3 +74,13 @@ Use the existing results shell, masthead and text-first place card; no additiona
 
 ## Taste neighbors
 Use the collection paper shell and existing Korean editorial type. Lead with “취향이 닮은 사람.” The only first action is selecting actual saved places (nothing preselected). Explain comparison and publication separately. Show matching names and a simple common-place count, not a synthetic percentage, fake profile, or mock result. Make empty states honest and public visibility reversible. Use the existing navigation, ink/cream controls, and 44px targets.
+
+
+## Stitch iteration: decision context before choosing a venue (2026-11-26)
+
+Reference patterns: [Catchtable](https://apps.apple.com/kr/app/%EC%BA%90%EC%B9%98%ED%85%8C%EC%9D%B4%EB%B8%94/id1485193566) frames discovery around an occasion; [Tabling](https://play.google.com/store/apps/details?hl=ko&id=com.mealant.tabling) makes both location and theme available. KULT uses the same decision principles, not the booking interface or their visual identity.
+
+- Keep the exact title “오늘의 큐레이션 장소는?”, the existing KULT paper/ink/terracotta colors, typography and verified CUCO image. Add a brief Korean cue below each existing purpose label, no new required question or choice.
+- Use a subtle 01/02 step marker. After a purpose is selected, expose live counts derived from KULT’s eligible venues on each neighborhood row; retain “목적 바꾸기”. Treat counts as matching venue counts, never availability or waiting times.
+- Include a secondary “동네는 아직 미정” row, with the same purpose held in the URL. It goes to the existing citywide results. “동네 고르기” returns with that purpose intact. No calendar, party size, location permission, reviews, or booking signals.
+- Keep the fine editorial dividers, single-column rows, at least 44px touch targets, reduced-motion handling, and a visible keyboard focus. Count labels and navigation should wrap without overflow. In a received link, do not force people through onboarding.

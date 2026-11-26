@@ -4,21 +4,16 @@ import { ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import { getMergedCafes } from '@/lib/curators';
 import { kultMemberSettings } from '@/lib/supabase/server';
-import { picks, pickPurposes, purposePicks, resolveEditorialPick, resolvePickPurpose } from '@/lib/editorialPicks';
+import { pickPurposes, resolvePickPurpose, resolvePurposeAreas, resolvePurposeShortlist } from '@/lib/editorialPicks';
 import styles from './entry.module.css';
 
 type Props = { searchParams: Promise<{ purpose?: string | string[] }> };
-const neighborhoodOrder = ['삼각지', '해방촌', '성수', '연남동'];
 
 export default async function HomePage({ searchParams }: Props) {
   const purpose = resolvePickPurpose((await searchParams).purpose);
   const catalog = purpose ? await getMergedCafes() : [];
-  const areas = purpose ? neighborhoodOrder.flatMap(area => {
-    const pick = picks.find(candidate => candidate.area === area);
-    if (!pick) return [];
-    const resolved = resolveEditorialPick(pick.slug, catalog);
-    return resolved && purposePicks(resolved.places, purpose.id).length ? [pick] : [];
-  }) : [];
+  const areas = purpose ? resolvePurposeAreas(catalog, purpose.id) : [];
+  const allCount = purpose ? resolvePurposeShortlist(catalog, purpose.id).length : 0;
 
   return <div className={styles.page} lang="ko">
     <Header section="entry" />
@@ -31,7 +26,7 @@ export default async function HomePage({ searchParams }: Props) {
         </div>
         <section className={styles.chooser} aria-labelledby="entry-choice-title">
           <div className={styles.choiceHeader}>
-            <h2 id="entry-choice-title">{purpose ? '동네' : '목적'}</h2>
+            <h2 id="entry-choice-title"><span className={styles.choiceStep} aria-hidden="true">{purpose ? '02' : '01'}</span>{purpose ? '동네' : '방문 목적'}</h2>
             {purpose && <Link href="/" scroll={false} className={styles.editChoice} aria-label={purpose.label + ' · 목적 바꾸기'}>
               {purpose.label}<span>변경</span>
             </Link>}
@@ -40,11 +35,16 @@ export default async function HomePage({ searchParams }: Props) {
             <ul className={styles.choices}>
               {purpose ? areas.map(area => <li key={area.slug}>
                 <Link className={styles.choice} href={'/picks/' + area.slug + '?purpose=' + purpose.id}>
-                  {area.area}<ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+                  <span>{area.area}</span><span className={styles.choiceTail}><span className={styles.count}>{area.count}곳</span><ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" /></span>
                 </Link>
-              </li>) : pickPurposes.map(option => <li key={option.id}>
+              </li>).concat(allCount ? [<li key="all-areas">
+                <Link className={styles.choice} href={'/picks?purpose=' + purpose.id}>
+                  <span className={styles.choiceCopy}><span>동네는 아직 미정</span><small>서울에서 이 목적에 맞는 곳만 보기</small></span>
+                  <span className={styles.choiceTail}><span className={styles.count}>{allCount}곳</span><ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" /></span>
+                </Link>
+              </li>] : []) : pickPurposes.map(option => <li key={option.id}>
                 <Link className={styles.choice} href={'/?purpose=' + option.id} scroll={false}>
-                  {option.label}<ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+                  <span className={styles.choiceCopy}><span>{option.label}</span><small>{option.cue}</small></span><ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
                 </Link>
               </li>)}
             </ul>

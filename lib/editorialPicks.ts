@@ -16,9 +16,9 @@ export function resolveEditorialPick<T extends { id: string; is_demo?: boolean; 
 }
 
 export const pickPurposes = [
-  { id: 'date', label: '데이트', english: 'Date', heading: '데이트하기 좋은 곳' },
-  { id: 'friends', label: '친구 모임', english: 'With friends', heading: '친구 모임에 좋은 곳' },
-  { id: 'solo', label: '혼자 가기', english: 'Solo', heading: '혼자 가기 좋은 곳' },
+  { id: 'date', label: '데이트', english: 'Date', heading: '데이트하기 좋은 곳', cue: '식사 약속부터 산책 중 들를 곳까지' },
+  { id: 'friends', label: '친구 모임', english: 'With friends', heading: '친구 모임에 좋은 곳', cue: '친구와 함께 먹고 마실 곳' },
+  { id: 'solo', label: '혼자 가기', english: 'Solo', heading: '혼자 가기 좋은 곳', cue: '커피 한 잔부터 가벼운 디저트까지' },
 ] as const;
 
 export type PickPurpose = typeof pickPurposes[number]['id'];
@@ -43,5 +43,19 @@ export function resolvePurposeShortlist<T extends { id: string; is_demo?: boolea
       seen.add(place.cafe.id);
       return [{ ...place, slug: pick.slug, area: pick.area, area_en: pick.area_en }];
     });
+  });
+}
+
+const neighborhoodOrder = ['삼각지', '해방촌', '성수', '연남동'] as const;
+
+export function resolvePurposeAreas<T extends { id: string; is_demo?: boolean; business_status?: string; content_status?: string }>(
+  catalog: T[], purpose: PickPurpose,
+) {
+  return neighborhoodOrder.flatMap(area => {
+    const pick = picks.find(candidate => candidate.area === area);
+    if (!pick) return [];
+    const resolved = resolveEditorialPick(pick.slug, catalog);
+    const count = resolved ? new Set(purposePicks(resolved.places, purpose).map(place => place.cafe.id)).size : 0;
+    return count ? [{ slug: pick.slug, area: pick.area, area_en: pick.area_en, count }] : [];
   });
 }

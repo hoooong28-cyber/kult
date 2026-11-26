@@ -36,3 +36,9 @@
 @media (prefers-reduced-motion: reduce) {
   .choice svg { transition: none; }
 }
+
+.choiceStep { display: inline-block; margin-right: 9px; color: var(--kult-accent-text); font-variant-numeric: tabular-nums; }
+.choiceCopy { display: grid; min-width: 0; gap: 3px; padding-block: 3px; }
+.choiceCopy small { font-size: .82rem; line-height: 1.4; font-weight: 400; color: var(--kult-muted); word-break: keep-all; }
+.choiceTail { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 11px; }
+.count { color: var(--kult-muted); font-size: .8rem; font-weight: 500; font-variant-numeric: tabular-nums; }

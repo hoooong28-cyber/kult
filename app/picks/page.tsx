@@ -25,7 +25,7 @@ export default async function PurposeResultsPage({ searchParams }: Props) {
     <Header section="results" />
     <div className={styles.wrap}>
       <header className={styles.resultIntro}>
-        <Link href="/" className={styles.back}>← 선택 바꾸기</Link>
+        <Link href={'/?purpose=' + purpose.id} className={styles.back}>← 동네 고르기</Link>
         <div className={styles.sectionHead}>
           <div>
             <p lang="en">SEOUL CITY GUIDE / {purpose.english}</p>
@@ -37,6 +37,7 @@ export default async function PurposeResultsPage({ searchParams }: Props) {
         </div>
       </header>
       {places.length ? <>
+        <p className={styles.purposeSummary}>{purpose.label} · 서울 전체 {places.length}곳</p>
         <div className={styles.grid}>
           {places.map((item, index) => <EditorialPlaceCard key={item.cafe.id} cafe={item.cafe}
             area={item.area} index={index} reason={item.reason} reasonEn={item.reason_en} />)}
