@@ -168,7 +168,8 @@ export async function fetchSharedList(input: string, request: typeof fetch = fet
   let name = '', total = 0;
   for (let start = 0; start < 500; start += 20) {
     const endpoint = new URL(`https://pages.map.naver.com/save-pages/api/maps-bookmark/v3/shares/${shareId}/bookmarks`);
-    endpoint.search = new URLSearchParams({start: String(start), limit: '20', sort: 'lastUseTime', placeInfo: 'true'}).toString();
+    // Match the anonymous shared-list view's all-category, 20-row request.
+    endpoint.search = new URLSearchParams({placeInfo: 'true', start: String(start), limit: '20', sort: 'lastUseTime', mcids: 'ALL', createIdNo: 'true'}).toString();
     const response = await read(endpoint.href, { redirect: 'manual', headers: {'Accept': 'application/json'} });
     if (!response.ok) { await response.body?.cancel(); throw responseError(response.status); }
     const raw = await response.text();

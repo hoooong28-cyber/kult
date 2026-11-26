@@ -68,3 +68,19 @@ test('preserves exact numeric Naver place IDs', async () => {
   }));
   assert.equal(list.places[0].url, 'https://map.naver.com/p/entry/place/1393890643');
 });
+
+
+test('uses the public shared-list paging query on both pages and strips owner data', async () => {
+ const starts=[];
+ const list=await fetchSharedList(url, async raw=>{
+  const u=new URL(raw);
+  const start=Number(u.searchParams.get('start'));
+  starts.push(start);
+  assert.deepEqual(Object.fromEntries(u.searchParams),{placeInfo:'true',start:String(start),limit:'20',sort:'lastUseTime',mcids:'ALL',createIdNo:'true'});
+  const body=await page(start,31).json();
+  return Response.json({...body,folder:{...body.folder,createIdNo:'not-a-venue'}});
+ });
+ assert.deepEqual(starts,[0,20]);
+ assert.equal(list.places.length,31);
+ assert.ok(!JSON.stringify(list).includes('not-a-venue'));
+});
