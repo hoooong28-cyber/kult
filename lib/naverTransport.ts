@@ -1,11 +1,12 @@
 import https from 'node:https';
+import { NAVER_IMPORT_HOSTS } from './naverImport';
 
 // Keep the public-list reader on HTTP/1.1. The upstream currently returns empty
 // 500 responses to Node's fetch transport in our integration checks.
 export const naverRequest: typeof fetch = async (input, init) => {
   const url = new URL(String(input));
   if (url.protocol !== 'https:' || url.port || url.username || url.password ||
-      !['naver.me', 'pages.map.naver.com'].includes(url.hostname)) throw new Error('Unsupported upstream');
+      !NAVER_IMPORT_HOSTS.includes(url.hostname)) throw new Error('Unsupported upstream');
   return new Promise<Response>((resolve, reject) => {
     const request = https.get(url, {
       signal: init?.signal || undefined,

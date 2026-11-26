@@ -84,7 +84,7 @@ export default function NaverImportPanel({
       <form onSubmit={e => { e.preventDefault(); void loadList(url); }} className="flex flex-col sm:flex-row gap-3">
         <div className="flex-1">
           <label htmlFor="naver-list-url" className="block text-xs mb-2 text-stone-300">저장 목록 공유 링크</label>
-          <input id="naver-list-url" type="url" required maxLength={2048} value={url} onChange={e => {setUrl(e.target.value); setPreview(null);}} placeholder="https://naver.me/…" disabled={busy} className="w-full rounded-xl border border-stone-600 bg-stone-950 px-4 py-3 text-sm" />
+          <input id="naver-list-url" type="text" inputMode="url" required maxLength={2048} value={url} onChange={e => {setUrl(e.target.value); setPreview(null);}} placeholder="https://naver.me/…" disabled={busy} className="w-full rounded-xl border border-stone-600 bg-stone-950 px-4 py-3 text-sm" />
         </div>
         <button disabled={busy || !ready} className="self-end w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-300 text-stone-950 font-bold text-sm disabled:opacity-50">{busy ? '목록 불러오는 중…' : '목록 불러오기'}</button>
       </form>
