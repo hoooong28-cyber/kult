@@ -70,7 +70,7 @@ export default function NaverImportPanel({
         body: JSON.stringify({ url: link }), signal: AbortSignal.timeout(46000),
       });
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || '목록을 불러오지 못했습니다.');
+      if (!response.ok) throw new Error((data.error || '목록을 불러오지 못했습니다.') + (typeof data.diagnostic === 'string' && data.diagnostic ? ' [' + data.diagnostic + ']' : ''));
       if (getCurrentUser()?.id === ownerAtRequest) setPreview(data.list);
     } catch (e) { setError(e instanceof Error && e.name !== 'TimeoutError' ? e.message : '응답이 늦어지고 있습니다. 잠시 후 다시 시도해주세요.'); }
     finally { setBusy(false); }
