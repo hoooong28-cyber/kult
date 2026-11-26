@@ -54,10 +54,10 @@ export default function NaverImportPanel({
     try {
       const response = await fetch('/api/import/naver', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: link }), signal: AbortSignal.timeout(30000),
+        body: JSON.stringify({ url: link }), signal: AbortSignal.timeout(46000),
       });
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || '목록을 불러오지 못했습니다.');
+      if (!response.ok) throw new Error((data.error || '목록을 불러오지 못했습니다.') + (typeof data.diagnostic === 'string' && data.diagnostic.length ? ` [${data.diagnostic}]` : ''));
       if (ownerAtRequest && ownerAtRequest !== getCurrentUser()?.id) return;
       setPreview(data.list);
     } catch (e) { setError(e instanceof Error && e.name !== 'TimeoutError' ? e.message : '응답이 늦어지고 있습니다. 잠시 후 다시 시도해주세요.'); }
