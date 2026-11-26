@@ -12,7 +12,7 @@ export default async function PickAreaPage({ searchParams }: Props) {
   const purpose = resolvePickPurpose((await searchParams).purpose);
   if (!purpose) redirect('/');
   const catalog = await getMergedCafes();
-  const areas = ['삼각지', '해방촌', '성수'].flatMap(area => {
+  const areas = ['삼각지', '해방촌', '성수', '연남동'].flatMap(area => {
     const pick = picks.find(candidate => candidate.area === area);
     if (!pick) return [];
     const resolved = resolveEditorialPick(pick.slug, catalog);

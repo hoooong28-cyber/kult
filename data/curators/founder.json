@@ -25,7 +25,11 @@
         "kid_free_zone": false,
         "english_menu": true,
         "card_only": true,
-        "good_for": ["date", "solo", "work"],
+        "good_for": [
+          "date",
+          "solo",
+          "work"
+        ],
         "price_range": "$$"
       },
       "hours": "화요일 정기휴무, 11:00-22:00",
@@ -49,7 +53,11 @@
         "kid_free_zone": false,
         "english_menu": true,
         "card_only": true,
-        "good_for": ["coffee", "date", "solo"],
+        "good_for": [
+          "coffee",
+          "date",
+          "solo"
+        ],
         "price_range": "$$"
       },
       "hours": "매일 10:00-21:00",
@@ -64,7 +72,7 @@
       "neighborhood": "Seongsu",
       "address": "서울 성동구 연무장3길 6",
       "lat": 37.5432,
-      "lng": 127.0520,
+      "lng": 127.052,
       "tags": {
         "wifi": true,
         "outlet_availability": "many",
@@ -72,12 +80,130 @@
         "kid_free_zone": false,
         "english_menu": true,
         "card_only": true,
-        "good_for": ["work", "solo"],
+        "good_for": [
+          "work",
+          "solo"
+        ],
         "price_range": "$$"
       },
       "hours": "매일 10:00-20:00",
       "last_verified_date": "2026-09-03",
       "notes": "아늑한 지하 작업 공간과 스페셜티 원두 픽스쳐. 혼자 집중해서 글쓰거나 작업하기에 최적."
+    },
+    {
+      "id": "demo-naver-1741866041",
+      "name": "피에트라",
+      "name_local": "피에트라",
+      "naver_place_id": "1741866041",
+      "neighborhood": "Yeonnam",
+      "address": "서울특별시 마포구 연남동 375-116 1층",
+      "lat": 37.5661556,
+      "lng": 126.9200124,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "연남동에서 산책하다 아이스크림을 먹고 싶을 때."
+    },
+    {
+      "id": "demo-naver-1883924356",
+      "name": "이미커피",
+      "name_local": "이미커피",
+      "naver_place_id": "1883924356",
+      "neighborhood": "Yeonnam",
+      "address": "서울특별시 마포구 동교동 201-10 1층",
+      "lat": 37.5574767,
+      "lng": 126.9219163,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "홍대입구 동교동에서 커피 한 잔 쉬어가기."
+    },
+    {
+      "id": "demo-naver-1612839292",
+      "name": "코티지블루",
+      "name_local": "코티지블루",
+      "naver_place_id": "1612839292",
+      "neighborhood": "Yeonnam",
+      "address": "서울특별시 마포구 연남동 565-14 2층 코티지블루",
+      "lat": 37.560408,
+      "lng": 126.9207305,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "연남동에서 브런치 약속을 잡을 때."
+    },
+    {
+      "id": "demo-naver-1985216398",
+      "name": "하우스키루",
+      "name_local": "하우스키루",
+      "naver_place_id": "1985216398",
+      "neighborhood": "Yeonnam",
+      "address": "서울특별시 마포구 동교동 184-14 1층",
+      "lat": 37.5558444,
+      "lng": 126.931162,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "미확인 · 네이버 지도에서 최신 정보 확인",
+      "last_verified_date": "",
+      "notes": "홍대입구 동교동에서 커피와 디저트를 고를 때."
+    },
+    {
+      "id": "nonostante-yeonnam",
+      "name": "NONOSTANTE",
+      "name_local": "노노스탄테",
+      "naver_place_id": "1976051967",
+      "neighborhood": "Yeonnam",
+      "address": "서울 마포구 연남로3길 7, 1.5층",
+      "lat": null,
+      "lng": null,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "네이버 지도에서 최신 영업시간 확인",
+      "last_verified_date": "2026-11-26",
+      "notes": "연남동 골목의 이탈리안 다이닝과 와인바."
     }
   ]
 }

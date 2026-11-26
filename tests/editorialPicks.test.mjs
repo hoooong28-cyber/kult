@@ -47,11 +47,19 @@ test('purpose and exact-branch photo checks do not exclude legitimate photo-free
 });
 
 test('citywide purpose results include real matches, excluding closed and demo records', () => {
-  const ids = (purpose, rows = catalog) => resolvePurposeShortlist(rows, purpose).map(row => row.cafe.id);
+  const ids = (purpose, rows = catalog) => resolvePurposeShortlist(rows, purpose).filter(row => row.slug !== 'yeonnam').map(row => row.cafe.id);
   assert.deepEqual(ids('date'), ['discovery-mna-samgakji', 'cuco-seongsu', 'discovery-a-glass-of-haebangchon']);
   assert.deepEqual(ids('friends'), ['discovery-mongtan-samgakji', 'discovery-always-august-samgakji', 'discovery-mna-samgakji', 'cuco-seongsu', 'discovery-haus-bakery-service', 'discovery-a-glass-of-haebangchon']);
   assert.deepEqual(ids('solo'), ['discovery-always-august-samgakji', 'lowkey-seongsu', 'discovery-haus-bakery-service']);
   const altered = catalog.map(c => c.id === 'lowkey-seongsu' ? { ...c, is_demo: true } :
     c.id === 'discovery-haus-bakery-service' ? { ...c, business_status: 'closed' } : c);
   assert.deepEqual(ids('solo', altered), ['discovery-always-august-samgakji']);
+});
+
+test('Yeonnam shows five exact venues, retains Donggyo addresses, and filters by occasion', () => {
+  const result = resolveEditorialPick('yeonnam', catalog);
+  assert.equal(result.places.length, 5);
+  assert.deepEqual(result.places.map(p => p.cafe.naver_place_id), ['1741866041','1612839292','1883924356','1985216398','1976051967']);
+  assert.equal(result.places.filter(p => p.cafe.address.includes('동교동')).length, 2);
+  assert.deepEqual(['date','friends','solo'].map(p => purposePicks(result.places,p).length), [3,3,2]);
 });

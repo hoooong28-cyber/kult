@@ -89,5 +89,58 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "yeonnam",
+    "area": "연남동",
+    "area_en": "Yeonnam",
+    "title": "연남동에서 가볼 곳",
+    "title_en": "Where to go in Yeonnam",
+    "source": "neighborhood",
+    "places": [
+      {
+        "id": "demo-naver-1741866041",
+        "reason": "연남동에서 산책하다 아이스크림을 먹고 싶을 때.",
+        "reason_en": "An ice cream stop on a walk through Yeonnam.",
+        "purposes": [
+          "date",
+          "solo"
+        ]
+      },
+      {
+        "id": "demo-naver-1612839292",
+        "reason": "연남동에서 브런치 약속을 잡을 때.",
+        "reason_en": "A brunch stop in Yeonnam.",
+        "purposes": [
+          "date",
+          "friends"
+        ]
+      },
+      {
+        "id": "demo-naver-1883924356",
+        "reason": "홍대입구 동교동에서 커피 한 잔 쉬어가기.",
+        "reason_en": "A coffee stop in Donggyo, near Hongik University Station.",
+        "purposes": [
+          "solo"
+        ]
+      },
+      {
+        "id": "demo-naver-1985216398",
+        "reason": "홍대입구 동교동에서 커피와 디저트를 고를 때.",
+        "reason_en": "A café and dessert stop in Donggyo near the station.",
+        "purposes": [
+          "friends"
+        ]
+      },
+      {
+        "id": "nonostante-yeonnam",
+        "reason": "연남동 골목에서 파스타와 와인을 곁들이고 싶을 때.",
+        "reason_en": "Italian food and wine tucked into Yeonnam's side streets.",
+        "purposes": [
+          "date",
+          "friends"
+        ]
+      }
+    ]
   }
 ]

@@ -8,7 +8,7 @@ import { picks, pickPurposes, purposePicks, resolveEditorialPick, resolvePickPur
 import styles from './entry.module.css';
 
 type Props = { searchParams: Promise<{ purpose?: string | string[] }> };
-const neighborhoodOrder = ['삼각지', '해방촌', '성수'];
+const neighborhoodOrder = ['삼각지', '해방촌', '성수', '연남동'];
 
 export default async function HomePage({ searchParams }: Props) {
   const purpose = resolvePickPurpose((await searchParams).purpose);
