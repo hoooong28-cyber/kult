@@ -35,3 +35,36 @@ test('empty lists are a valid snapshot',async()=>{
 });
 
 test('accepts single-place links supported by current main',()=>{assert.equal(validateListUrl('https://map.naver.com/p/entry/place/123').hostname,'map.naver.com');});
+
+test('provider 503 is retried once without asking users to change sharing settings', async () => {
+  let calls = 0;
+  const list = await fetchSharedList(url, async () => ++calls === 1 ? new Response(null, {status: 503}) : page(0, 3));
+  assert.equal(calls, 2);
+  assert.equal(list.places.length, 3);
+});
+
+test('provider denial and rate limit are not retried', async () => {
+  for (const [status, code] of [[403, 'unavailable'], [429, 'rate_limit']]) {
+    let calls = 0;
+    await assert.rejects(fetchSharedList(url, async () => {
+      calls += 1;
+      return new Response(null, {status});
+    }), {code});
+    assert.equal(calls, 1);
+  }
+});
+
+test('persistent provider failure and unexpected JSON are not treated as private lists', async () => {
+  let calls = 0;
+  await assert.rejects(fetchSharedList(url, async () => { calls++; return new Response(null, {status: 502}); }), {code: 'upstream'});
+  assert.equal(calls, 2);
+  await assert.rejects(fetchSharedList(url, async () => Response.json({status: 'unexpected'})), {code: 'format'});
+});
+
+test('preserves exact numeric Naver place IDs', async () => {
+  const list = await fetchSharedList(url, async () => Response.json({
+    folder: {name: 'Test', bookmarkCount: 1},
+    bookmarkList: [{...item(1), sid: 1393890643}],
+  }));
+  assert.equal(list.places[0].url, 'https://map.naver.com/p/entry/place/1393890643');
+});

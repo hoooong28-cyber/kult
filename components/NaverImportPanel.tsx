@@ -50,7 +50,7 @@ export default function NaverImportPanel({
     try {
       const response = await fetch('/api/import/naver', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: link }), signal: AbortSignal.timeout(30000),
+        body: JSON.stringify({ url: link }), signal: AbortSignal.timeout(46000),
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || '목록을 불러오지 못했습니다.');
@@ -60,7 +60,7 @@ export default function NaverImportPanel({
   }
 
   function savePreview() {
-    if (!preview || !ready) return;
+    if (!preview || !ready || !getCurrentUser()) return;
     const updated = mergeImportedLists(lists, preview);
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
