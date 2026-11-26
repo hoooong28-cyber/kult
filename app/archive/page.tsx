@@ -25,6 +25,7 @@ import {
 } from '@/lib/userStore';
 import { CuratedCafe } from '@/lib/types';
 import { ImportedPlace, uniqueImportedPlaces } from '@/lib/naverImport';
+import { readNaverLists } from '@/lib/naverListStorage';
 import {
   BookOpen,
   Bookmark,
@@ -73,16 +74,12 @@ export default function ArchivePage() {
 
   const loadNaverPlaces = () => {
     try {
-      const raw = localStorage.getItem('kult_naver_imported_lists_v1');
-      if (raw) {
-        const lists = JSON.parse(raw);
-        if (Array.isArray(lists)) {
-          const unique = uniqueImportedPlaces(lists);
-          setNaverImportedPlaces(unique);
-          setImportedCount(unique.length);
-        }
-      }
+      const unique = uniqueImportedPlaces(readNaverLists(localStorage, getCurrentUser()?.id));
+      setNaverImportedPlaces(unique);
+      setImportedCount(unique.length);
     } catch (e) {
+      setNaverImportedPlaces([]);
+      setImportedCount(0);
       console.error('Failed to load imported NAVER places:', e);
     }
   };
@@ -128,6 +125,7 @@ export default function ArchivePage() {
 
     const unsubUser = subscribeUser((user) => {
       setCurrentUser(user);
+      loadNaverPlaces();
     });
 
     const unsubPosts = subscribePosts((posts) => {
@@ -138,6 +136,7 @@ export default function ArchivePage() {
       loadNaverPlaces();
     };
     window.addEventListener('kult_naver_import_updated', handleNaverUpdate);
+    window.addEventListener('storage', handleNaverUpdate);
 
     return () => {
       unsubArchive();
@@ -145,6 +144,7 @@ export default function ArchivePage() {
       unsubUser();
       unsubPosts();
       window.removeEventListener('kult_naver_import_updated', handleNaverUpdate);
+      window.removeEventListener('storage', handleNaverUpdate);
     };
   }, []);
 
