@@ -23,7 +23,7 @@ export async function generateMetadata({ params, searchParams }: Props) {
 }
 
 export default async function EditorialPickPage({ params, searchParams }: Props) {
-  const [{ slug }, query, catalog] = await Promise.all([params, searchParams, getMergedCafes()]);
+  const [{ slug }, query, catalog] = await Promise.all([params, searchParams, getMergedCafes({ resolveMapCoordinates: false })]);
   const pick = resolveEditorialPick(slug, catalog);
   if (!pick) notFound();
   const purpose = resolvePickPurpose(query.purpose);

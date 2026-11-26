@@ -11,7 +11,7 @@ type Props = { searchParams: Promise<{ purpose?: string | string[] }> };
 
 export default async function HomePage({ searchParams }: Props) {
   const purpose = resolvePickPurpose((await searchParams).purpose);
-  const catalog = purpose ? await getMergedCafes() : [];
+  const catalog = purpose ? await getMergedCafes({ resolveMapCoordinates: false }) : [];
   const areas = purpose ? resolvePurposeAreas(catalog, purpose.id) : [];
   const allCount = purpose ? resolvePurposeShortlist(catalog, purpose.id).length : 0;
 

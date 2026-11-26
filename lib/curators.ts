@@ -176,7 +176,7 @@ export async function getCuratorById(id: string): Promise<{
  * Merges cafes across all curators. Deduplicates by normalized name + address,
  * combining curator metadata into `curated_by` and `curators`.
  */
-export async function getMergedCafes({ includeClosed = false }: { includeClosed?: boolean } = {}): Promise<CuratedCafe[]> {
+export async function getMergedCafes({ includeClosed = false, resolveMapCoordinates = true }: { includeClosed?: boolean; resolveMapCoordinates?: boolean } = {}): Promise<CuratedCafe[]> {
   const curatorFiles = await getAllCuratorFiles();
   const cafeMap = new Map<string, CuratedCafe>();
   const dedupeKey = (cafe: Cafe) => `${cafe.name.toLowerCase().trim()}_${cafe.address.toLowerCase().replace(/\s+/g, '')}`;
@@ -197,7 +197,10 @@ export async function getMergedCafes({ includeClosed = false }: { includeClosed?
       if (closed && !includeClosed) continue;
       const cafe = closed ?? record;
 
-      const coords = closed ? { lat: null, lng: null } : await resolveCoordinates(cafe.address, cafe.lat, cafe.lng);
+      // Text-only editorial surfaces must not wait on geocoding for the entire catalog.
+      const coords = closed ? { lat: null, lng: null }
+        : resolveMapCoordinates ? await resolveCoordinates(cafe.address, cafe.lat, cafe.lng)
+        : { lat: cafe.lat, lng: cafe.lng };
       const freshness = closed
         ? { months_ago: 0, is_stale: true, badge_label: '영업 종료' }
         : cafe.is_demo

@@ -19,7 +19,7 @@ export async function generateMetadata({ searchParams }: Props) {
 export default async function PurposeResultsPage({ searchParams }: Props) {
   const purpose = resolvePickPurpose((await searchParams).purpose);
   if (!purpose) redirect('/');
-  const places = resolvePurposeShortlist(await getMergedCafes(), purpose.id);
+  const places = resolvePurposeShortlist(await getMergedCafes({ resolveMapCoordinates: false }), purpose.id);
   const photoIndex = places.findIndex(item => getVenuePhoto(item.cafe));
   const path = '/picks?purpose=' + purpose.id;
 

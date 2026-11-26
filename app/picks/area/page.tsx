@@ -11,7 +11,7 @@ export const metadata = { title: '어느 동네로 갈까요? · KULT' };
 export default async function PickAreaPage({ searchParams }: Props) {
   const purpose = resolvePickPurpose((await searchParams).purpose);
   if (!purpose) redirect('/');
-  const catalog = await getMergedCafes();
+  const catalog = await getMergedCafes({ resolveMapCoordinates: false });
   const areas = resolvePurposeAreas(catalog, purpose.id);
   const allCount = resolvePurposeShortlist(catalog, purpose.id).length;
   return <div className={styles.paper} lang="ko">
