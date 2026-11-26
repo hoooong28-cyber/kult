@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
+import { catalogPlaceDestination } from '../../lib/catalogSavePaths';
 
 const destinations = new Set(['/archive', '/taste-neighbors', '/']);
 
 export function accountDestination(value: unknown) {
-  return typeof value === 'string' && destinations.has(value) ? value : '/archive';
+  return typeof value === 'string' && (destinations.has(value) || catalogPlaceDestination(value) !== null) ? value : '/archive';
 }
 
 export function canonicalAccountOrigin(): string | null {

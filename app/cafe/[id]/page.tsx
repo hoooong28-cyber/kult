@@ -3,7 +3,7 @@ import VenueMenu from '@/components/VenueMenu';
 import { getVenueMenu } from '@/lib/venueMenus';
 import { getVenuePhoto } from '@/lib/venuePhotos';
 import React from 'react';
-import SavePlaceButton from '@/components/SavePlaceButton';
+import CatalogDetailSave from '@/components/CatalogDetailSave';
 import StoryCards from '@/components/StoryCards';
 import { storiesForPlace } from '@/lib/stories';
 import { PageInteraction, MapLink, SourceLink, ShareButton } from '@/components/Interaction';
@@ -30,6 +30,7 @@ import {
 
 interface PageProps {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ save?: string | string[] }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -60,7 +61,7 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function CafeDetailPage({ params }: PageProps) {
+export default async function CafeDetailPage({ params, searchParams }: PageProps) {
   const { id } = await params;
   const cafe = await getCafeById(id);
 
@@ -89,6 +90,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
     );
   }
 
+  const saveStatus = (await searchParams).save;
   const primaryCurator = cafe.curators[0];
   const hasVenueMenu = Boolean(getVenueMenu(cafe));
   const hasVenuePhoto = Boolean(getVenuePhoto(cafe));
@@ -149,7 +151,7 @@ export default async function CafeDetailPage({ params }: PageProps) {
 
       {/* Main Content Container */}
       <main className="max-w-5xl mx-auto px-4 sm:px-8 py-8 sm:py-12 flex-1 w-full space-y-8">
-        <div className="flex flex-wrap gap-3"><SavePlaceButton placeId={id} /><ShareButton context={{place_id:id}} /><Link href="/archive" className="min-h-11 px-4 py-3 text-sm underline">내 KULT 보기</Link></div>
+        <div className="flex flex-wrap gap-3"><CatalogDetailSave key={id} placeId={id} status={saveStatus === 'retry' || saveStatus === 'login' ? saveStatus : undefined} /><ShareButton context={{place_id:id}} /><Link href="/archive" className="min-h-11 px-4 py-3 text-sm underline">내 KULT 보기</Link></div>
         {/* Title Header */}
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 uppercase tracking-widest mb-2">

@@ -7,6 +7,7 @@ import ReportModal from '@/components/ReportModal';
 import EditProfileModal from '@/components/EditProfileModal';
 import CreatePostModal from '@/components/CreatePostModal';
 import AuthModal from '@/components/AuthModal';
+import CatalogAccountArchive from '@/components/CatalogAccountArchive';
 import NaverImportPanel from '@/components/NaverImportPanel';
 import NaverIndividualSave from '@/components/NaverIndividualSave';
 import MobileBottomNav from '@/components/MobileBottomNav';
@@ -186,6 +187,7 @@ export default function ArchivePage() {
       </div>
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 space-y-10">
+        <CatalogAccountArchive cafes={allCafes} />
         <NaverImportPanel onCountChange={setImportedCount} />
         <Link href="/taste-neighbors" className="inline-flex min-h-11 items-center font-bold text-amber-300 underline">취향이 닮은 사람 찾기 ↗</Link>
         <section id="naver-single" className="scroll-mt-24">
