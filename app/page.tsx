@@ -469,7 +469,7 @@ export default function HomePage() {
                         : 'bg-[#FCF9F5] border border-[#E6DFD3] text-[#1C1C1A] hover:border-[#1C1C1A]'
                     }`}
                   >
-                    {nh}
+                    {nh === 'Yeonnam' ? '연남동' : nh}
                   </button>
                 ))}
               </div>

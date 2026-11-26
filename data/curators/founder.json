@@ -75,6 +75,29 @@
       "hours": "매일 10:00-20:00",
       "last_verified_date": "2026-09-03",
       "notes": "아늑한 지하 작업 공간과 스페셜티 원두 픽스쳐. 혼자 집중해서 글쓰거나 작업하기에 최적."
+    },
+    {
+      "id": "nonostante-yeonnam",
+      "name": "NONOSTANTE",
+      "name_local": "노노스탄테",
+      "naver_place_id": "1976051967",
+      "neighborhood": "Yeonnam",
+      "address": "서울 마포구 연남로3길 7, 1.5층",
+      "lat": null,
+      "lng": null,
+      "tags": {
+        "wifi": null,
+        "outlet_availability": "unknown",
+        "noise_level": "unknown",
+        "kid_free_zone": null,
+        "english_menu": null,
+        "card_only": null,
+        "good_for": [],
+        "price_range": "unknown"
+      },
+      "hours": "네이버 지도에서 최신 영업시간 확인",
+      "last_verified_date": "2026-11-26",
+      "notes": "연남동 골목의 이탈리안 다이닝과 와인바."
     }
   ]
 }
