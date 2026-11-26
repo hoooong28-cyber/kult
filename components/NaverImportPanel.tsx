@@ -2,11 +2,11 @@
 
 import { MapLink } from './Interaction';
 import { useEffect, useMemo, useState } from 'react';
-import { ImportedList, mergeImportedLists, uniqueImportedPlaces } from '@/lib/naverImport';
+import { ImportedList, uniqueImportedPlaces } from '@/lib/naverImport';
 
-import { getCurrentUser } from '@/lib/userStore';
-
-const STORAGE_KEY = 'kult_naver_imported_lists_v1';
+import { MAX_NAVER_FILE_BYTES, parseNaverListFile, seoulDiningPlaces } from '@/lib/naverListFile';
+import { readNaverLists, saveNaverList } from '@/lib/naverListStorage';
+import { getCurrentUser, subscribeUser } from '@/lib/userStore';
 
 export default function NaverImportPanel({
   onCountChange,
@@ -18,6 +18,7 @@ export default function NaverImportPanel({
   const [url, setUrl] = useState('');
   const [lists, setLists] = useState<ImportedList[]>([]);
   const [preview, setPreview] = useState<ImportedList | null>(null);
+  const [seoulOnly, setSeoulOnly] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
@@ -25,20 +26,35 @@ export default function NaverImportPanel({
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const stored = JSON.parse(raw);
-        if (!Array.isArray(stored) || !stored.every(list => typeof list.shareId === 'string' && Array.isArray(list.places) && list.places.every((p: { id?: unknown; name?: unknown; address?: unknown; category?: unknown; url?: unknown }) => typeof p.id === 'string' && typeof p.name === 'string' && typeof p.address === 'string' && typeof p.category === 'string' && typeof p.url === 'string' && p.url.startsWith('https://map.naver.com/')))) throw new Error();
-        setLists(stored);
-      }
-      setReady(true);
-    } catch { setError('저장된 목록을 읽지 못했습니다. 브라우저 저장소를 확인해주세요. 기존 데이터는 덮어쓰지 않았습니다.'); }
+    const refresh = () => {
+      try { setLists(readNaverLists(localStorage, getCurrentUser()?.id)); setReady(true); }
+      catch { setLists([]); setReady(false); setError('저장된 목록을 읽지 못했어요. 기존 데이터는 그대로예요.'); }
+    };
+    refresh();
+    const unsubscribe = subscribeUser(() => { setPreview(null); setMessage(''); setError(''); refresh(); });
+    window.addEventListener('storage', refresh);
+    return () => { unsubscribe(); window.removeEventListener('storage', refresh); };
   }, []);
 
   const places = useMemo(() => uniqueImportedPlaces(lists), [lists]);
   useEffect(() => { onCountChange(places.length); }, [places.length, onCountChange]);
   const visible = places.filter(p => `${p.name} ${p.address} ${p.category}`.toLowerCase().includes(query.toLowerCase()));
+
+  const previewPlaces = preview ? (seoulOnly ? seoulDiningPlaces(preview.places) : preview.places) : [];
+  const selectedId = preview && seoulOnly ? preview.shareId + '-seoul-dining' : preview?.shareId;
+
+  async function loadFile(file: File) {
+    if (!getCurrentUser()) { onRequireAuth?.(); setError('로그인 후 목록 파일을 가져올 수 있어요.'); return; }
+    const ownerAtRequest = getCurrentUser()?.id;
+    setBusy(true); setError(''); setMessage(''); setPreview(null); setSeoulOnly(false);
+    try {
+      if (file.size > MAX_NAVER_FILE_BYTES) throw new Error('2MB 이하의 JSON 파일만 읽을 수 있어요.');
+      const list = await parseNaverListFile(await file.text(), {name: file.name.replace(/\.json$/i, '')});
+      if (getCurrentUser()?.id === ownerAtRequest) setPreview(list);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : '파일을 읽지 못했어요. 기존 저장은 그대로예요.');
+    } finally { setBusy(false); }
+  }
 
   async function loadList(link: string) {
     if (!getCurrentUser()) {
@@ -46,26 +62,28 @@ export default function NaverImportPanel({
       setError('회원가입 또는 로그인 후 네이버 지도를 가져올 수 있습니다.');
       return;
     }
-    setBusy(true); setError(''); setMessage(''); setPreview(null);
+    const ownerAtRequest = getCurrentUser()?.id;
+    setBusy(true); setError(''); setMessage(''); setPreview(null); setSeoulOnly(false);
     try {
       const response = await fetch('/api/import/naver', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: link }), signal: AbortSignal.timeout(46000),
       });
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || '목록을 불러오지 못했습니다.');
-      setPreview(data.list);
+      if (!response.ok) throw new Error((data.error || '목록을 불러오지 못했습니다.') + (typeof data.diagnostic === 'string' && data.diagnostic ? ' [' + data.diagnostic + ']' : ''));
+      if (getCurrentUser()?.id === ownerAtRequest) setPreview(data.list);
     } catch (e) { setError(e instanceof Error && e.name !== 'TimeoutError' ? e.message : '응답이 늦어지고 있습니다. 잠시 후 다시 시도해주세요.'); }
     finally { setBusy(false); }
   }
 
   function savePreview() {
-    if (!preview || !ready || !getCurrentUser()) return;
-    const updated = mergeImportedLists(lists, preview);
+    if (!preview || !selectedId || !previewPlaces.length || !ready || !getCurrentUser()) return;
+    const selected = { ...preview, shareId: selectedId, name: seoulOnly ? preview.name + ' · 서울 카페·식당' : preview.name, places: previewPlaces };
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-      setLists(updated); setPreview(null);
-      setMessage(`‘${preview.name}’ ${preview.places.length}개 장소를 저장했습니다. 내 아카이브 서재에 즉시 반영되었습니다.`);
+      const owner = getCurrentUser()?.id;
+      if (!owner) return;
+      setLists(saveNaverList(localStorage, owner, selected)); setPreview(null);
+      setMessage(`‘${selected.name}’ ${selected.places.length}개 장소를 저장했습니다. 내 아카이브 서재에 즉시 반영되었습니다.`);
       if (typeof window !== 'undefined') {
         window.dispatchEvent(new Event('kult_naver_import_updated'));
       }
@@ -87,27 +105,35 @@ export default function NaverImportPanel({
         </div>
         <button disabled={busy || !ready} className="self-end w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-300 text-stone-950 font-bold text-sm disabled:opacity-50">{busy ? '목록 불러오는 중…' : '목록 불러오기'}</button>
       </form>
+      <details className="text-sm text-stone-300">
+        <summary className="cursor-pointer">목록 파일로 가져오기</summary>
+        <p className="text-xs text-stone-400 mt-2">공유 링크가 안 될 때 가지고 있는 네이버 목록 JSON 파일을 사용할 수 있어요. 파일은 이 브라우저 안에서만 읽고, 공개하거나 서버로 전송하지 않아요.</p>
+        <label className="block mt-3">네이버 목록 JSON 파일
+          <input type="file" accept=".json,application/json" disabled={busy || !ready} className="mt-2 block max-w-full text-xs" onChange={e => { const file = e.currentTarget.files?.[0]; e.currentTarget.value = ''; if (file) void loadFile(file); }} />
+        </label>
+      </details>
       {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
       {message && <p role="status" className="text-sm text-emerald-300">{message}</p>}
       {preview && <div className="rounded-2xl border border-amber-300/40 bg-stone-950 p-4 space-y-4">
         <h3 className="font-bold">{preview.name} · {preview.places.length}개 장소</h3>
+        <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={seoulOnly} onChange={e => setSeoulOnly(e.target.checked)} />서울 카페·식당만 저장 ({seoulDiningPlaces(preview.places).length}곳)</label>
         <p className="text-xs text-stone-400">{preview.places.filter(p => !p.available).length}개는 폐업했거나 정보가 없습니다. 해당 표시를 유지한 채 가져옵니다.</p>
-        {lists.some(l => l.shareId === preview.shareId) && <p className="text-xs text-amber-200">이 목록은 이미 저장되어 있습니다. 저장하면 기존 목록을 현재 내용으로 갱신합니다.</p>}
+        {lists.some(l => l.shareId === selectedId) && <p className="text-xs text-amber-200">이 목록은 이미 저장되어 있습니다. 저장하면 기존 목록을 현재 내용으로 갱신합니다.</p>}
         <ul className="max-h-64 overflow-auto divide-y divide-stone-800">
-          {preview.places.map(p => <li key={p.id} className="py-2"><span className="text-sm font-semibold">{p.name}</span><span className="ml-2 text-xs text-stone-400">{p.category}{!p.available && ' · 정보 확인 필요'}</span><p className="text-xs text-stone-400 mt-1">{p.address || '주소 정보 없음'}</p></li>)}
+          {previewPlaces.map(p => <li key={p.id} className="py-2"><span className="text-sm font-semibold">{p.name}</span><span className="ml-2 text-xs text-stone-400">{p.category}{!p.available && ' · 정보 확인 필요'}</span><p className="text-xs text-stone-400 mt-1">{p.address || '주소 정보 없음'}</p></li>)}
         </ul>
-        {preview.places.length === 0 && <p className="text-sm text-stone-400">저장된 장소가 없는 목록입니다.</p>}
+        {previewPlaces.length === 0 && <p className="text-sm text-stone-400">현재 조건으로 저장할 장소가 없어요.</p>}
         <div className="flex gap-3">
-          <button onClick={savePreview} className="rounded-xl bg-amber-300 px-4 py-2 text-sm font-bold text-stone-950">내 장소에 저장</button>
+          <button onClick={savePreview} disabled={!previewPlaces.length} className="rounded-xl bg-amber-300 px-4 py-2 text-sm font-bold text-stone-950 disabled:opacity-50">내 장소에 저장</button>
           <button onClick={() => setPreview(null)} className="rounded-xl border border-stone-600 px-4 py-2 text-sm">취소</button>
         </div>
       </div>}
       {lists.length > 0 && <div className="space-y-4 border-t border-stone-700 pt-5">
         <h3 className="font-bold">가져온 내 장소 · {places.length}곳</h3>
         <div className="space-y-2">{lists.map(list => <div key={list.shareId} className="flex flex-wrap items-center gap-3 text-xs text-stone-400">
-          <a href={list.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-amber-200 underline">{list.name} · {list.places.length}곳</a>
+          {list.shareId.startsWith('file-') ? <span className="text-amber-200">{list.name} · {list.places.length}곳</span> : <a href={list.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-amber-200 underline">{list.name} · {list.places.length}곳</a>}
           <span>{new Date(list.importedAt).toLocaleDateString('ko-KR')} 가져옴</span>
-          <button disabled={busy} onClick={() => void loadList(list.sourceUrl)} className="border border-stone-600 rounded-lg px-3 py-1 disabled:opacity-50">최신 목록 다시 불러오기</button>
+          {!list.shareId.startsWith('file-') && !list.shareId.endsWith('-seoul-dining') && <button disabled={busy} onClick={() => void loadList(list.sourceUrl)} className="border border-stone-600 rounded-lg px-3 py-1 disabled:opacity-50">최신 목록 다시 불러오기</button>}
         </div>)}</div>
         <label className="block text-sm">내 장소 검색<input value={query} onChange={e => setQuery(e.target.value)} placeholder="장소명, 지역, 분류" className="block w-full mt-2 rounded-xl border border-stone-600 bg-stone-950 px-4 py-3" /></label>
         <div className="grid sm:grid-cols-2 gap-3 max-h-[560px] overflow-auto">
