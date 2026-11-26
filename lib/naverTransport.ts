@@ -8,7 +8,7 @@ export function createNaverRequest(trace: (line: string) => void = () => {}): ty
   if (url.protocol !== 'https:' || url.port || url.username || url.password ||
       !['naver.me', 'pages.map.naver.com'].includes(url.hostname)) throw new Error('Unsupported upstream');
   return new Promise<Response>((resolve, reject) => {
-    const scope = url.hostname === 'naver.me' ? 'link' : url.searchParams.get('start') === '0' ? 'page1' : url.searchParams.get('start') === '20' ? 'page2' : 'later-page';
+    const scope = url.hostname === 'naver.me' ? 'link' : url.searchParams.get('limit') === '5000' ? 'overview' : url.searchParams.get('start') === '0' ? 'page1' : url.searchParams.get('start') === '20' ? 'page2' : 'later-page';
     const started = Date.now();
     let phase = 'start';
     const record = (value: string) => trace(scope + ' ' + value + ' (' + (Date.now() - started) + 'ms)');

@@ -84,3 +84,15 @@ test('uses the public shared-list paging query on both pages and strips owner da
  assert.equal(list.places.length,31);
  assert.ok(!JSON.stringify(list).includes('not-a-venue'));
 });
+
+test('observed public overview accepts only a complete, identified list and strips private memo text', async () => {
+ let calls=0;
+ const result=await fetchSharedList(url,async raw=>{
+   calls++;
+   assert.deepEqual(Object.fromEntries(new URL(raw).searchParams),{start:'0',limit:'5000',sort:'lastUseTime',createIdNo:'false'});
+   return Response.json({folder:{name:'Fixture',bookmarkCount:31},bookmarkList:Array.from({length:31},(_,i)=>({...item(i+1),memo:'never keep'}))});
+ },'overview');
+ assert.equal(calls,1);assert.equal(result.places.length,31);assert.ok(result.places.every(p=>p.memo===''));
+ await assert.rejects(fetchSharedList(url,async ()=>page(0,31),'overview'),{code:'changed'});
+ await assert.rejects(fetchSharedList(url,async ()=>Response.json({folder:{name:'Fixture',bookmarkCount:1},bookmarkList:[{...item(1),sid:null}]}),'overview'),{code:'format'});
+});

@@ -103,7 +103,7 @@ export function uniqueImportedPlaces(lists: ImportedList[]): ImportedPlace[] {
   return [...new Map(lists.flatMap(list => list.places).reverse().map(place => [place.id, place])).values()];
 }
 
-export async function fetchSharedList(input: string, request: typeof fetch = fetch): Promise<ImportedList> {
+export async function fetchSharedList(input: string, request: typeof fetch = fetch, mode: 'paged' | 'overview' = 'paged'): Promise<ImportedList> {
   let url = validateListUrl(input);
   const deadline = AbortSignal.timeout(38000);
   let retryAvailable = true;
@@ -163,6 +163,26 @@ export async function fetchSharedList(input: string, request: typeof fetch = fet
       };
     }
     throw new ImportError('공유 링크를 읽지 못했습니다. 네이버 지도 앱/웹의 리스트 공유 링크(naver.me 등)를 다시 복사해주세요.');
+  }
+
+  if (mode === 'overview') {
+    const endpoint = new URL(`https://pages.map.naver.com/save-pages/api/maps-bookmark/v3/shares/${shareId}/bookmarks`);
+    endpoint.search = new URLSearchParams({start: '0', limit: '5000', sort: 'lastUseTime', createIdNo: 'false'}).toString();
+    const signal = AbortSignal.any([deadline, AbortSignal.timeout(15000)]);
+    let response: Response;
+    try { response = await request(endpoint.href, {signal, redirect: 'error', cache: 'no-store', headers: {'Accept': 'application/json'}}); }
+    catch { throw new ImportError(signal.aborted ? timeoutMessage : upstreamMessage, signal.aborted ? 'timeout' : 'upstream'); }
+    if (!response.ok) throw responseError(response.status);
+    const raw = await response.text();
+    if (raw.length > 2_000_000) throw new ImportError(formatMessage, 'format');
+    let payload: unknown;
+    try { payload = JSON.parse(raw); } catch { throw new ImportError(formatMessage, 'format'); }
+    const page = parseBookmarkPage(payload, shareId);
+    if (page.total > 500 || page.total !== page.places.length || new Set(page.places.map(p => p.id)).size !== page.total)
+      throw new ImportError(changedMessage, 'changed');
+    if (page.places.some(p => !/^naver-place-[0-9]{1,25}$/.test(p.id) || !p.address.trim()))
+      throw new ImportError(formatMessage, 'format');
+    return {shareId, name: page.name, sourceUrl: `https://map.naver.com/p/favorite/sharedPlace/folder/${shareId}`, importedAt: new Date().toISOString(), places: page.places.map(p => ({...p, memo: ''}))};
   }
 
   const places: ImportedPlace[] = [];

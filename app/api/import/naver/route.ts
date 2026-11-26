@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     if (body.length > 4096) return NextResponse.json({ error: '요청이 너무 큽니다.' }, { status: 413, headers });
     const parsed = JSON.parse(body);
     if (typeof parsed?.url !== 'string') throw new ImportError('공유 링크를 넣어주세요.');
-    const list = await fetchSharedList(parsed.url, naverRequest);
+    const list = await fetchSharedList(parsed.url, naverRequest, process.env.VERCEL_ENV === 'preview' ? 'overview' : 'paged');
     return NextResponse.json({ list }, { headers });
   } catch (error) {
     if (error instanceof ImportError) {
