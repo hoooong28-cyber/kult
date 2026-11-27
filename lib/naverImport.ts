@@ -103,7 +103,10 @@ export function uniqueImportedPlaces(lists: ImportedList[]): ImportedPlace[] {
   return [...new Map(lists.flatMap(list => list.places).reverse().map(place => [place.id, place])).values()];
 }
 
-const MAX_PAGE_RETRIES = 3;
+// A stalled upstream page has been observed to spend over 10 seconds before
+// returning 500. Keep time for retries and the remaining pages within the 25s
+// request budget, while allowing a longer final attempt for a slow response.
+const PAGE_ATTEMPT_TIMEOUTS_MS = [5000, 5000, 6000, 12000] as const;
 const RETRYABLE_NETWORK_CODES = new Set([
   'EAGAIN', 'ENOTFOUND', 'EAI_AGAIN', 'ECONNRESET', 'ECONNREFUSED', 'ENETUNREACH',
   'EHOSTUNREACH', 'ETIMEDOUT', 'ECONNABORTED', 'EPIPE', 'ERR_STREAM_PREMATURE_CLOSE', 'UND_ERR_SOCKET', 'UND_ERR_CONNECT_TIMEOUT',
@@ -130,12 +133,12 @@ async function waitForRetry(ms: number, signal: AbortSignal): Promise<void> {
 
 async function readBookmarkPage(endpoint: URL, request: typeof fetch, signal: AbortSignal): Promise<unknown> {
   let lastError = new ImportError('네이버 응답을 읽을 수 없습니다. 잠시 후 다시 시도해주세요.');
-  for (let attempt = 0; attempt <= MAX_PAGE_RETRIES && !signal.aborted; attempt++) {
+  for (let attempt = 0; attempt < PAGE_ATTEMPT_TIMEOUTS_MS.length && !signal.aborted; attempt++) {
     if (attempt > 0) {
       await waitForRetry(300 * attempt, signal);
       if (signal.aborted) break;
     }
-    const attemptSignal = AbortSignal.any([signal, AbortSignal.timeout(12000)]);
+    const attemptSignal = AbortSignal.any([signal, AbortSignal.timeout(PAGE_ATTEMPT_TIMEOUTS_MS[attempt])]);
     try {
       const response = await request(endpoint.href, { signal: attemptSignal, redirect: 'error', cache: 'no-store', headers: { Accept: 'application/json' } });
       if (!response.ok) {
