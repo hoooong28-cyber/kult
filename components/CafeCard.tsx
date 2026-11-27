@@ -62,7 +62,7 @@ export default function CafeCard({ cafe, isSelected = false, onSelect, onRequire
         <VenuePhoto cafe={cafe} />
         {/* Header: Name & Freshness Badge */}
         <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
-          <div>
+          <div className="min-w-0">
             <div className="flex items-baseline gap-2 flex-wrap">
               <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1c1c1a] group-hover:text-[#bf703a] transition-colors">
                 {cafe.name}
@@ -75,7 +75,7 @@ export default function CafeCard({ cafe, isSelected = false, onSelect, onRequire
               <MapPin className="w-3.5 h-3.5 text-[#bf703a] shrink-0" />
               <span className="font-semibold text-[#1c1c1a]">{cafe.neighborhood}</span>
               <span>•</span>
-              <span className="truncate max-w-[200px] sm:max-w-xs">{cafe.address}</span>
+              <span className="min-w-0 truncate max-w-[200px] sm:max-w-xs">{cafe.address}</span>
             </div>
           </div>
 

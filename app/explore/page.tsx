@@ -223,7 +223,7 @@ export default function HomePage() {
               <NaverMap cafes={filteredCafes} selectedCafeId={selectedCafeId} onSelectMarker={(id) => setSelectedCafeId(id)} height="650px" />
             </div>
           ) : filteredCafes.length === 0 ? (
-            <p role="status" className="text-sm text-[var(--kult-muted)]">{loading ? '장소를 불러오는 중이에요.' : '이 조건에서 사진을 확인한 장소는 아직 없어요.'}</p>
+            <p role="status" className="text-sm text-[var(--kult-muted)]">{loading ? '장소를 불러오는 중이에요.' : '이 조건에 맞는 장소가 아직 없어요.'}</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredCafes.map((cafe) => (

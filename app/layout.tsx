@@ -4,7 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'KULT Seoul · 서울 약속 장소 가이드',
   description:
-    '실제 사진으로 서울의 카페와 음식점을 둘러보고, 약속 장소를 친구에게 공유하세요.',
+    '사진과 KULT 일러스트로 서울의 카페와 음식점을 둘러보고, 약속 장소를 친구에게 공유하세요.',
   keywords: [
     'Seoul Expat Cafes',
     'Seoul Cafe Work',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'KULT Seoul · 서울 약속 장소 가이드',
-    description: 'Choose a place to meet in Seoul. Browse real venue photos and share your shortlist.',
+    description: 'Choose a place to meet in Seoul. Browse venue photos and KULT illustrations, then share your shortlist.',
     type: 'website',
     locale: 'ko_KR',
   },
