@@ -60,3 +60,13 @@ test('home uses a compact mobile headline and the shared main landmark', () => {
   assert.match(get('app/layout.tsx'), /<main\b/);
   assert.doesNotMatch(get('app/page.tsx'), /<main\b/);
 });
+
+test('mobile hero artwork grows with the viewport but preserves its short-screen cap', () => {
+  const css = get('app/entry.module.css');
+  const home = get('app/page.tsx');
+  for (const size of ['min(86vw, 340px, 39svh)', 'min(86vw, 340px, 35svh)']) {
+    assert.ok(css.includes('width: ' + size));
+    assert.ok(home.includes(size));
+  }
+  assert.match(css, /\.coverImage \{[\s\S]*?height: auto/);
+});

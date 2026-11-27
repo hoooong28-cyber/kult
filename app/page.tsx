@@ -33,7 +33,7 @@ export default async function HomePage({ searchParams }: Props) {
       </div>
       <div className={styles.cover}>
         <Image src="/brand/kult-cafe-cover.webp" alt="" width={1040} height={1300}
-          sizes="(max-width: 767px) and (max-height: 700px) min(70vw, 264px, 29svh), (max-width: 767px) min(70vw, 264px, 33svh), (max-width: 1200px) 39vw, 460px"
+          sizes="(max-width: 767px) and (max-height: 700px) min(86vw, 340px, 35svh), (max-width: 767px) min(86vw, 340px, 39svh), (max-width: 1200px) 39vw, 460px"
           className={styles.coverImage} />
       </div>
       <div className={styles.inner}>

@@ -94,3 +94,7 @@ Place the venue title and a purpose-specific reason on each card. Rank by the se
 Use the approved café illustration as the first visual, then the exact existing title, supporting line and purpose chooser. The title is a page heading, not the brand mark: use the mobile scale above and preserve the cover, editorial face and warm paper. Keep a little space before the chooser without moving its first action below the fold at 320×568 with default text settings. Test text at 200% for readable wrapping and reachable controls, not for above-the-fold placement. Preserve one main landmark and retain focus on the step heading after selecting a purpose.
 
 Reference for direction, not a KULT size requirement: [GOV.UK responsive type scale](https://design-system.service.gov.uk/styles/type-scale/) and [USWDS mobile typesetting](https://designsystem.digital.gov/components/typography/).
+
+### Stitch refinement: larger mobile illustration (2026-11-27)
+
+Give the approved art real presence: use the smaller of 86vw, 340px or 39% of the stable viewport height (35% at 700px height or less). At 390×844 that is about 329×412px. Preserve the full 4:5 illustration, paper blend, 27px title and existing desktop layout. The first purpose remains visible at 320×568 at normal text size. Hide the decoration on mobile after choosing a purpose.

@@ -39,14 +39,14 @@
   .intro h1 { margin: 8px 0 6px; font-size: clamp(1.625rem, 1.2rem + 2vw, 1.875rem); line-height: 1.23; letter-spacing: -.038em; }
   .dek { line-height: 1.4; }
   .chooser { margin-top: 6px; }
-  .cover { width: min(70vw, 264px, 33svh); justify-self: center; }
+  .cover { width: min(86vw, 340px, 39svh); justify-self: center; }
   /* The artwork introduces the home; it should not push neighborhoods off-screen. */
   .entry:has(.chooser[data-purpose-selected]) { grid-template-areas: "intro" "controls" "secondary"; row-gap: 12px; }
   .entry:has(.chooser[data-purpose-selected]) .cover { display: none; }
   .secondary { margin-top: 9px; }
 }
 @media (max-width: 767px) and (max-height: 700px) {
-  .cover { width: min(70vw, 264px, 29svh); }
+  .cover { width: min(86vw, 340px, 35svh); }
 }
 @media (prefers-reduced-motion: reduce) {
   .choice svg { transition: none; }
