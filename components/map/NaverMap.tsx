@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { MapLink } from '../Interaction';
+import { naverMapSearchUrl, naverVenueMapLink } from '@/lib/naverPlaceLinks';
 import { CuratedCafe } from '@/lib/types';
 import { MapPin, ExternalLink } from 'lucide-react';
 
@@ -184,6 +185,7 @@ export default function NaverMap({
   }, [selectedCafeId, cafes]);
 
   if (mapError || !mapLoaded) {
+    const target = cafes.find(cafe => cafe.id === selectedCafeId) ?? cafes[0];
     return (
       <div
         className={`relative w-full rounded-2xl bg-[#ffffff] border border-[#e5e2de] p-6 flex flex-col justify-between overflow-hidden shadow-xs ${className}`}
@@ -238,10 +240,8 @@ export default function NaverMap({
 
         <div className="relative z-10 flex items-center justify-between text-xs text-[#5e5e5d] border-t border-[#e5e2de] pt-3">
           <span>Click cafe pin to select and inspect notes</span>
-          <MapLink placeId={cafes[0]?.id}
-            href={`https://map.naver.com/v5/search/${encodeURIComponent(
-              cafes[0]?.address || '성수동 카페'
-            )}`}
+          <MapLink placeId={target?.id}
+            href={target ? naverVenueMapLink(target).href : naverMapSearchUrl('성수동 카페')}
             className="flex items-center gap-1 text-[#1c1c1a] hover:text-[#bf703a] font-mono font-semibold hover:underline"
           >
             <span>Open Naver Map</span>

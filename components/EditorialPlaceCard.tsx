@@ -1,3 +1,4 @@
+import { naverVenueMapLink } from '@/lib/naverPlaceLinks';
 import Link from 'next/link';
 import type { CuratedCafe } from '@/lib/types';
 import { getVenuePhoto } from '@/lib/venuePhotos';
@@ -11,9 +12,8 @@ export default function EditorialPlaceCard({ cafe, area, index, reason, reasonEn
 }) {
   if (cafe.is_demo || cafe.business_status === 'closed') return null;
   const hasPhoto = Boolean(getVenuePhoto(cafe));
-  const exactMap = cafe.naver_place_id && /^[1-9]\d*$/.test(cafe.naver_place_id)
-    ? 'https://map.naver.com/p/entry/place/' + cafe.naver_place_id : null;
-  const map = exactMap ?? 'https://map.naver.com/p/search/' + encodeURIComponent((cafe.name_local || cafe.name) + ' ' + cafe.address);
+  const map = naverVenueMapLink(cafe);
+  const exactMap = map.kind === 'place' ? map.href : null;
   return <article className={hasPhoto ? styles.card : `${styles.card} ${styles.textCard}`}>
     {hasPhoto && <VenuePhoto cafe={cafe} variant="editorial" eager={eagerPhoto} />}
     <div className={styles.cardCopy}>
@@ -23,7 +23,7 @@ export default function EditorialPlaceCard({ cafe, area, index, reason, reasonEn
       <p lang="en" className={styles.enReason}>{reasonEn}</p>
       <p className={styles.address}>{cafe.address}</p>
       <div className={styles.cardActions}>
-        <a href={map} target="_blank" rel="noopener noreferrer" className={styles.map}>지도 열기 <span aria-hidden="true">↗</span></a>
+        <a href={map.href} target="_blank" rel="noopener noreferrer" className={styles.map}>{exactMap ? '지도 열기' : '지도에서 상호 검색'} <span aria-hidden="true">↗</span></a>
         {!hasPhoto && exactMap && <a href={exactMap + '?placePath=%2Fphoto'} target="_blank" rel="noopener noreferrer" className={styles.map}>네이버 사진 보기 <span aria-hidden="true">↗</span></a>}
         <CopyPlaceAddress address={cafe.address} />
         {allowSave && <SavePlaceButton placeId={cafe.id} />}

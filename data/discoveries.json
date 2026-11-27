@@ -525,6 +525,7 @@
     "id": "discovery-mongtan-samgakji",
     "name": "Mongtan",
     "name_local": "몽탄",
+    "naver_place_id": "1810277002",
     "content_status": "discovered",
     "neighborhood": "용산구 · 삼각지",
     "address": "서울 용산구 백범로99길 50",

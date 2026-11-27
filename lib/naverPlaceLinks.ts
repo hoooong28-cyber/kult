@@ -45,3 +45,25 @@ export function ownerPlaceRoadKey(value: string): string {
   const parts = value.normalize('NFKC').trim().match(/^(.+?(?:대로|로|길))\s*(\d+(?:\s*-\s*\d+)?)/u);
   return parts ? `${ownerPlaceAddressKey(parts[1])}#${parts[2].replace(/\s/g, '')}` : '';
 }
+
+const validPlaceId = new RegExp(`^${idPattern}$`);
+
+export function naverMapSearchUrl(query: string): string {
+  const keyword = query.trim();
+  return keyword ? `https://map.naver.com/p/search/${encodeURIComponent(keyword)}` : 'https://map.naver.com/';
+}
+
+/** Prefer a catalog's verified Naver place ID. A fallback is a search, not a place link. */
+export function naverVenueMapLink(venue: {
+  naver_place_id?: string | null;
+  name_local?: string | null;
+  name?: string | null;
+  address?: string | null;
+}): { href: string; kind: 'place' | 'search' } {
+  const id = venue.naver_place_id;
+  if (typeof id === 'string' && validPlaceId.test(id)) {
+    return { href: canonicalNaverPlaceUrl(id), kind: 'place' };
+  }
+  const keyword = venue.name_local?.trim() || venue.name?.trim() || venue.address?.trim() || '';
+  return { href: naverMapSearchUrl(keyword), kind: 'search' };
+}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { naverVenueMapLink } from '@/lib/naverPlaceLinks';
 import Link from 'next/link';
 import { CuratedCafe } from '@/lib/types';
 import FreshnessBadge from './FreshnessBadge';
@@ -24,9 +25,7 @@ export default function CafeCard({ cafe, isSelected = false, onSelect, onRequire
   if (cafe.is_demo || cafe.business_status === 'closed') return null;
   const hasPhoto = Boolean(getVenuePhoto(cafe));
   if (!hasPhoto) {
-    const map = cafe.naver_place_id && /^[1-9]\d*$/.test(cafe.naver_place_id)
-      ? 'https://map.naver.com/p/entry/place/' + cafe.naver_place_id
-      : 'https://map.naver.com/p/search/' + encodeURIComponent((cafe.name_local || cafe.name) + ' ' + cafe.address);
+    const map = naverVenueMapLink(cafe);
     return <Impression event="place_impression" place_id={cafe.id} recommendation_source={source}>
       <article onClick={onSelect} className={`min-w-0 rounded-2xl border bg-white px-4 py-3 ${isSelected ? 'border-[var(--kult-ink)]' : 'border-[var(--kult-rule)]'}`}>
         <div className="flex items-start justify-between gap-2">
@@ -41,7 +40,7 @@ export default function CafeCard({ cafe, isSelected = false, onSelect, onRequire
         {cafe.notes && <p className="mt-2 text-sm leading-relaxed text-[var(--kult-ink)]">{cafe.notes}</p>}
         <p className="mt-1 text-xs leading-relaxed text-[var(--kult-muted)]">{cafe.address}</p>
         <div onClick={event => event.stopPropagation()} className="mt-1 flex flex-wrap items-center gap-x-3 text-xs underline underline-offset-2">
-          {(cafe.naver_place_id || cafe.address) && <MapLink href={map} placeId={cafe.id} className="inline-flex min-h-11 items-center">지도 열기 ↗</MapLink>}
+          {(cafe.naver_place_id || cafe.address) && <MapLink href={map.href} placeId={cafe.id} className="inline-flex min-h-11 items-center">{map.kind === 'place' ? '지도 열기' : '지도에서 상호 검색'} ↗</MapLink>}
           {cafe.discovery_source && <a href={cafe.discovery_source.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center">소개 출처 ↗</a>}
         </div>
       </article>

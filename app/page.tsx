@@ -25,22 +25,22 @@ export default async function HomePage({ searchParams }: Props) {
   return <div className={styles.page} lang="ko">
     <Header section="entry" />
     <main className={styles.entry} aria-labelledby="entry-title">
+      <div className={styles.intro}>
+        <p className={styles.eyebrow} lang="en"><span aria-hidden="true" /> THE SEOUL EDIT</p>
+        <h1 id="entry-title">오늘의 큐레이션 장소는?</h1>
+        <p className={styles.dek}>서울에서 골라둔 카페와 식당.</p>
+      </div>
+      <div className={styles.cover}>
+        <Image src="/brand/kult-cafe-cover.webp" alt="" width={1040} height={1300}
+          sizes="(max-width: 767px) min(57vw, 222px, 26svh), (max-width: 1200px) 39vw, 460px"
+          className={styles.coverImage} />
+      </div>
       <div className={styles.inner}>
-        <div className={styles.intro}>
-          <p className={styles.eyebrow} lang="en"><span aria-hidden="true" /> THE SEOUL EDIT</p>
-          <h1 id="entry-title">오늘의 큐레이션 장소는?</h1>
-          <p className={styles.dek}>서울에서 골라둔 카페와 식당.</p>
-        </div>
         <EntryChooser options={options} />
         <nav className={styles.importLinks} aria-label="네이버 지도 가져오기">
           <Link href="/archive#naver-import">네이버 지도 저장 목록 가져오기 <span aria-hidden="true">↗</span></Link>
           <Link href="/archive#naver-single">장소 하나 저장</Link>
         </nav>
-      </div>
-      <div className={styles.cover}>
-        <Image src="/brand/kult-cafe-cover.webp" alt="" width={1040} height={1300}
-          sizes="(max-width: 767px) min(84vw, 320px), (max-width: 1200px) 39vw, 460px"
-          className={styles.coverImage} />
       </div>
       <nav className={styles.secondary} aria-label="기타 메뉴">
         <Link href="/discoveries#pick-two">동네별로 보기</Link>

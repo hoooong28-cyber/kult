@@ -1,6 +1,7 @@
 .page { min-height: 77svh; background: var(--kult-paper); color: var(--kult-ink); font-family: var(--kult-font-body); }
-.entry { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; column-gap: clamp(32px, 7vw, 92px); row-gap: 30px; max-width: 1230px; margin-inline: auto; padding: clamp(40px, 8vh, 86px) clamp(24px, 5vw, 64px) 36px; }
-.inner { min-width: 0; }
+.entry { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); grid-template-areas: "intro cover" "controls cover" "secondary secondary"; grid-template-rows: auto 1fr auto; align-items: start; column-gap: clamp(32px, 7vw, 92px); max-width: 1230px; margin-inline: auto; padding: clamp(40px, 8vh, 86px) clamp(24px, 5vw, 64px) 36px; }
+.intro { grid-area: intro; min-width: 0; }
+.inner { grid-area: controls; min-width: 0; }
 .eyebrow { display: flex; align-items: center; gap: 9px; color: var(--kult-accent-text); font-size: .71rem; font-weight: 700; letter-spacing: .16em; }
 .eyebrow span { width: 20px; height: 1px; background: var(--kult-accent-text); }
 .intro h1 { margin: 13px 0 10px; font-family: var(--kult-font-display); font-size: clamp(2.2rem, 4.15vw, 3.25rem); font-weight: 700; line-height: 1.16; letter-spacing: -.053em; word-break: keep-all; overflow-wrap: anywhere; }
@@ -23,7 +24,7 @@
 .importLinks a:first-child { color: var(--kult-accent-text); font-weight: 700; }
 .importLinks a:not(:first-child), .secondary a, .empty { color: var(--kult-muted); }
 .empty { margin: 12px 0; font-size: .9rem; }
-.cover { min-width: 0; }
+.cover { grid-area: cover; min-width: 0; }
 /* Let the ink sit on KULT paper without changing the approved artwork. */
 .coverImage {
   display: block;
@@ -32,11 +33,12 @@
   filter: grayscale(1) contrast(1.10) brightness(1.045);
   mix-blend-mode: multiply;
 }
-.secondary { grid-column: 1 / -1; border-top: 1px solid var(--kult-rule); padding-top: 4px; }
+.secondary { grid-area: secondary; margin-top: 30px; border-top: 1px solid var(--kult-rule); padding-top: 4px; }
 @media (max-width: 767px) {
-  .entry { grid-template-columns: minmax(0, 1fr); padding: 24px 20px 22px; row-gap: 17px; }
-  .chooser { margin-top: 17px; }
-  .cover { width: min(84vw, 320px); justify-self: center; }
+  .entry { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "cover" "controls" "secondary"; grid-template-rows: auto; padding: 24px 20px 22px; row-gap: 12px; }
+  .chooser { margin-top: 0; }
+  .cover { width: min(57vw, 222px, 26svh); justify-self: center; }
+  .secondary { margin-top: 5px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .choice svg { transition: none; }

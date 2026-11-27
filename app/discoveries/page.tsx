@@ -1,3 +1,4 @@
+import { naverVenueMapLink } from '@/lib/naverPlaceLinks';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import { getMergedCafes } from '@/lib/curators';
@@ -64,9 +65,7 @@ export default async function DiscoveriesPage() {
             {cafe.discovery_source && <a href={cafe.discovery_source.url} target="_blank" rel="noopener noreferrer" className="text-xs underline underline-offset-4">소개 출처 · {cafe.discovery_source.published_at}</a>}
             <div className="mt-auto flex flex-wrap items-center gap-2 pt-3">
               <MapLink placeId={cafe.id}
-                href={cafe.naver_place_id && /^[1-9]\d*$/.test(cafe.naver_place_id)
-                  ? `https://map.naver.com/p/entry/place/${cafe.naver_place_id}`
-                  : `https://map.naver.com/p/search/${encodeURIComponent((cafe.name_local || cafe.name) + ' ' + cafe.address)}`}
+                href={naverVenueMapLink(cafe).href}
                 className="inline-flex min-h-11 items-center rounded-lg bg-[#201A15] px-3 py-2 text-xs font-semibold text-[#FCF9F5]">
                 지도에서 찾기 · Open map ↗
               </MapLink>

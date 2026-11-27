@@ -1,3 +1,4 @@
+import { naverMapSearchUrl, naverVenueMapLink } from '@/lib/naverPlaceLinks';
 import VenuePhoto from '@/components/VenuePhoto';
 import VenueMenu from '@/components/VenueMenu';
 import { getVenueMenu } from '@/lib/venueMenus';
@@ -90,6 +91,7 @@ export default async function CafeDetailPage({ params, searchParams }: PageProps
     );
   }
 
+  const map = naverVenueMapLink(cafe);
   const saveStatus = (await searchParams).save;
   const primaryCurator = cafe.curators[0];
   const hasVenueMenu = Boolean(getVenueMenu(cafe));
@@ -115,7 +117,7 @@ export default async function CafeDetailPage({ params, searchParams }: PageProps
       latitude: cafe.lat,
       longitude: cafe.lng,
     } : undefined,
-    hasMap: `https://map.naver.com/p/search/${encodeURIComponent(cafe.name_local + " " + cafe.address)}`,
+    hasMap: map.href,
     servesCuisine: 'Coffee, Desserts, Speciality Drinks',
   };
 
@@ -170,10 +172,10 @@ export default async function CafeDetailPage({ params, searchParams }: PageProps
             </div>
 
             <MapLink placeId={id}
-              href={cafe.naver_place_id ? `https://map.naver.com/p/entry/place/${cafe.naver_place_id}` : `https://map.naver.com/v5/search/${encodeURIComponent(cafe.name_local + " " + cafe.address)}`}
+              href={map.href}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 text-stone-950 font-semibold text-xs hover:bg-amber-300 shadow-md transition-colors self-start"
             >
-              <span>Open in NAVER Map</span>
+              <span>{map.kind === 'place' ? '네이버 지도에서 보기' : '네이버 지도에서 상호 검색'}</span>
               <ExternalLink className="w-4 h-4" />
             </MapLink>
           </div>
@@ -181,6 +183,8 @@ export default async function CafeDetailPage({ params, searchParams }: PageProps
           <p className="text-sm text-stone-300 mt-3 flex items-center gap-1.5">
             <MapPin className="w-4 h-4 text-stone-500 shrink-0" />
             <span>{cafe.address}</span>
+            {map.kind === 'search' && cafe.address?.trim() && <MapLink placeId={id}
+              href={naverMapSearchUrl(cafe.address)} className="inline-flex min-h-11 shrink-0 items-center underline underline-offset-4">주소로 검색</MapLink>}
           </p>
           {(hasVenuePhoto || hasVenueMenu) && <nav aria-label="사진과 메뉴 바로 가기" className="mt-2 flex flex-wrap gap-x-5 text-sm text-stone-200">
             {hasVenuePhoto && <a href="#venue-photo" className="inline-flex min-h-11 items-center underline underline-offset-4">공간 사진과 출처</a>}
@@ -336,7 +340,7 @@ export default async function CafeDetailPage({ params, searchParams }: PageProps
 
             <div className="pt-2">
               <span className="text-xs text-stone-400 block mb-2 font-medium">Interactive Map Location</span>
-              {cafe.lat !== null && cafe.lng !== null ? <NaverMap cafes={[cafe]} selectedCafeId={cafe.id} height="220px" /> : <p className="text-sm text-stone-400">정확한 지도 위치를 확인 중입니다. 위의 네이버 지도 링크에서 이름과 주소로 검색할 수 있어요.</p>}
+              {cafe.lat !== null && cafe.lng !== null ? <NaverMap cafes={[cafe]} selectedCafeId={cafe.id} height="220px" /> : <p className="text-sm text-stone-400">지도 위치가 표시되지 않으면 위의 네이버 지도 링크를 이용해 주세요.</p>}
             </div>
           </div>
         </section>
