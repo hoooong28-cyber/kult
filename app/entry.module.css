@@ -24,7 +24,14 @@
 .importLinks a:not(:first-child), .secondary a, .empty { color: var(--kult-muted); }
 .empty { margin: 12px 0; font-size: .9rem; }
 .cover { min-width: 0; }
-.coverImage { display: block; width: 100%; height: auto; }
+/* Let the ink sit on KULT paper without changing the approved artwork. */
+.coverImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1) contrast(1.10) brightness(1.045);
+  mix-blend-mode: multiply;
+}
 .secondary { grid-column: 1 / -1; border-top: 1px solid var(--kult-rule); padding-top: 4px; }
 @media (max-width: 767px) {
   .entry { grid-template-columns: minmax(0, 1fr); padding: 24px 20px 22px; row-gap: 17px; }
