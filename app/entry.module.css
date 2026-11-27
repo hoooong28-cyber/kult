@@ -32,6 +32,8 @@
   width: 100%;
   height: auto;
   filter: url("#kult-cover-ink");
+  pointer-events: none;
+  user-select: none;
 }
 .secondary { grid-area: secondary; margin-top: 30px; border-top: 1px solid var(--kult-rule); padding-top: 4px; }
 @media (max-width: 767px) {
@@ -40,15 +42,12 @@
   .dek { line-height: 1.4; }
   .chooser { margin-top: 6px; }
   /* Trim only unused paper: image marks start at row 89 and end at 1257. */
-  .cover { width: min(96vw, 440px, 46svh); justify-self: center; aspect-ratio: 1040 / 1184; overflow: hidden; }
+  .cover { width: min(100%, 86vw, 340px, 39svh, max(35svh, calc(58svh - 161px))); justify-self: start; aspect-ratio: 1040 / 1184; overflow: hidden; }
   .coverImage { transform: translateY(-6%); }
   /* The artwork introduces the home; it should not push neighborhoods off-screen. */
   .entry:has(.chooser[data-purpose-selected]) { grid-template-areas: "intro" "controls" "secondary"; row-gap: 12px; }
   .entry:has(.chooser[data-purpose-selected]) .cover { display: none; }
   .secondary { margin-top: 9px; }
-}
-@media (max-width: 767px) and (max-height: 700px) {
-  .cover { width: min(96vw, 440px, 41svh); }
 }
 @media (prefers-reduced-motion: reduce) {
   .choice svg { transition: none; }

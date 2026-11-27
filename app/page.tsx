@@ -34,20 +34,20 @@ export default async function HomePage({ searchParams }: Props) {
       <div className={styles.cover}>
         <svg className={styles.coverFilter} width="0" height="0" aria-hidden="true" focusable="false">
           <defs>
-            <filter id="kult-cover-ink" colorInterpolationFilters="sRGB">
+            <filter id="kult-cover-ink" x="0%" y="0%" width="100%" height="100%" colorInterpolationFilters="sRGB">
               <feColorMatrix type="matrix" values="
                 0 0 0 0 .11
                 0 0 0 0 .105
                 0 0 0 0 .095
-                -.2126 -.7152 -.0722 0 1" />
+                -.2126 -.7152 -.0722 1 0" />
               <feComponentTransfer>
                 <feFuncA type="linear" slope="1.18" intercept="-.10" />
               </feComponentTransfer>
             </filter>
           </defs>
         </svg>
-        <Image src="/brand/kult-cafe-cover.webp" alt="" width={1040} height={1300}
-          sizes="(max-width: 767px) and (max-height: 700px) min(96vw, 440px, 41svh), (max-width: 767px) min(96vw, 440px, 46svh), (max-width: 1200px) 39vw, 460px"
+        <Image src="/brand/kult-cafe-cover.webp" alt="" draggable={false} width={1040} height={1300}
+          sizes="(max-width: 767px) min(calc(100vw - 40px), 86vw, 340px, 39svh, max(35svh, calc(58svh - 161px))), (max-width: 1200px) 39vw, 460px"
           className={styles.coverImage} />
       </div>
       <div className={styles.inner}>
