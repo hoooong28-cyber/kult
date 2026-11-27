@@ -1,4 +1,5 @@
 import data from '../data/venue-photos.json' with { type: 'json' };
+import illustrationIds from '../data/venue-illustrations.json' with { type: 'json' };
 import policy from '../data/venue-photo-policy.json' with { type: 'json' };
 
 export type VenuePhotoRecord = {
@@ -20,4 +21,12 @@ export function getVenuePhoto(place: { id: string; address: string; is_demo?: bo
     && /^\/venues\/[a-zA-Z0-9_-]+\.(?:jpg|jpeg|png|webp|avif)$/.test(photo.src)
     && ['interior', 'coffee', 'food'].includes(photo.subject)
     && photo.alt.trim() && photo.credit.trim() && /^https:\/\//.test(photo.source_url) ? photo : null;
+}
+
+const illustrations = new Set(illustrationIds);
+
+export function getVenueIllustration(place: { id: string; is_demo?: boolean; business_status?: string }): string | null {
+  if (place.is_demo || place.business_status === 'closed' || policy.excluded_place_ids.includes(place.id)
+    || !illustrations.has(place.id)) return null;
+  return `/venue-art/${place.id}.svg`;
 }

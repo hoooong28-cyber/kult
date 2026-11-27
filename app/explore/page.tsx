@@ -138,8 +138,8 @@ export default function HomePage() {
         <section id="cover-story" lang="ko" className="grid items-center gap-6 rounded-2xl border border-[var(--kult-rule)] bg-[var(--kult-cream)] px-5 py-8 sm:px-8 lg:grid-cols-2 lg:py-11">
           <div>
             <p lang="en" className="text-xs font-bold tracking-[.2em] text-[var(--kult-accent-text)]">KULT / THE SEOUL EDIT</p>
-            <h1 className="my-4 text-5xl md:text-7xl leading-[.99] tracking-[-.06em] font-serif font-bold">우리, 오늘<br/>어디 갈래<span className="text-[var(--kult-accent-text)]">?</span></h1>
-            <p className="mb-5 text-sm leading-relaxed text-[var(--kult-muted)]">동네와 약속에 맞는 공간을 골라, 친구에게 보내요.<span lang="en" className="block text-xs mt-1">Find a place to meet in Seoul.</span></p>
+            <h1 className="my-4 text-5xl md:text-7xl leading-[.99] tracking-[-.06em] font-serif font-bold max-md:text-[clamp(1.625rem,1.2rem_+_2vw,1.875rem)] max-md:leading-[1.23] max-md:tracking-[-.038em] max-md:[overflow-wrap:anywhere]">우리, 오늘<br/>어디 갈래<span className="text-[var(--kult-accent-text)]">?</span></h1>
+            <p className="mb-5 text-sm leading-relaxed text-[var(--kult-muted)] max-md:text-base">동네와 약속에 맞는 공간을 골라, 친구에게 보내요.<span lang="en" className="block text-xs mt-1">Find a place to meet in Seoul.</span></p>
             <div className="flex flex-wrap gap-2">
               <Link href="/picks/seongsu-brunch-or-coffee" className="min-h-11 inline-flex items-center rounded-full bg-[var(--kult-ink)] px-4 text-[var(--kult-paper)] text-sm font-bold">성수 약속 ↗</Link>
               <Link href="/discoveries#pick-two" className="min-h-11 inline-flex items-center rounded-full border border-[var(--kult-rule)] px-4 text-[var(--kult-ink)] text-sm font-bold">다른 동네</Link>
@@ -157,7 +157,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-[#1C1C1A] pb-4 gap-4">
             <div>
               <span className="text-[11px] tracking-[0.2em] uppercase font-bold text-[var(--kult-accent-text)]">SECTION 03 / CARTOGRAPHY &amp; DIRECTORY</span>
-              <h3 className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-[#1C1C1A] mt-1">
+              <h3 className="font-serif text-2xl md:text-3xl font-bold tracking-tight max-md:text-[1.375rem] text-[#1C1C1A] mt-1">
                 Seoul City Gazette &amp; Cartography
               </h3>
             </div>

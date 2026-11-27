@@ -78,7 +78,7 @@ export default async function CafeDetailPage({ params, searchParams }: PageProps
             <ArrowLeft className="h-4 w-4" /> 내 KULT로 돌아가기
           </Link>
           <p className="inline-block rounded-lg border border-stone-700 bg-stone-800 px-3 py-1 text-sm font-semibold">영업 종료</p>
-          <h1 className="font-serif text-3xl font-bold">{cafe.name_local}</h1>
+          <h1 className="font-serif text-3xl font-bold max-md:text-[clamp(1.625rem,1.2rem_+_2vw,1.875rem)] max-md:leading-[1.23] max-md:tracking-[-.038em] max-md:[overflow-wrap:anywhere]">{cafe.name_local}</h1>
           <p className="text-sm text-stone-400">이전 주소: {cafe.address}</p>
           <p className="text-stone-300">이 지점은 영업을 종료했습니다. 기존에 저장한 장소를 다시 볼 수 있도록 이 기록은 남겨두었어요.</p>
           {cafe.closure_source_url && (
@@ -163,10 +163,10 @@ export default async function CafeDetailPage({ params, searchParams }: PageProps
 
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
             <div>
-              <h1 className="font-serif text-3xl sm:text-5xl font-extrabold text-stone-100 tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl font-extrabold text-stone-100 tracking-tight max-md:text-[clamp(1.625rem,1.2rem_+_2vw,1.875rem)] max-md:leading-[1.23] max-md:tracking-[-.038em] max-md:[overflow-wrap:anywhere]">
                 {cafe.name}
               </h1>
-              <p className="text-xl font-medium text-stone-400 mt-1">
+              <p className="text-xl font-medium text-stone-400 mt-1 max-md:text-base max-md:[overflow-wrap:anywhere]">
                 {cafe.name_local}
               </p>
             </div>
@@ -204,7 +204,7 @@ export default async function CafeDetailPage({ params, searchParams }: PageProps
             <span>{cafe.content_status === 'discovered' ? 'DISCOVERY NOTE · 발견 기록' : cafe.is_demo ? '테스트 장소 안내' : 'Curator Interview Commentary'}</span>
           </div>
 
-          <blockquote className="font-serif text-xl sm:text-2xl text-stone-100 italic leading-relaxed border-l-4 border-amber-400 pl-4 py-1">
+          <blockquote className="font-serif text-xl sm:text-2xl text-stone-100 italic leading-relaxed max-md:text-base max-md:[overflow-wrap:anywhere] border-l-4 border-amber-400 pl-4 py-1">
             "{cafe.notes}"
           </blockquote>
 

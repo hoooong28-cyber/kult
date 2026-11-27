@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" style="--paper:#fbf7ef;--accent:#c1c784">
+<rect width="640" height="400" fill="#eeecd9"/>
+<rect x="24" y="24" width="592" height="352" rx="6" fill="none" stroke="#575e39" opacity=".26"/>
+<g transform="translate(0 43)" fill="none" stroke="#575e39" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M103 230Q307 190 539 229" opacity=".38" stroke-width="1.5"/>
+<g transform="translate(211 167) scale(0.86)" opacity=".8"><path d="M-97 43l51-73 34 43 57-82L99 44Zm71-39 16-23L8-7l37-62M22-36l20 14 21-15" fill="none"/></g>
+<g transform="translate(381 150) scale(1.26)"><path d="M-78 73V-15a78 78 0 0 1 156 0v88ZM-61 62v-75a61 61 0 0 1 122 0v75Zm61-134V62M-61-5H61" fill="none"/></g>
+</g>
+<g fill="#575e39" font-family="Georgia,serif" font-size="15" letter-spacing="3"><text x="43" y="53">KULT FIELD NOTES</text><text text-anchor="end" x="598" y="356">22</text></g>
+</svg>

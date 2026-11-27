@@ -34,9 +34,9 @@ export default async function DiscoveriesPage() {
     <Header section="discoveries" />
     <div className="max-w-7xl mx-auto px-4 md:px-12 py-8">
       <p lang="en" className="text-xs font-semibold tracking-widest text-[#8B4829]">SEOUL SHORTLIST</p>
-      <h1 className="font-serif text-4xl sm:text-5xl my-5">오늘 갈 곳, 동네부터 고르세요.</h1>
+      <h1 className="font-serif text-4xl sm:text-5xl my-5 max-md:text-[clamp(1.625rem,1.2rem_+_2vw,1.875rem)] max-md:leading-[1.23] max-md:tracking-[-.038em] max-md:[overflow-wrap:anywhere] max-md:break-keep">오늘 갈 곳, 동네부터 고르세요.</h1>
       <p lang="en" className="text-sm font-medium text-[#554A3F]">Pick a neighborhood. Open a map when you find your spot.</p>
-      <p className="max-w-2xl text-sm leading-7 text-[#706F6C] mt-2">동네와 약속을 고르면, 왜 골랐는지와 지도 링크를 볼 수 있어요.</p>
+      <p className="max-w-2xl text-sm leading-7 text-[#706F6C] mt-2 max-md:text-base">동네와 약속을 고르면, 왜 골랐는지와 지도 링크를 볼 수 있어요.</p>
       {featuredPicks.length > 0 && <section id="pick-two" className="mb-8 mt-7 scroll-mt-6 rounded-2xl bg-[var(--kult-cream)] border border-[var(--kult-rule)] p-5 sm:p-7">
         <h2 className="text-xl font-semibold">약속 장소, 후보만 빠르게 골라요.</h2>
         <p lang="en" className="mt-1 text-sm text-stone-700">Compare a few places, then send the link to a friend.</p>
@@ -59,9 +59,9 @@ export default async function DiscoveriesPage() {
           <article className="h-full rounded-2xl border border-[#E6DFD3] bg-white p-4 sm:p-5 flex flex-col gap-2.5">
             <VenuePhoto cafe={cafe} />
             <p className="text-xs text-[var(--kult-accent-text)]">{cafe.neighborhood} · 방문 미확인</p>
-            <SourceLink source="editorial" href={`/cafe/${cafe.id}`} className="font-serif text-2xl hover:underline">{cafe.name_local}</SourceLink>
-            <p className="text-sm leading-6 text-[#706F6C]">{cafe.notes}</p>
-            <p className="text-xs text-[#706F6C]">{cafe.address}</p>
+            <SourceLink source="editorial" href={`/cafe/${cafe.id}`} className="font-serif text-2xl hover:underline max-md:text-xl max-md:[overflow-wrap:anywhere]">{cafe.name_local}</SourceLink>
+            <p className="text-sm leading-6 text-[#706F6C] max-md:text-base">{cafe.notes}</p>
+            <p className="text-xs text-[#706F6C] max-md:text-sm">{cafe.address}</p>
             {cafe.discovery_source && <a href={cafe.discovery_source.url} target="_blank" rel="noopener noreferrer" className="text-xs underline underline-offset-4">소개 출처 · {cafe.discovery_source.published_at}</a>}
             <div className="mt-auto flex flex-wrap items-center gap-2 pt-3">
               <MapLink placeId={cafe.id}

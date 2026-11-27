@@ -28,6 +28,7 @@ export default function CafeCard({ cafe, isSelected = false, onSelect, onRequire
     const map = naverVenueMapLink(cafe);
     return <Impression event="place_impression" place_id={cafe.id} recommendation_source={source}>
       <article onClick={onSelect} className={`min-w-0 rounded-2xl border bg-white px-4 py-3 ${isSelected ? 'border-[var(--kult-ink)]' : 'border-[var(--kult-rule)]'}`}>
+        <VenuePhoto cafe={cafe} />
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
             <p className="text-xs text-[var(--kult-accent-text)]">{cafe.neighborhood}</p>

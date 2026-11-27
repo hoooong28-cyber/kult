@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" style="--paper:#fbf7ef;--accent:#c1c784">
+<rect width="640" height="400" fill="#eeecd9"/>
+<rect x="24" y="24" width="592" height="352" rx="6" fill="none" stroke="#575e39" opacity=".26"/>
+<g transform="translate(0 43)" fill="none" stroke="#575e39" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M102 229h451" opacity=".38" stroke-width="1.5"/>
+<g transform="translate(437 162) scale(0.94)" opacity=".8"><ellipse cx="0" cy="45" rx="79" ry="16" fill="none"/><path d="M-51-11Q-51 43 0 49Q52 43 53-11Z" fill="var(--paper)"/><ellipse cy="-11" rx="52" ry="19" fill="var(--accent)"/><path d="M53-4C105-28 100 33 45 32M-17-15q17 16 34 0M-8-63q-14 11 0 20m20-26q-14 11 0 20" fill="none"/></g>
+<g transform="translate(265 155) scale(1.2)"><path d="M-60-12Q-54 44 0 46t60-58" fill="var(--paper)"/><ellipse cy="-12" rx="60" ry="22" fill="var(--accent)"/><path d="M-42-14Q-9 5 24-16m-31-8 28-63h12L17-22M22-42l8 3m-4-14 8 3" fill="none"/></g>
+</g>
+<g fill="#575e39" font-family="Georgia,serif" font-size="15" letter-spacing="3"><text x="43" y="53">KULT FIELD NOTES</text><text text-anchor="end" x="598" y="356">04</text></g>
+</svg>

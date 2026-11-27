@@ -1,7 +1,7 @@
 import { naverVenueMapLink } from '@/lib/naverPlaceLinks';
 import Link from 'next/link';
 import type { CuratedCafe } from '@/lib/types';
-import { getVenuePhoto } from '@/lib/venuePhotos';
+import { getVenueIllustration, getVenuePhoto } from '@/lib/venuePhotos';
 import VenuePhoto from './VenuePhoto';
 import CopyPlaceAddress from './CopyPlaceAddress';
 import SavePlaceButton from './SavePlaceButton';
@@ -12,10 +12,11 @@ export default function EditorialPlaceCard({ cafe, area, index, reason, reasonEn
 }) {
   if (cafe.is_demo || cafe.business_status === 'closed') return null;
   const hasPhoto = Boolean(getVenuePhoto(cafe));
+  const hasVisual = hasPhoto || Boolean(getVenueIllustration(cafe));
   const map = naverVenueMapLink(cafe);
   const exactMap = map.kind === 'place' ? map.href : null;
-  return <article className={hasPhoto ? styles.card : `${styles.card} ${styles.textCard}`}>
-    {hasPhoto && <VenuePhoto cafe={cafe} variant="editorial" eager={eagerPhoto} />}
+  return <article className={hasVisual ? styles.card : `${styles.card} ${styles.textCard}`}>
+    {hasVisual && <VenuePhoto cafe={cafe} variant="editorial" eager={eagerPhoto} />}
     <div className={styles.cardCopy}>
       <p className={styles.cardKicker}>{String(index + 1).padStart(2, '0')} / {area}</p>
       <h3><Link href={'/cafe/' + cafe.id}>{cafe.name_local || cafe.name} <span aria-hidden="true">↗</span></Link></h3>

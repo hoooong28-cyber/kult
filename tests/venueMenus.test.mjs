@@ -82,8 +82,8 @@ test('menu board requires explicit exact-place Naver filter and independent veri
   assert.equal(getExactBoard('2051980514', { ...board, verifiedDate: '' }), undefined);
 });
 
-test('detail photo renders CUCO image alt and attribution, but no placeholder for Always or MNA', async () => {
-  const [{ readFileSync }, { default: ts }, { createElement }, { renderToStaticMarkup }, jsx, { getVenuePhoto }] = await Promise.all([
+test('venue visuals prefer a verified photo and label original illustrations', async () => {
+  const [{ readFileSync }, { default: ts }, { createElement }, { renderToStaticMarkup }, jsx, { getVenueIllustration, getVenuePhoto }] = await Promise.all([
     import('node:fs'), import('typescript'), import('react'), import('react-dom/server'), import('react/jsx-runtime'), import('../lib/venuePhotos.ts'),
   ]);
   const output = ts.transpileModule(readFileSync(new URL('../components/VenuePhoto.tsx', import.meta.url), 'utf8'), {
@@ -92,7 +92,7 @@ test('detail photo renders CUCO image alt and attribution, but no placeholder fo
   const module = { exports: {} };
   const require = name => {
     if (name === 'react/jsx-runtime') return jsx;
-    if (name === '@/lib/venuePhotos') return { getVenuePhoto };
+    if (name === '@/lib/venuePhotos') return { getVenueIllustration, getVenuePhoto };
     if (name === 'next/image') return { default: ({ src, alt }) => createElement('img', { src, alt }) };
     assert.fail('Unexpected dependency: ' + name);
   };
@@ -102,6 +102,12 @@ test('detail photo renders CUCO image alt and attribution, but no placeholder fo
   assert.match(html, /id="venue-photo"/);
   assert.match(html, /<img[^>]+alt="쿠코 성수의 원목 테이블/);
   assert.match(html, /href="https:\/\/nmjt\.kr\/cuco"[^>]*>사진 출처 · CUCO \/ Studio NMJT/);
-  assert.equal(render(mna), '');
-  assert.equal(render(discoveries.find(row => row.id === 'discovery-always-august-samgakji')), '');
+  assert.doesNotMatch(html, /실제 공간 사진이 아니에요/);
+  const mnaHtml = render(mna);
+  assert.match(mnaHtml, /src="\/venue-art\/discovery-mna-samgakji\.svg"/);
+  assert.match(mnaHtml, /KULT 일러스트 · 실제 공간 사진이 아니에요/);
+  assert.doesNotMatch(mnaHtml, /사진 출처/);
+  assert.match(render(discoveries.find(row => row.id === 'discovery-always-august-samgakji')), /src="\/venue-art\/discovery-always-august-samgakji\.svg"/);
+  assert.equal(render({...mna, is_demo: true}), '');
+  assert.equal(render({...mna, business_status: 'closed'}), '');
 });

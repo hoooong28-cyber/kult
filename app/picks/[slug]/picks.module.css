@@ -54,3 +54,12 @@
 .areaCount{flex:0 0 auto;font-size:.83rem;font-weight:500;color:var(--kult-muted);font-variant-numeric:tabular-nums}
 .areaCount span{margin-left:.45rem;color:var(--kult-accent-text)}
 .purposeSummary{margin:0 0 14px;font-size:.9rem;color:var(--kult-muted);line-height:1.5}
+
+/* Match the mobile home title scale across the public picks journey. */
+@media(max-width:767px){
+  .intro h1,.resultIntro h1{font-size:clamp(1.625rem,1.2rem + 2vw,1.875rem);line-height:1.23;letter-spacing:-.038em;overflow-wrap:anywhere}
+  .sectionHead h2{font-size:1.375rem;letter-spacing:-.038em;overflow-wrap:anywhere}
+  .card h3{font-size:1.25rem;letter-spacing:-.03em;overflow-wrap:anywhere}
+  .dek,.reason{font-size:1rem}
+  .enReason,.address{font-size:.875rem;overflow-wrap:anywhere}
+}

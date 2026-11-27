@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" style="--paper:#fbf7ef;--accent:#c2a58c">
+<rect width="640" height="400" fill="#ece5dd"/>
+<rect x="24" y="24" width="592" height="352" rx="6" fill="none" stroke="#644a3c" opacity=".26"/>
+<g transform="translate(0 43)" fill="none" stroke="#644a3c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M103 230Q307 190 539 229" opacity=".38" stroke-width="1.5"/>
+<g transform="translate(211 167) scale(0.86)" opacity=".8"><ellipse cy="43" rx="76" ry="13" fill="none"/><path d="M-58 32v-29L42-42l14 66Z" fill="var(--paper)"/><path d="M-58 3L56-7M-58 17L56 7" fill="none"/><path d="M18-38q-5-18 9-18t9 13" fill="var(--accent)"/></g>
+<g transform="translate(381 150) scale(1.26)"><g fill="var(--accent)"><ellipse rx="20" ry="29" transform="translate(-31 10)rotate(32)"/><ellipse rx="18" ry="26" transform="translate(23 -5)rotate(-23)"/><ellipse rx="16" ry="24" transform="translate(53 20)rotate(53)"/></g><path d="M-19-12q-6 8-11 23t-15 22M14-28q2 13 12 23t8 19M72 5q-8 12-20 14T36 36" fill="none"/></g>
+</g>
+<g fill="#644a3c" font-family="Georgia,serif" font-size="15" letter-spacing="3"><text x="43" y="53">KULT FIELD NOTES</text><text text-anchor="end" x="598" y="356">16</text></g>
+</svg>
