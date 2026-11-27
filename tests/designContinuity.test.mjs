@@ -17,9 +17,13 @@ test('main KULT discovery surfaces use the same masthead and live brand base', (
   assert.doesNotMatch(get('app/page.tsx'), /<VenuePhoto|<NaverMap|어떤 약속이에요/);
   assert.match(get('app/explore/page.tsx'), /삼각지 약속/);
   const home = get('app/page.tsx');
-  assert.match(home, /href=\{['"]\/\?purpose=['"] \+ option\.id\}/);
-  assert.match(home, /area\.slug \+ ['"]\?purpose=['"] \+ purpose\.id/);
-  assert.match(home, /resolvePickPurpose\(\(await searchParams\)\.purpose\)/);
+  const chooser = get('app/EntryChooser.tsx');
+  assert.match(home, /<EntryChooser options=\{options\}/);
+  assert.match(chooser, /href=\{['"]\/\?purpose=['"] \+ option\.id\}/);
+  assert.match(chooser, /area\.slug \+ ['"]\?purpose=['"] \+ purpose\.id/);
+  assert.match(chooser, /useSearchParams\(\)\.getAll\('purpose'\)/);
+  assert.match(chooser, /window\.history\.pushState/);
+  assert.match(home, /getMergedCafes\(\{ resolveMapCoordinates: false \}\)/);
   assert.match(home, /\/archive#naver-import/);
   assert.match(home, /cuco-seongsu-interior\.jpg/);
   assert.match(get('app/picks/area/page.tsx'), /어느 동네로 갈까요\?/);
