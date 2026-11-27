@@ -23,15 +23,13 @@
 .importLinks a:first-child { color: var(--kult-accent-text); font-weight: 700; }
 .importLinks a:not(:first-child), .secondary a, .empty { color: var(--kult-muted); }
 .empty { margin: 12px 0; font-size: .9rem; }
-.photo { min-width: 0; margin: 0; }
-.photoFrame { position: relative; overflow: hidden; aspect-ratio: 4 / 5; background: var(--kult-cream); }
-.photoFrame img { object-fit: cover; }
-.photo figcaption { margin-top: 9px; color: var(--kult-muted); font-size: .77rem; }
+.cover { min-width: 0; }
+.coverImage { display: block; width: 100%; height: auto; }
 .secondary { grid-column: 1 / -1; border-top: 1px solid var(--kult-rule); padding-top: 4px; }
 @media (max-width: 767px) {
   .entry { grid-template-columns: minmax(0, 1fr); padding: 24px 20px 22px; row-gap: 17px; }
   .chooser { margin-top: 17px; }
-  .photoFrame { aspect-ratio: 16 / 9; }
+  .cover { width: min(84vw, 320px); justify-self: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   .choice svg { transition: none; }

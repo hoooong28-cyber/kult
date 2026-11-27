@@ -25,7 +25,9 @@ test('main KULT discovery surfaces use the same masthead and live brand base', (
   assert.match(chooser, /window\.history\.pushState/);
   assert.match(home, /getMergedCafes\(\{ resolveMapCoordinates: false \}\)/);
   assert.match(home, /\/archive#naver-import/);
-  assert.match(home, /cuco-seongsu-interior\.jpg/);
+  assert.match(home, /\/brand\/kult-cafe-cover\.webp" alt=""/);
+  assert.doesNotMatch(home, /cuco-seongsu-interior\.jpg|<figcaption>성수 · 쿠코/);
+  assert.ok(fs.existsSync(new URL('../public/venues/cuco-seongsu-interior.jpg', import.meta.url)));
   assert.match(get('app/picks/area/page.tsx'), /어느 동네로 갈까요\?/);
   assert.match(get('app/picks/area/page.tsx'), /area\.slug \+ '\?purpose=' \+ purpose\.id/);
   for (const page of ['app/page.tsx', 'app/explore/page.tsx', 'app/discoveries/page.tsx', 'app/picks/page.tsx', 'app/picks/[slug]/page.tsx']) {

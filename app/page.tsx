@@ -37,13 +37,11 @@ export default async function HomePage({ searchParams }: Props) {
           <Link href="/archive#naver-single">장소 하나 저장</Link>
         </nav>
       </div>
-      <figure className={styles.photo}>
-        <div className={styles.photoFrame}>
-          <Image src="/venues/cuco-seongsu-interior.jpg" alt="성수 쿠코의 실내" fill
-            sizes="(max-width: 767px) 94vw, (max-width: 1200px) 44vw, 530px" />
-        </div>
-        <figcaption>성수 · 쿠코</figcaption>
-      </figure>
+      <div className={styles.cover}>
+        <Image src="/brand/kult-cafe-cover.webp" alt="" width={1040} height={1300}
+          sizes="(max-width: 767px) min(84vw, 320px), (max-width: 1200px) 39vw, 460px"
+          className={styles.coverImage} />
+      </div>
       <nav className={styles.secondary} aria-label="기타 메뉴">
         <Link href="/discoveries#pick-two">동네별로 보기</Link>
         <Link href="/archive">내 아카이브</Link>
