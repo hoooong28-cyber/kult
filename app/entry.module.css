@@ -36,9 +36,9 @@
 .secondary { grid-area: secondary; margin-top: 30px; border-top: 1px solid var(--kult-rule); padding-top: 4px; }
 @media (max-width: 767px) {
   .entry { grid-template-columns: minmax(0, 1fr); grid-template-areas: "cover" "intro" "controls" "secondary"; grid-template-rows: auto; padding: 12px 20px 22px; row-gap: 5px; }
-  .intro h1 { margin: 8px 0 5px; font-size: clamp(2.12rem, 10.4vw, 3.05rem); line-height: 1.1; }
+  .intro h1 { margin: 8px 0 6px; font-size: clamp(1.625rem, 1.2rem + 2vw, 1.875rem); line-height: 1.23; letter-spacing: -.038em; }
   .dek { line-height: 1.4; }
-  .chooser { margin-top: 0; }
+  .chooser { margin-top: 6px; }
   .cover { width: min(70vw, 264px, 33svh); justify-self: center; }
   /* The artwork introduces the home; it should not push neighborhoods off-screen. */
   .entry:has(.chooser[data-purpose-selected]) { grid-template-areas: "intro" "controls" "secondary"; row-gap: 12px; }

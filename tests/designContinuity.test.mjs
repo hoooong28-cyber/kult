@@ -54,3 +54,9 @@ test('mobile KULT leads with the artwork, then prioritizes neighborhoods after a
   assert.match(get('app/EntryChooser.tsx'), /data-purpose-selected=/);
   assert.match(layout, /\.entry:has\(\.chooser\[data-purpose-selected\]\) \.cover \{ display: none; \}/);
 });
+
+test('home uses a compact mobile headline and the shared main landmark', () => {
+  assert.match(get('app/entry.module.css'), /font-size: clamp\(1\.625rem, 1\.2rem \+ 2vw, 1\.875rem\); line-height: 1\.23/);
+  assert.match(get('app/layout.tsx'), /<main\b/);
+  assert.doesNotMatch(get('app/page.tsx'), /<main\b/);
+});

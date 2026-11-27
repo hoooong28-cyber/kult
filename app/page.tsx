@@ -25,7 +25,7 @@ export default async function HomePage({ searchParams }: Props) {
 
   return <div className={styles.page} lang="ko">
     <Header section="entry" />
-    <main className={styles.entry} aria-labelledby="entry-title">
+    <section className={styles.entry} aria-labelledby="entry-title">
       <div className={styles.intro}>
         <p className={styles.eyebrow} lang="en"><span aria-hidden="true" /> THE SEOUL EDIT</p>
         <h1 id="entry-title">오늘의 큐레이션 장소는?</h1>
@@ -49,6 +49,6 @@ export default async function HomePage({ searchParams }: Props) {
         {(kultMemberSettings() || process.env.NODE_ENV === 'development') && <Link href="/taste-neighbors">취향이 닮은 사람</Link>}
         <Link href="/collections/k-seoul-evenings">K가 고른 서울의 저녁</Link>
       </nav>
-    </main>
+    </section>
   </div>;
 }

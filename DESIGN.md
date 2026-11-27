@@ -27,7 +27,7 @@ Keep navigation ink-first; don't put tiny white text on the brighter terracotta.
 
 - Preserve KULT's existing Playfair Display for Latin display and local KULT Hangul Editorial (Noto Serif CJK KR Bold) for Korean. If the preview cannot access local assets, use Noto Serif KR Bold rather than distorting Hangul.
 - Body: existing Source Sans 3 and KULT Hangul Sans (Noto Sans CJK KR); 15–16px, 1.55–1.65 leading, 65ch maximum. Captions: 12–13px.
-- Home display: 38–42px around 390px, up to 72px desktop, weight 700, line-height 1.12, tracking no tighter than −0.055em. Keep ‘오늘 어디 갈까요?’ together where possible; never break a Korean word.
+- Home title: 26–30px on mobile (27px around 390px), line-height 1.23, letter-spacing −0.038em. Supporting text stays 16px: aim for roughly 1.7× title-to-body sizing rather than a display banner. Preserve the desktop scale. Let the Korean title wrap naturally at larger text settings.
 - Result heading: 32px on mobile, up to 52px desktop. Korean first and English as a quieter guide cue. No Inter or generic default serif as the visible design face; no condensed pseudo-Hangul.
 
 ## 4. Component Stylings and Copy
@@ -88,3 +88,9 @@ Reference patterns: [Catchtable](https://apps.apple.com/kr/app/%EC%BA%90%EC%B9%9
 ### Stitch refinement: purpose-first recommendation cards
 
 Place the venue title and a purpose-specific reason on each card. Rank by the selected occasion, not photo inventory; prefer distinct leads when legitimate options exist, never force uniqueness by inventing a venue. An overlap remains reasonable when distinguishable reasons support both. The first approved exact-branch photo is visible on the result list and loads eagerly; other validated images may load lazily. If no approved image is available, keep the compact card and link the verified Naver photo gallery without embedding, copying or staging a fake photo. Keep the palette, existing hierarchy, and no-placeholder rule.
+
+### Stitch refinement: mobile home hierarchy (2026-11-27)
+
+Use the approved café illustration as the first visual, then the exact existing title, supporting line and purpose chooser. The title is a page heading, not the brand mark: use the mobile scale above and preserve the cover, editorial face and warm paper. Keep a little space before the chooser without moving its first action below the fold at 320×568 with default text settings. Test text at 200% for readable wrapping and reachable controls, not for above-the-fold placement. Preserve one main landmark and retain focus on the step heading after selecting a purpose.
+
+Reference for direction, not a KULT size requirement: [GOV.UK responsive type scale](https://design-system.service.gov.uk/styles/type-scale/) and [USWDS mobile typesetting](https://designsystem.digital.gov/components/typography/).
