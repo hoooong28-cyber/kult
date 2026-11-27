@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 import EntryChooser from './EntryChooser';
 import Header from '@/components/Header';
 import { getMergedCafes } from '@/lib/curators';
@@ -32,13 +33,13 @@ export default async function HomePage({ searchParams }: Props) {
       </div>
       <div className={styles.cover}>
         <Image src="/brand/kult-cafe-cover.webp" alt="" width={1040} height={1300}
-          sizes="(max-width: 767px) min(57vw, 222px, 26svh), (max-width: 1200px) 39vw, 460px"
+          sizes="(max-width: 767px) and (max-height: 700px) min(70vw, 264px, 29svh), (max-width: 767px) min(70vw, 264px, 33svh), (max-width: 1200px) 39vw, 460px"
           className={styles.coverImage} />
       </div>
       <div className={styles.inner}>
         <EntryChooser options={options} />
         <nav className={styles.importLinks} aria-label="네이버 지도 가져오기">
-          <Link href="/archive#naver-import">네이버 지도 저장 목록 가져오기 <span aria-hidden="true">↗</span></Link>
+          <Link href="/archive#naver-import">네이버 지도 저장 목록 가져오기 <ArrowUpRight size={13} strokeWidth={1.6} aria-hidden="true" /></Link>
           <Link href="/archive#naver-single">장소 하나 저장</Link>
         </nav>
       </div>

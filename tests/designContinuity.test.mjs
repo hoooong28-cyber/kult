@@ -44,3 +44,12 @@ test('four Hangul font subsets are self-hosted and carry an open-font notice', (
   }
   assert.match(get('public/fonts/OFL-notice.txt'), /SIL OPEN FONT LICENSE Version 1\.1/);
 });
+
+test('mobile KULT keeps the artwork between title and controls, then prioritizes neighborhoods', () => {
+  const home = get('app/page.tsx');
+  const layout = get('app/entry.module.css');
+  assert.ok(home.indexOf('id="entry-title"') < home.indexOf('className={styles.cover}'));
+  assert.ok(home.indexOf('className={styles.cover}') < home.indexOf('<EntryChooser'));
+  assert.match(get('app/EntryChooser.tsx'), /data-purpose-selected=/);
+  assert.match(layout, /\.entry:has\(\.chooser\[data-purpose-selected\]\) \.cover \{ display: none; \}/);
+});

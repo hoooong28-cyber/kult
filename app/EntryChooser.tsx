@@ -27,7 +27,7 @@ export default function EntryChooser({ options }: { options: Option[] }) {
     title.current?.focus({ preventScroll: true });
   }
 
-  return <section className={styles.chooser} aria-labelledby="entry-choice-title">
+  return <section className={styles.chooser} data-purpose-selected={purpose ? 'true' : undefined} aria-labelledby="entry-choice-title">
     <div className={styles.choiceHeader}>
       <h2 ref={title} tabIndex={-1} id="entry-choice-title"><span className={styles.choiceStep} aria-hidden="true">{purpose ? '02' : '01'}</span>{purpose ? '동네' : '방문 목적'}</h2>
       {purpose && <a href="/" onClick={changePurpose} className={styles.editChoice} aria-label={purpose.label + ' · 목적 바꾸기'}>
