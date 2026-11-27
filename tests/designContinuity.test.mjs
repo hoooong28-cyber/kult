@@ -61,12 +61,17 @@ test('home uses a compact mobile headline and the shared main landmark', () => {
   assert.doesNotMatch(get('app/page.tsx'), /<main\b/);
 });
 
-test('mobile hero artwork grows with the viewport but preserves its short-screen cap', () => {
+test('mobile artwork fills more width and draws ink without a second paper color', () => {
   const css = get('app/entry.module.css');
   const home = get('app/page.tsx');
-  for (const size of ['min(86vw, 340px, 39svh)', 'min(86vw, 340px, 35svh)']) {
+  for (const size of ['min(96vw, 440px, 46svh)', 'min(96vw, 440px, 41svh)']) {
     assert.ok(css.includes('width: ' + size));
     assert.ok(home.includes(size));
   }
   assert.match(css, /\.coverImage \{[\s\S]*?height: auto/);
+  assert.match(css, /aspect-ratio: 1040 \/ 1184/);
+  assert.match(css, /filter: url\("#kult-cover-ink"\)/);
+  assert.doesNotMatch(css, /mix-blend-mode/);
+  assert.match(home, /<filter id="kult-cover-ink" colorInterpolationFilters="sRGB">/);
+  assert.match(home, /<feFuncA type="linear" slope="1.18" intercept="-.10"/);
 });

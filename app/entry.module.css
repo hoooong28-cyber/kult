@@ -25,13 +25,13 @@
 .importLinks a:not(:first-child), .secondary a, .empty { color: var(--kult-muted); }
 .empty { margin: 12px 0; font-size: .9rem; }
 .cover { grid-area: cover; min-width: 0; }
-/* Let the ink sit on KULT paper without changing the approved artwork. */
+/* Remove the source paper, rather than blending two different paper colors. */
+.coverFilter { position: absolute; pointer-events: none; }
 .coverImage {
   display: block;
   width: 100%;
   height: auto;
-  filter: grayscale(1) contrast(1.10) brightness(1.045);
-  mix-blend-mode: multiply;
+  filter: url("#kult-cover-ink");
 }
 .secondary { grid-area: secondary; margin-top: 30px; border-top: 1px solid var(--kult-rule); padding-top: 4px; }
 @media (max-width: 767px) {
@@ -39,14 +39,16 @@
   .intro h1 { margin: 8px 0 6px; font-size: clamp(1.625rem, 1.2rem + 2vw, 1.875rem); line-height: 1.23; letter-spacing: -.038em; }
   .dek { line-height: 1.4; }
   .chooser { margin-top: 6px; }
-  .cover { width: min(86vw, 340px, 39svh); justify-self: center; }
+  /* Trim only unused paper: image marks start at row 89 and end at 1257. */
+  .cover { width: min(96vw, 440px, 46svh); justify-self: center; aspect-ratio: 1040 / 1184; overflow: hidden; }
+  .coverImage { transform: translateY(-6%); }
   /* The artwork introduces the home; it should not push neighborhoods off-screen. */
   .entry:has(.chooser[data-purpose-selected]) { grid-template-areas: "intro" "controls" "secondary"; row-gap: 12px; }
   .entry:has(.chooser[data-purpose-selected]) .cover { display: none; }
   .secondary { margin-top: 9px; }
 }
 @media (max-width: 767px) and (max-height: 700px) {
-  .cover { width: min(86vw, 340px, 35svh); }
+  .cover { width: min(96vw, 440px, 41svh); }
 }
 @media (prefers-reduced-motion: reduce) {
   .choice svg { transition: none; }

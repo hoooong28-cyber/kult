@@ -95,6 +95,6 @@ Use the approved café illustration as the first visual, then the exact existing
 
 Reference for direction, not a KULT size requirement: [GOV.UK responsive type scale](https://design-system.service.gov.uk/styles/type-scale/) and [USWDS mobile typesetting](https://designsystem.digital.gov/components/typography/).
 
-### Stitch refinement: larger mobile illustration (2026-11-27)
+### Stitch refinement: ink directly on paper (2026-11-27)
 
-Give the approved art real presence: use the smaller of 86vw, 340px or 39% of the stable viewport height (35% at 700px height or less). At 390×844 that is about 329×412px. Preserve the full 4:5 illustration, paper blend, 27px title and existing desktop layout. The first purpose remains visible at 320×568 at normal text size. Hide the decoration on mobile after choosing a purpose.
+Set the café drawing nearly edge to edge against the same warm page paper. Use neutral off-black ink on transparent paper: paper pixels in the source illustration are not part of the design. There must be no visible image rectangle, border, mix-blend wrapper, or introduced color. Preserve every illustrated mark, but trim unused space above the hanging lamp and below the seated figures on phones. Set the width to the smaller of 96vw, 440px and 46svh (41svh at 700px height or less). At 390×844 the cover is 374px wide. Keep the existing desktop geometry and 27px mobile heading; the first purpose remains visible at 320×568 at normal text size. Hide the decoration after a mobile purpose is selected.
