@@ -3,6 +3,8 @@ import { fetchSharedList, ImportError } from '@/lib/naverImport';
 import { naverRequest } from '@/lib/naverTransport';
 
 export const runtime = 'nodejs';
+// Keep this importer close to the Naver Maps upstream; other routes are unchanged.
+export const preferredRegion = 'icn1';
 export const maxDuration = 30;
 
 export async function POST(request: NextRequest) {
