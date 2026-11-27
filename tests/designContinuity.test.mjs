@@ -64,9 +64,10 @@ test('home uses a compact mobile headline and the shared main landmark', () => {
 test('mobile artwork stays left-aligned, stable during a gesture, and transparent at the edges', () => {
   const css = get('app/entry.module.css');
   const home = get('app/page.tsx');
-  assert.ok(css.includes('width: min(100%, 86vw, 340px, 39svh, max(35svh, calc(58svh - 161px))); justify-self: start'));
-  assert.ok(home.includes('min(calc(100vw - 40px), 86vw, 340px, 39svh, max(35svh, calc(58svh - 161px)))'));
-  assert.doesNotMatch(css, /max-height: 700px/);
+  assert.ok(css.includes('width: min(calc(100% + 32px), 96vw, 440px, 46svh, max(41svh, calc(71svh - 210px))); justify-self: start'));
+  assert.ok(home.includes('min(calc(100vw - 8px), 96vw, 440px, 46svh, max(41svh, calc(71svh - 210px)))'));
+  assert.match(css, /justify-self: start; margin-inline-start: -8px/);
+  assert.doesNotMatch(css, /max-height: 700px|\d+dvh/);
   assert.match(home, /draggable={false}/);
   assert.match(css, /filter: url\("#kult-cover-ink"\);\s*pointer-events: none;\s*user-select: none/);
   assert.match(css, /\.coverImage \{[\s\S]*?height: auto/);

@@ -47,7 +47,7 @@ export default async function HomePage({ searchParams }: Props) {
           </defs>
         </svg>
         <Image src="/brand/kult-cafe-cover.webp" alt="" draggable={false} width={1040} height={1300}
-          sizes="(max-width: 767px) min(calc(100vw - 40px), 86vw, 340px, 39svh, max(35svh, calc(58svh - 161px))), (max-width: 1200px) 39vw, 460px"
+          sizes="(max-width: 767px) min(calc(100vw - 8px), 96vw, 440px, 46svh, max(41svh, calc(71svh - 210px))), (max-width: 1200px) 39vw, 460px"
           className={styles.coverImage} />
       </div>
       <div className={styles.inner}>
