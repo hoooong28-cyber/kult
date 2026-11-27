@@ -35,7 +35,7 @@
 }
 .secondary { grid-area: secondary; margin-top: 30px; border-top: 1px solid var(--kult-rule); padding-top: 4px; }
 @media (max-width: 767px) {
-  .entry { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "cover" "controls" "secondary"; grid-template-rows: auto; padding: 12px 20px 22px; row-gap: 5px; }
+  .entry { grid-template-columns: minmax(0, 1fr); grid-template-areas: "cover" "intro" "controls" "secondary"; grid-template-rows: auto; padding: 12px 20px 22px; row-gap: 5px; }
   .intro h1 { margin: 8px 0 5px; font-size: clamp(2.12rem, 10.4vw, 3.05rem); line-height: 1.1; }
   .dek { line-height: 1.4; }
   .chooser { margin-top: 0; }

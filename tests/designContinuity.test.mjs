@@ -45,11 +45,12 @@ test('four Hangul font subsets are self-hosted and carry an open-font notice', (
   assert.match(get('public/fonts/OFL-notice.txt'), /SIL OPEN FONT LICENSE Version 1\.1/);
 });
 
-test('mobile KULT keeps the artwork between title and controls, then prioritizes neighborhoods', () => {
+test('mobile KULT leads with the artwork, then prioritizes neighborhoods after a choice', () => {
   const home = get('app/page.tsx');
   const layout = get('app/entry.module.css');
-  assert.ok(home.indexOf('id="entry-title"') < home.indexOf('className={styles.cover}'));
-  assert.ok(home.indexOf('className={styles.cover}') < home.indexOf('<EntryChooser'));
+  assert.match(home, /<Image src="\/brand\/kult-cafe-cover\.webp" alt=""/);
+  assert.match(layout, /grid-template-areas: "cover" "intro" "controls" "secondary"/);
+  assert.match(layout, /grid-template-areas: "intro cover" "controls cover" "secondary secondary"/);
   assert.match(get('app/EntryChooser.tsx'), /data-purpose-selected=/);
   assert.match(layout, /\.entry:has\(\.chooser\[data-purpose-selected\]\) \.cover \{ display: none; \}/);
 });
